@@ -1,0 +1,82 @@
+[gd_scene format=3 uid="uid://cv8uak2t01rol"]
+
+[node name="GameWindow" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.396078, 0.396078, 0.396078, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="ColorRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 756.0
+offset_top = -2.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.32549, 0.403922, 0.494118, 1)
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 449.0
+offset_top = 101.0
+offset_right = 489.0
+offset_bottom = 124.0
+text = "Wood: 0"
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 0
+offset_left = 763.0
+offset_top = 4.0
+offset_right = 1142.0
+offset_bottom = 27.0
+text = "Upgrades | Buildings | Reaserch | Policies | WAR"
+
+[node name="LVL" type="Label" parent="."]
+layout_mode = 0
+offset_left = 541.0
+offset_top = 544.0
+offset_right = 615.0
+offset_bottom = 567.0
+text = "Level"
+
+[node name="ColorRect2" type="ColorRect" parent="LVL"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -488.0
+offset_top = 33.0
+offset_right = 386.0
+offset_bottom = 22.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.529412, 0.286275, 0.556863, 1)
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 144.0
+offset_top = 184.0
+offset_right = 268.0
+offset_bottom = 224.0
+text = "Chop"
+
+[node name="Button2" type="Button" parent="."]
+layout_mode = 0
+offset_left = 38.0
+offset_top = 502.0
+offset_right = 162.0
+offset_bottom = 542.0
+text = "Skill tree"
