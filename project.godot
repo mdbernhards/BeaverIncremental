@@ -11,5 +11,10 @@ config_version=5
 [application]
 
 config/name="Beaver Incremental"
+run/main_scene="res://Scenes/gameWindow.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
+
+[autoload]
+
+GameValues="*res://singletons/GameValues.gd"
