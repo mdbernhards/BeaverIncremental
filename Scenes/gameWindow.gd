@@ -4,23 +4,23 @@ var woodCount = 0;
 var foodCount = 0;
 
 func _ready():
-	$WoodLabel.text = "Wood: " + str(woodCount)
+	$UI/LeftVBox/TopHBox/StatLabels/WoodLabel.text = "Wood: " + str(woodCount)
 
 func _process(delta):
-	$FoodButton/Label.text = str(round($FoodButton/Label/FoodButtonTimer.time_left))
+	$UI/LeftVBox/MidHBox/VBoxContainer/FoodButton/Label.text = str(round($UI/LeftVBox/MidHBox/VBoxContainer/FoodButton/Label/FoodButtonTimer.time_left))
 
 func _on_button_button_down():
 	woodCount += 1
-	$WoodLabel.text = "Wood: " + str(woodCount)
+	$UI/LeftVBox/TopHBox/StatLabels/WoodLabel.text = "Wood: " + str(woodCount)
 
 func _on_food_button_button_down():
-	$FoodButton/Label/FoodButtonTimer.start()
+	$UI/LeftVBox/MidHBox/VBoxContainer/FoodButton/Label/FoodButtonTimer.start()
 
 func _on_food_timer_timeout():
 	foodCount -= 1
-	$FoodLabel.text = "Food: " + str(foodCount)
+	$UI/LeftVBox/TopHBox/StatLabels/FoodLabel.text = "Food: " + str(foodCount)
 
 
 func _on_food_button_timer_timeout():
 	foodCount += 50
-	$FoodLabel.text = "Food: " + str(foodCount)
+	$UI/LeftVBox/TopHBox/StatLabels/FoodLabel.text = "Food: " + str(foodCount)

@@ -11,7 +11,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_a87dj")
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="Background" type="ColorRect" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -20,40 +20,35 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.396078, 0.396078, 0.396078, 1)
 
-[node name="ColorRect2" type="ColorRect" parent="ColorRect"]
+[node name="ColorRect2" type="ColorRect" parent="Background"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 756.0
-offset_top = -2.0
+offset_left = 1420.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.32549, 0.403922, 0.494118, 1)
 
-[node name="WoodLabel" type="Label" parent="."]
+[node name="UI" type="ReferenceRect" parent="."]
 layout_mode = 0
-offset_left = 10.0
-offset_top = 17.0
-offset_right = 73.0
-offset_bottom = 40.0
-text = "Wood: 0"
+offset_right = 1920.0
+offset_bottom = 1080.0
 
-[node name="WoodLabel2" type="Label" parent="."]
-layout_mode = 0
-offset_left = 224.0
-offset_top = 14.0
-offset_right = 287.0
-offset_bottom = 37.0
-text = "Scrolling log.....................................................................................
-next line
-.....
-......
-...
-You get killed \"prestige\" after each act and start from the begining
-get permanant bonus and points in to a skill tree"
+[node name="LeftVBox" type="VBoxContainer" parent="UI"]
+layout_mode = 2
+offset_right = 1420.0
+offset_bottom = 1092.0
+size_flags_horizontal = 3
 
-[node name="FoodLabel" type="Label" parent="."]
+[node name="TopHBox" type="HBoxContainer" parent="UI/LeftVBox"]
+custom_minimum_size = Vector2(100, 150)
+layout_mode = 2
+
+[node name="StatLabels" type="Control" parent="UI/LeftVBox/TopHBox"]
+layout_mode = 2
+
+[node name="FoodLabel" type="Label" parent="UI/LeftVBox/TopHBox/StatLabels"]
 layout_mode = 0
 offset_left = 10.0
 offset_top = 53.0
@@ -61,197 +56,257 @@ offset_right = 73.0
 offset_bottom = 76.0
 text = "Food: 0"
 
-[node name="FoodTimer" type="Timer" parent="FoodLabel"]
+[node name="FoodTimer" type="Timer" parent="UI/LeftVBox/TopHBox/StatLabels/FoodLabel"]
 wait_time = 3.0
 autostart = true
 
-[node name="WaterLabel" type="Label" parent="."]
+[node name="WaterLabel" type="Label" parent="UI/LeftVBox/TopHBox/StatLabels"]
 layout_mode = 0
 offset_left = 10.0
 offset_top = 84.0
-offset_right = 73.0
+offset_right = 75.0
 offset_bottom = 107.0
 text = "Water: 0"
 
-[node name="WaterTimer" type="Timer" parent="WaterLabel"]
+[node name="WaterTimer" type="Timer" parent="UI/LeftVBox/TopHBox/StatLabels/WaterLabel"]
 wait_time = 3.0
 autostart = true
 
-[node name="Label2" type="Label" parent="."]
+[node name="WoodLabel" type="Label" parent="UI/LeftVBox/TopHBox/StatLabels"]
 layout_mode = 0
-offset_left = 763.0
-offset_top = 4.0
-offset_right = 1142.0
-offset_bottom = 27.0
-text = "Upgrades | Buildings | Reaserch | Policies | WAR"
+offset_left = 10.0
+offset_top = 17.0
+offset_right = 73.0
+offset_bottom = 40.0
+text = "Wood: 0"
 
-[node name="LVL" type="Label" parent="."]
-layout_mode = 0
-offset_left = 541.0
-offset_top = 544.0
-offset_right = 615.0
-offset_bottom = 567.0
-text = "Level"
+[node name="MidHBox" type="HBoxContainer" parent="UI/LeftVBox"]
+custom_minimum_size = Vector2(0, 650)
+layout_mode = 2
+size_flags_vertical = 3
 
-[node name="ColorRect2" type="ColorRect" parent="LVL"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -488.0
-offset_top = 33.0
-offset_right = 386.0
-offset_bottom = 22.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0.529412, 0.286275, 0.556863, 1)
+[node name="MarginBox" type="ColorRect" parent="UI/LeftVBox/MidHBox"]
+custom_minimum_size = Vector2(40, 0)
+layout_mode = 2
+color = Color(1, 1, 1, 0)
 
-[node name="ChopButton" type="Button" parent="."]
-layout_mode = 0
-offset_left = 570.0
-offset_top = 262.0
-offset_right = 694.0
-offset_bottom = 302.0
-text = "Chop"
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/LeftVBox/MidHBox"]
+custom_minimum_size = Vector2(200, 10)
+layout_mode = 2
+theme_override_constants/separation = 20
+alignment = 1
 
-[node name="FoodButton" type="Button" parent="."]
-layout_mode = 0
-offset_left = 571.0
-offset_top = 325.0
-offset_right = 695.0
-offset_bottom = 365.0
+[node name="FoodButton" type="Button" parent="UI/LeftVBox/MidHBox/VBoxContainer"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
 text = "Get Food"
 
-[node name="Label" type="Label" parent="FoodButton"]
+[node name="Label" type="Label" parent="UI/LeftVBox/MidHBox/VBoxContainer/FoodButton"]
 layout_mode = 0
-offset_left = 133.0
-offset_top = 11.0
-offset_right = 173.0
-offset_bottom = 34.0
+offset_left = 204.0
+offset_top = 1.0
+offset_right = 244.0
+offset_bottom = 24.0
 text = "0"
 
-[node name="FoodButtonTimer" type="Timer" parent="FoodButton/Label"]
+[node name="FoodButtonTimer" type="Timer" parent="UI/LeftVBox/MidHBox/VBoxContainer/FoodButton/Label"]
 wait_time = 10.0
 one_shot = true
 
-[node name="FoodStack" type="Button" parent="."]
-layout_mode = 0
-offset_left = 1061.0
-offset_top = 552.0
-offset_right = 1108.0
-offset_bottom = 592.0
-text = "Food"
+[node name="WaterButton" type="Button" parent="UI/LeftVBox/MidHBox/VBoxContainer"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+text = "Get Water"
 
-[node name="SkillTreeButton" type="Button" parent="."]
-layout_mode = 0
-offset_left = 38.0
-offset_top = 502.0
-offset_right = 162.0
-offset_bottom = 542.0
+[node name="ChopButton" type="Button" parent="UI/LeftVBox/MidHBox/VBoxContainer"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+text = "Chop"
+
+[node name="BotHBox" type="HBoxContainer" parent="UI/LeftVBox"]
+custom_minimum_size = Vector2(0, 280)
+layout_mode = 2
+
+[node name="TextLog" type="Label" parent="UI/LeftVBox/BotHBox"]
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+text = "Scrolling log..............................................................................--------------------------------.......
+next line
+.....
+......
+...
+You get killed \"prestige\" after each act and start from the begining
+get permanant bonus and points in to a skill tree
+
+Have levelups, with skills like talk to ants, talk to other animals so they
+can help
+
+Axe joke: beavers invent axe but don't know what to use it for, then small boost 
+from sharpening teeth with it, later invent beter sharpening devices and small 
+axes for hands to use with teeth for wood cutting"
+
+[node name="LevelVBox" type="VBoxContainer" parent="UI/LeftVBox/BotHBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 2
+
+[node name="LVLLabel" type="Label" parent="UI/LeftVBox/BotHBox/LevelVBox"]
+layout_mode = 2
+text = "Level 4"
+horizontal_alignment = 1
+
+[node name="XPBar" type="ColorRect" parent="UI/LeftVBox/BotHBox/LevelVBox"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+color = Color(0.529412, 0.286275, 0.556863, 1)
+
+[node name="ColorRect3" type="ColorRect" parent="UI/LeftVBox/BotHBox/LevelVBox"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+color = Color(0.529412, 0.286275, 0.556863, 0)
+
+[node name="RightVBox" type="VBoxContainer" parent="UI"]
+layout_mode = 2
+offset_left = 1420.0
+offset_right = 1920.0
+offset_bottom = 1080.0
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.35
+
+[node name="Tabs" type="HBoxContainer" parent="UI/RightVBox"]
+layout_mode = 2
+
+[node name="UpgradesButton" type="Button" parent="UI/RightVBox/Tabs"]
+layout_mode = 2
+text = "Upgrades"
+
+[node name="BuildingsButton" type="Button" parent="UI/RightVBox/Tabs"]
+layout_mode = 2
+text = "Buildings"
+
+[node name="ReaserchButton" type="Button" parent="UI/RightVBox/Tabs"]
+layout_mode = 2
+text = "Reaserch"
+
+[node name="PoliciesButton" type="Button" parent="UI/RightVBox/Tabs"]
+layout_mode = 2
+text = "Policies"
+
+[node name="WarButton" type="Button" parent="UI/RightVBox/Tabs"]
+layout_mode = 2
+text = "War"
+
+[node name="SkillTreeButton" type="Button" parent="UI/RightVBox/Tabs"]
+layout_mode = 2
 text = "Skill tree"
 
-[node name="SkillTreeButton2" type="Button" parent="."]
+[node name="FoodStack" type="Button" parent="."]
 layout_mode = 0
-offset_left = 769.0
-offset_top = 47.0
-offset_right = 893.0
-offset_bottom = 87.0
+offset_left = 1594.0
+offset_top = 894.0
+offset_right = 1641.0
+offset_bottom = 934.0
+text = "Food"
+
+[node name="SkillIdeas" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="SkillTreeButton2" type="Button" parent="SkillIdeas"]
+layout_mode = 0
+offset_left = 2000.0
+offset_top = 22.0
+offset_right = 2124.0
+offset_bottom = 76.0
 text = "Wood +1
 cost: 25 wood"
 
-[node name="SkillTreeButton9" type="Button" parent="."]
+[node name="SkillTreeButton9" type="Button" parent="SkillIdeas"]
 layout_mode = 0
-offset_left = 1015.0
-offset_top = 53.0
-offset_right = 1139.0
-offset_bottom = 107.0
+offset_left = 2246.0
+offset_top = 28.0
+offset_right = 2370.0
+offset_bottom = 82.0
 text = "Unlock fishing
 cost: 25 wood"
 
-[node name="SkillTreeButton10" type="Button" parent="."]
+[node name="SkillTreeButton10" type="Button" parent="SkillIdeas"]
 layout_mode = 0
-offset_left = 986.0
-offset_top = 119.0
-offset_right = 1146.0
-offset_bottom = 173.0
+offset_left = 2217.0
+offset_top = 94.0
+offset_right = 2377.0
+offset_bottom = 148.0
 text = "Unlock alp's stream
 cost: 25 wood"
 
-[node name="SkillTreeButton11" type="Button" parent="."]
+[node name="SkillTreeButton11" type="Button" parent="SkillIdeas"]
 layout_mode = 0
-offset_left = 986.0
-offset_top = 194.0
-offset_right = 1146.0
-offset_bottom = 248.0
+offset_left = 2217.0
+offset_top = 169.0
+offset_right = 2377.0
+offset_bottom = 223.0
 text = "build shelter
 cost: 25 wood"
 
-[node name="SkillTreeButton3" type="Button" parent="."]
+[node name="SkillTreeButton3" type="Button" parent="SkillIdeas"]
 layout_mode = 0
-offset_left = 771.0
-offset_top = 121.0
-offset_right = 895.0
-offset_bottom = 175.0
+offset_left = 2002.0
+offset_top = 96.0
+offset_right = 2126.0
+offset_bottom = 150.0
 text = "Food  5% more
 cost: 25 wood"
 
-[node name="SkillTreeButton4" type="Button" parent="."]
+[node name="SkillTreeButton4" type="Button" parent="SkillIdeas"]
 layout_mode = 0
-offset_left = 769.0
-offset_top = 188.0
-offset_right = 893.0
-offset_bottom = 242.0
+offset_left = 2000.0
+offset_top = 163.0
+offset_right = 2128.0
+offset_bottom = 217.0
 text = "Water 5% more
 cost: 25 wood"
 
-[node name="SkillTreeButton5" type="Button" parent="."]
+[node name="SkillTreeButton5" type="Button" parent="SkillIdeas"]
 layout_mode = 0
-offset_left = 772.0
-offset_top = 255.0
-offset_right = 900.0
-offset_bottom = 309.0
+offset_left = 2003.0
+offset_top = 230.0
+offset_right = 2131.0
+offset_bottom = 284.0
 text = "+1 food stack
 cost: 25 wood"
 
-[node name="SkillTreeButton7" type="Button" parent="."]
+[node name="SkillTreeButton7" type="Button" parent="SkillIdeas"]
 layout_mode = 0
-offset_left = 778.0
-offset_top = 437.0
-offset_right = 906.0
-offset_bottom = 491.0
+offset_left = 2009.0
+offset_top = 412.0
+offset_right = 2230.0
+offset_bottom = 466.0
 text = "can chop while getting food
 cost: 25 wood"
 
-[node name="SkillTreeButton8" type="Button" parent="."]
+[node name="SkillTreeButton8" type="Button" parent="SkillIdeas"]
 layout_mode = 0
-offset_left = 777.0
-offset_top = 500.0
-offset_right = 998.0
-offset_bottom = 554.0
+offset_left = 2008.0
+offset_top = 475.0
+offset_right = 2239.0
+offset_bottom = 529.0
 text = "can chop while getting water
 cost: 25 wood"
 
-[node name="SkillTreeButton6" type="Button" parent="."]
+[node name="SkillTreeButton6" type="Button" parent="SkillIdeas"]
 layout_mode = 0
-offset_left = 774.0
-offset_top = 326.0
-offset_right = 902.0
-offset_bottom = 380.0
+offset_left = 2005.0
+offset_top = 301.0
+offset_right = 2174.0
+offset_bottom = 401.0
 text = "+1 water that appers
 you need to press
  on it 6 times now
 cost: 25 wood"
 
-[node name="WaterButton" type="Button" parent="."]
-layout_mode = 0
-offset_left = 576.0
-offset_top = 383.0
-offset_right = 700.0
-offset_bottom = 419.0
-text = "Get Water"
-
-[connection signal="timeout" from="FoodLabel/FoodTimer" to="." method="_on_food_timer_timeout"]
-[connection signal="button_down" from="ChopButton" to="." method="_on_button_button_down"]
-[connection signal="button_down" from="FoodButton" to="." method="_on_food_button_button_down"]
-[connection signal="timeout" from="FoodButton/Label/FoodButtonTimer" to="." method="_on_food_button_timer_timeout"]
+[connection signal="timeout" from="UI/LeftVBox/TopHBox/StatLabels/FoodLabel/FoodTimer" to="." method="_on_food_timer_timeout"]
+[connection signal="button_down" from="UI/LeftVBox/MidHBox/VBoxContainer/FoodButton" to="." method="_on_food_button_button_down"]
+[connection signal="timeout" from="UI/LeftVBox/MidHBox/VBoxContainer/FoodButton/Label/FoodButtonTimer" to="." method="_on_food_button_timer_timeout"]
+[connection signal="button_down" from="UI/LeftVBox/MidHBox/VBoxContainer/ChopButton" to="." method="_on_button_button_down"]
 [connection signal="button_down" from="FoodStack" to="." method="_on_food_button_button_down"]
