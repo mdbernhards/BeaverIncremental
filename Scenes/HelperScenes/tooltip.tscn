@@ -1,0 +1,63 @@
+[gd_scene load_steps=2 format=3 uid="uid://me5r77ptj5r2"]
+
+[ext_resource type="Texture2D" uid="uid://dxyyldui4tghv" path="res://Art/UpgradeIcons/axeIcon.png" id="1_bh8uh"]
+
+[node name="ToolTip" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1520.0
+offset_bottom = -830.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 400.0
+offset_bottom = 250.0
+color = Color(0.172549, 0.313726, 0.172549, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+custom_minimum_size = Vector2(400, 250)
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2
+
+[node name="IconBox" type="VBoxContainer" parent="VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(60, 0)
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/HBoxContainer/IconBox"]
+layout_mode = 2
+texture = ExtResource("1_bh8uh")
+expand_mode = 5
+
+[node name="TitleBox" type="VBoxContainer" parent="VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(340, 0)
+layout_mode = 2
+
+[node name="RichTextLabel" type="Label" parent="VBoxContainer/HBoxContainer/TitleBox"]
+layout_mode = 2
+text = "Title"
+horizontal_alignment = 1
+
+[node name="DescriptionBox" type="HBoxContainer" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 150)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/DescriptionBox"]
+layout_mode = 2
+text = "This is a good item"
+
+[node name="FlavorBox" type="HBoxContainer" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/FlavorBox"]
+layout_mode = 2
+text = "\"Call me Velvet Thunder\" - Holt"

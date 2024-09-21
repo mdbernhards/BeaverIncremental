@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://cv8uak2t01rol"]
+[gd_scene load_steps=4 format=3 uid="uid://cv8uak2t01rol"]
 
 [ext_resource type="Script" path="res://Scenes/gameWindow.gd" id="1_a87dj"]
+[ext_resource type="PackedScene" uid="uid://vwonnoflc7vi" path="res://Scenes/ui.tscn" id="2_uocu5"]
+[ext_resource type="PackedScene" uid="uid://me5r77ptj5r2" path="res://Scenes/HelperScenes/tooltip.tscn" id="3_0pey8"]
 
 [node name="GameWindow" type="Control"]
 layout_mode = 3
@@ -30,188 +32,23 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.32549, 0.403922, 0.494118, 1)
 
-[node name="UI" type="ReferenceRect" parent="."]
+[node name="UI" parent="." instance=ExtResource("2_uocu5")]
 layout_mode = 0
-offset_right = 1920.0
-offset_bottom = 1080.0
-
-[node name="LeftVBox" type="VBoxContainer" parent="UI"]
-layout_mode = 2
-offset_right = 1420.0
-offset_bottom = 1092.0
-size_flags_horizontal = 3
-
-[node name="TopHBox" type="HBoxContainer" parent="UI/LeftVBox"]
-custom_minimum_size = Vector2(100, 150)
-layout_mode = 2
-
-[node name="StatLabels" type="Control" parent="UI/LeftVBox/TopHBox"]
-layout_mode = 2
-
-[node name="FoodLabel" type="Label" parent="UI/LeftVBox/TopHBox/StatLabels"]
-layout_mode = 0
-offset_left = 10.0
-offset_top = 53.0
-offset_right = 73.0
-offset_bottom = 76.0
-text = "Food: 0"
-
-[node name="FoodTimer" type="Timer" parent="UI/LeftVBox/TopHBox/StatLabels/FoodLabel"]
-wait_time = 3.0
-autostart = true
-
-[node name="WaterLabel" type="Label" parent="UI/LeftVBox/TopHBox/StatLabels"]
-layout_mode = 0
-offset_left = 10.0
-offset_top = 84.0
-offset_right = 75.0
-offset_bottom = 107.0
-text = "Water: 0"
-
-[node name="WaterTimer" type="Timer" parent="UI/LeftVBox/TopHBox/StatLabels/WaterLabel"]
-wait_time = 3.0
-autostart = true
-
-[node name="WoodLabel" type="Label" parent="UI/LeftVBox/TopHBox/StatLabels"]
-layout_mode = 0
-offset_left = 10.0
-offset_top = 17.0
-offset_right = 73.0
-offset_bottom = 40.0
-text = "Wood: 0"
-
-[node name="MidHBox" type="HBoxContainer" parent="UI/LeftVBox"]
-custom_minimum_size = Vector2(0, 650)
-layout_mode = 2
-size_flags_vertical = 3
-
-[node name="MarginBox" type="ColorRect" parent="UI/LeftVBox/MidHBox"]
-custom_minimum_size = Vector2(40, 0)
-layout_mode = 2
-color = Color(1, 1, 1, 0)
-
-[node name="VBoxContainer" type="VBoxContainer" parent="UI/LeftVBox/MidHBox"]
-custom_minimum_size = Vector2(200, 10)
-layout_mode = 2
-theme_override_constants/separation = 20
-alignment = 1
-
-[node name="FoodButton" type="Button" parent="UI/LeftVBox/MidHBox/VBoxContainer"]
-custom_minimum_size = Vector2(0, 40)
-layout_mode = 2
-text = "Get Food"
-
-[node name="Label" type="Label" parent="UI/LeftVBox/MidHBox/VBoxContainer/FoodButton"]
-layout_mode = 0
-offset_left = 204.0
-offset_top = 1.0
-offset_right = 244.0
-offset_bottom = 24.0
-text = "0"
-
-[node name="FoodButtonTimer" type="Timer" parent="UI/LeftVBox/MidHBox/VBoxContainer/FoodButton/Label"]
-wait_time = 10.0
-one_shot = true
-
-[node name="WaterButton" type="Button" parent="UI/LeftVBox/MidHBox/VBoxContainer"]
-custom_minimum_size = Vector2(0, 40)
-layout_mode = 2
-text = "Get Water"
-
-[node name="ChopButton" type="Button" parent="UI/LeftVBox/MidHBox/VBoxContainer"]
-custom_minimum_size = Vector2(0, 40)
-layout_mode = 2
-text = "Chop"
-
-[node name="BotHBox" type="HBoxContainer" parent="UI/LeftVBox"]
-custom_minimum_size = Vector2(0, 280)
-layout_mode = 2
-
-[node name="TextLog" type="Label" parent="UI/LeftVBox/BotHBox"]
-custom_minimum_size = Vector2(400, 0)
-layout_mode = 2
-text = "Scrolling log..............................................................................--------------------------------.......
-next line
-.....
-......
-...
-You get killed \"prestige\" after each act and start from the begining
-get permanant bonus and points in to a skill tree
-
-Have levelups, with skills like talk to ants, talk to other animals so they
-can help
-
-Axe joke: beavers invent axe but don't know what to use it for, then small boost 
-from sharpening teeth with it, later invent beter sharpening devices and small 
-axes for hands to use with teeth for wood cutting"
-
-[node name="LevelVBox" type="VBoxContainer" parent="UI/LeftVBox/BotHBox"]
-layout_mode = 2
-size_flags_horizontal = 3
-alignment = 2
-
-[node name="LVLLabel" type="Label" parent="UI/LeftVBox/BotHBox/LevelVBox"]
-layout_mode = 2
-text = "Level 4"
-horizontal_alignment = 1
-
-[node name="XPBar" type="ColorRect" parent="UI/LeftVBox/BotHBox/LevelVBox"]
-custom_minimum_size = Vector2(0, 30)
-layout_mode = 2
-color = Color(0.529412, 0.286275, 0.556863, 1)
-
-[node name="ColorRect3" type="ColorRect" parent="UI/LeftVBox/BotHBox/LevelVBox"]
-custom_minimum_size = Vector2(0, 30)
-layout_mode = 2
-color = Color(0.529412, 0.286275, 0.556863, 0)
-
-[node name="RightVBox" type="VBoxContainer" parent="UI"]
-layout_mode = 2
-offset_left = 1420.0
-offset_right = 1920.0
-offset_bottom = 1080.0
-size_flags_horizontal = 3
-size_flags_stretch_ratio = 0.35
-
-[node name="Tabs" type="HBoxContainer" parent="UI/RightVBox"]
-layout_mode = 2
-
-[node name="UpgradesButton" type="Button" parent="UI/RightVBox/Tabs"]
-layout_mode = 2
-text = "Upgrades"
-
-[node name="BuildingsButton" type="Button" parent="UI/RightVBox/Tabs"]
-layout_mode = 2
-text = "Buildings"
-
-[node name="ReaserchButton" type="Button" parent="UI/RightVBox/Tabs"]
-layout_mode = 2
-text = "Reaserch"
-
-[node name="PoliciesButton" type="Button" parent="UI/RightVBox/Tabs"]
-layout_mode = 2
-text = "Policies"
-
-[node name="WarButton" type="Button" parent="UI/RightVBox/Tabs"]
-layout_mode = 2
-text = "War"
-
-[node name="SkillTreeButton" type="Button" parent="UI/RightVBox/Tabs"]
-layout_mode = 2
-text = "Skill tree"
 
 [node name="FoodStack" type="Button" parent="."]
 layout_mode = 0
-offset_left = 1594.0
-offset_top = 894.0
-offset_right = 1641.0
-offset_bottom = 934.0
+offset_left = 2009.0
+offset_top = 996.0
+offset_right = 2056.0
+offset_bottom = 1036.0
 text = "Food"
 
 [node name="SkillIdeas" type="Control" parent="."]
 anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = 69.0
+offset_top = 1161.0
+offset_right = 109.0
+offset_bottom = 1201.0
 
 [node name="SkillTreeButton2" type="Button" parent="SkillIdeas"]
 layout_mode = 0
@@ -305,8 +142,33 @@ you need to press
  on it 6 times now
 cost: 25 wood"
 
-[connection signal="timeout" from="UI/LeftVBox/TopHBox/StatLabels/FoodLabel/FoodTimer" to="." method="_on_food_timer_timeout"]
-[connection signal="button_down" from="UI/LeftVBox/MidHBox/VBoxContainer/FoodButton" to="." method="_on_food_button_button_down"]
-[connection signal="timeout" from="UI/LeftVBox/MidHBox/VBoxContainer/FoodButton/Label/FoodButtonTimer" to="." method="_on_food_button_timer_timeout"]
-[connection signal="button_down" from="UI/LeftVBox/MidHBox/VBoxContainer/ChopButton" to="." method="_on_button_button_down"]
+[node name="TextLog" type="Label" parent="SkillIdeas"]
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 0
+offset_left = 1945.0
+offset_top = 568.0
+offset_right = 2578.0
+offset_bottom = 929.0
+text = "Scrolling log..............................................................................--------------------------------.......
+next line
+.....
+......
+...
+You get killed \"prestige\" after each act and start from the begining
+get permanant bonus and points in to a skill tree
+
+Have levelups, with skills like talk to ants, talk to other animals so they
+can help
+
+Axe joke: beavers invent axe but don't know what to use it for, then small boost 
+from sharpening teeth with it, later invent beter sharpening devices and small 
+axes for hands to use with teeth for wood cutting"
+
+[node name="ToolTip" parent="." instance=ExtResource("3_0pey8")]
+layout_mode = 1
+offset_left = -538.0
+offset_top = 299.0
+offset_right = -2058.0
+offset_bottom = -531.0
+
 [connection signal="button_down" from="FoodStack" to="." method="_on_food_button_button_down"]

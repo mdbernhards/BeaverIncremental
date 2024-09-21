@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://vwonnoflc7vi"]
+
+[ext_resource type="PackedScene" uid="uid://b0skpo0q0gxdn" path="res://Scenes/screen_left.tscn" id="1_a06vx"]
+[ext_resource type="PackedScene" uid="uid://cvn3xlgbmdubg" path="res://Scenes/screen_right.tscn" id="2_f13re"]
+
+[node name="UI" type="HBoxContainer"]
+offset_right = 1920.0
+offset_bottom = 1080.0
+
+[node name="ScreenLeft" parent="." instance=ExtResource("1_a06vx")]
+layout_mode = 2
+
+[node name="ScreenRight" parent="." instance=ExtResource("2_f13re")]
+layout_mode = 2

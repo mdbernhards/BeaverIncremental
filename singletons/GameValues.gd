@@ -1,11 +1,39 @@
 extends Node
 
-var WoodPerChop = 1
+var woodPerChop = 1
 
-func _ready():
-	pass # Replace with function body.
+var waterPerClick = 20
+var waterPerBonusClick = 5
 
+var foodPerClick = 25
+var foodPerBonusClick = 5
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
+var foodLimit = 100
+var waterLimit = 25
+var woodLimit = 250
+
+var Upgrades = {
+	"WoodUpgrades" : {
+		"Wood1" : {
+			"id" : 1,
+			"name" : "The first chop",
+			"description" : "learn how to chop",
+			"price" : 0,
+			"icon" : "axe.png"
+		},
+		"Wood2" : {
+			"id" : 2,
+			"name" : "The second chop",
+			"description" : "+1 wood per chop",
+			"price" : 0,
+			"icon" : "axe.png"
+		},
+		"Wood3" : {
+			"id" : 3,
+			"name" : "The third chop",
+			"description" : "+1 wood per chop",
+			"price" : 0,
+			"icon" : "axe.png"
+		}
+	}
+}

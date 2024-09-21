@@ -1,0 +1,157 @@
+[gd_scene load_steps=7 format=3 uid="uid://cvn3xlgbmdubg"]
+
+[ext_resource type="Texture2D" uid="uid://dasmch1b765yc" path="res://icon.svg" id="1_0015g"]
+[ext_resource type="Script" path="res://Scenes/screen_right.gd" id="1_pc3yk"]
+[ext_resource type="Script" path="res://Scenes/UpgradeTab.gd" id="2_osvlb"]
+[ext_resource type="Texture2D" uid="uid://dxyyldui4tghv" path="res://Art/UpgradeIcons/axeIcon.png" id="2_t80xk"]
+[ext_resource type="Texture2D" uid="uid://b4o0cujyn7qtc" path="res://Art/UpgradeIcons/chickenIcon.png" id="4_20mjn"]
+[ext_resource type="Texture2D" uid="uid://dqlg2epleljbg" path="res://Art/UpgradeIcons/waterIcon.png" id="5_ld88k"]
+
+[node name="ScreenRight" type="VBoxContainer"]
+offset_left = 1420.0
+offset_right = 1920.0
+offset_bottom = 1080.0
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.35
+script = ExtResource("1_pc3yk")
+
+[node name="margin" type="Control" parent="."]
+custom_minimum_size = Vector2(0, 15)
+layout_mode = 2
+
+[node name="Tabs" type="HBoxContainer" parent="."]
+custom_minimum_size = Vector2(0, 35)
+layout_mode = 2
+
+[node name="UpgradesButton" type="Button" parent="Tabs"]
+layout_mode = 2
+text = "Upgrades"
+
+[node name="BuildingsButton" type="Button" parent="Tabs"]
+layout_mode = 2
+text = "Buildings"
+
+[node name="ReaserchButton" type="Button" parent="Tabs"]
+layout_mode = 2
+text = "Reaserch"
+
+[node name="PoliciesButton" type="Button" parent="Tabs"]
+layout_mode = 2
+text = "Policies"
+
+[node name="WarButton" type="Button" parent="Tabs"]
+layout_mode = 2
+text = "War"
+
+[node name="SkillTreeButton" type="Button" parent="Tabs"]
+layout_mode = 2
+text = "Skill tree"
+
+[node name="margin2" type="Control" parent="."]
+custom_minimum_size = Vector2(0, 15)
+layout_mode = 2
+
+[node name="TabScreen" type="HBoxContainer" parent="."]
+custom_minimum_size = Vector2(500, 900)
+layout_mode = 2
+
+[node name="UpgradeTab" type="Control" parent="TabScreen"]
+custom_minimum_size = Vector2(500, 0)
+layout_mode = 2
+script = ExtResource("2_osvlb")
+
+[node name="UpgradeList" type="ItemList" parent="TabScreen/UpgradeTab"]
+custom_minimum_size = Vector2(500, 400)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+tooltip_text = "biggggggggg eggg"
+item_count = 5
+max_columns = 5
+same_column_width = true
+fixed_column_width = 90
+icon_mode = 0
+fixed_icon_size = Vector2i(80, 80)
+item_0/text = "egggs"
+item_0/icon = ExtResource("2_t80xk")
+item_1/text = "egggs2"
+item_1/icon = ExtResource("1_0015g")
+item_2/text = ""
+item_2/icon = ExtResource("1_0015g")
+item_3/text = ""
+item_3/icon = ExtResource("1_0015g")
+item_4/text = ""
+item_4/icon = ExtResource("1_0015g")
+
+[node name="BuildingsTab" type="Control" parent="TabScreen"]
+visible = false
+custom_minimum_size = Vector2(500, 0)
+layout_mode = 2
+
+[node name="BuildingsList" type="ItemList" parent="TabScreen/BuildingsTab"]
+custom_minimum_size = Vector2(500, 400)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+tooltip_text = "biggggggggg eggg"
+item_count = 5
+max_columns = 5
+same_column_width = true
+fixed_column_width = 90
+icon_mode = 0
+fixed_icon_size = Vector2i(80, 80)
+item_0/text = "egggs"
+item_0/icon = ExtResource("4_20mjn")
+item_1/text = "egggs2"
+item_1/icon = ExtResource("1_0015g")
+item_2/text = ""
+item_2/icon = ExtResource("1_0015g")
+item_3/text = ""
+item_3/icon = ExtResource("1_0015g")
+item_4/text = ""
+item_4/icon = ExtResource("1_0015g")
+
+[node name="ReaserchTab" type="Control" parent="TabScreen"]
+visible = false
+custom_minimum_size = Vector2(500, 0)
+layout_mode = 2
+
+[node name="ReaserchList" type="ItemList" parent="TabScreen/ReaserchTab"]
+custom_minimum_size = Vector2(500, 400)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+tooltip_text = "biggggggggg eggg"
+item_count = 5
+max_columns = 5
+same_column_width = true
+fixed_column_width = 90
+icon_mode = 0
+fixed_icon_size = Vector2i(80, 80)
+item_0/text = "egggs"
+item_0/icon = ExtResource("5_ld88k")
+item_1/text = "egggs2"
+item_1/icon = ExtResource("1_0015g")
+item_2/text = ""
+item_2/icon = ExtResource("1_0015g")
+item_3/text = ""
+item_3/icon = ExtResource("1_0015g")
+item_4/text = ""
+item_4/icon = ExtResource("1_0015g")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+custom_minimum_size = Vector2(0, 95)
+layout_mode = 2
+
+[connection signal="button_down" from="Tabs/UpgradesButton" to="." method="_on_upgrades_button_button_down"]
+[connection signal="button_down" from="Tabs/BuildingsButton" to="." method="_on_buildings_button_button_down"]
+[connection signal="button_down" from="Tabs/ReaserchButton" to="." method="_on_reaserch_button_button_down"]
