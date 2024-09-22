@@ -1,10 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://cvn3xlgbmdubg"]
+[gd_scene load_steps=6 format=3 uid="uid://cvn3xlgbmdubg"]
 
 [ext_resource type="Texture2D" uid="uid://dasmch1b765yc" path="res://icon.svg" id="1_0015g"]
 [ext_resource type="Script" path="res://Scenes/screen_right.gd" id="1_pc3yk"]
 [ext_resource type="Script" path="res://Scenes/UpgradeTab.gd" id="2_osvlb"]
-[ext_resource type="PackedScene" uid="uid://bw7g1q2uslrdu" path="res://Scenes/HelperScenes/upgrade_button.tscn" id="3_hr3tu"]
-[ext_resource type="Script" path="res://Scenes/Upgrade.gd" id="4_3rmou"]
 [ext_resource type="Texture2D" uid="uid://b4o0cujyn7qtc" path="res://Art/UpgradeIcons/chickenIcon.png" id="4_20mjn"]
 [ext_resource type="Texture2D" uid="uid://dqlg2epleljbg" path="res://Art/UpgradeIcons/waterIcon.png" id="5_ld88k"]
 
@@ -89,36 +87,34 @@ theme_override_constants/margin_bottom = 10
 [node name="BuildingsList" type="GridContainer" parent="TabScreen/UpgradeTab/MarginContainer"]
 custom_minimum_size = Vector2(480, 880)
 layout_mode = 2
+tooltip_text = "biggggggggg eggg"
 columns = 5
 
-[node name="UpgradeButton" parent="TabScreen/UpgradeTab/MarginContainer/BuildingsList" instance=ExtResource("3_hr3tu")]
-visible = false
-layout_mode = 2
-
-[node name="TextureRect2" type="TextureRect" parent="TabScreen/UpgradeTab/MarginContainer/BuildingsList"]
-visible = false
+[node name="TextureRect" type="TextureRect" parent="TabScreen/UpgradeTab/MarginContainer/BuildingsList"]
 custom_minimum_size = Vector2(90, 0)
 layout_mode = 2
 texture = ExtResource("5_ld88k")
 expand_mode = 5
-script = ExtResource("4_3rmou")
+
+[node name="TextureRect2" type="TextureRect" parent="TabScreen/UpgradeTab/MarginContainer/BuildingsList"]
+custom_minimum_size = Vector2(90, 0)
+layout_mode = 2
+texture = ExtResource("5_ld88k")
+expand_mode = 5
 
 [node name="TextureRect3" type="TextureRect" parent="TabScreen/UpgradeTab/MarginContainer/BuildingsList"]
-visible = false
 custom_minimum_size = Vector2(90, 0)
 layout_mode = 2
 texture = ExtResource("5_ld88k")
 expand_mode = 5
 
 [node name="TextureRect4" type="TextureRect" parent="TabScreen/UpgradeTab/MarginContainer/BuildingsList"]
-visible = false
 custom_minimum_size = Vector2(90, 0)
 layout_mode = 2
 texture = ExtResource("5_ld88k")
 expand_mode = 5
 
 [node name="TextureRect5" type="TextureRect" parent="TabScreen/UpgradeTab/MarginContainer/BuildingsList"]
-visible = false
 custom_minimum_size = Vector2(90, 0)
 layout_mode = 2
 texture = ExtResource("5_ld88k")

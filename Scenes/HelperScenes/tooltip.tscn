@@ -1,8 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://me5r77ptj5r2"]
+[gd_scene load_steps=3 format=3 uid="uid://me5r77ptj5r2"]
 
+[ext_resource type="Script" path="res://Scenes/HelperScenes/tooltip.gd" id="1_8g4gs"]
 [ext_resource type="Texture2D" uid="uid://dxyyldui4tghv" path="res://Art/UpgradeIcons/axeIcon.png" id="1_bh8uh"]
 
 [node name="ToolTip" type="Control"]
+clip_contents = true
+custom_minimum_size = Vector2(400, 250)
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -11,53 +14,65 @@ offset_right = -1520.0
 offset_bottom = -830.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_8g4gs")
 
-[node name="ColorRect" type="ColorRect" parent="."]
-layout_mode = 0
+[node name="Background" type="ColorRect" parent="."]
+clip_contents = true
+custom_minimum_size = Vector2(400, 250)
+layout_mode = 2
 offset_right = 400.0
 offset_bottom = 250.0
 color = Color(0.172549, 0.313726, 0.172549, 1)
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
+[node name="MarginBox" type="MarginContainer" parent="."]
 custom_minimum_size = Vector2(400, 250)
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_right = 400.0
+offset_bottom = 250.0
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
 
-[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+[node name="VBox" type="VBoxContainer" parent="MarginBox"]
+custom_minimum_size = Vector2(380, 230)
+layout_mode = 2
+
+[node name="HBox" type="HBoxContainer" parent="MarginBox/VBox"]
 custom_minimum_size = Vector2(0, 60)
 layout_mode = 2
 
-[node name="IconBox" type="VBoxContainer" parent="VBoxContainer/HBoxContainer"]
+[node name="IconBox" type="VBoxContainer" parent="MarginBox/VBox/HBox"]
 custom_minimum_size = Vector2(60, 0)
 layout_mode = 2
 
-[node name="TextureRect" type="TextureRect" parent="VBoxContainer/HBoxContainer/IconBox"]
+[node name="Icon" type="TextureRect" parent="MarginBox/VBox/HBox/IconBox"]
 layout_mode = 2
 texture = ExtResource("1_bh8uh")
 expand_mode = 5
 
-[node name="TitleBox" type="VBoxContainer" parent="VBoxContainer/HBoxContainer"]
-custom_minimum_size = Vector2(340, 0)
+[node name="TitleBox" type="VBoxContainer" parent="MarginBox/VBox/HBox"]
+custom_minimum_size = Vector2(316, 0)
 layout_mode = 2
 
-[node name="RichTextLabel" type="Label" parent="VBoxContainer/HBoxContainer/TitleBox"]
+[node name="TitleLabel" type="Label" parent="MarginBox/VBox/HBox/TitleBox"]
 layout_mode = 2
+size_flags_vertical = 6
 text = "Title"
 horizontal_alignment = 1
 
-[node name="DescriptionBox" type="HBoxContainer" parent="VBoxContainer"]
-custom_minimum_size = Vector2(0, 150)
+[node name="DescriptionBox" type="HBoxContainer" parent="MarginBox/VBox"]
+custom_minimum_size = Vector2(0, 122)
 layout_mode = 2
 
-[node name="Label" type="Label" parent="VBoxContainer/DescriptionBox"]
+[node name="DescriptionLabel" type="Label" parent="MarginBox/VBox/DescriptionBox"]
 layout_mode = 2
 text = "This is a good item"
 
-[node name="FlavorBox" type="HBoxContainer" parent="VBoxContainer"]
+[node name="FlavorBox" type="HBoxContainer" parent="MarginBox/VBox"]
 custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
 
-[node name="Label" type="Label" parent="VBoxContainer/FlavorBox"]
+[node name="FlavorLabel" type="Label" parent="MarginBox/VBox/FlavorBox"]
 layout_mode = 2
 text = "\"Call me Velvet Thunder\" - Holt"

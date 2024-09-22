@@ -19,7 +19,6 @@ func _on_buildings_button_button_down():
 	resetTabs()
 	$TabScreen/BuildingsTab.visible = true
 
-
 func _on_reaserch_button_button_down():
 	resetTabs()
 	$TabScreen/ReaserchTab.visible = true

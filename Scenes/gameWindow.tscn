@@ -164,7 +164,8 @@ Axe joke: beavers invent axe but don't know what to use it for, then small boost
 from sharpening teeth with it, later invent beter sharpening devices and small 
 axes for hands to use with teeth for wood cutting"
 
-[node name="ToolTip" parent="." instance=ExtResource("3_0pey8")]
+[node name="ToolTip" parent="." groups=["tooltip"] instance=ExtResource("3_0pey8")]
+visible = false
 layout_mode = 1
 offset_left = -538.0
 offset_top = 299.0

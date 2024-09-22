@@ -23,37 +23,37 @@ func _on_food_button_button_down():
 	foodButtonTimer.start()
 
 func _on_food_button_timer_timeout():
-	foodCount += 50
+	foodCount += GameValues.FoodPerClick
 	
-	if foodCount > GameValues.foodLimit:
-		foodCount = GameValues.foodLimit
+	if foodCount > GameValues.FoodLimit:
+		foodCount = GameValues.FoodLimit
 	
-	foodLabel.text = "Food: " + str(foodCount) + "/" + str(GameValues.foodLimit)
+	foodLabel.text = "Food: " + str(foodCount) + "/" + str(GameValues.FoodLimit)
 
 func _on_water_button_button_down():
-	waterCount += 50
+	waterCount += GameValues.WaterPerClick
 	
-	if waterCount > GameValues.waterLimit:
-		waterCount = GameValues.waterLimit
+	if waterCount > GameValues.WaterLimit:
+		waterCount = GameValues.WaterLimit
 		
-	waterLabel.text = "Water: " + str(waterCount) + "/" + str(GameValues.waterLimit)
+	waterLabel.text = "Water: " + str(waterCount) + "/" + str(GameValues.WaterLimit)
 
 func _on_chop_button_button_down():
-	woodCount += 1
+	woodCount += GameValues.WoodPerChop
 	
-	if woodCount > GameValues.woodLimit:
-		woodCount = GameValues.woodLimit
+	if woodCount > GameValues.WoodLimit:
+		woodCount = GameValues.WoodLimit
 		
-	woodLabel.text = "Wood: " + str(woodCount) + "/" + str(GameValues.woodLimit)
+	woodLabel.text = "Wood: " + str(woodCount) + "/" + str(GameValues.WoodLimit)
 
 func _on_food_timer_timeout():
 	if foodCount > 0:
 		foodCount -= 1
 		
-	foodLabel.text = "Food: " + str(foodCount) + "/" + str(GameValues.foodLimit)
+	foodLabel.text = "Food: " + str(foodCount) + "/" + str(GameValues.FoodLimit)
 
 func _on_water_timer_timeout():
 	if waterCount > 0:
 		waterCount -= 1
 		
-	waterLabel.text = "Water: " + str(waterCount) + "/" + str(GameValues.waterLimit)
+	waterLabel.text = "Water: " + str(waterCount) + "/" + str(GameValues.WaterLimit)
