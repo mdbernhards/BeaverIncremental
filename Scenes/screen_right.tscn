@@ -4,8 +4,8 @@
 [ext_resource type="Script" path="res://Scenes/screen_right.gd" id="1_pc3yk"]
 [ext_resource type="Script" path="res://Scenes/UpgradeTab.gd" id="2_osvlb"]
 [ext_resource type="PackedScene" uid="uid://bw7g1q2uslrdu" path="res://Scenes/HelperScenes/upgrade_button.tscn" id="3_hr3tu"]
-[ext_resource type="Script" path="res://Scenes/Upgrade.gd" id="4_3rmou"]
 [ext_resource type="Texture2D" uid="uid://b4o0cujyn7qtc" path="res://Art/UpgradeIcons/chickenIcon.png" id="4_20mjn"]
+[ext_resource type="Script" path="res://Scenes/UpgradeButton.gd" id="5_fr1lr"]
 [ext_resource type="Texture2D" uid="uid://dqlg2epleljbg" path="res://Art/UpgradeIcons/waterIcon.png" id="5_ld88k"]
 
 [node name="ScreenRight" type="VBoxContainer"]
@@ -61,22 +61,6 @@ custom_minimum_size = Vector2(500, 0)
 layout_mode = 2
 script = ExtResource("2_osvlb")
 
-[node name="UpgradeList" type="ItemList" parent="TabScreen/UpgradeTab"]
-visible = false
-custom_minimum_size = Vector2(500, 400)
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-tooltip_text = "biggggggggg eggg"
-max_columns = 5
-same_column_width = true
-fixed_column_width = 90
-icon_mode = 0
-fixed_icon_size = Vector2i(80, 80)
-
 [node name="MarginContainer" type="MarginContainer" parent="TabScreen/UpgradeTab"]
 custom_minimum_size = Vector2(500, 900)
 layout_mode = 0
@@ -101,7 +85,7 @@ custom_minimum_size = Vector2(90, 0)
 layout_mode = 2
 texture = ExtResource("5_ld88k")
 expand_mode = 5
-script = ExtResource("4_3rmou")
+script = ExtResource("5_fr1lr")
 
 [node name="TextureRect3" type="TextureRect" parent="TabScreen/UpgradeTab/MarginContainer/BuildingsList"]
 visible = false
@@ -123,11 +107,6 @@ custom_minimum_size = Vector2(90, 0)
 layout_mode = 2
 texture = ExtResource("5_ld88k")
 expand_mode = 5
-
-[node name="BuildingsTab2" type="Control" parent="TabScreen"]
-visible = false
-custom_minimum_size = Vector2(500, 900)
-layout_mode = 2
 
 [node name="BuildingsTab" type="Control" parent="TabScreen"]
 visible = false
@@ -198,4 +177,4 @@ layout_mode = 2
 [connection signal="button_down" from="Tabs/UpgradesButton" to="." method="_on_upgrades_button_button_down"]
 [connection signal="button_down" from="Tabs/BuildingsButton" to="." method="_on_buildings_button_button_down"]
 [connection signal="button_down" from="Tabs/ReaserchButton" to="." method="_on_reaserch_button_button_down"]
-[connection signal="item_selected" from="TabScreen/UpgradeTab/UpgradeList" to="TabScreen/UpgradeTab" method="_on_upgrade_list_item_selected"]
+[connection signal="upgrade_clicked" from="TabScreen/UpgradeTab/MarginContainer/BuildingsList/UpgradeButton" to="TabScreen/UpgradeTab" method="_on_upgrade_button_upgrade_clicked"]

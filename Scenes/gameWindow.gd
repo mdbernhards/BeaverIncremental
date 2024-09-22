@@ -13,10 +13,10 @@ func positionToolTip():
 		toolTipPos.x -= 405
 	else:
 		toolTipPos.x += 10
-		
+	
 	if toolTipPos.y > 800:
 		toolTipPos.y -= 255
 	else:
 		toolTipPos.y += 10
-		
+	
 	$ToolTip.position = toolTipPos

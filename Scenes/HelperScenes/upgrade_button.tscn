@@ -1,11 +1,15 @@
 [gd_scene load_steps=3 format=3 uid="uid://bw7g1q2uslrdu"]
 
 [ext_resource type="Texture2D" uid="uid://dqlg2epleljbg" path="res://Art/UpgradeIcons/waterIcon.png" id="1_1tfgc"]
-[ext_resource type="Script" path="res://Scenes/Upgrade.gd" id="2_3fuvy"]
+[ext_resource type="Script" path="res://Scenes/UpgradeButton.gd" id="2_x2osv"]
 
 [node name="UpgradeButton" type="TextureRect"]
 custom_minimum_size = Vector2(90, 0)
 tooltip_text = "eeeg"
 texture = ExtResource("1_1tfgc")
 expand_mode = 5
-script = ExtResource("2_3fuvy")
+script = ExtResource("2_x2osv")
+
+[connection signal="gui_input" from="." to="." method="_on_gui_input"]
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

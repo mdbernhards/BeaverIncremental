@@ -12,7 +12,7 @@ script = ExtResource("1_4yvj6")
 custom_minimum_size = Vector2(100, 150)
 layout_mode = 2
 
-[node name="StatLabels" type="Control" parent="TopHBox"]
+[node name="StatLabels" type="Control" parent="TopHBox" groups=["ResourceLabels"]]
 layout_mode = 2
 
 [node name="FoodLabel" type="Label" parent="TopHBox/StatLabels"]
