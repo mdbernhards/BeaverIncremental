@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://b0skpo0q0gxdn"]
+[gd_scene load_steps=3 format=3 uid="uid://b0skpo0q0gxdn"]
 
 [ext_resource type="Script" path="res://Scenes/screen_left.gd" id="1_4yvj6"]
+[ext_resource type="Texture2D" uid="uid://dqlg2epleljbg" path="res://Art/UpgradeIcons/waterIcon.png" id="2_5fgyw"]
 
 [node name="ScreenLeft" type="VBoxContainer"]
 offset_right = 1420.0
@@ -13,14 +14,13 @@ custom_minimum_size = Vector2(100, 150)
 layout_mode = 2
 
 [node name="StatLabels" type="Control" parent="TopHBox" groups=["ResourceLabels"]]
+custom_minimum_size = Vector2(170, 0)
 layout_mode = 2
 
 [node name="FoodLabel" type="Label" parent="TopHBox/StatLabels"]
-layout_mode = 0
-offset_left = 10.0
-offset_top = 53.0
-offset_right = 73.0
-offset_bottom = 76.0
+layout_mode = 2
+offset_right = 1420.0
+offset_bottom = 23.0
 text = "Food: 0"
 
 [node name="FoodTimer" type="Timer" parent="TopHBox/StatLabels/FoodLabel"]
@@ -28,11 +28,10 @@ wait_time = 3.0
 autostart = true
 
 [node name="WaterLabel" type="Label" parent="TopHBox/StatLabels"]
-layout_mode = 0
-offset_left = 10.0
-offset_top = 84.0
-offset_right = 75.0
-offset_bottom = 107.0
+layout_mode = 2
+offset_top = 27.0
+offset_right = 1420.0
+offset_bottom = 50.0
 text = "Water: 0"
 
 [node name="WaterTimer" type="Timer" parent="TopHBox/StatLabels/WaterLabel"]
@@ -40,12 +39,74 @@ wait_time = 3.0
 autostart = true
 
 [node name="WoodLabel" type="Label" parent="TopHBox/StatLabels"]
-layout_mode = 0
-offset_left = 10.0
-offset_top = 17.0
-offset_right = 73.0
-offset_bottom = 40.0
+layout_mode = 2
+offset_top = 54.0
+offset_right = 1420.0
+offset_bottom = 77.0
 text = "Wood: 0"
+
+[node name="StatusEffects" type="VBoxContainer" parent="TopHBox"]
+custom_minimum_size = Vector2(1200, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="TopHBox/StatusEffects"]
+layout_mode = 2
+text = "Status Effects"
+horizontal_alignment = 2
+
+[node name="GridContainer" type="GridContainer" parent="TopHBox/StatusEffects"]
+layout_direction = 3
+layout_mode = 2
+columns = 10
+
+[node name="TextureRect3" type="TextureRect" parent="TopHBox/StatusEffects/GridContainer"]
+custom_minimum_size = Vector2(30, 0)
+layout_mode = 2
+texture = ExtResource("2_5fgyw")
+expand_mode = 5
+
+[node name="TextureRect4" type="TextureRect" parent="TopHBox/StatusEffects/GridContainer"]
+custom_minimum_size = Vector2(30, 0)
+layout_mode = 2
+texture = ExtResource("2_5fgyw")
+expand_mode = 5
+
+[node name="TextureRect5" type="TextureRect" parent="TopHBox/StatusEffects/GridContainer"]
+custom_minimum_size = Vector2(30, 0)
+layout_mode = 2
+texture = ExtResource("2_5fgyw")
+expand_mode = 5
+
+[node name="TextureRect6" type="TextureRect" parent="TopHBox/StatusEffects/GridContainer"]
+custom_minimum_size = Vector2(30, 0)
+layout_mode = 2
+texture = ExtResource("2_5fgyw")
+expand_mode = 5
+
+[node name="TextureRect7" type="TextureRect" parent="TopHBox/StatusEffects/GridContainer"]
+custom_minimum_size = Vector2(30, 0)
+layout_mode = 2
+texture = ExtResource("2_5fgyw")
+expand_mode = 5
+
+[node name="TextureRect8" type="TextureRect" parent="TopHBox/StatusEffects/GridContainer"]
+custom_minimum_size = Vector2(30, 0)
+layout_mode = 2
+texture = ExtResource("2_5fgyw")
+expand_mode = 5
+
+[node name="TextureRect9" type="TextureRect" parent="TopHBox/StatusEffects/GridContainer"]
+custom_minimum_size = Vector2(30, 0)
+layout_mode = 2
+texture = ExtResource("2_5fgyw")
+expand_mode = 5
+
+[node name="TextureRect10" type="TextureRect" parent="TopHBox/StatusEffects/GridContainer"]
+custom_minimum_size = Vector2(30, 0)
+layout_mode = 2
+texture = ExtResource("2_5fgyw")
+expand_mode = 5
 
 [node name="MidHBox" type="HBoxContainer" parent="."]
 custom_minimum_size = Vector2(0, 650)
@@ -57,18 +118,34 @@ custom_minimum_size = Vector2(40, 0)
 layout_mode = 2
 color = Color(1, 1, 1, 0)
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MidHBox"]
+[node name="VBox" type="VBoxContainer" parent="MidHBox"]
 custom_minimum_size = Vector2(200, 10)
 layout_mode = 2
 theme_override_constants/separation = 20
 alignment = 1
 
-[node name="FoodButton" type="Button" parent="MidHBox/VBoxContainer"]
+[node name="SwimButton" type="Button" parent="MidHBox/VBox"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+text = "Swim"
+
+[node name="Label" type="Label" parent="MidHBox/VBox/SwimButton"]
+offset_left = 204.0
+offset_top = 1.0
+offset_right = 244.0
+offset_bottom = 24.0
+text = "0"
+
+[node name="SwimButtonTimer" type="Timer" parent="MidHBox/VBox/SwimButton/Label"]
+wait_time = 10.0
+one_shot = true
+
+[node name="FoodButton" type="Button" parent="MidHBox/VBox"]
 custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
 text = "Get Food"
 
-[node name="Label" type="Label" parent="MidHBox/VBoxContainer/FoodButton"]
+[node name="Label" type="Label" parent="MidHBox/VBox/FoodButton"]
 layout_mode = 0
 offset_left = 204.0
 offset_top = 1.0
@@ -76,19 +153,48 @@ offset_right = 244.0
 offset_bottom = 24.0
 text = "0"
 
-[node name="FoodButtonTimer" type="Timer" parent="MidHBox/VBoxContainer/FoodButton/Label"]
+[node name="FoodButtonTimer" type="Timer" parent="MidHBox/VBox/FoodButton/Label"]
 wait_time = 10.0
 one_shot = true
 
-[node name="WaterButton" type="Button" parent="MidHBox/VBoxContainer"]
+[node name="FoodTicker" type="Timer" parent="MidHBox/VBox/FoodButton/Label"]
+
+[node name="WaterButton" type="Button" parent="MidHBox/VBox"]
 custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
 text = "Get Water"
 
-[node name="ChopButton" type="Button" parent="MidHBox/VBoxContainer"]
+[node name="Label" type="Label" parent="MidHBox/VBox/WaterButton"]
+offset_left = 204.0
+offset_top = 1.0
+offset_right = 244.0
+offset_bottom = 24.0
+text = "0"
+
+[node name="WaterButtonTimer" type="Timer" parent="MidHBox/VBox/WaterButton/Label"]
+wait_time = 10.0
+one_shot = true
+
+[node name="WaterTicker" type="Timer" parent="MidHBox/VBox/WaterButton/Label"]
+
+[node name="ChopButton" type="Button" parent="MidHBox/VBox" groups=["chopButton"]]
+visible = false
 custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
 text = "Chop"
+
+[node name="Label" type="Label" parent="MidHBox/VBox/ChopButton"]
+offset_left = 204.0
+offset_top = 1.0
+offset_right = 244.0
+offset_bottom = 24.0
+text = "0"
+
+[node name="ChopButtonTimer" type="Timer" parent="MidHBox/VBox/ChopButton/Label"]
+wait_time = 10.0
+one_shot = true
+
+[node name="WoodTicker" type="Timer" parent="MidHBox/VBox/ChopButton/Label"]
 
 [node name="BotHBox" type="HBoxContainer" parent="."]
 custom_minimum_size = Vector2(0, 280)
@@ -128,9 +234,18 @@ custom_minimum_size = Vector2(0, 30)
 layout_mode = 2
 color = Color(0.529412, 0.286275, 0.556863, 0)
 
+[node name="BonusResourceNode" type="Node" parent="."]
+
 [connection signal="timeout" from="TopHBox/StatLabels/FoodLabel/FoodTimer" to="." method="_on_food_timer_timeout"]
 [connection signal="timeout" from="TopHBox/StatLabels/WaterLabel/WaterTimer" to="." method="_on_water_timer_timeout"]
-[connection signal="button_down" from="MidHBox/VBoxContainer/FoodButton" to="." method="_on_food_button_button_down"]
-[connection signal="timeout" from="MidHBox/VBoxContainer/FoodButton/Label/FoodButtonTimer" to="." method="_on_food_button_timer_timeout"]
-[connection signal="button_down" from="MidHBox/VBoxContainer/WaterButton" to="." method="_on_water_button_button_down"]
-[connection signal="button_down" from="MidHBox/VBoxContainer/ChopButton" to="." method="_on_chop_button_button_down"]
+[connection signal="button_down" from="MidHBox/VBox/SwimButton" to="." method="_on_swim_button_button_down"]
+[connection signal="timeout" from="MidHBox/VBox/SwimButton/Label/SwimButtonTimer" to="." method="_on_swim_button_timer_timeout"]
+[connection signal="button_down" from="MidHBox/VBox/FoodButton" to="." method="_on_food_button_button_down"]
+[connection signal="timeout" from="MidHBox/VBox/FoodButton/Label/FoodButtonTimer" to="." method="_on_food_button_timer_timeout"]
+[connection signal="timeout" from="MidHBox/VBox/FoodButton/Label/FoodTicker" to="." method="_on_food_ticker_timeout"]
+[connection signal="button_down" from="MidHBox/VBox/WaterButton" to="." method="_on_water_button_button_down"]
+[connection signal="timeout" from="MidHBox/VBox/WaterButton/Label/WaterButtonTimer" to="." method="_on_water_button_timer_timeout"]
+[connection signal="timeout" from="MidHBox/VBox/WaterButton/Label/WaterTicker" to="." method="_on_water_ticker_timeout"]
+[connection signal="button_down" from="MidHBox/VBox/ChopButton" to="." method="_on_chop_button_button_down"]
+[connection signal="timeout" from="MidHBox/VBox/ChopButton/Label/ChopButtonTimer" to="." method="_on_chop_button_timer_timeout"]
+[connection signal="timeout" from="MidHBox/VBox/ChopButton/Label/WoodTicker" to="." method="_on_wood_ticker_timeout"]

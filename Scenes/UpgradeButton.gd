@@ -1,6 +1,7 @@
 extends TextureRect
 
 @export var upgradeName = "NaN"
+@export var upgradePrice = 0
 
 signal upgrade_clicked(upgrade)
 
@@ -8,7 +9,13 @@ func _ready():
 	pass
 
 func _process(delta):
-	pass
+	checkIfAfordable()
+	
+func checkIfAfordable():
+	if $ColorRect and upgradePrice > GameValues.WoodCount:
+		$ColorRect.visible = true
+	elif $ColorRect:
+		$ColorRect.visible = false
 
 func _make_custom_tooltip(for_text):
 	if GameValues.Upgrades.has(upgradeName):

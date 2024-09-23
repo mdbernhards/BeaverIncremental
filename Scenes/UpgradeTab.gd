@@ -15,6 +15,7 @@ func listUpgradesFromResourceFile():
 		var upgradeButtonInstance = upgradeButton.instantiate()
 		upgradeButtonInstance.set_texture(load(Upgrades[upgrade].icon))
 		upgradeButtonInstance.upgradeName = upgrade
+		upgradeButtonInstance.upgradePrice = Upgrades[upgrade].price
 		upgradeButtonInstance.upgrade_clicked.connect(_on_upgrade_button_upgrade_clicked)
 		$MarginContainer/BuildingsList.add_child(upgradeButtonInstance)
 
@@ -49,6 +50,24 @@ func setSpecificUpgrade(upgradeName):
 		
 	if upgradeType == upgradeTypes.ChopWhileWater:
 		pass
+		
+	if upgradeType == upgradeTypes.WoodActionLength:
+		GameValues.chopLength += 1
+		
+	if upgradeType == upgradeTypes.FoodActionLength:
+		GameValues.foodLength += 1
+		
+	if upgradeType == upgradeTypes.WaterActionLength:
+		GameValues.waterLength += 1
+		
+	if upgradeType == upgradeTypes.FoodStorage:
+		GameValues.FoodLimit += 15
+		
+	if upgradeType == upgradeTypes.WaterStorage:
+		GameValues.WaterLimit += 15
+	
+	if upgradeName == "UnlockChopping":
+		get_tree().get_first_node_in_group("chopButton").visible = true
 
 func _on_upgrade_button_upgrade_clicked(upgrade):
 	var upgradeData = Upgrades[upgrade.upgradeName]

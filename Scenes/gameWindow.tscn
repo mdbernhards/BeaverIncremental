@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://cv8uak2t01rol"]
+[gd_scene load_steps=5 format=3 uid="uid://cv8uak2t01rol"]
 
 [ext_resource type="Script" path="res://Scenes/gameWindow.gd" id="1_a87dj"]
 [ext_resource type="PackedScene" uid="uid://vwonnoflc7vi" path="res://Scenes/ui.tscn" id="2_uocu5"]
 [ext_resource type="PackedScene" uid="uid://me5r77ptj5r2" path="res://Scenes/HelperScenes/tooltip.tscn" id="3_0pey8"]
+[ext_resource type="PackedScene" uid="uid://dcmrr6w7awt10" path="res://Scenes/HelperScenes/BonusResource.tscn" id="3_s1jx2"]
 
 [node name="GameWindow" type="Control"]
 layout_mode = 3
@@ -35,13 +36,13 @@ color = Color(0.32549, 0.403922, 0.494118, 1)
 [node name="UI" parent="." instance=ExtResource("2_uocu5")]
 layout_mode = 0
 
-[node name="FoodStack" type="Button" parent="."]
+[node name="FoodStack" parent="." instance=ExtResource("3_s1jx2")]
+visible = false
 layout_mode = 0
-offset_left = 2009.0
-offset_top = 996.0
-offset_right = 2056.0
-offset_bottom = 1036.0
-text = "Food"
+offset_left = 2244.0
+offset_top = 881.0
+offset_right = 2301.0
+offset_bottom = 922.0
 
 [node name="SkillIdeas" type="Control" parent="."]
 anchors_preset = 0
@@ -171,5 +172,3 @@ offset_left = -538.0
 offset_top = 299.0
 offset_right = -2058.0
 offset_bottom = -531.0
-
-[connection signal="button_down" from="FoodStack" to="." method="_on_food_button_button_down"]
