@@ -45,7 +45,7 @@ offset_right = 1420.0
 offset_bottom = 77.0
 text = "Wood: 0"
 
-[node name="StatusEffects" type="VBoxContainer" parent="TopHBox"]
+[node name="StatusEffects" type="VBoxContainer" parent="TopHBox" groups=["StatusEffects"]]
 custom_minimum_size = Vector2(1200, 0)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -130,6 +130,7 @@ layout_mode = 2
 text = "Swim"
 
 [node name="Label" type="Label" parent="MidHBox/VBox/SwimButton"]
+layout_mode = 0
 offset_left = 204.0
 offset_top = 1.0
 offset_right = 244.0
@@ -165,6 +166,7 @@ layout_mode = 2
 text = "Get Water"
 
 [node name="Label" type="Label" parent="MidHBox/VBox/WaterButton"]
+layout_mode = 0
 offset_left = 204.0
 offset_top = 1.0
 offset_right = 244.0
@@ -184,6 +186,7 @@ layout_mode = 2
 text = "Chop"
 
 [node name="Label" type="Label" parent="MidHBox/VBox/ChopButton"]
+layout_mode = 0
 offset_left = 204.0
 offset_top = 1.0
 offset_right = 244.0
@@ -200,19 +203,38 @@ one_shot = true
 custom_minimum_size = Vector2(0, 280)
 layout_mode = 2
 
-[node name="TextLog" type="Label" parent="BotHBox"]
-custom_minimum_size = Vector2(400, 0)
+[node name="MarginContainer" type="MarginContainer" parent="BotHBox"]
+custom_minimum_size = Vector2(600, 0)
 layout_mode = 2
-text = "Scrolling log..............................................................................--------------------------------.......
-next line
-.....
-......
-...
-You get killed \"prestige\" after each act and start from the begining
-get permanant bonus and points in to a skill tree
-.....................................................................................................
-Have levelups, with skills like talk to ants, talk to other animals so they
-can help"
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
+
+[node name="TextLog" type="ScrollContainer" parent="BotHBox/MarginContainer"]
+custom_minimum_size = Vector2(600, 0)
+layout_mode = 2
+horizontal_scroll_mode = 0
+
+[node name="TextLog2" type="ItemList" parent="BotHBox/MarginContainer/TextLog"]
+custom_minimum_size = Vector2(600, 0)
+layout_mode = 2
+auto_height = true
+item_count = 15
+item_0/text = "FIsh"
+item_1/text = "sadsad"
+item_2/text = "dsfdsfds"
+item_3/text = "sadfasdf"
+item_4/text = "asdfasdfasdf"
+item_5/text = "12::04 - fish dead"
+item_6/text = "asdsadsa"
+item_7/text = "asdfsdfsd"
+item_8/text = "avsasdfds"
+item_9/text = "asdfsadfsdafdsafasdf"
+item_10/text = "asdfsdf"
+item_11/text = "asdfdsvds"
+item_12/text = "asdfasdfsdf"
+item_13/text = "asdfasf"
+item_14/text = "asdfsafsdaf"
 
 [node name="LevelVBox" type="VBoxContainer" parent="BotHBox"]
 layout_mode = 2
@@ -235,6 +257,31 @@ layout_mode = 2
 color = Color(0.529412, 0.286275, 0.556863, 0)
 
 [node name="BonusResourceNode" type="Node" parent="."]
+
+[node name="TextLog2" type="Label" parent="BonusResourceNode"]
+custom_minimum_size = Vector2(400, 0)
+offset_left = 2363.0
+offset_top = 225.0
+offset_right = 2996.0
+offset_bottom = 690.0
+text = "Scrolling log..............................................................................--------------------------------.......
+next line
+.....
+......
+...
+You get killed \"prestige\" after each act and start from the begining
+get permanant bonus and points in to a skill tree
+.....................................................................................................
+Have levelups, with skills like talk to ants, talk to other animals so they
+can help
+
+scscsc
+
+sadasdasd
+
+asdasdasd
+
+asdsad"
 
 [connection signal="timeout" from="TopHBox/StatLabels/FoodLabel/FoodTimer" to="." method="_on_food_timer_timeout"]
 [connection signal="timeout" from="TopHBox/StatLabels/WaterLabel/WaterTimer" to="." method="_on_water_timer_timeout"]

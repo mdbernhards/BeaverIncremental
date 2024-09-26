@@ -23,30 +23,31 @@ layout_mode = 2
 [node name="Tabs" type="HBoxContainer" parent="."]
 custom_minimum_size = Vector2(0, 35)
 layout_mode = 2
+alignment = 1
 
 [node name="UpgradesButton" type="Button" parent="Tabs"]
 layout_mode = 2
 text = "Upgrades"
 
+[node name="ReaserchButton" type="Button" parent="Tabs" groups=["ResearchButton"]]
+layout_mode = 2
+text = "Reaserch"
+
 [node name="BuildingsButton" type="Button" parent="Tabs"]
 layout_mode = 2
 text = "Buildings"
 
-[node name="ReaserchButton" type="Button" parent="Tabs"]
-layout_mode = 2
-text = "Reaserch"
-
 [node name="PoliciesButton" type="Button" parent="Tabs"]
 layout_mode = 2
-text = "Policies"
+text = "????"
 
 [node name="WarButton" type="Button" parent="Tabs"]
 layout_mode = 2
-text = "War"
+text = "????"
 
 [node name="SkillTreeButton" type="Button" parent="Tabs"]
 layout_mode = 2
-text = "Skill tree"
+text = "????"
 
 [node name="margin2" type="Control" parent="."]
 custom_minimum_size = Vector2(0, 15)
@@ -61,7 +62,7 @@ custom_minimum_size = Vector2(500, 0)
 layout_mode = 2
 script = ExtResource("2_osvlb")
 
-[node name="MarginContainer" type="MarginContainer" parent="TabScreen/UpgradeTab"]
+[node name="Margin" type="MarginContainer" parent="TabScreen/UpgradeTab"]
 custom_minimum_size = Vector2(500, 900)
 layout_mode = 0
 offset_right = 520.0
@@ -70,16 +71,16 @@ theme_override_constants/margin_left = 15
 theme_override_constants/margin_top = 10
 theme_override_constants/margin_bottom = 10
 
-[node name="BuildingsList" type="GridContainer" parent="TabScreen/UpgradeTab/MarginContainer"]
+[node name="UpgradeList" type="GridContainer" parent="TabScreen/UpgradeTab/Margin"]
 custom_minimum_size = Vector2(480, 880)
 layout_mode = 2
 columns = 5
 
-[node name="UpgradeButton" parent="TabScreen/UpgradeTab/MarginContainer/BuildingsList" instance=ExtResource("3_hr3tu")]
+[node name="UpgradeButton" parent="TabScreen/UpgradeTab/Margin/UpgradeList" instance=ExtResource("3_hr3tu")]
 visible = false
 layout_mode = 2
 
-[node name="TextureRect2" type="TextureRect" parent="TabScreen/UpgradeTab/MarginContainer/BuildingsList"]
+[node name="TextureRect2" type="TextureRect" parent="TabScreen/UpgradeTab/Margin/UpgradeList"]
 visible = false
 custom_minimum_size = Vector2(90, 0)
 layout_mode = 2
@@ -87,26 +88,152 @@ texture = ExtResource("5_ld88k")
 expand_mode = 5
 script = ExtResource("5_fr1lr")
 
-[node name="TextureRect3" type="TextureRect" parent="TabScreen/UpgradeTab/MarginContainer/BuildingsList"]
+[node name="TextureRect3" type="TextureRect" parent="TabScreen/UpgradeTab/Margin/UpgradeList"]
 visible = false
 custom_minimum_size = Vector2(90, 0)
 layout_mode = 2
 texture = ExtResource("5_ld88k")
 expand_mode = 5
 
-[node name="TextureRect4" type="TextureRect" parent="TabScreen/UpgradeTab/MarginContainer/BuildingsList"]
+[node name="TextureRect4" type="TextureRect" parent="TabScreen/UpgradeTab/Margin/UpgradeList"]
 visible = false
 custom_minimum_size = Vector2(90, 0)
 layout_mode = 2
 texture = ExtResource("5_ld88k")
 expand_mode = 5
 
-[node name="TextureRect5" type="TextureRect" parent="TabScreen/UpgradeTab/MarginContainer/BuildingsList"]
+[node name="TextureRect5" type="TextureRect" parent="TabScreen/UpgradeTab/Margin/UpgradeList"]
 visible = false
 custom_minimum_size = Vector2(90, 0)
 layout_mode = 2
 texture = ExtResource("5_ld88k")
 expand_mode = 5
+
+[node name="ReaserchTab" type="Control" parent="TabScreen"]
+visible = false
+custom_minimum_size = Vector2(500, 0)
+layout_mode = 2
+
+[node name="ReaserchList" type="VBoxContainer" parent="TabScreen/ReaserchTab"]
+custom_minimum_size = Vector2(500, 400)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+tooltip_text = "biggggggggg eggg"
+
+[node name="ResearchItem" type="HBoxContainer" parent="TabScreen/ReaserchTab/ReaserchList"]
+custom_minimum_size = Vector2(0, 110)
+layout_mode = 2
+
+[node name="TextureRect3" type="TextureRect" parent="TabScreen/ReaserchTab/ReaserchList/ResearchItem"]
+custom_minimum_size = Vector2(90, 0)
+layout_mode = 2
+texture = ExtResource("5_ld88k")
+expand_mode = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TabScreen/ReaserchTab/ReaserchList/ResearchItem"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="TabScreen/ReaserchTab/ReaserchList/ResearchItem/VBoxContainer"]
+layout_mode = 2
+text = "Research"
+
+[node name="Label2" type="Label" parent="TabScreen/ReaserchTab/ReaserchList/ResearchItem/VBoxContainer"]
+layout_mode = 2
+text = "Cost: 300 wood; 100 Food"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="TabScreen/ReaserchTab/ReaserchList/ResearchItem/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="TabScreen/ReaserchTab/ReaserchList/ResearchItem/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Time:  20.00 min                 "
+
+[node name="Button" type="Button" parent="TabScreen/ReaserchTab/ReaserchList/ResearchItem/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Start reaserch"
+
+[node name="ColorRect" type="ColorRect" parent="TabScreen/ReaserchTab/ReaserchList/ResearchItem"]
+layout_mode = 2
+
+[node name="ResearchItem2" type="HBoxContainer" parent="TabScreen/ReaserchTab/ReaserchList"]
+custom_minimum_size = Vector2(0, 110)
+layout_mode = 2
+
+[node name="TextureRect3" type="TextureRect" parent="TabScreen/ReaserchTab/ReaserchList/ResearchItem2"]
+custom_minimum_size = Vector2(90, 0)
+layout_mode = 2
+texture = ExtResource("5_ld88k")
+expand_mode = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TabScreen/ReaserchTab/ReaserchList/ResearchItem2"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="TabScreen/ReaserchTab/ReaserchList/ResearchItem2/VBoxContainer"]
+layout_mode = 2
+text = "Research"
+
+[node name="Label2" type="Label" parent="TabScreen/ReaserchTab/ReaserchList/ResearchItem2/VBoxContainer"]
+layout_mode = 2
+text = "Cost: 300 wood; 100 Food"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="TabScreen/ReaserchTab/ReaserchList/ResearchItem2/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="TabScreen/ReaserchTab/ReaserchList/ResearchItem2/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Time:  20.00 min                 "
+
+[node name="Button" type="Button" parent="TabScreen/ReaserchTab/ReaserchList/ResearchItem2/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Start reaserch"
+
+[node name="ColorRect" type="ColorRect" parent="TabScreen/ReaserchTab/ReaserchList/ResearchItem2"]
+layout_mode = 2
+
+[node name="ResearchItem3" type="HBoxContainer" parent="TabScreen/ReaserchTab/ReaserchList"]
+custom_minimum_size = Vector2(0, 110)
+layout_mode = 2
+
+[node name="TextureRect3" type="TextureRect" parent="TabScreen/ReaserchTab/ReaserchList/ResearchItem3"]
+custom_minimum_size = Vector2(90, 0)
+layout_mode = 2
+texture = ExtResource("5_ld88k")
+expand_mode = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TabScreen/ReaserchTab/ReaserchList/ResearchItem3"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="TabScreen/ReaserchTab/ReaserchList/ResearchItem3/VBoxContainer"]
+layout_mode = 2
+text = "Research"
+
+[node name="Label2" type="Label" parent="TabScreen/ReaserchTab/ReaserchList/ResearchItem3/VBoxContainer"]
+layout_mode = 2
+text = "Cost: 300 wood; 100 Food"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="TabScreen/ReaserchTab/ReaserchList/ResearchItem3/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="TabScreen/ReaserchTab/ReaserchList/ResearchItem3/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Time:  20.00 min                 "
+
+[node name="Button" type="Button" parent="TabScreen/ReaserchTab/ReaserchList/ResearchItem3/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "Start reaserch"
+
+[node name="ColorRect" type="ColorRect" parent="TabScreen/ReaserchTab/ReaserchList/ResearchItem3"]
+layout_mode = 2
 
 [node name="BuildingsTab" type="Control" parent="TabScreen"]
 visible = false
@@ -139,42 +266,11 @@ item_3/icon = ExtResource("1_0015g")
 item_4/text = ""
 item_4/icon = ExtResource("1_0015g")
 
-[node name="ReaserchTab" type="Control" parent="TabScreen"]
-visible = false
-custom_minimum_size = Vector2(500, 0)
-layout_mode = 2
-
-[node name="ReaserchList" type="ItemList" parent="TabScreen/ReaserchTab"]
-custom_minimum_size = Vector2(500, 400)
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-tooltip_text = "biggggggggg eggg"
-item_count = 5
-max_columns = 5
-same_column_width = true
-fixed_column_width = 90
-icon_mode = 0
-fixed_icon_size = Vector2i(80, 80)
-item_0/text = "egggs"
-item_0/icon = ExtResource("5_ld88k")
-item_1/text = "egggs2"
-item_1/icon = ExtResource("1_0015g")
-item_2/text = ""
-item_2/icon = ExtResource("1_0015g")
-item_3/text = ""
-item_3/icon = ExtResource("1_0015g")
-item_4/text = ""
-item_4/icon = ExtResource("1_0015g")
-
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 custom_minimum_size = Vector2(0, 95)
 layout_mode = 2
 
 [connection signal="button_down" from="Tabs/UpgradesButton" to="." method="_on_upgrades_button_button_down"]
-[connection signal="button_down" from="Tabs/BuildingsButton" to="." method="_on_buildings_button_button_down"]
 [connection signal="button_down" from="Tabs/ReaserchButton" to="." method="_on_reaserch_button_button_down"]
-[connection signal="upgrade_clicked" from="TabScreen/UpgradeTab/MarginContainer/BuildingsList/UpgradeButton" to="TabScreen/UpgradeTab" method="_on_upgrade_button_upgrade_clicked"]
+[connection signal="button_down" from="Tabs/BuildingsButton" to="." method="_on_buildings_button_button_down"]
+[connection signal="upgrade_clicked" from="TabScreen/UpgradeTab/Margin/UpgradeList/UpgradeButton" to="TabScreen/UpgradeTab" method="_on_upgrade_button_upgrade_clicked"]

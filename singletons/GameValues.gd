@@ -82,7 +82,8 @@ enum upgradeTypes {
 	FoodStorage,
 	WaterActionLength,
 	FoodActionLength,
-	WoodActionLength,}
+	WoodActionLength,
+	Other}
 
 enum PriceType {
 	Water,
@@ -94,11 +95,47 @@ var Reaserch = {
 	"Discover choping": true,
 	"Wood jesus (make food in to wood)": true,
 	"Discover that wood differs (unlock mapel)": true,
+	"unlock coper": true,
+	"unlock tin": true,
+	"unlock bronze": true,
+	"unlock iron": true,
 }
 
-# upgrades to add, increase storage water and food to 100; 25 50 100
-# reaserch upgrades
-# unlock reaserch
+# add a production
+var StatusEffects = {
+	"Hungry" : {
+		"trigger" : "food under 50",
+		"effect" : "20% less production",
+		"endCondition" : "food above 50",
+	},
+	"Starving" : {
+		"trigger" : "food under 10",
+		"effect" : "40% less production",
+		"endCondition" : "food above 25",
+	},
+	"Thirsty" : {
+		"trigger" : "water under 50",
+		"effect" : "20% less production",
+		"endCondition" : "water above 50",
+	},
+	"Dehydrated" : {
+		"trigger" : "water under 10",
+		"effect" : "40% less production",
+		"endCondition" : "water above 25",
+	},
+	"Tired" : {
+		"trigger" : "50s action uptime in last minute",
+		"effect" : "-20% production",
+		"endCondition" : "15s no actions done",
+	},
+	"Revved up" : {
+		"trigger" : "55s chopping action uptime in last minute",
+		"effect" : "25% wood production",
+		"endCondition" : "5s no chopping done",
+	},
+}
+
+# add new field: reaserch needed and some way that upgrades get added idk yet
 var Upgrades = {
 	"FoodPerClick1" : {
 		"id" : 1,
@@ -154,14 +191,14 @@ var Upgrades = {
 		"icon" : "res://Art/UpgradeIcons/chickenIcon.png",
 		"type" : upgradeTypes.FoodStorage
 	},
-	"UnlockChopping" : {
+	"UnlockResearch" : {
 		"id" : 0,
-		"name" : "The first chop",
-		"description" : "learn how to chop",
+		"name" : "is your name albert?",
+		"description" : "Unlock Research and something mysterious",
 		"price" : 30,
 		"priceType" : PriceType.Wood,
-		"icon" : "res://Art/UpgradeIcons/axeIcon.png",
-		"type" : upgradeTypes.WoodPerClick
+		"icon" : "res://Art/UpgradeIcons/tempIcon.svg",
+		"type" : upgradeTypes.Other
 	},
 	"WaterStorage2" : {
 		"id" : 1,

@@ -13,7 +13,6 @@ var woodTicker
 var waterTicker
 var foodTicker
 
-
 var RNG = RandomNumberGenerator.new()
 
 func _ready():

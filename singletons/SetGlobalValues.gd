@@ -21,3 +21,9 @@ func refreshValues():
 	foodLabel.text = "Food: " + str(GameValues.FoodCount) + "/" + str(GameValues.FoodLimit)
 	waterLabel.text = "Water: " + str(GameValues.WaterCount) + "/" + str(GameValues.WaterLimit)
 	woodLabel.text = "Wood: " + str(GameValues.WoodCount) + "/" + str(GameValues.WoodLimit)
+
+func unlockReaserch():
+	pass
+
+func unlockBuildings():
+	pass
