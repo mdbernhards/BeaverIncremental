@@ -21,6 +21,7 @@ GameValues="*res://singletons/GameValues.gd"
 SetGlobalValues="*res://singletons/SetGlobalValues.gd"
 SetResearchUnlocks="*res://singletons/SetResearchUnlocks.gd"
 SetUpgradeUnlocks="*res://singletons/SetUpgradeUnlocks.gd"
+SetTextLogValues="*res://singletons/SetTextLogValues.gd"
 
 [display]
 

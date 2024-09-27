@@ -1,10 +1,15 @@
 extends Control
 
+var isSetVisible = false
+
 func _ready():
 	pass
 
-func _process(delta):
+func _process(_delta):
 	positionToolTip()
+	if (GameValues.PhaseFour or !GameValues.introEnabled) and !isSetVisible:
+		$Background/RightBackground.visible = true
+		isSetVisible = true
 
 func positionToolTip():
 	var toolTipPos = get_global_mouse_position()

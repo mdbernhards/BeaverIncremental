@@ -3,8 +3,9 @@ extends VBoxContainer
 func _ready():
 	pass
 
-func _process(delta):
-	pass
+func _process(_delta):
+	if GameValues.introEnabled:
+		visible = false
 
 func resetTabs():
 	$TabScreen/UpgradeTab.visible = false

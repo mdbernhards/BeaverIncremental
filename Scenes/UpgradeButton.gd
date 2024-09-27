@@ -8,7 +8,7 @@ signal upgrade_clicked(upgrade)
 func _ready():
 	pass
 
-func _process(delta):
+func _process(_delta):
 	checkIfAfordable()
 	
 func checkIfAfordable():
@@ -17,7 +17,7 @@ func checkIfAfordable():
 	elif $ColorRect:
 		$ColorRect.visible = false
 
-func _make_custom_tooltip(for_text):
+func _make_custom_tooltip(_for_text):
 	if GameValues.Upgrades.has(upgradeName):
 		var upgrade = GameValues.Upgrades[upgradeName]
 		var tooltip = load("res://Scenes/HelperScenes/tooltip.tscn").instantiate()

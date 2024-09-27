@@ -1,0 +1,22 @@
+[gd_scene load_steps=2 format=3 uid="uid://c8f4mcc3rud31"]
+
+[ext_resource type="Script" path="res://Scenes/TextLog.gd" id="1_5fu0f"]
+
+[node name="TextLogScroll" type="ScrollContainer" groups=["TextLogContainer"]]
+custom_minimum_size = Vector2(600, 0)
+follow_focus = true
+horizontal_scroll_mode = 0
+script = ExtResource("1_5fu0f")
+
+[node name="TextLog" type="RichTextLabel" parent="." groups=["TextLog"]]
+custom_minimum_size = Vector2(600, 0)
+layout_mode = 2
+fit_content = true
+scroll_following = true
+
+[node name="MessagePeriodTimer" type="Timer" parent="TextLog" groups=["PhaseTwoIntroPeriod"]]
+wait_time = 3.0
+
+[connection signal="mouse_entered" from="TextLog" to="." method="_on_text_log_mouse_entered"]
+[connection signal="mouse_exited" from="TextLog" to="." method="_on_text_log_mouse_exited"]
+[connection signal="timeout" from="TextLog/MessagePeriodTimer" to="." method="_on_message_period_timer_timeout"]

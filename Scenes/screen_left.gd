@@ -7,35 +7,35 @@ var waterLabel
 var foodButtonTimer
 var woodButtonTimer
 var waterButtonTimer
-var SwimButtonTimer
 
 var woodTicker
 var waterTicker
 var foodTicker
 
+#objects
+var StatsObject
+var StatusEffectsObject
+var ActionsObject
+var TextLogObject
+var RevvedBarObject
+
 var RNG = RandomNumberGenerator.new()
 
+var everythingIsVisible = false
+var PhaseTwoStarted = false
+
 func _ready():
-	woodLabel = get_node("TopHBox/StatLabels/WoodLabel") 
-	foodLabel = get_node("TopHBox/StatLabels/FoodLabel") 
-	waterLabel = get_node("TopHBox/StatLabels/WaterLabel") 
-	
-	foodButtonTimer = get_node("MidHBox/VBox/FoodButton/Label/FoodButtonTimer") 
-	woodButtonTimer = get_node("MidHBox/VBox/ChopButton/Label/ChopButtonTimer") 
-	waterButtonTimer = get_node("MidHBox/VBox/WaterButton/Label/WaterButtonTimer") 
-	SwimButtonTimer = get_node("MidHBox/VBox/SwimButton/Label/SwimButtonTimer") 
-	
-	woodTicker = get_node("MidHBox/VBox/ChopButton/Label/WoodTicker") 
-	waterTicker = get_node("MidHBox/VBox/WaterButton/Label/WaterTicker") 
-	foodTicker = get_node("MidHBox/VBox/FoodButton/Label/FoodTicker") 
-	
+	assignVariables()
 	SetGlobalValues.refreshValues()
 
-func _process(delta):
-	$MidHBox/VBox/FoodButton/Label.text = str(round(foodButtonTimer.time_left))
-	$MidHBox/VBox/WaterButton/Label.text = str(round(waterButtonTimer.time_left))
-	$MidHBox/VBox/ChopButton/Label.text = str(round(woodButtonTimer.time_left))
-	$MidHBox/VBox/SwimButton/Label.text = str(round(SwimButtonTimer.time_left))
+func _process(_delta):
+	$MidHBox/Actions/FoodButton/Label.text = str(round(foodButtonTimer.time_left))
+	$MidHBox/Actions/WaterButton/Label.text = str(round(waterButtonTimer.time_left))
+	$MidHBox/Actions/ChopButton/Label.text = str(round(woodButtonTimer.time_left))
+	
+	if GameValues.introEnabled and !everythingIsVisible:
+		setEverythingInvisible()
+		setVisibility()
 
 # action timer start
 func _on_food_button_button_down():
@@ -56,13 +56,8 @@ func _on_chop_button_button_down():
 		woodButtonTimer.start()
 		woodTicker.start()
 
-func _on_swim_button_button_down():
-	if checkThatNoButtonsPressed():
-		SwimButtonTimer.wait_time = GameValues.swimLength
-		SwimButtonTimer.start()
-
 func checkThatNoButtonsPressed():
-	return foodButtonTimer.is_stopped() and waterButtonTimer.is_stopped() and woodButtonTimer.is_stopped() and SwimButtonTimer.is_stopped()
+	return foodButtonTimer.is_stopped() and waterButtonTimer.is_stopped() and woodButtonTimer.is_stopped()
 
 # timer done, action happens
 func _on_water_button_timer_timeout():
@@ -80,9 +75,6 @@ func _on_food_timer_timeout():
 
 func _on_water_timer_timeout():
 	SetGlobalValues.addWater(-1)
-
-func _on_swim_button_timer_timeout():
-	GameValues.SwimCount += 1
 
 #1s long tickers (maybe they will have some modifier later)
 func _on_food_ticker_timeout():
@@ -104,4 +96,47 @@ func spawnBonusResource():
 	bonus.setType(bonus.bonusType.wood)
 	bonus.position = Vector2(RNG.randf_range(30, 1850), RNG.randf_range(30, 1000))
 	get_node("BonusResourceNode").add_child(bonus)
+
+func setEverythingInvisible():
+	StatsObject.visible = false
+	StatusEffectsObject.visible = false
+	ActionsObject.visible = false
+	if !PhaseTwoStarted:
+		TextLogObject.visible = false
+	RevvedBarObject.visible = false
+
+func setVisibility():
+	if GameValues.PhaseTwo and !PhaseTwoStarted:
+		PhaseTwoStarted = true
+		$BotHBox/MarginContainer/TextLogVisibilityTimer.start()
+		$IntroNode/IntroButton/IntroTimer.stop()
+	if GameValues.PhaseThree:
+		ActionsObject.visible = true
+		StatsObject.visible = true
+	if GameValues.PhaseFour:
+		StatusEffectsObject.visible = true
+		RevvedBarObject.visible = true
+		everythingIsVisible = true
+
+func assignVariables():
+	StatsObject = $TopHBox/StatLabels
+	StatusEffectsObject = $TopHBox/StatusEffects
+	ActionsObject = $MidHBox/Actions
+	TextLogObject = $BotHBox/MarginContainer/TextLogScroll
+	RevvedBarObject = $BotHBox/RevvedBar
 	
+	woodLabel = get_node("TopHBox/StatLabels/WoodLabel") 
+	foodLabel = get_node("TopHBox/StatLabels/FoodLabel") 
+	waterLabel = get_node("TopHBox/StatLabels/WaterLabel") 
+	
+	foodButtonTimer = get_node("MidHBox/Actions/FoodButton/Label/FoodButtonTimer") 
+	woodButtonTimer = get_node("MidHBox/Actions/ChopButton/Label/ChopButtonTimer") 
+	waterButtonTimer = get_node("MidHBox/Actions/WaterButton/Label/WaterButtonTimer") 
+	
+	woodTicker = get_node("MidHBox/Actions/ChopButton/Label/WoodTicker") 
+	waterTicker = get_node("MidHBox/Actions/WaterButton/Label/WaterTicker") 
+	foodTicker = get_node("MidHBox/Actions/FoodButton/Label/FoodTicker") 
+
+func _on_text_log_visibility_timer_timeout():
+	TextLogObject.visible = true
+	get_tree().get_first_node_in_group("TextLogContainer").PhaseTwoStart()

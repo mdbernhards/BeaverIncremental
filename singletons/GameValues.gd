@@ -26,7 +26,6 @@ var DefaultWoodLimit = 2500
 var chopLength = 1.1
 var waterLength = 2.1
 var foodLength = 3.1
-var swimLength = 2.1
 
 var WoodPerChop = DefaultWoodPerChop
 
@@ -41,10 +40,23 @@ var FoodLimit = DefaultFoodLimit
 var WaterLimit = DefaultWaterLimit
 var WoodLimit = DefaultWoodLimit
 
-var WoodCount = 0;
-var FoodCount = 20;
-var WaterCount = 30;
-var SwimCount = 0;
+var WoodCount = 0
+var FoodCount = 20
+var WaterCount = 30
+
+#introValues
+var IntroClickCount = 0
+var PhaseOneClicksNeeded = 3
+var PhaseTwoClicksNeeded = 30
+var PhaseThreeClicksNeeded = 60
+var IntroRefreshLength = 1
+var introEnabled = true
+
+#introPhases
+var PhaseOne = true # first clicks, swimming out # 30 sec
+var PhaseTwo = false # Scroll log appears, starts writing messages, get a walk button, maybe there is a river or an animal so the button changes. # 2 min
+var PhaseThree = false # get food and water actions appear, water and food stats appear, need to manage with walking # 5 min
+var PhaseFour = false #Find temple, unlock upgrades
 
 func setDefaultValues():
 	WoodPerChop = DefaultWoodPerChop

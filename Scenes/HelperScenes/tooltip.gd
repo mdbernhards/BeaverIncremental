@@ -3,7 +3,7 @@ extends Control
 func _ready():
 	pass
 
-func _process(delta):
+func _process(_delta):
 	pass
 
 func setTooltip(iconPath, title, description, price, flavor = "\"Call me Velvet Thunder\" - Holt"):
