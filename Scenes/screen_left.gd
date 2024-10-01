@@ -13,11 +13,12 @@ var waterTicker
 var foodTicker
 
 #objects
-var StatsObject
 var StatusEffectsObject
 var ActionsObject
 var TextLogObject
 var RevvedBarObject
+var ResourceBars
+var WoodCountLabel
 
 var RNG = RandomNumberGenerator.new()
 
@@ -26,12 +27,13 @@ var PhaseTwoStarted = false
 
 func _ready():
 	assignVariables()
-	SetGlobalValues.refreshValues()
 
 func _process(_delta):
 	$MidHBox/Actions/FoodButton/Label.text = str(round(foodButtonTimer.time_left))
 	$MidHBox/Actions/WaterButton/Label.text = str(round(waterButtonTimer.time_left))
 	$MidHBox/Actions/ChopButton/Label.text = str(round(woodButtonTimer.time_left))
+	
+	setWoodCountLabel()
 	
 	if GameValues.introEnabled and !everythingIsVisible:
 		setEverythingInvisible()
@@ -98,12 +100,13 @@ func spawnBonusResource():
 	get_node("BonusResourceNode").add_child(bonus)
 
 func setEverythingInvisible():
-	StatsObject.visible = false
 	StatusEffectsObject.visible = false
 	ActionsObject.visible = false
 	if !PhaseTwoStarted:
 		TextLogObject.visible = false
 	RevvedBarObject.visible = false
+	WoodCountLabel.visible = false
+	ResourceBars.visible = false
 
 func setVisibility():
 	if GameValues.PhaseTwo and !PhaseTwoStarted:
@@ -112,22 +115,20 @@ func setVisibility():
 		$IntroNode/IntroButton/IntroTimer.stop()
 	if GameValues.PhaseThree:
 		ActionsObject.visible = true
-		StatsObject.visible = true
+		WoodCountLabel.visible = true
 	if GameValues.PhaseFour:
+		ResourceBars.visible = true
 		StatusEffectsObject.visible = true
 		RevvedBarObject.visible = true
 		everythingIsVisible = true
 
 func assignVariables():
-	StatsObject = $TopHBox/StatLabels
-	StatusEffectsObject = $TopHBox/StatusEffects
+	StatusEffectsObject = $HB/StatusEffects
 	ActionsObject = $MidHBox/Actions
 	TextLogObject = $BotHBox/MarginContainer/TextLogScroll
 	RevvedBarObject = $BotHBox/RevvedBar
-	
-	woodLabel = get_node("TopHBox/StatLabels/WoodLabel") 
-	foodLabel = get_node("TopHBox/StatLabels/FoodLabel") 
-	waterLabel = get_node("TopHBox/StatLabels/WaterLabel") 
+	ResourceBars = $HB/ResourceBars
+	WoodCountLabel = $HB/WoodCountLabel
 	
 	foodButtonTimer = get_node("MidHBox/Actions/FoodButton/Label/FoodButtonTimer") 
 	woodButtonTimer = get_node("MidHBox/Actions/ChopButton/Label/ChopButtonTimer") 
@@ -136,6 +137,9 @@ func assignVariables():
 	woodTicker = get_node("MidHBox/Actions/ChopButton/Label/WoodTicker") 
 	waterTicker = get_node("MidHBox/Actions/WaterButton/Label/WaterTicker") 
 	foodTicker = get_node("MidHBox/Actions/FoodButton/Label/FoodTicker") 
+
+func setWoodCountLabel():
+	WoodCountLabel.text = "You have " + str(GameValues.WoodCount) + " Wood."
 
 func _on_text_log_visibility_timer_timeout():
 	TextLogObject.visible = true

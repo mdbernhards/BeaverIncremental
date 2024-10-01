@@ -1,0 +1,53 @@
+[gd_scene load_steps=6 format=3 uid="uid://cybak3h0v08rm"]
+
+[ext_resource type="Texture2D" uid="uid://coidrt05v8vr4" path="res://Art/UIelements/TripleBar.png" id="1_gnd63"]
+[ext_resource type="Script" path="res://Scenes/HelperScenes/resource_bars.gd" id="2_lqwso"]
+[ext_resource type="Texture2D" uid="uid://ddmqgccuxiwwp" path="res://Art/UIelements/blueBar.png" id="2_ylq7u"]
+[ext_resource type="Texture2D" uid="uid://1dbep7t2e6mf" path="res://Art/UIelements/greenBar.png" id="3_cx0d6"]
+[ext_resource type="Texture2D" uid="uid://c4lad0t7fbur5" path="res://Art/UIelements/brownBar.png" id="4_c42rv"]
+
+[node name="ResourceBars" type="TextureRect"]
+texture = ExtResource("1_gnd63")
+stretch_mode = 2
+script = ExtResource("2_lqwso")
+
+[node name="WaterBar" type="TextureProgressBar" parent="."]
+layout_mode = 0
+offset_left = 9.0
+offset_top = 26.0
+offset_right = 191.0
+offset_bottom = 38.0
+value = 100.0
+stretch_margin_left = 100
+stretch_margin_top = 100
+stretch_margin_right = 100
+stretch_margin_bottom = 100
+texture_progress = ExtResource("2_ylq7u")
+
+[node name="FoodBar" type="TextureProgressBar" parent="."]
+layout_mode = 0
+offset_left = 9.0
+offset_top = 44.0
+offset_right = 191.0
+offset_bottom = 56.0
+value = 55.0
+stretch_margin_left = 100
+stretch_margin_top = 100
+stretch_margin_right = 100
+stretch_margin_bottom = 100
+texture_progress = ExtResource("3_cx0d6")
+
+[node name="WoodBar" type="TextureProgressBar" parent="."]
+layout_mode = 0
+offset_left = 9.0
+offset_top = 62.0
+offset_right = 191.0
+offset_bottom = 74.0
+min_value = 1.0
+value = 77.0
+exp_edit = true
+stretch_margin_left = 100
+stretch_margin_top = 100
+stretch_margin_right = 100
+stretch_margin_bottom = 100
+texture_progress = ExtResource("4_c42rv")

@@ -4,8 +4,10 @@ func _ready():
 	pass
 
 func _process(_delta):
-	if GameValues.introEnabled:
+	if GameValues.introEnabled and !GameValues.PhaseFour:
 		visible = false
+	else:
+		visible = true
 
 func resetTabs():
 	$TabScreen/UpgradeTab.visible = false

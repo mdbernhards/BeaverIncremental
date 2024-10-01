@@ -47,8 +47,8 @@ var WaterCount = 30
 #introValues
 var IntroClickCount = 0
 var PhaseOneClicksNeeded = 3
-var PhaseTwoClicksNeeded = 30
-var PhaseThreeClicksNeeded = 60
+var PhaseTwoClicksNeeded = 7
+var PhaseThreeClicksNeeded = 10
 var IntroRefreshLength = 1
 var introEnabled = true
 
@@ -57,6 +57,8 @@ var PhaseOne = true # first clicks, swimming out # 30 sec
 var PhaseTwo = false # Scroll log appears, starts writing messages, get a walk button, maybe there is a river or an animal so the button changes. # 2 min
 var PhaseThree = false # get food and water actions appear, water and food stats appear, need to manage with walking # 5 min
 var PhaseFour = false #Find temple, unlock upgrades
+
+var TextLogMessageSpeed = 0.5
 
 func setDefaultValues():
 	WoodPerChop = DefaultWoodPerChop

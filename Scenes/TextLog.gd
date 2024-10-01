@@ -14,6 +14,8 @@ var PhaseTwoIntroHappening = false
 func _ready():
 	MessagePeriodTimer = get_tree().get_first_node_in_group("PhaseTwoIntroPeriod")
 	TextLogger = get_tree().get_first_node_in_group("TextLog")
+	
+	MessagePeriodTimer.wait_time = GameValues.TextLogMessageSpeed
 
 func _process(_delta):
 	pass
