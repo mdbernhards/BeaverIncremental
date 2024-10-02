@@ -1,6 +1,6 @@
 extends Node
 
-var PhaseTwoIntroText = [
+var Phase2IntroText = [
 	"You survived....",
 	"...",
 	"",
@@ -30,7 +30,7 @@ var PhaseTwoIntroText = [
 	"You won't give up so you start walking not being sure where",
 	"Not being sure why",]
 
-var PhaseTwoWalkingText = [
+var Phase2WalkingText = [
 	"...",
 	"...",
 	"",
@@ -49,7 +49,7 @@ var PhaseTwoWalkingText = [
 	" ",
 	"Suddenly you want to build a large wooden structure",]
 
-var PhaseThreeIntroText = [
+var Phase3IntroText = [
 	" ",
 	"After walking for so long you start getting hungry",
 	"Some water also wouldn't be so bad",
@@ -59,7 +59,7 @@ var PhaseThreeIntroText = [
 	"You'll look for something good to put in your mouth",
 	"You still have to walk",]
 
-var PhaseThreeOutroText = [ #start 10 clicks before
+var Phase3OutroText = [ #start 10 clicks before
 	" ",
 	"You keep thinking to your self..",
 	"You still have to walk",
@@ -88,7 +88,7 @@ var PhaseThreeOutroText = [ #start 10 clicks before
 	"...",
 	"You notice there is a place for donations and think to yourself that it might be a good idea to donate some wood",]
 	
-var PhaseFourIntroText = [
+var Phase4IntroText = [
 	" ",
 	"You decide to colect some wood",
 	"100 should be enough?",
@@ -98,7 +98,7 @@ var PhaseFourIntroText = [
 	"",
 	"~a bit faster maybe?~",]
 	
-var PhaseFourOutroText = [
+var Phase4OutroText = [
 	" ",
 	"You have finnaly done it",
 	"You gather up all the wood and place it in a pile on the donation place",
@@ -128,7 +128,7 @@ var PhaseFourOutroText = [
 	"It's so exiting, so exiting that you pass out...",]
 	# fade out, fade in to the upgrade screen and stat bars existing
 	
-var phaseFiveIntroText = [
+var phase5IntroText = [
 	" ",
 	"You wake up",]
 # you wake up, ready to begin the work, you somehow know that if you will bring wood to the temple it will revard you
@@ -151,5 +151,17 @@ var phaseFiveIntroText = [
 	# it's beaver country
 	# one small step for a beaver one giant leap for amphibious rodents 
 	
+var randomText = [
+	"a wood a day keeps the beaver away ",
+	"You smell some good air, you follow to the source to discover wood, you are happy",
+	"It's a good day for wood cutting",]
+
+var informationText = [
+	"From this piece of wood you gathered 1111 wood",
+	"You just unlocked an achievement [Epic guy fun time!]",]
+	
 func WriteToTextLog(text):
 	get_tree().get_first_node_in_group("TextLogContainer").WriteToLog(text)
+	
+func WriteArrayToTextLog(array):
+	get_tree().get_first_node_in_group("TextLogContainer").WriteOutAnArray(array)

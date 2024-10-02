@@ -60,13 +60,13 @@ func _on_intro_timer_timeout():
 
 func CheckPhaseCompletion():
 	if GameValues.PhaseThree:
-		if GameValues.PhaseThreeClicksNeeded <= GameValues.IntroClickCount:
+		if GameValues.Phase4StartClicksNeeded <= GameValues.IntroClickCount:
 			GameValues.PhaseFour = true
 	elif GameValues.PhaseTwo:
-		if GameValues.PhaseTwoClicksNeeded <= GameValues.IntroClickCount:
+		if GameValues.Phase3StartClicksNeeded <= GameValues.IntroClickCount:
 			GameValues.PhaseThree = true
 	elif GameValues.PhaseOne:
-		if GameValues.PhaseOneClicksNeeded <= GameValues.IntroClickCount:
+		if GameValues.Phase2StartClicksNeeded <= GameValues.IntroClickCount:
 			GameValues.PhaseTwo = true
 
 func getPhase():

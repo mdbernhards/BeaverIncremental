@@ -46,9 +46,13 @@ var WaterCount = 30
 
 #introValues
 var IntroClickCount = 0
-var PhaseOneClicksNeeded = 3
-var PhaseTwoClicksNeeded = 7
-var PhaseThreeClicksNeeded = 10
+
+var Phase2StartClicksNeeded = 3
+var Phase2MidClicksNeeded = 6
+var Phase3StartClicksNeeded = 9
+var Phase3MidClicksNeeded = 12
+var Phase4StartClicksNeeded = 15
+var Phase5StartClicksNeeded = 18
 var IntroRefreshLength = 1
 var introEnabled = true
 

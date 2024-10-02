@@ -9,7 +9,14 @@ var CurrentTextArray
 var CurrentlyWritingAnArray = false
 var NextMessage = 0
 
-var PhaseTwoIntroHappening = false
+var Phase2IntroHappening = false
+
+# Used so that text printing triggers only once
+var Phase2WalkTriggered = false
+var Phase3IntroTriggered = false
+var Phase3OutroTriggered = false
+var Phase4IntroTriggered = false
+var Phase5IntroTriggered = false
 
 func _ready():
 	MessagePeriodTimer = get_tree().get_first_node_in_group("PhaseTwoIntroPeriod")
@@ -18,7 +25,24 @@ func _ready():
 	MessagePeriodTimer.wait_time = GameValues.TextLogMessageSpeed
 
 func _process(_delta):
-	pass
+	CheckIfTextNeedsToBeTriggered()
+
+func CheckIfTextNeedsToBeTriggered():
+	if GameValues.Phase2MidClicksNeeded <= GameValues.IntroClickCount && !Phase2WalkTriggered:
+		SetTextLogValues.WriteArrayToTextLog(SetTextLogValues.PhaseTwoWalkingText)
+		Phase2WalkTriggered = true
+	elif GameValues.Phase3StartClicksNeeded <= GameValues.IntroClickCount && !Phase3IntroTriggered:
+		SetTextLogValues.WriteArrayToTextLog(SetTextLogValues.PhaseThreeIntroText)
+		Phase3IntroTriggered = true
+	elif GameValues.Phase3MidClicksNeeded <= GameValues.IntroClickCount && !Phase3OutroTriggered:
+		SetTextLogValues.WriteArrayToTextLog(SetTextLogValues.PhaseThreeOutroText)
+		Phase3OutroTriggered = true
+	elif GameValues.Phase4StartClicksNeeded <= GameValues.IntroClickCount && !Phase4IntroTriggered:
+		SetTextLogValues.WriteArrayToTextLog(SetTextLogValues.PhaseFourIntroText)
+		Phase4IntroTriggered = true
+	elif GameValues.Phase5StartClicksNeeded <= GameValues.IntroClickCount && !Phase5IntroTriggered:
+		SetTextLogValues.WriteArrayToTextLog(SetTextLogValues.phaseFiveIntroText)
+		Phase5IntroTriggered = true
 
 func WriteToLog(text):
 	if text != "":
@@ -29,8 +53,8 @@ func WriteToLog(text):
 			scroll_vertical = int(get_v_scroll_bar().max_value)
 	
 func PhaseTwoStart():
-	PhaseTwoIntroHappening = true
-	WriteOutAnArray(SetTextLogValues.PhaseTwoIntroText)
+	Phase2IntroHappening = true
+	WriteOutAnArray(SetTextLogValues.Phase2IntroText)
 
 func WriteOutAnArray(array):
 	if CurrentlyWritingAnArray:
@@ -51,8 +75,8 @@ func WriteNextMessage():
 		MessagePeriodTimer.start()
 	else:
 		CurrentlyWritingAnArray = false
-		if PhaseTwoIntroHappening:
-			PhaseTwoIntroHappening = false
+		if Phase2IntroHappening:
+			Phase2IntroHappening = false
 			get_tree().get_first_node_in_group("IntroActionPeriodTimer").start()
 
 func _on_message_period_timer_timeout():
