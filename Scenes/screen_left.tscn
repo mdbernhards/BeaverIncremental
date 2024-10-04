@@ -249,6 +249,16 @@ text = "Swim"
 wait_time = 10.0
 one_shot = true
 
+[node name="PhaseThreeStartDelayTimer" type="Timer" parent="."]
+wait_time = 6.0
+one_shot = true
+
+[node name="PhaseFourStartDelayTimer" type="Timer" parent="."]
+one_shot = true
+
+[node name="PhaseFiveStartDelayTimer2" type="Timer" parent="."]
+one_shot = true
+
 [connection signal="button_down" from="MidHBox/Actions/FoodButton" to="." method="_on_food_button_button_down"]
 [connection signal="timeout" from="MidHBox/Actions/FoodButton/Label/FoodButtonTimer" to="." method="_on_food_button_timer_timeout"]
 [connection signal="timeout" from="MidHBox/Actions/FoodButton/Label/FoodTicker" to="." method="_on_food_ticker_timeout"]
@@ -261,3 +271,6 @@ one_shot = true
 [connection signal="timeout" from="BotHBox/MarginContainer/TextLogVisibilityTimer" to="." method="_on_text_log_visibility_timer_timeout"]
 [connection signal="button_down" from="IntroNode/IntroButton" to="IntroNode" method="_on_intro_button_button_down"]
 [connection signal="timeout" from="IntroNode/IntroButton/IntroTimer" to="IntroNode" method="_on_intro_timer_timeout"]
+[connection signal="timeout" from="PhaseThreeStartDelayTimer" to="." method="_on_phase_three_start_delay_timer_timeout"]
+[connection signal="timeout" from="PhaseFourStartDelayTimer" to="." method="_on_phase_four_start_delay_timer_timeout"]
+[connection signal="timeout" from="PhaseFiveStartDelayTimer2" to="." method="_on_phase_five_start_delay_timer_2_timeout"]

@@ -29,19 +29,19 @@ func _process(_delta):
 
 func CheckIfTextNeedsToBeTriggered():
 	if GameValues.Phase2MidClicksNeeded <= GameValues.IntroClickCount && !Phase2WalkTriggered:
-		SetTextLogValues.WriteArrayToTextLog(SetTextLogValues.PhaseTwoWalkingText)
+		SetTextLogValues.WriteArrayToTextLog(SetTextLogValues.Phase2WalkingText)
 		Phase2WalkTriggered = true
 	elif GameValues.Phase3StartClicksNeeded <= GameValues.IntroClickCount && !Phase3IntroTriggered:
-		SetTextLogValues.WriteArrayToTextLog(SetTextLogValues.PhaseThreeIntroText)
+		SetTextLogValues.WriteArrayToTextLog(SetTextLogValues.Phase3IntroText)
 		Phase3IntroTriggered = true
 	elif GameValues.Phase3MidClicksNeeded <= GameValues.IntroClickCount && !Phase3OutroTriggered:
-		SetTextLogValues.WriteArrayToTextLog(SetTextLogValues.PhaseThreeOutroText)
+		SetTextLogValues.WriteArrayToTextLog(SetTextLogValues.Phase3OutroText)
 		Phase3OutroTriggered = true
 	elif GameValues.Phase4StartClicksNeeded <= GameValues.IntroClickCount && !Phase4IntroTriggered:
-		SetTextLogValues.WriteArrayToTextLog(SetTextLogValues.PhaseFourIntroText)
+		SetTextLogValues.WriteArrayToTextLog(SetTextLogValues.Phase2IntroText)
 		Phase4IntroTriggered = true
 	elif GameValues.Phase5StartClicksNeeded <= GameValues.IntroClickCount && !Phase5IntroTriggered:
-		SetTextLogValues.WriteArrayToTextLog(SetTextLogValues.phaseFiveIntroText)
+		SetTextLogValues.WriteArrayToTextLog(SetTextLogValues.phase5IntroText)
 		Phase5IntroTriggered = true
 
 func WriteToLog(text):

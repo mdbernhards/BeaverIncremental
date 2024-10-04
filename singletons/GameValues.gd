@@ -9,7 +9,7 @@ var DefaultWaterPerClick = 1
 var DefaultFoodPerClick = 1
 
 # percentiges
-var chanceOfWoodPerFoodClick = 45 #45%
+var chanceOfWoodPerFoodClick = 0 #45%
 var possibleWoodPerFoodClick = [1, 3]
 
 # per bonus click
@@ -61,8 +61,10 @@ var PhaseOne = true # first clicks, swimming out # 30 sec
 var PhaseTwo = false # Scroll log appears, starts writing messages, get a walk button, maybe there is a river or an animal so the button changes. # 2 min
 var PhaseThree = false # get food and water actions appear, water and food stats appear, need to manage with walking # 5 min
 var PhaseFour = false #Find temple, unlock upgrades
+var PhaseFive = false #Find temple, unlock upgrades
 
-var TextLogMessageSpeed = 0.5
+var TextLogMessageSpeed = 0.5 # s
+var chanceOfSpawningBonusResource = 5 # %
 
 func setDefaultValues():
 	WoodPerChop = DefaultWoodPerChop

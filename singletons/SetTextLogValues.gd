@@ -27,7 +27,11 @@ var Phase2IntroText = [
 	"...", 
 	"You won't give up",
 	"You won't give up",
+	" ",
 	"You won't give up so you start walking not being sure where",
+	"",
+	"...", 
+	"",
 	"Not being sure why",]
 
 var Phase2WalkingText = [
@@ -130,31 +134,55 @@ var Phase4OutroText = [
 	
 var phase5IntroText = [
 	" ",
-	"You wake up",]
-# you wake up, ready to begin the work, you somehow know that if you will bring wood to the temple it will revard you
-# you know that the most needed thing for the temple is wood, wood is what it craves.
-# The temple is already ready to grant you an upgrade for just a small amount of wood
-# You get to work
+	" ",
+	"",
+	"You wake up",
+	"You are ready to do the work",
+	"Somehow you know that if you will bring wood to the temple it will reward you",
+	" ",
+	"You know that the most needed thing for the temple is wood, wood is what it craves.",
+	"The temple is already ready to grant you an upgrade for just a small amount of wood",
+	"So you get to work",
+	" ",
+	"",
+	" ",
+	"",
+	" ",
+	"",
+	"GATHER SOME FOOD TO GET MORE WOOD",]
 
-# Later next text par to ka tagad var veikt dažādus reaserch (reaserch unlock), kuri aizņem vairāk laika un vairāk resursus
-# The temple grants you ability to reaserch different topics and to gain important skills
+var WoodGatheringUnlockText = [
+	" ",
+	" ",
+	"You final remembered what beavers do",
+	"They gather wood, using their...?",
+	"...",
+	"...",
+	"Axe?",
+	" ",
+	" ",
+	"You gather some materials to build a stone axe",
+	"Now you are ready for everything",
+	"Ready to show the world the biggest damn ever knowned",]
 
-# Vajag bebru sistēmu kur tu reqruto un saliec kur tu gribi lai viņi strādā, tas būtu iemesls ēdienam un dzērienam exponensiāli paplašināties
-# Ūdeni un varbūt ēdienu arī izmantot reasercham, kkādam upgradem, metalurgija, tur vajag ūdeni	
-	
-	# Beaver quotes
-	# a beaver never tells his seacrets
-	# a beaver always pays his debts
-	# once a beaver always a beaver
-	# One does not simply beaver
-	# it's beaver town
-	# it's beaver country
-	# one small step for a beaver one giant leap for amphibious rodents 
-	
+var ReaserchUnlockText = [
+	" ",
+	" ",
+	"The temple grants you ability to reaserch different topics and to gain important skills",
+	"You unlocked Reaserch",
+	"You can do one reserch at the time to improve your QOL, it takes time and different resources",]
+
 var randomText = [
 	"a wood a day keeps the beaver away ",
 	"You smell some good air, you follow to the source to discover wood, you are happy",
-	"It's a good day for wood cutting",]
+	"It's a good day for wood cutting",
+	"A beaver never tells his secrets",
+	"A beaver always pays his debts",
+	"Once a beaver always a beaver",
+	"One does not simply beaver",
+	"It's beaver country",
+	"It's beaver town",
+	"One small step for a beaver one giant leap for amphibious rodents",]
 
 var informationText = [
 	"From this piece of wood you gathered 1111 wood",

@@ -4,7 +4,7 @@ func _ready():
 	pass
 
 func _process(_delta):
-	if GameValues.introEnabled and !GameValues.PhaseFour:
+	if GameValues.introEnabled and !GameValues.PhaseFive:
 		visible = false
 	else:
 		visible = true

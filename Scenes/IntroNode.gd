@@ -1,6 +1,7 @@
 extends Node
 
 var RNG = RandomNumberGenerator.new()
+
 var IntroTimer
 var IntroButton
 
@@ -59,6 +60,9 @@ func _on_intro_timer_timeout():
 	SetIntroButton()
 
 func CheckPhaseCompletion():
+	if GameValues.PhaseFour:
+		if GameValues.Phase5StartClicksNeeded <= GameValues.IntroClickCount:
+			GameValues.PhaseFive = true
 	if GameValues.PhaseThree:
 		if GameValues.Phase4StartClicksNeeded <= GameValues.IntroClickCount:
 			GameValues.PhaseFour = true

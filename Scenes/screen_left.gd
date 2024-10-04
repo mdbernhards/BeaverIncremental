@@ -24,6 +24,9 @@ var RNG = RandomNumberGenerator.new()
 
 var everythingIsVisible = false
 var PhaseTwoStarted = false
+var PhaseThreeStarted = false
+var PhaseFourStarted = false
+var PhaseFiveStarted = false
 
 func _ready():
 	assignVariables()
@@ -84,14 +87,18 @@ func _on_food_ticker_timeout():
 		SetGlobalValues.addWood(int(RNG.randf_range(GameValues.possibleWoodPerFoodClick[0], GameValues.possibleWoodPerFoodClick[1])))
 	
 	SetGlobalValues.addFood(GameValues.FoodPerClick)
-	spawnBonusResource()
+	calculatedResourceSpawn()
 
 func _on_water_ticker_timeout():
 	SetGlobalValues.addWater(GameValues.WaterPerClick)
 
 func _on_wood_ticker_timeout():
 	SetGlobalValues.addWood(GameValues.WoodPerChop)
-	
+
+func calculatedResourceSpawn():
+	if RNG.randf_range(0, 100) <= GameValues.chanceOfSpawningBonusResource:
+		spawnBonusResource()
+
 func spawnBonusResource():
 	var bonusTemp = load("res://Scenes/HelperScenes/BonusResource.tscn")
 	var bonus = bonusTemp.instantiate()
@@ -100,27 +107,35 @@ func spawnBonusResource():
 	get_node("BonusResourceNode").add_child(bonus)
 
 func setEverythingInvisible():
-	StatusEffectsObject.visible = false
-	ActionsObject.visible = false
-	if !PhaseTwoStarted:
+	if !PhaseFiveStarted:
+		RevvedBarObject.visible = false
+	elif !PhaseFourStarted:
+		ResourceBars.visible = false
+	elif !PhaseThreeStarted:
+		ActionsObject.visible = false
+		WoodCountLabel.visible = false
+		StatusEffectsObject.visible = false
+	elif !PhaseTwoStarted:
 		TextLogObject.visible = false
-	RevvedBarObject.visible = false
-	WoodCountLabel.visible = false
-	ResourceBars.visible = false
+	elif GameValues.WoodCount > 0 &&  GameValues.WoodCount < 11:
+		WoodCountLabel.visible = true
 
 func setVisibility():
-	if GameValues.PhaseTwo and !PhaseTwoStarted:
+	if GameValues.PhaseFive and !PhaseFiveStarted:
+		$PhaseFourStartDelayTimer.wait_time = 3
+		$PhaseFourStartDelayTimer.start()
+		PhaseFiveStarted = true
+	if GameValues.PhaseFour and !PhaseFourStarted:
+		$PhaseFourStartDelayTimer.wait_time = 3
+		$PhaseFourStartDelayTimer.start()
+		PhaseFourStarted = true
+	elif GameValues.PhaseThree and !PhaseThreeStarted:
+		$PhaseThreeStartDelayTimer.start()
+		PhaseThreeStarted = true
+	elif GameValues.PhaseTwo and !PhaseTwoStarted:
 		PhaseTwoStarted = true
 		$BotHBox/MarginContainer/TextLogVisibilityTimer.start()
 		$IntroNode/IntroButton/IntroTimer.stop()
-	if GameValues.PhaseThree:
-		ActionsObject.visible = true
-		WoodCountLabel.visible = true
-	if GameValues.PhaseFour:
-		ResourceBars.visible = true
-		StatusEffectsObject.visible = true
-		RevvedBarObject.visible = true
-		everythingIsVisible = true
 
 func assignVariables():
 	StatusEffectsObject = $HB/StatusEffects
@@ -144,3 +159,15 @@ func setWoodCountLabel():
 func _on_text_log_visibility_timer_timeout():
 	TextLogObject.visible = true
 	get_tree().get_first_node_in_group("TextLogContainer").PhaseTwoStart()
+
+func _on_phase_three_start_delay_timer_timeout():
+	ActionsObject.visible = true
+	StatusEffectsObject.visible = true
+
+func _on_phase_four_start_delay_timer_timeout():
+	ResourceBars.visible = true
+	WoodCountLabel.visible = true
+
+func _on_phase_five_start_delay_timer_2_timeout():
+	RevvedBarObject.visible = true
+	everythingIsVisible = true
