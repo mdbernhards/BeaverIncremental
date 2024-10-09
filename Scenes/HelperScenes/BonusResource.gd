@@ -1,9 +1,6 @@
 extends Button
 
-enum bonusType {
-	water,
-	food,
-	wood }
+var bonusType = GameValues.bonusType
 
 var Type
 

@@ -7,7 +7,7 @@ func _ready():
 
 func _process(_delta):
 	positionToolTip()
-	if (GameValues.PhaseFour or !GameValues.introEnabled) and !isSetVisible:
+	if (GameValues.PhaseFive or !GameValues.introEnabled) and !isSetVisible:
 		$Background/RightBackground.visible = true
 		isSetVisible = true
 

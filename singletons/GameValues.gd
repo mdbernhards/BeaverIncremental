@@ -20,7 +20,7 @@ var DefaultWoodPerBonusClick = 5
 # storage limit
 var DefaultFoodLimit = 10
 var DefaultWaterLimit = 10
-var DefaultWoodLimit = 2500
+var DefaultWoodLimit = 100
 
 # action length (in s)
 var chopLength = 1.1
@@ -41,8 +41,8 @@ var WaterLimit = DefaultWaterLimit
 var WoodLimit = DefaultWoodLimit
 
 var WoodCount = 0
-var FoodCount = 20
-var WaterCount = 30
+var FoodCount = 8
+var WaterCount = 8
 
 #introValues
 var IntroClickCount = 0
@@ -54,7 +54,7 @@ var Phase3MidClicksNeeded = 12
 var Phase4StartClicksNeeded = 15
 var Phase5StartClicksNeeded = 18
 var IntroRefreshLength = 1
-var introEnabled = true
+var introEnabled = false
 
 #introPhases
 var PhaseOne = true # first clicks, swimming out # 30 sec
@@ -109,6 +109,11 @@ enum PriceType {
 	Water,
 	Food,
 	Wood,}
+	
+enum bonusType {
+	water,
+	food,
+	wood }
 
 # Reaserch takes time and a bunch of resources
 var Reaserch = {
@@ -127,31 +132,37 @@ var StatusEffects = {
 		"trigger" : "food under 50",
 		"effect" : "20% less production",
 		"endCondition" : "food above 50",
+		"triggered" : "false",
 	},
 	"Starving" : {
 		"trigger" : "food under 10",
 		"effect" : "40% less production",
 		"endCondition" : "food above 25",
+		"triggered" : "false",
 	},
 	"Thirsty" : {
 		"trigger" : "water under 50",
 		"effect" : "20% less production",
 		"endCondition" : "water above 50",
+		"triggered" : "false",
 	},
 	"Dehydrated" : {
 		"trigger" : "water under 10",
 		"effect" : "40% less production",
 		"endCondition" : "water above 25",
+		"triggered" : "false",
 	},
 	"Tired" : {
 		"trigger" : "50s action uptime in last minute",
 		"effect" : "-20% production",
 		"endCondition" : "15s no actions done",
+		"triggered" : "false",
 	},
 	"Revved up" : {
 		"trigger" : "55s chopping action uptime in last minute",
 		"effect" : "25% wood production",
 		"endCondition" : "5s no chopping done",
+		"triggered" : "false",
 	},
 }
 

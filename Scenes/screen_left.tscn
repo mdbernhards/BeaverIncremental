@@ -1,12 +1,12 @@
 [gd_scene load_steps=8 format=3 uid="uid://b0skpo0q0gxdn"]
 
 [ext_resource type="Script" path="res://Scenes/screen_left.gd" id="1_4yvj6"]
-[ext_resource type="Texture2D" uid="uid://dqlg2epleljbg" path="res://Art/UpgradeIcons/waterIcon.png" id="2_5fgyw"]
 [ext_resource type="PackedScene" uid="uid://cybak3h0v08rm" path="res://Scenes/HelperScenes/resource_bars.tscn" id="2_p80sj"]
 [ext_resource type="Script" path="res://Scenes/IntroNode.gd" id="3_hc6hp"]
 [ext_resource type="PackedScene" uid="uid://c8f4mcc3rud31" path="res://Scenes/textLog.tscn" id="3_jrjqm"]
-[ext_resource type="Texture2D" uid="uid://berdqceogxk73" path="res://Art/blueBerry.png" id="4_61e1j"]
-[ext_resource type="Texture2D" uid="uid://cyhwp0kiw4voj" path="res://Art/RainDrop.png" id="5_m5j80"]
+[ext_resource type="PackedScene" uid="uid://bn8hnol6uyqaw" path="res://Scenes/HelperScenes/status_effects_window.tscn" id="3_yaejt"]
+[ext_resource type="PackedScene" uid="uid://dm341wa6fbmdy" path="res://Scenes/HelperScenes/actions.tscn" id="4_ng7rg"]
+[ext_resource type="Script" path="res://Scenes/BonusResourceManager.gd" id="6_82wt1"]
 
 [node name="ScreenLeft" type="VBoxContainer"]
 offset_right = 1420.0
@@ -17,12 +17,19 @@ script = ExtResource("1_4yvj6")
 [node name="HB" type="HBoxContainer" parent="."]
 custom_minimum_size = Vector2(0, 150)
 layout_mode = 2
-alignment = 1
 
-[node name="ResourceBars" parent="HB" instance=ExtResource("2_p80sj")]
+[node name="VB" type="VBoxContainer" parent="HB"]
+custom_minimum_size = Vector2(200, 150)
 layout_mode = 2
 
-[node name="WoodCountLabel" type="Label" parent="HB"]
+[node name="ResourceBars" parent="HB/VB" instance=ExtResource("2_p80sj")]
+layout_mode = 2
+
+[node name="VB2" type="VBoxContainer" parent="HB"]
+custom_minimum_size = Vector2(900, 61)
+layout_mode = 2
+
+[node name="WoodCountLabel" type="Label" parent="HB/VB2"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 0
@@ -30,142 +37,11 @@ theme_override_font_sizes/font_size = 44
 text = "You have 435435 Wood."
 horizontal_alignment = 1
 
-[node name="StatusEffects" type="VBoxContainer" parent="HB" groups=["StatusEffects"]]
+[node name="StatusEffects" parent="HB" instance=ExtResource("3_yaejt")]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="HB/StatusEffects"]
+[node name="Actions" parent="." instance=ExtResource("4_ng7rg")]
 layout_mode = 2
-text = "Status Effects"
-horizontal_alignment = 2
-
-[node name="GridContainer" type="GridContainer" parent="HB/StatusEffects"]
-layout_direction = 3
-layout_mode = 2
-columns = 10
-
-[node name="TextureRect3" type="TextureRect" parent="HB/StatusEffects/GridContainer"]
-custom_minimum_size = Vector2(30, 0)
-layout_mode = 2
-texture = ExtResource("2_5fgyw")
-expand_mode = 5
-
-[node name="TextureRect4" type="TextureRect" parent="HB/StatusEffects/GridContainer"]
-custom_minimum_size = Vector2(30, 0)
-layout_mode = 2
-texture = ExtResource("2_5fgyw")
-expand_mode = 5
-
-[node name="TextureRect5" type="TextureRect" parent="HB/StatusEffects/GridContainer"]
-custom_minimum_size = Vector2(30, 0)
-layout_mode = 2
-texture = ExtResource("2_5fgyw")
-expand_mode = 5
-
-[node name="TextureRect6" type="TextureRect" parent="HB/StatusEffects/GridContainer"]
-custom_minimum_size = Vector2(30, 0)
-layout_mode = 2
-texture = ExtResource("2_5fgyw")
-expand_mode = 5
-
-[node name="TextureRect7" type="TextureRect" parent="HB/StatusEffects/GridContainer"]
-custom_minimum_size = Vector2(30, 0)
-layout_mode = 2
-texture = ExtResource("2_5fgyw")
-expand_mode = 5
-
-[node name="TextureRect8" type="TextureRect" parent="HB/StatusEffects/GridContainer"]
-custom_minimum_size = Vector2(30, 0)
-layout_mode = 2
-texture = ExtResource("2_5fgyw")
-expand_mode = 5
-
-[node name="TextureRect9" type="TextureRect" parent="HB/StatusEffects/GridContainer"]
-custom_minimum_size = Vector2(30, 0)
-layout_mode = 2
-texture = ExtResource("2_5fgyw")
-expand_mode = 5
-
-[node name="TextureRect10" type="TextureRect" parent="HB/StatusEffects/GridContainer"]
-custom_minimum_size = Vector2(30, 0)
-layout_mode = 2
-texture = ExtResource("2_5fgyw")
-expand_mode = 5
-
-[node name="MidHBox" type="HBoxContainer" parent="."]
-custom_minimum_size = Vector2(0, 650)
-layout_mode = 2
-size_flags_vertical = 3
-
-[node name="MarginBox" type="ColorRect" parent="MidHBox"]
-custom_minimum_size = Vector2(40, 0)
-layout_mode = 2
-color = Color(1, 1, 1, 0)
-
-[node name="Actions" type="VBoxContainer" parent="MidHBox"]
-custom_minimum_size = Vector2(150, 150)
-layout_mode = 2
-theme_override_constants/separation = 20
-alignment = 1
-
-[node name="FoodButton" type="TextureButton" parent="MidHBox/Actions"]
-custom_minimum_size = Vector2(150, 150)
-layout_mode = 2
-texture_normal = ExtResource("4_61e1j")
-stretch_mode = 5
-
-[node name="Label" type="Label" parent="MidHBox/Actions/FoodButton"]
-layout_mode = 0
-offset_left = 204.0
-offset_top = 1.0
-offset_right = 244.0
-offset_bottom = 24.0
-text = "0"
-
-[node name="FoodButtonTimer" type="Timer" parent="MidHBox/Actions/FoodButton/Label"]
-wait_time = 10.0
-one_shot = true
-
-[node name="FoodTicker" type="Timer" parent="MidHBox/Actions/FoodButton/Label"]
-
-[node name="WaterButton" type="TextureButton" parent="MidHBox/Actions"]
-custom_minimum_size = Vector2(150, 150)
-layout_mode = 2
-texture_normal = ExtResource("5_m5j80")
-stretch_mode = 5
-
-[node name="Label" type="Label" parent="MidHBox/Actions/WaterButton"]
-layout_mode = 0
-offset_left = 204.0
-offset_top = 1.0
-offset_right = 244.0
-offset_bottom = 24.0
-text = "0"
-
-[node name="WaterButtonTimer" type="Timer" parent="MidHBox/Actions/WaterButton/Label"]
-wait_time = 10.0
-one_shot = true
-
-[node name="WaterTicker" type="Timer" parent="MidHBox/Actions/WaterButton/Label"]
-
-[node name="ChopButton" type="Button" parent="MidHBox/Actions" groups=["chopButton"]]
-visible = false
-custom_minimum_size = Vector2(0, 40)
-layout_mode = 2
-text = "Chop"
-
-[node name="Label" type="Label" parent="MidHBox/Actions/ChopButton"]
-layout_mode = 0
-offset_left = 204.0
-offset_top = 1.0
-offset_right = 244.0
-offset_bottom = 24.0
-text = "0"
-
-[node name="ChopButtonTimer" type="Timer" parent="MidHBox/Actions/ChopButton/Label"]
-wait_time = 10.0
-one_shot = true
-
-[node name="WoodTicker" type="Timer" parent="MidHBox/Actions/ChopButton/Label"]
 
 [node name="BotHBox" type="HBoxContainer" parent="."]
 custom_minimum_size = Vector2(0, 280)
@@ -205,32 +81,8 @@ custom_minimum_size = Vector2(0, 30)
 layout_mode = 2
 color = Color(0.529412, 0.286275, 0.556863, 0)
 
-[node name="BonusResourceNode" type="Node" parent="."]
-
-[node name="TextLog2" type="Label" parent="BonusResourceNode"]
-custom_minimum_size = Vector2(400, 0)
-offset_left = 2363.0
-offset_top = 225.0
-offset_right = 2996.0
-offset_bottom = 690.0
-text = "Scrolling log..............................................................................--------------------------------.......
-next line
-.....
-......
-...
-You get killed \"prestige\" after each act and start from the begining
-get permanant bonus and points in to a skill tree
-.....................................................................................................
-Have levelups, with skills like talk to ants, talk to other animals so they
-can help
-
-scscsc
-
-sadasdasd
-
-asdasdasd
-
-asdsad"
+[node name="BonusResourceManager" type="Node" parent="." groups=["BonusNode"]]
+script = ExtResource("6_82wt1")
 
 [node name="IntroNode" type="Node" parent="."]
 script = ExtResource("3_hc6hp")
@@ -256,21 +108,12 @@ one_shot = true
 [node name="PhaseFourStartDelayTimer" type="Timer" parent="."]
 one_shot = true
 
-[node name="PhaseFiveStartDelayTimer2" type="Timer" parent="."]
+[node name="PhaseFiveStartDelayTimer" type="Timer" parent="."]
 one_shot = true
 
-[connection signal="button_down" from="MidHBox/Actions/FoodButton" to="." method="_on_food_button_button_down"]
-[connection signal="timeout" from="MidHBox/Actions/FoodButton/Label/FoodButtonTimer" to="." method="_on_food_button_timer_timeout"]
-[connection signal="timeout" from="MidHBox/Actions/FoodButton/Label/FoodTicker" to="." method="_on_food_ticker_timeout"]
-[connection signal="button_down" from="MidHBox/Actions/WaterButton" to="." method="_on_water_button_button_down"]
-[connection signal="timeout" from="MidHBox/Actions/WaterButton/Label/WaterButtonTimer" to="." method="_on_water_button_timer_timeout"]
-[connection signal="timeout" from="MidHBox/Actions/WaterButton/Label/WaterTicker" to="." method="_on_water_ticker_timeout"]
-[connection signal="button_down" from="MidHBox/Actions/ChopButton" to="." method="_on_chop_button_button_down"]
-[connection signal="timeout" from="MidHBox/Actions/ChopButton/Label/ChopButtonTimer" to="." method="_on_chop_button_timer_timeout"]
-[connection signal="timeout" from="MidHBox/Actions/ChopButton/Label/WoodTicker" to="." method="_on_wood_ticker_timeout"]
 [connection signal="timeout" from="BotHBox/MarginContainer/TextLogVisibilityTimer" to="." method="_on_text_log_visibility_timer_timeout"]
 [connection signal="button_down" from="IntroNode/IntroButton" to="IntroNode" method="_on_intro_button_button_down"]
 [connection signal="timeout" from="IntroNode/IntroButton/IntroTimer" to="IntroNode" method="_on_intro_timer_timeout"]
 [connection signal="timeout" from="PhaseThreeStartDelayTimer" to="." method="_on_phase_three_start_delay_timer_timeout"]
 [connection signal="timeout" from="PhaseFourStartDelayTimer" to="." method="_on_phase_four_start_delay_timer_timeout"]
-[connection signal="timeout" from="PhaseFiveStartDelayTimer2" to="." method="_on_phase_five_start_delay_timer_2_timeout"]
+[connection signal="timeout" from="PhaseFiveStartDelayTimer" to="." method="_on_phase_five_start_delay_timer_2_timeout"]

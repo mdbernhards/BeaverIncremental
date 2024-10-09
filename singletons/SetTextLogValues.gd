@@ -11,6 +11,8 @@ var Phase2IntroText = [
 	"...",
 	"", 
 	"...", 
+	"", 
+	"...", 
 	"You wake up..",
 	"You're in a place you don't recognize with no memories coming back",
 	"You remember you are a beaver, but you don't remember what beavers are",
