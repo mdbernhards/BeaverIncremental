@@ -22,26 +22,26 @@ func _ready():
 	MessagePeriodTimer = get_tree().get_first_node_in_group("PhaseTwoIntroPeriod")
 	TextLogger = get_tree().get_first_node_in_group("TextLog")
 	
-	MessagePeriodTimer.wait_time = GameValues.TextLogMessageSpeed
+	MessagePeriodTimer.wait_time = DefaultValues.TextLogMessageSpeed
 
 func _process(_delta):
 	CheckIfTextNeedsToBeTriggered()
 
 func CheckIfTextNeedsToBeTriggered():
-	if GameValues.Phase2MidClicksNeeded <= GameValues.IntroClickCount && !Phase2WalkTriggered:
-		SetTextLogValues.WriteArrayToTextLog(SetTextLogValues.Phase2WalkingText)
+	if DefaultValues.Phase2MidClicksNeeded <= GameValues.IntroClickCount && !Phase2WalkTriggered:
+		SetTextLog.WriteArrayToTextLog(ConstTextLogValues.Phase2WalkingText)
 		Phase2WalkTriggered = true
-	elif GameValues.Phase3StartClicksNeeded <= GameValues.IntroClickCount && !Phase3IntroTriggered:
-		SetTextLogValues.WriteArrayToTextLog(SetTextLogValues.Phase3IntroText)
+	elif DefaultValues.Phase3StartClicksNeeded <= GameValues.IntroClickCount && !Phase3IntroTriggered:
+		SetTextLog.WriteArrayToTextLog(ConstTextLogValues.Phase3IntroText)
 		Phase3IntroTriggered = true
-	elif GameValues.Phase3MidClicksNeeded <= GameValues.IntroClickCount && !Phase3OutroTriggered:
-		SetTextLogValues.WriteArrayToTextLog(SetTextLogValues.Phase3OutroText)
+	elif DefaultValues.Phase3MidClicksNeeded <= GameValues.IntroClickCount && !Phase3OutroTriggered:
+		SetTextLog.WriteArrayToTextLog(ConstTextLogValues.Phase3OutroText)
 		Phase3OutroTriggered = true
-	elif GameValues.Phase4StartClicksNeeded <= GameValues.IntroClickCount && !Phase4IntroTriggered:
-		SetTextLogValues.WriteArrayToTextLog(SetTextLogValues.Phase2IntroText)
+	elif DefaultValues.Phase4StartClicksNeeded <= GameValues.IntroClickCount && !Phase4IntroTriggered:
+		SetTextLog.WriteArrayToTextLog(ConstTextLogValues.Phase2IntroText)
 		Phase4IntroTriggered = true
-	elif GameValues.Phase5StartClicksNeeded <= GameValues.IntroClickCount && !Phase5IntroTriggered:
-		SetTextLogValues.WriteArrayToTextLog(SetTextLogValues.phase5IntroText)
+	elif DefaultValues.Phase5StartClicksNeeded <= GameValues.IntroClickCount && !Phase5IntroTriggered:
+		SetTextLog.WriteArrayToTextLog(ConstTextLogValues.phase5IntroText)
 		Phase5IntroTriggered = true
 
 func WriteToLog(text):
@@ -54,7 +54,7 @@ func WriteToLog(text):
 	
 func PhaseTwoStart():
 	Phase2IntroHappening = true
-	WriteOutAnArray(SetTextLogValues.Phase2IntroText)
+	WriteOutAnArray(ConstTextLogValues.Phase2IntroText)
 
 func WriteOutAnArray(array):
 	if CurrentlyWritingAnArray:

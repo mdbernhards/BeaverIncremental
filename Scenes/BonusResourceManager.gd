@@ -9,7 +9,7 @@ func _process(delta):
 	pass
 
 func calculatedAndSpawnResource(type):
-	if RNG.randf_range(0, 100) <= GameValues.chanceOfSpawningBonusResource:
+	if RNG.randf_range(0, 100) <= DefaultValues.DefaultChanceOfSpawningBonusResource:
 		spawnBonusResource(type)
 
 func spawnBonusResource(type):

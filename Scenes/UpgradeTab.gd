@@ -1,6 +1,6 @@
 extends Control
 
-var Upgrades = GameValues.Upgrades
+var Upgrades = ConstUpgradeValues.Upgrades
 
 func _ready():
 	listUpgradesFromResourceFile()
@@ -23,7 +23,7 @@ func _on_upgrade_button_upgrade_clicked(upgrade):
 	var upgradeData = Upgrades[upgrade.upgradeName]
 	
 	if GameValues.WoodCount >= upgradeData.price:
-		SetGlobalValues.addWood(-upgradeData.price)
+		SetGameValues.addWood(-upgradeData.price)
 		GameValues.UpgradeState[upgrade.upgradeName] = true
 		SetUpgradeUnlocks.setUpgrades()
 		upgrade.queue_free()

@@ -10,10 +10,10 @@ var PhaseTwoButtonText = ["Walk", "Take a nap", "Breath", "Run", "Climb", "Look 
 var PhaseThreeButtonText = ["Walk", "Speed Walk", "Explore", "Go in circles", "Stargaze", "Look behind", "Discover?", "Go get it", "Cry"]
 
 func _ready():
-	IntroTimer = $IntroButton/IntroTimer
 	IntroButton = $IntroButton
+	IntroTimer = $IntroButton/IntroTimer
 	
-	IntroTimer.wait_time = GameValues.IntroRefreshLength
+	IntroTimer.wait_time = DefaultValues.IntroRefreshLength
 	
 	if GameValues.introEnabled:
 		SetIntroButton()
@@ -24,7 +24,7 @@ func _process(_delta):
 func SetIntroButton():
 	IntroButton.position = Vector2(RNG.randf_range(30, 1850), RNG.randf_range(30, 1000))
 	
-	match getPhase():
+	match getPhase(): # this is for button lable
 		1:
 			IntroButton.text = SetFirstPhaseText()
 		2:
@@ -32,7 +32,7 @@ func SetIntroButton():
 		3:
 			IntroButton.text = SetThirdPhaseText()
 		4:
-			IntroButton.text = SetFirstPhaseText() # there is no fourth phase text
+			IntroButton.text = SetThirdPhaseText() # there is no fourth phase text
 	
 	IntroButton.visible = true
 
@@ -61,16 +61,16 @@ func _on_intro_timer_timeout():
 
 func CheckPhaseCompletion():
 	if GameValues.PhaseFour:
-		if GameValues.Phase5StartClicksNeeded <= GameValues.IntroClickCount:
+		if DefaultValues.Phase5StartClicksNeeded <= GameValues.IntroClickCount:
 			GameValues.PhaseFive = true
 	if GameValues.PhaseThree:
-		if GameValues.Phase4StartClicksNeeded <= GameValues.IntroClickCount:
+		if DefaultValues.Phase4StartClicksNeeded <= GameValues.IntroClickCount:
 			GameValues.PhaseFour = true
 	elif GameValues.PhaseTwo:
-		if GameValues.Phase3StartClicksNeeded <= GameValues.IntroClickCount:
+		if DefaultValues.Phase3StartClicksNeeded <= GameValues.IntroClickCount:
 			GameValues.PhaseThree = true
 	elif GameValues.PhaseOne:
-		if GameValues.Phase2StartClicksNeeded <= GameValues.IntroClickCount:
+		if DefaultValues.Phase2StartClicksNeeded <= GameValues.IntroClickCount:
 			GameValues.PhaseTwo = true
 
 func getPhase():

@@ -24,6 +24,15 @@ stretch_margin_right = 100
 stretch_margin_bottom = 100
 texture_progress = ExtResource("2_ylq7u")
 
+[node name="Label" type="Label" parent="WaterBar"]
+layout_mode = 0
+offset_left = -1.0
+offset_top = -3.0
+offset_right = 183.0
+offset_bottom = 15.0
+theme_override_font_sizes/font_size = 13
+text = "     100"
+
 [node name="FoodBar" type="TextureProgressBar" parent="."]
 layout_mode = 0
 offset_left = 9.0
@@ -36,6 +45,14 @@ stretch_margin_top = 100
 stretch_margin_right = 100
 stretch_margin_bottom = 100
 texture_progress = ExtResource("3_cx0d6")
+
+[node name="Label" type="Label" parent="FoodBar"]
+offset_left = -1.0
+offset_top = -3.0
+offset_right = 183.0
+offset_bottom = 15.0
+theme_override_font_sizes/font_size = 13
+text = "     100"
 
 [node name="WoodBar" type="TextureProgressBar" parent="."]
 layout_mode = 0
@@ -51,3 +68,18 @@ stretch_margin_top = 100
 stretch_margin_right = 100
 stretch_margin_bottom = 100
 texture_progress = ExtResource("4_c42rv")
+
+[node name="Label" type="Label" parent="WoodBar"]
+offset_left = -1.0
+offset_top = -3.0
+offset_right = 183.0
+offset_bottom = 15.0
+theme_override_font_sizes/font_size = 13
+text = "     100"
+
+[connection signal="mouse_entered" from="WaterBar" to="." method="_on_water_bar_mouse_entered"]
+[connection signal="mouse_exited" from="WaterBar" to="." method="_on_water_bar_mouse_exited"]
+[connection signal="mouse_entered" from="FoodBar" to="." method="_on_food_bar_mouse_entered"]
+[connection signal="mouse_exited" from="FoodBar" to="." method="_on_food_bar_mouse_exited"]
+[connection signal="mouse_entered" from="WoodBar" to="." method="_on_wood_bar_mouse_entered"]
+[connection signal="mouse_exited" from="WoodBar" to="." method="_on_wood_bar_mouse_exited"]

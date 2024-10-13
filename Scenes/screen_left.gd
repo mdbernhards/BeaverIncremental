@@ -46,15 +46,15 @@ func setEverythingInvisible():
 
 func setVisibility():
 	if GameValues.PhaseFive and !PhaseFiveStarted:
-		$PhaseFiveStartDelayTimer.wait_time = SetTextLogValues.phase5IntroText.size() * GameValues.TextLogMessageSpeed
+		$PhaseFiveStartDelayTimer.wait_time = ConstTextLogValues.phase5IntroText.size() * DefaultValues.TextLogMessageSpeed
 		$PhaseFiveStartDelayTimer.start()
 		PhaseFiveStarted = true
 	if GameValues.PhaseFour and !PhaseFourStarted:
-		$PhaseFourStartDelayTimer.wait_time = SetTextLogValues.Phase4IntroText.size() * GameValues.TextLogMessageSpeed
+		$PhaseFourStartDelayTimer.wait_time = ConstTextLogValues.Phase4IntroText.size() * DefaultValues.TextLogMessageSpeed
 		$PhaseFourStartDelayTimer.start()
 		PhaseFourStarted = true
 	elif GameValues.PhaseThree and !PhaseThreeStarted:
-		$PhaseFourStartDelayTimer.wait_time = SetTextLogValues.Phase3IntroText.size() * GameValues.TextLogMessageSpeed
+		$PhaseFourStartDelayTimer.wait_time = ConstTextLogValues.Phase3IntroText.size() * DefaultValues.TextLogMessageSpeed
 		$PhaseThreeStartDelayTimer.start()
 		PhaseThreeStarted = true
 	elif GameValues.PhaseTwo and !PhaseTwoStarted:

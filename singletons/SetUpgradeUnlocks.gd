@@ -1,17 +1,17 @@
 extends Node
 
 func setSpecificUpgrade(upgradeName):
-	var upgradeType = GameValues.Upgrades[upgradeName].type
-	var upgradeTypes = GameValues.upgradeTypes
+	var upgradeType = ConstUpgradeValues.Upgrades[upgradeName].type
+	var upgradeTypes = ConstUpgradeValues.upgradeTypes
 	
 	if upgradeType == upgradeTypes.WoodPerClick:
-		GameValues.WoodPerChop += 1
+		GameValues.WoodPerClick += 1
 		
-	if upgradeType == upgradeTypes.FoodPerClick:
-		GameValues.FoodPerClick += 3
+	if upgradeType == upgradeTypes.FoodPerTick:
+		GameValues.FoodPerTick += 1
 		
-	if upgradeType == upgradeTypes.WaterPerClick:
-		GameValues.WaterPerClick += 3
+	if upgradeType == upgradeTypes.WaterPerTick:
+		GameValues.WaterPerTick += 1
 		
 	if upgradeType == upgradeTypes.WaterCombo:
 		pass
@@ -19,14 +19,11 @@ func setSpecificUpgrade(upgradeName):
 	if upgradeType == upgradeTypes.FoodCombo:
 		pass
 		
-	if upgradeType == upgradeTypes.ChopWhileFood:
+	if upgradeType == upgradeTypes.WoodWhileFood:
 		pass
 		
-	if upgradeType == upgradeTypes.ChopWhileWater:
+	if upgradeType == upgradeTypes.WoodWhileWater:
 		pass
-		
-	if upgradeType == upgradeTypes.WoodActionLength:
-		GameValues.chopLength += 1
 		
 	if upgradeType == upgradeTypes.FoodActionLength:
 		GameValues.foodLength += 1
@@ -44,17 +41,58 @@ func setSpecificUpgrade(upgradeName):
 		if upgradeName == "UnlockResearch":
 			var researchButton = get_tree().get_first_node_in_group("ResearchButton")
 			researchButton.text = "Research"
-			
-			var statusEffectsWindow = get_tree().get_first_node_in_group("StatusEffects")
-			statusEffectsWindow.visible = true
 	
 	if upgradeName == "UnlockChopping":
-		pass
-		#get_tree().get_first_node_in_group("chopButton").visible = true
+		get_tree().get_first_node_in_group("chopButton").visible = true
 
 func setUpgrades():
-	GameValues.setDefaultValues()
+	setDefaultValues()
 	
 	for upgrade in GameValues.UpgradeState:
 		if GameValues.UpgradeState[upgrade] == true:
 			setSpecificUpgrade(upgrade)
+	
+	recalculateProduction()
+	applyProductionEffects()
+
+func recalculateProduction(): # Production Impacts manual woodchoping and all automated collection of resources
+	var production = DefaultValues.DefaultProductionValue
+	
+	if GameValues.StatusEffectState["Hungry"]:
+		production -= production * DefaultValues.HungerImpact
+	
+	if GameValues.StatusEffectState["Starving"]:
+		production -= production * DefaultValues.StarvingImpact
+	
+	if GameValues.StatusEffectState["Thirsty"]:
+		production -= production * DefaultValues.ThirstyImpact
+	
+	if GameValues.StatusEffectState["Dehydrated"]:
+		production -= production * DefaultValues.DehydratedImpact
+	
+	GameValues.ProductionValue = production
+
+func applyProductionEffects():
+	GameValues.WoodPerClick *= GameValues.ProductionValue
+	#GameValues.WaterPerTick *= GameValues.ProductionValue
+	#GameValues.FoodPerTick *= GameValues.ProductionValue
+	
+	#GameValues.WaterPerBonusClick *= GameValues.ProductionValue
+	#GameValues.FoodPerBonusClick *= GameValues.ProductionValue
+	#GameValues.WoodPerBonusClick *= GameValues.ProductionValue
+
+func setDefaultValues():
+	GameValues.WoodPerClick = DefaultValues.DefaultWoodPerClick
+	GameValues.WaterPerTick = DefaultValues.DefaultWaterPerTick
+	GameValues.FoodPerTick = DefaultValues.DefaultFoodPerTick
+
+	GameValues.WaterPerBonusClick = DefaultValues.DefaultWaterPerBonusClick
+	GameValues.FoodPerBonusClick = DefaultValues.DefaultFoodPerBonusClick
+	GameValues.WoodPerBonusClick = DefaultValues.DefaultWoodPerBonusClick
+
+	GameValues.FoodLimit = DefaultValues.DefaultFoodLimit
+	GameValues.WaterLimit = DefaultValues.DefaultWaterLimit
+	GameValues.WoodLimit = DefaultValues.DefaultWoodLimit
+	
+	GameValues.WaterLength = DefaultValues.DefaultWaterLength
+	GameValues.FoodLength = DefaultValues.DefaultFoodLength

@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://cybak3h0v08rm" path="res://Scenes/HelperScenes/resource_bars.tscn" id="2_p80sj"]
 [ext_resource type="Script" path="res://Scenes/IntroNode.gd" id="3_hc6hp"]
 [ext_resource type="PackedScene" uid="uid://c8f4mcc3rud31" path="res://Scenes/textLog.tscn" id="3_jrjqm"]
-[ext_resource type="PackedScene" uid="uid://bn8hnol6uyqaw" path="res://Scenes/HelperScenes/status_effects_window.tscn" id="3_yaejt"]
+[ext_resource type="PackedScene" uid="uid://bn8hnol6uyqaw" path="res://Scenes/HelperScenes/StatusEffects.tscn" id="3_yaejt"]
 [ext_resource type="PackedScene" uid="uid://dm341wa6fbmdy" path="res://Scenes/HelperScenes/actions.tscn" id="4_ng7rg"]
 [ext_resource type="Script" path="res://Scenes/BonusResourceManager.gd" id="6_82wt1"]
 
@@ -62,6 +62,7 @@ wait_time = 6.0
 one_shot = true
 
 [node name="RevvedBar" type="VBoxContainer" parent="BotHBox"]
+visible = false
 layout_mode = 2
 size_flags_horizontal = 3
 alignment = 2

@@ -70,20 +70,6 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 texture_normal = ExtResource("4_phy76")
 
-[node name="Label" type="Label" parent="VB2/ChopButton"]
-layout_mode = 0
-offset_left = 204.0
-offset_top = 1.0
-offset_right = 244.0
-offset_bottom = 24.0
-text = "0"
-
-[node name="ChopButtonTimer" type="Timer" parent="VB2/ChopButton/Label"]
-wait_time = 10.0
-one_shot = true
-
-[node name="WoodTicker" type="Timer" parent="VB2/ChopButton/Label"]
-
 [connection signal="button_down" from="VB/FoodButton" to="." method="_on_food_button_button_down"]
 [connection signal="timeout" from="VB/FoodButton/Label/FoodButtonTimer" to="." method="_on_food_button_timer_timeout"]
 [connection signal="timeout" from="VB/FoodButton/Label/FoodTicker" to="." method="_on_food_ticker_timeout"]
@@ -91,5 +77,3 @@ one_shot = true
 [connection signal="timeout" from="VB/WaterButton/Label/WaterButtonTimer" to="." method="_on_water_button_timer_timeout"]
 [connection signal="timeout" from="VB/WaterButton/Label/WaterTicker" to="." method="_on_water_ticker_timeout"]
 [connection signal="button_down" from="VB2/ChopButton" to="." method="_on_chop_button_button_down"]
-[connection signal="timeout" from="VB2/ChopButton/Label/ChopButtonTimer" to="." method="_on_chop_button_timer_timeout"]
-[connection signal="timeout" from="VB2/ChopButton/Label/WoodTicker" to="." method="_on_wood_ticker_timeout"]

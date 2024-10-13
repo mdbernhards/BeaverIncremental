@@ -1,6 +1,6 @@
 extends Button
 
-var bonusType = GameValues.bonusType
+var bonusType = ConstBonusValues.bonusType
 
 var Type
 
@@ -16,9 +16,9 @@ func setType(type):
 
 func _on_button_down():
 	if Type == bonusType.water:
-		SetGlobalValues.addWater(GameValues.WaterPerBonusClick)
+		SetGameValues.addWater(GameValues.WaterPerBonusClick)
 	elif Type == bonusType.food:
-		SetGlobalValues.addFood(GameValues.FoodPerBonusClick)
+		SetGameValues.addFood(GameValues.FoodPerBonusClick)
 	elif Type == bonusType.wood:
-		SetGlobalValues.addWood(GameValues.WoodPerBonusClick)
+		SetGameValues.addWood(GameValues.WoodPerBonusClick)
 	queue_free()

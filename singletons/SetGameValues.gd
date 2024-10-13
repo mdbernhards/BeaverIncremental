@@ -1,5 +1,11 @@
 extends Node
 
+func _ready():
+	pass
+
+func _process(delta):
+	pass
+
 func addWood(amount):
 	GameValues.WoodCount = clamp(GameValues.WoodCount + amount, 0, GameValues.WoodLimit)
 

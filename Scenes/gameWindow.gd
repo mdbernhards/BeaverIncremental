@@ -1,27 +1,25 @@
 extends Control
 
 var isSetVisible = false
+var resourceDrainStarted = false
 
 func _ready():
 	pass
 
 func _process(_delta):
-	positionToolTip()
 	if (GameValues.PhaseFive or !GameValues.introEnabled) and !isSetVisible:
 		$Background/RightBackground.visible = true
 		isSetVisible = true
+		
+	if (!GameValues.introEnabled or GameValues.PhaseFour) and !resourceDrainStarted:
+		resourceDrainStarted = true
+		GameValues.WaterCount = DefaultValues.DefaultWaterLimit * 0.5
+		GameValues.FoodCount = DefaultValues.DefaultFoodLimit * 0.5
+		$ResourceDrain.start()
 
-func positionToolTip():
-	var toolTipPos = get_global_mouse_position()
-	
-	if toolTipPos.x > 1500:
-		toolTipPos.x -= 405
-	else:
-		toolTipPos.x += 10
-	
-	if toolTipPos.y > 800:
-		toolTipPos.y -= 255
-	else:
-		toolTipPos.y += 10
-	
-	$ToolTip.position = toolTipPos
+func _on_resource_drain_timeout():
+	setResourceDrain()
+
+func setResourceDrain():
+	SetGameValues.addWater(-1)
+	SetGameValues.addFood(-1)

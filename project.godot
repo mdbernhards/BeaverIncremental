@@ -18,10 +18,15 @@ config/icon="res://icon.svg"
 [autoload]
 
 GameValues="*res://singletons/GameValues.gd"
-SetGlobalValues="*res://singletons/SetGlobalValues.gd"
 SetResearchUnlocks="*res://singletons/SetResearchUnlocks.gd"
 SetUpgradeUnlocks="*res://singletons/SetUpgradeUnlocks.gd"
-SetTextLogValues="*res://singletons/SetTextLogValues.gd"
+ConstBonusValues="*res://singletons/ConstBonusValues.gd"
+ConstStatusEffectValues="*res://singletons/ConstStatusEffectValues.gd"
+ConstTextLogValues="*res://singletons/ConstTextLogValues.gd"
+ConstUpgradeValues="*res://singletons/ConstUpgradeValues.gd"
+DefaultValues="*res://singletons/DefaultValues.gd"
+SetGameValues="*res://singletons/SetGameValues.gd"
+SetTextLog="*res://singletons/SetTextLog.gd"
 
 [display]
 
