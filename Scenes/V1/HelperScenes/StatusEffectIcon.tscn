@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://dhvmej5t8i04p"]
+
+[ext_resource type="Texture2D" uid="uid://dqlg2epleljbg" path="res://Art/V1/UpgradeIcons/waterIcon.png" id="1_feg3t"]
+[ext_resource type="Script" path="res://Scenes/V1/HelperScenes/StatusEffectIcon.gd" id="2_8w01g"]
+
+[node name="EffectIcon" type="TextureRect"]
+custom_minimum_size = Vector2(30, 0)
+tooltip_text = "effect Icon"
+texture = ExtResource("1_feg3t")
+expand_mode = 5
+script = ExtResource("2_8w01g")

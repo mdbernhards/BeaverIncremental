@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b4o0cujyn7qtc"
-path="res://.godot/imported/chickenIcon.png-6061476461a93b2077bec34dc7e682bc.ctex"
+uid="uid://berdqceogxk73"
+path="res://.godot/imported/blueBerry.png-5397c1197470f64dc0abddc28189a0c7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/UpgradeIcons/chickenIcon.png"
-dest_files=["res://.godot/imported/chickenIcon.png-6061476461a93b2077bec34dc7e682bc.ctex"]
+source_file="res://Art/V1/blueBerry.png"
+dest_files=["res://.godot/imported/blueBerry.png-5397c1197470f64dc0abddc28189a0c7.ctex"]
 
 [params]
 

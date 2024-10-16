@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://me5r77ptj5r2"]
 
-[ext_resource type="Script" path="res://Scenes/HelperScenes/tooltip.gd" id="1_8g4gs"]
-[ext_resource type="Texture2D" uid="uid://dxyyldui4tghv" path="res://Art/UpgradeIcons/axeIcon.png" id="1_bh8uh"]
+[ext_resource type="Script" path="res://Scenes/V1/HelperScenes/tooltip.gd" id="1_8g4gs"]
+[ext_resource type="Texture2D" uid="uid://dxyyldui4tghv" path="res://Art/V1/UpgradeIcons/axeIcon.png" id="1_bh8uh"]
 
 [node name="ToolTip" type="Control"]
 clip_contents = true

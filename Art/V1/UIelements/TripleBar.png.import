@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://1dbep7t2e6mf"
-path="res://.godot/imported/greenBar.png-bb56ef7d9942f692783f01f1df794c31.ctex"
+uid="uid://coidrt05v8vr4"
+path="res://.godot/imported/TripleBar.png-dc13a4fbb3e45e2fe177ba9e603a0bfb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/UIelements/greenBar.png"
-dest_files=["res://.godot/imported/greenBar.png-bb56ef7d9942f692783f01f1df794c31.ctex"]
+source_file="res://Art/V1/UIelements/TripleBar.png"
+dest_files=["res://.godot/imported/TripleBar.png-dc13a4fbb3e45e2fe177ba9e603a0bfb.ctex"]
 
 [params]
 

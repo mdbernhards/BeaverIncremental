@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cyhwp0kiw4voj"
-path="res://.godot/imported/RainDrop.png-302d0509988cb0ba17c909894367a5d9.ctex"
+uid="uid://5lkav5tqg2sg"
+path="res://.godot/imported/tempIcon.svg-9c1d0827283abf5faa3da1fdd33960da.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/RainDrop.png"
-dest_files=["res://.godot/imported/RainDrop.png-302d0509988cb0ba17c909894367a5d9.ctex"]
+source_file="res://Art/V1/UpgradeIcons/tempIcon.svg"
+dest_files=["res://.godot/imported/tempIcon.svg-9c1d0827283abf5faa3da1fdd33960da.ctex"]
 
 [params]
 
@@ -32,3 +32,6 @@ process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=1
+svg/scale=1.0
+editor/scale_with_editor_scale=false
+editor/convert_colors_with_editor_theme=false

@@ -11,22 +11,22 @@ config_version=5
 [application]
 
 config/name="Beaver Incremental"
-run/main_scene="res://Scenes/gameWindow.tscn"
+run/main_scene="res://Scenes/V1/gameWindow.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
 
 [autoload]
 
-GameValues="*res://singletons/GameValues.gd"
-SetResearchUnlocks="*res://singletons/SetResearchUnlocks.gd"
-SetUpgradeUnlocks="*res://singletons/SetUpgradeUnlocks.gd"
-ConstBonusValues="*res://singletons/ConstBonusValues.gd"
-ConstStatusEffectValues="*res://singletons/ConstStatusEffectValues.gd"
-ConstTextLogValues="*res://singletons/ConstTextLogValues.gd"
-ConstUpgradeValues="*res://singletons/ConstUpgradeValues.gd"
-DefaultValues="*res://singletons/DefaultValues.gd"
-SetGameValues="*res://singletons/SetGameValues.gd"
-SetTextLog="*res://singletons/SetTextLog.gd"
+GameValues="*res://singletons/V1/GameValues.gd"
+SetResearchUnlocks="*res://singletons/V1/SetResearchUnlocks.gd"
+SetUpgradeUnlocks="*res://singletons/V1/SetUpgradeUnlocks.gd"
+ConstBonusValues="*res://singletons/V1/ConstBonusValues.gd"
+ConstStatusEffectValues="*res://singletons/V1/ConstStatusEffectValues.gd"
+ConstTextLogValues="*res://singletons/V1/ConstTextLogValues.gd"
+ConstUpgradeValues="*res://singletons/V1/ConstUpgradeValues.gd"
+DefaultValues="*res://singletons/V1/DefaultValues.gd"
+SetGameValues="*res://singletons/V1/SetGameValues.gd"
+SetTextLog="*res://singletons/V1/SetTextLog.gd"
 
 [display]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://coidrt05v8vr4"
-path="res://.godot/imported/TripleBar.png-a2e8046ad93805710da1a384c0e1b821.ctex"
+uid="uid://cyhwp0kiw4voj"
+path="res://.godot/imported/RainDrop.png-076402b7abfb5c9d54ef250836055df8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/UIelements/TripleBar.png"
-dest_files=["res://.godot/imported/TripleBar.png-a2e8046ad93805710da1a384c0e1b821.ctex"]
+source_file="res://Art/V1/RainDrop.png"
+dest_files=["res://.godot/imported/RainDrop.png-076402b7abfb5c9d54ef250836055df8.ctex"]
 
 [params]
 

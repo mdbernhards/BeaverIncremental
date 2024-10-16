@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://dcmrr6w7awt10"]
 
-[ext_resource type="Script" path="res://Scenes/HelperScenes/BonusResource.gd" id="1_0xsyh"]
+[ext_resource type="Script" path="res://Scenes/V1/HelperScenes/BonusResource.gd" id="1_0xsyh"]
 
 [node name="BonusButton" type="Button"]
 offset_right = 49.0

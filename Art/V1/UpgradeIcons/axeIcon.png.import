@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c4lad0t7fbur5"
-path="res://.godot/imported/brownBar.png-5450cf03c13e1e0921060d139b50ecc0.ctex"
+uid="uid://dxyyldui4tghv"
+path="res://.godot/imported/axeIcon.png-06d5312e93017296025da84dcec642f0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/UIelements/brownBar.png"
-dest_files=["res://.godot/imported/brownBar.png-5450cf03c13e1e0921060d139b50ecc0.ctex"]
+source_file="res://Art/V1/UpgradeIcons/axeIcon.png"
+dest_files=["res://.godot/imported/axeIcon.png-06d5312e93017296025da84dcec642f0.ctex"]
 
 [params]
 

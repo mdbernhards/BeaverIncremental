@@ -1,12 +1,12 @@
 [gd_scene load_steps=8 format=3 uid="uid://cvn3xlgbmdubg"]
 
 [ext_resource type="Texture2D" uid="uid://dasmch1b765yc" path="res://icon.svg" id="1_0015g"]
-[ext_resource type="Script" path="res://Scenes/screen_right.gd" id="1_pc3yk"]
-[ext_resource type="Script" path="res://Scenes/UpgradeTab.gd" id="2_osvlb"]
-[ext_resource type="PackedScene" uid="uid://bw7g1q2uslrdu" path="res://Scenes/HelperScenes/upgrade_button.tscn" id="3_hr3tu"]
-[ext_resource type="Texture2D" uid="uid://b4o0cujyn7qtc" path="res://Art/UpgradeIcons/chickenIcon.png" id="4_20mjn"]
-[ext_resource type="Script" path="res://Scenes/UpgradeButton.gd" id="5_fr1lr"]
-[ext_resource type="Texture2D" uid="uid://dqlg2epleljbg" path="res://Art/UpgradeIcons/waterIcon.png" id="5_ld88k"]
+[ext_resource type="Script" path="res://Scenes/V1/screen_right.gd" id="1_pc3yk"]
+[ext_resource type="Script" path="res://Scenes/V1/UpgradeTab.gd" id="2_osvlb"]
+[ext_resource type="PackedScene" uid="uid://bw7g1q2uslrdu" path="res://Scenes/V1/HelperScenes/upgrade_button.tscn" id="3_hr3tu"]
+[ext_resource type="Texture2D" uid="uid://b4o0cujyn7qtc" path="res://Art/V1/UpgradeIcons/chickenIcon.png" id="4_20mjn"]
+[ext_resource type="Script" path="res://Scenes/V1/UpgradeButton.gd" id="5_fr1lr"]
+[ext_resource type="Texture2D" uid="uid://dqlg2epleljbg" path="res://Art/V1/UpgradeIcons/waterIcon.png" id="5_ld88k"]
 
 [node name="ScreenRight" type="VBoxContainer"]
 offset_left = 1420.0

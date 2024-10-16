@@ -20,10 +20,11 @@ var Upgrades = {
 	"FoodPerClick1" : {
 		"id" : 1,
 		"name" : "The first chomp",
-		"description" : "+3 food per chomp",
+		"description" : "+1 food per tick",
 		"price" : 5,
 		"icon" : "res://Art/UpgradeIcons/chickenIcon.png",
-		"type" : upgradeTypes.FoodPerTick
+		"type" : upgradeTypes.FoodPerTick,
+		"Levels": 5,
 	},
 	"WaterPerClick1" : {
 		"id" : 1,

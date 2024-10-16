@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://c8f4mcc3rud31"]
 
-[ext_resource type="Script" path="res://Scenes/TextLog.gd" id="1_5fu0f"]
+[ext_resource type="Script" path="res://Scenes/V1/TextLog.gd" id="1_5fu0f"]
 
 [node name="TextLogScroll" type="ScrollContainer" groups=["TextLogContainer"]]
 custom_minimum_size = Vector2(600, 0)

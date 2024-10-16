@@ -1,15 +1,15 @@
 [gd_scene load_steps=6 format=3 uid="uid://cybak3h0v08rm"]
 
-[ext_resource type="Texture2D" uid="uid://coidrt05v8vr4" path="res://Art/UIelements/TripleBar.png" id="1_gnd63"]
-[ext_resource type="Script" path="res://Scenes/HelperScenes/resource_bars.gd" id="2_lqwso"]
-[ext_resource type="Texture2D" uid="uid://ddmqgccuxiwwp" path="res://Art/UIelements/blueBar.png" id="2_ylq7u"]
-[ext_resource type="Texture2D" uid="uid://1dbep7t2e6mf" path="res://Art/UIelements/greenBar.png" id="3_cx0d6"]
-[ext_resource type="Texture2D" uid="uid://c4lad0t7fbur5" path="res://Art/UIelements/brownBar.png" id="4_c42rv"]
+[ext_resource type="Texture2D" uid="uid://coidrt05v8vr4" path="res://Art/V1/UIelements/TripleBar.png" id="1_bo05p"]
+[ext_resource type="Script" path="res://Scenes/V1/HelperScenes/resource_bars.gd" id="2_34mp3"]
+[ext_resource type="Texture2D" uid="uid://ddmqgccuxiwwp" path="res://Art/V1/UIelements/blueBar.png" id="3_t6ywl"]
+[ext_resource type="Texture2D" uid="uid://1dbep7t2e6mf" path="res://Art/V1/UIelements/greenBar.png" id="4_x3urg"]
+[ext_resource type="Texture2D" uid="uid://c4lad0t7fbur5" path="res://Art/V1/UIelements/brownBar.png" id="5_5nnne"]
 
 [node name="ResourceBars" type="TextureRect"]
-texture = ExtResource("1_gnd63")
+texture = ExtResource("1_bo05p")
 stretch_mode = 2
-script = ExtResource("2_lqwso")
+script = ExtResource("2_34mp3")
 
 [node name="WaterBar" type="TextureProgressBar" parent="."]
 layout_mode = 0
@@ -22,7 +22,7 @@ stretch_margin_left = 100
 stretch_margin_top = 100
 stretch_margin_right = 100
 stretch_margin_bottom = 100
-texture_progress = ExtResource("2_ylq7u")
+texture_progress = ExtResource("3_t6ywl")
 
 [node name="Label" type="Label" parent="WaterBar"]
 layout_mode = 0
@@ -44,9 +44,10 @@ stretch_margin_left = 100
 stretch_margin_top = 100
 stretch_margin_right = 100
 stretch_margin_bottom = 100
-texture_progress = ExtResource("3_cx0d6")
+texture_progress = ExtResource("4_x3urg")
 
 [node name="Label" type="Label" parent="FoodBar"]
+layout_mode = 0
 offset_left = -1.0
 offset_top = -3.0
 offset_right = 183.0
@@ -67,9 +68,10 @@ stretch_margin_left = 100
 stretch_margin_top = 100
 stretch_margin_right = 100
 stretch_margin_bottom = 100
-texture_progress = ExtResource("4_c42rv")
+texture_progress = ExtResource("5_5nnne")
 
 [node name="Label" type="Label" parent="WoodBar"]
+layout_mode = 0
 offset_left = -1.0
 offset_top = -3.0
 offset_right = 183.0

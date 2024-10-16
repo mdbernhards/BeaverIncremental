@@ -1,12 +1,12 @@
 [gd_scene load_steps=8 format=3 uid="uid://b0skpo0q0gxdn"]
 
-[ext_resource type="Script" path="res://Scenes/screen_left.gd" id="1_4yvj6"]
-[ext_resource type="PackedScene" uid="uid://cybak3h0v08rm" path="res://Scenes/HelperScenes/resource_bars.tscn" id="2_p80sj"]
-[ext_resource type="Script" path="res://Scenes/IntroNode.gd" id="3_hc6hp"]
-[ext_resource type="PackedScene" uid="uid://c8f4mcc3rud31" path="res://Scenes/textLog.tscn" id="3_jrjqm"]
-[ext_resource type="PackedScene" uid="uid://bn8hnol6uyqaw" path="res://Scenes/HelperScenes/StatusEffects.tscn" id="3_yaejt"]
-[ext_resource type="PackedScene" uid="uid://dm341wa6fbmdy" path="res://Scenes/HelperScenes/actions.tscn" id="4_ng7rg"]
-[ext_resource type="Script" path="res://Scenes/BonusResourceManager.gd" id="6_82wt1"]
+[ext_resource type="Script" path="res://Scenes/V1/screen_left.gd" id="1_4yvj6"]
+[ext_resource type="PackedScene" uid="uid://cybak3h0v08rm" path="res://Scenes/V1/HelperScenes/resource_bars.tscn" id="2_p80sj"]
+[ext_resource type="Script" path="res://Scenes/V1/IntroNode.gd" id="3_hc6hp"]
+[ext_resource type="PackedScene" uid="uid://c8f4mcc3rud31" path="res://Scenes/V1/textLog.tscn" id="3_jrjqm"]
+[ext_resource type="PackedScene" uid="uid://bn8hnol6uyqaw" path="res://Scenes/V1/HelperScenes/StatusEffects.tscn" id="3_yaejt"]
+[ext_resource type="PackedScene" uid="uid://dm341wa6fbmdy" path="res://Scenes/V1/HelperScenes/actions.tscn" id="4_ng7rg"]
+[ext_resource type="Script" path="res://Scenes/V1/BonusResourceManager.gd" id="6_82wt1"]
 
 [node name="ScreenLeft" type="VBoxContainer"]
 offset_right = 1420.0

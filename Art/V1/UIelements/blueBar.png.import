@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://3ylqa5whjpqc"
-path="res://.godot/imported/blueBerryV2.png-4e726dbcab497c26a25b3546619a54af.ctex"
+uid="uid://ddmqgccuxiwwp"
+path="res://.godot/imported/blueBar.png-3b2842c12b23ed400e7ea518095f5041.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/blueBerryV2.png"
-dest_files=["res://.godot/imported/blueBerryV2.png-4e726dbcab497c26a25b3546619a54af.ctex"]
+source_file="res://Art/V1/UIelements/blueBar.png"
+dest_files=["res://.godot/imported/blueBar.png-3b2842c12b23ed400e7ea518095f5041.ctex"]
 
 [params]
 

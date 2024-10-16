@@ -1,17 +1,17 @@
 extends Node
 
 # Production Value used to impact resource gains
-var ProductionValue
+@onready var ProductionValue
 
 # Specific resource gained per click or per tick
-var FoodPerTick
-var WaterPerTick
-var WoodPerClick
+@onready var FoodPerTick = DefaultValues.DefaultFoodPerTick
+@onready var WaterPerTick = DefaultValues.DefaultWaterPerTick
+@onready var WoodPerClick = DefaultValues.DefaultWoodPerClick
 
 # Specific resource gained per bonus button click
-var WaterPerBonusClick
-var FoodPerBonusClick
-var WoodPerBonusClick
+@onready var WaterPerBonusClick = DefaultValues.DefaultWaterPerBonusClick
+@onready var FoodPerBonusClick = DefaultValues.DefaultFoodPerBonusClick
+@onready var WoodPerBonusClick = DefaultValues.DefaultWoodPerClick
 
 # max storage values, apply default values to have no exceptions
 @onready var FoodLimit = DefaultValues.DefaultFoodLimit
@@ -19,8 +19,8 @@ var WoodPerBonusClick
 @onready var WoodLimit = DefaultValues.DefaultWoodLimit
 
 # action length
-var WaterLength
-var FoodLength
+@onready var WaterLength = DefaultValues.DefaultWaterLength
+@onready var FoodLength =  DefaultValues.DefaultFoodLength
 
 # Resource start values
 var WoodCount = 100

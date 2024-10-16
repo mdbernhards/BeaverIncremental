@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://5lkav5tqg2sg"
-path="res://.godot/imported/tempIcon.svg-b39491a0ac0d0c965ec1fda3d6f6f38c.ctex"
+uid="uid://dqlg2epleljbg"
+path="res://.godot/imported/waterIcon.png-d88def49d599d72bb1bab49f5e422edf.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Art/UpgradeIcons/tempIcon.svg"
-dest_files=["res://.godot/imported/tempIcon.svg-b39491a0ac0d0c965ec1fda3d6f6f38c.ctex"]
+source_file="res://Art/V1/UpgradeIcons/waterIcon.png"
+dest_files=["res://.godot/imported/waterIcon.png-d88def49d599d72bb1bab49f5e422edf.ctex"]
 
 [params]
 
@@ -32,6 +32,3 @@ process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=1
-svg/scale=1.0
-editor/scale_with_editor_scale=false
-editor/convert_colors_with_editor_theme=false

@@ -1,14 +1,14 @@
 [gd_scene load_steps=5 format=3 uid="uid://dm341wa6fbmdy"]
 
-[ext_resource type="Script" path="res://Scenes/HelperScenes/actions.gd" id="1_iy5iy"]
-[ext_resource type="Texture2D" uid="uid://3ylqa5whjpqc" path="res://Art/blueBerryV2.png" id="2_6d8e0"]
-[ext_resource type="Texture2D" uid="uid://cyhwp0kiw4voj" path="res://Art/RainDrop.png" id="3_4hg3y"]
-[ext_resource type="Texture2D" uid="uid://dxb3aradagd2j" path="res://Art/Tree.png" id="4_phy76"]
+[ext_resource type="Script" path="res://Scenes/V1/HelperScenes/actions.gd" id="1_1j86c"]
+[ext_resource type="Texture2D" uid="uid://3ylqa5whjpqc" path="res://Art/V1/blueBerryV2.png" id="2_fksh8"]
+[ext_resource type="Texture2D" uid="uid://cyhwp0kiw4voj" path="res://Art/V1/RainDrop.png" id="3_slpf7"]
+[ext_resource type="Texture2D" uid="uid://dxb3aradagd2j" path="res://Art/V1/Tree.png" id="4_1323c"]
 
 [node name="Actions" type="HBoxContainer"]
 custom_minimum_size = Vector2(0, 650)
 size_flags_vertical = 3
-script = ExtResource("1_iy5iy")
+script = ExtResource("1_1j86c")
 
 [node name="VB" type="VBoxContainer" parent="."]
 layout_mode = 2
@@ -16,7 +16,7 @@ layout_mode = 2
 [node name="FoodButton" type="TextureButton" parent="VB"]
 custom_minimum_size = Vector2(150, 150)
 layout_mode = 2
-texture_normal = ExtResource("2_6d8e0")
+texture_normal = ExtResource("2_fksh8")
 stretch_mode = 5
 
 [node name="Label" type="Label" parent="VB/FoodButton"]
@@ -36,7 +36,7 @@ one_shot = true
 [node name="WaterButton" type="TextureButton" parent="VB"]
 custom_minimum_size = Vector2(150, 150)
 layout_mode = 2
-texture_normal = ExtResource("3_4hg3y")
+texture_normal = ExtResource("3_slpf7")
 stretch_mode = 5
 
 [node name="Label" type="Label" parent="VB/WaterButton"]
@@ -68,7 +68,7 @@ custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-texture_normal = ExtResource("4_phy76")
+texture_normal = ExtResource("4_1323c")
 
 [connection signal="button_down" from="VB/FoodButton" to="." method="_on_food_button_button_down"]
 [connection signal="timeout" from="VB/FoodButton/Label/FoodButtonTimer" to="." method="_on_food_button_timer_timeout"]
