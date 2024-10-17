@@ -1,0 +1,4099 @@
+[gd_scene format=3 uid="uid://dopio2pmdmjpx"]
+
+[node name="GameMainScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="BackgroundColor" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.584314, 0.584314, 0.584314, 1)
+
+[node name="GameScreen" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="GameScreenHBox" type="HBoxContainer" parent="GameScreen"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBox" type="VBoxContainer" parent="GameScreen/GameScreenHBox"]
+custom_minimum_size = Vector2(1030, 0)
+layout_mode = 2
+
+[node name="BarsMC" type="MarginContainer" parent="GameScreen/GameScreenHBox/VBox"]
+custom_minimum_size = Vector2(0, 770)
+layout_mode = 2
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_top = 25
+
+[node name="Background" type="Control" parent="GameScreen/GameScreenHBox/VBox/BarsMC"]
+layout_mode = 2
+
+[node name="ColorRect" type="ColorRect" parent="GameScreen/GameScreenHBox/VBox/BarsMC/Background"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.427451, 0.584314, 0.533333, 1)
+
+[node name="MC" type="MarginContainer" parent="GameScreen/GameScreenHBox/VBox/BarsMC/Background/ColorRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 25
+theme_override_constants/margin_bottom = 25
+
+[node name="ColorRect" type="ColorRect" parent="GameScreen/GameScreenHBox/VBox/BarsMC/Background/ColorRect/MC"]
+layout_mode = 2
+color = Color(0.309804, 0.443137, 0.4, 1)
+
+[node name="MC" type="MarginContainer" parent="GameScreen/GameScreenHBox/VBox/BarsMC"]
+layout_mode = 2
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_right = 25
+theme_override_constants/margin_bottom = 25
+
+[node name="VBox" type="VBoxContainer" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC"]
+layout_mode = 2
+
+[node name="TitleLabel" type="Label" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 37
+text = "Resources"
+
+[node name="MC" type="MarginContainer" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox"]
+layout_mode = 2
+theme_override_constants/margin_top = 9
+theme_override_constants/margin_right = 37
+theme_override_constants/margin_bottom = 15
+
+[node name="LabelHBox" type="HBoxContainer" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/MC"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+theme_override_constants/separation = 50
+alignment = 2
+
+[node name="ColorRect" type="ColorRect" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/MC/LabelHBox"]
+custom_minimum_size = Vector2(160, 0)
+layout_mode = 2
+color = Color(0.227451, 0.333333, 0.298039, 1)
+
+[node name="WoodCampsLabel" type="Label" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/MC/LabelHBox/ColorRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 22
+text = "Wood Camp"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ColorRect2" type="ColorRect" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/MC/LabelHBox"]
+custom_minimum_size = Vector2(160, 0)
+layout_mode = 2
+color = Color(0.227451, 0.333333, 0.298039, 1)
+
+[node name="LevelLabel" type="Label" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/MC/LabelHBox/ColorRect2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 22
+text = "Level"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BarPagesMC" type="MarginContainer" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 15
+
+[node name="Page1Scroll" type="ScrollContainer" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC"]
+layout_mode = 2
+
+[node name="VBox" type="VBoxContainer" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page1Scroll"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="BarItemMC" type="MarginContainer" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page1Scroll/VBox"]
+layout_mode = 2
+theme_override_constants/margin_left = 0
+theme_override_constants/margin_top = 7
+theme_override_constants/margin_bottom = 7
+
+[node name="HBox" type="HBoxContainer" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page1Scroll/VBox/BarItemMC"]
+custom_minimum_size = Vector2(0, 110)
+layout_mode = 2
+
+[node name="BarVBox" type="VBoxContainer" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page1Scroll/VBox/BarItemMC/HBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="BarLabels" type="HBoxContainer" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page1Scroll/VBox/BarItemMC/HBox/BarVBox"]
+custom_minimum_size = Vector2(0, 45)
+layout_mode = 2
+theme_override_constants/separation = 6
+
+[node name="MC" type="MarginContainer" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page1Scroll/VBox/BarItemMC/HBox/BarVBox/BarLabels"]
+layout_mode = 2
+theme_override_constants/margin_top = -2
+
+[node name="TitleLabel" type="Label" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page1Scroll/VBox/BarItemMC/HBox/BarVBox/BarLabels/MC"]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 30
+text = "Oak"
+
+[node name="MC2" type="MarginContainer" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page1Scroll/VBox/BarItemMC/HBox/BarVBox/BarLabels"]
+layout_mode = 2
+
+[node name="LVLLabel" type="Label" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page1Scroll/VBox/BarItemMC/HBox/BarVBox/BarLabels/MC2"]
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_font_sizes/font_size = 17
+text = "LVL 10"
+
+[node name="MC3" type="MarginContainer" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page1Scroll/VBox/BarItemMC/HBox/BarVBox/BarLabels"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="InventoryLabel" type="Label" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page1Scroll/VBox/BarItemMC/HBox/BarVBox/BarLabels/MC3"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+theme_override_font_sizes/font_size = 17
+text = "1,000,000 / 9,999,999"
+
+[node name="BarRect" type="ColorRect" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page1Scroll/VBox/BarItemMC/HBox/BarVBox"]
+layout_mode = 2
+size_flags_vertical = 3
+color = Color(0.768627, 0.541176, 0.254902, 1)
+
+[node name="HBox" type="HBoxContainer" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page1Scroll/VBox/BarItemMC/HBox/BarVBox/BarRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MC" type="MarginContainer" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page1Scroll/VBox/BarItemMC/HBox/BarVBox/BarRect/HBox"]
+layout_mode = 2
+theme_override_constants/margin_left = 6
+theme_override_constants/margin_bottom = 8
+
+[node name="VBox" type="VBoxContainer" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page1Scroll/VBox/BarItemMC/HBox/BarVBox/BarRect/HBox/MC"]
+layout_mode = 2
+theme_override_constants/separation = 2
+alignment = 2
+
+[node name="PerClickLabel" type="Label" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page1Scroll/VBox/BarItemMC/HBox/BarVBox/BarRect/HBox/MC/VBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 13
+text = "103e14 Oak per click"
+
+[node name="PerSecondLabel" type="Label" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page1Scroll/VBox/BarItemMC/HBox/BarVBox/BarRect/HBox/MC/VBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 13
+text = "144e15 Oak per second"
+
+[node name="MC2" type="MarginContainer" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page1Scroll/VBox/BarItemMC/HBox/BarVBox/BarRect/HBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_right = 12
+
+[node name="ClickLabel" type="Label" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page1Scroll/VBox/BarItemMC/HBox/BarVBox/BarRect/HBox/MC2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 28
+text = "Click"
+horizontal_alignment = 2
+
+[node name="WoodCampMC" type="MarginContainer" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page1Scroll/VBox/BarItemMC/HBox"]
+custom_minimum_size = Vector2(210, 0)
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_right = 10
+
+[node name="ColorRect" type="ColorRect" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page1Scroll/VBox/BarItemMC/HBox/WoodCampMC"]
+layout_mode = 2
+color = Color(0.172549, 0.443137, 0.317647, 1)
+
+[node name="WoodCampHBox" type="HBoxContainer" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page1Scroll/VBox/BarItemMC/HBox/WoodCampMC"]
+layout_mode = 2
+
+[node name="MC" type="MarginContainer" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page1Scroll/VBox/BarItemMC/HBox/WoodCampMC/WoodCampHBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 37
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 37
+
+[node name="ColorRect" type="ColorRect" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page1Scroll/VBox/BarItemMC/HBox/WoodCampMC/WoodCampHBox/MC"]
+layout_mode = 2
+color = Color(0.333333, 0.490196, 0.568627, 1)
+
+[node name="InventoryCountLabel" type="Label" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page1Scroll/VBox/BarItemMC/HBox/WoodCampMC/WoodCampHBox/MC/ColorRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "10"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MC2" type="MarginContainer" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page1Scroll/VBox/BarItemMC/HBox/WoodCampMC/WoodCampHBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_right = 10
+
+[node name="VBox" type="VBoxContainer" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page1Scroll/VBox/BarItemMC/HBox/WoodCampMC/WoodCampHBox/MC2"]
+layout_mode = 2
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="BuyButton" type="Button" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page1Scroll/VBox/BarItemMC/HBox/WoodCampMC/WoodCampHBox/MC2/VBox"]
+layout_mode = 2
+text = "Buy"
+
+[node name="BuyMaxButton" type="Button" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page1Scroll/VBox/BarItemMC/HBox/WoodCampMC/WoodCampHBox/MC2/VBox"]
+layout_mode = 2
+text = "Buy Max"
+
+[node name="LevelMC" type="MarginContainer" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page1Scroll/VBox/BarItemMC/HBox"]
+custom_minimum_size = Vector2(210, 0)
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_right = 10
+
+[node name="ColorRect" type="ColorRect" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page1Scroll/VBox/BarItemMC/HBox/LevelMC"]
+layout_mode = 2
+color = Color(0.396078, 0.576471, 0.643137, 1)
+
+[node name="LevelHBox" type="HBoxContainer" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page1Scroll/VBox/BarItemMC/HBox/LevelMC"]
+layout_mode = 2
+
+[node name="MC" type="MarginContainer" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page1Scroll/VBox/BarItemMC/HBox/LevelMC/LevelHBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 37
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 37
+
+[node name="ColorRect" type="ColorRect" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page1Scroll/VBox/BarItemMC/HBox/LevelMC/LevelHBox/MC"]
+layout_mode = 2
+color = Color(0.333333, 0.490196, 0.568627, 1)
+
+[node name="InventoryCountLabel" type="Label" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page1Scroll/VBox/BarItemMC/HBox/LevelMC/LevelHBox/MC/ColorRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "10"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MC2" type="MarginContainer" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page1Scroll/VBox/BarItemMC/HBox/LevelMC/LevelHBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_right = 10
+
+[node name="VBox" type="VBoxContainer" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page1Scroll/VBox/BarItemMC/HBox/LevelMC/LevelHBox/MC2"]
+layout_mode = 2
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="BuyButton" type="Button" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page1Scroll/VBox/BarItemMC/HBox/LevelMC/LevelHBox/MC2/VBox"]
+layout_mode = 2
+text = "Buy"
+
+[node name="BuyMaxButton" type="Button" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page1Scroll/VBox/BarItemMC/HBox/LevelMC/LevelHBox/MC2/VBox"]
+layout_mode = 2
+text = "Buy Max"
+
+[node name="BarItemMC2" type="MarginContainer" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page1Scroll/VBox"]
+layout_mode = 2
+theme_override_constants/margin_left = 0
+theme_override_constants/margin_top = 7
+theme_override_constants/margin_bottom = 7
+
+[node name="HBox" type="HBoxContainer" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page1Scroll/VBox/BarItemMC2"]
+custom_minimum_size = Vector2(0, 110)
+layout_mode = 2
+
+[node name="BarVBox" type="VBoxContainer" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page1Scroll/VBox/BarItemMC2/HBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="BarLabels" type="HBoxContainer" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page1Scroll/VBox/BarItemMC2/HBox/BarVBox"]
+custom_minimum_size = Vector2(0, 45)
+layout_mode = 2
+theme_override_constants/separation = 6
+
+[node name="MC" type="MarginContainer" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page1Scroll/VBox/BarItemMC2/HBox/BarVBox/BarLabels"]
+layout_mode = 2
+theme_override_constants/margin_top = -2
+
+[node name="TitleLabel" type="Label" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page1Scroll/VBox/BarItemMC2/HBox/BarVBox/BarLabels/MC"]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 30
+text = "Oak"
+
+[node name="MC2" type="MarginContainer" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page1Scroll/VBox/BarItemMC2/HBox/BarVBox/BarLabels"]
+layout_mode = 2
+
+[node name="LVLLabel" type="Label" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page1Scroll/VBox/BarItemMC2/HBox/BarVBox/BarLabels/MC2"]
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_font_sizes/font_size = 17
+text = "LVL 10"
+
+[node name="MC3" type="MarginContainer" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page1Scroll/VBox/BarItemMC2/HBox/BarVBox/BarLabels"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="InventoryLabel" type="Label" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page1Scroll/VBox/BarItemMC2/HBox/BarVBox/BarLabels/MC3"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+theme_override_font_sizes/font_size = 17
+text = "1,000,000 / 9,999,999"
+
+[node name="BarRect" type="ColorRect" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page1Scroll/VBox/BarItemMC2/HBox/BarVBox"]
+layout_mode = 2
+size_flags_vertical = 3
+color = Color(0.768627, 0.541176, 0.254902, 1)
+
+[node name="HBox" type="HBoxContainer" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page1Scroll/VBox/BarItemMC2/HBox/BarVBox/BarRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MC" type="MarginContainer" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page1Scroll/VBox/BarItemMC2/HBox/BarVBox/BarRect/HBox"]
+layout_mode = 2
+theme_override_constants/margin_left = 6
+theme_override_constants/margin_bottom = 8
+
+[node name="VBox" type="VBoxContainer" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page1Scroll/VBox/BarItemMC2/HBox/BarVBox/BarRect/HBox/MC"]
+layout_mode = 2
+theme_override_constants/separation = 2
+alignment = 2
+
+[node name="PerClickLabel" type="Label" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page1Scroll/VBox/BarItemMC2/HBox/BarVBox/BarRect/HBox/MC/VBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 13
+text = "103e14 Oak per click"
+
+[node name="PerSecondLabel" type="Label" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page1Scroll/VBox/BarItemMC2/HBox/BarVBox/BarRect/HBox/MC/VBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 13
+text = "144e15 Oak per second"
+
+[node name="MC2" type="MarginContainer" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page1Scroll/VBox/BarItemMC2/HBox/BarVBox/BarRect/HBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_right = 12
+
+[node name="ClickLabel" type="Label" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page1Scroll/VBox/BarItemMC2/HBox/BarVBox/BarRect/HBox/MC2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 28
+text = "Click"
+horizontal_alignment = 2
+
+[node name="WoodCampMC" type="MarginContainer" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page1Scroll/VBox/BarItemMC2/HBox"]
+custom_minimum_size = Vector2(210, 0)
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_right = 10
+
+[node name="ColorRect" type="ColorRect" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page1Scroll/VBox/BarItemMC2/HBox/WoodCampMC"]
+layout_mode = 2
+color = Color(0.172549, 0.443137, 0.317647, 1)
+
+[node name="WoodCampHBox" type="HBoxContainer" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page1Scroll/VBox/BarItemMC2/HBox/WoodCampMC"]
+layout_mode = 2
+
+[node name="MC" type="MarginContainer" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page1Scroll/VBox/BarItemMC2/HBox/WoodCampMC/WoodCampHBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 37
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 37
+
+[node name="ColorRect" type="ColorRect" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page1Scroll/VBox/BarItemMC2/HBox/WoodCampMC/WoodCampHBox/MC"]
+layout_mode = 2
+color = Color(0.333333, 0.490196, 0.568627, 1)
+
+[node name="InventoryCountLabel" type="Label" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page1Scroll/VBox/BarItemMC2/HBox/WoodCampMC/WoodCampHBox/MC/ColorRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "10"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MC2" type="MarginContainer" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page1Scroll/VBox/BarItemMC2/HBox/WoodCampMC/WoodCampHBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_right = 10
+
+[node name="VBox" type="VBoxContainer" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page1Scroll/VBox/BarItemMC2/HBox/WoodCampMC/WoodCampHBox/MC2"]
+layout_mode = 2
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="BuyButton" type="Button" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page1Scroll/VBox/BarItemMC2/HBox/WoodCampMC/WoodCampHBox/MC2/VBox"]
+layout_mode = 2
+text = "Buy"
+
+[node name="BuyMaxButton" type="Button" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page1Scroll/VBox/BarItemMC2/HBox/WoodCampMC/WoodCampHBox/MC2/VBox"]
+layout_mode = 2
+text = "Buy Max"
+
+[node name="LevelMC" type="MarginContainer" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page1Scroll/VBox/BarItemMC2/HBox"]
+custom_minimum_size = Vector2(210, 0)
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_right = 10
+
+[node name="ColorRect" type="ColorRect" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page1Scroll/VBox/BarItemMC2/HBox/LevelMC"]
+layout_mode = 2
+color = Color(0.396078, 0.576471, 0.643137, 1)
+
+[node name="LevelHBox" type="HBoxContainer" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page1Scroll/VBox/BarItemMC2/HBox/LevelMC"]
+layout_mode = 2
+
+[node name="MC" type="MarginContainer" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page1Scroll/VBox/BarItemMC2/HBox/LevelMC/LevelHBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 37
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 37
+
+[node name="ColorRect" type="ColorRect" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page1Scroll/VBox/BarItemMC2/HBox/LevelMC/LevelHBox/MC"]
+layout_mode = 2
+color = Color(0.333333, 0.490196, 0.568627, 1)
+
+[node name="InventoryCountLabel" type="Label" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page1Scroll/VBox/BarItemMC2/HBox/LevelMC/LevelHBox/MC/ColorRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "10"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MC2" type="MarginContainer" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page1Scroll/VBox/BarItemMC2/HBox/LevelMC/LevelHBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_right = 10
+
+[node name="VBox" type="VBoxContainer" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page1Scroll/VBox/BarItemMC2/HBox/LevelMC/LevelHBox/MC2"]
+layout_mode = 2
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="BuyButton" type="Button" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page1Scroll/VBox/BarItemMC2/HBox/LevelMC/LevelHBox/MC2/VBox"]
+layout_mode = 2
+text = "Buy"
+
+[node name="BuyMaxButton" type="Button" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page1Scroll/VBox/BarItemMC2/HBox/LevelMC/LevelHBox/MC2/VBox"]
+layout_mode = 2
+text = "Buy Max"
+
+[node name="BarItemMC3" type="MarginContainer" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page1Scroll/VBox"]
+layout_mode = 2
+theme_override_constants/margin_left = 0
+theme_override_constants/margin_top = 7
+theme_override_constants/margin_bottom = 7
+
+[node name="HBox" type="HBoxContainer" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page1Scroll/VBox/BarItemMC3"]
+custom_minimum_size = Vector2(0, 110)
+layout_mode = 2
+
+[node name="BarVBox" type="VBoxContainer" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page1Scroll/VBox/BarItemMC3/HBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="BarLabels" type="HBoxContainer" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page1Scroll/VBox/BarItemMC3/HBox/BarVBox"]
+custom_minimum_size = Vector2(0, 45)
+layout_mode = 2
+theme_override_constants/separation = 6
+
+[node name="MC" type="MarginContainer" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page1Scroll/VBox/BarItemMC3/HBox/BarVBox/BarLabels"]
+layout_mode = 2
+theme_override_constants/margin_top = -2
+
+[node name="TitleLabel" type="Label" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page1Scroll/VBox/BarItemMC3/HBox/BarVBox/BarLabels/MC"]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 30
+text = "Oak"
+
+[node name="MC2" type="MarginContainer" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page1Scroll/VBox/BarItemMC3/HBox/BarVBox/BarLabels"]
+layout_mode = 2
+
+[node name="LVLLabel" type="Label" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page1Scroll/VBox/BarItemMC3/HBox/BarVBox/BarLabels/MC2"]
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_font_sizes/font_size = 17
+text = "LVL 10"
+
+[node name="MC3" type="MarginContainer" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page1Scroll/VBox/BarItemMC3/HBox/BarVBox/BarLabels"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="InventoryLabel" type="Label" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page1Scroll/VBox/BarItemMC3/HBox/BarVBox/BarLabels/MC3"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+theme_override_font_sizes/font_size = 17
+text = "1,000,000 / 9,999,999"
+
+[node name="BarRect" type="ColorRect" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page1Scroll/VBox/BarItemMC3/HBox/BarVBox"]
+layout_mode = 2
+size_flags_vertical = 3
+color = Color(0.768627, 0.541176, 0.254902, 1)
+
+[node name="HBox" type="HBoxContainer" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page1Scroll/VBox/BarItemMC3/HBox/BarVBox/BarRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MC" type="MarginContainer" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page1Scroll/VBox/BarItemMC3/HBox/BarVBox/BarRect/HBox"]
+layout_mode = 2
+theme_override_constants/margin_left = 6
+theme_override_constants/margin_bottom = 8
+
+[node name="VBox" type="VBoxContainer" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page1Scroll/VBox/BarItemMC3/HBox/BarVBox/BarRect/HBox/MC"]
+layout_mode = 2
+theme_override_constants/separation = 2
+alignment = 2
+
+[node name="PerClickLabel" type="Label" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page1Scroll/VBox/BarItemMC3/HBox/BarVBox/BarRect/HBox/MC/VBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 13
+text = "103e14 Oak per click"
+
+[node name="PerSecondLabel" type="Label" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page1Scroll/VBox/BarItemMC3/HBox/BarVBox/BarRect/HBox/MC/VBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 13
+text = "144e15 Oak per second"
+
+[node name="MC2" type="MarginContainer" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page1Scroll/VBox/BarItemMC3/HBox/BarVBox/BarRect/HBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_right = 12
+
+[node name="ClickLabel" type="Label" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page1Scroll/VBox/BarItemMC3/HBox/BarVBox/BarRect/HBox/MC2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 28
+text = "Click"
+horizontal_alignment = 2
+
+[node name="WoodCampMC" type="MarginContainer" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page1Scroll/VBox/BarItemMC3/HBox"]
+custom_minimum_size = Vector2(210, 0)
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_right = 10
+
+[node name="ColorRect" type="ColorRect" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page1Scroll/VBox/BarItemMC3/HBox/WoodCampMC"]
+layout_mode = 2
+color = Color(0.172549, 0.443137, 0.317647, 1)
+
+[node name="WoodCampHBox" type="HBoxContainer" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page1Scroll/VBox/BarItemMC3/HBox/WoodCampMC"]
+layout_mode = 2
+
+[node name="MC" type="MarginContainer" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page1Scroll/VBox/BarItemMC3/HBox/WoodCampMC/WoodCampHBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 37
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 37
+
+[node name="ColorRect" type="ColorRect" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page1Scroll/VBox/BarItemMC3/HBox/WoodCampMC/WoodCampHBox/MC"]
+layout_mode = 2
+color = Color(0.333333, 0.490196, 0.568627, 1)
+
+[node name="InventoryCountLabel" type="Label" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page1Scroll/VBox/BarItemMC3/HBox/WoodCampMC/WoodCampHBox/MC/ColorRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "10"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MC2" type="MarginContainer" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page1Scroll/VBox/BarItemMC3/HBox/WoodCampMC/WoodCampHBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_right = 10
+
+[node name="VBox" type="VBoxContainer" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page1Scroll/VBox/BarItemMC3/HBox/WoodCampMC/WoodCampHBox/MC2"]
+layout_mode = 2
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="BuyButton" type="Button" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page1Scroll/VBox/BarItemMC3/HBox/WoodCampMC/WoodCampHBox/MC2/VBox"]
+layout_mode = 2
+text = "Buy"
+
+[node name="BuyMaxButton" type="Button" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page1Scroll/VBox/BarItemMC3/HBox/WoodCampMC/WoodCampHBox/MC2/VBox"]
+layout_mode = 2
+text = "Buy Max"
+
+[node name="LevelMC" type="MarginContainer" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page1Scroll/VBox/BarItemMC3/HBox"]
+custom_minimum_size = Vector2(210, 0)
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_right = 10
+
+[node name="ColorRect" type="ColorRect" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page1Scroll/VBox/BarItemMC3/HBox/LevelMC"]
+layout_mode = 2
+color = Color(0.396078, 0.576471, 0.643137, 1)
+
+[node name="LevelHBox" type="HBoxContainer" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page1Scroll/VBox/BarItemMC3/HBox/LevelMC"]
+layout_mode = 2
+
+[node name="MC" type="MarginContainer" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page1Scroll/VBox/BarItemMC3/HBox/LevelMC/LevelHBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 37
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 37
+
+[node name="ColorRect" type="ColorRect" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page1Scroll/VBox/BarItemMC3/HBox/LevelMC/LevelHBox/MC"]
+layout_mode = 2
+color = Color(0.333333, 0.490196, 0.568627, 1)
+
+[node name="InventoryCountLabel" type="Label" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page1Scroll/VBox/BarItemMC3/HBox/LevelMC/LevelHBox/MC/ColorRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "10"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MC2" type="MarginContainer" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page1Scroll/VBox/BarItemMC3/HBox/LevelMC/LevelHBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_right = 10
+
+[node name="VBox" type="VBoxContainer" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page1Scroll/VBox/BarItemMC3/HBox/LevelMC/LevelHBox/MC2"]
+layout_mode = 2
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="BuyButton" type="Button" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page1Scroll/VBox/BarItemMC3/HBox/LevelMC/LevelHBox/MC2/VBox"]
+layout_mode = 2
+text = "Buy"
+
+[node name="BuyMaxButton" type="Button" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page1Scroll/VBox/BarItemMC3/HBox/LevelMC/LevelHBox/MC2/VBox"]
+layout_mode = 2
+text = "Buy Max"
+
+[node name="BarItemMC4" type="MarginContainer" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page1Scroll/VBox"]
+layout_mode = 2
+theme_override_constants/margin_left = 0
+theme_override_constants/margin_top = 7
+theme_override_constants/margin_bottom = 7
+
+[node name="HBox" type="HBoxContainer" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page1Scroll/VBox/BarItemMC4"]
+custom_minimum_size = Vector2(0, 110)
+layout_mode = 2
+
+[node name="BarVBox" type="VBoxContainer" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page1Scroll/VBox/BarItemMC4/HBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="BarLabels" type="HBoxContainer" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page1Scroll/VBox/BarItemMC4/HBox/BarVBox"]
+custom_minimum_size = Vector2(0, 45)
+layout_mode = 2
+theme_override_constants/separation = 6
+
+[node name="MC" type="MarginContainer" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page1Scroll/VBox/BarItemMC4/HBox/BarVBox/BarLabels"]
+layout_mode = 2
+theme_override_constants/margin_top = -2
+
+[node name="TitleLabel" type="Label" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page1Scroll/VBox/BarItemMC4/HBox/BarVBox/BarLabels/MC"]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 30
+text = "Oak"
+
+[node name="MC2" type="MarginContainer" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page1Scroll/VBox/BarItemMC4/HBox/BarVBox/BarLabels"]
+layout_mode = 2
+
+[node name="LVLLabel" type="Label" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page1Scroll/VBox/BarItemMC4/HBox/BarVBox/BarLabels/MC2"]
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_font_sizes/font_size = 17
+text = "LVL 10"
+
+[node name="MC3" type="MarginContainer" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page1Scroll/VBox/BarItemMC4/HBox/BarVBox/BarLabels"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="InventoryLabel" type="Label" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page1Scroll/VBox/BarItemMC4/HBox/BarVBox/BarLabels/MC3"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+theme_override_font_sizes/font_size = 17
+text = "1,000,000 / 9,999,999"
+
+[node name="BarRect" type="ColorRect" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page1Scroll/VBox/BarItemMC4/HBox/BarVBox"]
+layout_mode = 2
+size_flags_vertical = 3
+color = Color(0.768627, 0.541176, 0.254902, 1)
+
+[node name="HBox" type="HBoxContainer" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page1Scroll/VBox/BarItemMC4/HBox/BarVBox/BarRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MC" type="MarginContainer" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page1Scroll/VBox/BarItemMC4/HBox/BarVBox/BarRect/HBox"]
+layout_mode = 2
+theme_override_constants/margin_left = 6
+theme_override_constants/margin_bottom = 8
+
+[node name="VBox" type="VBoxContainer" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page1Scroll/VBox/BarItemMC4/HBox/BarVBox/BarRect/HBox/MC"]
+layout_mode = 2
+theme_override_constants/separation = 2
+alignment = 2
+
+[node name="PerClickLabel" type="Label" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page1Scroll/VBox/BarItemMC4/HBox/BarVBox/BarRect/HBox/MC/VBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 13
+text = "103e14 Oak per click"
+
+[node name="PerSecondLabel" type="Label" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page1Scroll/VBox/BarItemMC4/HBox/BarVBox/BarRect/HBox/MC/VBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 13
+text = "144e15 Oak per second"
+
+[node name="MC2" type="MarginContainer" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page1Scroll/VBox/BarItemMC4/HBox/BarVBox/BarRect/HBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_right = 12
+
+[node name="ClickLabel" type="Label" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page1Scroll/VBox/BarItemMC4/HBox/BarVBox/BarRect/HBox/MC2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 28
+text = "Click"
+horizontal_alignment = 2
+
+[node name="WoodCampMC" type="MarginContainer" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page1Scroll/VBox/BarItemMC4/HBox"]
+custom_minimum_size = Vector2(210, 0)
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_right = 10
+
+[node name="ColorRect" type="ColorRect" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page1Scroll/VBox/BarItemMC4/HBox/WoodCampMC"]
+layout_mode = 2
+color = Color(0.172549, 0.443137, 0.317647, 1)
+
+[node name="WoodCampHBox" type="HBoxContainer" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page1Scroll/VBox/BarItemMC4/HBox/WoodCampMC"]
+layout_mode = 2
+
+[node name="MC" type="MarginContainer" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page1Scroll/VBox/BarItemMC4/HBox/WoodCampMC/WoodCampHBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 37
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 37
+
+[node name="ColorRect" type="ColorRect" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page1Scroll/VBox/BarItemMC4/HBox/WoodCampMC/WoodCampHBox/MC"]
+layout_mode = 2
+color = Color(0.333333, 0.490196, 0.568627, 1)
+
+[node name="InventoryCountLabel" type="Label" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page1Scroll/VBox/BarItemMC4/HBox/WoodCampMC/WoodCampHBox/MC/ColorRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "10"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MC2" type="MarginContainer" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page1Scroll/VBox/BarItemMC4/HBox/WoodCampMC/WoodCampHBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_right = 10
+
+[node name="VBox" type="VBoxContainer" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page1Scroll/VBox/BarItemMC4/HBox/WoodCampMC/WoodCampHBox/MC2"]
+layout_mode = 2
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="BuyButton" type="Button" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page1Scroll/VBox/BarItemMC4/HBox/WoodCampMC/WoodCampHBox/MC2/VBox"]
+layout_mode = 2
+text = "Buy"
+
+[node name="BuyMaxButton" type="Button" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page1Scroll/VBox/BarItemMC4/HBox/WoodCampMC/WoodCampHBox/MC2/VBox"]
+layout_mode = 2
+text = "Buy Max"
+
+[node name="LevelMC" type="MarginContainer" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page1Scroll/VBox/BarItemMC4/HBox"]
+custom_minimum_size = Vector2(210, 0)
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_right = 10
+
+[node name="ColorRect" type="ColorRect" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page1Scroll/VBox/BarItemMC4/HBox/LevelMC"]
+layout_mode = 2
+color = Color(0.396078, 0.576471, 0.643137, 1)
+
+[node name="LevelHBox" type="HBoxContainer" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page1Scroll/VBox/BarItemMC4/HBox/LevelMC"]
+layout_mode = 2
+
+[node name="MC" type="MarginContainer" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page1Scroll/VBox/BarItemMC4/HBox/LevelMC/LevelHBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 37
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 37
+
+[node name="ColorRect" type="ColorRect" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page1Scroll/VBox/BarItemMC4/HBox/LevelMC/LevelHBox/MC"]
+layout_mode = 2
+color = Color(0.333333, 0.490196, 0.568627, 1)
+
+[node name="InventoryCountLabel" type="Label" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page1Scroll/VBox/BarItemMC4/HBox/LevelMC/LevelHBox/MC/ColorRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "10"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MC2" type="MarginContainer" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page1Scroll/VBox/BarItemMC4/HBox/LevelMC/LevelHBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_right = 10
+
+[node name="VBox" type="VBoxContainer" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page1Scroll/VBox/BarItemMC4/HBox/LevelMC/LevelHBox/MC2"]
+layout_mode = 2
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="BuyButton" type="Button" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page1Scroll/VBox/BarItemMC4/HBox/LevelMC/LevelHBox/MC2/VBox"]
+layout_mode = 2
+text = "Buy"
+
+[node name="BuyMaxButton" type="Button" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page1Scroll/VBox/BarItemMC4/HBox/LevelMC/LevelHBox/MC2/VBox"]
+layout_mode = 2
+text = "Buy Max"
+
+[node name="Page2Scroll" type="ScrollContainer" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC"]
+visible = false
+layout_mode = 2
+
+[node name="VBox" type="VBoxContainer" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page2Scroll"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="BarItemMC" type="MarginContainer" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page2Scroll/VBox"]
+layout_mode = 2
+theme_override_constants/margin_left = 0
+theme_override_constants/margin_top = 7
+theme_override_constants/margin_bottom = 7
+
+[node name="HBox" type="HBoxContainer" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page2Scroll/VBox/BarItemMC"]
+custom_minimum_size = Vector2(0, 110)
+layout_mode = 2
+
+[node name="BarVBox" type="VBoxContainer" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page2Scroll/VBox/BarItemMC/HBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="BarLabels" type="HBoxContainer" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page2Scroll/VBox/BarItemMC/HBox/BarVBox"]
+custom_minimum_size = Vector2(0, 45)
+layout_mode = 2
+theme_override_constants/separation = 6
+
+[node name="MC" type="MarginContainer" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page2Scroll/VBox/BarItemMC/HBox/BarVBox/BarLabels"]
+layout_mode = 2
+theme_override_constants/margin_top = -2
+
+[node name="TitleLabel" type="Label" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page2Scroll/VBox/BarItemMC/HBox/BarVBox/BarLabels/MC"]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 30
+text = "Oak"
+
+[node name="MC2" type="MarginContainer" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page2Scroll/VBox/BarItemMC/HBox/BarVBox/BarLabels"]
+layout_mode = 2
+
+[node name="LVLLabel" type="Label" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page2Scroll/VBox/BarItemMC/HBox/BarVBox/BarLabels/MC2"]
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_font_sizes/font_size = 17
+text = "LVL 10"
+
+[node name="MC3" type="MarginContainer" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page2Scroll/VBox/BarItemMC/HBox/BarVBox/BarLabels"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="InventoryLabel" type="Label" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page2Scroll/VBox/BarItemMC/HBox/BarVBox/BarLabels/MC3"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+theme_override_font_sizes/font_size = 17
+text = "1,000,000 / 9,999,999"
+
+[node name="BarRect" type="ColorRect" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page2Scroll/VBox/BarItemMC/HBox/BarVBox"]
+layout_mode = 2
+size_flags_vertical = 3
+color = Color(0.768627, 0.541176, 0.254902, 1)
+
+[node name="HBox" type="HBoxContainer" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page2Scroll/VBox/BarItemMC/HBox/BarVBox/BarRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MC" type="MarginContainer" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page2Scroll/VBox/BarItemMC/HBox/BarVBox/BarRect/HBox"]
+layout_mode = 2
+theme_override_constants/margin_left = 6
+theme_override_constants/margin_bottom = 8
+
+[node name="VBox" type="VBoxContainer" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page2Scroll/VBox/BarItemMC/HBox/BarVBox/BarRect/HBox/MC"]
+layout_mode = 2
+theme_override_constants/separation = 2
+alignment = 2
+
+[node name="PerClickLabel" type="Label" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page2Scroll/VBox/BarItemMC/HBox/BarVBox/BarRect/HBox/MC/VBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 13
+text = "103e14 Oak per click"
+
+[node name="PerSecondLabel" type="Label" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page2Scroll/VBox/BarItemMC/HBox/BarVBox/BarRect/HBox/MC/VBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 13
+text = "144e15 Oak per second"
+
+[node name="MC2" type="MarginContainer" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page2Scroll/VBox/BarItemMC/HBox/BarVBox/BarRect/HBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_right = 12
+
+[node name="ClickLabel" type="Label" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page2Scroll/VBox/BarItemMC/HBox/BarVBox/BarRect/HBox/MC2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 28
+text = "Click"
+horizontal_alignment = 2
+
+[node name="WoodCampMC" type="MarginContainer" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page2Scroll/VBox/BarItemMC/HBox"]
+custom_minimum_size = Vector2(210, 0)
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_right = 10
+
+[node name="ColorRect" type="ColorRect" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page2Scroll/VBox/BarItemMC/HBox/WoodCampMC"]
+layout_mode = 2
+color = Color(0.172549, 0.443137, 0.317647, 1)
+
+[node name="WoodCampHBox" type="HBoxContainer" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page2Scroll/VBox/BarItemMC/HBox/WoodCampMC"]
+layout_mode = 2
+
+[node name="MC" type="MarginContainer" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page2Scroll/VBox/BarItemMC/HBox/WoodCampMC/WoodCampHBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 37
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 37
+
+[node name="ColorRect" type="ColorRect" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page2Scroll/VBox/BarItemMC/HBox/WoodCampMC/WoodCampHBox/MC"]
+layout_mode = 2
+color = Color(0.333333, 0.490196, 0.568627, 1)
+
+[node name="InventoryCountLabel" type="Label" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page2Scroll/VBox/BarItemMC/HBox/WoodCampMC/WoodCampHBox/MC/ColorRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "10"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MC2" type="MarginContainer" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page2Scroll/VBox/BarItemMC/HBox/WoodCampMC/WoodCampHBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_right = 10
+
+[node name="VBox" type="VBoxContainer" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page2Scroll/VBox/BarItemMC/HBox/WoodCampMC/WoodCampHBox/MC2"]
+layout_mode = 2
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="BuyButton" type="Button" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page2Scroll/VBox/BarItemMC/HBox/WoodCampMC/WoodCampHBox/MC2/VBox"]
+layout_mode = 2
+text = "Buy"
+
+[node name="BuyMaxButton" type="Button" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page2Scroll/VBox/BarItemMC/HBox/WoodCampMC/WoodCampHBox/MC2/VBox"]
+layout_mode = 2
+text = "Buy Max"
+
+[node name="LevelMC" type="MarginContainer" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page2Scroll/VBox/BarItemMC/HBox"]
+custom_minimum_size = Vector2(210, 0)
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_right = 10
+
+[node name="ColorRect" type="ColorRect" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page2Scroll/VBox/BarItemMC/HBox/LevelMC"]
+layout_mode = 2
+color = Color(0.396078, 0.576471, 0.643137, 1)
+
+[node name="LevelHBox" type="HBoxContainer" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page2Scroll/VBox/BarItemMC/HBox/LevelMC"]
+layout_mode = 2
+
+[node name="MC" type="MarginContainer" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page2Scroll/VBox/BarItemMC/HBox/LevelMC/LevelHBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 37
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 37
+
+[node name="ColorRect" type="ColorRect" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page2Scroll/VBox/BarItemMC/HBox/LevelMC/LevelHBox/MC"]
+layout_mode = 2
+color = Color(0.333333, 0.490196, 0.568627, 1)
+
+[node name="InventoryCountLabel" type="Label" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page2Scroll/VBox/BarItemMC/HBox/LevelMC/LevelHBox/MC/ColorRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "10"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MC2" type="MarginContainer" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page2Scroll/VBox/BarItemMC/HBox/LevelMC/LevelHBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_right = 10
+
+[node name="VBox" type="VBoxContainer" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page2Scroll/VBox/BarItemMC/HBox/LevelMC/LevelHBox/MC2"]
+layout_mode = 2
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="BuyButton" type="Button" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page2Scroll/VBox/BarItemMC/HBox/LevelMC/LevelHBox/MC2/VBox"]
+layout_mode = 2
+text = "Buy"
+
+[node name="BuyMaxButton" type="Button" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page2Scroll/VBox/BarItemMC/HBox/LevelMC/LevelHBox/MC2/VBox"]
+layout_mode = 2
+text = "Buy Max"
+
+[node name="BarItemMC2" type="MarginContainer" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page2Scroll/VBox"]
+layout_mode = 2
+theme_override_constants/margin_left = 0
+theme_override_constants/margin_top = 7
+theme_override_constants/margin_bottom = 7
+
+[node name="HBox" type="HBoxContainer" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page2Scroll/VBox/BarItemMC2"]
+custom_minimum_size = Vector2(0, 110)
+layout_mode = 2
+
+[node name="BarVBox" type="VBoxContainer" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page2Scroll/VBox/BarItemMC2/HBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="BarLabels" type="HBoxContainer" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page2Scroll/VBox/BarItemMC2/HBox/BarVBox"]
+custom_minimum_size = Vector2(0, 45)
+layout_mode = 2
+theme_override_constants/separation = 6
+
+[node name="MC" type="MarginContainer" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page2Scroll/VBox/BarItemMC2/HBox/BarVBox/BarLabels"]
+layout_mode = 2
+theme_override_constants/margin_top = -2
+
+[node name="TitleLabel" type="Label" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page2Scroll/VBox/BarItemMC2/HBox/BarVBox/BarLabels/MC"]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 30
+text = "Oak"
+
+[node name="MC2" type="MarginContainer" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page2Scroll/VBox/BarItemMC2/HBox/BarVBox/BarLabels"]
+layout_mode = 2
+
+[node name="LVLLabel" type="Label" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page2Scroll/VBox/BarItemMC2/HBox/BarVBox/BarLabels/MC2"]
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_font_sizes/font_size = 17
+text = "LVL 10"
+
+[node name="MC3" type="MarginContainer" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page2Scroll/VBox/BarItemMC2/HBox/BarVBox/BarLabels"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="InventoryLabel" type="Label" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page2Scroll/VBox/BarItemMC2/HBox/BarVBox/BarLabels/MC3"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+theme_override_font_sizes/font_size = 17
+text = "1,000,000 / 9,999,999"
+
+[node name="BarRect" type="ColorRect" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page2Scroll/VBox/BarItemMC2/HBox/BarVBox"]
+layout_mode = 2
+size_flags_vertical = 3
+color = Color(0.768627, 0.541176, 0.254902, 1)
+
+[node name="HBox" type="HBoxContainer" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page2Scroll/VBox/BarItemMC2/HBox/BarVBox/BarRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MC" type="MarginContainer" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page2Scroll/VBox/BarItemMC2/HBox/BarVBox/BarRect/HBox"]
+layout_mode = 2
+theme_override_constants/margin_left = 6
+theme_override_constants/margin_bottom = 8
+
+[node name="VBox" type="VBoxContainer" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page2Scroll/VBox/BarItemMC2/HBox/BarVBox/BarRect/HBox/MC"]
+layout_mode = 2
+theme_override_constants/separation = 2
+alignment = 2
+
+[node name="PerClickLabel" type="Label" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page2Scroll/VBox/BarItemMC2/HBox/BarVBox/BarRect/HBox/MC/VBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 13
+text = "103e14 Oak per click"
+
+[node name="PerSecondLabel" type="Label" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page2Scroll/VBox/BarItemMC2/HBox/BarVBox/BarRect/HBox/MC/VBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 13
+text = "144e15 Oak per second"
+
+[node name="MC2" type="MarginContainer" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page2Scroll/VBox/BarItemMC2/HBox/BarVBox/BarRect/HBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_right = 12
+
+[node name="ClickLabel" type="Label" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page2Scroll/VBox/BarItemMC2/HBox/BarVBox/BarRect/HBox/MC2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 28
+text = "Click"
+horizontal_alignment = 2
+
+[node name="WoodCampMC" type="MarginContainer" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page2Scroll/VBox/BarItemMC2/HBox"]
+custom_minimum_size = Vector2(210, 0)
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_right = 10
+
+[node name="ColorRect" type="ColorRect" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page2Scroll/VBox/BarItemMC2/HBox/WoodCampMC"]
+layout_mode = 2
+color = Color(0.172549, 0.443137, 0.317647, 1)
+
+[node name="WoodCampHBox" type="HBoxContainer" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page2Scroll/VBox/BarItemMC2/HBox/WoodCampMC"]
+layout_mode = 2
+
+[node name="MC" type="MarginContainer" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page2Scroll/VBox/BarItemMC2/HBox/WoodCampMC/WoodCampHBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 37
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 37
+
+[node name="ColorRect" type="ColorRect" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page2Scroll/VBox/BarItemMC2/HBox/WoodCampMC/WoodCampHBox/MC"]
+layout_mode = 2
+color = Color(0.333333, 0.490196, 0.568627, 1)
+
+[node name="InventoryCountLabel" type="Label" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page2Scroll/VBox/BarItemMC2/HBox/WoodCampMC/WoodCampHBox/MC/ColorRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "10"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MC2" type="MarginContainer" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page2Scroll/VBox/BarItemMC2/HBox/WoodCampMC/WoodCampHBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_right = 10
+
+[node name="VBox" type="VBoxContainer" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page2Scroll/VBox/BarItemMC2/HBox/WoodCampMC/WoodCampHBox/MC2"]
+layout_mode = 2
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="BuyButton" type="Button" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page2Scroll/VBox/BarItemMC2/HBox/WoodCampMC/WoodCampHBox/MC2/VBox"]
+layout_mode = 2
+text = "Buy"
+
+[node name="BuyMaxButton" type="Button" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page2Scroll/VBox/BarItemMC2/HBox/WoodCampMC/WoodCampHBox/MC2/VBox"]
+layout_mode = 2
+text = "Buy Max"
+
+[node name="LevelMC" type="MarginContainer" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page2Scroll/VBox/BarItemMC2/HBox"]
+custom_minimum_size = Vector2(210, 0)
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_right = 10
+
+[node name="ColorRect" type="ColorRect" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page2Scroll/VBox/BarItemMC2/HBox/LevelMC"]
+layout_mode = 2
+color = Color(0.396078, 0.576471, 0.643137, 1)
+
+[node name="LevelHBox" type="HBoxContainer" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page2Scroll/VBox/BarItemMC2/HBox/LevelMC"]
+layout_mode = 2
+
+[node name="MC" type="MarginContainer" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page2Scroll/VBox/BarItemMC2/HBox/LevelMC/LevelHBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 37
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 37
+
+[node name="ColorRect" type="ColorRect" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page2Scroll/VBox/BarItemMC2/HBox/LevelMC/LevelHBox/MC"]
+layout_mode = 2
+color = Color(0.333333, 0.490196, 0.568627, 1)
+
+[node name="InventoryCountLabel" type="Label" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page2Scroll/VBox/BarItemMC2/HBox/LevelMC/LevelHBox/MC/ColorRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "10"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MC2" type="MarginContainer" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page2Scroll/VBox/BarItemMC2/HBox/LevelMC/LevelHBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_right = 10
+
+[node name="VBox" type="VBoxContainer" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page2Scroll/VBox/BarItemMC2/HBox/LevelMC/LevelHBox/MC2"]
+layout_mode = 2
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="BuyButton" type="Button" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page2Scroll/VBox/BarItemMC2/HBox/LevelMC/LevelHBox/MC2/VBox"]
+layout_mode = 2
+text = "Buy"
+
+[node name="BuyMaxButton" type="Button" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page2Scroll/VBox/BarItemMC2/HBox/LevelMC/LevelHBox/MC2/VBox"]
+layout_mode = 2
+text = "Buy Max"
+
+[node name="BarItemMC3" type="MarginContainer" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page2Scroll/VBox"]
+layout_mode = 2
+theme_override_constants/margin_left = 0
+theme_override_constants/margin_top = 7
+theme_override_constants/margin_bottom = 7
+
+[node name="HBox" type="HBoxContainer" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page2Scroll/VBox/BarItemMC3"]
+custom_minimum_size = Vector2(0, 110)
+layout_mode = 2
+
+[node name="BarVBox" type="VBoxContainer" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page2Scroll/VBox/BarItemMC3/HBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="BarLabels" type="HBoxContainer" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page2Scroll/VBox/BarItemMC3/HBox/BarVBox"]
+custom_minimum_size = Vector2(0, 45)
+layout_mode = 2
+theme_override_constants/separation = 6
+
+[node name="MC" type="MarginContainer" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page2Scroll/VBox/BarItemMC3/HBox/BarVBox/BarLabels"]
+layout_mode = 2
+theme_override_constants/margin_top = -2
+
+[node name="TitleLabel" type="Label" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page2Scroll/VBox/BarItemMC3/HBox/BarVBox/BarLabels/MC"]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 30
+text = "Oak"
+
+[node name="MC2" type="MarginContainer" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page2Scroll/VBox/BarItemMC3/HBox/BarVBox/BarLabels"]
+layout_mode = 2
+
+[node name="LVLLabel" type="Label" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page2Scroll/VBox/BarItemMC3/HBox/BarVBox/BarLabels/MC2"]
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_font_sizes/font_size = 17
+text = "LVL 10"
+
+[node name="MC3" type="MarginContainer" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page2Scroll/VBox/BarItemMC3/HBox/BarVBox/BarLabels"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="InventoryLabel" type="Label" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page2Scroll/VBox/BarItemMC3/HBox/BarVBox/BarLabels/MC3"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+theme_override_font_sizes/font_size = 17
+text = "1,000,000 / 9,999,999"
+
+[node name="BarRect" type="ColorRect" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page2Scroll/VBox/BarItemMC3/HBox/BarVBox"]
+layout_mode = 2
+size_flags_vertical = 3
+color = Color(0.768627, 0.541176, 0.254902, 1)
+
+[node name="HBox" type="HBoxContainer" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page2Scroll/VBox/BarItemMC3/HBox/BarVBox/BarRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MC" type="MarginContainer" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page2Scroll/VBox/BarItemMC3/HBox/BarVBox/BarRect/HBox"]
+layout_mode = 2
+theme_override_constants/margin_left = 6
+theme_override_constants/margin_bottom = 8
+
+[node name="VBox" type="VBoxContainer" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page2Scroll/VBox/BarItemMC3/HBox/BarVBox/BarRect/HBox/MC"]
+layout_mode = 2
+theme_override_constants/separation = 2
+alignment = 2
+
+[node name="PerClickLabel" type="Label" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page2Scroll/VBox/BarItemMC3/HBox/BarVBox/BarRect/HBox/MC/VBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 13
+text = "103e14 Oak per click"
+
+[node name="PerSecondLabel" type="Label" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page2Scroll/VBox/BarItemMC3/HBox/BarVBox/BarRect/HBox/MC/VBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 13
+text = "144e15 Oak per second"
+
+[node name="MC2" type="MarginContainer" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page2Scroll/VBox/BarItemMC3/HBox/BarVBox/BarRect/HBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_right = 12
+
+[node name="ClickLabel" type="Label" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page2Scroll/VBox/BarItemMC3/HBox/BarVBox/BarRect/HBox/MC2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 28
+text = "Click"
+horizontal_alignment = 2
+
+[node name="WoodCampMC" type="MarginContainer" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page2Scroll/VBox/BarItemMC3/HBox"]
+custom_minimum_size = Vector2(210, 0)
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_right = 10
+
+[node name="ColorRect" type="ColorRect" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page2Scroll/VBox/BarItemMC3/HBox/WoodCampMC"]
+layout_mode = 2
+color = Color(0.172549, 0.443137, 0.317647, 1)
+
+[node name="WoodCampHBox" type="HBoxContainer" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page2Scroll/VBox/BarItemMC3/HBox/WoodCampMC"]
+layout_mode = 2
+
+[node name="MC" type="MarginContainer" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page2Scroll/VBox/BarItemMC3/HBox/WoodCampMC/WoodCampHBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 37
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 37
+
+[node name="ColorRect" type="ColorRect" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page2Scroll/VBox/BarItemMC3/HBox/WoodCampMC/WoodCampHBox/MC"]
+layout_mode = 2
+color = Color(0.333333, 0.490196, 0.568627, 1)
+
+[node name="InventoryCountLabel" type="Label" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page2Scroll/VBox/BarItemMC3/HBox/WoodCampMC/WoodCampHBox/MC/ColorRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "10"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MC2" type="MarginContainer" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page2Scroll/VBox/BarItemMC3/HBox/WoodCampMC/WoodCampHBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_right = 10
+
+[node name="VBox" type="VBoxContainer" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page2Scroll/VBox/BarItemMC3/HBox/WoodCampMC/WoodCampHBox/MC2"]
+layout_mode = 2
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="BuyButton" type="Button" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page2Scroll/VBox/BarItemMC3/HBox/WoodCampMC/WoodCampHBox/MC2/VBox"]
+layout_mode = 2
+text = "Buy"
+
+[node name="BuyMaxButton" type="Button" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page2Scroll/VBox/BarItemMC3/HBox/WoodCampMC/WoodCampHBox/MC2/VBox"]
+layout_mode = 2
+text = "Buy Max"
+
+[node name="LevelMC" type="MarginContainer" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page2Scroll/VBox/BarItemMC3/HBox"]
+custom_minimum_size = Vector2(210, 0)
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_right = 10
+
+[node name="ColorRect" type="ColorRect" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page2Scroll/VBox/BarItemMC3/HBox/LevelMC"]
+layout_mode = 2
+color = Color(0.396078, 0.576471, 0.643137, 1)
+
+[node name="LevelHBox" type="HBoxContainer" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page2Scroll/VBox/BarItemMC3/HBox/LevelMC"]
+layout_mode = 2
+
+[node name="MC" type="MarginContainer" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page2Scroll/VBox/BarItemMC3/HBox/LevelMC/LevelHBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 37
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 37
+
+[node name="ColorRect" type="ColorRect" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page2Scroll/VBox/BarItemMC3/HBox/LevelMC/LevelHBox/MC"]
+layout_mode = 2
+color = Color(0.333333, 0.490196, 0.568627, 1)
+
+[node name="InventoryCountLabel" type="Label" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page2Scroll/VBox/BarItemMC3/HBox/LevelMC/LevelHBox/MC/ColorRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "10"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MC2" type="MarginContainer" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page2Scroll/VBox/BarItemMC3/HBox/LevelMC/LevelHBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_right = 10
+
+[node name="VBox" type="VBoxContainer" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page2Scroll/VBox/BarItemMC3/HBox/LevelMC/LevelHBox/MC2"]
+layout_mode = 2
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="BuyButton" type="Button" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page2Scroll/VBox/BarItemMC3/HBox/LevelMC/LevelHBox/MC2/VBox"]
+layout_mode = 2
+text = "Buy"
+
+[node name="BuyMaxButton" type="Button" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page2Scroll/VBox/BarItemMC3/HBox/LevelMC/LevelHBox/MC2/VBox"]
+layout_mode = 2
+text = "Buy Max"
+
+[node name="BarItemMC4" type="MarginContainer" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page2Scroll/VBox"]
+layout_mode = 2
+theme_override_constants/margin_left = 0
+theme_override_constants/margin_top = 7
+theme_override_constants/margin_bottom = 7
+
+[node name="HBox" type="HBoxContainer" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page2Scroll/VBox/BarItemMC4"]
+custom_minimum_size = Vector2(0, 110)
+layout_mode = 2
+
+[node name="BarVBox" type="VBoxContainer" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page2Scroll/VBox/BarItemMC4/HBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="BarLabels" type="HBoxContainer" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page2Scroll/VBox/BarItemMC4/HBox/BarVBox"]
+custom_minimum_size = Vector2(0, 45)
+layout_mode = 2
+theme_override_constants/separation = 6
+
+[node name="MC" type="MarginContainer" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page2Scroll/VBox/BarItemMC4/HBox/BarVBox/BarLabels"]
+layout_mode = 2
+theme_override_constants/margin_top = -2
+
+[node name="TitleLabel" type="Label" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page2Scroll/VBox/BarItemMC4/HBox/BarVBox/BarLabels/MC"]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 30
+text = "Oak"
+
+[node name="MC2" type="MarginContainer" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page2Scroll/VBox/BarItemMC4/HBox/BarVBox/BarLabels"]
+layout_mode = 2
+
+[node name="LVLLabel" type="Label" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page2Scroll/VBox/BarItemMC4/HBox/BarVBox/BarLabels/MC2"]
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_font_sizes/font_size = 17
+text = "LVL 10"
+
+[node name="MC3" type="MarginContainer" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page2Scroll/VBox/BarItemMC4/HBox/BarVBox/BarLabels"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="InventoryLabel" type="Label" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page2Scroll/VBox/BarItemMC4/HBox/BarVBox/BarLabels/MC3"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+theme_override_font_sizes/font_size = 17
+text = "1,000,000 / 9,999,999"
+
+[node name="BarRect" type="ColorRect" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page2Scroll/VBox/BarItemMC4/HBox/BarVBox"]
+layout_mode = 2
+size_flags_vertical = 3
+color = Color(0.768627, 0.541176, 0.254902, 1)
+
+[node name="HBox" type="HBoxContainer" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page2Scroll/VBox/BarItemMC4/HBox/BarVBox/BarRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MC" type="MarginContainer" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page2Scroll/VBox/BarItemMC4/HBox/BarVBox/BarRect/HBox"]
+layout_mode = 2
+theme_override_constants/margin_left = 6
+theme_override_constants/margin_bottom = 8
+
+[node name="VBox" type="VBoxContainer" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page2Scroll/VBox/BarItemMC4/HBox/BarVBox/BarRect/HBox/MC"]
+layout_mode = 2
+theme_override_constants/separation = 2
+alignment = 2
+
+[node name="PerClickLabel" type="Label" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page2Scroll/VBox/BarItemMC4/HBox/BarVBox/BarRect/HBox/MC/VBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 13
+text = "103e14 Oak per click"
+
+[node name="PerSecondLabel" type="Label" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page2Scroll/VBox/BarItemMC4/HBox/BarVBox/BarRect/HBox/MC/VBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 13
+text = "144e15 Oak per second"
+
+[node name="MC2" type="MarginContainer" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page2Scroll/VBox/BarItemMC4/HBox/BarVBox/BarRect/HBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_right = 12
+
+[node name="ClickLabel" type="Label" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page2Scroll/VBox/BarItemMC4/HBox/BarVBox/BarRect/HBox/MC2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 28
+text = "Click"
+horizontal_alignment = 2
+
+[node name="WoodCampMC" type="MarginContainer" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page2Scroll/VBox/BarItemMC4/HBox"]
+custom_minimum_size = Vector2(210, 0)
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_right = 10
+
+[node name="ColorRect" type="ColorRect" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page2Scroll/VBox/BarItemMC4/HBox/WoodCampMC"]
+layout_mode = 2
+color = Color(0.172549, 0.443137, 0.317647, 1)
+
+[node name="WoodCampHBox" type="HBoxContainer" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page2Scroll/VBox/BarItemMC4/HBox/WoodCampMC"]
+layout_mode = 2
+
+[node name="MC" type="MarginContainer" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page2Scroll/VBox/BarItemMC4/HBox/WoodCampMC/WoodCampHBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 37
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 37
+
+[node name="ColorRect" type="ColorRect" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page2Scroll/VBox/BarItemMC4/HBox/WoodCampMC/WoodCampHBox/MC"]
+layout_mode = 2
+color = Color(0.333333, 0.490196, 0.568627, 1)
+
+[node name="InventoryCountLabel" type="Label" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page2Scroll/VBox/BarItemMC4/HBox/WoodCampMC/WoodCampHBox/MC/ColorRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "10"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MC2" type="MarginContainer" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page2Scroll/VBox/BarItemMC4/HBox/WoodCampMC/WoodCampHBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_right = 10
+
+[node name="VBox" type="VBoxContainer" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page2Scroll/VBox/BarItemMC4/HBox/WoodCampMC/WoodCampHBox/MC2"]
+layout_mode = 2
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="BuyButton" type="Button" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page2Scroll/VBox/BarItemMC4/HBox/WoodCampMC/WoodCampHBox/MC2/VBox"]
+layout_mode = 2
+text = "Buy"
+
+[node name="BuyMaxButton" type="Button" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page2Scroll/VBox/BarItemMC4/HBox/WoodCampMC/WoodCampHBox/MC2/VBox"]
+layout_mode = 2
+text = "Buy Max"
+
+[node name="LevelMC" type="MarginContainer" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page2Scroll/VBox/BarItemMC4/HBox"]
+custom_minimum_size = Vector2(210, 0)
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_right = 10
+
+[node name="ColorRect" type="ColorRect" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page2Scroll/VBox/BarItemMC4/HBox/LevelMC"]
+layout_mode = 2
+color = Color(0.396078, 0.576471, 0.643137, 1)
+
+[node name="LevelHBox" type="HBoxContainer" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page2Scroll/VBox/BarItemMC4/HBox/LevelMC"]
+layout_mode = 2
+
+[node name="MC" type="MarginContainer" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page2Scroll/VBox/BarItemMC4/HBox/LevelMC/LevelHBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 37
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 37
+
+[node name="ColorRect" type="ColorRect" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page2Scroll/VBox/BarItemMC4/HBox/LevelMC/LevelHBox/MC"]
+layout_mode = 2
+color = Color(0.333333, 0.490196, 0.568627, 1)
+
+[node name="InventoryCountLabel" type="Label" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page2Scroll/VBox/BarItemMC4/HBox/LevelMC/LevelHBox/MC/ColorRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "10"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MC2" type="MarginContainer" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page2Scroll/VBox/BarItemMC4/HBox/LevelMC/LevelHBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_right = 10
+
+[node name="VBox" type="VBoxContainer" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page2Scroll/VBox/BarItemMC4/HBox/LevelMC/LevelHBox/MC2"]
+layout_mode = 2
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="BuyButton" type="Button" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page2Scroll/VBox/BarItemMC4/HBox/LevelMC/LevelHBox/MC2/VBox"]
+layout_mode = 2
+text = "Buy"
+
+[node name="BuyMaxButton" type="Button" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page2Scroll/VBox/BarItemMC4/HBox/LevelMC/LevelHBox/MC2/VBox"]
+layout_mode = 2
+text = "Buy Max"
+
+[node name="Page3Scroll" type="ScrollContainer" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC"]
+visible = false
+layout_mode = 2
+
+[node name="VBox" type="VBoxContainer" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page3Scroll"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="BarItemMC" type="MarginContainer" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page3Scroll/VBox"]
+layout_mode = 2
+theme_override_constants/margin_left = 0
+theme_override_constants/margin_top = 7
+theme_override_constants/margin_bottom = 7
+
+[node name="HBox" type="HBoxContainer" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page3Scroll/VBox/BarItemMC"]
+custom_minimum_size = Vector2(0, 110)
+layout_mode = 2
+
+[node name="BarVBox" type="VBoxContainer" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page3Scroll/VBox/BarItemMC/HBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="BarLabels" type="HBoxContainer" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page3Scroll/VBox/BarItemMC/HBox/BarVBox"]
+custom_minimum_size = Vector2(0, 45)
+layout_mode = 2
+theme_override_constants/separation = 6
+
+[node name="MC" type="MarginContainer" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page3Scroll/VBox/BarItemMC/HBox/BarVBox/BarLabels"]
+layout_mode = 2
+theme_override_constants/margin_top = -2
+
+[node name="TitleLabel" type="Label" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page3Scroll/VBox/BarItemMC/HBox/BarVBox/BarLabels/MC"]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 30
+text = "Oak"
+
+[node name="MC2" type="MarginContainer" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page3Scroll/VBox/BarItemMC/HBox/BarVBox/BarLabels"]
+layout_mode = 2
+
+[node name="LVLLabel" type="Label" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page3Scroll/VBox/BarItemMC/HBox/BarVBox/BarLabels/MC2"]
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_font_sizes/font_size = 17
+text = "LVL 10"
+
+[node name="MC3" type="MarginContainer" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page3Scroll/VBox/BarItemMC/HBox/BarVBox/BarLabels"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="InventoryLabel" type="Label" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page3Scroll/VBox/BarItemMC/HBox/BarVBox/BarLabels/MC3"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+theme_override_font_sizes/font_size = 17
+text = "1,000,000 / 9,999,999"
+
+[node name="BarRect" type="ColorRect" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page3Scroll/VBox/BarItemMC/HBox/BarVBox"]
+layout_mode = 2
+size_flags_vertical = 3
+color = Color(0.768627, 0.541176, 0.254902, 1)
+
+[node name="HBox" type="HBoxContainer" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page3Scroll/VBox/BarItemMC/HBox/BarVBox/BarRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MC" type="MarginContainer" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page3Scroll/VBox/BarItemMC/HBox/BarVBox/BarRect/HBox"]
+layout_mode = 2
+theme_override_constants/margin_left = 6
+theme_override_constants/margin_bottom = 8
+
+[node name="VBox" type="VBoxContainer" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page3Scroll/VBox/BarItemMC/HBox/BarVBox/BarRect/HBox/MC"]
+layout_mode = 2
+theme_override_constants/separation = 2
+alignment = 2
+
+[node name="PerClickLabel" type="Label" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page3Scroll/VBox/BarItemMC/HBox/BarVBox/BarRect/HBox/MC/VBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 13
+text = "103e14 Oak per click"
+
+[node name="PerSecondLabel" type="Label" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page3Scroll/VBox/BarItemMC/HBox/BarVBox/BarRect/HBox/MC/VBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 13
+text = "144e15 Oak per second"
+
+[node name="MC2" type="MarginContainer" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page3Scroll/VBox/BarItemMC/HBox/BarVBox/BarRect/HBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_right = 12
+
+[node name="ClickLabel" type="Label" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page3Scroll/VBox/BarItemMC/HBox/BarVBox/BarRect/HBox/MC2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 28
+text = "Click"
+horizontal_alignment = 2
+
+[node name="WoodCampMC" type="MarginContainer" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page3Scroll/VBox/BarItemMC/HBox"]
+custom_minimum_size = Vector2(210, 0)
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_right = 10
+
+[node name="ColorRect" type="ColorRect" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page3Scroll/VBox/BarItemMC/HBox/WoodCampMC"]
+layout_mode = 2
+color = Color(0.172549, 0.443137, 0.317647, 1)
+
+[node name="WoodCampHBox" type="HBoxContainer" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page3Scroll/VBox/BarItemMC/HBox/WoodCampMC"]
+layout_mode = 2
+
+[node name="MC" type="MarginContainer" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page3Scroll/VBox/BarItemMC/HBox/WoodCampMC/WoodCampHBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 37
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 37
+
+[node name="ColorRect" type="ColorRect" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page3Scroll/VBox/BarItemMC/HBox/WoodCampMC/WoodCampHBox/MC"]
+layout_mode = 2
+color = Color(0.333333, 0.490196, 0.568627, 1)
+
+[node name="InventoryCountLabel" type="Label" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page3Scroll/VBox/BarItemMC/HBox/WoodCampMC/WoodCampHBox/MC/ColorRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "10"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MC2" type="MarginContainer" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page3Scroll/VBox/BarItemMC/HBox/WoodCampMC/WoodCampHBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_right = 10
+
+[node name="VBox" type="VBoxContainer" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page3Scroll/VBox/BarItemMC/HBox/WoodCampMC/WoodCampHBox/MC2"]
+layout_mode = 2
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="BuyButton" type="Button" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page3Scroll/VBox/BarItemMC/HBox/WoodCampMC/WoodCampHBox/MC2/VBox"]
+layout_mode = 2
+text = "Buy"
+
+[node name="BuyMaxButton" type="Button" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page3Scroll/VBox/BarItemMC/HBox/WoodCampMC/WoodCampHBox/MC2/VBox"]
+layout_mode = 2
+text = "Buy Max"
+
+[node name="LevelMC" type="MarginContainer" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page3Scroll/VBox/BarItemMC/HBox"]
+custom_minimum_size = Vector2(210, 0)
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_right = 10
+
+[node name="ColorRect" type="ColorRect" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page3Scroll/VBox/BarItemMC/HBox/LevelMC"]
+layout_mode = 2
+color = Color(0.396078, 0.576471, 0.643137, 1)
+
+[node name="LevelHBox" type="HBoxContainer" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page3Scroll/VBox/BarItemMC/HBox/LevelMC"]
+layout_mode = 2
+
+[node name="MC" type="MarginContainer" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page3Scroll/VBox/BarItemMC/HBox/LevelMC/LevelHBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 37
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 37
+
+[node name="ColorRect" type="ColorRect" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page3Scroll/VBox/BarItemMC/HBox/LevelMC/LevelHBox/MC"]
+layout_mode = 2
+color = Color(0.333333, 0.490196, 0.568627, 1)
+
+[node name="InventoryCountLabel" type="Label" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page3Scroll/VBox/BarItemMC/HBox/LevelMC/LevelHBox/MC/ColorRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "10"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MC2" type="MarginContainer" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page3Scroll/VBox/BarItemMC/HBox/LevelMC/LevelHBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_right = 10
+
+[node name="VBox" type="VBoxContainer" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page3Scroll/VBox/BarItemMC/HBox/LevelMC/LevelHBox/MC2"]
+layout_mode = 2
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="BuyButton" type="Button" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page3Scroll/VBox/BarItemMC/HBox/LevelMC/LevelHBox/MC2/VBox"]
+layout_mode = 2
+text = "Buy"
+
+[node name="BuyMaxButton" type="Button" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page3Scroll/VBox/BarItemMC/HBox/LevelMC/LevelHBox/MC2/VBox"]
+layout_mode = 2
+text = "Buy Max"
+
+[node name="BarItemMC2" type="MarginContainer" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page3Scroll/VBox"]
+layout_mode = 2
+theme_override_constants/margin_left = 0
+theme_override_constants/margin_top = 7
+theme_override_constants/margin_bottom = 7
+
+[node name="HBox" type="HBoxContainer" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page3Scroll/VBox/BarItemMC2"]
+custom_minimum_size = Vector2(0, 110)
+layout_mode = 2
+
+[node name="BarVBox" type="VBoxContainer" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page3Scroll/VBox/BarItemMC2/HBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="BarLabels" type="HBoxContainer" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page3Scroll/VBox/BarItemMC2/HBox/BarVBox"]
+custom_minimum_size = Vector2(0, 45)
+layout_mode = 2
+theme_override_constants/separation = 6
+
+[node name="MC" type="MarginContainer" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page3Scroll/VBox/BarItemMC2/HBox/BarVBox/BarLabels"]
+layout_mode = 2
+theme_override_constants/margin_top = -2
+
+[node name="TitleLabel" type="Label" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page3Scroll/VBox/BarItemMC2/HBox/BarVBox/BarLabels/MC"]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 30
+text = "Oak"
+
+[node name="MC2" type="MarginContainer" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page3Scroll/VBox/BarItemMC2/HBox/BarVBox/BarLabels"]
+layout_mode = 2
+
+[node name="LVLLabel" type="Label" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page3Scroll/VBox/BarItemMC2/HBox/BarVBox/BarLabels/MC2"]
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_font_sizes/font_size = 17
+text = "LVL 10"
+
+[node name="MC3" type="MarginContainer" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page3Scroll/VBox/BarItemMC2/HBox/BarVBox/BarLabels"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="InventoryLabel" type="Label" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page3Scroll/VBox/BarItemMC2/HBox/BarVBox/BarLabels/MC3"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+theme_override_font_sizes/font_size = 17
+text = "1,000,000 / 9,999,999"
+
+[node name="BarRect" type="ColorRect" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page3Scroll/VBox/BarItemMC2/HBox/BarVBox"]
+layout_mode = 2
+size_flags_vertical = 3
+color = Color(0.768627, 0.541176, 0.254902, 1)
+
+[node name="HBox" type="HBoxContainer" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page3Scroll/VBox/BarItemMC2/HBox/BarVBox/BarRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MC" type="MarginContainer" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page3Scroll/VBox/BarItemMC2/HBox/BarVBox/BarRect/HBox"]
+layout_mode = 2
+theme_override_constants/margin_left = 6
+theme_override_constants/margin_bottom = 8
+
+[node name="VBox" type="VBoxContainer" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page3Scroll/VBox/BarItemMC2/HBox/BarVBox/BarRect/HBox/MC"]
+layout_mode = 2
+theme_override_constants/separation = 2
+alignment = 2
+
+[node name="PerClickLabel" type="Label" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page3Scroll/VBox/BarItemMC2/HBox/BarVBox/BarRect/HBox/MC/VBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 13
+text = "103e14 Oak per click"
+
+[node name="PerSecondLabel" type="Label" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page3Scroll/VBox/BarItemMC2/HBox/BarVBox/BarRect/HBox/MC/VBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 13
+text = "144e15 Oak per second"
+
+[node name="MC2" type="MarginContainer" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page3Scroll/VBox/BarItemMC2/HBox/BarVBox/BarRect/HBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_right = 12
+
+[node name="ClickLabel" type="Label" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page3Scroll/VBox/BarItemMC2/HBox/BarVBox/BarRect/HBox/MC2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 28
+text = "Click"
+horizontal_alignment = 2
+
+[node name="WoodCampMC" type="MarginContainer" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page3Scroll/VBox/BarItemMC2/HBox"]
+custom_minimum_size = Vector2(210, 0)
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_right = 10
+
+[node name="ColorRect" type="ColorRect" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page3Scroll/VBox/BarItemMC2/HBox/WoodCampMC"]
+layout_mode = 2
+color = Color(0.172549, 0.443137, 0.317647, 1)
+
+[node name="WoodCampHBox" type="HBoxContainer" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page3Scroll/VBox/BarItemMC2/HBox/WoodCampMC"]
+layout_mode = 2
+
+[node name="MC" type="MarginContainer" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page3Scroll/VBox/BarItemMC2/HBox/WoodCampMC/WoodCampHBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 37
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 37
+
+[node name="ColorRect" type="ColorRect" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page3Scroll/VBox/BarItemMC2/HBox/WoodCampMC/WoodCampHBox/MC"]
+layout_mode = 2
+color = Color(0.333333, 0.490196, 0.568627, 1)
+
+[node name="InventoryCountLabel" type="Label" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page3Scroll/VBox/BarItemMC2/HBox/WoodCampMC/WoodCampHBox/MC/ColorRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "10"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MC2" type="MarginContainer" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page3Scroll/VBox/BarItemMC2/HBox/WoodCampMC/WoodCampHBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_right = 10
+
+[node name="VBox" type="VBoxContainer" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page3Scroll/VBox/BarItemMC2/HBox/WoodCampMC/WoodCampHBox/MC2"]
+layout_mode = 2
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="BuyButton" type="Button" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page3Scroll/VBox/BarItemMC2/HBox/WoodCampMC/WoodCampHBox/MC2/VBox"]
+layout_mode = 2
+text = "Buy"
+
+[node name="BuyMaxButton" type="Button" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page3Scroll/VBox/BarItemMC2/HBox/WoodCampMC/WoodCampHBox/MC2/VBox"]
+layout_mode = 2
+text = "Buy Max"
+
+[node name="LevelMC" type="MarginContainer" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page3Scroll/VBox/BarItemMC2/HBox"]
+custom_minimum_size = Vector2(210, 0)
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_right = 10
+
+[node name="ColorRect" type="ColorRect" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page3Scroll/VBox/BarItemMC2/HBox/LevelMC"]
+layout_mode = 2
+color = Color(0.396078, 0.576471, 0.643137, 1)
+
+[node name="LevelHBox" type="HBoxContainer" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page3Scroll/VBox/BarItemMC2/HBox/LevelMC"]
+layout_mode = 2
+
+[node name="MC" type="MarginContainer" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page3Scroll/VBox/BarItemMC2/HBox/LevelMC/LevelHBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 37
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 37
+
+[node name="ColorRect" type="ColorRect" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page3Scroll/VBox/BarItemMC2/HBox/LevelMC/LevelHBox/MC"]
+layout_mode = 2
+color = Color(0.333333, 0.490196, 0.568627, 1)
+
+[node name="InventoryCountLabel" type="Label" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page3Scroll/VBox/BarItemMC2/HBox/LevelMC/LevelHBox/MC/ColorRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "10"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MC2" type="MarginContainer" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page3Scroll/VBox/BarItemMC2/HBox/LevelMC/LevelHBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_right = 10
+
+[node name="VBox" type="VBoxContainer" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page3Scroll/VBox/BarItemMC2/HBox/LevelMC/LevelHBox/MC2"]
+layout_mode = 2
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="BuyButton" type="Button" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page3Scroll/VBox/BarItemMC2/HBox/LevelMC/LevelHBox/MC2/VBox"]
+layout_mode = 2
+text = "Buy"
+
+[node name="BuyMaxButton" type="Button" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page3Scroll/VBox/BarItemMC2/HBox/LevelMC/LevelHBox/MC2/VBox"]
+layout_mode = 2
+text = "Buy Max"
+
+[node name="BarItemMC3" type="MarginContainer" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page3Scroll/VBox"]
+layout_mode = 2
+theme_override_constants/margin_left = 0
+theme_override_constants/margin_top = 7
+theme_override_constants/margin_bottom = 7
+
+[node name="HBox" type="HBoxContainer" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page3Scroll/VBox/BarItemMC3"]
+custom_minimum_size = Vector2(0, 110)
+layout_mode = 2
+
+[node name="BarVBox" type="VBoxContainer" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page3Scroll/VBox/BarItemMC3/HBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="BarLabels" type="HBoxContainer" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page3Scroll/VBox/BarItemMC3/HBox/BarVBox"]
+custom_minimum_size = Vector2(0, 45)
+layout_mode = 2
+theme_override_constants/separation = 6
+
+[node name="MC" type="MarginContainer" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page3Scroll/VBox/BarItemMC3/HBox/BarVBox/BarLabels"]
+layout_mode = 2
+theme_override_constants/margin_top = -2
+
+[node name="TitleLabel" type="Label" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page3Scroll/VBox/BarItemMC3/HBox/BarVBox/BarLabels/MC"]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 30
+text = "Oak"
+
+[node name="MC2" type="MarginContainer" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page3Scroll/VBox/BarItemMC3/HBox/BarVBox/BarLabels"]
+layout_mode = 2
+
+[node name="LVLLabel" type="Label" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page3Scroll/VBox/BarItemMC3/HBox/BarVBox/BarLabels/MC2"]
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_font_sizes/font_size = 17
+text = "LVL 10"
+
+[node name="MC3" type="MarginContainer" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page3Scroll/VBox/BarItemMC3/HBox/BarVBox/BarLabels"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="InventoryLabel" type="Label" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page3Scroll/VBox/BarItemMC3/HBox/BarVBox/BarLabels/MC3"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+theme_override_font_sizes/font_size = 17
+text = "1,000,000 / 9,999,999"
+
+[node name="BarRect" type="ColorRect" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page3Scroll/VBox/BarItemMC3/HBox/BarVBox"]
+layout_mode = 2
+size_flags_vertical = 3
+color = Color(0.768627, 0.541176, 0.254902, 1)
+
+[node name="HBox" type="HBoxContainer" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page3Scroll/VBox/BarItemMC3/HBox/BarVBox/BarRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MC" type="MarginContainer" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page3Scroll/VBox/BarItemMC3/HBox/BarVBox/BarRect/HBox"]
+layout_mode = 2
+theme_override_constants/margin_left = 6
+theme_override_constants/margin_bottom = 8
+
+[node name="VBox" type="VBoxContainer" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page3Scroll/VBox/BarItemMC3/HBox/BarVBox/BarRect/HBox/MC"]
+layout_mode = 2
+theme_override_constants/separation = 2
+alignment = 2
+
+[node name="PerClickLabel" type="Label" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page3Scroll/VBox/BarItemMC3/HBox/BarVBox/BarRect/HBox/MC/VBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 13
+text = "103e14 Oak per click"
+
+[node name="PerSecondLabel" type="Label" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page3Scroll/VBox/BarItemMC3/HBox/BarVBox/BarRect/HBox/MC/VBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 13
+text = "144e15 Oak per second"
+
+[node name="MC2" type="MarginContainer" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page3Scroll/VBox/BarItemMC3/HBox/BarVBox/BarRect/HBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_right = 12
+
+[node name="ClickLabel" type="Label" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page3Scroll/VBox/BarItemMC3/HBox/BarVBox/BarRect/HBox/MC2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 28
+text = "Click"
+horizontal_alignment = 2
+
+[node name="WoodCampMC" type="MarginContainer" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page3Scroll/VBox/BarItemMC3/HBox"]
+custom_minimum_size = Vector2(210, 0)
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_right = 10
+
+[node name="ColorRect" type="ColorRect" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page3Scroll/VBox/BarItemMC3/HBox/WoodCampMC"]
+layout_mode = 2
+color = Color(0.172549, 0.443137, 0.317647, 1)
+
+[node name="WoodCampHBox" type="HBoxContainer" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page3Scroll/VBox/BarItemMC3/HBox/WoodCampMC"]
+layout_mode = 2
+
+[node name="MC" type="MarginContainer" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page3Scroll/VBox/BarItemMC3/HBox/WoodCampMC/WoodCampHBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 37
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 37
+
+[node name="ColorRect" type="ColorRect" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page3Scroll/VBox/BarItemMC3/HBox/WoodCampMC/WoodCampHBox/MC"]
+layout_mode = 2
+color = Color(0.333333, 0.490196, 0.568627, 1)
+
+[node name="InventoryCountLabel" type="Label" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page3Scroll/VBox/BarItemMC3/HBox/WoodCampMC/WoodCampHBox/MC/ColorRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "10"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MC2" type="MarginContainer" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page3Scroll/VBox/BarItemMC3/HBox/WoodCampMC/WoodCampHBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_right = 10
+
+[node name="VBox" type="VBoxContainer" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page3Scroll/VBox/BarItemMC3/HBox/WoodCampMC/WoodCampHBox/MC2"]
+layout_mode = 2
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="BuyButton" type="Button" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page3Scroll/VBox/BarItemMC3/HBox/WoodCampMC/WoodCampHBox/MC2/VBox"]
+layout_mode = 2
+text = "Buy"
+
+[node name="BuyMaxButton" type="Button" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page3Scroll/VBox/BarItemMC3/HBox/WoodCampMC/WoodCampHBox/MC2/VBox"]
+layout_mode = 2
+text = "Buy Max"
+
+[node name="LevelMC" type="MarginContainer" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page3Scroll/VBox/BarItemMC3/HBox"]
+custom_minimum_size = Vector2(210, 0)
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_right = 10
+
+[node name="ColorRect" type="ColorRect" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page3Scroll/VBox/BarItemMC3/HBox/LevelMC"]
+layout_mode = 2
+color = Color(0.396078, 0.576471, 0.643137, 1)
+
+[node name="LevelHBox" type="HBoxContainer" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page3Scroll/VBox/BarItemMC3/HBox/LevelMC"]
+layout_mode = 2
+
+[node name="MC" type="MarginContainer" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page3Scroll/VBox/BarItemMC3/HBox/LevelMC/LevelHBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 37
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 37
+
+[node name="ColorRect" type="ColorRect" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page3Scroll/VBox/BarItemMC3/HBox/LevelMC/LevelHBox/MC"]
+layout_mode = 2
+color = Color(0.333333, 0.490196, 0.568627, 1)
+
+[node name="InventoryCountLabel" type="Label" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page3Scroll/VBox/BarItemMC3/HBox/LevelMC/LevelHBox/MC/ColorRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "10"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MC2" type="MarginContainer" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page3Scroll/VBox/BarItemMC3/HBox/LevelMC/LevelHBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_right = 10
+
+[node name="VBox" type="VBoxContainer" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page3Scroll/VBox/BarItemMC3/HBox/LevelMC/LevelHBox/MC2"]
+layout_mode = 2
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="BuyButton" type="Button" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page3Scroll/VBox/BarItemMC3/HBox/LevelMC/LevelHBox/MC2/VBox"]
+layout_mode = 2
+text = "Buy"
+
+[node name="BuyMaxButton" type="Button" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page3Scroll/VBox/BarItemMC3/HBox/LevelMC/LevelHBox/MC2/VBox"]
+layout_mode = 2
+text = "Buy Max"
+
+[node name="BarItemMC4" type="MarginContainer" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page3Scroll/VBox"]
+layout_mode = 2
+theme_override_constants/margin_left = 0
+theme_override_constants/margin_top = 7
+theme_override_constants/margin_bottom = 7
+
+[node name="HBox" type="HBoxContainer" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page3Scroll/VBox/BarItemMC4"]
+custom_minimum_size = Vector2(0, 110)
+layout_mode = 2
+
+[node name="BarVBox" type="VBoxContainer" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page3Scroll/VBox/BarItemMC4/HBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="BarLabels" type="HBoxContainer" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page3Scroll/VBox/BarItemMC4/HBox/BarVBox"]
+custom_minimum_size = Vector2(0, 45)
+layout_mode = 2
+theme_override_constants/separation = 6
+
+[node name="MC" type="MarginContainer" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page3Scroll/VBox/BarItemMC4/HBox/BarVBox/BarLabels"]
+layout_mode = 2
+theme_override_constants/margin_top = -2
+
+[node name="TitleLabel" type="Label" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page3Scroll/VBox/BarItemMC4/HBox/BarVBox/BarLabels/MC"]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 30
+text = "Oak"
+
+[node name="MC2" type="MarginContainer" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page3Scroll/VBox/BarItemMC4/HBox/BarVBox/BarLabels"]
+layout_mode = 2
+
+[node name="LVLLabel" type="Label" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page3Scroll/VBox/BarItemMC4/HBox/BarVBox/BarLabels/MC2"]
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_font_sizes/font_size = 17
+text = "LVL 10"
+
+[node name="MC3" type="MarginContainer" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page3Scroll/VBox/BarItemMC4/HBox/BarVBox/BarLabels"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="InventoryLabel" type="Label" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page3Scroll/VBox/BarItemMC4/HBox/BarVBox/BarLabels/MC3"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+theme_override_font_sizes/font_size = 17
+text = "1,000,000 / 9,999,999"
+
+[node name="BarRect" type="ColorRect" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page3Scroll/VBox/BarItemMC4/HBox/BarVBox"]
+layout_mode = 2
+size_flags_vertical = 3
+color = Color(0.768627, 0.541176, 0.254902, 1)
+
+[node name="HBox" type="HBoxContainer" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page3Scroll/VBox/BarItemMC4/HBox/BarVBox/BarRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MC" type="MarginContainer" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page3Scroll/VBox/BarItemMC4/HBox/BarVBox/BarRect/HBox"]
+layout_mode = 2
+theme_override_constants/margin_left = 6
+theme_override_constants/margin_bottom = 8
+
+[node name="VBox" type="VBoxContainer" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page3Scroll/VBox/BarItemMC4/HBox/BarVBox/BarRect/HBox/MC"]
+layout_mode = 2
+theme_override_constants/separation = 2
+alignment = 2
+
+[node name="PerClickLabel" type="Label" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page3Scroll/VBox/BarItemMC4/HBox/BarVBox/BarRect/HBox/MC/VBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 13
+text = "103e14 Oak per click"
+
+[node name="PerSecondLabel" type="Label" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page3Scroll/VBox/BarItemMC4/HBox/BarVBox/BarRect/HBox/MC/VBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 13
+text = "144e15 Oak per second"
+
+[node name="MC2" type="MarginContainer" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page3Scroll/VBox/BarItemMC4/HBox/BarVBox/BarRect/HBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_right = 12
+
+[node name="ClickLabel" type="Label" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page3Scroll/VBox/BarItemMC4/HBox/BarVBox/BarRect/HBox/MC2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 28
+text = "Click"
+horizontal_alignment = 2
+
+[node name="WoodCampMC" type="MarginContainer" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page3Scroll/VBox/BarItemMC4/HBox"]
+custom_minimum_size = Vector2(210, 0)
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_right = 10
+
+[node name="ColorRect" type="ColorRect" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page3Scroll/VBox/BarItemMC4/HBox/WoodCampMC"]
+layout_mode = 2
+color = Color(0.172549, 0.443137, 0.317647, 1)
+
+[node name="WoodCampHBox" type="HBoxContainer" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page3Scroll/VBox/BarItemMC4/HBox/WoodCampMC"]
+layout_mode = 2
+
+[node name="MC" type="MarginContainer" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page3Scroll/VBox/BarItemMC4/HBox/WoodCampMC/WoodCampHBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 37
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 37
+
+[node name="ColorRect" type="ColorRect" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page3Scroll/VBox/BarItemMC4/HBox/WoodCampMC/WoodCampHBox/MC"]
+layout_mode = 2
+color = Color(0.333333, 0.490196, 0.568627, 1)
+
+[node name="InventoryCountLabel" type="Label" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page3Scroll/VBox/BarItemMC4/HBox/WoodCampMC/WoodCampHBox/MC/ColorRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "10"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MC2" type="MarginContainer" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page3Scroll/VBox/BarItemMC4/HBox/WoodCampMC/WoodCampHBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_right = 10
+
+[node name="VBox" type="VBoxContainer" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page3Scroll/VBox/BarItemMC4/HBox/WoodCampMC/WoodCampHBox/MC2"]
+layout_mode = 2
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="BuyButton" type="Button" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page3Scroll/VBox/BarItemMC4/HBox/WoodCampMC/WoodCampHBox/MC2/VBox"]
+layout_mode = 2
+text = "Buy"
+
+[node name="BuyMaxButton" type="Button" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page3Scroll/VBox/BarItemMC4/HBox/WoodCampMC/WoodCampHBox/MC2/VBox"]
+layout_mode = 2
+text = "Buy Max"
+
+[node name="LevelMC" type="MarginContainer" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page3Scroll/VBox/BarItemMC4/HBox"]
+custom_minimum_size = Vector2(210, 0)
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_right = 10
+
+[node name="ColorRect" type="ColorRect" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page3Scroll/VBox/BarItemMC4/HBox/LevelMC"]
+layout_mode = 2
+color = Color(0.396078, 0.576471, 0.643137, 1)
+
+[node name="LevelHBox" type="HBoxContainer" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page3Scroll/VBox/BarItemMC4/HBox/LevelMC"]
+layout_mode = 2
+
+[node name="MC" type="MarginContainer" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page3Scroll/VBox/BarItemMC4/HBox/LevelMC/LevelHBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 37
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 37
+
+[node name="ColorRect" type="ColorRect" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page3Scroll/VBox/BarItemMC4/HBox/LevelMC/LevelHBox/MC"]
+layout_mode = 2
+color = Color(0.333333, 0.490196, 0.568627, 1)
+
+[node name="InventoryCountLabel" type="Label" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page3Scroll/VBox/BarItemMC4/HBox/LevelMC/LevelHBox/MC/ColorRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "10"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MC2" type="MarginContainer" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page3Scroll/VBox/BarItemMC4/HBox/LevelMC/LevelHBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_right = 10
+
+[node name="VBox" type="VBoxContainer" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page3Scroll/VBox/BarItemMC4/HBox/LevelMC/LevelHBox/MC2"]
+layout_mode = 2
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="BuyButton" type="Button" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page3Scroll/VBox/BarItemMC4/HBox/LevelMC/LevelHBox/MC2/VBox"]
+layout_mode = 2
+text = "Buy"
+
+[node name="BuyMaxButton" type="Button" parent="GameScreen/GameScreenHBox/VBox/BarsMC/MC/VBox/BarPagesMC/Page3Scroll/VBox/BarItemMC4/HBox/LevelMC/LevelHBox/MC2/VBox"]
+layout_mode = 2
+text = "Buy Max"
+
+[node name="PageButtonsMC" type="MarginContainer" parent="GameScreen/GameScreenHBox/VBox"]
+custom_minimum_size = Vector2(0, 57)
+layout_mode = 2
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_top = -4
+theme_override_constants/margin_bottom = 21
+
+[node name="ColorRect" type="ColorRect" parent="GameScreen/GameScreenHBox/VBox/PageButtonsMC"]
+layout_mode = 2
+color = Color(0.196078, 0.537255, 0.470588, 1)
+
+[node name="MC" type="MarginContainer" parent="GameScreen/GameScreenHBox/VBox/PageButtonsMC/ColorRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_top = 3
+theme_override_constants/margin_bottom = 3
+
+[node name="HBox" type="HBoxContainer" parent="GameScreen/GameScreenHBox/VBox/PageButtonsMC/ColorRect/MC"]
+layout_mode = 2
+theme_override_constants/separation = 15
+alignment = 1
+
+[node name="Page1Button" type="Button" parent="GameScreen/GameScreenHBox/VBox/PageButtonsMC/ColorRect/MC/HBox"]
+layout_mode = 2
+text = "Page 1"
+
+[node name="Page2Button" type="Button" parent="GameScreen/GameScreenHBox/VBox/PageButtonsMC/ColorRect/MC/HBox"]
+layout_mode = 2
+text = "Page 2"
+
+[node name="Page3Button" type="Button" parent="GameScreen/GameScreenHBox/VBox/PageButtonsMC/ColorRect/MC/HBox"]
+layout_mode = 2
+text = "Page 3"
+
+[node name="DeadMargin" type="Control" parent="GameScreen/GameScreenHBox/VBox"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="RightHBox" type="Control" parent="GameScreen/GameScreenHBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="TopMenuVBox" type="Control" parent="GameScreen/GameScreenHBox/RightHBox"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="UpgradesButton" type="Control" parent="GameScreen/GameScreenHBox/RightHBox/TopMenuVBox"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ResearchButton" type="Control" parent="GameScreen/GameScreenHBox/RightHBox/TopMenuVBox"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="MagicButton" type="Control" parent="GameScreen/GameScreenHBox/RightHBox/TopMenuVBox"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="DamButton" type="Control" parent="GameScreen/GameScreenHBox/RightHBox/TopMenuVBox"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TabsVBox" type="Control" parent="GameScreen/GameScreenHBox/RightHBox"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="UpgradesSectionHBox" type="Control" parent="GameScreen/GameScreenHBox/RightHBox/TabsVBox"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="UpgradeTabsMenuVBox" type="Control" parent="GameScreen/GameScreenHBox/RightHBox/TabsVBox/UpgradesSectionHBox"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Page1Button" type="Control" parent="GameScreen/GameScreenHBox/RightHBox/TabsVBox/UpgradesSectionHBox/UpgradeTabsMenuVBox"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Page2Button" type="Control" parent="GameScreen/GameScreenHBox/RightHBox/TabsVBox/UpgradesSectionHBox/UpgradeTabsMenuVBox"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Page3Button" type="Control" parent="GameScreen/GameScreenHBox/RightHBox/TabsVBox/UpgradesSectionHBox/UpgradeTabsMenuVBox"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="BuyMaxAllSectionsButton" type="Control" parent="GameScreen/GameScreenHBox/RightHBox/TabsVBox/UpgradesSectionHBox/UpgradeTabsMenuVBox"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="UpgradeTabHBox" type="Control" parent="GameScreen/GameScreenHBox/RightHBox/TabsVBox/UpgradesSectionHBox"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="BuyMaxVBox" type="Control" parent="GameScreen/GameScreenHBox/RightHBox/TabsVBox/UpgradesSectionHBox/UpgradeTabHBox"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="BuyMaxButton" type="Control" parent="GameScreen/GameScreenHBox/RightHBox/TabsVBox/UpgradesSectionHBox/UpgradeTabHBox/BuyMaxVBox"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="UpgradesGrid" type="Control" parent="GameScreen/GameScreenHBox/RightHBox/TabsVBox/UpgradesSectionHBox/UpgradeTabHBox"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Upgrade1HBox" type="Control" parent="GameScreen/GameScreenHBox/RightHBox/TabsVBox/UpgradesSectionHBox/UpgradeTabHBox/UpgradesGrid"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TitleLabel" type="Control" parent="GameScreen/GameScreenHBox/RightHBox/TabsVBox/UpgradesSectionHBox/UpgradeTabHBox/UpgradesGrid/Upgrade1HBox"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="CostLabel" type="Control" parent="GameScreen/GameScreenHBox/RightHBox/TabsVBox/UpgradesSectionHBox/UpgradeTabHBox/UpgradesGrid/Upgrade1HBox"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="VBox" type="Control" parent="GameScreen/GameScreenHBox/RightHBox/TabsVBox/UpgradesSectionHBox/UpgradeTabHBox/UpgradesGrid/Upgrade1HBox"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="BuyButton" type="Control" parent="GameScreen/GameScreenHBox/RightHBox/TabsVBox/UpgradesSectionHBox/UpgradeTabHBox/UpgradesGrid/Upgrade1HBox/VBox"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="BuyMaxButton" type="Control" parent="GameScreen/GameScreenHBox/RightHBox/TabsVBox/UpgradesSectionHBox/UpgradeTabHBox/UpgradesGrid/Upgrade1HBox/VBox"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="UpgradeProgressLabel" type="Control" parent="GameScreen/GameScreenHBox/RightHBox/TabsVBox/UpgradesSectionHBox/UpgradeTabHBox/UpgradesGrid/Upgrade1HBox/VBox"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Upgrade1HBox2" type="Control" parent="GameScreen/GameScreenHBox/RightHBox/TabsVBox/UpgradesSectionHBox/UpgradeTabHBox/UpgradesGrid"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TitleLabel" type="Control" parent="GameScreen/GameScreenHBox/RightHBox/TabsVBox/UpgradesSectionHBox/UpgradeTabHBox/UpgradesGrid/Upgrade1HBox2"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="CostLabel" type="Control" parent="GameScreen/GameScreenHBox/RightHBox/TabsVBox/UpgradesSectionHBox/UpgradeTabHBox/UpgradesGrid/Upgrade1HBox2"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="VBox" type="Control" parent="GameScreen/GameScreenHBox/RightHBox/TabsVBox/UpgradesSectionHBox/UpgradeTabHBox/UpgradesGrid/Upgrade1HBox2"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="BuyButton" type="Control" parent="GameScreen/GameScreenHBox/RightHBox/TabsVBox/UpgradesSectionHBox/UpgradeTabHBox/UpgradesGrid/Upgrade1HBox2/VBox"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="BuyMaxButton" type="Control" parent="GameScreen/GameScreenHBox/RightHBox/TabsVBox/UpgradesSectionHBox/UpgradeTabHBox/UpgradesGrid/Upgrade1HBox2/VBox"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="UpgradeProgressLabel" type="Control" parent="GameScreen/GameScreenHBox/RightHBox/TabsVBox/UpgradesSectionHBox/UpgradeTabHBox/UpgradesGrid/Upgrade1HBox2/VBox"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Upgrade1HBox3" type="Control" parent="GameScreen/GameScreenHBox/RightHBox/TabsVBox/UpgradesSectionHBox/UpgradeTabHBox/UpgradesGrid"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TitleLabel" type="Control" parent="GameScreen/GameScreenHBox/RightHBox/TabsVBox/UpgradesSectionHBox/UpgradeTabHBox/UpgradesGrid/Upgrade1HBox3"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="CostLabel" type="Control" parent="GameScreen/GameScreenHBox/RightHBox/TabsVBox/UpgradesSectionHBox/UpgradeTabHBox/UpgradesGrid/Upgrade1HBox3"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="VBox" type="Control" parent="GameScreen/GameScreenHBox/RightHBox/TabsVBox/UpgradesSectionHBox/UpgradeTabHBox/UpgradesGrid/Upgrade1HBox3"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="BuyButton" type="Control" parent="GameScreen/GameScreenHBox/RightHBox/TabsVBox/UpgradesSectionHBox/UpgradeTabHBox/UpgradesGrid/Upgrade1HBox3/VBox"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="BuyMaxButton" type="Control" parent="GameScreen/GameScreenHBox/RightHBox/TabsVBox/UpgradesSectionHBox/UpgradeTabHBox/UpgradesGrid/Upgrade1HBox3/VBox"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="UpgradeProgressLabel" type="Control" parent="GameScreen/GameScreenHBox/RightHBox/TabsVBox/UpgradesSectionHBox/UpgradeTabHBox/UpgradesGrid/Upgrade1HBox3/VBox"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="UpgradeTab2HBox" type="Control" parent="GameScreen/GameScreenHBox/RightHBox/TabsVBox/UpgradesSectionHBox"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="BuyMaxVBox" type="Control" parent="GameScreen/GameScreenHBox/RightHBox/TabsVBox/UpgradesSectionHBox/UpgradeTab2HBox"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="BuyMaxButton" type="Control" parent="GameScreen/GameScreenHBox/RightHBox/TabsVBox/UpgradesSectionHBox/UpgradeTab2HBox/BuyMaxVBox"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="UpgradesGrid" type="Control" parent="GameScreen/GameScreenHBox/RightHBox/TabsVBox/UpgradesSectionHBox/UpgradeTab2HBox"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Upgrade1HBox" type="Control" parent="GameScreen/GameScreenHBox/RightHBox/TabsVBox/UpgradesSectionHBox/UpgradeTab2HBox/UpgradesGrid"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TitleLabel" type="Control" parent="GameScreen/GameScreenHBox/RightHBox/TabsVBox/UpgradesSectionHBox/UpgradeTab2HBox/UpgradesGrid/Upgrade1HBox"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="CostLabel" type="Control" parent="GameScreen/GameScreenHBox/RightHBox/TabsVBox/UpgradesSectionHBox/UpgradeTab2HBox/UpgradesGrid/Upgrade1HBox"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="VBox" type="Control" parent="GameScreen/GameScreenHBox/RightHBox/TabsVBox/UpgradesSectionHBox/UpgradeTab2HBox/UpgradesGrid/Upgrade1HBox"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="BuyButton" type="Control" parent="GameScreen/GameScreenHBox/RightHBox/TabsVBox/UpgradesSectionHBox/UpgradeTab2HBox/UpgradesGrid/Upgrade1HBox/VBox"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="BuyMaxButton" type="Control" parent="GameScreen/GameScreenHBox/RightHBox/TabsVBox/UpgradesSectionHBox/UpgradeTab2HBox/UpgradesGrid/Upgrade1HBox/VBox"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="UpgradeProgressLabel" type="Control" parent="GameScreen/GameScreenHBox/RightHBox/TabsVBox/UpgradesSectionHBox/UpgradeTab2HBox/UpgradesGrid/Upgrade1HBox/VBox"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Upgrade1HBox2" type="Control" parent="GameScreen/GameScreenHBox/RightHBox/TabsVBox/UpgradesSectionHBox/UpgradeTab2HBox/UpgradesGrid"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TitleLabel" type="Control" parent="GameScreen/GameScreenHBox/RightHBox/TabsVBox/UpgradesSectionHBox/UpgradeTab2HBox/UpgradesGrid/Upgrade1HBox2"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="CostLabel" type="Control" parent="GameScreen/GameScreenHBox/RightHBox/TabsVBox/UpgradesSectionHBox/UpgradeTab2HBox/UpgradesGrid/Upgrade1HBox2"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="VBox" type="Control" parent="GameScreen/GameScreenHBox/RightHBox/TabsVBox/UpgradesSectionHBox/UpgradeTab2HBox/UpgradesGrid/Upgrade1HBox2"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="BuyButton" type="Control" parent="GameScreen/GameScreenHBox/RightHBox/TabsVBox/UpgradesSectionHBox/UpgradeTab2HBox/UpgradesGrid/Upgrade1HBox2/VBox"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="BuyMaxButton" type="Control" parent="GameScreen/GameScreenHBox/RightHBox/TabsVBox/UpgradesSectionHBox/UpgradeTab2HBox/UpgradesGrid/Upgrade1HBox2/VBox"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="UpgradeProgressLabel" type="Control" parent="GameScreen/GameScreenHBox/RightHBox/TabsVBox/UpgradesSectionHBox/UpgradeTab2HBox/UpgradesGrid/Upgrade1HBox2/VBox"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Upgrade1HBox3" type="Control" parent="GameScreen/GameScreenHBox/RightHBox/TabsVBox/UpgradesSectionHBox/UpgradeTab2HBox/UpgradesGrid"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TitleLabel" type="Control" parent="GameScreen/GameScreenHBox/RightHBox/TabsVBox/UpgradesSectionHBox/UpgradeTab2HBox/UpgradesGrid/Upgrade1HBox3"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="CostLabel" type="Control" parent="GameScreen/GameScreenHBox/RightHBox/TabsVBox/UpgradesSectionHBox/UpgradeTab2HBox/UpgradesGrid/Upgrade1HBox3"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="VBox" type="Control" parent="GameScreen/GameScreenHBox/RightHBox/TabsVBox/UpgradesSectionHBox/UpgradeTab2HBox/UpgradesGrid/Upgrade1HBox3"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="BuyButton" type="Control" parent="GameScreen/GameScreenHBox/RightHBox/TabsVBox/UpgradesSectionHBox/UpgradeTab2HBox/UpgradesGrid/Upgrade1HBox3/VBox"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="BuyMaxButton" type="Control" parent="GameScreen/GameScreenHBox/RightHBox/TabsVBox/UpgradesSectionHBox/UpgradeTab2HBox/UpgradesGrid/Upgrade1HBox3/VBox"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="UpgradeProgressLabel" type="Control" parent="GameScreen/GameScreenHBox/RightHBox/TabsVBox/UpgradesSectionHBox/UpgradeTab2HBox/UpgradesGrid/Upgrade1HBox3/VBox"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="UpgradeTab3HBox" type="Control" parent="GameScreen/GameScreenHBox/RightHBox/TabsVBox/UpgradesSectionHBox"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="BuyMaxVBox" type="Control" parent="GameScreen/GameScreenHBox/RightHBox/TabsVBox/UpgradesSectionHBox/UpgradeTab3HBox"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="BuyMaxButton" type="Control" parent="GameScreen/GameScreenHBox/RightHBox/TabsVBox/UpgradesSectionHBox/UpgradeTab3HBox/BuyMaxVBox"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="UpgradesGrid" type="Control" parent="GameScreen/GameScreenHBox/RightHBox/TabsVBox/UpgradesSectionHBox/UpgradeTab3HBox"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Upgrade1HBox" type="Control" parent="GameScreen/GameScreenHBox/RightHBox/TabsVBox/UpgradesSectionHBox/UpgradeTab3HBox/UpgradesGrid"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TitleLabel" type="Control" parent="GameScreen/GameScreenHBox/RightHBox/TabsVBox/UpgradesSectionHBox/UpgradeTab3HBox/UpgradesGrid/Upgrade1HBox"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="CostLabel" type="Control" parent="GameScreen/GameScreenHBox/RightHBox/TabsVBox/UpgradesSectionHBox/UpgradeTab3HBox/UpgradesGrid/Upgrade1HBox"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="VBox" type="Control" parent="GameScreen/GameScreenHBox/RightHBox/TabsVBox/UpgradesSectionHBox/UpgradeTab3HBox/UpgradesGrid/Upgrade1HBox"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="BuyButton" type="Control" parent="GameScreen/GameScreenHBox/RightHBox/TabsVBox/UpgradesSectionHBox/UpgradeTab3HBox/UpgradesGrid/Upgrade1HBox/VBox"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="BuyMaxButton" type="Control" parent="GameScreen/GameScreenHBox/RightHBox/TabsVBox/UpgradesSectionHBox/UpgradeTab3HBox/UpgradesGrid/Upgrade1HBox/VBox"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="UpgradeProgressLabel" type="Control" parent="GameScreen/GameScreenHBox/RightHBox/TabsVBox/UpgradesSectionHBox/UpgradeTab3HBox/UpgradesGrid/Upgrade1HBox/VBox"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Upgrade1HBox2" type="Control" parent="GameScreen/GameScreenHBox/RightHBox/TabsVBox/UpgradesSectionHBox/UpgradeTab3HBox/UpgradesGrid"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TitleLabel" type="Control" parent="GameScreen/GameScreenHBox/RightHBox/TabsVBox/UpgradesSectionHBox/UpgradeTab3HBox/UpgradesGrid/Upgrade1HBox2"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="CostLabel" type="Control" parent="GameScreen/GameScreenHBox/RightHBox/TabsVBox/UpgradesSectionHBox/UpgradeTab3HBox/UpgradesGrid/Upgrade1HBox2"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="VBox" type="Control" parent="GameScreen/GameScreenHBox/RightHBox/TabsVBox/UpgradesSectionHBox/UpgradeTab3HBox/UpgradesGrid/Upgrade1HBox2"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="BuyButton" type="Control" parent="GameScreen/GameScreenHBox/RightHBox/TabsVBox/UpgradesSectionHBox/UpgradeTab3HBox/UpgradesGrid/Upgrade1HBox2/VBox"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="BuyMaxButton" type="Control" parent="GameScreen/GameScreenHBox/RightHBox/TabsVBox/UpgradesSectionHBox/UpgradeTab3HBox/UpgradesGrid/Upgrade1HBox2/VBox"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="UpgradeProgressLabel" type="Control" parent="GameScreen/GameScreenHBox/RightHBox/TabsVBox/UpgradesSectionHBox/UpgradeTab3HBox/UpgradesGrid/Upgrade1HBox2/VBox"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Upgrade1HBox3" type="Control" parent="GameScreen/GameScreenHBox/RightHBox/TabsVBox/UpgradesSectionHBox/UpgradeTab3HBox/UpgradesGrid"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TitleLabel" type="Control" parent="GameScreen/GameScreenHBox/RightHBox/TabsVBox/UpgradesSectionHBox/UpgradeTab3HBox/UpgradesGrid/Upgrade1HBox3"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="CostLabel" type="Control" parent="GameScreen/GameScreenHBox/RightHBox/TabsVBox/UpgradesSectionHBox/UpgradeTab3HBox/UpgradesGrid/Upgrade1HBox3"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="VBox" type="Control" parent="GameScreen/GameScreenHBox/RightHBox/TabsVBox/UpgradesSectionHBox/UpgradeTab3HBox/UpgradesGrid/Upgrade1HBox3"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="BuyButton" type="Control" parent="GameScreen/GameScreenHBox/RightHBox/TabsVBox/UpgradesSectionHBox/UpgradeTab3HBox/UpgradesGrid/Upgrade1HBox3/VBox"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="BuyMaxButton" type="Control" parent="GameScreen/GameScreenHBox/RightHBox/TabsVBox/UpgradesSectionHBox/UpgradeTab3HBox/UpgradesGrid/Upgrade1HBox3/VBox"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="UpgradeProgressLabel" type="Control" parent="GameScreen/GameScreenHBox/RightHBox/TabsVBox/UpgradesSectionHBox/UpgradeTab3HBox/UpgradesGrid/Upgrade1HBox3/VBox"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ResearchSectionHBox" type="Control" parent="GameScreen/GameScreenHBox/RightHBox/TabsVBox"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ResearchMenuTabsVBox" type="Control" parent="GameScreen/GameScreenHBox/RightHBox/TabsVBox/ResearchSectionHBox"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Page1Button" type="Control" parent="GameScreen/GameScreenHBox/RightHBox/TabsVBox/ResearchSectionHBox/ResearchMenuTabsVBox"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Page2Button" type="Control" parent="GameScreen/GameScreenHBox/RightHBox/TabsVBox/ResearchSectionHBox/ResearchMenuTabsVBox"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Page3Button" type="Control" parent="GameScreen/GameScreenHBox/RightHBox/TabsVBox/ResearchSectionHBox/ResearchMenuTabsVBox"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="BuyMaxAllSectionsButton" type="Control" parent="GameScreen/GameScreenHBox/RightHBox/TabsVBox/ResearchSectionHBox/ResearchMenuTabsVBox"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ResearchPagesVBox" type="Control" parent="GameScreen/GameScreenHBox/RightHBox/TabsVBox/ResearchSectionHBox"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="GeneralPageHBox" type="Control" parent="GameScreen/GameScreenHBox/RightHBox/TabsVBox/ResearchSectionHBox/ResearchPagesVBox"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="BuyMaxVBox" type="Control" parent="GameScreen/GameScreenHBox/RightHBox/TabsVBox/ResearchSectionHBox/ResearchPagesVBox/GeneralPageHBox"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="BuyMaxButton" type="Control" parent="GameScreen/GameScreenHBox/RightHBox/TabsVBox/ResearchSectionHBox/ResearchPagesVBox/GeneralPageHBox/BuyMaxVBox"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ResearchListHBox" type="Control" parent="GameScreen/GameScreenHBox/RightHBox/TabsVBox/ResearchSectionHBox/ResearchPagesVBox/GeneralPageHBox"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Research1BoxHBox" type="Control" parent="GameScreen/GameScreenHBox/RightHBox/TabsVBox/ResearchSectionHBox/ResearchPagesVBox/GeneralPageHBox/ResearchListHBox"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TimeLeftBar" type="Control" parent="GameScreen/GameScreenHBox/RightHBox/TabsVBox/ResearchSectionHBox/ResearchPagesVBox/GeneralPageHBox/ResearchListHBox/Research1BoxHBox"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="StartResearchButton" type="Control" parent="GameScreen/GameScreenHBox/RightHBox/TabsVBox/ResearchSectionHBox/ResearchPagesVBox/GeneralPageHBox/ResearchListHBox/Research1BoxHBox"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Research2BoxHBox" type="Control" parent="GameScreen/GameScreenHBox/RightHBox/TabsVBox/ResearchSectionHBox/ResearchPagesVBox/GeneralPageHBox/ResearchListHBox"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TimeLeftBar" type="Control" parent="GameScreen/GameScreenHBox/RightHBox/TabsVBox/ResearchSectionHBox/ResearchPagesVBox/GeneralPageHBox/ResearchListHBox/Research2BoxHBox"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="StartResearchButton" type="Control" parent="GameScreen/GameScreenHBox/RightHBox/TabsVBox/ResearchSectionHBox/ResearchPagesVBox/GeneralPageHBox/ResearchListHBox/Research2BoxHBox"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Research3BoxHBox" type="Control" parent="GameScreen/GameScreenHBox/RightHBox/TabsVBox/ResearchSectionHBox/ResearchPagesVBox/GeneralPageHBox/ResearchListHBox"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TimeLeftBar" type="Control" parent="GameScreen/GameScreenHBox/RightHBox/TabsVBox/ResearchSectionHBox/ResearchPagesVBox/GeneralPageHBox/ResearchListHBox/Research3BoxHBox"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="StartResearchButton" type="Control" parent="GameScreen/GameScreenHBox/RightHBox/TabsVBox/ResearchSectionHBox/ResearchPagesVBox/GeneralPageHBox/ResearchListHBox/Research3BoxHBox"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="MagicSection" type="Control" parent="GameScreen/GameScreenHBox/RightHBox/TabsVBox"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="MagicButtonsGrid" type="Control" parent="GameScreen/GameScreenHBox/RightHBox/TabsVBox/MagicSection"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="MagicUpgradeButton1" type="Control" parent="GameScreen/GameScreenHBox/RightHBox/TabsVBox/MagicSection/MagicButtonsGrid"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="MagicUpgradeButton2" type="Control" parent="GameScreen/GameScreenHBox/RightHBox/TabsVBox/MagicSection/MagicButtonsGrid"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="MagicUpgradeButton3" type="Control" parent="GameScreen/GameScreenHBox/RightHBox/TabsVBox/MagicSection/MagicButtonsGrid"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="MagicUpgradeButton4" type="Control" parent="GameScreen/GameScreenHBox/RightHBox/TabsVBox/MagicSection/MagicButtonsGrid"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="MagicUpgradeButton5" type="Control" parent="GameScreen/GameScreenHBox/RightHBox/TabsVBox/MagicSection/MagicButtonsGrid"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="DamSection" type="Control" parent="GameScreen/GameScreenHBox/RightHBox/TabsVBox"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="DamSectionVBox" type="Control" parent="GameScreen/GameScreenHBox/RightHBox/TabsVBox/DamSection"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="DamSelectionHBox" type="Control" parent="GameScreen/GameScreenHBox/RightHBox/TabsVBox/DamSection/DamSectionVBox"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="SmallDamButton" type="Control" parent="GameScreen/GameScreenHBox/RightHBox/TabsVBox/DamSection/DamSectionVBox/DamSelectionHBox"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="MediumDamButton" type="Control" parent="GameScreen/GameScreenHBox/RightHBox/TabsVBox/DamSection/DamSectionVBox/DamSelectionHBox"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="BigDamButton" type="Control" parent="GameScreen/GameScreenHBox/RightHBox/TabsVBox/DamSection/DamSectionVBox/DamSelectionHBox"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="GiantDamButton" type="Control" parent="GameScreen/GameScreenHBox/RightHBox/TabsVBox/DamSection/DamSectionVBox/DamSelectionHBox"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="DamPagesHBox" type="Control" parent="GameScreen/GameScreenHBox/RightHBox/TabsVBox/DamSection/DamSectionVBox"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="SmallDamPageHBox" type="Control" parent="GameScreen/GameScreenHBox/RightHBox/TabsVBox/DamSection/DamSectionVBox/DamPagesHBox"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="DamSectionButton1" type="Control" parent="GameScreen/GameScreenHBox/RightHBox/TabsVBox/DamSection/DamSectionVBox/DamPagesHBox/SmallDamPageHBox"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="DamSectionButton2" type="Control" parent="GameScreen/GameScreenHBox/RightHBox/TabsVBox/DamSection/DamSectionVBox/DamPagesHBox/SmallDamPageHBox"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="DamSectionButton3" type="Control" parent="GameScreen/GameScreenHBox/RightHBox/TabsVBox/DamSection/DamSectionVBox/DamPagesHBox/SmallDamPageHBox"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="MediumDamPageHBox" type="Control" parent="GameScreen/GameScreenHBox/RightHBox/TabsVBox/DamSection/DamSectionVBox/DamPagesHBox"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="DamSectionButton1" type="Control" parent="GameScreen/GameScreenHBox/RightHBox/TabsVBox/DamSection/DamSectionVBox/DamPagesHBox/MediumDamPageHBox"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="DamSectionButton2" type="Control" parent="GameScreen/GameScreenHBox/RightHBox/TabsVBox/DamSection/DamSectionVBox/DamPagesHBox/MediumDamPageHBox"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="DamSectionButton3" type="Control" parent="GameScreen/GameScreenHBox/RightHBox/TabsVBox/DamSection/DamSectionVBox/DamPagesHBox/MediumDamPageHBox"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="BigDamPageHBox" type="Control" parent="GameScreen/GameScreenHBox/RightHBox/TabsVBox/DamSection/DamSectionVBox/DamPagesHBox"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="DamSectionButton1" type="Control" parent="GameScreen/GameScreenHBox/RightHBox/TabsVBox/DamSection/DamSectionVBox/DamPagesHBox/BigDamPageHBox"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="DamSectionButton2" type="Control" parent="GameScreen/GameScreenHBox/RightHBox/TabsVBox/DamSection/DamSectionVBox/DamPagesHBox/BigDamPageHBox"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="DamSectionButton3" type="Control" parent="GameScreen/GameScreenHBox/RightHBox/TabsVBox/DamSection/DamSectionVBox/DamPagesHBox/BigDamPageHBox"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="GiantDamPageHBox" type="Control" parent="GameScreen/GameScreenHBox/RightHBox/TabsVBox/DamSection/DamSectionVBox/DamPagesHBox"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="DamSectionButton1" type="Control" parent="GameScreen/GameScreenHBox/RightHBox/TabsVBox/DamSection/DamSectionVBox/DamPagesHBox/GiantDamPageHBox"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="DamSectionButton2" type="Control" parent="GameScreen/GameScreenHBox/RightHBox/TabsVBox/DamSection/DamSectionVBox/DamPagesHBox/GiantDamPageHBox"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="DamSectionButton3" type="Control" parent="GameScreen/GameScreenHBox/RightHBox/TabsVBox/DamSection/DamSectionVBox/DamPagesHBox/GiantDamPageHBox"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="FishingScreen" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="FishingScreenVBox" type="Control" parent="FishingScreen"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="FishingGameHBox" type="Control" parent="FishingScreen/FishingScreenVBox"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="FishingGameLogicNode" type="Node" parent="FishingScreen/FishingScreenVBox/FishingGameHBox"]
+
+[node name="FishButton" type="Control" parent="FishingScreen/FishingScreenVBox/FishingGameHBox"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="BaitSelectionHBox" type="Control" parent="FishingScreen/FishingScreenVBox"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="UsedBaitLabel" type="Control" parent="FishingScreen/FishingScreenVBox/BaitSelectionHBox"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="BaitButtons" type="Control" parent="FishingScreen/FishingScreenVBox/BaitSelectionHBox"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="AppleBaitButton" type="Control" parent="FishingScreen/FishingScreenVBox/BaitSelectionHBox/BaitButtons"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="BirchBaitButton" type="Control" parent="FishingScreen/FishingScreenVBox/BaitSelectionHBox/BaitButtons"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="MapleBaitButton" type="Control" parent="FishingScreen/FishingScreenVBox/BaitSelectionHBox/BaitButtons"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="FishingImprovementsMenusHBox" type="Control" parent="FishingScreen/FishingScreenVBox"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="FishingPageButtonsVBox" type="Control" parent="FishingScreen/FishingScreenVBox/FishingImprovementsMenusHBox"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ShopButton" type="Control" parent="FishingScreen/FishingScreenVBox/FishingImprovementsMenusHBox/FishingPageButtonsVBox"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="FishingSpotsButton" type="Control" parent="FishingScreen/FishingScreenVBox/FishingImprovementsMenusHBox/FishingPageButtonsVBox"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="FishingPagesVBox" type="Control" parent="FishingScreen/FishingScreenVBox/FishingImprovementsMenusHBox"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ShopPageHBox" type="Control" parent="FishingScreen/FishingScreenVBox/FishingImprovementsMenusHBox/FishingPagesVBox"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="BuyBaitLabel" type="Control" parent="FishingScreen/FishingScreenVBox/FishingImprovementsMenusHBox/FishingPagesVBox/ShopPageHBox"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="InventoryLabel" type="Control" parent="FishingScreen/FishingScreenVBox/FishingImprovementsMenusHBox/FishingPagesVBox/ShopPageHBox"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="BaitsHBox" type="Control" parent="FishingScreen/FishingScreenVBox/FishingImprovementsMenusHBox/FishingPagesVBox/ShopPageHBox"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="BaitItemVBox1" type="Control" parent="FishingScreen/FishingScreenVBox/FishingImprovementsMenusHBox/FishingPagesVBox/ShopPageHBox/BaitsHBox"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="BaitLabel" type="Control" parent="FishingScreen/FishingScreenVBox/FishingImprovementsMenusHBox/FishingPagesVBox/ShopPageHBox/BaitsHBox/BaitItemVBox1"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="BuyButtons" type="Control" parent="FishingScreen/FishingScreenVBox/FishingImprovementsMenusHBox/FishingPagesVBox/ShopPageHBox/BaitsHBox/BaitItemVBox1"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="InventoryCountLabel" type="Control" parent="FishingScreen/FishingScreenVBox/FishingImprovementsMenusHBox/FishingPagesVBox/ShopPageHBox/BaitsHBox/BaitItemVBox1"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="BaitItemVBox2" type="Control" parent="FishingScreen/FishingScreenVBox/FishingImprovementsMenusHBox/FishingPagesVBox/ShopPageHBox/BaitsHBox"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="BaitLabel" type="Control" parent="FishingScreen/FishingScreenVBox/FishingImprovementsMenusHBox/FishingPagesVBox/ShopPageHBox/BaitsHBox/BaitItemVBox2"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="BuyButtons" type="Control" parent="FishingScreen/FishingScreenVBox/FishingImprovementsMenusHBox/FishingPagesVBox/ShopPageHBox/BaitsHBox/BaitItemVBox2"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="InventoryCountLabel" type="Control" parent="FishingScreen/FishingScreenVBox/FishingImprovementsMenusHBox/FishingPagesVBox/ShopPageHBox/BaitsHBox/BaitItemVBox2"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="BaitItemVBox3" type="Control" parent="FishingScreen/FishingScreenVBox/FishingImprovementsMenusHBox/FishingPagesVBox/ShopPageHBox/BaitsHBox"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="BaitLabel" type="Control" parent="FishingScreen/FishingScreenVBox/FishingImprovementsMenusHBox/FishingPagesVBox/ShopPageHBox/BaitsHBox/BaitItemVBox3"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="BuyButtons" type="Control" parent="FishingScreen/FishingScreenVBox/FishingImprovementsMenusHBox/FishingPagesVBox/ShopPageHBox/BaitsHBox/BaitItemVBox3"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="InventoryCountLabel" type="Control" parent="FishingScreen/FishingScreenVBox/FishingImprovementsMenusHBox/FishingPagesVBox/ShopPageHBox/BaitsHBox/BaitItemVBox3"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="FishingSpotsPageHBox" type="Control" parent="FishingScreen/FishingScreenVBox/FishingImprovementsMenusHBox/FishingPagesVBox"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="FishingSpotsLabel" type="Control" parent="FishingScreen/FishingScreenVBox/FishingImprovementsMenusHBox/FishingPagesVBox/FishingSpotsPageHBox"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="FishingSpotsHBox" type="Control" parent="FishingScreen/FishingScreenVBox/FishingImprovementsMenusHBox/FishingPagesVBox/FishingSpotsPageHBox"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="FishingSpotVBox1" type="Control" parent="FishingScreen/FishingScreenVBox/FishingImprovementsMenusHBox/FishingPagesVBox/FishingSpotsPageHBox/FishingSpotsHBox"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="SpotImage" type="Control" parent="FishingScreen/FishingScreenVBox/FishingImprovementsMenusHBox/FishingPagesVBox/FishingSpotsPageHBox/FishingSpotsHBox/FishingSpotVBox1"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TextHBox" type="Control" parent="FishingScreen/FishingScreenVBox/FishingImprovementsMenusHBox/FishingPagesVBox/FishingSpotsPageHBox/FishingSpotsHBox/FishingSpotVBox1"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TitleLabel" type="Control" parent="FishingScreen/FishingScreenVBox/FishingImprovementsMenusHBox/FishingPagesVBox/FishingSpotsPageHBox/FishingSpotsHBox/FishingSpotVBox1/TextHBox"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="DescriptionLabel" type="Control" parent="FishingScreen/FishingScreenVBox/FishingImprovementsMenusHBox/FishingPagesVBox/FishingSpotsPageHBox/FishingSpotsHBox/FishingSpotVBox1/TextHBox"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="GoToPlaceButton" type="Control" parent="FishingScreen/FishingScreenVBox/FishingImprovementsMenusHBox/FishingPagesVBox/FishingSpotsPageHBox/FishingSpotsHBox/FishingSpotVBox1"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="FishingSpotVBox2" type="Control" parent="FishingScreen/FishingScreenVBox/FishingImprovementsMenusHBox/FishingPagesVBox/FishingSpotsPageHBox/FishingSpotsHBox"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="SpotImage" type="Control" parent="FishingScreen/FishingScreenVBox/FishingImprovementsMenusHBox/FishingPagesVBox/FishingSpotsPageHBox/FishingSpotsHBox/FishingSpotVBox2"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TextHBox" type="Control" parent="FishingScreen/FishingScreenVBox/FishingImprovementsMenusHBox/FishingPagesVBox/FishingSpotsPageHBox/FishingSpotsHBox/FishingSpotVBox2"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TitleLabel" type="Control" parent="FishingScreen/FishingScreenVBox/FishingImprovementsMenusHBox/FishingPagesVBox/FishingSpotsPageHBox/FishingSpotsHBox/FishingSpotVBox2/TextHBox"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="DescriptionLabel" type="Control" parent="FishingScreen/FishingScreenVBox/FishingImprovementsMenusHBox/FishingPagesVBox/FishingSpotsPageHBox/FishingSpotsHBox/FishingSpotVBox2/TextHBox"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="GoToPlaceButton" type="Control" parent="FishingScreen/FishingScreenVBox/FishingImprovementsMenusHBox/FishingPagesVBox/FishingSpotsPageHBox/FishingSpotsHBox/FishingSpotVBox2"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="FishingSpotVBox3" type="Control" parent="FishingScreen/FishingScreenVBox/FishingImprovementsMenusHBox/FishingPagesVBox/FishingSpotsPageHBox/FishingSpotsHBox"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="SpotImage" type="Control" parent="FishingScreen/FishingScreenVBox/FishingImprovementsMenusHBox/FishingPagesVBox/FishingSpotsPageHBox/FishingSpotsHBox/FishingSpotVBox3"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TextHBox" type="Control" parent="FishingScreen/FishingScreenVBox/FishingImprovementsMenusHBox/FishingPagesVBox/FishingSpotsPageHBox/FishingSpotsHBox/FishingSpotVBox3"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TitleLabel" type="Control" parent="FishingScreen/FishingScreenVBox/FishingImprovementsMenusHBox/FishingPagesVBox/FishingSpotsPageHBox/FishingSpotsHBox/FishingSpotVBox3/TextHBox"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="DescriptionLabel" type="Control" parent="FishingScreen/FishingScreenVBox/FishingImprovementsMenusHBox/FishingPagesVBox/FishingSpotsPageHBox/FishingSpotsHBox/FishingSpotVBox3/TextHBox"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="GoToPlaceButton" type="Control" parent="FishingScreen/FishingScreenVBox/FishingImprovementsMenusHBox/FishingPagesVBox/FishingSpotsPageHBox/FishingSpotsHBox/FishingSpotVBox3"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="AchievementScreen" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="AchievementScreenVBox" type="Control" parent="AchievementScreen"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="FeatsOfStrengthHBox" type="Control" parent="AchievementScreen/AchievementScreenVBox"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="FoSTitleHBox" type="Control" parent="AchievementScreen/AchievementScreenVBox/FeatsOfStrengthHBox"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TitleLabel" type="Control" parent="AchievementScreen/AchievementScreenVBox/FeatsOfStrengthHBox/FoSTitleHBox"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="FoSHBox" type="Control" parent="AchievementScreen/AchievementScreenVBox/FeatsOfStrengthHBox"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="FoSSectionHBox1" type="Control" parent="AchievementScreen/AchievementScreenVBox/FeatsOfStrengthHBox/FoSHBox"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="FoSNameLabel" type="Control" parent="AchievementScreen/AchievementScreenVBox/FeatsOfStrengthHBox/FoSHBox/FoSSectionHBox1"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="FoSButtonsVBox" type="Control" parent="AchievementScreen/AchievementScreenVBox/FeatsOfStrengthHBox/FoSHBox/FoSSectionHBox1"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Button1" type="Control" parent="AchievementScreen/AchievementScreenVBox/FeatsOfStrengthHBox/FoSHBox/FoSSectionHBox1/FoSButtonsVBox"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Button2" type="Control" parent="AchievementScreen/AchievementScreenVBox/FeatsOfStrengthHBox/FoSHBox/FoSSectionHBox1/FoSButtonsVBox"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Button3" type="Control" parent="AchievementScreen/AchievementScreenVBox/FeatsOfStrengthHBox/FoSHBox/FoSSectionHBox1/FoSButtonsVBox"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="FoSSectionHBox2" type="Control" parent="AchievementScreen/AchievementScreenVBox/FeatsOfStrengthHBox/FoSHBox"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="FoSNameLabel" type="Control" parent="AchievementScreen/AchievementScreenVBox/FeatsOfStrengthHBox/FoSHBox/FoSSectionHBox2"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="FoSButtonsVBox" type="Control" parent="AchievementScreen/AchievementScreenVBox/FeatsOfStrengthHBox/FoSHBox/FoSSectionHBox2"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Button1" type="Control" parent="AchievementScreen/AchievementScreenVBox/FeatsOfStrengthHBox/FoSHBox/FoSSectionHBox2/FoSButtonsVBox"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Button2" type="Control" parent="AchievementScreen/AchievementScreenVBox/FeatsOfStrengthHBox/FoSHBox/FoSSectionHBox2/FoSButtonsVBox"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Button3" type="Control" parent="AchievementScreen/AchievementScreenVBox/FeatsOfStrengthHBox/FoSHBox/FoSSectionHBox2/FoSButtonsVBox"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="FoSSectionHBox3" type="Control" parent="AchievementScreen/AchievementScreenVBox/FeatsOfStrengthHBox/FoSHBox"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="FoSNameLabel" type="Control" parent="AchievementScreen/AchievementScreenVBox/FeatsOfStrengthHBox/FoSHBox/FoSSectionHBox3"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="FoSButtonsVBox" type="Control" parent="AchievementScreen/AchievementScreenVBox/FeatsOfStrengthHBox/FoSHBox/FoSSectionHBox3"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Button1" type="Control" parent="AchievementScreen/AchievementScreenVBox/FeatsOfStrengthHBox/FoSHBox/FoSSectionHBox3/FoSButtonsVBox"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Button2" type="Control" parent="AchievementScreen/AchievementScreenVBox/FeatsOfStrengthHBox/FoSHBox/FoSSectionHBox3/FoSButtonsVBox"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Button3" type="Control" parent="AchievementScreen/AchievementScreenVBox/FeatsOfStrengthHBox/FoSHBox/FoSSectionHBox3/FoSButtonsVBox"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="MarginHBox" type="Control" parent="AchievementScreen/AchievementScreenVBox"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="AchievementsHBox" type="Control" parent="AchievementScreen/AchievementScreenVBox"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TitleHBox" type="Control" parent="AchievementScreen/AchievementScreenVBox/AchievementsHBox"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TitleLabel" type="Control" parent="AchievementScreen/AchievementScreenVBox/AchievementsHBox/TitleHBox"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="AchievementGrid" type="Control" parent="AchievementScreen/AchievementScreenVBox/AchievementsHBox"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Achievement1" type="Control" parent="AchievementScreen/AchievementScreenVBox/AchievementsHBox/AchievementGrid"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Achievement2" type="Control" parent="AchievementScreen/AchievementScreenVBox/AchievementsHBox/AchievementGrid"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Achievement3" type="Control" parent="AchievementScreen/AchievementScreenVBox/AchievementsHBox/AchievementGrid"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="AscentionScreen" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="AscentionScreenHBox" type="Control" parent="AscentionScreen"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TopVBox" type="Control" parent="AscentionScreen/AscentionScreenHBox"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="MagicEffectsHBox" type="Control" parent="AscentionScreen/AscentionScreenHBox/TopVBox"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="MagicLabel" type="Control" parent="AscentionScreen/AscentionScreenHBox/TopVBox/MagicEffectsHBox"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="EffectsLabel" type="Control" parent="AscentionScreen/AscentionScreenHBox/TopVBox/MagicEffectsHBox"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ProductionLabel" type="Control" parent="AscentionScreen/AscentionScreenHBox/TopVBox/MagicEffectsHBox"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="AscensionTitleLabel" type="Control" parent="AscentionScreen/AscentionScreenHBox/TopVBox"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="MagicRecivedLabel" type="Control" parent="AscentionScreen/AscentionScreenHBox"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="AscendButton" type="Control" parent="AscentionScreen/AscentionScreenHBox"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="BackgroundScreen" type="Control" parent="."]
+custom_minimum_size = Vector2(910, 1080)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="BackgroundHBox" type="HBoxContainer" parent="BackgroundScreen"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MC" type="MarginContainer" parent="BackgroundScreen/BackgroundHBox"]
+custom_minimum_size = Vector2(880, 0)
+layout_mode = 2
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_bottom = 25
+
+[node name="TextLogVBox" type="VBoxContainer" parent="BackgroundScreen/BackgroundHBox/MC"]
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 2
+
+[node name="TextLogBackground" type="ColorRect" parent="BackgroundScreen/BackgroundHBox/MC/TextLogVBox"]
+custom_minimum_size = Vector2(0, 220)
+layout_mode = 2
+color = Color(0.262745, 0.262745, 0.262745, 1)
+
+[node name="TexLog" type="RichTextLabel" parent="BackgroundScreen/BackgroundHBox/MC/TextLogVBox"]
+layout_mode = 2
+
+[node name="MC2" type="MarginContainer" parent="BackgroundScreen/BackgroundHBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 29
+
+[node name="MenuButtonsVBox" type="VBoxContainer" parent="BackgroundScreen/BackgroundHBox/MC2"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 16
+alignment = 2
+
+[node name="AchievementsButton" type="Button" parent="BackgroundScreen/BackgroundHBox/MC2/MenuButtonsVBox"]
+layout_mode = 2
+text = "Achievments"
+
+[node name="AscentionButton" type="Button" parent="BackgroundScreen/BackgroundHBox/MC2/MenuButtonsVBox"]
+layout_mode = 2
+text = "Ascention"
+
+[node name="FishingButton" type="Button" parent="BackgroundScreen/BackgroundHBox/MC2/MenuButtonsVBox"]
+layout_mode = 2
+text = "Fishing"
+
+[node name="HomeButton" type="Button" parent="BackgroundScreen/BackgroundHBox/MC2/MenuButtonsVBox"]
+layout_mode = 2
+text = "Home"
+
+[node name="SettingsButton" type="Button" parent="BackgroundScreen/BackgroundHBox/MC2/MenuButtonsVBox"]
+layout_mode = 2
+text = "Settings"
+
+[node name="M" type="Control" parent="BackgroundScreen/BackgroundHBox"]
+custom_minimum_size = Vector2(880, 0)
+layout_mode = 2

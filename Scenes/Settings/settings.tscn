@@ -1,0 +1,121 @@
+[gd_scene format=3 uid="uid://dnnaegnbqppxc"]
+
+[node name="Settings" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="SettingsHBox" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="SettingsTitle" type="Control" parent="SettingsHBox"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="SettingsGrid" type="Control" parent="SettingsHBox"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="SoundSectionHBox" type="Control" parent="SettingsHBox/SettingsGrid"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="SoundLabel" type="Control" parent="SettingsHBox/SettingsGrid/SoundSectionHBox"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="MasterVolumeSlider" type="Control" parent="SettingsHBox/SettingsGrid/SoundSectionHBox"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="EffectsSlider" type="Control" parent="SettingsHBox/SettingsGrid/SoundSectionHBox"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="MusicSlider" type="Control" parent="SettingsHBox/SettingsGrid/SoundSectionHBox"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="NumbersSectionHBox" type="Control" parent="SettingsHBox/SettingsGrid"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="SoundLabel" type="Control" parent="SettingsHBox/SettingsGrid/NumbersSectionHBox"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="MasterVolumeSlider" type="Control" parent="SettingsHBox/SettingsGrid/NumbersSectionHBox"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="EffectsSlider" type="Control" parent="SettingsHBox/SettingsGrid/NumbersSectionHBox"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="MusicSlider" type="Control" parent="SettingsHBox/SettingsGrid/NumbersSectionHBox"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="EffectsSectionHBox" type="Control" parent="SettingsHBox/SettingsGrid"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="SoundLabel" type="Control" parent="SettingsHBox/SettingsGrid/EffectsSectionHBox"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="MasterVolumeSlider" type="Control" parent="SettingsHBox/SettingsGrid/EffectsSectionHBox"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="EffectsSlider" type="Control" parent="SettingsHBox/SettingsGrid/EffectsSectionHBox"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="MusicSlider" type="Control" parent="SettingsHBox/SettingsGrid/EffectsSectionHBox"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Credits" type="Control" parent="SettingsHBox/SettingsGrid"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0

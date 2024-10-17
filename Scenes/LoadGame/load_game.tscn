@@ -1,0 +1,157 @@
+[gd_scene format=3 uid="uid://bh8e34tborwh1"]
+
+[node name="LoadGame" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="LoadGameHBox" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TopVBox" type="Control" parent="LoadGameHBox"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="BackButton" type="Control" parent="LoadGameHBox/TopVBox"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="LoadGameLabel" type="Control" parent="LoadGameHBox/TopVBox"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="LoadGameListHBox" type="Control" parent="LoadGameHBox"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ChooseSaveLabel" type="Control" parent="LoadGameHBox/LoadGameListHBox"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="LoadGameListHBox" type="Control" parent="LoadGameHBox/LoadGameListHBox"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="SaveVBox1" type="Control" parent="LoadGameHBox/LoadGameListHBox/LoadGameListHBox"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="SaveNameLabel" type="Control" parent="LoadGameHBox/LoadGameListHBox/LoadGameListHBox/SaveVBox1"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="StatLabelsHBox" type="Control" parent="LoadGameHBox/LoadGameListHBox/LoadGameListHBox/SaveVBox1"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TimeSpentLabel" type="Control" parent="LoadGameHBox/LoadGameListHBox/LoadGameListHBox/SaveVBox1/StatLabelsHBox"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="MagicEarnedLabel" type="Control" parent="LoadGameHBox/LoadGameListHBox/LoadGameListHBox/SaveVBox1/StatLabelsHBox"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="LoadAndNewGameButton" type="Control" parent="LoadGameHBox/LoadGameListHBox/LoadGameListHBox/SaveVBox1"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="SaveVBox2" type="Control" parent="LoadGameHBox/LoadGameListHBox/LoadGameListHBox"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="SaveNameLabel" type="Control" parent="LoadGameHBox/LoadGameListHBox/LoadGameListHBox/SaveVBox2"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="StatLabelsHBox" type="Control" parent="LoadGameHBox/LoadGameListHBox/LoadGameListHBox/SaveVBox2"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TimeSpentLabel" type="Control" parent="LoadGameHBox/LoadGameListHBox/LoadGameListHBox/SaveVBox2/StatLabelsHBox"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="MagicEarnedLabel" type="Control" parent="LoadGameHBox/LoadGameListHBox/LoadGameListHBox/SaveVBox2/StatLabelsHBox"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="LoadAndNewGameButton" type="Control" parent="LoadGameHBox/LoadGameListHBox/LoadGameListHBox/SaveVBox2"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="SaveVBox3" type="Control" parent="LoadGameHBox/LoadGameListHBox/LoadGameListHBox"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="SaveNameLabel" type="Control" parent="LoadGameHBox/LoadGameListHBox/LoadGameListHBox/SaveVBox3"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="StatLabelsHBox" type="Control" parent="LoadGameHBox/LoadGameListHBox/LoadGameListHBox/SaveVBox3"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TimeSpentLabel" type="Control" parent="LoadGameHBox/LoadGameListHBox/LoadGameListHBox/SaveVBox3/StatLabelsHBox"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="MagicEarnedLabel" type="Control" parent="LoadGameHBox/LoadGameListHBox/LoadGameListHBox/SaveVBox3/StatLabelsHBox"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="LoadAndNewGameButton" type="Control" parent="LoadGameHBox/LoadGameListHBox/LoadGameListHBox/SaveVBox3"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
