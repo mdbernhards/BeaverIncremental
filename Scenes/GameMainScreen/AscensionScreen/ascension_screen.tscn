@@ -1,0 +1,119 @@
+[gd_scene format=3 uid="uid://dtv4rjhuhfki5"]
+
+[node name="AscensionScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 2
+offset_left = 25.0
+offset_top = 25.0
+offset_right = 1895.0
+offset_bottom = 1055.0
+color = Color(0.266667, 0.266667, 0.266667, 1)
+
+[node name="MC" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_top = 25
+theme_override_constants/margin_right = 25
+theme_override_constants/margin_bottom = 25
+
+[node name="AscensionVBox" type="VBoxContainer" parent="MC"]
+layout_mode = 2
+alignment = 2
+
+[node name="TopHBox" type="HBoxContainer" parent="MC/AscensionVBox"]
+layout_mode = 2
+
+[node name="MC" type="MarginContainer" parent="MC/AscensionVBox/TopHBox"]
+custom_minimum_size = Vector2(500, 0)
+layout_mode = 2
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_top = 25
+
+[node name="VBox" type="VBoxContainer" parent="MC/AscensionVBox/TopHBox/MC"]
+layout_mode = 2
+
+[node name="MagicLabel" type="Label" parent="MC/AscensionVBox/TopHBox/MC/VBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 28
+text = "You have 12 Magic"
+
+[node name="EffectsLabel" type="Label" parent="MC/AscensionVBox/TopHBox/MC/VBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 21
+text = "Effects:"
+
+[node name="EffectLabel" type="Label" parent="MC/AscensionVBox/TopHBox/MC/VBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+text = "22% more production"
+
+[node name="EffectLabel2" type="Label" parent="MC/AscensionVBox/TopHBox/MC/VBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+text = "24% more storage?? prob not"
+
+[node name="EffectLabel3" type="Label" parent="MC/AscensionVBox/TopHBox/MC/VBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+text = "6% more classic wood production"
+
+[node name="EffectLabel4" type="Label" parent="MC/AscensionVBox/TopHBox/MC/VBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+text = "45% more gold generated from wood"
+
+[node name="EffectLabel5" type="Label" parent="MC/AscensionVBox/TopHBox/MC/VBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+text = "45% more gold generated from wood"
+
+[node name="MC2" type="MarginContainer" parent="MC/AscensionVBox/TopHBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 75
+
+[node name="AscensionTitleLabel" type="Label" parent="MC/AscensionVBox/TopHBox/MC2"]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 145
+text = "Ascension"
+
+[node name="MagicRecivedLabel" type="MarginContainer" parent="MC/AscensionVBox"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_bottom = 15
+
+[node name="MagicGainLabel" type="Label" parent="MC/AscensionVBox/MagicRecivedLabel"]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 55
+text = "You will receive 33 Magic"
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="AscendButton" type="MarginContainer" parent="MC/AscensionVBox"]
+layout_mode = 2
+theme_override_constants/margin_left = 750
+theme_override_constants/margin_right = 710
+
+[node name="Button" type="Button" parent="MC/AscensionVBox/AscendButton"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 80
+text = "Ascend"
+
+[node name="EmptySpace" type="Control" parent="MC/AscensionVBox"]
+custom_minimum_size = Vector2(0, 265)
+layout_mode = 2

@@ -1,0 +1,922 @@
+[gd_scene format=3 uid="uid://msehiccnr5t8"]
+
+[node name="AchievementScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="AchievementScreenHBox" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="FeatsOfStrengthVBox" type="VBoxContainer" parent="AchievementScreenHBox"]
+custom_minimum_size = Vector2(895, 0)
+layout_mode = 2
+
+[node name="FoSTitleMC" type="MarginContainer" parent="AchievementScreenHBox/FeatsOfStrengthVBox"]
+custom_minimum_size = Vector2(0, 70)
+layout_mode = 2
+theme_override_constants/margin_left = 290
+theme_override_constants/margin_top = 13
+theme_override_constants/margin_right = 290
+theme_override_constants/margin_bottom = 3
+
+[node name="ColorRect" type="ColorRect" parent="AchievementScreenHBox/FeatsOfStrengthVBox/FoSTitleMC"]
+layout_mode = 2
+color = Color(0.305882, 0.352941, 0.392157, 1)
+
+[node name="TitleLabel" type="Label" parent="AchievementScreenHBox/FeatsOfStrengthVBox/FoSTitleMC/ColorRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 30
+text = "Feats of Strength"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MC" type="MarginContainer" parent="AchievementScreenHBox/FeatsOfStrengthVBox"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="ScrollContainer" type="ScrollContainer" parent="AchievementScreenHBox/FeatsOfStrengthVBox/MC"]
+layout_mode = 2
+
+[node name="FoSItems" type="VBoxContainer" parent="AchievementScreenHBox/FeatsOfStrengthVBox/MC/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Item" type="VBoxContainer" parent="AchievementScreenHBox/FeatsOfStrengthVBox/MC/ScrollContainer/FoSItems"]
+layout_mode = 2
+
+[node name="MC" type="MarginContainer" parent="AchievementScreenHBox/FeatsOfStrengthVBox/MC/ScrollContainer/FoSItems/Item"]
+layout_mode = 2
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_top = 15
+
+[node name="FoSNameLabel" type="Label" parent="AchievementScreenHBox/FeatsOfStrengthVBox/MC/ScrollContainer/FoSItems/Item/MC"]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 32
+text = "Oak Wood"
+
+[node name="MC2" type="MarginContainer" parent="AchievementScreenHBox/FeatsOfStrengthVBox/MC/ScrollContainer/FoSItems/Item"]
+layout_mode = 2
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_top = 2
+theme_override_constants/margin_right = 25
+theme_override_constants/margin_bottom = 20
+
+[node name="HBox" type="HBoxContainer" parent="AchievementScreenHBox/FeatsOfStrengthVBox/MC/ScrollContainer/FoSItems/Item/MC2"]
+layout_mode = 2
+theme_override_constants/separation = 25
+
+[node name="Item1" type="MarginContainer" parent="AchievementScreenHBox/FeatsOfStrengthVBox/MC/ScrollContainer/FoSItems/Item/MC2/HBox"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+
+[node name="Button" type="Button" parent="AchievementScreenHBox/FeatsOfStrengthVBox/MC/ScrollContainer/FoSItems/Item/MC2/HBox/Item1"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+
+[node name="Item2" type="MarginContainer" parent="AchievementScreenHBox/FeatsOfStrengthVBox/MC/ScrollContainer/FoSItems/Item/MC2/HBox"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+
+[node name="Button" type="Button" parent="AchievementScreenHBox/FeatsOfStrengthVBox/MC/ScrollContainer/FoSItems/Item/MC2/HBox/Item2"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+
+[node name="Item3" type="MarginContainer" parent="AchievementScreenHBox/FeatsOfStrengthVBox/MC/ScrollContainer/FoSItems/Item/MC2/HBox"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+
+[node name="Button" type="Button" parent="AchievementScreenHBox/FeatsOfStrengthVBox/MC/ScrollContainer/FoSItems/Item/MC2/HBox/Item3"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+
+[node name="Item4" type="MarginContainer" parent="AchievementScreenHBox/FeatsOfStrengthVBox/MC/ScrollContainer/FoSItems/Item/MC2/HBox"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+
+[node name="Button" type="Button" parent="AchievementScreenHBox/FeatsOfStrengthVBox/MC/ScrollContainer/FoSItems/Item/MC2/HBox/Item4"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+
+[node name="Item5" type="MarginContainer" parent="AchievementScreenHBox/FeatsOfStrengthVBox/MC/ScrollContainer/FoSItems/Item/MC2/HBox"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 12
+
+[node name="Button" type="Button" parent="AchievementScreenHBox/FeatsOfStrengthVBox/MC/ScrollContainer/FoSItems/Item/MC2/HBox/Item5"]
+layout_mode = 2
+
+[node name="Item6" type="MarginContainer" parent="AchievementScreenHBox/FeatsOfStrengthVBox/MC/ScrollContainer/FoSItems/Item/MC2/HBox"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 12
+
+[node name="Button" type="Button" parent="AchievementScreenHBox/FeatsOfStrengthVBox/MC/ScrollContainer/FoSItems/Item/MC2/HBox/Item6"]
+layout_mode = 2
+
+[node name="Item7" type="MarginContainer" parent="AchievementScreenHBox/FeatsOfStrengthVBox/MC/ScrollContainer/FoSItems/Item/MC2/HBox"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 12
+
+[node name="Button" type="Button" parent="AchievementScreenHBox/FeatsOfStrengthVBox/MC/ScrollContainer/FoSItems/Item/MC2/HBox/Item7"]
+layout_mode = 2
+
+[node name="Item2" type="VBoxContainer" parent="AchievementScreenHBox/FeatsOfStrengthVBox/MC/ScrollContainer/FoSItems"]
+layout_mode = 2
+
+[node name="MC" type="MarginContainer" parent="AchievementScreenHBox/FeatsOfStrengthVBox/MC/ScrollContainer/FoSItems/Item2"]
+layout_mode = 2
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_top = 15
+
+[node name="FoSNameLabel" type="Label" parent="AchievementScreenHBox/FeatsOfStrengthVBox/MC/ScrollContainer/FoSItems/Item2/MC"]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 32
+text = "Oak Wood"
+
+[node name="MC2" type="MarginContainer" parent="AchievementScreenHBox/FeatsOfStrengthVBox/MC/ScrollContainer/FoSItems/Item2"]
+layout_mode = 2
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_top = 2
+theme_override_constants/margin_right = 25
+theme_override_constants/margin_bottom = 20
+
+[node name="HBox" type="HBoxContainer" parent="AchievementScreenHBox/FeatsOfStrengthVBox/MC/ScrollContainer/FoSItems/Item2/MC2"]
+layout_mode = 2
+theme_override_constants/separation = 25
+
+[node name="Item1" type="MarginContainer" parent="AchievementScreenHBox/FeatsOfStrengthVBox/MC/ScrollContainer/FoSItems/Item2/MC2/HBox"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+
+[node name="Button" type="Button" parent="AchievementScreenHBox/FeatsOfStrengthVBox/MC/ScrollContainer/FoSItems/Item2/MC2/HBox/Item1"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+
+[node name="Item2" type="MarginContainer" parent="AchievementScreenHBox/FeatsOfStrengthVBox/MC/ScrollContainer/FoSItems/Item2/MC2/HBox"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+
+[node name="Button" type="Button" parent="AchievementScreenHBox/FeatsOfStrengthVBox/MC/ScrollContainer/FoSItems/Item2/MC2/HBox/Item2"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+
+[node name="Item3" type="MarginContainer" parent="AchievementScreenHBox/FeatsOfStrengthVBox/MC/ScrollContainer/FoSItems/Item2/MC2/HBox"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+
+[node name="Button" type="Button" parent="AchievementScreenHBox/FeatsOfStrengthVBox/MC/ScrollContainer/FoSItems/Item2/MC2/HBox/Item3"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+
+[node name="Item4" type="MarginContainer" parent="AchievementScreenHBox/FeatsOfStrengthVBox/MC/ScrollContainer/FoSItems/Item2/MC2/HBox"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+
+[node name="Button" type="Button" parent="AchievementScreenHBox/FeatsOfStrengthVBox/MC/ScrollContainer/FoSItems/Item2/MC2/HBox/Item4"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+
+[node name="Item5" type="MarginContainer" parent="AchievementScreenHBox/FeatsOfStrengthVBox/MC/ScrollContainer/FoSItems/Item2/MC2/HBox"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 12
+
+[node name="Button" type="Button" parent="AchievementScreenHBox/FeatsOfStrengthVBox/MC/ScrollContainer/FoSItems/Item2/MC2/HBox/Item5"]
+layout_mode = 2
+
+[node name="Item6" type="MarginContainer" parent="AchievementScreenHBox/FeatsOfStrengthVBox/MC/ScrollContainer/FoSItems/Item2/MC2/HBox"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 12
+
+[node name="Button" type="Button" parent="AchievementScreenHBox/FeatsOfStrengthVBox/MC/ScrollContainer/FoSItems/Item2/MC2/HBox/Item6"]
+layout_mode = 2
+
+[node name="Item7" type="MarginContainer" parent="AchievementScreenHBox/FeatsOfStrengthVBox/MC/ScrollContainer/FoSItems/Item2/MC2/HBox"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 12
+
+[node name="Button" type="Button" parent="AchievementScreenHBox/FeatsOfStrengthVBox/MC/ScrollContainer/FoSItems/Item2/MC2/HBox/Item7"]
+layout_mode = 2
+
+[node name="Item3" type="VBoxContainer" parent="AchievementScreenHBox/FeatsOfStrengthVBox/MC/ScrollContainer/FoSItems"]
+layout_mode = 2
+
+[node name="MC" type="MarginContainer" parent="AchievementScreenHBox/FeatsOfStrengthVBox/MC/ScrollContainer/FoSItems/Item3"]
+layout_mode = 2
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_top = 15
+
+[node name="FoSNameLabel" type="Label" parent="AchievementScreenHBox/FeatsOfStrengthVBox/MC/ScrollContainer/FoSItems/Item3/MC"]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 32
+text = "Oak Wood"
+
+[node name="MC2" type="MarginContainer" parent="AchievementScreenHBox/FeatsOfStrengthVBox/MC/ScrollContainer/FoSItems/Item3"]
+layout_mode = 2
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_top = 2
+theme_override_constants/margin_right = 25
+theme_override_constants/margin_bottom = 20
+
+[node name="HBox" type="HBoxContainer" parent="AchievementScreenHBox/FeatsOfStrengthVBox/MC/ScrollContainer/FoSItems/Item3/MC2"]
+layout_mode = 2
+theme_override_constants/separation = 25
+
+[node name="Item1" type="MarginContainer" parent="AchievementScreenHBox/FeatsOfStrengthVBox/MC/ScrollContainer/FoSItems/Item3/MC2/HBox"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+
+[node name="Button" type="Button" parent="AchievementScreenHBox/FeatsOfStrengthVBox/MC/ScrollContainer/FoSItems/Item3/MC2/HBox/Item1"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+
+[node name="Item2" type="MarginContainer" parent="AchievementScreenHBox/FeatsOfStrengthVBox/MC/ScrollContainer/FoSItems/Item3/MC2/HBox"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+
+[node name="Button" type="Button" parent="AchievementScreenHBox/FeatsOfStrengthVBox/MC/ScrollContainer/FoSItems/Item3/MC2/HBox/Item2"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+
+[node name="Item3" type="MarginContainer" parent="AchievementScreenHBox/FeatsOfStrengthVBox/MC/ScrollContainer/FoSItems/Item3/MC2/HBox"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+
+[node name="Button" type="Button" parent="AchievementScreenHBox/FeatsOfStrengthVBox/MC/ScrollContainer/FoSItems/Item3/MC2/HBox/Item3"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+
+[node name="Item4" type="MarginContainer" parent="AchievementScreenHBox/FeatsOfStrengthVBox/MC/ScrollContainer/FoSItems/Item3/MC2/HBox"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+
+[node name="Button" type="Button" parent="AchievementScreenHBox/FeatsOfStrengthVBox/MC/ScrollContainer/FoSItems/Item3/MC2/HBox/Item4"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+
+[node name="Item5" type="MarginContainer" parent="AchievementScreenHBox/FeatsOfStrengthVBox/MC/ScrollContainer/FoSItems/Item3/MC2/HBox"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 12
+
+[node name="Button" type="Button" parent="AchievementScreenHBox/FeatsOfStrengthVBox/MC/ScrollContainer/FoSItems/Item3/MC2/HBox/Item5"]
+layout_mode = 2
+
+[node name="Item6" type="MarginContainer" parent="AchievementScreenHBox/FeatsOfStrengthVBox/MC/ScrollContainer/FoSItems/Item3/MC2/HBox"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 12
+
+[node name="Button" type="Button" parent="AchievementScreenHBox/FeatsOfStrengthVBox/MC/ScrollContainer/FoSItems/Item3/MC2/HBox/Item6"]
+layout_mode = 2
+
+[node name="Item7" type="MarginContainer" parent="AchievementScreenHBox/FeatsOfStrengthVBox/MC/ScrollContainer/FoSItems/Item3/MC2/HBox"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 12
+
+[node name="Button" type="Button" parent="AchievementScreenHBox/FeatsOfStrengthVBox/MC/ScrollContainer/FoSItems/Item3/MC2/HBox/Item7"]
+layout_mode = 2
+
+[node name="Item4" type="VBoxContainer" parent="AchievementScreenHBox/FeatsOfStrengthVBox/MC/ScrollContainer/FoSItems"]
+layout_mode = 2
+
+[node name="MC" type="MarginContainer" parent="AchievementScreenHBox/FeatsOfStrengthVBox/MC/ScrollContainer/FoSItems/Item4"]
+layout_mode = 2
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_top = 15
+
+[node name="FoSNameLabel" type="Label" parent="AchievementScreenHBox/FeatsOfStrengthVBox/MC/ScrollContainer/FoSItems/Item4/MC"]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 32
+text = "Oak Wood"
+
+[node name="MC2" type="MarginContainer" parent="AchievementScreenHBox/FeatsOfStrengthVBox/MC/ScrollContainer/FoSItems/Item4"]
+layout_mode = 2
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_top = 2
+theme_override_constants/margin_right = 25
+theme_override_constants/margin_bottom = 20
+
+[node name="HBox" type="HBoxContainer" parent="AchievementScreenHBox/FeatsOfStrengthVBox/MC/ScrollContainer/FoSItems/Item4/MC2"]
+layout_mode = 2
+theme_override_constants/separation = 25
+
+[node name="Item1" type="MarginContainer" parent="AchievementScreenHBox/FeatsOfStrengthVBox/MC/ScrollContainer/FoSItems/Item4/MC2/HBox"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+
+[node name="Button" type="Button" parent="AchievementScreenHBox/FeatsOfStrengthVBox/MC/ScrollContainer/FoSItems/Item4/MC2/HBox/Item1"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+
+[node name="Item2" type="MarginContainer" parent="AchievementScreenHBox/FeatsOfStrengthVBox/MC/ScrollContainer/FoSItems/Item4/MC2/HBox"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+
+[node name="Button" type="Button" parent="AchievementScreenHBox/FeatsOfStrengthVBox/MC/ScrollContainer/FoSItems/Item4/MC2/HBox/Item2"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+
+[node name="Item3" type="MarginContainer" parent="AchievementScreenHBox/FeatsOfStrengthVBox/MC/ScrollContainer/FoSItems/Item4/MC2/HBox"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+
+[node name="Button" type="Button" parent="AchievementScreenHBox/FeatsOfStrengthVBox/MC/ScrollContainer/FoSItems/Item4/MC2/HBox/Item3"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+
+[node name="Item4" type="MarginContainer" parent="AchievementScreenHBox/FeatsOfStrengthVBox/MC/ScrollContainer/FoSItems/Item4/MC2/HBox"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+
+[node name="Button" type="Button" parent="AchievementScreenHBox/FeatsOfStrengthVBox/MC/ScrollContainer/FoSItems/Item4/MC2/HBox/Item4"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+
+[node name="Item5" type="MarginContainer" parent="AchievementScreenHBox/FeatsOfStrengthVBox/MC/ScrollContainer/FoSItems/Item4/MC2/HBox"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 12
+
+[node name="Button" type="Button" parent="AchievementScreenHBox/FeatsOfStrengthVBox/MC/ScrollContainer/FoSItems/Item4/MC2/HBox/Item5"]
+layout_mode = 2
+
+[node name="Item6" type="MarginContainer" parent="AchievementScreenHBox/FeatsOfStrengthVBox/MC/ScrollContainer/FoSItems/Item4/MC2/HBox"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 12
+
+[node name="Button" type="Button" parent="AchievementScreenHBox/FeatsOfStrengthVBox/MC/ScrollContainer/FoSItems/Item4/MC2/HBox/Item6"]
+layout_mode = 2
+
+[node name="Item7" type="MarginContainer" parent="AchievementScreenHBox/FeatsOfStrengthVBox/MC/ScrollContainer/FoSItems/Item4/MC2/HBox"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 12
+
+[node name="Button" type="Button" parent="AchievementScreenHBox/FeatsOfStrengthVBox/MC/ScrollContainer/FoSItems/Item4/MC2/HBox/Item7"]
+layout_mode = 2
+
+[node name="Item5" type="VBoxContainer" parent="AchievementScreenHBox/FeatsOfStrengthVBox/MC/ScrollContainer/FoSItems"]
+layout_mode = 2
+
+[node name="MC" type="MarginContainer" parent="AchievementScreenHBox/FeatsOfStrengthVBox/MC/ScrollContainer/FoSItems/Item5"]
+layout_mode = 2
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_top = 15
+
+[node name="FoSNameLabel" type="Label" parent="AchievementScreenHBox/FeatsOfStrengthVBox/MC/ScrollContainer/FoSItems/Item5/MC"]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 32
+text = "Oak Wood"
+
+[node name="MC2" type="MarginContainer" parent="AchievementScreenHBox/FeatsOfStrengthVBox/MC/ScrollContainer/FoSItems/Item5"]
+layout_mode = 2
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_top = 2
+theme_override_constants/margin_right = 25
+theme_override_constants/margin_bottom = 20
+
+[node name="HBox" type="HBoxContainer" parent="AchievementScreenHBox/FeatsOfStrengthVBox/MC/ScrollContainer/FoSItems/Item5/MC2"]
+layout_mode = 2
+theme_override_constants/separation = 25
+
+[node name="Item1" type="MarginContainer" parent="AchievementScreenHBox/FeatsOfStrengthVBox/MC/ScrollContainer/FoSItems/Item5/MC2/HBox"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+
+[node name="Button" type="Button" parent="AchievementScreenHBox/FeatsOfStrengthVBox/MC/ScrollContainer/FoSItems/Item5/MC2/HBox/Item1"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+
+[node name="Item2" type="MarginContainer" parent="AchievementScreenHBox/FeatsOfStrengthVBox/MC/ScrollContainer/FoSItems/Item5/MC2/HBox"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+
+[node name="Button" type="Button" parent="AchievementScreenHBox/FeatsOfStrengthVBox/MC/ScrollContainer/FoSItems/Item5/MC2/HBox/Item2"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+
+[node name="Item3" type="MarginContainer" parent="AchievementScreenHBox/FeatsOfStrengthVBox/MC/ScrollContainer/FoSItems/Item5/MC2/HBox"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+
+[node name="Button" type="Button" parent="AchievementScreenHBox/FeatsOfStrengthVBox/MC/ScrollContainer/FoSItems/Item5/MC2/HBox/Item3"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+
+[node name="Item4" type="MarginContainer" parent="AchievementScreenHBox/FeatsOfStrengthVBox/MC/ScrollContainer/FoSItems/Item5/MC2/HBox"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+
+[node name="Button" type="Button" parent="AchievementScreenHBox/FeatsOfStrengthVBox/MC/ScrollContainer/FoSItems/Item5/MC2/HBox/Item4"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+
+[node name="Item5" type="MarginContainer" parent="AchievementScreenHBox/FeatsOfStrengthVBox/MC/ScrollContainer/FoSItems/Item5/MC2/HBox"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 12
+
+[node name="Button" type="Button" parent="AchievementScreenHBox/FeatsOfStrengthVBox/MC/ScrollContainer/FoSItems/Item5/MC2/HBox/Item5"]
+layout_mode = 2
+
+[node name="Item6" type="MarginContainer" parent="AchievementScreenHBox/FeatsOfStrengthVBox/MC/ScrollContainer/FoSItems/Item5/MC2/HBox"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 12
+
+[node name="Button" type="Button" parent="AchievementScreenHBox/FeatsOfStrengthVBox/MC/ScrollContainer/FoSItems/Item5/MC2/HBox/Item6"]
+layout_mode = 2
+
+[node name="Item7" type="MarginContainer" parent="AchievementScreenHBox/FeatsOfStrengthVBox/MC/ScrollContainer/FoSItems/Item5/MC2/HBox"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 12
+
+[node name="Button" type="Button" parent="AchievementScreenHBox/FeatsOfStrengthVBox/MC/ScrollContainer/FoSItems/Item5/MC2/HBox/Item7"]
+layout_mode = 2
+
+[node name="Item6" type="VBoxContainer" parent="AchievementScreenHBox/FeatsOfStrengthVBox/MC/ScrollContainer/FoSItems"]
+layout_mode = 2
+
+[node name="MC" type="MarginContainer" parent="AchievementScreenHBox/FeatsOfStrengthVBox/MC/ScrollContainer/FoSItems/Item6"]
+layout_mode = 2
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_top = 15
+
+[node name="FoSNameLabel" type="Label" parent="AchievementScreenHBox/FeatsOfStrengthVBox/MC/ScrollContainer/FoSItems/Item6/MC"]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 32
+text = "Oak Wood"
+
+[node name="MC2" type="MarginContainer" parent="AchievementScreenHBox/FeatsOfStrengthVBox/MC/ScrollContainer/FoSItems/Item6"]
+layout_mode = 2
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_top = 2
+theme_override_constants/margin_right = 25
+theme_override_constants/margin_bottom = 20
+
+[node name="HBox" type="HBoxContainer" parent="AchievementScreenHBox/FeatsOfStrengthVBox/MC/ScrollContainer/FoSItems/Item6/MC2"]
+layout_mode = 2
+theme_override_constants/separation = 25
+
+[node name="Item1" type="MarginContainer" parent="AchievementScreenHBox/FeatsOfStrengthVBox/MC/ScrollContainer/FoSItems/Item6/MC2/HBox"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+
+[node name="Button" type="Button" parent="AchievementScreenHBox/FeatsOfStrengthVBox/MC/ScrollContainer/FoSItems/Item6/MC2/HBox/Item1"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+
+[node name="Item2" type="MarginContainer" parent="AchievementScreenHBox/FeatsOfStrengthVBox/MC/ScrollContainer/FoSItems/Item6/MC2/HBox"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+
+[node name="Button" type="Button" parent="AchievementScreenHBox/FeatsOfStrengthVBox/MC/ScrollContainer/FoSItems/Item6/MC2/HBox/Item2"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+
+[node name="Item3" type="MarginContainer" parent="AchievementScreenHBox/FeatsOfStrengthVBox/MC/ScrollContainer/FoSItems/Item6/MC2/HBox"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+
+[node name="Button" type="Button" parent="AchievementScreenHBox/FeatsOfStrengthVBox/MC/ScrollContainer/FoSItems/Item6/MC2/HBox/Item3"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+
+[node name="Item4" type="MarginContainer" parent="AchievementScreenHBox/FeatsOfStrengthVBox/MC/ScrollContainer/FoSItems/Item6/MC2/HBox"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+
+[node name="Button" type="Button" parent="AchievementScreenHBox/FeatsOfStrengthVBox/MC/ScrollContainer/FoSItems/Item6/MC2/HBox/Item4"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+
+[node name="Item5" type="MarginContainer" parent="AchievementScreenHBox/FeatsOfStrengthVBox/MC/ScrollContainer/FoSItems/Item6/MC2/HBox"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 12
+
+[node name="Button" type="Button" parent="AchievementScreenHBox/FeatsOfStrengthVBox/MC/ScrollContainer/FoSItems/Item6/MC2/HBox/Item5"]
+layout_mode = 2
+
+[node name="Item6" type="MarginContainer" parent="AchievementScreenHBox/FeatsOfStrengthVBox/MC/ScrollContainer/FoSItems/Item6/MC2/HBox"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 12
+
+[node name="Button" type="Button" parent="AchievementScreenHBox/FeatsOfStrengthVBox/MC/ScrollContainer/FoSItems/Item6/MC2/HBox/Item6"]
+layout_mode = 2
+
+[node name="Item7" type="MarginContainer" parent="AchievementScreenHBox/FeatsOfStrengthVBox/MC/ScrollContainer/FoSItems/Item6/MC2/HBox"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 12
+
+[node name="Button" type="Button" parent="AchievementScreenHBox/FeatsOfStrengthVBox/MC/ScrollContainer/FoSItems/Item6/MC2/HBox/Item7"]
+layout_mode = 2
+
+[node name="Item7" type="VBoxContainer" parent="AchievementScreenHBox/FeatsOfStrengthVBox/MC/ScrollContainer/FoSItems"]
+layout_mode = 2
+
+[node name="MC" type="MarginContainer" parent="AchievementScreenHBox/FeatsOfStrengthVBox/MC/ScrollContainer/FoSItems/Item7"]
+layout_mode = 2
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_top = 15
+
+[node name="FoSNameLabel" type="Label" parent="AchievementScreenHBox/FeatsOfStrengthVBox/MC/ScrollContainer/FoSItems/Item7/MC"]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 32
+text = "Oak Wood"
+
+[node name="MC2" type="MarginContainer" parent="AchievementScreenHBox/FeatsOfStrengthVBox/MC/ScrollContainer/FoSItems/Item7"]
+layout_mode = 2
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_top = 2
+theme_override_constants/margin_right = 25
+theme_override_constants/margin_bottom = 20
+
+[node name="HBox" type="HBoxContainer" parent="AchievementScreenHBox/FeatsOfStrengthVBox/MC/ScrollContainer/FoSItems/Item7/MC2"]
+layout_mode = 2
+theme_override_constants/separation = 25
+
+[node name="Item1" type="MarginContainer" parent="AchievementScreenHBox/FeatsOfStrengthVBox/MC/ScrollContainer/FoSItems/Item7/MC2/HBox"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+
+[node name="Button" type="Button" parent="AchievementScreenHBox/FeatsOfStrengthVBox/MC/ScrollContainer/FoSItems/Item7/MC2/HBox/Item1"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+
+[node name="Item2" type="MarginContainer" parent="AchievementScreenHBox/FeatsOfStrengthVBox/MC/ScrollContainer/FoSItems/Item7/MC2/HBox"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+
+[node name="Button" type="Button" parent="AchievementScreenHBox/FeatsOfStrengthVBox/MC/ScrollContainer/FoSItems/Item7/MC2/HBox/Item2"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+
+[node name="Item3" type="MarginContainer" parent="AchievementScreenHBox/FeatsOfStrengthVBox/MC/ScrollContainer/FoSItems/Item7/MC2/HBox"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+
+[node name="Button" type="Button" parent="AchievementScreenHBox/FeatsOfStrengthVBox/MC/ScrollContainer/FoSItems/Item7/MC2/HBox/Item3"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+
+[node name="Item4" type="MarginContainer" parent="AchievementScreenHBox/FeatsOfStrengthVBox/MC/ScrollContainer/FoSItems/Item7/MC2/HBox"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+
+[node name="Button" type="Button" parent="AchievementScreenHBox/FeatsOfStrengthVBox/MC/ScrollContainer/FoSItems/Item7/MC2/HBox/Item4"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+
+[node name="Item5" type="MarginContainer" parent="AchievementScreenHBox/FeatsOfStrengthVBox/MC/ScrollContainer/FoSItems/Item7/MC2/HBox"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 12
+
+[node name="Button" type="Button" parent="AchievementScreenHBox/FeatsOfStrengthVBox/MC/ScrollContainer/FoSItems/Item7/MC2/HBox/Item5"]
+layout_mode = 2
+
+[node name="Item6" type="MarginContainer" parent="AchievementScreenHBox/FeatsOfStrengthVBox/MC/ScrollContainer/FoSItems/Item7/MC2/HBox"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 12
+
+[node name="Button" type="Button" parent="AchievementScreenHBox/FeatsOfStrengthVBox/MC/ScrollContainer/FoSItems/Item7/MC2/HBox/Item6"]
+layout_mode = 2
+
+[node name="Item7" type="MarginContainer" parent="AchievementScreenHBox/FeatsOfStrengthVBox/MC/ScrollContainer/FoSItems/Item7/MC2/HBox"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 12
+
+[node name="Button" type="Button" parent="AchievementScreenHBox/FeatsOfStrengthVBox/MC/ScrollContainer/FoSItems/Item7/MC2/HBox/Item7"]
+layout_mode = 2
+
+[node name="MC" type="MarginContainer" parent="AchievementScreenHBox"]
+custom_minimum_size = Vector2(180, 0)
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 13
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 265
+
+[node name="ColorRect" type="ColorRect" parent="AchievementScreenHBox/MC"]
+layout_mode = 2
+color = Color(0.486275, 0.486275, 0.486275, 1)
+
+[node name="AchievementsVBox" type="VBoxContainer" parent="AchievementScreenHBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="FoSTitleMC" type="MarginContainer" parent="AchievementScreenHBox/AchievementsVBox"]
+custom_minimum_size = Vector2(0, 70)
+layout_mode = 2
+theme_override_constants/margin_left = 270
+theme_override_constants/margin_top = 13
+theme_override_constants/margin_right = 270
+theme_override_constants/margin_bottom = 3
+
+[node name="ColorRect" type="ColorRect" parent="AchievementScreenHBox/AchievementsVBox/FoSTitleMC"]
+layout_mode = 2
+color = Color(0.443137, 0.435294, 0.294118, 1)
+
+[node name="TitleLabel" type="Label" parent="AchievementScreenHBox/AchievementsVBox/FoSTitleMC/ColorRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 30
+text = "Achievements"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MC" type="MarginContainer" parent="AchievementScreenHBox/AchievementsVBox"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 25
+theme_override_constants/margin_bottom = 20
+
+[node name="ScrollContainer" type="ScrollContainer" parent="AchievementScreenHBox/AchievementsVBox/MC"]
+layout_mode = 2
+
+[node name="FoSItems" type="GridContainer" parent="AchievementScreenHBox/AchievementsVBox/MC/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/h_separation = 16
+theme_override_constants/v_separation = 20
+columns = 7
+
+[node name="Item1" type="MarginContainer" parent="AchievementScreenHBox/AchievementsVBox/MC/ScrollContainer/FoSItems"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+
+[node name="Button" type="Button" parent="AchievementScreenHBox/AchievementsVBox/MC/ScrollContainer/FoSItems/Item1"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+
+[node name="Item2" type="MarginContainer" parent="AchievementScreenHBox/AchievementsVBox/MC/ScrollContainer/FoSItems"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+
+[node name="Button" type="Button" parent="AchievementScreenHBox/AchievementsVBox/MC/ScrollContainer/FoSItems/Item2"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+
+[node name="Item3" type="MarginContainer" parent="AchievementScreenHBox/AchievementsVBox/MC/ScrollContainer/FoSItems"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+
+[node name="Button" type="Button" parent="AchievementScreenHBox/AchievementsVBox/MC/ScrollContainer/FoSItems/Item3"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+
+[node name="Item4" type="MarginContainer" parent="AchievementScreenHBox/AchievementsVBox/MC/ScrollContainer/FoSItems"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+
+[node name="Button" type="Button" parent="AchievementScreenHBox/AchievementsVBox/MC/ScrollContainer/FoSItems/Item4"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+
+[node name="Item5" type="MarginContainer" parent="AchievementScreenHBox/AchievementsVBox/MC/ScrollContainer/FoSItems"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+
+[node name="Button" type="Button" parent="AchievementScreenHBox/AchievementsVBox/MC/ScrollContainer/FoSItems/Item5"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+
+[node name="Item6" type="MarginContainer" parent="AchievementScreenHBox/AchievementsVBox/MC/ScrollContainer/FoSItems"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+
+[node name="Button" type="Button" parent="AchievementScreenHBox/AchievementsVBox/MC/ScrollContainer/FoSItems/Item6"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+
+[node name="Item7" type="MarginContainer" parent="AchievementScreenHBox/AchievementsVBox/MC/ScrollContainer/FoSItems"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+
+[node name="Button" type="Button" parent="AchievementScreenHBox/AchievementsVBox/MC/ScrollContainer/FoSItems/Item7"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+
+[node name="Item8" type="MarginContainer" parent="AchievementScreenHBox/AchievementsVBox/MC/ScrollContainer/FoSItems"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+
+[node name="Button" type="Button" parent="AchievementScreenHBox/AchievementsVBox/MC/ScrollContainer/FoSItems/Item8"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+
+[node name="Item9" type="MarginContainer" parent="AchievementScreenHBox/AchievementsVBox/MC/ScrollContainer/FoSItems"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+
+[node name="Button" type="Button" parent="AchievementScreenHBox/AchievementsVBox/MC/ScrollContainer/FoSItems/Item9"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+
+[node name="Item10" type="MarginContainer" parent="AchievementScreenHBox/AchievementsVBox/MC/ScrollContainer/FoSItems"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+
+[node name="Button" type="Button" parent="AchievementScreenHBox/AchievementsVBox/MC/ScrollContainer/FoSItems/Item10"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+
+[node name="Item11" type="MarginContainer" parent="AchievementScreenHBox/AchievementsVBox/MC/ScrollContainer/FoSItems"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+
+[node name="Button" type="Button" parent="AchievementScreenHBox/AchievementsVBox/MC/ScrollContainer/FoSItems/Item11"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+
+[node name="Item12" type="MarginContainer" parent="AchievementScreenHBox/AchievementsVBox/MC/ScrollContainer/FoSItems"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+
+[node name="Button" type="Button" parent="AchievementScreenHBox/AchievementsVBox/MC/ScrollContainer/FoSItems/Item12"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+
+[node name="Item13" type="MarginContainer" parent="AchievementScreenHBox/AchievementsVBox/MC/ScrollContainer/FoSItems"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+
+[node name="Button" type="Button" parent="AchievementScreenHBox/AchievementsVBox/MC/ScrollContainer/FoSItems/Item13"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+
+[node name="Item14" type="MarginContainer" parent="AchievementScreenHBox/AchievementsVBox/MC/ScrollContainer/FoSItems"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+
+[node name="Button" type="Button" parent="AchievementScreenHBox/AchievementsVBox/MC/ScrollContainer/FoSItems/Item14"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+
+[node name="Item15" type="MarginContainer" parent="AchievementScreenHBox/AchievementsVBox/MC/ScrollContainer/FoSItems"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+
+[node name="Button" type="Button" parent="AchievementScreenHBox/AchievementsVBox/MC/ScrollContainer/FoSItems/Item15"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+
+[node name="Item16" type="MarginContainer" parent="AchievementScreenHBox/AchievementsVBox/MC/ScrollContainer/FoSItems"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+
+[node name="Button" type="Button" parent="AchievementScreenHBox/AchievementsVBox/MC/ScrollContainer/FoSItems/Item16"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+
+[node name="Item17" type="MarginContainer" parent="AchievementScreenHBox/AchievementsVBox/MC/ScrollContainer/FoSItems"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+
+[node name="Button" type="Button" parent="AchievementScreenHBox/AchievementsVBox/MC/ScrollContainer/FoSItems/Item17"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+
+[node name="Item18" type="MarginContainer" parent="AchievementScreenHBox/AchievementsVBox/MC/ScrollContainer/FoSItems"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+
+[node name="Button" type="Button" parent="AchievementScreenHBox/AchievementsVBox/MC/ScrollContainer/FoSItems/Item18"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+
+[node name="Item19" type="MarginContainer" parent="AchievementScreenHBox/AchievementsVBox/MC/ScrollContainer/FoSItems"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+
+[node name="Button" type="Button" parent="AchievementScreenHBox/AchievementsVBox/MC/ScrollContainer/FoSItems/Item19"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+
+[node name="Item20" type="MarginContainer" parent="AchievementScreenHBox/AchievementsVBox/MC/ScrollContainer/FoSItems"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+
+[node name="Button" type="Button" parent="AchievementScreenHBox/AchievementsVBox/MC/ScrollContainer/FoSItems/Item20"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+
+[node name="Item21" type="MarginContainer" parent="AchievementScreenHBox/AchievementsVBox/MC/ScrollContainer/FoSItems"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+
+[node name="Button" type="Button" parent="AchievementScreenHBox/AchievementsVBox/MC/ScrollContainer/FoSItems/Item21"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+
+[node name="Item22" type="MarginContainer" parent="AchievementScreenHBox/AchievementsVBox/MC/ScrollContainer/FoSItems"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+
+[node name="Button" type="Button" parent="AchievementScreenHBox/AchievementsVBox/MC/ScrollContainer/FoSItems/Item22"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
