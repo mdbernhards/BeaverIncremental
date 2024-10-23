@@ -1,9 +1,9 @@
 [gd_scene load_steps=5 format=3 uid="uid://bdjorvu5y30qm"]
 
-[ext_resource type="PackedScene" uid="uid://cc8a2sbrqy5ew" path="res://Scenes/MainMenu/main_menu.tscn" id="1_5ya8i"]
-[ext_resource type="PackedScene" uid="uid://bh8e34tborwh1" path="res://Scenes/LoadGame/load_game.tscn" id="2_q55r7"]
-[ext_resource type="PackedScene" uid="uid://dnnaegnbqppxc" path="res://Scenes/Settings/settings.tscn" id="3_ofubu"]
-[ext_resource type="PackedScene" uid="uid://dopio2pmdmjpx" path="res://Scenes/GameMainScreen/game_main_screen.tscn" id="4_btfnp"]
+[ext_resource type="PackedScene" uid="uid://cc8a2sbrqy5ew" path="res://Scenes/main_menu.tscn" id="1_5ya8i"]
+[ext_resource type="PackedScene" uid="uid://bh8e34tborwh1" path="res://Scenes/load_game.tscn" id="2_q55r7"]
+[ext_resource type="PackedScene" uid="uid://dnnaegnbqppxc" path="res://Scenes/settings.tscn" id="3_ofubu"]
+[ext_resource type="PackedScene" uid="uid://dopio2pmdmjpx" path="res://Scenes/game_main_screen.tscn" id="4_btfnp"]
 
 [node name="Game" type="Control"]
 layout_mode = 3
@@ -31,13 +31,10 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="MainMenu" parent="." instance=ExtResource("1_5ya8i")]
-visible = false
 
 [node name="LoadGame" parent="." instance=ExtResource("2_q55r7")]
-visible = false
 
 [node name="Settings" parent="." instance=ExtResource("3_ofubu")]
-visible = false
 
 [node name="GameMainScreen" parent="." instance=ExtResource("4_btfnp")]
 layout_mode = 1

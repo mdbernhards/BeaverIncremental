@@ -1,0 +1,1680 @@
+[gd_scene format=3 uid="uid://dy25pvs37m84w"]
+
+[node name="FishingScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="MC" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="HBox" type="HBoxContainer" parent="MC"]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="VBox" type="VBoxContainer" parent="MC/HBox"]
+custom_minimum_size = Vector2(1060, 0)
+layout_mode = 2
+mouse_filter = 2
+
+[node name="MC" type="MarginContainer" parent="MC/HBox/VBox"]
+custom_minimum_size = Vector2(700, 820)
+layout_mode = 2
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_top = 25
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 10
+
+[node name="FishingGame" type="ColorRect" parent="MC/HBox/VBox/MC"]
+layout_mode = 2
+color = Color(0.278431, 0.356863, 0.403922, 1)
+
+[node name="FishingGameLogicNode" type="Node" parent="MC/HBox/VBox/MC/FishingGame"]
+
+[node name="Button" type="Button" parent="MC/HBox/VBox/MC/FishingGame/FishingGameLogicNode"]
+visible = false
+offset_left = 298.0
+offset_top = 146.0
+offset_right = 354.0
+offset_bottom = 189.0
+theme_override_font_sizes/font_size = 25
+text = "Fish"
+
+[node name="Button2" type="Button" parent="MC/HBox/VBox/MC/FishingGame/FishingGameLogicNode"]
+visible = false
+offset_left = 177.0
+offset_top = 387.0
+offset_right = 233.0
+offset_bottom = 430.0
+theme_override_font_sizes/font_size = 25
+text = "Fish"
+
+[node name="Button3" type="Button" parent="MC/HBox/VBox/MC/FishingGame/FishingGameLogicNode"]
+visible = false
+offset_left = 745.0
+offset_top = 237.0
+offset_right = 801.0
+offset_bottom = 280.0
+theme_override_font_sizes/font_size = 25
+text = "Fish"
+
+[node name="MC" type="MarginContainer" parent="MC/HBox/VBox/MC/FishingGame"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
+
+[node name="VBox" type="VBoxContainer" parent="MC/HBox/VBox/MC/FishingGame/MC"]
+layout_mode = 2
+theme_override_constants/separation = 0
+alignment = 2
+
+[node name="HBox" type="HBoxContainer" parent="MC/HBox/VBox/MC/FishingGame/MC/VBox"]
+layout_mode = 2
+theme_override_constants/separation = 12
+alignment = 1
+
+[node name="MC" type="MarginContainer" parent="MC/HBox/VBox/MC/FishingGame/MC/VBox/HBox"]
+custom_minimum_size = Vector2(115, 0)
+layout_mode = 2
+theme_override_constants/margin_top = 0
+
+[node name="FishButton" type="Button" parent="MC/HBox/VBox/MC/FishingGame/MC/VBox/HBox/MC"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "FISH!"
+
+[node name="VBox" type="VBoxContainer" parent="MC/HBox/VBox/MC/FishingGame/MC/VBox/HBox"]
+custom_minimum_size = Vector2(45, 0)
+layout_mode = 2
+theme_override_constants/separation = 7
+
+[node name="MC" type="MarginContainer" parent="MC/HBox/VBox/MC/FishingGame/MC/VBox/HBox/VBox"]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="MC/HBox/VBox/MC/FishingGame/MC/VBox/HBox/VBox/MC"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "1x"
+
+[node name="MC2" type="MarginContainer" parent="MC/HBox/VBox/MC/FishingGame/MC/VBox/HBox/VBox"]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="MC/HBox/VBox/MC/FishingGame/MC/VBox/HBox/VBox/MC2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "10x"
+
+[node name="MC2" type="MarginContainer" parent="MC/HBox/VBox"]
+layout_mode = 2
+size_flags_vertical = 3
+mouse_filter = 2
+
+[node name="BaitSelection" type="MarginContainer" parent="MC/HBox"]
+custom_minimum_size = Vector2(170, 0)
+layout_mode = 2
+theme_override_constants/margin_top = 25
+theme_override_constants/margin_bottom = 25
+
+[node name="ColorRect" type="ColorRect" parent="MC/HBox/BaitSelection"]
+layout_mode = 2
+color = Color(0.266667, 0.266667, 0.266667, 1)
+
+[node name="VBox" type="VBoxContainer" parent="MC/HBox/BaitSelection"]
+layout_mode = 2
+
+[node name="MC" type="MarginContainer" parent="MC/HBox/BaitSelection/VBox"]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
+
+[node name="ColorRect" type="ColorRect" parent="MC/HBox/BaitSelection/VBox/MC"]
+layout_mode = 2
+color = Color(0.380392, 0.309804, 0.309804, 1)
+
+[node name="UsedBaitLabel" type="Label" parent="MC/HBox/BaitSelection/VBox/MC"]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 24
+text = "Used Bait"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BaitButtons" type="MarginContainer" parent="MC/HBox/BaitSelection/VBox"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_top = 15
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MC/HBox/BaitSelection/VBox/BaitButtons"]
+layout_mode = 2
+theme_override_constants/separation = 17
+
+[node name="BaitButton" type="MarginContainer" parent="MC/HBox/BaitSelection/VBox/BaitButtons/VBoxContainer"]
+custom_minimum_size = Vector2(0, 45)
+layout_mode = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_right = 15
+
+[node name="Button" type="Button" parent="MC/HBox/BaitSelection/VBox/BaitButtons/VBoxContainer/BaitButton"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 21
+text = "Apple"
+
+[node name="BaitButton2" type="MarginContainer" parent="MC/HBox/BaitSelection/VBox/BaitButtons/VBoxContainer"]
+custom_minimum_size = Vector2(0, 45)
+layout_mode = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_right = 15
+
+[node name="Button" type="Button" parent="MC/HBox/BaitSelection/VBox/BaitButtons/VBoxContainer/BaitButton2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 21
+text = "Apple"
+
+[node name="BaitButton3" type="MarginContainer" parent="MC/HBox/BaitSelection/VBox/BaitButtons/VBoxContainer"]
+custom_minimum_size = Vector2(0, 45)
+layout_mode = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_right = 15
+
+[node name="Button" type="Button" parent="MC/HBox/BaitSelection/VBox/BaitButtons/VBoxContainer/BaitButton3"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 21
+text = "Apple"
+
+[node name="BaitButton4" type="MarginContainer" parent="MC/HBox/BaitSelection/VBox/BaitButtons/VBoxContainer"]
+custom_minimum_size = Vector2(0, 45)
+layout_mode = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_right = 15
+
+[node name="Button" type="Button" parent="MC/HBox/BaitSelection/VBox/BaitButtons/VBoxContainer/BaitButton4"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 21
+text = "Apple"
+
+[node name="BaitButton5" type="MarginContainer" parent="MC/HBox/BaitSelection/VBox/BaitButtons/VBoxContainer"]
+custom_minimum_size = Vector2(0, 45)
+layout_mode = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_right = 15
+
+[node name="Button" type="Button" parent="MC/HBox/BaitSelection/VBox/BaitButtons/VBoxContainer/BaitButton5"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 21
+text = "Apple"
+
+[node name="FishingImprovementsMenusHBox" type="MarginContainer" parent="MC/HBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 25
+theme_override_constants/margin_right = 25
+theme_override_constants/margin_bottom = 25
+
+[node name="ColorRect" type="ColorRect" parent="MC/HBox/FishingImprovementsMenusHBox"]
+layout_mode = 2
+color = Color(0.266667, 0.266667, 0.266667, 1)
+
+[node name="VBox" type="VBoxContainer" parent="MC/HBox/FishingImprovementsMenusHBox"]
+layout_mode = 2
+
+[node name="MC" type="MarginContainer" parent="MC/HBox/FishingImprovementsMenusHBox/VBox"]
+custom_minimum_size = Vector2(400, 100)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
+
+[node name="ColorRect" type="ColorRect" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/MC"]
+layout_mode = 2
+color = Color(0.305882, 0.321569, 0.392157, 1)
+
+[node name="HBox" type="HBoxContainer" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/MC/ColorRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 17
+alignment = 1
+
+[node name="MC" type="MarginContainer" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/MC/ColorRect/HBox"]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 10
+
+[node name="Button" type="Button" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/MC/ColorRect/HBox/MC"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 23
+text = "Shop"
+
+[node name="MC2" type="MarginContainer" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/MC/ColorRect/HBox"]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 10
+
+[node name="Button" type="Button" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/MC/ColorRect/HBox/MC2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 23
+text = "Fishing Spots"
+
+[node name="PagesMC" type="MarginContainer" parent="MC/HBox/FishingImprovementsMenusHBox/VBox"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="ShopPage" type="VBoxContainer" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC"]
+layout_mode = 2
+
+[node name="MC" type="MarginContainer" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/ShopPage"]
+layout_mode = 2
+theme_override_constants/margin_left = 40
+theme_override_constants/margin_right = 40
+
+[node name="Label" type="Label" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/ShopPage/MC"]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 45
+text = "Shop"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/ShopPage/MC"]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(0.752941, 0.627451, 0.627451, 1)
+text = "Inventory"
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="MC2" type="MarginContainer" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/ShopPage"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_top = 35
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 25
+
+[node name="ScrollContainer" type="ScrollContainer" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/ShopPage/MC2"]
+layout_mode = 2
+
+[node name="MC" type="MarginContainer" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/ShopPage/MC2/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/margin_right = 5
+
+[node name="VBox" type="VBoxContainer" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/ShopPage/MC2/ScrollContainer/MC"]
+layout_mode = 2
+
+[node name="PlaceItem1" type="MarginContainer" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/ShopPage/MC2/ScrollContainer/MC/VBox"]
+custom_minimum_size = Vector2(0, 130)
+layout_mode = 2
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 0
+theme_override_constants/margin_bottom = 10
+
+[node name="ColorRect" type="ColorRect" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/ShopPage/MC2/ScrollContainer/MC/VBox/PlaceItem1"]
+layout_mode = 2
+color = Color(0.196078, 0.196078, 0.196078, 1)
+
+[node name="HBox" type="HBoxContainer" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/ShopPage/MC2/ScrollContainer/MC/VBox/PlaceItem1"]
+layout_mode = 2
+
+[node name="MC1" type="MarginContainer" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/ShopPage/MC2/ScrollContainer/MC/VBox/PlaceItem1/HBox"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VBox" type="VBoxContainer" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/ShopPage/MC2/ScrollContainer/MC/VBox/PlaceItem1/HBox/MC1"]
+layout_mode = 2
+
+[node name="MC" type="MarginContainer" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/ShopPage/MC2/ScrollContainer/MC/VBox/PlaceItem1/HBox/MC1/VBox"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/ShopPage/MC2/ScrollContainer/MC/VBox/PlaceItem1/HBox/MC1/VBox/MC"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "Oak Bait"
+
+[node name="MC2" type="MarginContainer" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/ShopPage/MC2/ScrollContainer/MC/VBox/PlaceItem1/HBox/MC1/VBox"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 20
+
+[node name="Label" type="Label" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/ShopPage/MC2/ScrollContainer/MC/VBox/PlaceItem1/HBox/MC1/VBox/MC2"]
+custom_minimum_size = Vector2(220, 0)
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 12
+text = "5% fishing power"
+autowrap_mode = 3
+
+[node name="MC2" type="MarginContainer" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/ShopPage/MC2/ScrollContainer/MC/VBox/PlaceItem1/HBox"]
+custom_minimum_size = Vector2(220, 0)
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="GridContainer" type="GridContainer" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/ShopPage/MC2/ScrollContainer/MC/VBox/PlaceItem1/HBox/MC2"]
+layout_mode = 2
+theme_override_constants/h_separation = 15
+theme_override_constants/v_separation = 10
+columns = 2
+
+[node name="Button" type="Button" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/ShopPage/MC2/ScrollContainer/MC/VBox/PlaceItem1/HBox/MC2/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Buy"
+
+[node name="Button2" type="Button" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/ShopPage/MC2/ScrollContainer/MC/VBox/PlaceItem1/HBox/MC2/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "10x"
+
+[node name="Button3" type="Button" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/ShopPage/MC2/ScrollContainer/MC/VBox/PlaceItem1/HBox/MC2/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "100x"
+
+[node name="Button4" type="Button" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/ShopPage/MC2/ScrollContainer/MC/VBox/PlaceItem1/HBox/MC2/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "1000x"
+
+[node name="MC3" type="MarginContainer" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/ShopPage/MC2/ScrollContainer/MC/VBox/PlaceItem1/HBox"]
+custom_minimum_size = Vector2(110, 0)
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="ColorRect" type="ColorRect" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/ShopPage/MC2/ScrollContainer/MC/VBox/PlaceItem1/HBox/MC3"]
+layout_mode = 2
+color = Color(0.388235, 0.388235, 0.388235, 1)
+
+[node name="Label" type="Label" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/ShopPage/MC2/ScrollContainer/MC/VBox/PlaceItem1/HBox/MC3"]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 25
+text = "22"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PlaceItem2" type="MarginContainer" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/ShopPage/MC2/ScrollContainer/MC/VBox"]
+custom_minimum_size = Vector2(0, 130)
+layout_mode = 2
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 0
+theme_override_constants/margin_bottom = 10
+
+[node name="ColorRect" type="ColorRect" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/ShopPage/MC2/ScrollContainer/MC/VBox/PlaceItem2"]
+layout_mode = 2
+color = Color(0.196078, 0.196078, 0.196078, 1)
+
+[node name="HBox" type="HBoxContainer" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/ShopPage/MC2/ScrollContainer/MC/VBox/PlaceItem2"]
+layout_mode = 2
+
+[node name="MC1" type="MarginContainer" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/ShopPage/MC2/ScrollContainer/MC/VBox/PlaceItem2/HBox"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VBox" type="VBoxContainer" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/ShopPage/MC2/ScrollContainer/MC/VBox/PlaceItem2/HBox/MC1"]
+layout_mode = 2
+
+[node name="MC" type="MarginContainer" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/ShopPage/MC2/ScrollContainer/MC/VBox/PlaceItem2/HBox/MC1/VBox"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/ShopPage/MC2/ScrollContainer/MC/VBox/PlaceItem2/HBox/MC1/VBox/MC"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "Oak Bait"
+
+[node name="MC2" type="MarginContainer" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/ShopPage/MC2/ScrollContainer/MC/VBox/PlaceItem2/HBox/MC1/VBox"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 20
+
+[node name="Label" type="Label" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/ShopPage/MC2/ScrollContainer/MC/VBox/PlaceItem2/HBox/MC1/VBox/MC2"]
+custom_minimum_size = Vector2(220, 0)
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 12
+text = "5% fishing power"
+autowrap_mode = 3
+
+[node name="MC2" type="MarginContainer" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/ShopPage/MC2/ScrollContainer/MC/VBox/PlaceItem2/HBox"]
+custom_minimum_size = Vector2(220, 0)
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="GridContainer" type="GridContainer" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/ShopPage/MC2/ScrollContainer/MC/VBox/PlaceItem2/HBox/MC2"]
+layout_mode = 2
+theme_override_constants/h_separation = 15
+theme_override_constants/v_separation = 10
+columns = 2
+
+[node name="Button" type="Button" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/ShopPage/MC2/ScrollContainer/MC/VBox/PlaceItem2/HBox/MC2/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Buy"
+
+[node name="Button2" type="Button" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/ShopPage/MC2/ScrollContainer/MC/VBox/PlaceItem2/HBox/MC2/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "10x"
+
+[node name="Button3" type="Button" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/ShopPage/MC2/ScrollContainer/MC/VBox/PlaceItem2/HBox/MC2/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "100x"
+
+[node name="Button4" type="Button" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/ShopPage/MC2/ScrollContainer/MC/VBox/PlaceItem2/HBox/MC2/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "1000x"
+
+[node name="MC3" type="MarginContainer" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/ShopPage/MC2/ScrollContainer/MC/VBox/PlaceItem2/HBox"]
+custom_minimum_size = Vector2(110, 0)
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="ColorRect" type="ColorRect" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/ShopPage/MC2/ScrollContainer/MC/VBox/PlaceItem2/HBox/MC3"]
+layout_mode = 2
+color = Color(0.388235, 0.388235, 0.388235, 1)
+
+[node name="Label" type="Label" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/ShopPage/MC2/ScrollContainer/MC/VBox/PlaceItem2/HBox/MC3"]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 25
+text = "22"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PlaceItem3" type="MarginContainer" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/ShopPage/MC2/ScrollContainer/MC/VBox"]
+custom_minimum_size = Vector2(0, 130)
+layout_mode = 2
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 0
+theme_override_constants/margin_bottom = 10
+
+[node name="ColorRect" type="ColorRect" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/ShopPage/MC2/ScrollContainer/MC/VBox/PlaceItem3"]
+layout_mode = 2
+color = Color(0.196078, 0.196078, 0.196078, 1)
+
+[node name="HBox" type="HBoxContainer" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/ShopPage/MC2/ScrollContainer/MC/VBox/PlaceItem3"]
+layout_mode = 2
+
+[node name="MC1" type="MarginContainer" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/ShopPage/MC2/ScrollContainer/MC/VBox/PlaceItem3/HBox"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VBox" type="VBoxContainer" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/ShopPage/MC2/ScrollContainer/MC/VBox/PlaceItem3/HBox/MC1"]
+layout_mode = 2
+
+[node name="MC" type="MarginContainer" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/ShopPage/MC2/ScrollContainer/MC/VBox/PlaceItem3/HBox/MC1/VBox"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/ShopPage/MC2/ScrollContainer/MC/VBox/PlaceItem3/HBox/MC1/VBox/MC"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "Oak Bait"
+
+[node name="MC2" type="MarginContainer" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/ShopPage/MC2/ScrollContainer/MC/VBox/PlaceItem3/HBox/MC1/VBox"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 20
+
+[node name="Label" type="Label" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/ShopPage/MC2/ScrollContainer/MC/VBox/PlaceItem3/HBox/MC1/VBox/MC2"]
+custom_minimum_size = Vector2(220, 0)
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 12
+text = "5% fishing power"
+autowrap_mode = 3
+
+[node name="MC2" type="MarginContainer" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/ShopPage/MC2/ScrollContainer/MC/VBox/PlaceItem3/HBox"]
+custom_minimum_size = Vector2(220, 0)
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="GridContainer" type="GridContainer" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/ShopPage/MC2/ScrollContainer/MC/VBox/PlaceItem3/HBox/MC2"]
+layout_mode = 2
+theme_override_constants/h_separation = 15
+theme_override_constants/v_separation = 10
+columns = 2
+
+[node name="Button" type="Button" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/ShopPage/MC2/ScrollContainer/MC/VBox/PlaceItem3/HBox/MC2/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Buy"
+
+[node name="Button2" type="Button" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/ShopPage/MC2/ScrollContainer/MC/VBox/PlaceItem3/HBox/MC2/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "10x"
+
+[node name="Button3" type="Button" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/ShopPage/MC2/ScrollContainer/MC/VBox/PlaceItem3/HBox/MC2/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "100x"
+
+[node name="Button4" type="Button" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/ShopPage/MC2/ScrollContainer/MC/VBox/PlaceItem3/HBox/MC2/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "1000x"
+
+[node name="MC3" type="MarginContainer" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/ShopPage/MC2/ScrollContainer/MC/VBox/PlaceItem3/HBox"]
+custom_minimum_size = Vector2(110, 0)
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="ColorRect" type="ColorRect" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/ShopPage/MC2/ScrollContainer/MC/VBox/PlaceItem3/HBox/MC3"]
+layout_mode = 2
+color = Color(0.388235, 0.388235, 0.388235, 1)
+
+[node name="Label" type="Label" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/ShopPage/MC2/ScrollContainer/MC/VBox/PlaceItem3/HBox/MC3"]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 25
+text = "22"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PlaceItem4" type="MarginContainer" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/ShopPage/MC2/ScrollContainer/MC/VBox"]
+custom_minimum_size = Vector2(0, 130)
+layout_mode = 2
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 0
+theme_override_constants/margin_bottom = 10
+
+[node name="ColorRect" type="ColorRect" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/ShopPage/MC2/ScrollContainer/MC/VBox/PlaceItem4"]
+layout_mode = 2
+color = Color(0.196078, 0.196078, 0.196078, 1)
+
+[node name="HBox" type="HBoxContainer" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/ShopPage/MC2/ScrollContainer/MC/VBox/PlaceItem4"]
+layout_mode = 2
+
+[node name="MC1" type="MarginContainer" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/ShopPage/MC2/ScrollContainer/MC/VBox/PlaceItem4/HBox"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VBox" type="VBoxContainer" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/ShopPage/MC2/ScrollContainer/MC/VBox/PlaceItem4/HBox/MC1"]
+layout_mode = 2
+
+[node name="MC" type="MarginContainer" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/ShopPage/MC2/ScrollContainer/MC/VBox/PlaceItem4/HBox/MC1/VBox"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/ShopPage/MC2/ScrollContainer/MC/VBox/PlaceItem4/HBox/MC1/VBox/MC"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "Oak Bait"
+
+[node name="MC2" type="MarginContainer" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/ShopPage/MC2/ScrollContainer/MC/VBox/PlaceItem4/HBox/MC1/VBox"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 20
+
+[node name="Label" type="Label" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/ShopPage/MC2/ScrollContainer/MC/VBox/PlaceItem4/HBox/MC1/VBox/MC2"]
+custom_minimum_size = Vector2(220, 0)
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 12
+text = "5% fishing power"
+autowrap_mode = 3
+
+[node name="MC2" type="MarginContainer" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/ShopPage/MC2/ScrollContainer/MC/VBox/PlaceItem4/HBox"]
+custom_minimum_size = Vector2(220, 0)
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="GridContainer" type="GridContainer" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/ShopPage/MC2/ScrollContainer/MC/VBox/PlaceItem4/HBox/MC2"]
+layout_mode = 2
+theme_override_constants/h_separation = 15
+theme_override_constants/v_separation = 10
+columns = 2
+
+[node name="Button" type="Button" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/ShopPage/MC2/ScrollContainer/MC/VBox/PlaceItem4/HBox/MC2/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Buy"
+
+[node name="Button2" type="Button" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/ShopPage/MC2/ScrollContainer/MC/VBox/PlaceItem4/HBox/MC2/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "10x"
+
+[node name="Button3" type="Button" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/ShopPage/MC2/ScrollContainer/MC/VBox/PlaceItem4/HBox/MC2/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "100x"
+
+[node name="Button4" type="Button" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/ShopPage/MC2/ScrollContainer/MC/VBox/PlaceItem4/HBox/MC2/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "1000x"
+
+[node name="MC3" type="MarginContainer" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/ShopPage/MC2/ScrollContainer/MC/VBox/PlaceItem4/HBox"]
+custom_minimum_size = Vector2(110, 0)
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="ColorRect" type="ColorRect" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/ShopPage/MC2/ScrollContainer/MC/VBox/PlaceItem4/HBox/MC3"]
+layout_mode = 2
+color = Color(0.388235, 0.388235, 0.388235, 1)
+
+[node name="Label" type="Label" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/ShopPage/MC2/ScrollContainer/MC/VBox/PlaceItem4/HBox/MC3"]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 25
+text = "22"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PlaceItem5" type="MarginContainer" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/ShopPage/MC2/ScrollContainer/MC/VBox"]
+custom_minimum_size = Vector2(0, 130)
+layout_mode = 2
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 0
+theme_override_constants/margin_bottom = 10
+
+[node name="ColorRect" type="ColorRect" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/ShopPage/MC2/ScrollContainer/MC/VBox/PlaceItem5"]
+layout_mode = 2
+color = Color(0.196078, 0.196078, 0.196078, 1)
+
+[node name="HBox" type="HBoxContainer" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/ShopPage/MC2/ScrollContainer/MC/VBox/PlaceItem5"]
+layout_mode = 2
+
+[node name="MC1" type="MarginContainer" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/ShopPage/MC2/ScrollContainer/MC/VBox/PlaceItem5/HBox"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VBox" type="VBoxContainer" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/ShopPage/MC2/ScrollContainer/MC/VBox/PlaceItem5/HBox/MC1"]
+layout_mode = 2
+
+[node name="MC" type="MarginContainer" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/ShopPage/MC2/ScrollContainer/MC/VBox/PlaceItem5/HBox/MC1/VBox"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/ShopPage/MC2/ScrollContainer/MC/VBox/PlaceItem5/HBox/MC1/VBox/MC"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "Oak Bait"
+
+[node name="MC2" type="MarginContainer" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/ShopPage/MC2/ScrollContainer/MC/VBox/PlaceItem5/HBox/MC1/VBox"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 20
+
+[node name="Label" type="Label" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/ShopPage/MC2/ScrollContainer/MC/VBox/PlaceItem5/HBox/MC1/VBox/MC2"]
+custom_minimum_size = Vector2(220, 0)
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 12
+text = "5% fishing power"
+autowrap_mode = 3
+
+[node name="MC2" type="MarginContainer" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/ShopPage/MC2/ScrollContainer/MC/VBox/PlaceItem5/HBox"]
+custom_minimum_size = Vector2(220, 0)
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="GridContainer" type="GridContainer" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/ShopPage/MC2/ScrollContainer/MC/VBox/PlaceItem5/HBox/MC2"]
+layout_mode = 2
+theme_override_constants/h_separation = 15
+theme_override_constants/v_separation = 10
+columns = 2
+
+[node name="Button" type="Button" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/ShopPage/MC2/ScrollContainer/MC/VBox/PlaceItem5/HBox/MC2/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Buy"
+
+[node name="Button2" type="Button" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/ShopPage/MC2/ScrollContainer/MC/VBox/PlaceItem5/HBox/MC2/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "10x"
+
+[node name="Button3" type="Button" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/ShopPage/MC2/ScrollContainer/MC/VBox/PlaceItem5/HBox/MC2/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "100x"
+
+[node name="Button4" type="Button" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/ShopPage/MC2/ScrollContainer/MC/VBox/PlaceItem5/HBox/MC2/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "1000x"
+
+[node name="MC3" type="MarginContainer" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/ShopPage/MC2/ScrollContainer/MC/VBox/PlaceItem5/HBox"]
+custom_minimum_size = Vector2(110, 0)
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="ColorRect" type="ColorRect" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/ShopPage/MC2/ScrollContainer/MC/VBox/PlaceItem5/HBox/MC3"]
+layout_mode = 2
+color = Color(0.388235, 0.388235, 0.388235, 1)
+
+[node name="Label" type="Label" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/ShopPage/MC2/ScrollContainer/MC/VBox/PlaceItem5/HBox/MC3"]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 25
+text = "22"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PlaceItem6" type="MarginContainer" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/ShopPage/MC2/ScrollContainer/MC/VBox"]
+custom_minimum_size = Vector2(0, 130)
+layout_mode = 2
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 0
+theme_override_constants/margin_bottom = 10
+
+[node name="ColorRect" type="ColorRect" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/ShopPage/MC2/ScrollContainer/MC/VBox/PlaceItem6"]
+layout_mode = 2
+color = Color(0.196078, 0.196078, 0.196078, 1)
+
+[node name="HBox" type="HBoxContainer" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/ShopPage/MC2/ScrollContainer/MC/VBox/PlaceItem6"]
+layout_mode = 2
+
+[node name="MC1" type="MarginContainer" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/ShopPage/MC2/ScrollContainer/MC/VBox/PlaceItem6/HBox"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VBox" type="VBoxContainer" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/ShopPage/MC2/ScrollContainer/MC/VBox/PlaceItem6/HBox/MC1"]
+layout_mode = 2
+
+[node name="MC" type="MarginContainer" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/ShopPage/MC2/ScrollContainer/MC/VBox/PlaceItem6/HBox/MC1/VBox"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/ShopPage/MC2/ScrollContainer/MC/VBox/PlaceItem6/HBox/MC1/VBox/MC"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "Oak Bait"
+
+[node name="MC2" type="MarginContainer" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/ShopPage/MC2/ScrollContainer/MC/VBox/PlaceItem6/HBox/MC1/VBox"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 20
+
+[node name="Label" type="Label" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/ShopPage/MC2/ScrollContainer/MC/VBox/PlaceItem6/HBox/MC1/VBox/MC2"]
+custom_minimum_size = Vector2(220, 0)
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 12
+text = "5% fishing power"
+autowrap_mode = 3
+
+[node name="MC2" type="MarginContainer" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/ShopPage/MC2/ScrollContainer/MC/VBox/PlaceItem6/HBox"]
+custom_minimum_size = Vector2(220, 0)
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="GridContainer" type="GridContainer" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/ShopPage/MC2/ScrollContainer/MC/VBox/PlaceItem6/HBox/MC2"]
+layout_mode = 2
+theme_override_constants/h_separation = 15
+theme_override_constants/v_separation = 10
+columns = 2
+
+[node name="Button" type="Button" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/ShopPage/MC2/ScrollContainer/MC/VBox/PlaceItem6/HBox/MC2/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Buy"
+
+[node name="Button2" type="Button" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/ShopPage/MC2/ScrollContainer/MC/VBox/PlaceItem6/HBox/MC2/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "10x"
+
+[node name="Button3" type="Button" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/ShopPage/MC2/ScrollContainer/MC/VBox/PlaceItem6/HBox/MC2/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "100x"
+
+[node name="Button4" type="Button" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/ShopPage/MC2/ScrollContainer/MC/VBox/PlaceItem6/HBox/MC2/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "1000x"
+
+[node name="MC3" type="MarginContainer" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/ShopPage/MC2/ScrollContainer/MC/VBox/PlaceItem6/HBox"]
+custom_minimum_size = Vector2(110, 0)
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="ColorRect" type="ColorRect" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/ShopPage/MC2/ScrollContainer/MC/VBox/PlaceItem6/HBox/MC3"]
+layout_mode = 2
+color = Color(0.388235, 0.388235, 0.388235, 1)
+
+[node name="Label" type="Label" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/ShopPage/MC2/ScrollContainer/MC/VBox/PlaceItem6/HBox/MC3"]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 25
+text = "22"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="FishingSpotsPage" type="VBoxContainer" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC"]
+visible = false
+layout_mode = 2
+
+[node name="MC" type="MarginContainer" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/FishingSpotsPage"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/FishingSpotsPage/MC"]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 45
+text = "Fishing Spots"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MC2" type="MarginContainer" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/FishingSpotsPage"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_top = 35
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 25
+
+[node name="ScrollContainer" type="ScrollContainer" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/FishingSpotsPage/MC2"]
+layout_mode = 2
+
+[node name="MC" type="MarginContainer" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/FishingSpotsPage/MC2/ScrollContainer"]
+layout_mode = 2
+theme_override_constants/margin_right = 5
+
+[node name="VBox" type="VBoxContainer" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/FishingSpotsPage/MC2/ScrollContainer/MC"]
+layout_mode = 2
+
+[node name="PlaceItem1" type="MarginContainer" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/FishingSpotsPage/MC2/ScrollContainer/MC/VBox"]
+custom_minimum_size = Vector2(0, 130)
+layout_mode = 2
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 0
+theme_override_constants/margin_bottom = 10
+
+[node name="ColorRect" type="ColorRect" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/FishingSpotsPage/MC2/ScrollContainer/MC/VBox/PlaceItem1"]
+layout_mode = 2
+color = Color(0.196078, 0.196078, 0.196078, 1)
+
+[node name="HBox" type="HBoxContainer" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/FishingSpotsPage/MC2/ScrollContainer/MC/VBox/PlaceItem1"]
+layout_mode = 2
+
+[node name="MC" type="MarginContainer" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/FishingSpotsPage/MC2/ScrollContainer/MC/VBox/PlaceItem1/HBox"]
+custom_minimum_size = Vector2(110, 0)
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="ColorRect" type="ColorRect" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/FishingSpotsPage/MC2/ScrollContainer/MC/VBox/PlaceItem1/HBox/MC"]
+layout_mode = 2
+color = Color(0.564706, 0.6, 0.415686, 1)
+
+[node name="MC2" type="MarginContainer" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/FishingSpotsPage/MC2/ScrollContainer/MC/VBox/PlaceItem1/HBox"]
+custom_minimum_size = Vector2(105, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VBox" type="VBoxContainer" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/FishingSpotsPage/MC2/ScrollContainer/MC/VBox/PlaceItem1/HBox/MC2"]
+layout_mode = 2
+
+[node name="MC" type="MarginContainer" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/FishingSpotsPage/MC2/ScrollContainer/MC/VBox/PlaceItem1/HBox/MC2/VBox"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/FishingSpotsPage/MC2/ScrollContainer/MC/VBox/PlaceItem1/HBox/MC2/VBox/MC"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "Oak Lake"
+
+[node name="MC2" type="MarginContainer" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/FishingSpotsPage/MC2/ScrollContainer/MC/VBox/PlaceItem1/HBox/MC2/VBox"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 20
+
+[node name="Label" type="Label" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/FishingSpotsPage/MC2/ScrollContainer/MC/VBox/PlaceItem1/HBox/MC2/VBox/MC2"]
+custom_minimum_size = Vector2(329, 0)
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 12
+text = "Description: This is a wonderful space to get more fish"
+autowrap_mode = 3
+
+[node name="MC3" type="MarginContainer" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/FishingSpotsPage/MC2/ScrollContainer/MC/VBox/PlaceItem1/HBox"]
+custom_minimum_size = Vector2(110, 0)
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="ColorRect" type="ColorRect" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/FishingSpotsPage/MC2/ScrollContainer/MC/VBox/PlaceItem1/HBox/MC3"]
+layout_mode = 2
+color = Color(0.564706, 0.6, 0.415686, 1)
+
+[node name="Button" type="Button" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/FishingSpotsPage/MC2/ScrollContainer/MC/VBox/PlaceItem1/HBox/MC3"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 26
+text = "GO"
+
+[node name="PlaceItem2" type="MarginContainer" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/FishingSpotsPage/MC2/ScrollContainer/MC/VBox"]
+custom_minimum_size = Vector2(0, 130)
+layout_mode = 2
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 0
+theme_override_constants/margin_bottom = 10
+
+[node name="ColorRect" type="ColorRect" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/FishingSpotsPage/MC2/ScrollContainer/MC/VBox/PlaceItem2"]
+layout_mode = 2
+color = Color(0.196078, 0.196078, 0.196078, 1)
+
+[node name="HBox" type="HBoxContainer" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/FishingSpotsPage/MC2/ScrollContainer/MC/VBox/PlaceItem2"]
+layout_mode = 2
+
+[node name="MC" type="MarginContainer" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/FishingSpotsPage/MC2/ScrollContainer/MC/VBox/PlaceItem2/HBox"]
+custom_minimum_size = Vector2(110, 0)
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="ColorRect" type="ColorRect" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/FishingSpotsPage/MC2/ScrollContainer/MC/VBox/PlaceItem2/HBox/MC"]
+layout_mode = 2
+color = Color(0.564706, 0.6, 0.415686, 1)
+
+[node name="MC2" type="MarginContainer" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/FishingSpotsPage/MC2/ScrollContainer/MC/VBox/PlaceItem2/HBox"]
+custom_minimum_size = Vector2(105, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VBox" type="VBoxContainer" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/FishingSpotsPage/MC2/ScrollContainer/MC/VBox/PlaceItem2/HBox/MC2"]
+layout_mode = 2
+
+[node name="MC" type="MarginContainer" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/FishingSpotsPage/MC2/ScrollContainer/MC/VBox/PlaceItem2/HBox/MC2/VBox"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/FishingSpotsPage/MC2/ScrollContainer/MC/VBox/PlaceItem2/HBox/MC2/VBox/MC"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "Oak Lake"
+
+[node name="MC2" type="MarginContainer" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/FishingSpotsPage/MC2/ScrollContainer/MC/VBox/PlaceItem2/HBox/MC2/VBox"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 20
+
+[node name="Label" type="Label" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/FishingSpotsPage/MC2/ScrollContainer/MC/VBox/PlaceItem2/HBox/MC2/VBox/MC2"]
+custom_minimum_size = Vector2(329, 0)
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 12
+text = "Description: This is a wonderful space to get more fish"
+autowrap_mode = 3
+
+[node name="MC3" type="MarginContainer" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/FishingSpotsPage/MC2/ScrollContainer/MC/VBox/PlaceItem2/HBox"]
+custom_minimum_size = Vector2(110, 0)
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="ColorRect" type="ColorRect" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/FishingSpotsPage/MC2/ScrollContainer/MC/VBox/PlaceItem2/HBox/MC3"]
+layout_mode = 2
+color = Color(0.564706, 0.6, 0.415686, 1)
+
+[node name="Button" type="Button" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/FishingSpotsPage/MC2/ScrollContainer/MC/VBox/PlaceItem2/HBox/MC3"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 26
+text = "GO"
+
+[node name="PlaceItem3" type="MarginContainer" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/FishingSpotsPage/MC2/ScrollContainer/MC/VBox"]
+custom_minimum_size = Vector2(0, 130)
+layout_mode = 2
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 0
+theme_override_constants/margin_bottom = 10
+
+[node name="ColorRect" type="ColorRect" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/FishingSpotsPage/MC2/ScrollContainer/MC/VBox/PlaceItem3"]
+layout_mode = 2
+color = Color(0.196078, 0.196078, 0.196078, 1)
+
+[node name="HBox" type="HBoxContainer" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/FishingSpotsPage/MC2/ScrollContainer/MC/VBox/PlaceItem3"]
+layout_mode = 2
+
+[node name="MC" type="MarginContainer" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/FishingSpotsPage/MC2/ScrollContainer/MC/VBox/PlaceItem3/HBox"]
+custom_minimum_size = Vector2(110, 0)
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="ColorRect" type="ColorRect" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/FishingSpotsPage/MC2/ScrollContainer/MC/VBox/PlaceItem3/HBox/MC"]
+layout_mode = 2
+color = Color(0.564706, 0.6, 0.415686, 1)
+
+[node name="MC2" type="MarginContainer" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/FishingSpotsPage/MC2/ScrollContainer/MC/VBox/PlaceItem3/HBox"]
+custom_minimum_size = Vector2(105, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VBox" type="VBoxContainer" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/FishingSpotsPage/MC2/ScrollContainer/MC/VBox/PlaceItem3/HBox/MC2"]
+layout_mode = 2
+
+[node name="MC" type="MarginContainer" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/FishingSpotsPage/MC2/ScrollContainer/MC/VBox/PlaceItem3/HBox/MC2/VBox"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/FishingSpotsPage/MC2/ScrollContainer/MC/VBox/PlaceItem3/HBox/MC2/VBox/MC"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "Oak Lake"
+
+[node name="MC2" type="MarginContainer" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/FishingSpotsPage/MC2/ScrollContainer/MC/VBox/PlaceItem3/HBox/MC2/VBox"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 20
+
+[node name="Label" type="Label" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/FishingSpotsPage/MC2/ScrollContainer/MC/VBox/PlaceItem3/HBox/MC2/VBox/MC2"]
+custom_minimum_size = Vector2(329, 0)
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 12
+text = "Description: This is a wonderful space to get more fish"
+autowrap_mode = 3
+
+[node name="MC3" type="MarginContainer" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/FishingSpotsPage/MC2/ScrollContainer/MC/VBox/PlaceItem3/HBox"]
+custom_minimum_size = Vector2(110, 0)
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="ColorRect" type="ColorRect" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/FishingSpotsPage/MC2/ScrollContainer/MC/VBox/PlaceItem3/HBox/MC3"]
+layout_mode = 2
+color = Color(0.564706, 0.6, 0.415686, 1)
+
+[node name="Button" type="Button" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/FishingSpotsPage/MC2/ScrollContainer/MC/VBox/PlaceItem3/HBox/MC3"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 26
+text = "GO"
+
+[node name="PlaceItem4" type="MarginContainer" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/FishingSpotsPage/MC2/ScrollContainer/MC/VBox"]
+custom_minimum_size = Vector2(0, 130)
+layout_mode = 2
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 0
+theme_override_constants/margin_bottom = 10
+
+[node name="ColorRect" type="ColorRect" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/FishingSpotsPage/MC2/ScrollContainer/MC/VBox/PlaceItem4"]
+layout_mode = 2
+color = Color(0.196078, 0.196078, 0.196078, 1)
+
+[node name="HBox" type="HBoxContainer" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/FishingSpotsPage/MC2/ScrollContainer/MC/VBox/PlaceItem4"]
+layout_mode = 2
+
+[node name="MC" type="MarginContainer" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/FishingSpotsPage/MC2/ScrollContainer/MC/VBox/PlaceItem4/HBox"]
+custom_minimum_size = Vector2(110, 0)
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="ColorRect" type="ColorRect" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/FishingSpotsPage/MC2/ScrollContainer/MC/VBox/PlaceItem4/HBox/MC"]
+layout_mode = 2
+color = Color(0.564706, 0.6, 0.415686, 1)
+
+[node name="MC2" type="MarginContainer" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/FishingSpotsPage/MC2/ScrollContainer/MC/VBox/PlaceItem4/HBox"]
+custom_minimum_size = Vector2(105, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VBox" type="VBoxContainer" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/FishingSpotsPage/MC2/ScrollContainer/MC/VBox/PlaceItem4/HBox/MC2"]
+layout_mode = 2
+
+[node name="MC" type="MarginContainer" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/FishingSpotsPage/MC2/ScrollContainer/MC/VBox/PlaceItem4/HBox/MC2/VBox"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/FishingSpotsPage/MC2/ScrollContainer/MC/VBox/PlaceItem4/HBox/MC2/VBox/MC"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "Oak Lake"
+
+[node name="MC2" type="MarginContainer" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/FishingSpotsPage/MC2/ScrollContainer/MC/VBox/PlaceItem4/HBox/MC2/VBox"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 20
+
+[node name="Label" type="Label" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/FishingSpotsPage/MC2/ScrollContainer/MC/VBox/PlaceItem4/HBox/MC2/VBox/MC2"]
+custom_minimum_size = Vector2(329, 0)
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 12
+text = "Description: This is a wonderful space to get more fish"
+autowrap_mode = 3
+
+[node name="MC3" type="MarginContainer" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/FishingSpotsPage/MC2/ScrollContainer/MC/VBox/PlaceItem4/HBox"]
+custom_minimum_size = Vector2(110, 0)
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="ColorRect" type="ColorRect" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/FishingSpotsPage/MC2/ScrollContainer/MC/VBox/PlaceItem4/HBox/MC3"]
+layout_mode = 2
+color = Color(0.564706, 0.6, 0.415686, 1)
+
+[node name="Button" type="Button" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/FishingSpotsPage/MC2/ScrollContainer/MC/VBox/PlaceItem4/HBox/MC3"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 26
+text = "GO"
+
+[node name="PlaceItem5" type="MarginContainer" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/FishingSpotsPage/MC2/ScrollContainer/MC/VBox"]
+custom_minimum_size = Vector2(0, 130)
+layout_mode = 2
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 0
+theme_override_constants/margin_bottom = 10
+
+[node name="ColorRect" type="ColorRect" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/FishingSpotsPage/MC2/ScrollContainer/MC/VBox/PlaceItem5"]
+layout_mode = 2
+color = Color(0.196078, 0.196078, 0.196078, 1)
+
+[node name="HBox" type="HBoxContainer" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/FishingSpotsPage/MC2/ScrollContainer/MC/VBox/PlaceItem5"]
+layout_mode = 2
+
+[node name="MC" type="MarginContainer" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/FishingSpotsPage/MC2/ScrollContainer/MC/VBox/PlaceItem5/HBox"]
+custom_minimum_size = Vector2(110, 0)
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="ColorRect" type="ColorRect" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/FishingSpotsPage/MC2/ScrollContainer/MC/VBox/PlaceItem5/HBox/MC"]
+layout_mode = 2
+color = Color(0.564706, 0.6, 0.415686, 1)
+
+[node name="MC2" type="MarginContainer" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/FishingSpotsPage/MC2/ScrollContainer/MC/VBox/PlaceItem5/HBox"]
+custom_minimum_size = Vector2(105, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VBox" type="VBoxContainer" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/FishingSpotsPage/MC2/ScrollContainer/MC/VBox/PlaceItem5/HBox/MC2"]
+layout_mode = 2
+
+[node name="MC" type="MarginContainer" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/FishingSpotsPage/MC2/ScrollContainer/MC/VBox/PlaceItem5/HBox/MC2/VBox"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/FishingSpotsPage/MC2/ScrollContainer/MC/VBox/PlaceItem5/HBox/MC2/VBox/MC"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "Oak Lake"
+
+[node name="MC2" type="MarginContainer" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/FishingSpotsPage/MC2/ScrollContainer/MC/VBox/PlaceItem5/HBox/MC2/VBox"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 20
+
+[node name="Label" type="Label" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/FishingSpotsPage/MC2/ScrollContainer/MC/VBox/PlaceItem5/HBox/MC2/VBox/MC2"]
+custom_minimum_size = Vector2(329, 0)
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 12
+text = "Description: This is a wonderful space to get more fish"
+autowrap_mode = 3
+
+[node name="MC3" type="MarginContainer" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/FishingSpotsPage/MC2/ScrollContainer/MC/VBox/PlaceItem5/HBox"]
+custom_minimum_size = Vector2(110, 0)
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="ColorRect" type="ColorRect" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/FishingSpotsPage/MC2/ScrollContainer/MC/VBox/PlaceItem5/HBox/MC3"]
+layout_mode = 2
+color = Color(0.564706, 0.6, 0.415686, 1)
+
+[node name="Button" type="Button" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/FishingSpotsPage/MC2/ScrollContainer/MC/VBox/PlaceItem5/HBox/MC3"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 26
+text = "GO"
+
+[node name="PlaceItem6" type="MarginContainer" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/FishingSpotsPage/MC2/ScrollContainer/MC/VBox"]
+custom_minimum_size = Vector2(0, 130)
+layout_mode = 2
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 0
+theme_override_constants/margin_bottom = 10
+
+[node name="ColorRect" type="ColorRect" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/FishingSpotsPage/MC2/ScrollContainer/MC/VBox/PlaceItem6"]
+layout_mode = 2
+color = Color(0.196078, 0.196078, 0.196078, 1)
+
+[node name="HBox" type="HBoxContainer" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/FishingSpotsPage/MC2/ScrollContainer/MC/VBox/PlaceItem6"]
+layout_mode = 2
+
+[node name="MC" type="MarginContainer" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/FishingSpotsPage/MC2/ScrollContainer/MC/VBox/PlaceItem6/HBox"]
+custom_minimum_size = Vector2(110, 0)
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="ColorRect" type="ColorRect" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/FishingSpotsPage/MC2/ScrollContainer/MC/VBox/PlaceItem6/HBox/MC"]
+layout_mode = 2
+color = Color(0.564706, 0.6, 0.415686, 1)
+
+[node name="MC2" type="MarginContainer" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/FishingSpotsPage/MC2/ScrollContainer/MC/VBox/PlaceItem6/HBox"]
+custom_minimum_size = Vector2(105, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VBox" type="VBoxContainer" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/FishingSpotsPage/MC2/ScrollContainer/MC/VBox/PlaceItem6/HBox/MC2"]
+layout_mode = 2
+
+[node name="MC" type="MarginContainer" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/FishingSpotsPage/MC2/ScrollContainer/MC/VBox/PlaceItem6/HBox/MC2/VBox"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/FishingSpotsPage/MC2/ScrollContainer/MC/VBox/PlaceItem6/HBox/MC2/VBox/MC"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "Oak Lake"
+
+[node name="MC2" type="MarginContainer" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/FishingSpotsPage/MC2/ScrollContainer/MC/VBox/PlaceItem6/HBox/MC2/VBox"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 20
+
+[node name="Label" type="Label" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/FishingSpotsPage/MC2/ScrollContainer/MC/VBox/PlaceItem6/HBox/MC2/VBox/MC2"]
+custom_minimum_size = Vector2(329, 0)
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 12
+text = "Description: This is a wonderful space to get more fish"
+autowrap_mode = 3
+
+[node name="MC3" type="MarginContainer" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/FishingSpotsPage/MC2/ScrollContainer/MC/VBox/PlaceItem6/HBox"]
+custom_minimum_size = Vector2(110, 0)
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="ColorRect" type="ColorRect" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/FishingSpotsPage/MC2/ScrollContainer/MC/VBox/PlaceItem6/HBox/MC3"]
+layout_mode = 2
+color = Color(0.564706, 0.6, 0.415686, 1)
+
+[node name="Button" type="Button" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/FishingSpotsPage/MC2/ScrollContainer/MC/VBox/PlaceItem6/HBox/MC3"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 26
+text = "GO"
+
+[node name="FishingPagesVBox" type="Control" parent="MC/HBox/FishingImprovementsMenusHBox"]
+layout_mode = 2
+
+[node name="ShopPageHBox" type="Control" parent="MC/HBox/FishingImprovementsMenusHBox/FishingPagesVBox"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="BuyBaitLabel" type="Control" parent="MC/HBox/FishingImprovementsMenusHBox/FishingPagesVBox/ShopPageHBox"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="InventoryLabel" type="Control" parent="MC/HBox/FishingImprovementsMenusHBox/FishingPagesVBox/ShopPageHBox"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="BaitsHBox" type="Control" parent="MC/HBox/FishingImprovementsMenusHBox/FishingPagesVBox/ShopPageHBox"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="BaitItemVBox1" type="Control" parent="MC/HBox/FishingImprovementsMenusHBox/FishingPagesVBox/ShopPageHBox/BaitsHBox"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="BaitLabel" type="Control" parent="MC/HBox/FishingImprovementsMenusHBox/FishingPagesVBox/ShopPageHBox/BaitsHBox/BaitItemVBox1"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="BuyButtons" type="Control" parent="MC/HBox/FishingImprovementsMenusHBox/FishingPagesVBox/ShopPageHBox/BaitsHBox/BaitItemVBox1"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="InventoryCountLabel" type="Control" parent="MC/HBox/FishingImprovementsMenusHBox/FishingPagesVBox/ShopPageHBox/BaitsHBox/BaitItemVBox1"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="BaitItemVBox2" type="Control" parent="MC/HBox/FishingImprovementsMenusHBox/FishingPagesVBox/ShopPageHBox/BaitsHBox"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="BaitLabel" type="Control" parent="MC/HBox/FishingImprovementsMenusHBox/FishingPagesVBox/ShopPageHBox/BaitsHBox/BaitItemVBox2"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="BuyButtons" type="Control" parent="MC/HBox/FishingImprovementsMenusHBox/FishingPagesVBox/ShopPageHBox/BaitsHBox/BaitItemVBox2"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="InventoryCountLabel" type="Control" parent="MC/HBox/FishingImprovementsMenusHBox/FishingPagesVBox/ShopPageHBox/BaitsHBox/BaitItemVBox2"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="BaitItemVBox3" type="Control" parent="MC/HBox/FishingImprovementsMenusHBox/FishingPagesVBox/ShopPageHBox/BaitsHBox"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="BaitLabel" type="Control" parent="MC/HBox/FishingImprovementsMenusHBox/FishingPagesVBox/ShopPageHBox/BaitsHBox/BaitItemVBox3"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="BuyButtons" type="Control" parent="MC/HBox/FishingImprovementsMenusHBox/FishingPagesVBox/ShopPageHBox/BaitsHBox/BaitItemVBox3"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="InventoryCountLabel" type="Control" parent="MC/HBox/FishingImprovementsMenusHBox/FishingPagesVBox/ShopPageHBox/BaitsHBox/BaitItemVBox3"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="FishingSpotsPageHBox" type="Control" parent="MC/HBox/FishingImprovementsMenusHBox/FishingPagesVBox"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="FishingSpotsLabel" type="Control" parent="MC/HBox/FishingImprovementsMenusHBox/FishingPagesVBox/FishingSpotsPageHBox"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="FishingSpotsHBox" type="Control" parent="MC/HBox/FishingImprovementsMenusHBox/FishingPagesVBox/FishingSpotsPageHBox"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="FishingSpotVBox1" type="Control" parent="MC/HBox/FishingImprovementsMenusHBox/FishingPagesVBox/FishingSpotsPageHBox/FishingSpotsHBox"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="SpotImage" type="Control" parent="MC/HBox/FishingImprovementsMenusHBox/FishingPagesVBox/FishingSpotsPageHBox/FishingSpotsHBox/FishingSpotVBox1"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TextHBox" type="Control" parent="MC/HBox/FishingImprovementsMenusHBox/FishingPagesVBox/FishingSpotsPageHBox/FishingSpotsHBox/FishingSpotVBox1"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TitleLabel" type="Control" parent="MC/HBox/FishingImprovementsMenusHBox/FishingPagesVBox/FishingSpotsPageHBox/FishingSpotsHBox/FishingSpotVBox1/TextHBox"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="DescriptionLabel" type="Control" parent="MC/HBox/FishingImprovementsMenusHBox/FishingPagesVBox/FishingSpotsPageHBox/FishingSpotsHBox/FishingSpotVBox1/TextHBox"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="GoToPlaceButton" type="Control" parent="MC/HBox/FishingImprovementsMenusHBox/FishingPagesVBox/FishingSpotsPageHBox/FishingSpotsHBox/FishingSpotVBox1"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="FishingSpotVBox2" type="Control" parent="MC/HBox/FishingImprovementsMenusHBox/FishingPagesVBox/FishingSpotsPageHBox/FishingSpotsHBox"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="SpotImage" type="Control" parent="MC/HBox/FishingImprovementsMenusHBox/FishingPagesVBox/FishingSpotsPageHBox/FishingSpotsHBox/FishingSpotVBox2"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TextHBox" type="Control" parent="MC/HBox/FishingImprovementsMenusHBox/FishingPagesVBox/FishingSpotsPageHBox/FishingSpotsHBox/FishingSpotVBox2"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TitleLabel" type="Control" parent="MC/HBox/FishingImprovementsMenusHBox/FishingPagesVBox/FishingSpotsPageHBox/FishingSpotsHBox/FishingSpotVBox2/TextHBox"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="DescriptionLabel" type="Control" parent="MC/HBox/FishingImprovementsMenusHBox/FishingPagesVBox/FishingSpotsPageHBox/FishingSpotsHBox/FishingSpotVBox2/TextHBox"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="GoToPlaceButton" type="Control" parent="MC/HBox/FishingImprovementsMenusHBox/FishingPagesVBox/FishingSpotsPageHBox/FishingSpotsHBox/FishingSpotVBox2"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="FishingSpotVBox3" type="Control" parent="MC/HBox/FishingImprovementsMenusHBox/FishingPagesVBox/FishingSpotsPageHBox/FishingSpotsHBox"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="SpotImage" type="Control" parent="MC/HBox/FishingImprovementsMenusHBox/FishingPagesVBox/FishingSpotsPageHBox/FishingSpotsHBox/FishingSpotVBox3"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TextHBox" type="Control" parent="MC/HBox/FishingImprovementsMenusHBox/FishingPagesVBox/FishingSpotsPageHBox/FishingSpotsHBox/FishingSpotVBox3"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TitleLabel" type="Control" parent="MC/HBox/FishingImprovementsMenusHBox/FishingPagesVBox/FishingSpotsPageHBox/FishingSpotsHBox/FishingSpotVBox3/TextHBox"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="DescriptionLabel" type="Control" parent="MC/HBox/FishingImprovementsMenusHBox/FishingPagesVBox/FishingSpotsPageHBox/FishingSpotsHBox/FishingSpotVBox3/TextHBox"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="GoToPlaceButton" type="Control" parent="MC/HBox/FishingImprovementsMenusHBox/FishingPagesVBox/FishingSpotsPageHBox/FishingSpotsHBox/FishingSpotVBox3"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
