@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://dopio2pmdmjpx"]
+[gd_scene load_steps=6 format=3 uid="uid://dopio2pmdmjpx"]
 
 [ext_resource type="PackedScene" uid="uid://bor0f34yh2ofm" path="res://Scenes/GameMainScreenScenes/game_screen.tscn" id="1_8477q"]
 [ext_resource type="PackedScene" uid="uid://dy25pvs37m84w" path="res://Scenes/GameMainScreenScenes/fishing_screen.tscn" id="2_17x50"]
 [ext_resource type="PackedScene" uid="uid://msehiccnr5t8" path="res://Scenes/GameMainScreenScenes/achievement_screen.tscn" id="2_kma5e"]
 [ext_resource type="PackedScene" uid="uid://dtv4rjhuhfki5" path="res://Scenes/GameMainScreenScenes/ascension_screen.tscn" id="3_cexxl"]
+[ext_resource type="PackedScene" uid="uid://dnnaegnbqppxc" path="res://Scenes/settings.tscn" id="5_tqmh8"]
 
 [node name="GameMainScreen" type="Control"]
 layout_mode = 3
@@ -144,7 +145,6 @@ layout_mode = 2
 mouse_filter = 1
 
 [node name="GameScreen" parent="Gameplay" instance=ExtResource("1_8477q")]
-visible = false
 layout_mode = 1
 mouse_filter = 1
 
@@ -161,3 +161,7 @@ mouse_filter = 1
 visible = false
 layout_mode = 1
 mouse_filter = 1
+
+[node name="Settings" parent="." instance=ExtResource("5_tqmh8")]
+visible = false
+layout_mode = 1

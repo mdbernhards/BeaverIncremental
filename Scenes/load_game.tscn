@@ -2,155 +2,516 @@
 
 [node name="LoadGame" type="Control"]
 layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
-[node name="LoadGameHBox" type="Control" parent="."]
+[node name="Background" type="ColorRect" parent="."]
+offset_left = 25.0
+offset_top = 25.0
+offset_right = 1895.0
+offset_bottom = 1055.0
+color = Color(0.266667, 0.266667, 0.266667, 1)
+
+[node name="MC" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 75
+theme_override_constants/margin_top = 50
+theme_override_constants/margin_right = 75
+theme_override_constants/margin_bottom = 50
+
+[node name="LoadGameVBox" type="VBoxContainer" parent="MC"]
+layout_mode = 2
+
+[node name="MC" type="MarginContainer" parent="MC/LoadGameVBox"]
+custom_minimum_size = Vector2(0, 195)
+layout_mode = 2
+
+[node name="HBox" type="HBoxContainer" parent="MC/LoadGameVBox/MC"]
+layout_mode = 2
+
+[node name="MC" type="MarginContainer" parent="MC/LoadGameVBox/MC/HBox"]
+layout_mode = 2
+theme_override_constants/margin_top = 45
+theme_override_constants/margin_bottom = 34
+
+[node name="BackButton" type="Button" parent="MC/LoadGameVBox/MC/HBox/MC"]
+custom_minimum_size = Vector2(380, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 65
+text = "Back"
+
+[node name="HBox2" type="HBoxContainer" parent="MC/LoadGameVBox/MC"]
+layout_mode = 2
+alignment = 1
+
+[node name="LoadGameLabel" type="Label" parent="MC/LoadGameVBox/MC/HBox2"]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 140
+text = "Load Game"
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="MC2" type="MarginContainer" parent="MC/LoadGameVBox"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="ColorRect" type="ColorRect" parent="MC/LoadGameVBox/MC2"]
+layout_mode = 2
+color = Color(0.223529, 0.176471, 0.305882, 0.239216)
+
+[node name="VBox" type="VBoxContainer" parent="MC/LoadGameVBox/MC2"]
+layout_mode = 2
+
+[node name="MC" type="MarginContainer" parent="MC/LoadGameVBox/MC2/VBox"]
+layout_mode = 2
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_bottom = 10
+
+[node name="ChooseSaveLabel" type="Label" parent="MC/LoadGameVBox/MC2/VBox/MC"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 55
+text = "Choose Save"
+horizontal_alignment = 1
+
+[node name="MC2" type="MarginContainer" parent="MC/LoadGameVBox/MC2/VBox"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 60
+
+[node name="ColorRect" type="ColorRect" parent="MC/LoadGameVBox/MC2/VBox/MC2"]
+layout_mode = 2
+color = Color(0.466667, 0.258824, 0.258824, 0.160784)
+
+[node name="MC" type="MarginContainer" parent="MC/LoadGameVBox/MC2/VBox/MC2"]
+layout_mode = 2
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_top = 30
+theme_override_constants/margin_right = 30
+theme_override_constants/margin_bottom = 15
+
+[node name="VBox" type="VBoxContainer" parent="MC/LoadGameVBox/MC2/VBox/MC2/MC"]
+layout_mode = 2
+theme_override_constants/separation = 25
+
+[node name="ItemMC1" type="MarginContainer" parent="MC/LoadGameVBox/MC2/VBox/MC2/MC/VBox"]
+layout_mode = 2
+
+[node name="ColorRect" type="ColorRect" parent="MC/LoadGameVBox/MC2/VBox/MC2/MC/VBox/ItemMC1"]
+custom_minimum_size = Vector2(0, 120)
+layout_mode = 2
+color = Color(0.380392, 0.164706, 0.164706, 0.376471)
+
+[node name="HBox" type="HBoxContainer" parent="MC/LoadGameVBox/MC2/VBox/MC2/MC/VBox/ItemMC1/ColorRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MC" type="MarginContainer" parent="MC/LoadGameVBox/MC2/VBox/MC2/MC/VBox/ItemMC1/ColorRect/HBox"]
+custom_minimum_size = Vector2(375, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 15
+
+[node name="Label" type="Label" parent="MC/LoadGameVBox/MC2/VBox/MC2/MC/VBox/ItemMC1/ColorRect/HBox/MC"]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(0.901961, 0.631373, 0.623529, 1)
+theme_override_font_sizes/font_size = 30
+text = "Game 1"
+
+[node name="MC2" type="MarginContainer" parent="MC/LoadGameVBox/MC2/VBox/MC2/MC/VBox/ItemMC1/ColorRect/HBox"]
+custom_minimum_size = Vector2(375, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 15
+
+[node name="VBox" type="VBoxContainer" parent="MC/LoadGameVBox/MC2/VBox/MC2/MC/VBox/ItemMC1/ColorRect/HBox/MC2"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MC/LoadGameVBox/MC2/VBox/MC2/MC/VBox/ItemMC1/ColorRect/HBox/MC2/VBox"]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(0.164706, 0.0784314, 0.0823529, 1)
+theme_override_font_sizes/font_size = 30
+text = "Time Spent: 22h"
+
+[node name="Label2" type="Label" parent="MC/LoadGameVBox/MC2/VBox/MC2/MC/VBox/ItemMC1/ColorRect/HBox/MC2/VBox"]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(0.164706, 0.0784314, 0.0823529, 1)
+theme_override_font_sizes/font_size = 30
+text = "Magic earned: 432e16"
+
+[node name="MC3" type="MarginContainer" parent="MC/LoadGameVBox/MC2/VBox/MC2/MC/VBox/ItemMC1/ColorRect/HBox"]
+custom_minimum_size = Vector2(375, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 18
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 18
+
+[node name="Button" type="Button" parent="MC/LoadGameVBox/MC2/VBox/MC2/MC/VBox/ItemMC1/ColorRect/HBox/MC3"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.901961, 0.631373, 0.623529, 1)
+theme_override_font_sizes/font_size = 30
+text = "Load Game"
+
+[node name="ItemMC2" type="MarginContainer" parent="MC/LoadGameVBox/MC2/VBox/MC2/MC/VBox"]
+layout_mode = 2
+
+[node name="ColorRect" type="ColorRect" parent="MC/LoadGameVBox/MC2/VBox/MC2/MC/VBox/ItemMC2"]
+custom_minimum_size = Vector2(0, 120)
+layout_mode = 2
+color = Color(0.380392, 0.164706, 0.164706, 0.376471)
+
+[node name="HBox" type="HBoxContainer" parent="MC/LoadGameVBox/MC2/VBox/MC2/MC/VBox/ItemMC2/ColorRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MC" type="MarginContainer" parent="MC/LoadGameVBox/MC2/VBox/MC2/MC/VBox/ItemMC2/ColorRect/HBox"]
+custom_minimum_size = Vector2(375, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 15
+
+[node name="Label" type="Label" parent="MC/LoadGameVBox/MC2/VBox/MC2/MC/VBox/ItemMC2/ColorRect/HBox/MC"]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(0.901961, 0.631373, 0.623529, 1)
+theme_override_font_sizes/font_size = 30
+text = "Game 1"
+
+[node name="MC2" type="MarginContainer" parent="MC/LoadGameVBox/MC2/VBox/MC2/MC/VBox/ItemMC2/ColorRect/HBox"]
+custom_minimum_size = Vector2(375, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 15
+
+[node name="VBox" type="VBoxContainer" parent="MC/LoadGameVBox/MC2/VBox/MC2/MC/VBox/ItemMC2/ColorRect/HBox/MC2"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MC/LoadGameVBox/MC2/VBox/MC2/MC/VBox/ItemMC2/ColorRect/HBox/MC2/VBox"]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(0.164706, 0.0784314, 0.0823529, 1)
+theme_override_font_sizes/font_size = 30
+text = "Time Spent: 22h"
+
+[node name="Label2" type="Label" parent="MC/LoadGameVBox/MC2/VBox/MC2/MC/VBox/ItemMC2/ColorRect/HBox/MC2/VBox"]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(0.164706, 0.0784314, 0.0823529, 1)
+theme_override_font_sizes/font_size = 30
+text = "Magic earned: 432e16"
+
+[node name="MC3" type="MarginContainer" parent="MC/LoadGameVBox/MC2/VBox/MC2/MC/VBox/ItemMC2/ColorRect/HBox"]
+custom_minimum_size = Vector2(375, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 18
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 18
+
+[node name="Button" type="Button" parent="MC/LoadGameVBox/MC2/VBox/MC2/MC/VBox/ItemMC2/ColorRect/HBox/MC3"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.901961, 0.631373, 0.623529, 1)
+theme_override_font_sizes/font_size = 30
+text = "Load Game"
+
+[node name="ItemMC3" type="MarginContainer" parent="MC/LoadGameVBox/MC2/VBox/MC2/MC/VBox"]
+layout_mode = 2
+
+[node name="ColorRect" type="ColorRect" parent="MC/LoadGameVBox/MC2/VBox/MC2/MC/VBox/ItemMC3"]
+custom_minimum_size = Vector2(0, 120)
+layout_mode = 2
+color = Color(0.380392, 0.164706, 0.164706, 0.376471)
+
+[node name="HBox" type="HBoxContainer" parent="MC/LoadGameVBox/MC2/VBox/MC2/MC/VBox/ItemMC3/ColorRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MC" type="MarginContainer" parent="MC/LoadGameVBox/MC2/VBox/MC2/MC/VBox/ItemMC3/ColorRect/HBox"]
+custom_minimum_size = Vector2(375, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 15
+
+[node name="Label" type="Label" parent="MC/LoadGameVBox/MC2/VBox/MC2/MC/VBox/ItemMC3/ColorRect/HBox/MC"]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(0.901961, 0.631373, 0.623529, 1)
+theme_override_font_sizes/font_size = 30
+text = "Game 1"
+
+[node name="MC2" type="MarginContainer" parent="MC/LoadGameVBox/MC2/VBox/MC2/MC/VBox/ItemMC3/ColorRect/HBox"]
+custom_minimum_size = Vector2(375, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 15
+
+[node name="VBox" type="VBoxContainer" parent="MC/LoadGameVBox/MC2/VBox/MC2/MC/VBox/ItemMC3/ColorRect/HBox/MC2"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MC/LoadGameVBox/MC2/VBox/MC2/MC/VBox/ItemMC3/ColorRect/HBox/MC2/VBox"]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(0.164706, 0.0784314, 0.0823529, 1)
+theme_override_font_sizes/font_size = 30
+text = "Time Spent: 22h"
+
+[node name="Label2" type="Label" parent="MC/LoadGameVBox/MC2/VBox/MC2/MC/VBox/ItemMC3/ColorRect/HBox/MC2/VBox"]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(0.164706, 0.0784314, 0.0823529, 1)
+theme_override_font_sizes/font_size = 30
+text = "Magic earned: 432e16"
+
+[node name="MC3" type="MarginContainer" parent="MC/LoadGameVBox/MC2/VBox/MC2/MC/VBox/ItemMC3/ColorRect/HBox"]
+custom_minimum_size = Vector2(375, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 18
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 18
+
+[node name="Button" type="Button" parent="MC/LoadGameVBox/MC2/VBox/MC2/MC/VBox/ItemMC3/ColorRect/HBox/MC3"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.901961, 0.631373, 0.623529, 1)
+theme_override_font_sizes/font_size = 30
+text = "Load Game"
+
+[node name="ItemMC4" type="MarginContainer" parent="MC/LoadGameVBox/MC2/VBox/MC2/MC/VBox"]
+layout_mode = 2
+
+[node name="ColorRect" type="ColorRect" parent="MC/LoadGameVBox/MC2/VBox/MC2/MC/VBox/ItemMC4"]
+custom_minimum_size = Vector2(0, 120)
+layout_mode = 2
+color = Color(0.380392, 0.164706, 0.164706, 0.376471)
+
+[node name="HBox" type="HBoxContainer" parent="MC/LoadGameVBox/MC2/VBox/MC2/MC/VBox/ItemMC4/ColorRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MC" type="MarginContainer" parent="MC/LoadGameVBox/MC2/VBox/MC2/MC/VBox/ItemMC4/ColorRect/HBox"]
+custom_minimum_size = Vector2(375, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 15
+
+[node name="Label" type="Label" parent="MC/LoadGameVBox/MC2/VBox/MC2/MC/VBox/ItemMC4/ColorRect/HBox/MC"]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(0.901961, 0.631373, 0.623529, 1)
+theme_override_font_sizes/font_size = 30
+text = "???????????"
+
+[node name="MC2" type="MarginContainer" parent="MC/LoadGameVBox/MC2/VBox/MC2/MC/VBox/ItemMC4/ColorRect/HBox"]
+custom_minimum_size = Vector2(375, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 15
+
+[node name="VBox" type="VBoxContainer" parent="MC/LoadGameVBox/MC2/VBox/MC2/MC/VBox/ItemMC4/ColorRect/HBox/MC2"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MC/LoadGameVBox/MC2/VBox/MC2/MC/VBox/ItemMC4/ColorRect/HBox/MC2/VBox"]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(0.164706, 0.0784314, 0.0823529, 1)
+theme_override_font_sizes/font_size = 30
+
+[node name="Label2" type="Label" parent="MC/LoadGameVBox/MC2/VBox/MC2/MC/VBox/ItemMC4/ColorRect/HBox/MC2/VBox"]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(0.164706, 0.0784314, 0.0823529, 1)
+theme_override_font_sizes/font_size = 30
+
+[node name="MC3" type="MarginContainer" parent="MC/LoadGameVBox/MC2/VBox/MC2/MC/VBox/ItemMC4/ColorRect/HBox"]
+custom_minimum_size = Vector2(375, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 18
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 18
+
+[node name="Button" type="Button" parent="MC/LoadGameVBox/MC2/VBox/MC2/MC/VBox/ItemMC4/ColorRect/HBox/MC3"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.901961, 0.631373, 0.623529, 1)
+theme_override_font_sizes/font_size = 30
+text = "NEW GAME"
+
+[node name="LoadGameListHBox" type="Control" parent="MC/LoadGameVBox"]
+layout_mode = 2
+
+[node name="ChooseSaveLabel" type="Control" parent="MC/LoadGameVBox/LoadGameListHBox"]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="TopVBox" type="Control" parent="LoadGameHBox"]
+[node name="LoadGameListHBox" type="Control" parent="MC/LoadGameVBox/LoadGameListHBox"]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="BackButton" type="Control" parent="LoadGameHBox/TopVBox"]
+[node name="SaveVBox1" type="Control" parent="MC/LoadGameVBox/LoadGameListHBox/LoadGameListHBox"]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="LoadGameLabel" type="Control" parent="LoadGameHBox/TopVBox"]
+[node name="SaveNameLabel" type="Control" parent="MC/LoadGameVBox/LoadGameListHBox/LoadGameListHBox/SaveVBox1"]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="LoadGameListHBox" type="Control" parent="LoadGameHBox"]
+[node name="StatLabelsHBox" type="Control" parent="MC/LoadGameVBox/LoadGameListHBox/LoadGameListHBox/SaveVBox1"]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="ChooseSaveLabel" type="Control" parent="LoadGameHBox/LoadGameListHBox"]
+[node name="TimeSpentLabel" type="Control" parent="MC/LoadGameVBox/LoadGameListHBox/LoadGameListHBox/SaveVBox1/StatLabelsHBox"]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="LoadGameListHBox" type="Control" parent="LoadGameHBox/LoadGameListHBox"]
+[node name="MagicEarnedLabel" type="Control" parent="MC/LoadGameVBox/LoadGameListHBox/LoadGameListHBox/SaveVBox1/StatLabelsHBox"]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="SaveVBox1" type="Control" parent="LoadGameHBox/LoadGameListHBox/LoadGameListHBox"]
+[node name="LoadAndNewGameButton" type="Control" parent="MC/LoadGameVBox/LoadGameListHBox/LoadGameListHBox/SaveVBox1"]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="SaveNameLabel" type="Control" parent="LoadGameHBox/LoadGameListHBox/LoadGameListHBox/SaveVBox1"]
+[node name="SaveVBox2" type="Control" parent="MC/LoadGameVBox/LoadGameListHBox/LoadGameListHBox"]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="StatLabelsHBox" type="Control" parent="LoadGameHBox/LoadGameListHBox/LoadGameListHBox/SaveVBox1"]
+[node name="SaveNameLabel" type="Control" parent="MC/LoadGameVBox/LoadGameListHBox/LoadGameListHBox/SaveVBox2"]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="TimeSpentLabel" type="Control" parent="LoadGameHBox/LoadGameListHBox/LoadGameListHBox/SaveVBox1/StatLabelsHBox"]
+[node name="StatLabelsHBox" type="Control" parent="MC/LoadGameVBox/LoadGameListHBox/LoadGameListHBox/SaveVBox2"]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="MagicEarnedLabel" type="Control" parent="LoadGameHBox/LoadGameListHBox/LoadGameListHBox/SaveVBox1/StatLabelsHBox"]
+[node name="TimeSpentLabel" type="Control" parent="MC/LoadGameVBox/LoadGameListHBox/LoadGameListHBox/SaveVBox2/StatLabelsHBox"]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="LoadAndNewGameButton" type="Control" parent="LoadGameHBox/LoadGameListHBox/LoadGameListHBox/SaveVBox1"]
+[node name="MagicEarnedLabel" type="Control" parent="MC/LoadGameVBox/LoadGameListHBox/LoadGameListHBox/SaveVBox2/StatLabelsHBox"]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="SaveVBox2" type="Control" parent="LoadGameHBox/LoadGameListHBox/LoadGameListHBox"]
+[node name="LoadAndNewGameButton" type="Control" parent="MC/LoadGameVBox/LoadGameListHBox/LoadGameListHBox/SaveVBox2"]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="SaveNameLabel" type="Control" parent="LoadGameHBox/LoadGameListHBox/LoadGameListHBox/SaveVBox2"]
+[node name="SaveVBox3" type="Control" parent="MC/LoadGameVBox/LoadGameListHBox/LoadGameListHBox"]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="StatLabelsHBox" type="Control" parent="LoadGameHBox/LoadGameListHBox/LoadGameListHBox/SaveVBox2"]
+[node name="SaveNameLabel" type="Control" parent="MC/LoadGameVBox/LoadGameListHBox/LoadGameListHBox/SaveVBox3"]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="TimeSpentLabel" type="Control" parent="LoadGameHBox/LoadGameListHBox/LoadGameListHBox/SaveVBox2/StatLabelsHBox"]
+[node name="StatLabelsHBox" type="Control" parent="MC/LoadGameVBox/LoadGameListHBox/LoadGameListHBox/SaveVBox3"]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="MagicEarnedLabel" type="Control" parent="LoadGameHBox/LoadGameListHBox/LoadGameListHBox/SaveVBox2/StatLabelsHBox"]
+[node name="TimeSpentLabel" type="Control" parent="MC/LoadGameVBox/LoadGameListHBox/LoadGameListHBox/SaveVBox3/StatLabelsHBox"]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="LoadAndNewGameButton" type="Control" parent="LoadGameHBox/LoadGameListHBox/LoadGameListHBox/SaveVBox2"]
+[node name="MagicEarnedLabel" type="Control" parent="MC/LoadGameVBox/LoadGameListHBox/LoadGameListHBox/SaveVBox3/StatLabelsHBox"]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="SaveVBox3" type="Control" parent="LoadGameHBox/LoadGameListHBox/LoadGameListHBox"]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="SaveNameLabel" type="Control" parent="LoadGameHBox/LoadGameListHBox/LoadGameListHBox/SaveVBox3"]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="StatLabelsHBox" type="Control" parent="LoadGameHBox/LoadGameListHBox/LoadGameListHBox/SaveVBox3"]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="TimeSpentLabel" type="Control" parent="LoadGameHBox/LoadGameListHBox/LoadGameListHBox/SaveVBox3/StatLabelsHBox"]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="MagicEarnedLabel" type="Control" parent="LoadGameHBox/LoadGameListHBox/LoadGameListHBox/SaveVBox3/StatLabelsHBox"]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="LoadAndNewGameButton" type="Control" parent="LoadGameHBox/LoadGameListHBox/LoadGameListHBox/SaveVBox3"]
+[node name="LoadAndNewGameButton" type="Control" parent="MC/LoadGameVBox/LoadGameListHBox/LoadGameListHBox/SaveVBox3"]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0

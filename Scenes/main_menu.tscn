@@ -2,42 +2,67 @@
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
-[node name="MenuHBox" type="Control" parent="."]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+[node name="Background" type="ColorRect" parent="."]
+offset_left = 25.0
+offset_top = 25.0
+offset_right = 1895.0
+offset_bottom = 1055.0
+color = Color(0.266667, 0.266667, 0.266667, 1)
 
-[node name="TitleLabel" type="Control" parent="MenuHBox"]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+[node name="MC" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_bottom = 150
 
-[node name="NewGameButton" type="Control" parent="MenuHBox"]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+[node name="MenuVBox" type="VBoxContainer" parent="MC"]
+layout_mode = 2
+theme_override_constants/separation = 45
+alignment = 1
 
-[node name="LoadGameButton" type="Control" parent="MenuHBox"]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+[node name="MC" type="MarginContainer" parent="MC/MenuVBox"]
+layout_mode = 2
+theme_override_constants/margin_bottom = 125
 
-[node name="SettingsButton" type="Control" parent="MenuHBox"]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+[node name="TitleLabel" type="Label" parent="MC/MenuVBox/MC"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 90
+text = "Beaver Incremental"
+horizontal_alignment = 1
 
-[node name="QuitButton" type="Control" parent="MenuHBox"]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+[node name="NewGameButton" type="Button" parent="MC/MenuVBox"]
+custom_minimum_size = Vector2(280, 85)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 42
+text = "NEW GAME"
+
+[node name="LoadGameButton" type="Button" parent="MC/MenuVBox"]
+custom_minimum_size = Vector2(280, 85)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 42
+text = "LOAD GAME"
+
+[node name="SettingsButton" type="Button" parent="MC/MenuVBox"]
+custom_minimum_size = Vector2(280, 85)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 42
+text = "SETTINGS"
+
+[node name="QuitButton" type="Button" parent="MC/MenuVBox"]
+custom_minimum_size = Vector2(280, 85)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 42
+text = "QUIT"

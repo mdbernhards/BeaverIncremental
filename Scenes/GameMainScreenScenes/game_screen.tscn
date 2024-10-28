@@ -3948,6 +3948,7 @@ theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 15
 
 [node name="UpgradesSection" type="VBoxContainer" parent="GameScreenHBox/RightMC/RightVBox/TabsMC"]
+visible = false
 layout_mode = 2
 
 [node name="UpgradeTabsButtonsMC" type="MarginContainer" parent="GameScreenHBox/RightMC/RightVBox/TabsMC/UpgradesSection"]
@@ -15132,7 +15133,6 @@ horizontal_alignment = 2
 vertical_alignment = 2
 
 [node name="DamSection" type="MarginContainer" parent="GameScreenHBox/RightMC/RightVBox/TabsMC"]
-visible = false
 layout_mode = 2
 
 [node name="DamSectionHBox" type="HBoxContainer" parent="GameScreenHBox/RightMC/RightVBox/TabsMC/DamSection"]

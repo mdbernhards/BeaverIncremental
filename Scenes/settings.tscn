@@ -2,120 +2,209 @@
 
 [node name="Settings" type="Control"]
 layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
-[node name="SettingsHBox" type="Control" parent="."]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+[node name="Background" type="ColorRect" parent="."]
+offset_left = 25.0
+offset_top = 25.0
+offset_right = 1895.0
+offset_bottom = 1055.0
+color = Color(0.266667, 0.266667, 0.266667, 1)
 
-[node name="SettingsTitle" type="Control" parent="SettingsHBox"]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+[node name="MC" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_top = 25
+theme_override_constants/margin_right = 25
+theme_override_constants/margin_bottom = 25
 
-[node name="SettingsGrid" type="Control" parent="SettingsHBox"]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+[node name="AscensionVBox" type="VBoxContainer" parent="MC"]
+layout_mode = 2
+alignment = 2
 
-[node name="SoundSectionHBox" type="Control" parent="SettingsHBox/SettingsGrid"]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+[node name="TopHBox" type="HBoxContainer" parent="MC/AscensionVBox"]
+layout_mode = 2
 
-[node name="SoundLabel" type="Control" parent="SettingsHBox/SettingsGrid/SoundSectionHBox"]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+[node name="MC" type="MarginContainer" parent="MC/AscensionVBox/TopHBox"]
+layout_mode = 2
+size_flags_horizontal = 3
 
-[node name="MasterVolumeSlider" type="Control" parent="SettingsHBox/SettingsGrid/SoundSectionHBox"]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+[node name="SettingsTitleLabel" type="Label" parent="MC/AscensionVBox/TopHBox/MC"]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 145
+text = "Settings"
+horizontal_alignment = 1
 
-[node name="EffectsSlider" type="Control" parent="SettingsHBox/SettingsGrid/SoundSectionHBox"]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+[node name="SettingsMC" type="MarginContainer" parent="MC/AscensionVBox"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_top = 25
+theme_override_constants/margin_right = 25
+theme_override_constants/margin_bottom = 25
 
-[node name="MusicSlider" type="Control" parent="SettingsHBox/SettingsGrid/SoundSectionHBox"]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+[node name="GridContainer" type="GridContainer" parent="MC/AscensionVBox/SettingsMC"]
+layout_mode = 2
+theme_override_constants/h_separation = 47
+theme_override_constants/v_separation = 40
+columns = 3
 
-[node name="NumbersSectionHBox" type="Control" parent="SettingsHBox/SettingsGrid"]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+[node name="SoundSettings" type="ColorRect" parent="MC/AscensionVBox/SettingsMC/GridContainer"]
+custom_minimum_size = Vector2(575, 275)
+layout_mode = 2
+color = Color(0.329412, 0.329412, 0.329412, 1)
 
-[node name="SoundLabel" type="Control" parent="SettingsHBox/SettingsGrid/NumbersSectionHBox"]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+[node name="MC" type="MarginContainer" parent="MC/AscensionVBox/SettingsMC/GridContainer/SoundSettings"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
 
-[node name="MasterVolumeSlider" type="Control" parent="SettingsHBox/SettingsGrid/NumbersSectionHBox"]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+[node name="VBox" type="VBoxContainer" parent="MC/AscensionVBox/SettingsMC/GridContainer/SoundSettings/MC"]
+layout_mode = 2
 
-[node name="EffectsSlider" type="Control" parent="SettingsHBox/SettingsGrid/NumbersSectionHBox"]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+[node name="Label" type="Label" parent="MC/AscensionVBox/SettingsMC/GridContainer/SoundSettings/MC/VBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Sound"
 
-[node name="MusicSlider" type="Control" parent="SettingsHBox/SettingsGrid/NumbersSectionHBox"]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+[node name="NumberSettings" type="ColorRect" parent="MC/AscensionVBox/SettingsMC/GridContainer"]
+custom_minimum_size = Vector2(575, 275)
+layout_mode = 2
+color = Color(0.329412, 0.329412, 0.329412, 1)
 
-[node name="EffectsSectionHBox" type="Control" parent="SettingsHBox/SettingsGrid"]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+[node name="MC" type="MarginContainer" parent="MC/AscensionVBox/SettingsMC/GridContainer/NumberSettings"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
 
-[node name="SoundLabel" type="Control" parent="SettingsHBox/SettingsGrid/EffectsSectionHBox"]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+[node name="VBox" type="VBoxContainer" parent="MC/AscensionVBox/SettingsMC/GridContainer/NumberSettings/MC"]
+layout_mode = 2
 
-[node name="MasterVolumeSlider" type="Control" parent="SettingsHBox/SettingsGrid/EffectsSectionHBox"]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+[node name="Label" type="Label" parent="MC/AscensionVBox/SettingsMC/GridContainer/NumberSettings/MC/VBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Sound"
 
-[node name="EffectsSlider" type="Control" parent="SettingsHBox/SettingsGrid/EffectsSectionHBox"]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+[node name="SavesSettings" type="ColorRect" parent="MC/AscensionVBox/SettingsMC/GridContainer"]
+custom_minimum_size = Vector2(575, 275)
+layout_mode = 2
+color = Color(0.329412, 0.329412, 0.329412, 1)
 
-[node name="MusicSlider" type="Control" parent="SettingsHBox/SettingsGrid/EffectsSectionHBox"]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+[node name="MC" type="MarginContainer" parent="MC/AscensionVBox/SettingsMC/GridContainer/SavesSettings"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
 
-[node name="Credits" type="Control" parent="SettingsHBox/SettingsGrid"]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+[node name="VBox" type="VBoxContainer" parent="MC/AscensionVBox/SettingsMC/GridContainer/SavesSettings/MC"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MC/AscensionVBox/SettingsMC/GridContainer/SavesSettings/MC/VBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Sound"
+
+[node name="ControlsSettings" type="ColorRect" parent="MC/AscensionVBox/SettingsMC/GridContainer"]
+custom_minimum_size = Vector2(575, 275)
+layout_mode = 2
+color = Color(0.329412, 0.329412, 0.329412, 1)
+
+[node name="MC" type="MarginContainer" parent="MC/AscensionVBox/SettingsMC/GridContainer/ControlsSettings"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
+
+[node name="VBox" type="VBoxContainer" parent="MC/AscensionVBox/SettingsMC/GridContainer/ControlsSettings/MC"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MC/AscensionVBox/SettingsMC/GridContainer/ControlsSettings/MC/VBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Sound"
+
+[node name="idk" type="ColorRect" parent="MC/AscensionVBox/SettingsMC/GridContainer"]
+custom_minimum_size = Vector2(575, 275)
+layout_mode = 2
+color = Color(0.329412, 0.329412, 0.329412, 1)
+
+[node name="MC" type="MarginContainer" parent="MC/AscensionVBox/SettingsMC/GridContainer/idk"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
+
+[node name="VBox" type="VBoxContainer" parent="MC/AscensionVBox/SettingsMC/GridContainer/idk/MC"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MC/AscensionVBox/SettingsMC/GridContainer/idk/MC/VBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Sound"
+
+[node name="Gameplay" type="ColorRect" parent="MC/AscensionVBox/SettingsMC/GridContainer"]
+custom_minimum_size = Vector2(575, 275)
+layout_mode = 2
+color = Color(0.329412, 0.329412, 0.329412, 1)
+
+[node name="MC" type="MarginContainer" parent="MC/AscensionVBox/SettingsMC/GridContainer/Gameplay"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
+
+[node name="VBox" type="VBoxContainer" parent="MC/AscensionVBox/SettingsMC/GridContainer/Gameplay/MC"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MC/AscensionVBox/SettingsMC/GridContainer/Gameplay/MC/VBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Sound"
