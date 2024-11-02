@@ -31,11 +31,12 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="MainMenu" parent="." instance=ExtResource("1_5ya8i")]
+visible = false
 layout_mode = 1
 
 [node name="LoadGame" parent="." instance=ExtResource("2_q55r7")]
 visible = false
+layout_mode = 1
 
 [node name="GameMainScreen" parent="." instance=ExtResource("4_btfnp")]
-visible = false
 layout_mode = 1

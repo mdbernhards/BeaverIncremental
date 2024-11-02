@@ -1,0 +1,1639 @@
+[gd_scene load_steps=4 format=3 uid="uid://3les52jwhf8"]
+
+[ext_resource type="Script" path="res://Scenes/GameMainScreenScenes/GameScenes/UpgradesSection.gd" id="1_71aif"]
+[ext_resource type="Script" path="res://Scenes/GameMainScreenScenes/GameScenes/UpgradeSection/UpgradePage.gd" id="2_2c32x"]
+[ext_resource type="Script" path="res://Scenes/GameMainScreenScenes/GameScenes/UpgradeSection/Upgrades.gd" id="3_c0qh1"]
+
+[node name="UpgradesSection" type="VBoxContainer"]
+offset_right = 798.0
+offset_bottom = 926.0
+script = ExtResource("1_71aif")
+
+[node name="UpgradePage" type="VBoxContainer" parent="."]
+layout_mode = 2
+size_flags_vertical = 3
+script = ExtResource("2_2c32x")
+
+[node name="UpgradeTabs" type="MarginContainer" parent="UpgradePage"]
+custom_minimum_size = Vector2(0, 45)
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_right = 5
+
+[node name="Background" type="ColorRect" parent="UpgradePage/UpgradeTabs"]
+layout_mode = 2
+color = Color(0.352941, 0.262745, 0.262745, 1)
+
+[node name="HBox" type="HBoxContainer" parent="UpgradePage/UpgradeTabs"]
+layout_mode = 2
+
+[node name="TabButtonsMC" type="MarginContainer" parent="UpgradePage/UpgradeTabs/HBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="HBox" type="HBoxContainer" parent="UpgradePage/UpgradeTabs/HBox/TabButtonsMC"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="UpgradeTabButton1" type="Button" parent="UpgradePage/UpgradeTabs/HBox/TabButtonsMC/HBox"]
+custom_minimum_size = Vector2(105, 0)
+layout_mode = 2
+text = "Oak"
+
+[node name="UpgradeTabButton2" type="Button" parent="UpgradePage/UpgradeTabs/HBox/TabButtonsMC/HBox"]
+custom_minimum_size = Vector2(105, 0)
+layout_mode = 2
+text = "Apple"
+
+[node name="UpgradeTabButton3" type="Button" parent="UpgradePage/UpgradeTabs/HBox/TabButtonsMC/HBox"]
+custom_minimum_size = Vector2(105, 0)
+layout_mode = 2
+text = "Maple"
+
+[node name="UpgradeTabButton4" type="Button" parent="UpgradePage/UpgradeTabs/HBox/TabButtonsMC/HBox"]
+custom_minimum_size = Vector2(105, 0)
+layout_mode = 2
+text = "Birch"
+
+[node name="UpgradeTabButton5" type="Button" parent="UpgradePage/UpgradeTabs/HBox/TabButtonsMC/HBox"]
+custom_minimum_size = Vector2(105, 0)
+layout_mode = 2
+text = "Spruce"
+
+[node name="Margin" type="MarginContainer" parent="UpgradePage/UpgradeTabs/HBox"]
+custom_minimum_size = Vector2(4, 0)
+layout_mode = 2
+theme_override_constants/margin_top = 2
+theme_override_constants/margin_bottom = 2
+
+[node name="ColorRect" type="ColorRect" parent="UpgradePage/UpgradeTabs/HBox/Margin"]
+layout_mode = 2
+color = Color(0.34902, 0.34902, 0.34902, 1)
+
+[node name="BuyMaxMC" type="MarginContainer" parent="UpgradePage/UpgradeTabs/HBox"]
+custom_minimum_size = Vector2(190, 0)
+layout_mode = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 25
+theme_override_constants/margin_bottom = 5
+
+[node name="BuyMaxAllTypesButton" type="Button" parent="UpgradePage/UpgradeTabs/HBox/BuyMaxMC"]
+layout_mode = 2
+text = "Buy Max"
+
+[node name="Upgrades" type="MarginContainer" parent="UpgradePage"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 0
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_right = 3
+theme_override_constants/margin_bottom = 10
+script = ExtResource("3_c0qh1")
+
+[node name="VBox" type="VBoxContainer" parent="UpgradePage/Upgrades"]
+layout_mode = 2
+
+[node name="TopHBox" type="HBoxContainer" parent="UpgradePage/Upgrades/VBox"]
+layout_mode = 2
+size_flags_vertical = 0
+alignment = 2
+
+[node name="TitleMC" type="MarginContainer" parent="UpgradePage/Upgrades/VBox/TopHBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 20
+
+[node name="TitleLabel" type="Label" parent="UpgradePage/Upgrades/VBox/TopHBox/TitleMC"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "Oak"
+
+[node name="BuyMaxMC" type="MarginContainer" parent="UpgradePage/Upgrades/VBox/TopHBox"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 25
+theme_override_constants/margin_bottom = 15
+
+[node name="BuyMaxButton" type="Button" parent="UpgradePage/Upgrades/VBox/TopHBox/BuyMaxMC"]
+layout_mode = 2
+theme_override_colors/icon_normal_color = Color(0.227451, 0.392157, 0.392157, 1)
+text = "Buy Max"
+
+[node name="ScrollBar" type="ScrollContainer" parent="UpgradePage/Upgrades/VBox"]
+layout_mode = 2
+size_flags_vertical = 3
+horizontal_scroll_mode = 0
+
+[node name="MC" type="MarginContainer" parent="UpgradePage/Upgrades/VBox/ScrollBar"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
+
+[node name="ItemGrid" type="GridContainer" parent="UpgradePage/Upgrades/VBox/ScrollBar/MC"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/h_separation = 38
+theme_override_constants/v_separation = 30
+columns = 3
+
+[node name="Item1" type="ColorRect" parent="UpgradePage/Upgrades/VBox/ScrollBar/MC/ItemGrid"]
+custom_minimum_size = Vector2(225, 90)
+layout_mode = 2
+color = Color(0.247059, 0.32549, 0.32549, 1)
+
+[node name="VBox" type="VBoxContainer" parent="UpgradePage/Upgrades/VBox/ScrollBar/MC/ItemGrid/Item1"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MC" type="MarginContainer" parent="UpgradePage/Upgrades/VBox/ScrollBar/MC/ItemGrid/Item1/VBox"]
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 6
+
+[node name="NameLabel" type="Label" parent="UpgradePage/Upgrades/VBox/ScrollBar/MC/ItemGrid/Item1/VBox/MC"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "Wood 1"
+
+[node name="MC2" type="MarginContainer" parent="UpgradePage/Upgrades/VBox/ScrollBar/MC/ItemGrid/Item1/VBox"]
+layout_mode = 2
+theme_override_constants/margin_right = 8
+
+[node name="CostLabel" type="Label" parent="UpgradePage/Upgrades/VBox/ScrollBar/MC/ItemGrid/Item1/VBox/MC2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+text = "10 wood"
+horizontal_alignment = 2
+
+[node name="MC3" type="MarginContainer" parent="UpgradePage/Upgrades/VBox/ScrollBar/MC/ItemGrid/Item1/VBox"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 5
+
+[node name="HBox" type="HBoxContainer" parent="UpgradePage/Upgrades/VBox/ScrollBar/MC/ItemGrid/Item1/VBox/MC3"]
+layout_mode = 2
+theme_override_constants/separation = 13
+alignment = 1
+
+[node name="MC" type="MarginContainer" parent="UpgradePage/Upgrades/VBox/ScrollBar/MC/ItemGrid/Item1/VBox/MC3/HBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_bottom = 0
+
+[node name="BuyButton" type="Button" parent="UpgradePage/Upgrades/VBox/ScrollBar/MC/ItemGrid/Item1/VBox/MC3/HBox/MC"]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 12
+text = "Buy"
+
+[node name="MC2" type="MarginContainer" parent="UpgradePage/Upgrades/VBox/ScrollBar/MC/ItemGrid/Item1/VBox/MC3/HBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="BuyMaxButton" type="Button" parent="UpgradePage/Upgrades/VBox/ScrollBar/MC/ItemGrid/Item1/VBox/MC3/HBox/MC2"]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 12
+text = "Buy Max"
+
+[node name="MC3" type="MarginContainer" parent="UpgradePage/Upgrades/VBox/ScrollBar/MC/ItemGrid/Item1/VBox/MC3/HBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_bottom = -11
+
+[node name="ProgressLabel" type="Label" parent="UpgradePage/Upgrades/VBox/ScrollBar/MC/ItemGrid/Item1/VBox/MC3/HBox/MC3"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+text = "5 / 15"
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="Item2" type="ColorRect" parent="UpgradePage/Upgrades/VBox/ScrollBar/MC/ItemGrid"]
+custom_minimum_size = Vector2(225, 90)
+layout_mode = 2
+color = Color(0.247059, 0.32549, 0.32549, 1)
+
+[node name="VBox" type="VBoxContainer" parent="UpgradePage/Upgrades/VBox/ScrollBar/MC/ItemGrid/Item2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MC" type="MarginContainer" parent="UpgradePage/Upgrades/VBox/ScrollBar/MC/ItemGrid/Item2/VBox"]
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 6
+
+[node name="NameLabel" type="Label" parent="UpgradePage/Upgrades/VBox/ScrollBar/MC/ItemGrid/Item2/VBox/MC"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "Wood 1"
+
+[node name="MC2" type="MarginContainer" parent="UpgradePage/Upgrades/VBox/ScrollBar/MC/ItemGrid/Item2/VBox"]
+layout_mode = 2
+theme_override_constants/margin_right = 8
+
+[node name="CostLabel" type="Label" parent="UpgradePage/Upgrades/VBox/ScrollBar/MC/ItemGrid/Item2/VBox/MC2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+text = "10 wood"
+horizontal_alignment = 2
+
+[node name="MC3" type="MarginContainer" parent="UpgradePage/Upgrades/VBox/ScrollBar/MC/ItemGrid/Item2/VBox"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 5
+
+[node name="HBox" type="HBoxContainer" parent="UpgradePage/Upgrades/VBox/ScrollBar/MC/ItemGrid/Item2/VBox/MC3"]
+layout_mode = 2
+theme_override_constants/separation = 13
+alignment = 1
+
+[node name="MC" type="MarginContainer" parent="UpgradePage/Upgrades/VBox/ScrollBar/MC/ItemGrid/Item2/VBox/MC3/HBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_bottom = 0
+
+[node name="BuyButton" type="Button" parent="UpgradePage/Upgrades/VBox/ScrollBar/MC/ItemGrid/Item2/VBox/MC3/HBox/MC"]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 12
+text = "Buy"
+
+[node name="MC2" type="MarginContainer" parent="UpgradePage/Upgrades/VBox/ScrollBar/MC/ItemGrid/Item2/VBox/MC3/HBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="BuyMaxButton" type="Button" parent="UpgradePage/Upgrades/VBox/ScrollBar/MC/ItemGrid/Item2/VBox/MC3/HBox/MC2"]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 12
+text = "Buy Max"
+
+[node name="MC3" type="MarginContainer" parent="UpgradePage/Upgrades/VBox/ScrollBar/MC/ItemGrid/Item2/VBox/MC3/HBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_bottom = -11
+
+[node name="ProgressLabel" type="Label" parent="UpgradePage/Upgrades/VBox/ScrollBar/MC/ItemGrid/Item2/VBox/MC3/HBox/MC3"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+text = "5 / 15"
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="Item3" type="ColorRect" parent="UpgradePage/Upgrades/VBox/ScrollBar/MC/ItemGrid"]
+custom_minimum_size = Vector2(225, 90)
+layout_mode = 2
+color = Color(0.247059, 0.32549, 0.32549, 1)
+
+[node name="VBox" type="VBoxContainer" parent="UpgradePage/Upgrades/VBox/ScrollBar/MC/ItemGrid/Item3"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MC" type="MarginContainer" parent="UpgradePage/Upgrades/VBox/ScrollBar/MC/ItemGrid/Item3/VBox"]
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 6
+
+[node name="NameLabel" type="Label" parent="UpgradePage/Upgrades/VBox/ScrollBar/MC/ItemGrid/Item3/VBox/MC"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "Wood 1"
+
+[node name="MC2" type="MarginContainer" parent="UpgradePage/Upgrades/VBox/ScrollBar/MC/ItemGrid/Item3/VBox"]
+layout_mode = 2
+theme_override_constants/margin_right = 8
+
+[node name="CostLabel" type="Label" parent="UpgradePage/Upgrades/VBox/ScrollBar/MC/ItemGrid/Item3/VBox/MC2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+text = "10 wood"
+horizontal_alignment = 2
+
+[node name="MC3" type="MarginContainer" parent="UpgradePage/Upgrades/VBox/ScrollBar/MC/ItemGrid/Item3/VBox"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 5
+
+[node name="HBox" type="HBoxContainer" parent="UpgradePage/Upgrades/VBox/ScrollBar/MC/ItemGrid/Item3/VBox/MC3"]
+layout_mode = 2
+theme_override_constants/separation = 13
+alignment = 1
+
+[node name="MC" type="MarginContainer" parent="UpgradePage/Upgrades/VBox/ScrollBar/MC/ItemGrid/Item3/VBox/MC3/HBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_bottom = 0
+
+[node name="BuyButton" type="Button" parent="UpgradePage/Upgrades/VBox/ScrollBar/MC/ItemGrid/Item3/VBox/MC3/HBox/MC"]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 12
+text = "Buy"
+
+[node name="MC2" type="MarginContainer" parent="UpgradePage/Upgrades/VBox/ScrollBar/MC/ItemGrid/Item3/VBox/MC3/HBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="BuyMaxButton" type="Button" parent="UpgradePage/Upgrades/VBox/ScrollBar/MC/ItemGrid/Item3/VBox/MC3/HBox/MC2"]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 12
+text = "Buy Max"
+
+[node name="MC3" type="MarginContainer" parent="UpgradePage/Upgrades/VBox/ScrollBar/MC/ItemGrid/Item3/VBox/MC3/HBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_bottom = -11
+
+[node name="ProgressLabel" type="Label" parent="UpgradePage/Upgrades/VBox/ScrollBar/MC/ItemGrid/Item3/VBox/MC3/HBox/MC3"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+text = "5 / 15"
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="Item4" type="ColorRect" parent="UpgradePage/Upgrades/VBox/ScrollBar/MC/ItemGrid"]
+custom_minimum_size = Vector2(225, 90)
+layout_mode = 2
+color = Color(0.247059, 0.32549, 0.32549, 1)
+
+[node name="VBox" type="VBoxContainer" parent="UpgradePage/Upgrades/VBox/ScrollBar/MC/ItemGrid/Item4"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MC" type="MarginContainer" parent="UpgradePage/Upgrades/VBox/ScrollBar/MC/ItemGrid/Item4/VBox"]
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 6
+
+[node name="NameLabel" type="Label" parent="UpgradePage/Upgrades/VBox/ScrollBar/MC/ItemGrid/Item4/VBox/MC"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "Wood 1"
+
+[node name="MC2" type="MarginContainer" parent="UpgradePage/Upgrades/VBox/ScrollBar/MC/ItemGrid/Item4/VBox"]
+layout_mode = 2
+theme_override_constants/margin_right = 8
+
+[node name="CostLabel" type="Label" parent="UpgradePage/Upgrades/VBox/ScrollBar/MC/ItemGrid/Item4/VBox/MC2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+text = "10 wood"
+horizontal_alignment = 2
+
+[node name="MC3" type="MarginContainer" parent="UpgradePage/Upgrades/VBox/ScrollBar/MC/ItemGrid/Item4/VBox"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 5
+
+[node name="HBox" type="HBoxContainer" parent="UpgradePage/Upgrades/VBox/ScrollBar/MC/ItemGrid/Item4/VBox/MC3"]
+layout_mode = 2
+theme_override_constants/separation = 13
+alignment = 1
+
+[node name="MC" type="MarginContainer" parent="UpgradePage/Upgrades/VBox/ScrollBar/MC/ItemGrid/Item4/VBox/MC3/HBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_bottom = 0
+
+[node name="BuyButton" type="Button" parent="UpgradePage/Upgrades/VBox/ScrollBar/MC/ItemGrid/Item4/VBox/MC3/HBox/MC"]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 12
+text = "Buy"
+
+[node name="MC2" type="MarginContainer" parent="UpgradePage/Upgrades/VBox/ScrollBar/MC/ItemGrid/Item4/VBox/MC3/HBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="BuyMaxButton" type="Button" parent="UpgradePage/Upgrades/VBox/ScrollBar/MC/ItemGrid/Item4/VBox/MC3/HBox/MC2"]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 12
+text = "Buy Max"
+
+[node name="MC3" type="MarginContainer" parent="UpgradePage/Upgrades/VBox/ScrollBar/MC/ItemGrid/Item4/VBox/MC3/HBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_bottom = -11
+
+[node name="ProgressLabel" type="Label" parent="UpgradePage/Upgrades/VBox/ScrollBar/MC/ItemGrid/Item4/VBox/MC3/HBox/MC3"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+text = "5 / 15"
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="Item5" type="ColorRect" parent="UpgradePage/Upgrades/VBox/ScrollBar/MC/ItemGrid"]
+custom_minimum_size = Vector2(225, 90)
+layout_mode = 2
+color = Color(0.247059, 0.32549, 0.32549, 1)
+
+[node name="VBox" type="VBoxContainer" parent="UpgradePage/Upgrades/VBox/ScrollBar/MC/ItemGrid/Item5"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MC" type="MarginContainer" parent="UpgradePage/Upgrades/VBox/ScrollBar/MC/ItemGrid/Item5/VBox"]
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 6
+
+[node name="NameLabel" type="Label" parent="UpgradePage/Upgrades/VBox/ScrollBar/MC/ItemGrid/Item5/VBox/MC"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "Wood 1"
+
+[node name="MC2" type="MarginContainer" parent="UpgradePage/Upgrades/VBox/ScrollBar/MC/ItemGrid/Item5/VBox"]
+layout_mode = 2
+theme_override_constants/margin_right = 8
+
+[node name="CostLabel" type="Label" parent="UpgradePage/Upgrades/VBox/ScrollBar/MC/ItemGrid/Item5/VBox/MC2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+text = "10 wood"
+horizontal_alignment = 2
+
+[node name="MC3" type="MarginContainer" parent="UpgradePage/Upgrades/VBox/ScrollBar/MC/ItemGrid/Item5/VBox"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 5
+
+[node name="HBox" type="HBoxContainer" parent="UpgradePage/Upgrades/VBox/ScrollBar/MC/ItemGrid/Item5/VBox/MC3"]
+layout_mode = 2
+theme_override_constants/separation = 13
+alignment = 1
+
+[node name="MC" type="MarginContainer" parent="UpgradePage/Upgrades/VBox/ScrollBar/MC/ItemGrid/Item5/VBox/MC3/HBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_bottom = 0
+
+[node name="BuyButton" type="Button" parent="UpgradePage/Upgrades/VBox/ScrollBar/MC/ItemGrid/Item5/VBox/MC3/HBox/MC"]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 12
+text = "Buy"
+
+[node name="MC2" type="MarginContainer" parent="UpgradePage/Upgrades/VBox/ScrollBar/MC/ItemGrid/Item5/VBox/MC3/HBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="BuyMaxButton" type="Button" parent="UpgradePage/Upgrades/VBox/ScrollBar/MC/ItemGrid/Item5/VBox/MC3/HBox/MC2"]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 12
+text = "Buy Max"
+
+[node name="MC3" type="MarginContainer" parent="UpgradePage/Upgrades/VBox/ScrollBar/MC/ItemGrid/Item5/VBox/MC3/HBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_bottom = -11
+
+[node name="ProgressLabel" type="Label" parent="UpgradePage/Upgrades/VBox/ScrollBar/MC/ItemGrid/Item5/VBox/MC3/HBox/MC3"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+text = "5 / 15"
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="Item6" type="ColorRect" parent="UpgradePage/Upgrades/VBox/ScrollBar/MC/ItemGrid"]
+custom_minimum_size = Vector2(225, 90)
+layout_mode = 2
+color = Color(0.247059, 0.32549, 0.32549, 1)
+
+[node name="VBox" type="VBoxContainer" parent="UpgradePage/Upgrades/VBox/ScrollBar/MC/ItemGrid/Item6"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MC" type="MarginContainer" parent="UpgradePage/Upgrades/VBox/ScrollBar/MC/ItemGrid/Item6/VBox"]
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 6
+
+[node name="NameLabel" type="Label" parent="UpgradePage/Upgrades/VBox/ScrollBar/MC/ItemGrid/Item6/VBox/MC"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "Wood 1"
+
+[node name="MC2" type="MarginContainer" parent="UpgradePage/Upgrades/VBox/ScrollBar/MC/ItemGrid/Item6/VBox"]
+layout_mode = 2
+theme_override_constants/margin_right = 8
+
+[node name="CostLabel" type="Label" parent="UpgradePage/Upgrades/VBox/ScrollBar/MC/ItemGrid/Item6/VBox/MC2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+text = "10 wood"
+horizontal_alignment = 2
+
+[node name="MC3" type="MarginContainer" parent="UpgradePage/Upgrades/VBox/ScrollBar/MC/ItemGrid/Item6/VBox"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 5
+
+[node name="HBox" type="HBoxContainer" parent="UpgradePage/Upgrades/VBox/ScrollBar/MC/ItemGrid/Item6/VBox/MC3"]
+layout_mode = 2
+theme_override_constants/separation = 13
+alignment = 1
+
+[node name="MC" type="MarginContainer" parent="UpgradePage/Upgrades/VBox/ScrollBar/MC/ItemGrid/Item6/VBox/MC3/HBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_bottom = 0
+
+[node name="BuyButton" type="Button" parent="UpgradePage/Upgrades/VBox/ScrollBar/MC/ItemGrid/Item6/VBox/MC3/HBox/MC"]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 12
+text = "Buy"
+
+[node name="MC2" type="MarginContainer" parent="UpgradePage/Upgrades/VBox/ScrollBar/MC/ItemGrid/Item6/VBox/MC3/HBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="BuyMaxButton" type="Button" parent="UpgradePage/Upgrades/VBox/ScrollBar/MC/ItemGrid/Item6/VBox/MC3/HBox/MC2"]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 12
+text = "Buy Max"
+
+[node name="MC3" type="MarginContainer" parent="UpgradePage/Upgrades/VBox/ScrollBar/MC/ItemGrid/Item6/VBox/MC3/HBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_bottom = -11
+
+[node name="ProgressLabel" type="Label" parent="UpgradePage/Upgrades/VBox/ScrollBar/MC/ItemGrid/Item6/VBox/MC3/HBox/MC3"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+text = "5 / 15"
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="Item7" type="ColorRect" parent="UpgradePage/Upgrades/VBox/ScrollBar/MC/ItemGrid"]
+custom_minimum_size = Vector2(225, 90)
+layout_mode = 2
+color = Color(0.247059, 0.32549, 0.32549, 1)
+
+[node name="VBox" type="VBoxContainer" parent="UpgradePage/Upgrades/VBox/ScrollBar/MC/ItemGrid/Item7"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MC" type="MarginContainer" parent="UpgradePage/Upgrades/VBox/ScrollBar/MC/ItemGrid/Item7/VBox"]
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 6
+
+[node name="NameLabel" type="Label" parent="UpgradePage/Upgrades/VBox/ScrollBar/MC/ItemGrid/Item7/VBox/MC"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "Wood 1"
+
+[node name="MC2" type="MarginContainer" parent="UpgradePage/Upgrades/VBox/ScrollBar/MC/ItemGrid/Item7/VBox"]
+layout_mode = 2
+theme_override_constants/margin_right = 8
+
+[node name="CostLabel" type="Label" parent="UpgradePage/Upgrades/VBox/ScrollBar/MC/ItemGrid/Item7/VBox/MC2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+text = "10 wood"
+horizontal_alignment = 2
+
+[node name="MC3" type="MarginContainer" parent="UpgradePage/Upgrades/VBox/ScrollBar/MC/ItemGrid/Item7/VBox"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 5
+
+[node name="HBox" type="HBoxContainer" parent="UpgradePage/Upgrades/VBox/ScrollBar/MC/ItemGrid/Item7/VBox/MC3"]
+layout_mode = 2
+theme_override_constants/separation = 13
+alignment = 1
+
+[node name="MC" type="MarginContainer" parent="UpgradePage/Upgrades/VBox/ScrollBar/MC/ItemGrid/Item7/VBox/MC3/HBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_bottom = 0
+
+[node name="BuyButton" type="Button" parent="UpgradePage/Upgrades/VBox/ScrollBar/MC/ItemGrid/Item7/VBox/MC3/HBox/MC"]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 12
+text = "Buy"
+
+[node name="MC2" type="MarginContainer" parent="UpgradePage/Upgrades/VBox/ScrollBar/MC/ItemGrid/Item7/VBox/MC3/HBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="BuyMaxButton" type="Button" parent="UpgradePage/Upgrades/VBox/ScrollBar/MC/ItemGrid/Item7/VBox/MC3/HBox/MC2"]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 12
+text = "Buy Max"
+
+[node name="MC3" type="MarginContainer" parent="UpgradePage/Upgrades/VBox/ScrollBar/MC/ItemGrid/Item7/VBox/MC3/HBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_bottom = -11
+
+[node name="ProgressLabel" type="Label" parent="UpgradePage/Upgrades/VBox/ScrollBar/MC/ItemGrid/Item7/VBox/MC3/HBox/MC3"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+text = "5 / 15"
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="Item8" type="ColorRect" parent="UpgradePage/Upgrades/VBox/ScrollBar/MC/ItemGrid"]
+custom_minimum_size = Vector2(225, 90)
+layout_mode = 2
+color = Color(0.247059, 0.32549, 0.32549, 1)
+
+[node name="VBox" type="VBoxContainer" parent="UpgradePage/Upgrades/VBox/ScrollBar/MC/ItemGrid/Item8"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MC" type="MarginContainer" parent="UpgradePage/Upgrades/VBox/ScrollBar/MC/ItemGrid/Item8/VBox"]
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 6
+
+[node name="NameLabel" type="Label" parent="UpgradePage/Upgrades/VBox/ScrollBar/MC/ItemGrid/Item8/VBox/MC"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "Wood 1"
+
+[node name="MC2" type="MarginContainer" parent="UpgradePage/Upgrades/VBox/ScrollBar/MC/ItemGrid/Item8/VBox"]
+layout_mode = 2
+theme_override_constants/margin_right = 8
+
+[node name="CostLabel" type="Label" parent="UpgradePage/Upgrades/VBox/ScrollBar/MC/ItemGrid/Item8/VBox/MC2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+text = "10 wood"
+horizontal_alignment = 2
+
+[node name="MC3" type="MarginContainer" parent="UpgradePage/Upgrades/VBox/ScrollBar/MC/ItemGrid/Item8/VBox"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 5
+
+[node name="HBox" type="HBoxContainer" parent="UpgradePage/Upgrades/VBox/ScrollBar/MC/ItemGrid/Item8/VBox/MC3"]
+layout_mode = 2
+theme_override_constants/separation = 13
+alignment = 1
+
+[node name="MC" type="MarginContainer" parent="UpgradePage/Upgrades/VBox/ScrollBar/MC/ItemGrid/Item8/VBox/MC3/HBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_bottom = 0
+
+[node name="BuyButton" type="Button" parent="UpgradePage/Upgrades/VBox/ScrollBar/MC/ItemGrid/Item8/VBox/MC3/HBox/MC"]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 12
+text = "Buy"
+
+[node name="MC2" type="MarginContainer" parent="UpgradePage/Upgrades/VBox/ScrollBar/MC/ItemGrid/Item8/VBox/MC3/HBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="BuyMaxButton" type="Button" parent="UpgradePage/Upgrades/VBox/ScrollBar/MC/ItemGrid/Item8/VBox/MC3/HBox/MC2"]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 12
+text = "Buy Max"
+
+[node name="MC3" type="MarginContainer" parent="UpgradePage/Upgrades/VBox/ScrollBar/MC/ItemGrid/Item8/VBox/MC3/HBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_bottom = -11
+
+[node name="ProgressLabel" type="Label" parent="UpgradePage/Upgrades/VBox/ScrollBar/MC/ItemGrid/Item8/VBox/MC3/HBox/MC3"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+text = "5 / 15"
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="Item9" type="ColorRect" parent="UpgradePage/Upgrades/VBox/ScrollBar/MC/ItemGrid"]
+custom_minimum_size = Vector2(225, 90)
+layout_mode = 2
+color = Color(0.247059, 0.32549, 0.32549, 1)
+
+[node name="VBox" type="VBoxContainer" parent="UpgradePage/Upgrades/VBox/ScrollBar/MC/ItemGrid/Item9"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MC" type="MarginContainer" parent="UpgradePage/Upgrades/VBox/ScrollBar/MC/ItemGrid/Item9/VBox"]
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 6
+
+[node name="NameLabel" type="Label" parent="UpgradePage/Upgrades/VBox/ScrollBar/MC/ItemGrid/Item9/VBox/MC"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "Wood 1"
+
+[node name="MC2" type="MarginContainer" parent="UpgradePage/Upgrades/VBox/ScrollBar/MC/ItemGrid/Item9/VBox"]
+layout_mode = 2
+theme_override_constants/margin_right = 8
+
+[node name="CostLabel" type="Label" parent="UpgradePage/Upgrades/VBox/ScrollBar/MC/ItemGrid/Item9/VBox/MC2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+text = "10 wood"
+horizontal_alignment = 2
+
+[node name="MC3" type="MarginContainer" parent="UpgradePage/Upgrades/VBox/ScrollBar/MC/ItemGrid/Item9/VBox"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 5
+
+[node name="HBox" type="HBoxContainer" parent="UpgradePage/Upgrades/VBox/ScrollBar/MC/ItemGrid/Item9/VBox/MC3"]
+layout_mode = 2
+theme_override_constants/separation = 13
+alignment = 1
+
+[node name="MC" type="MarginContainer" parent="UpgradePage/Upgrades/VBox/ScrollBar/MC/ItemGrid/Item9/VBox/MC3/HBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_bottom = 0
+
+[node name="BuyButton" type="Button" parent="UpgradePage/Upgrades/VBox/ScrollBar/MC/ItemGrid/Item9/VBox/MC3/HBox/MC"]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 12
+text = "Buy"
+
+[node name="MC2" type="MarginContainer" parent="UpgradePage/Upgrades/VBox/ScrollBar/MC/ItemGrid/Item9/VBox/MC3/HBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="BuyMaxButton" type="Button" parent="UpgradePage/Upgrades/VBox/ScrollBar/MC/ItemGrid/Item9/VBox/MC3/HBox/MC2"]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 12
+text = "Buy Max"
+
+[node name="MC3" type="MarginContainer" parent="UpgradePage/Upgrades/VBox/ScrollBar/MC/ItemGrid/Item9/VBox/MC3/HBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_bottom = -11
+
+[node name="ProgressLabel" type="Label" parent="UpgradePage/Upgrades/VBox/ScrollBar/MC/ItemGrid/Item9/VBox/MC3/HBox/MC3"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+text = "5 / 15"
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="Item10" type="ColorRect" parent="UpgradePage/Upgrades/VBox/ScrollBar/MC/ItemGrid"]
+custom_minimum_size = Vector2(225, 90)
+layout_mode = 2
+color = Color(0.247059, 0.32549, 0.32549, 1)
+
+[node name="VBox" type="VBoxContainer" parent="UpgradePage/Upgrades/VBox/ScrollBar/MC/ItemGrid/Item10"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MC" type="MarginContainer" parent="UpgradePage/Upgrades/VBox/ScrollBar/MC/ItemGrid/Item10/VBox"]
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 6
+
+[node name="NameLabel" type="Label" parent="UpgradePage/Upgrades/VBox/ScrollBar/MC/ItemGrid/Item10/VBox/MC"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "Wood 1"
+
+[node name="MC2" type="MarginContainer" parent="UpgradePage/Upgrades/VBox/ScrollBar/MC/ItemGrid/Item10/VBox"]
+layout_mode = 2
+theme_override_constants/margin_right = 8
+
+[node name="CostLabel" type="Label" parent="UpgradePage/Upgrades/VBox/ScrollBar/MC/ItemGrid/Item10/VBox/MC2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+text = "10 wood"
+horizontal_alignment = 2
+
+[node name="MC3" type="MarginContainer" parent="UpgradePage/Upgrades/VBox/ScrollBar/MC/ItemGrid/Item10/VBox"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 5
+
+[node name="HBox" type="HBoxContainer" parent="UpgradePage/Upgrades/VBox/ScrollBar/MC/ItemGrid/Item10/VBox/MC3"]
+layout_mode = 2
+theme_override_constants/separation = 13
+alignment = 1
+
+[node name="MC" type="MarginContainer" parent="UpgradePage/Upgrades/VBox/ScrollBar/MC/ItemGrid/Item10/VBox/MC3/HBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_bottom = 0
+
+[node name="BuyButton" type="Button" parent="UpgradePage/Upgrades/VBox/ScrollBar/MC/ItemGrid/Item10/VBox/MC3/HBox/MC"]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 12
+text = "Buy"
+
+[node name="MC2" type="MarginContainer" parent="UpgradePage/Upgrades/VBox/ScrollBar/MC/ItemGrid/Item10/VBox/MC3/HBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="BuyMaxButton" type="Button" parent="UpgradePage/Upgrades/VBox/ScrollBar/MC/ItemGrid/Item10/VBox/MC3/HBox/MC2"]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 12
+text = "Buy Max"
+
+[node name="MC3" type="MarginContainer" parent="UpgradePage/Upgrades/VBox/ScrollBar/MC/ItemGrid/Item10/VBox/MC3/HBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_bottom = -11
+
+[node name="ProgressLabel" type="Label" parent="UpgradePage/Upgrades/VBox/ScrollBar/MC/ItemGrid/Item10/VBox/MC3/HBox/MC3"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+text = "5 / 15"
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="Item11" type="ColorRect" parent="UpgradePage/Upgrades/VBox/ScrollBar/MC/ItemGrid"]
+custom_minimum_size = Vector2(225, 90)
+layout_mode = 2
+color = Color(0.247059, 0.32549, 0.32549, 1)
+
+[node name="VBox" type="VBoxContainer" parent="UpgradePage/Upgrades/VBox/ScrollBar/MC/ItemGrid/Item11"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MC" type="MarginContainer" parent="UpgradePage/Upgrades/VBox/ScrollBar/MC/ItemGrid/Item11/VBox"]
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 6
+
+[node name="NameLabel" type="Label" parent="UpgradePage/Upgrades/VBox/ScrollBar/MC/ItemGrid/Item11/VBox/MC"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "Wood 1"
+
+[node name="MC2" type="MarginContainer" parent="UpgradePage/Upgrades/VBox/ScrollBar/MC/ItemGrid/Item11/VBox"]
+layout_mode = 2
+theme_override_constants/margin_right = 8
+
+[node name="CostLabel" type="Label" parent="UpgradePage/Upgrades/VBox/ScrollBar/MC/ItemGrid/Item11/VBox/MC2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+text = "10 wood"
+horizontal_alignment = 2
+
+[node name="MC3" type="MarginContainer" parent="UpgradePage/Upgrades/VBox/ScrollBar/MC/ItemGrid/Item11/VBox"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 5
+
+[node name="HBox" type="HBoxContainer" parent="UpgradePage/Upgrades/VBox/ScrollBar/MC/ItemGrid/Item11/VBox/MC3"]
+layout_mode = 2
+theme_override_constants/separation = 13
+alignment = 1
+
+[node name="MC" type="MarginContainer" parent="UpgradePage/Upgrades/VBox/ScrollBar/MC/ItemGrid/Item11/VBox/MC3/HBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_bottom = 0
+
+[node name="BuyButton" type="Button" parent="UpgradePage/Upgrades/VBox/ScrollBar/MC/ItemGrid/Item11/VBox/MC3/HBox/MC"]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 12
+text = "Buy"
+
+[node name="MC2" type="MarginContainer" parent="UpgradePage/Upgrades/VBox/ScrollBar/MC/ItemGrid/Item11/VBox/MC3/HBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="BuyMaxButton" type="Button" parent="UpgradePage/Upgrades/VBox/ScrollBar/MC/ItemGrid/Item11/VBox/MC3/HBox/MC2"]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 12
+text = "Buy Max"
+
+[node name="MC3" type="MarginContainer" parent="UpgradePage/Upgrades/VBox/ScrollBar/MC/ItemGrid/Item11/VBox/MC3/HBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_bottom = -11
+
+[node name="ProgressLabel" type="Label" parent="UpgradePage/Upgrades/VBox/ScrollBar/MC/ItemGrid/Item11/VBox/MC3/HBox/MC3"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+text = "5 / 15"
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="Item12" type="ColorRect" parent="UpgradePage/Upgrades/VBox/ScrollBar/MC/ItemGrid"]
+custom_minimum_size = Vector2(225, 90)
+layout_mode = 2
+color = Color(0.247059, 0.32549, 0.32549, 1)
+
+[node name="VBox" type="VBoxContainer" parent="UpgradePage/Upgrades/VBox/ScrollBar/MC/ItemGrid/Item12"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MC" type="MarginContainer" parent="UpgradePage/Upgrades/VBox/ScrollBar/MC/ItemGrid/Item12/VBox"]
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 6
+
+[node name="NameLabel" type="Label" parent="UpgradePage/Upgrades/VBox/ScrollBar/MC/ItemGrid/Item12/VBox/MC"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "Wood 1"
+
+[node name="MC2" type="MarginContainer" parent="UpgradePage/Upgrades/VBox/ScrollBar/MC/ItemGrid/Item12/VBox"]
+layout_mode = 2
+theme_override_constants/margin_right = 8
+
+[node name="CostLabel" type="Label" parent="UpgradePage/Upgrades/VBox/ScrollBar/MC/ItemGrid/Item12/VBox/MC2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+text = "10 wood"
+horizontal_alignment = 2
+
+[node name="MC3" type="MarginContainer" parent="UpgradePage/Upgrades/VBox/ScrollBar/MC/ItemGrid/Item12/VBox"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 5
+
+[node name="HBox" type="HBoxContainer" parent="UpgradePage/Upgrades/VBox/ScrollBar/MC/ItemGrid/Item12/VBox/MC3"]
+layout_mode = 2
+theme_override_constants/separation = 13
+alignment = 1
+
+[node name="MC" type="MarginContainer" parent="UpgradePage/Upgrades/VBox/ScrollBar/MC/ItemGrid/Item12/VBox/MC3/HBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_bottom = 0
+
+[node name="BuyButton" type="Button" parent="UpgradePage/Upgrades/VBox/ScrollBar/MC/ItemGrid/Item12/VBox/MC3/HBox/MC"]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 12
+text = "Buy"
+
+[node name="MC2" type="MarginContainer" parent="UpgradePage/Upgrades/VBox/ScrollBar/MC/ItemGrid/Item12/VBox/MC3/HBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="BuyMaxButton" type="Button" parent="UpgradePage/Upgrades/VBox/ScrollBar/MC/ItemGrid/Item12/VBox/MC3/HBox/MC2"]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 12
+text = "Buy Max"
+
+[node name="MC3" type="MarginContainer" parent="UpgradePage/Upgrades/VBox/ScrollBar/MC/ItemGrid/Item12/VBox/MC3/HBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_bottom = -11
+
+[node name="ProgressLabel" type="Label" parent="UpgradePage/Upgrades/VBox/ScrollBar/MC/ItemGrid/Item12/VBox/MC3/HBox/MC3"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+text = "5 / 15"
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="Item13" type="ColorRect" parent="UpgradePage/Upgrades/VBox/ScrollBar/MC/ItemGrid"]
+custom_minimum_size = Vector2(225, 90)
+layout_mode = 2
+color = Color(0.247059, 0.32549, 0.32549, 1)
+
+[node name="VBox" type="VBoxContainer" parent="UpgradePage/Upgrades/VBox/ScrollBar/MC/ItemGrid/Item13"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MC" type="MarginContainer" parent="UpgradePage/Upgrades/VBox/ScrollBar/MC/ItemGrid/Item13/VBox"]
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 6
+
+[node name="NameLabel" type="Label" parent="UpgradePage/Upgrades/VBox/ScrollBar/MC/ItemGrid/Item13/VBox/MC"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "Wood 1"
+
+[node name="MC2" type="MarginContainer" parent="UpgradePage/Upgrades/VBox/ScrollBar/MC/ItemGrid/Item13/VBox"]
+layout_mode = 2
+theme_override_constants/margin_right = 8
+
+[node name="CostLabel" type="Label" parent="UpgradePage/Upgrades/VBox/ScrollBar/MC/ItemGrid/Item13/VBox/MC2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+text = "10 wood"
+horizontal_alignment = 2
+
+[node name="MC3" type="MarginContainer" parent="UpgradePage/Upgrades/VBox/ScrollBar/MC/ItemGrid/Item13/VBox"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 5
+
+[node name="HBox" type="HBoxContainer" parent="UpgradePage/Upgrades/VBox/ScrollBar/MC/ItemGrid/Item13/VBox/MC3"]
+layout_mode = 2
+theme_override_constants/separation = 13
+alignment = 1
+
+[node name="MC" type="MarginContainer" parent="UpgradePage/Upgrades/VBox/ScrollBar/MC/ItemGrid/Item13/VBox/MC3/HBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_bottom = 0
+
+[node name="BuyButton" type="Button" parent="UpgradePage/Upgrades/VBox/ScrollBar/MC/ItemGrid/Item13/VBox/MC3/HBox/MC"]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 12
+text = "Buy"
+
+[node name="MC2" type="MarginContainer" parent="UpgradePage/Upgrades/VBox/ScrollBar/MC/ItemGrid/Item13/VBox/MC3/HBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="BuyMaxButton" type="Button" parent="UpgradePage/Upgrades/VBox/ScrollBar/MC/ItemGrid/Item13/VBox/MC3/HBox/MC2"]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 12
+text = "Buy Max"
+
+[node name="MC3" type="MarginContainer" parent="UpgradePage/Upgrades/VBox/ScrollBar/MC/ItemGrid/Item13/VBox/MC3/HBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_bottom = -11
+
+[node name="ProgressLabel" type="Label" parent="UpgradePage/Upgrades/VBox/ScrollBar/MC/ItemGrid/Item13/VBox/MC3/HBox/MC3"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+text = "5 / 15"
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="Item14" type="ColorRect" parent="UpgradePage/Upgrades/VBox/ScrollBar/MC/ItemGrid"]
+custom_minimum_size = Vector2(225, 90)
+layout_mode = 2
+color = Color(0.247059, 0.32549, 0.32549, 1)
+
+[node name="VBox" type="VBoxContainer" parent="UpgradePage/Upgrades/VBox/ScrollBar/MC/ItemGrid/Item14"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MC" type="MarginContainer" parent="UpgradePage/Upgrades/VBox/ScrollBar/MC/ItemGrid/Item14/VBox"]
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 6
+
+[node name="NameLabel" type="Label" parent="UpgradePage/Upgrades/VBox/ScrollBar/MC/ItemGrid/Item14/VBox/MC"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "Wood 1"
+
+[node name="MC2" type="MarginContainer" parent="UpgradePage/Upgrades/VBox/ScrollBar/MC/ItemGrid/Item14/VBox"]
+layout_mode = 2
+theme_override_constants/margin_right = 8
+
+[node name="CostLabel" type="Label" parent="UpgradePage/Upgrades/VBox/ScrollBar/MC/ItemGrid/Item14/VBox/MC2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+text = "10 wood"
+horizontal_alignment = 2
+
+[node name="MC3" type="MarginContainer" parent="UpgradePage/Upgrades/VBox/ScrollBar/MC/ItemGrid/Item14/VBox"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 5
+
+[node name="HBox" type="HBoxContainer" parent="UpgradePage/Upgrades/VBox/ScrollBar/MC/ItemGrid/Item14/VBox/MC3"]
+layout_mode = 2
+theme_override_constants/separation = 13
+alignment = 1
+
+[node name="MC" type="MarginContainer" parent="UpgradePage/Upgrades/VBox/ScrollBar/MC/ItemGrid/Item14/VBox/MC3/HBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_bottom = 0
+
+[node name="BuyButton" type="Button" parent="UpgradePage/Upgrades/VBox/ScrollBar/MC/ItemGrid/Item14/VBox/MC3/HBox/MC"]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 12
+text = "Buy"
+
+[node name="MC2" type="MarginContainer" parent="UpgradePage/Upgrades/VBox/ScrollBar/MC/ItemGrid/Item14/VBox/MC3/HBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="BuyMaxButton" type="Button" parent="UpgradePage/Upgrades/VBox/ScrollBar/MC/ItemGrid/Item14/VBox/MC3/HBox/MC2"]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 12
+text = "Buy Max"
+
+[node name="MC3" type="MarginContainer" parent="UpgradePage/Upgrades/VBox/ScrollBar/MC/ItemGrid/Item14/VBox/MC3/HBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_bottom = -11
+
+[node name="ProgressLabel" type="Label" parent="UpgradePage/Upgrades/VBox/ScrollBar/MC/ItemGrid/Item14/VBox/MC3/HBox/MC3"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+text = "5 / 15"
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="Item15" type="ColorRect" parent="UpgradePage/Upgrades/VBox/ScrollBar/MC/ItemGrid"]
+custom_minimum_size = Vector2(225, 90)
+layout_mode = 2
+color = Color(0.247059, 0.32549, 0.32549, 1)
+
+[node name="VBox" type="VBoxContainer" parent="UpgradePage/Upgrades/VBox/ScrollBar/MC/ItemGrid/Item15"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MC" type="MarginContainer" parent="UpgradePage/Upgrades/VBox/ScrollBar/MC/ItemGrid/Item15/VBox"]
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 6
+
+[node name="NameLabel" type="Label" parent="UpgradePage/Upgrades/VBox/ScrollBar/MC/ItemGrid/Item15/VBox/MC"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "Wood 1"
+
+[node name="MC2" type="MarginContainer" parent="UpgradePage/Upgrades/VBox/ScrollBar/MC/ItemGrid/Item15/VBox"]
+layout_mode = 2
+theme_override_constants/margin_right = 8
+
+[node name="CostLabel" type="Label" parent="UpgradePage/Upgrades/VBox/ScrollBar/MC/ItemGrid/Item15/VBox/MC2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+text = "10 wood"
+horizontal_alignment = 2
+
+[node name="MC3" type="MarginContainer" parent="UpgradePage/Upgrades/VBox/ScrollBar/MC/ItemGrid/Item15/VBox"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 5
+
+[node name="HBox" type="HBoxContainer" parent="UpgradePage/Upgrades/VBox/ScrollBar/MC/ItemGrid/Item15/VBox/MC3"]
+layout_mode = 2
+theme_override_constants/separation = 13
+alignment = 1
+
+[node name="MC" type="MarginContainer" parent="UpgradePage/Upgrades/VBox/ScrollBar/MC/ItemGrid/Item15/VBox/MC3/HBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_bottom = 0
+
+[node name="BuyButton" type="Button" parent="UpgradePage/Upgrades/VBox/ScrollBar/MC/ItemGrid/Item15/VBox/MC3/HBox/MC"]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 12
+text = "Buy"
+
+[node name="MC2" type="MarginContainer" parent="UpgradePage/Upgrades/VBox/ScrollBar/MC/ItemGrid/Item15/VBox/MC3/HBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="BuyMaxButton" type="Button" parent="UpgradePage/Upgrades/VBox/ScrollBar/MC/ItemGrid/Item15/VBox/MC3/HBox/MC2"]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 12
+text = "Buy Max"
+
+[node name="MC3" type="MarginContainer" parent="UpgradePage/Upgrades/VBox/ScrollBar/MC/ItemGrid/Item15/VBox/MC3/HBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_bottom = -11
+
+[node name="ProgressLabel" type="Label" parent="UpgradePage/Upgrades/VBox/ScrollBar/MC/ItemGrid/Item15/VBox/MC3/HBox/MC3"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+text = "5 / 15"
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="Item16" type="ColorRect" parent="UpgradePage/Upgrades/VBox/ScrollBar/MC/ItemGrid"]
+custom_minimum_size = Vector2(225, 90)
+layout_mode = 2
+color = Color(0.247059, 0.32549, 0.32549, 1)
+
+[node name="VBox" type="VBoxContainer" parent="UpgradePage/Upgrades/VBox/ScrollBar/MC/ItemGrid/Item16"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MC" type="MarginContainer" parent="UpgradePage/Upgrades/VBox/ScrollBar/MC/ItemGrid/Item16/VBox"]
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 6
+
+[node name="NameLabel" type="Label" parent="UpgradePage/Upgrades/VBox/ScrollBar/MC/ItemGrid/Item16/VBox/MC"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "Wood 1"
+
+[node name="MC2" type="MarginContainer" parent="UpgradePage/Upgrades/VBox/ScrollBar/MC/ItemGrid/Item16/VBox"]
+layout_mode = 2
+theme_override_constants/margin_right = 8
+
+[node name="CostLabel" type="Label" parent="UpgradePage/Upgrades/VBox/ScrollBar/MC/ItemGrid/Item16/VBox/MC2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+text = "10 wood"
+horizontal_alignment = 2
+
+[node name="MC3" type="MarginContainer" parent="UpgradePage/Upgrades/VBox/ScrollBar/MC/ItemGrid/Item16/VBox"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 5
+
+[node name="HBox" type="HBoxContainer" parent="UpgradePage/Upgrades/VBox/ScrollBar/MC/ItemGrid/Item16/VBox/MC3"]
+layout_mode = 2
+theme_override_constants/separation = 13
+alignment = 1
+
+[node name="MC" type="MarginContainer" parent="UpgradePage/Upgrades/VBox/ScrollBar/MC/ItemGrid/Item16/VBox/MC3/HBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_bottom = 0
+
+[node name="BuyButton" type="Button" parent="UpgradePage/Upgrades/VBox/ScrollBar/MC/ItemGrid/Item16/VBox/MC3/HBox/MC"]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 12
+text = "Buy"
+
+[node name="MC2" type="MarginContainer" parent="UpgradePage/Upgrades/VBox/ScrollBar/MC/ItemGrid/Item16/VBox/MC3/HBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="BuyMaxButton" type="Button" parent="UpgradePage/Upgrades/VBox/ScrollBar/MC/ItemGrid/Item16/VBox/MC3/HBox/MC2"]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 12
+text = "Buy Max"
+
+[node name="MC3" type="MarginContainer" parent="UpgradePage/Upgrades/VBox/ScrollBar/MC/ItemGrid/Item16/VBox/MC3/HBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_bottom = -11
+
+[node name="ProgressLabel" type="Label" parent="UpgradePage/Upgrades/VBox/ScrollBar/MC/ItemGrid/Item16/VBox/MC3/HBox/MC3"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+text = "5 / 15"
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="Item17" type="ColorRect" parent="UpgradePage/Upgrades/VBox/ScrollBar/MC/ItemGrid"]
+custom_minimum_size = Vector2(225, 90)
+layout_mode = 2
+color = Color(0.247059, 0.32549, 0.32549, 1)
+
+[node name="VBox" type="VBoxContainer" parent="UpgradePage/Upgrades/VBox/ScrollBar/MC/ItemGrid/Item17"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MC" type="MarginContainer" parent="UpgradePage/Upgrades/VBox/ScrollBar/MC/ItemGrid/Item17/VBox"]
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 6
+
+[node name="NameLabel" type="Label" parent="UpgradePage/Upgrades/VBox/ScrollBar/MC/ItemGrid/Item17/VBox/MC"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "Wood 1"
+
+[node name="MC2" type="MarginContainer" parent="UpgradePage/Upgrades/VBox/ScrollBar/MC/ItemGrid/Item17/VBox"]
+layout_mode = 2
+theme_override_constants/margin_right = 8
+
+[node name="CostLabel" type="Label" parent="UpgradePage/Upgrades/VBox/ScrollBar/MC/ItemGrid/Item17/VBox/MC2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+text = "10 wood"
+horizontal_alignment = 2
+
+[node name="MC3" type="MarginContainer" parent="UpgradePage/Upgrades/VBox/ScrollBar/MC/ItemGrid/Item17/VBox"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 5
+
+[node name="HBox" type="HBoxContainer" parent="UpgradePage/Upgrades/VBox/ScrollBar/MC/ItemGrid/Item17/VBox/MC3"]
+layout_mode = 2
+theme_override_constants/separation = 13
+alignment = 1
+
+[node name="MC" type="MarginContainer" parent="UpgradePage/Upgrades/VBox/ScrollBar/MC/ItemGrid/Item17/VBox/MC3/HBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_bottom = 0
+
+[node name="BuyButton" type="Button" parent="UpgradePage/Upgrades/VBox/ScrollBar/MC/ItemGrid/Item17/VBox/MC3/HBox/MC"]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 12
+text = "Buy"
+
+[node name="MC2" type="MarginContainer" parent="UpgradePage/Upgrades/VBox/ScrollBar/MC/ItemGrid/Item17/VBox/MC3/HBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="BuyMaxButton" type="Button" parent="UpgradePage/Upgrades/VBox/ScrollBar/MC/ItemGrid/Item17/VBox/MC3/HBox/MC2"]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 12
+text = "Buy Max"
+
+[node name="MC3" type="MarginContainer" parent="UpgradePage/Upgrades/VBox/ScrollBar/MC/ItemGrid/Item17/VBox/MC3/HBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_bottom = -11
+
+[node name="ProgressLabel" type="Label" parent="UpgradePage/Upgrades/VBox/ScrollBar/MC/ItemGrid/Item17/VBox/MC3/HBox/MC3"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+text = "5 / 15"
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="Item18" type="ColorRect" parent="UpgradePage/Upgrades/VBox/ScrollBar/MC/ItemGrid"]
+custom_minimum_size = Vector2(225, 90)
+layout_mode = 2
+color = Color(0.247059, 0.32549, 0.32549, 1)
+
+[node name="VBox" type="VBoxContainer" parent="UpgradePage/Upgrades/VBox/ScrollBar/MC/ItemGrid/Item18"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MC" type="MarginContainer" parent="UpgradePage/Upgrades/VBox/ScrollBar/MC/ItemGrid/Item18/VBox"]
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 6
+
+[node name="NameLabel" type="Label" parent="UpgradePage/Upgrades/VBox/ScrollBar/MC/ItemGrid/Item18/VBox/MC"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 18
+text = "Wood 1"
+
+[node name="MC2" type="MarginContainer" parent="UpgradePage/Upgrades/VBox/ScrollBar/MC/ItemGrid/Item18/VBox"]
+layout_mode = 2
+theme_override_constants/margin_right = 8
+
+[node name="CostLabel" type="Label" parent="UpgradePage/Upgrades/VBox/ScrollBar/MC/ItemGrid/Item18/VBox/MC2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+text = "10 wood"
+horizontal_alignment = 2
+
+[node name="MC3" type="MarginContainer" parent="UpgradePage/Upgrades/VBox/ScrollBar/MC/ItemGrid/Item18/VBox"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 5
+
+[node name="HBox" type="HBoxContainer" parent="UpgradePage/Upgrades/VBox/ScrollBar/MC/ItemGrid/Item18/VBox/MC3"]
+layout_mode = 2
+theme_override_constants/separation = 13
+alignment = 1
+
+[node name="MC" type="MarginContainer" parent="UpgradePage/Upgrades/VBox/ScrollBar/MC/ItemGrid/Item18/VBox/MC3/HBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_bottom = 0
+
+[node name="BuyButton" type="Button" parent="UpgradePage/Upgrades/VBox/ScrollBar/MC/ItemGrid/Item18/VBox/MC3/HBox/MC"]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 12
+text = "Buy"
+
+[node name="MC2" type="MarginContainer" parent="UpgradePage/Upgrades/VBox/ScrollBar/MC/ItemGrid/Item18/VBox/MC3/HBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="BuyMaxButton" type="Button" parent="UpgradePage/Upgrades/VBox/ScrollBar/MC/ItemGrid/Item18/VBox/MC3/HBox/MC2"]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 12
+text = "Buy Max"
+
+[node name="MC3" type="MarginContainer" parent="UpgradePage/Upgrades/VBox/ScrollBar/MC/ItemGrid/Item18/VBox/MC3/HBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_bottom = -11
+
+[node name="ProgressLabel" type="Label" parent="UpgradePage/Upgrades/VBox/ScrollBar/MC/ItemGrid/Item18/VBox/MC3/HBox/MC3"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+text = "5 / 15"
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="Upgrade1HBox" type="Control" parent="UpgradePage/Upgrades/VBox/ScrollBar/MC/ItemGrid"]
+layout_mode = 2
+
+[node name="TitleLabel" type="Control" parent="UpgradePage/Upgrades/VBox/ScrollBar/MC/ItemGrid/Upgrade1HBox"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="CostLabel" type="Control" parent="UpgradePage/Upgrades/VBox/ScrollBar/MC/ItemGrid/Upgrade1HBox"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="VBox" type="Control" parent="UpgradePage/Upgrades/VBox/ScrollBar/MC/ItemGrid/Upgrade1HBox"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="BuyButton" type="Control" parent="UpgradePage/Upgrades/VBox/ScrollBar/MC/ItemGrid/Upgrade1HBox/VBox"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="BuyMaxButton" type="Control" parent="UpgradePage/Upgrades/VBox/ScrollBar/MC/ItemGrid/Upgrade1HBox/VBox"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="UpgradeProgressLabel" type="Control" parent="UpgradePage/Upgrades/VBox/ScrollBar/MC/ItemGrid/Upgrade1HBox/VBox"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="PageButtons" type="MarginContainer" parent="."]
+custom_minimum_size = Vector2(0, 45)
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_right = 5
+
+[node name="ColorRect" type="ColorRect" parent="PageButtons"]
+visible = false
+layout_mode = 2
+color = Color(0.352941, 0.262745, 0.262745, 1)
+
+[node name="HBox" type="HBoxContainer" parent="PageButtons"]
+layout_mode = 2
+alignment = 1
+
+[node name="PageButtonMC" type="MarginContainer" parent="PageButtons/HBox"]
+custom_minimum_size = Vector2(185, 0)
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_bottom = 8
+
+[node name="HBox" type="HBoxContainer" parent="PageButtons/HBox/PageButtonMC"]
+layout_mode = 2
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="Page1Button" type="Button" parent="PageButtons/HBox/PageButtonMC/HBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 11
+text = "Page 1"
+
+[node name="Page2Button" type="Button" parent="PageButtons/HBox/PageButtonMC/HBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 11
+text = "Page 2"
+
+[node name="Page3Button" type="Button" parent="PageButtons/HBox/PageButtonMC/HBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 11
+text = "Page 3"
+
+[connection signal="button_down" from="UpgradePage/UpgradeTabs/HBox/TabButtonsMC/HBox/UpgradeTabButton1" to="UpgradePage" method="_on_upgrade_tab_button_1_button_down"]
+[connection signal="button_down" from="UpgradePage/UpgradeTabs/HBox/TabButtonsMC/HBox/UpgradeTabButton2" to="UpgradePage" method="_on_upgrade_tab_button_2_button_down"]
+[connection signal="button_down" from="UpgradePage/UpgradeTabs/HBox/TabButtonsMC/HBox/UpgradeTabButton3" to="UpgradePage" method="_on_upgrade_tab_button_3_button_down"]
+[connection signal="button_down" from="UpgradePage/UpgradeTabs/HBox/TabButtonsMC/HBox/UpgradeTabButton4" to="UpgradePage" method="_on_upgrade_tab_button_4_button_down"]
+[connection signal="button_down" from="UpgradePage/UpgradeTabs/HBox/TabButtonsMC/HBox/UpgradeTabButton5" to="UpgradePage" method="_on_upgrade_tab_button_5_button_down"]
+[connection signal="button_down" from="PageButtons/HBox/PageButtonMC/HBox/Page1Button" to="." method="_on_page_1_button_button_down"]
+[connection signal="button_down" from="PageButtons/HBox/PageButtonMC/HBox/Page2Button" to="." method="_on_page_2_button_button_down"]
+[connection signal="button_down" from="PageButtons/HBox/PageButtonMC/HBox/Page3Button" to="." method="_on_page_3_button_button_down"]
