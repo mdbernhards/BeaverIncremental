@@ -1,22 +1,23 @@
 extends VBoxContainer
 
 # Nodes
-var UpgradePage
+var ResourcePage
 
 func _ready():
 	setNodePaths()
+	ResourcePage.changePage(1)
 
 func _process(delta):
 	pass
 
 func _on_page_1_button_button_down():
-	UpgradePage.changePage(1)
+	ResourcePage.changePage(1)
 
 func _on_page_2_button_button_down():
-	UpgradePage.changePage(2)
+	ResourcePage.changePage(2)
 
 func _on_page_3_button_button_down():
-	UpgradePage.changePage(3)
+	ResourcePage.changePage(3)
 
 func setNodePaths():
-	UpgradePage = $UpgradePage
+	ResourcePage = $BarsMC/MC/TitleVBox/ResourcePage

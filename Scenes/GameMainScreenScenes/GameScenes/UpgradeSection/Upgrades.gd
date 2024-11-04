@@ -1,28 +1,31 @@
 extends MarginContainer
 
-var UpgradeTabTitle
 var WoodType
 
-# Called when the node enters the scene tree for the first time.
+# Nodes
+var UpgradeTabTitle
+var ItemGrid
+
 func _ready():
-	setVarPaths()
+	setNodePaths()
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass
 
 func setupUpgradeTabForWoodType(type):
 	WoodType = type
+	UpgradeTabTitle.text = type
 	
 	UpgradeTabTitle.text = WoodType
-	setupUpgrades(WoodType)
+	setupUpgrades()
 
-func setupUpgrades(woodType):
-	#get all upgrades from upgrrade singleton
-	# get each upgrade status from save file singleton
-	# set the 18 upgrades up, show them or ??? based on if max level reached in upgrade, upgrade show trigger, indications of afordability 
-	pass
+func setupUpgrades():
+	var upgradeItems = ItemGrid.get_children()
 	
-func setVarPaths():
+	for item in upgradeItems:
+		item.WoodType = WoodType
+		item.changeUpgrade()
+	
+func setNodePaths():
 	UpgradeTabTitle = $VBox/TopHBox/TitleMC/TitleLabel
+	ItemGrid = $VBox/ScrollBar/MC/ItemGrid

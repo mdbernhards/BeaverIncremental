@@ -1,0 +1,227 @@
+[gd_scene load_steps=2 format=3 uid="uid://co5g5f1jr31nm"]
+
+[ext_resource type="Script" path="res://Scenes/GameMainScreenScenes/GameScenes/ResourceScreen/BarItem.gd" id="1_74j78"]
+
+[node name="BarItem" type="MarginContainer"]
+theme_override_constants/margin_left = 0
+script = ExtResource("1_74j78")
+
+[node name="HBox" type="HBoxContainer" parent="."]
+custom_minimum_size = Vector2(0, 110)
+layout_mode = 2
+
+[node name="BarVBox" type="VBoxContainer" parent="HBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="BarLabels" type="HBoxContainer" parent="HBox/BarVBox"]
+custom_minimum_size = Vector2(0, 45)
+layout_mode = 2
+theme_override_constants/separation = 6
+
+[node name="MC" type="MarginContainer" parent="HBox/BarVBox/BarLabels"]
+layout_mode = 2
+theme_override_constants/margin_top = -2
+
+[node name="TitleLabel" type="Label" parent="HBox/BarVBox/BarLabels/MC"]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 30
+text = "Oak"
+
+[node name="MC2" type="MarginContainer" parent="HBox/BarVBox/BarLabels"]
+layout_mode = 2
+
+[node name="LevelLabel" type="Label" parent="HBox/BarVBox/BarLabels/MC2"]
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_font_sizes/font_size = 17
+text = "LVL 10"
+
+[node name="MC3" type="MarginContainer" parent="HBox/BarVBox/BarLabels"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="StorageLabel" type="Label" parent="HBox/BarVBox/BarLabels/MC3"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+theme_override_font_sizes/font_size = 17
+text = "1,000,000 / 9,999,999"
+
+[node name="BarRect" type="ColorRect" parent="HBox/BarVBox"]
+layout_mode = 2
+size_flags_vertical = 3
+color = Color(0.513726, 0.415686, 0.243137, 1)
+
+[node name="HBox" type="HBoxContainer" parent="HBox/BarVBox/BarRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MC" type="MarginContainer" parent="HBox/BarVBox/BarRect/HBox"]
+layout_mode = 2
+theme_override_constants/margin_left = 6
+theme_override_constants/margin_bottom = 8
+
+[node name="VBox" type="VBoxContainer" parent="HBox/BarVBox/BarRect/HBox/MC"]
+layout_mode = 2
+theme_override_constants/separation = 2
+alignment = 2
+
+[node name="PerClickLabel" type="Label" parent="HBox/BarVBox/BarRect/HBox/MC/VBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 13
+text = "103e14 Oak per click"
+
+[node name="PerSecondLabel" type="Label" parent="HBox/BarVBox/BarRect/HBox/MC/VBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 13
+text = "144e15 Oak per second"
+
+[node name="MC2" type="MarginContainer" parent="HBox/BarVBox/BarRect/HBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 10
+
+[node name="ClickButton" type="Button" parent="HBox/BarVBox/BarRect/HBox/MC2"]
+layout_mode = 2
+size_flags_horizontal = 8
+theme_override_font_sizes/font_size = 26
+text = "Click"
+
+[node name="HSlider" type="HSlider" parent="HBox/BarVBox/BarRect"]
+custom_minimum_size = Vector2(175, 0)
+layout_mode = 0
+offset_left = 180.0
+offset_top = 39.0
+offset_right = 355.0
+offset_bottom = 55.0
+scale = Vector2(1.09087, 1.08809)
+value = 25.0
+
+[node name="Label" type="Label" parent="HBox/BarVBox/BarRect"]
+layout_mode = 0
+offset_left = 206.0
+offset_top = 15.0
+offset_right = 351.0
+offset_bottom = 38.0
+theme_override_font_sizes/font_size = 13
+text = "Maple production: 25%"
+
+[node name="WoodCampMC" type="MarginContainer" parent="HBox"]
+custom_minimum_size = Vector2(210, 0)
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_right = 10
+
+[node name="ColorRect" type="ColorRect" parent="HBox/WoodCampMC"]
+layout_mode = 2
+color = Color(0.172549, 0.443137, 0.317647, 1)
+
+[node name="WoodCampHBox" type="HBoxContainer" parent="HBox/WoodCampMC"]
+layout_mode = 2
+
+[node name="MC" type="MarginContainer" parent="HBox/WoodCampMC/WoodCampHBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 37
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 37
+
+[node name="ColorRect" type="ColorRect" parent="HBox/WoodCampMC/WoodCampHBox/MC"]
+layout_mode = 2
+color = Color(0.333333, 0.490196, 0.568627, 1)
+
+[node name="InventoryCountLabel" type="Label" parent="HBox/WoodCampMC/WoodCampHBox/MC/ColorRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "10"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MC2" type="MarginContainer" parent="HBox/WoodCampMC/WoodCampHBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_right = 10
+
+[node name="VBox" type="VBoxContainer" parent="HBox/WoodCampMC/WoodCampHBox/MC2"]
+layout_mode = 2
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="BuyButton" type="Button" parent="HBox/WoodCampMC/WoodCampHBox/MC2/VBox"]
+layout_mode = 2
+text = "Buy"
+
+[node name="BuyMaxButton" type="Button" parent="HBox/WoodCampMC/WoodCampHBox/MC2/VBox"]
+layout_mode = 2
+text = "Buy Max"
+
+[node name="LevelMC" type="MarginContainer" parent="HBox"]
+custom_minimum_size = Vector2(210, 0)
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_right = 10
+
+[node name="ColorRect" type="ColorRect" parent="HBox/LevelMC"]
+layout_mode = 2
+color = Color(0.396078, 0.576471, 0.643137, 1)
+
+[node name="LevelHBox" type="HBoxContainer" parent="HBox/LevelMC"]
+layout_mode = 2
+
+[node name="MC" type="MarginContainer" parent="HBox/LevelMC/LevelHBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 37
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 37
+
+[node name="ColorRect" type="ColorRect" parent="HBox/LevelMC/LevelHBox/MC"]
+layout_mode = 2
+color = Color(0.333333, 0.490196, 0.568627, 1)
+
+[node name="InventoryCountLabel" type="Label" parent="HBox/LevelMC/LevelHBox/MC/ColorRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "10"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MC2" type="MarginContainer" parent="HBox/LevelMC/LevelHBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_right = 10
+
+[node name="VBox" type="VBoxContainer" parent="HBox/LevelMC/LevelHBox/MC2"]
+layout_mode = 2
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="BuyButton" type="Button" parent="HBox/LevelMC/LevelHBox/MC2/VBox"]
+layout_mode = 2
+text = "Buy"
+
+[node name="BuyMaxButton" type="Button" parent="HBox/LevelMC/LevelHBox/MC2/VBox"]
+layout_mode = 2
+text = "Buy Max"
+
+[connection signal="button_down" from="HBox/BarVBox/BarRect/HBox/MC2/ClickButton" to="." method="_on_click_button_button_down"]
