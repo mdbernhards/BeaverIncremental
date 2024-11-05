@@ -5,27 +5,37 @@ var Upgrades = {
 		"1" : {
 			"Name" : "+Oak Per Click",
 			"Description" : "Increases Oak wood gathered per click by 1",
-			"Formula" : "idk",
+			"HasUpgradeType" : true,
+			"UpgradeType" : "add",
+			"BaseValue" : 1,
 		},
 		"2" :  {
 			"Name" : "+Oak Storage",
 			"Description" : "Increases Oak wood storage capacity by 10",
-			"Formula" : "idk",
+			"HasUpgradeType" : true,
+			"UpgradeType" : "add",
+			"BaseValue" : 10,
 		},
 		"3" :  {
 			"Name" : "Double Storage",
 			"Description" : "Doubles storage capacity",
-			"Formula" : "idk",
+			"HasUpgradeType" : true,
+			"UpgradeType" : "Pow",
+			"BaseValue" : 2,
 		},
 		"4" :  {
 			"Name" : "Better Wood Click",
 			"Description" : "Increases wood gathered per click by an additional 1",
-			"Formula" : "idk",
+			"HasUpgradeType" : true,
+			"UpgradeType" : "PerLevel",
+			"BaseValue" : 1,
 		},
 		"5" :  {
 			"Name" : "Unlock Apple Wood",
 			"Description" : "Unlocks Apple wood for production",
-			"Formula" : "idk",
+			"HasUpgradeType" : true,
+			"UpgradeType" : "Unlock",
+			"BaseValue" : "Apple",
 		},
 		"6" :  {
 			"Name" : "+WPS Oak Woodcamps",
@@ -368,6 +378,57 @@ var Upgrades = {
 		"16" : false,
 		"17" : false,
 		"18" : false,
+	},
+}
+
+var Resources = {
+	"Oak" : {
+		"Color" : Color('836a3e'),
+	},
+	"Apple" : {
+		"Color" : Color('836a3e'),
+	},
+	"Maple" : {
+		"Color" : Color('836a3e'),
+	},
+	"Birch" : {
+		"Color" : Color('836a3e'),
+	},
+	"Spruce" : {
+		"Color" : Color('836a3e'),
+	},
+	"Chestnut" : {
+		"Color" : Color('836a3e'),
+	},
+	"Cherry" : {
+		"Color" : Color('836a3e'),
+	},
+	"Ash" : {
+		"Color" : Color('836a3e'),
+	},
+	"Cedar" : {
+		"Color" : Color('836a3e'),
+	},
+	"Mahogany" : {
+		"Color" : Color('836a3e'),
+	},
+	"Ebony" : {
+		"Color" : Color('836a3e'),
+	},
+	"Dogwood" : {
+		"Color" : Color('836a3e'),
+	},
+	"Rosewood" : {
+		"Color" : Color('836a3e'),
+	},
+	"Ghost Gum" : {
+		"Color" : Color('836a3e'),
+	},
+	"Dragonwood" : {
+		"Color" : Color('836a3e'),
+	},
+	"Gold" : {
+		"Color" : Color('836a3e'),
 	},
 }
 

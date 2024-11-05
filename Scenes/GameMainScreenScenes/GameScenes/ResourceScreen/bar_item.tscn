@@ -3,6 +3,7 @@
 [ext_resource type="Script" path="res://Scenes/GameMainScreenScenes/GameScenes/ResourceScreen/BarItem.gd" id="1_74j78"]
 
 [node name="BarItem" type="MarginContainer"]
+custom_minimum_size = Vector2(953, 0)
 theme_override_constants/margin_left = 0
 script = ExtResource("1_74j78")
 

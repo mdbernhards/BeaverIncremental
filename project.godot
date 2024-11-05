@@ -29,6 +29,8 @@ SetGameValues="*res://singletons/V1/SetGameValues.gd"
 SetTextLog="*res://singletons/V1/SetTextLog.gd"
 ConstUpgrades="*res://singletons/ConstUpgrades.gd"
 SaveData="*res://singletons/SaveData.gd"
+Values="*res://singletons/Values.gd"
+CalculateValues="*res://singletons/CalculateValues.gd"
 
 [display]
 

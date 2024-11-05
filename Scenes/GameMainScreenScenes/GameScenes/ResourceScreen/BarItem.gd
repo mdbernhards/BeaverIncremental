@@ -19,14 +19,14 @@ func _process(delta):
 func changeBarValues(woodType = WoodType):
 	WoodType = woodType
 	NameLabel.text = WoodType
-	LevelLabel.text = str(SaveData.level)
+	LevelLabel.text = "LvL " + str(SaveData.Resources[WoodType]["Level"])
 	#PerClickLabel.text = calculatePerClickValue()
 	#PerSecondLabel.text = calculatePerSecondValue()
 	#StorageLabel.text = calculareStorageCapacity()
 
 func updateBarValues(woodType = WoodType):
 	WoodType = woodType
-	LevelLabel.text = str(SaveData.level)
+	LevelLabel.text = "LvL " + str(SaveData.Resources[WoodType]["Level"])
 	#PerClickLabel.text = calculatePerClickValue()
 	#PerSecondLabel.text = calculatePerSecondValue()
 	#StorageLabel.text = calculareStorageCapacity()

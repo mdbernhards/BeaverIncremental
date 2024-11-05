@@ -3,33 +3,112 @@ extends Node
 var lastTimeSaved
 var timePlayed
 
-var level = 14
+var Resources = {
+	"Oak" : {
+		"Count" : 0,
+		"Level" : 1,
+		"WoodCamps": 0,
+	},
+	"Apple" : {
+		"Count" : 0,
+		"Level" : 1,
+		"WoodCamps": 0,
+	},
+	"Maple" : {
+		"Count" : 0,
+		"Level" : 1,
+		"WoodCamps": 0,
+	},
+	"Birch" : {
+		"Count" : 0,
+		"Level" : 1,
+		"WoodCamps": 0,
+	},
+	"Spruce" : {
+		"Count" : 0,
+		"Level" : 1,
+		"WoodCamps": 0,
+	},
+	"Chestnut" : {
+		"Count" : 0,
+		"Level" : 1,
+		"WoodCamps": 0,
+	},
+	"Cherry" : {
+		"Count" : 0,
+		"Level" : 1,
+		"WoodCamps": 0,
+	},
+	"Ash" : {
+		"Count" : 0,
+		"Level" : 1,
+		"WoodCamps": 0,
+	},
+	"Cedar" : {
+		"Count" : 0,
+		"Level" : 1,
+		"WoodCamps": 0,
+	},
+	"Mahogany" : {
+		"Count" : 0,
+		"Level" : 1,
+		"WoodCamps": 0,
+	},
+	"Ebony" : {
+		"Count" : 0,
+		"Level" : 1,
+		"WoodCamps": 0,
+	},
+	"Dogwood" : {
+		"Count" : 0,
+		"Level" : 1,
+		"WoodCamps": 0,
+	},
+	"Rosewood" : {
+		"Count" : 0,
+		"Level" : 1,
+		"WoodCamps": 0,
+	},
+	"Ghost Gum" : {
+		"Count" : 0,
+		"Level" : 1,
+		"WoodCamps": 0,
+	},
+	"Dragonwood" : {
+		"Count" : 0,
+		"Level" : 1,
+		"WoodCamps": 0,
+	},
+	"Gold" : {
+		"Count" : 0,
+	},
+}
 
 var Upgrades = {
 	"Oak" : {
 		"1" : {
-			"Level" : 1,
+			"Level" : 0,
 		},
 		"2" :  {
-			"Level" : 1,
+			"Level" : 0,
 		},
 		"3" :  {
-			"Level" : 1,
+			"Level" : 0,
 		},
 		"4" :  {
-			"Level" : 1,
+			"Level" : 0,
 		},
 		"5" :  {
-			"Level" : 1,
+			"Level" : 0,
 		},
 		"6" :  {
-			"Level" : 1,
+			"Level" : 0,
 		},
 		"7" :  {
-			"Level" : 1,
+			"Level" : 0,
 		},
 		"8" :  {
-			"Level" : 1,
+			"Level" : 0,
 		},
 		"9" : false,
 		"10" : false,
@@ -44,31 +123,31 @@ var Upgrades = {
 	},
 	"Apple" : {
 		"1" : {
-			"Level" : 1,
+			"Level" : 0,
 		},
 		"2" :  {
-			"Level" : 1,
+			"Level" : 0,
 		},
 		"3" :  {
-			"Level" : 1,
+			"Level" : 0,
 		},
 		"4" :  {
-			"Level" : 1,
+			"Level" : 0,
 		},
 		"5" :  {
-			"Level" : 1,
+			"Level" : 0,
 		},
 		"6" :  {
-			"Level" : 1,
+			"Level" : 0,
 		},
 		"7" :  {
-			"Level" : 1,
+			"Level" : 0,
 		},
 		"8" :  {
-			"Level" : 1,
+			"Level" : 0,
 		},
 		"9" :  {
-			"Level" : 1,
+			"Level" : 0,
 		},
 		"10" : false,
 		"11" : false,
