@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://co5g5f1jr31nm"]
+[gd_scene load_steps=3 format=3 uid="uid://co5g5f1jr31nm"]
 
 [ext_resource type="Script" path="res://Scenes/GameMainScreenScenes/GameScenes/ResourceScreen/BarItem.gd" id="1_74j78"]
+[ext_resource type="Texture2D" uid="uid://d28u3ggeiph86" path="res://Art/white.jpg" id="2_ck83t"]
 
 [node name="BarItem" type="MarginContainer"]
 custom_minimum_size = Vector2(953, 0)
@@ -53,7 +54,18 @@ text = "1,000,000 / 9,999,999"
 [node name="BarRect" type="ColorRect" parent="HBox/BarVBox"]
 layout_mode = 2
 size_flags_vertical = 3
-color = Color(0.513726, 0.415686, 0.243137, 1)
+color = Color(0.231373, 0.180392, 0.0901961, 1)
+
+[node name="ProgressBar" type="TextureProgressBar" parent="HBox/BarVBox/BarRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+value = 55.0
+texture_progress = ExtResource("2_ck83t")
+tint_progress = Color(0.513726, 0.415686, 0.243137, 1)
 
 [node name="HBox" type="HBoxContainer" parent="HBox/BarVBox/BarRect"]
 layout_mode = 1

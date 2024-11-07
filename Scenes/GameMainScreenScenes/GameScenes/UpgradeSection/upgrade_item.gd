@@ -52,3 +52,4 @@ func _on_buy_button_button_down():
 	
 	SaveDataValues["Level"] += 1
 	setUpgradePriceAndLevel()
+	CalculateValues.calculateAllValues()
