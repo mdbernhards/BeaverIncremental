@@ -108,7 +108,7 @@ size_flags_horizontal = 8
 theme_override_font_sizes/font_size = 26
 text = "Click"
 
-[node name="HSlider" type="HSlider" parent="HBox/BarVBox/BarRect"]
+[node name="ResourceProductionSlider" type="HSlider" parent="HBox/BarVBox/BarRect"]
 custom_minimum_size = Vector2(175, 0)
 layout_mode = 0
 offset_left = 180.0
@@ -118,12 +118,12 @@ offset_bottom = 55.0
 scale = Vector2(1.09087, 1.08809)
 value = 25.0
 
-[node name="Label" type="Label" parent="HBox/BarVBox/BarRect"]
+[node name="ProductionLabel" type="Label" parent="HBox/BarVBox/BarRect/ResourceProductionSlider"]
 layout_mode = 0
-offset_left = 206.0
-offset_top = 15.0
-offset_right = 351.0
-offset_bottom = 38.0
+offset_left = 12.8338
+offset_top = -22.057
+offset_right = 157.834
+offset_bottom = 0.943001
 theme_override_font_sizes/font_size = 13
 text = "Maple production: 25%"
 
@@ -143,25 +143,30 @@ layout_mode = 2
 [node name="MC" type="MarginContainer" parent="HBox/WoodCampMC/WoodCampHBox"]
 layout_mode = 2
 size_flags_horizontal = 3
-theme_override_constants/margin_left = 15
-theme_override_constants/margin_top = 37
-theme_override_constants/margin_right = 10
-theme_override_constants/margin_bottom = 37
+theme_override_constants/margin_top = 8
 
-[node name="ColorRect" type="ColorRect" parent="HBox/WoodCampMC/WoodCampHBox/MC"]
+[node name="VBox" type="VBoxContainer" parent="HBox/WoodCampMC/WoodCampHBox/MC"]
 layout_mode = 2
-color = Color(0.333333, 0.490196, 0.568627, 1)
 
-[node name="InventoryCountLabel" type="Label" parent="HBox/WoodCampMC/WoodCampHBox/MC/ColorRect"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-text = "10"
+[node name="wcCountLabel" type="Label" parent="HBox/WoodCampMC/WoodCampHBox/MC/VBox"]
+custom_minimum_size = Vector2(0, 45)
+layout_mode = 2
+theme_override_font_sizes/font_size = 19
+text = "0"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="PriceTitleLabel" type="Label" parent="HBox/WoodCampMC/WoodCampHBox/MC/VBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 13
+text = "Price"
+horizontal_alignment = 1
+
+[node name="wcPriceLabel" type="Label" parent="HBox/WoodCampMC/WoodCampHBox/MC/VBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+text = "0"
+horizontal_alignment = 1
 
 [node name="MC2" type="MarginContainer" parent="HBox/WoodCampMC/WoodCampHBox"]
 layout_mode = 2
@@ -174,11 +179,11 @@ layout_mode = 2
 theme_override_constants/separation = 10
 alignment = 1
 
-[node name="BuyButton" type="Button" parent="HBox/WoodCampMC/WoodCampHBox/MC2/VBox"]
+[node name="WoodCampBuyButton" type="Button" parent="HBox/WoodCampMC/WoodCampHBox/MC2/VBox"]
 layout_mode = 2
 text = "Buy"
 
-[node name="BuyMaxButton" type="Button" parent="HBox/WoodCampMC/WoodCampHBox/MC2/VBox"]
+[node name="WoodCampBuyMaxButton" type="Button" parent="HBox/WoodCampMC/WoodCampHBox/MC2/VBox"]
 layout_mode = 2
 text = "Buy Max"
 
@@ -229,12 +234,14 @@ layout_mode = 2
 theme_override_constants/separation = 10
 alignment = 1
 
-[node name="BuyButton" type="Button" parent="HBox/LevelMC/LevelHBox/MC2/VBox"]
+[node name="LevelBuyButton" type="Button" parent="HBox/LevelMC/LevelHBox/MC2/VBox"]
 layout_mode = 2
 text = "Buy"
 
-[node name="BuyMaxButton" type="Button" parent="HBox/LevelMC/LevelHBox/MC2/VBox"]
+[node name="LevelBuyMaxButton" type="Button" parent="HBox/LevelMC/LevelHBox/MC2/VBox"]
 layout_mode = 2
 text = "Buy Max"
 
 [connection signal="button_down" from="HBox/BarVBox/BarRect/HBox/MC2/ClickButton" to="." method="_on_click_button_button_down"]
+[connection signal="button_down" from="HBox/WoodCampMC/WoodCampHBox/MC2/VBox/WoodCampBuyButton" to="." method="_on_wood_camp_buy_button_button_down"]
+[connection signal="button_down" from="HBox/LevelMC/LevelHBox/MC2/VBox/LevelBuyButton" to="." method="_on_level_buy_button_button_down"]

@@ -23,8 +23,7 @@ func setupUpgrades():
 	var upgradeItems = ItemGrid.get_children()
 	
 	for item in upgradeItems:
-		item.WoodType = WoodType
-		item.changeUpgrade()
+		item.changeUpgrade(WoodType)
 	
 func setNodePaths():
 	UpgradeTabTitle = $VBox/TopHBox/TitleMC/TitleLabel
