@@ -31,7 +31,7 @@ func _process(delta):
 func changeUpgrade(woodType):
 	WoodType = woodType
 	
-	var upgrade = ConstUpgrades.Upgrades[WoodType][str(UpgradeNumber)]
+	var upgrade = Upgrades.Upgrades[WoodType][str(UpgradeNumber)]
 	SaveDataValues = SaveData.Upgrades[WoodType][str(UpgradeNumber)]
 	
 	if SaveDataValues:

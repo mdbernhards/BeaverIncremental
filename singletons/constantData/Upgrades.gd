@@ -17,7 +17,7 @@ var Upgrades = {
 			"BaseValue" : 10,
 		},
 		"3" :  {
-			"Name" : "Double Storage",
+			"Name" : "Multiply Storage",
 			"Description" : "Doubles storage capacity",
 			"HasUpgradeType" : true,
 			"UpgradeType" : "Pow",

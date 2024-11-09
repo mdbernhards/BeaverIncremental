@@ -116,7 +116,7 @@ offset_top = 39.0
 offset_right = 355.0
 offset_bottom = 55.0
 scale = Vector2(1.09087, 1.08809)
-value = 25.0
+value = 100.0
 
 [node name="ProductionLabel" type="Label" parent="HBox/BarVBox/BarRect/ResourceProductionSlider"]
 layout_mode = 0
@@ -183,6 +183,15 @@ alignment = 1
 layout_mode = 2
 text = "Buy"
 
+[node name="CantAffordColorRect" type="ColorRect" parent="HBox/WoodCampMC/WoodCampHBox/MC2/VBox/WoodCampBuyButton"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.513726, 0.0941176, 0, 0.301961)
+
 [node name="WoodCampBuyMaxButton" type="Button" parent="HBox/WoodCampMC/WoodCampHBox/MC2/VBox"]
 layout_mode = 2
 text = "Buy Max"
@@ -243,5 +252,6 @@ layout_mode = 2
 text = "Buy Max"
 
 [connection signal="button_down" from="HBox/BarVBox/BarRect/HBox/MC2/ClickButton" to="." method="_on_click_button_button_down"]
+[connection signal="value_changed" from="HBox/BarVBox/BarRect/ResourceProductionSlider" to="." method="_on_resource_production_slider_value_changed"]
 [connection signal="button_down" from="HBox/WoodCampMC/WoodCampHBox/MC2/VBox/WoodCampBuyButton" to="." method="_on_wood_camp_buy_button_button_down"]
 [connection signal="button_down" from="HBox/LevelMC/LevelHBox/MC2/VBox/LevelBuyButton" to="." method="_on_level_buy_button_button_down"]

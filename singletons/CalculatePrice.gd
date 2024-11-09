@@ -33,6 +33,39 @@ func getWoodcampCost(woodcampCount, woodType):
 		"Dragonwood" :
 			return round(pow(1.28, woodcampCount) + 1.3 * pow(woodcampCount, 2.8)) + 7
 
+func getLevelCost(level, woodType):
+	match woodType :
+		"Oak" :
+			return round(pow(1.28, level) + 1.3 * pow(level, 2.8)) + 66
+		"Apple" :
+			return round(pow(1.28, level) + 1.3 * pow(level, 2.8)) + 7
+		"Maple" :
+			return round(pow(1.28, level) + 1.3 * pow(level, 2.8)) + 7
+		"Birch" :
+			return round(pow(1.28, level) + 1.3 * pow(level, 2.8)) + 7
+		"Spruce" :
+			return round(pow(1.28, level) + 1.3 * pow(level, 2.8)) + 7
+		"Chestnut" :
+			return round(pow(1.28, level) + 1.3 * pow(level, 2.8)) + 7
+		"Cherry" :
+			return round(pow(1.28, level) + 1.3 * pow(level, 2.8)) + 7
+		"Ash" :
+			return round(pow(1.28, level) + 1.3 * pow(level, 2.8)) + 7
+		"Cedar" :
+			return round(pow(1.28, level) + 1.3 * pow(level, 2.8)) + 7
+		"Mahogany" :
+			return round(pow(1.28, level) + 1.3 * pow(level, 2.8)) + 7
+		"Ebony" :
+			return round(pow(1.28, level) + 1.3 * pow(level, 2.8)) + 7
+		"Dogwood" :
+			return round(pow(1.28, level) + 1.3 * pow(level, 2.8)) + 7
+		"Rosewood" :
+			return round(pow(1.28, level) + 1.3 * pow(level, 2.8)) + 7
+		"Ghost Gum" :
+			return round(pow(1.28, level) + 1.3 * pow(level, 2.8)) + 7
+		"Dragonwood" :
+			return round(pow(1.28, level) + 1.3 * pow(level, 2.8)) + 7
+
 func getUpgradeCost(level, woodType, upgradeNr):
 	match woodType :
 		"Oak" :

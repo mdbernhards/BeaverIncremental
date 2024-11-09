@@ -224,108 +224,123 @@ var ResourceApplicableUpgrades = {
 var ResourceValues = {
 	"Oak" : {
 		"PerClick" : 100,
-		"PerSecondIncrease": 1,
+		"PerSecondIncrease": 0,
 		"PerSecondLoss": 0,
 		"Storage" : 100,
 		"Color" : Color("836a3e"),
+		"Production" : 100, # %
 	},
 	"Apple" : {
 		"PerClick" : 100,
-		"PerSecondIncrease": 10,
+		"PerSecondIncrease": 0,
 		"PerSecondLoss": 0,
 		"Storage" : 1000,
 		"Color" : Color(0.79215687513351, 0.49411764740944, 0.32549020648003),
+		"Production" : 100, # %
 	},
 	"Maple" : {
 		"PerClick" : 100,
-		"PerSecondIncrease": 10,
+		"PerSecondIncrease": 0,
 		"PerSecondLoss": 0,
 		"Storage" : 1000,
 		"Color" : Color(0.92941176891327, 0.81568628549576, 0.74509805440903),
+		"Production" : 100, # %
 	},
 	"Birch" : {
 		"PerClick" : 100,
-		"PerSecondIncrease": 10,
+		"PerSecondIncrease": 0,
 		"PerSecondLoss": 0,
 		"Storage" : 1000,
 		"Color" : Color(0.85098040103912, 0.71372550725937, 0.60392159223557),
+		"Production" : 100, # %
 	},
 	"Spruce" : {
 		"PerClick" : 100,
-		"PerSecondIncrease": 10,
+		"PerSecondIncrease": 0,
 		"PerSecondLoss": 0,
 		"Storage" : 1000,
 		"Color" : Color(0.2549019753933, 0.15686275064945, 0.08627451211214),
+		"Production" : 100, # %
 	},
 	"Chestnut" : {
 		"PerClick" : 100,
-		"PerSecondIncrease": 10,
+		"PerSecondIncrease": 0,
 		"PerSecondLoss": 0,
 		"Storage" : 1000,
 		"Color" : Color(0.59215688705444, 0.35686275362968, 0.16078431904316),
+		"Production" : 100, # %
 	},
 	"Cherry" : {
 		"PerClick" : 100,
-		"PerSecondIncrease": 10,
+		"PerSecondIncrease": 0,
 		"PerSecondLoss": 0,
 		"Storage" : 1000,
 		"Color" : Color(0.64705884456635, 0.34117648005486, 0.21568627655506),
+		"Production" : 100, # %
 	},
 	"Ash" : {
 		"PerClick" : 100,
-		"PerSecondIncrease": 10,
+		"PerSecondIncrease": 0,
 		"PerSecondLoss": 0,
 		"Storage" : 1000,
 		"Color" : Color(0.92549020051956, 0.82352942228317, 0.69803923368454),
+		"Production" : 100, # %
 	},
 	"Cedar" : {
 		"PerClick" : 100,
-		"PerSecondIncrease": 10,
+		"PerSecondIncrease": 0,
 		"PerSecondLoss": 0,
 		"Storage" : 1000,
 		"Color" : Color(0.60784316062927, 0.2352941185236, 0.2392156869173),
+		"Production" : 100, # %
 	},
 	"Mahogany" : {
 		"PerClick" : 100,
-		"PerSecondIncrease": 10,
+		"PerSecondIncrease": 0,
 		"PerSecondLoss": 0,
 		"Storage" : 1000,
 		"Color" : Color(0.50980395078659, 0.19215686619282, 0.05098039284348),
+		"Production" : 100, # %
 	},
 	"Ebony" : {
 		"PerClick" : 100,
-		"PerSecondIncrease": 10,
+		"PerSecondIncrease": 0,
 		"PerSecondLoss": 0,
 		"Storage" : 1000,
 		"Color" : Color(0.16862745583057, 0.15294118225574, 0.19215686619282),
+		"Production" : 100, # %
 	},
 	"Dogwood" : {
 		"PerClick" : 100,
-		"PerSecondIncrease": 10,
+		"PerSecondIncrease": 0,
 		"PerSecondLoss": 0,
 		"Storage" : 1000,
 		"Color" : Color(0.71764707565308, 0.54509806632996, 0.419607847929),
+		"Production" : 100, # %
 	},
 	"Rosewood" : {
 		"PerClick" : 100,
-		"PerSecondIncrease": 10,
+		"PerSecondIncrease": 0,
 		"PerSecondLoss": 0,
 		"Storage" : 1000,
 		"Color" : Color(0.4745098054409, 0.24705882370472, 0.2549019753933),
+		"Production" : 100, # %
 	},
 	"Ghost Gum" : {
 		"PerClick" : 100,
-		"PerSecondIncrease": 10,
+		"PerSecondIncrease": 0,
 		"PerSecondLoss": 0,
 		"Storage" : 1000,
 		"Color" : Color(0.7843137383461, 0.70980393886566, 0.64705884456635),
+		"Production" : 100, # %
 	},
 	"Dragonwood" : {
 		"PerClick" : 100,
-		"PerSecondIncrease": 10,
+		"PerSecondIncrease": 0,
 		"PerSecondLoss": 0,
 		"Storage" : 1000,
 		"Color" : Color(0.55686277151108, 0.42352941632271, 0.26274511218071),
+		"Production" : 100, # %
 	},
 	"Gold" : {
 		"PerSecond": 10,	

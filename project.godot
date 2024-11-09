@@ -27,11 +27,12 @@ ConstUpgradeValues="*res://singletons/V1/ConstUpgradeValues.gd"
 DefaultValues="*res://singletons/V1/DefaultValues.gd"
 SetGameValues="*res://singletons/V1/SetGameValues.gd"
 SetTextLog="*res://singletons/V1/SetTextLog.gd"
-ConstUpgrades="*res://singletons/ConstUpgrades.gd"
 SaveData="*res://singletons/SaveData.gd"
 Values="*res://singletons/Values.gd"
 CalculateValues="*res://singletons/CalculateValues.gd"
 CalculatePrice="*res://singletons/CalculatePrice.gd"
+Research="*res://singletons/constantData/Research.gd"
+Upgrades="*res://singletons/constantData/Upgrades.gd"
 
 [display]
 

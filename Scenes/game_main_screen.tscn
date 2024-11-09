@@ -25,72 +25,6 @@ grow_vertical = 2
 mouse_filter = 2
 color = Color(0.584314, 0.584314, 0.584314, 1)
 
-[node name="BackgroundElements" type="Control" parent="."]
-custom_minimum_size = Vector2(910, 1080)
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-
-[node name="BackgroundButtons" type="HBoxContainer" parent="BackgroundElements"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-
-[node name="MC" type="MarginContainer" parent="BackgroundElements/BackgroundButtons"]
-custom_minimum_size = Vector2(905, 0)
-layout_mode = 2
-theme_override_constants/margin_left = 25
-theme_override_constants/margin_bottom = 25
-
-[node name="MC2" type="MarginContainer" parent="BackgroundElements/BackgroundButtons"]
-layout_mode = 2
-size_flags_horizontal = 3
-mouse_filter = 2
-theme_override_constants/margin_left = 10
-theme_override_constants/margin_right = 10
-theme_override_constants/margin_bottom = 29
-
-[node name="MenuButtonsVBox" type="VBoxContainer" parent="BackgroundElements/BackgroundButtons/MC2"]
-show_behind_parent = true
-layout_mode = 2
-size_flags_horizontal = 3
-mouse_filter = 2
-theme_override_constants/separation = 16
-alignment = 2
-
-[node name="AchievementsButton" type="Button" parent="BackgroundElements/BackgroundButtons/MC2/MenuButtonsVBox"]
-layout_mode = 2
-text = "Achievments"
-
-[node name="AscensionButton" type="Button" parent="BackgroundElements/BackgroundButtons/MC2/MenuButtonsVBox"]
-layout_mode = 2
-text = "Ascension"
-
-[node name="FishingButton" type="Button" parent="BackgroundElements/BackgroundButtons/MC2/MenuButtonsVBox"]
-layout_mode = 2
-text = "Fishing"
-
-[node name="HomeButton" type="Button" parent="BackgroundElements/BackgroundButtons/MC2/MenuButtonsVBox"]
-layout_mode = 2
-text = "Home"
-
-[node name="SettingsButton" type="Button" parent="BackgroundElements/BackgroundButtons/MC2/MenuButtonsVBox"]
-layout_mode = 2
-text = "Settings"
-
-[node name="MC3" type="Control" parent="BackgroundElements/BackgroundButtons"]
-custom_minimum_size = Vector2(850, 0)
-layout_mode = 2
-mouse_filter = 1
-
 [node name="Gameplay" type="Control" parent="."]
 layout_mode = 1
 anchors_preset = 15
@@ -165,3 +99,45 @@ mouse_filter = 1
 [node name="Settings" parent="." instance=ExtResource("5_tqmh8")]
 visible = false
 layout_mode = 1
+
+[node name="BackgroundButtons" type="Control" parent="."]
+layout_mode = 1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1920.0
+offset_bottom = -1080.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="MenuButtonsVBox" type="VBoxContainer" parent="BackgroundButtons"]
+show_behind_parent = true
+layout_mode = 2
+offset_left = 919.0
+offset_top = 780.0
+offset_right = 1056.0
+offset_bottom = 1051.0
+size_flags_horizontal = 3
+mouse_filter = 2
+theme_override_constants/separation = 16
+alignment = 2
+
+[node name="AchievementsButton" type="Button" parent="BackgroundButtons/MenuButtonsVBox"]
+layout_mode = 2
+text = "Achievments"
+
+[node name="AscensionButton" type="Button" parent="BackgroundButtons/MenuButtonsVBox"]
+layout_mode = 2
+text = "Ascension"
+
+[node name="FishingButton" type="Button" parent="BackgroundButtons/MenuButtonsVBox"]
+layout_mode = 2
+text = "Fishing"
+
+[node name="HomeButton" type="Button" parent="BackgroundButtons/MenuButtonsVBox"]
+layout_mode = 2
+text = "Home"
+
+[node name="SettingsButton" type="Button" parent="BackgroundButtons/MenuButtonsVBox"]
+layout_mode = 2
+text = "Settings"
