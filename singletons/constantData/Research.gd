@@ -5,8 +5,8 @@ var Research = {
 		"Name" : "Unlock Woodcamps",
 		"Description" : "Allows building woodcamps, unlocks woodcamp upgrades",
 		"Time" : 60, # Seconds
-		"OakCost" : 4000,
-		"AppleCost" : 1000,
+		"OakCost" : 20, #4000
+		"AppleCost" : 10, #1000
 		"MapleCost" : 0,
 		"BirchCost" : 0,
 		"SpruceCost" : 0,

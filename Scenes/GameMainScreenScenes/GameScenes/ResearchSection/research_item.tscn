@@ -1,0 +1,133 @@
+[gd_scene load_steps=2 format=3 uid="uid://0vmptrphg526"]
+
+[ext_resource type="Script" path="res://Scenes/GameMainScreenScenes/GameScenes/ResearchSection/ResearchItem.gd" id="1_yg10v"]
+
+[node name="ResearchItem" type="MarginContainer"]
+custom_minimum_size = Vector2(0, 90)
+size_flags_horizontal = 4
+theme_override_constants/margin_right = 0
+script = ExtResource("1_yg10v")
+
+[node name="BG" type="ColorRect" parent="."]
+custom_minimum_size = Vector2(788, 90)
+layout_mode = 2
+color = Color(0.247059, 0.32549, 0.32549, 1)
+
+[node name="HBox" type="HBoxContainer" parent="BG"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MC" type="MarginContainer" parent="BG/HBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="VBox" type="VBoxContainer" parent="BG/HBox/MC"]
+layout_mode = 2
+
+[node name="MC" type="MarginContainer" parent="BG/HBox/MC/VBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 3
+
+[node name="TitleLabel" type="Label" parent="BG/HBox/MC/VBox/MC"]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 22
+text = "Cutting Ability"
+
+[node name="MC2" type="MarginContainer" parent="BG/HBox/MC/VBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/margin_left = 25
+
+[node name="EffectLabel" type="Label" parent="BG/HBox/MC/VBox/MC2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+text = "Unlock wood cutting"
+
+[node name="MC3" type="MarginContainer" parent="BG/HBox/MC/VBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_bottom = 4
+
+[node name="PriceLabel" type="Label" parent="BG/HBox/MC/VBox/MC3"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.709804, 0.709804, 0.709804, 1)
+theme_override_font_sizes/font_size = 10
+text = "Price: 1000 Oak, 500 Apple"
+
+[node name="MC2" type="MarginContainer" parent="BG/HBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_right = 5
+
+[node name="VBox" type="VBoxContainer" parent="BG/HBox/MC2"]
+layout_mode = 2
+
+[node name="MC" type="MarginContainer" parent="BG/HBox/MC2/VBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="ResearchProgressBar" type="ProgressBar" parent="BG/HBox/MC2/VBox/MC"]
+layout_mode = 2
+size_flags_vertical = 1
+
+[node name="MC" type="MarginContainer" parent="BG/HBox/MC2/VBox/MC/ResearchProgressBar"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_right = 7
+
+[node name="TimeLeftLabel" type="Label" parent="BG/HBox/MC2/VBox/MC/ResearchProgressBar/MC"]
+layout_mode = 2
+size_flags_horizontal = 8
+text = "59:59"
+horizontal_alignment = 2
+
+[node name="MC2" type="MarginContainer" parent="BG/HBox/MC2/VBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/margin_left = 200
+theme_override_constants/margin_top = 3
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 8
+
+[node name="StartResearchButton" type="Button" parent="BG/HBox/MC2/VBox/MC2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+text = "Start Research"
+
+[node name="CantAffordColorRect" type="ColorRect" parent="BG/HBox/MC2/VBox/MC2/StartResearchButton"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.513726, 0.0941176, 0, 0.301961)
+
+[node name="ResearchTimer" type="Timer" parent="."]
+wait_time = 60.0
+one_shot = true
+
+[connection signal="button_down" from="BG/HBox/MC2/VBox/MC2/StartResearchButton" to="." method="_on_start_research_button_button_down"]
+[connection signal="timeout" from="ResearchTimer" to="." method="_on_research_timer_timeout"]

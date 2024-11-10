@@ -77,7 +77,7 @@ func CalculateWoodPerSecondGain(woodType, upgrades):
 						if id == "8":
 							woodCampsMultiplier = (1 + log(Values.ResourceValues[woodType]["PerClick"]) * 1.2 * upgradeLevel)
 		
-	Values.ResourceValues[woodType]["PerSecondIncrease"] = woodCamps * woodCampsPSIncrease * woodCampsMultiplier * Values.ResourceValues[woodType]["Production"] / 100
+	Values.ResourceValues[woodType]["PerSecondIncrease"] = woodCamps * woodCampsPSIncrease * woodCampsMultiplier * SaveData.Resources[woodType]["Production"] / 100
 
 func CalculateWoodPerSecondLoss(woodType, upgrades):
 	if woodType == "Dragonwood":

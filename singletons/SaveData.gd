@@ -1,83 +1,95 @@
 extends Node
 
-var lastTimeSaved
-var timePlayed
-
 var Resources = {
 	"Oak" : {
 		"Count" : 0,
 		"Level" : 1,
 		"Woodcamps": 0,
+		"Production" : 100, # %
 	},
 	"Apple" : {
 		"Count" : 0,
 		"Level" : 1,
 		"Woodcamps": 0,
+		"Production" : 100, # %
 	},
 	"Maple" : {
 		"Count" : 0,
 		"Level" : 1,
 		"Woodcamps": 0,
+		"Production" : 100, # %
 	},
 	"Birch" : {
 		"Count" : 0,
 		"Level" : 1,
 		"Woodcamps": 0,
+		"Production" : 100, # %
 	},
 	"Spruce" : {
 		"Count" : 0,
 		"Level" : 1,
 		"Woodcamps": 0,
+		"Production" : 100, # %
 	},
 	"Chestnut" : {
 		"Count" : 0,
 		"Level" : 1,
 		"Woodcamps": 0,
+		"Production" : 100, # %
 	},
 	"Cherry" : {
 		"Count" : 0,
 		"Level" : 1,
 		"Woodcamps": 0,
+		"Production" : 100, # %
 	},
 	"Ash" : {
 		"Count" : 0,
 		"Level" : 1,
 		"Woodcamps": 0,
+		"Production" : 100, # %
 	},
 	"Cedar" : {
 		"Count" : 0,
 		"Level" : 1,
 		"Woodcamps": 0,
+		"Production" : 100, # %
 	},
 	"Mahogany" : {
 		"Count" : 0,
 		"Level" : 1,
 		"Woodcamps": 0,
+		"Production" : 100, # %
 	},
 	"Ebony" : {
 		"Count" : 0,
 		"Level" : 1,
 		"Woodcamps": 0,
+		"Production" : 100, # %
 	},
 	"Dogwood" : {
 		"Count" : 0,
 		"Level" : 1,
 		"Woodcamps": 0,
+		"Production" : 100, # %
 	},
 	"Rosewood" : {
 		"Count" : 0,
 		"Level" : 1,
 		"Woodcamps": 0,
+		"Production" : 100, # %
 	},
 	"Ghost Gum" : {
 		"Count" : 0,
 		"Level" : 1,
 		"Woodcamps": 0,
+		"Production" : 100, # %
 	},
 	"Dragonwood" : {
 		"Count" : 0,
 		"Level" : 1,
 		"Woodcamps": 0,
+		"Production" : 100, # %
 	},
 	"Gold" : {
 		"Count" : 0,
@@ -419,4 +431,61 @@ var Upgrades = {
 		"17" : false,
 		"18" : false,
 	},
+}
+
+var UnlockedResearch = {
+	"1" : false,
+	"2" : false,
+	"3" : false,
+	"4" : false,
+	"5" : false,
+	"6" : false,
+	"7" : false,
+}
+
+var UnlockedMagicUpgrades = {
+	"1" : false,
+	"2" : false,
+	"3" : false,
+	"4" : false,
+	"5" : false,
+	"6" : false,
+	"7" : false,
+}
+
+var UnlockedAchievements = {
+	"1" : false,
+	"2" : false,
+	"3" : false,
+	"4" : false,
+	"5" : false,
+	"6" : false,
+	"7" : false,
+}
+
+var UnlockedFeatsOfStrength = {
+	"1" : false,
+	"2" : false,
+	"3" : false,
+	"4" : false,
+	"5" : false,
+	"6" : false,
+	"7" : false,
+}
+
+var UnlockedDams = {
+	"1" : false,
+	"2" : false,
+	"3" : false,
+	"4" : false,
+}
+
+var GeneralInfo = {
+	"SaveName" : false,
+	"TimePlayed" : false,
+	"SaveStartedDate" : false,
+	"LastTimePlayedDate" : false,
+	"LastTimeSaved" : true,
+	"MasterVolume" : false,
+	"MusicVolume" : false,
 }

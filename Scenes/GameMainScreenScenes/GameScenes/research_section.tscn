@@ -1,6 +1,10 @@
-[gd_scene format=3 uid="uid://2xsk4oroe8q7"]
+[gd_scene load_steps=2 format=3 uid="uid://2xsk4oroe8q7"]
+
+[ext_resource type="Script" path="res://Scenes/GameMainScreenScenes/GameScenes/research_section.gd" id="1_mg01o"]
 
 [node name="ResearchSection" type="VBoxContainer"]
+custom_minimum_size = Vector2(798, 926)
+script = ExtResource("1_mg01o")
 
 [node name="TopHBox" type="HBoxContainer" parent="."]
 layout_mode = 2
@@ -36,112 +40,12 @@ size_flags_vertical = 3
 theme_override_constants/margin_left = 5
 theme_override_constants/margin_right = 1
 
-[node name="ScrollContainer" type="ScrollContainer" parent="MC"]
+[node name="ScrollBar" type="ScrollContainer" parent="MC"]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="GeneralPageVBox" type="VBoxContainer" parent="MC/ScrollContainer"]
+[node name="ResearchList" type="VBoxContainer" parent="MC/ScrollBar"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 3
 theme_override_constants/separation = 15
-
-[node name="ItemMC" type="MarginContainer" parent="MC/ScrollContainer/GeneralPageVBox"]
-custom_minimum_size = Vector2(0, 90)
-layout_mode = 2
-size_flags_horizontal = 4
-theme_override_constants/margin_right = 0
-
-[node name="ColorRect" type="ColorRect" parent="MC/ScrollContainer/GeneralPageVBox/ItemMC"]
-custom_minimum_size = Vector2(788, 90)
-layout_mode = 2
-color = Color(0.247059, 0.32549, 0.32549, 1)
-
-[node name="ItemHBox" type="HBoxContainer" parent="MC/ScrollContainer/GeneralPageVBox/ItemMC/ColorRect"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="MC" type="MarginContainer" parent="MC/ScrollContainer/GeneralPageVBox/ItemMC/ColorRect/ItemHBox"]
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="VBoxContainer" type="VBoxContainer" parent="MC/ScrollContainer/GeneralPageVBox/ItemMC/ColorRect/ItemHBox/MC"]
-layout_mode = 2
-
-[node name="MC" type="MarginContainer" parent="MC/ScrollContainer/GeneralPageVBox/ItemMC/ColorRect/ItemHBox/MC/VBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-theme_override_constants/margin_left = 10
-theme_override_constants/margin_top = 3
-
-[node name="TitleLabel" type="Label" parent="MC/ScrollContainer/GeneralPageVBox/ItemMC/ColorRect/ItemHBox/MC/VBoxContainer/MC"]
-layout_mode = 2
-size_flags_vertical = 1
-theme_override_font_sizes/font_size = 22
-text = "Cutting Ability"
-
-[node name="MC2" type="MarginContainer" parent="MC/ScrollContainer/GeneralPageVBox/ItemMC/ColorRect/ItemHBox/MC/VBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-theme_override_constants/margin_left = 25
-
-[node name="EffectLabel" type="Label" parent="MC/ScrollContainer/GeneralPageVBox/ItemMC/ColorRect/ItemHBox/MC/VBoxContainer/MC2"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 12
-text = "Unlock wood cutting"
-
-[node name="MC2" type="MarginContainer" parent="MC/ScrollContainer/GeneralPageVBox/ItemMC/ColorRect/ItemHBox"]
-layout_mode = 2
-size_flags_horizontal = 3
-theme_override_constants/margin_right = 5
-
-[node name="VBoxContainer" type="VBoxContainer" parent="MC/ScrollContainer/GeneralPageVBox/ItemMC/ColorRect/ItemHBox/MC2"]
-layout_mode = 2
-
-[node name="MC" type="MarginContainer" parent="MC/ScrollContainer/GeneralPageVBox/ItemMC/ColorRect/ItemHBox/MC2/VBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-theme_override_constants/margin_left = 10
-theme_override_constants/margin_top = 10
-theme_override_constants/margin_right = 10
-theme_override_constants/margin_bottom = 10
-
-[node name="ProgressBar" type="ProgressBar" parent="MC/ScrollContainer/GeneralPageVBox/ItemMC/ColorRect/ItemHBox/MC2/VBoxContainer/MC"]
-layout_mode = 2
-size_flags_vertical = 1
-
-[node name="MC" type="MarginContainer" parent="MC/ScrollContainer/GeneralPageVBox/ItemMC/ColorRect/ItemHBox/MC2/VBoxContainer/MC/ProgressBar"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/margin_right = 7
-
-[node name="TimeLeftLabel" type="Label" parent="MC/ScrollContainer/GeneralPageVBox/ItemMC/ColorRect/ItemHBox/MC2/VBoxContainer/MC/ProgressBar/MC"]
-layout_mode = 2
-size_flags_horizontal = 8
-text = "59:59"
-horizontal_alignment = 2
-
-[node name="MC2" type="MarginContainer" parent="MC/ScrollContainer/GeneralPageVBox/ItemMC/ColorRect/ItemHBox/MC2/VBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-theme_override_constants/margin_left = 200
-theme_override_constants/margin_top = 3
-theme_override_constants/margin_right = 10
-theme_override_constants/margin_bottom = 8
-
-[node name="StartResearchButton" type="Button" parent="MC/ScrollContainer/GeneralPageVBox/ItemMC/ColorRect/ItemHBox/MC2/VBoxContainer/MC2"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 14
-text = "Start Research"

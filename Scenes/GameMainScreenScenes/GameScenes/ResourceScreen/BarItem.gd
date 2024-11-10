@@ -32,7 +32,7 @@ func changeBarValues(woodType = WoodType):
 	WoodType = woodType
 	NameLabel.text = WoodType
 	
-	ResourceProductionSlider.value = Values.ResourceValues[WoodType]["Production"]
+	ResourceProductionSlider.value = SaveData.Resources[WoodType]["Production"]
 	WoodProgressBar.tint_progress = Values.ResourceValues[WoodType]["Color"]
 	
 	updateBarValues()
@@ -64,15 +64,6 @@ func updateBarValues(woodType = WoodType):
 		CantAffordColorRect.visible = false
 	else:
 		CantAffordColorRect.visible = true
-
-func calculatePerClickValue():
-	pass
-
-func calculatePerSecondValue():
-	pass
-
-func calculareStorageCapacity():
-	pass
 
 func setNodePaths():
 	NameLabel = $HBox/BarVBox/BarLabels/MC/TitleLabel
@@ -106,5 +97,5 @@ func _on_level_buy_button_button_down():
 	pass
 
 func _on_resource_production_slider_value_changed(value):
-		Values.ResourceValues[WoodType]["Production"] = value
+		SaveData.Resources[WoodType]["Production"] = value
 		CalculateValues.calculateAllValues()
