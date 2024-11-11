@@ -30,6 +30,7 @@ func _process(delta):
 
 func changeUpgrade(woodType):
 	WoodType = woodType
+	$Color.color = Values.ResourceValues[WoodType]["Color"]
 	
 	var upgrade = Upgrades.Upgrades[WoodType][str(UpgradeNumber)]
 	SaveDataValues = SaveData.Upgrades[WoodType][str(UpgradeNumber)]

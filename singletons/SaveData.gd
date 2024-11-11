@@ -1,98 +1,145 @@
 extends Node
 
+
+var Gold = {
+		"Count" : 0,
+	}
+
 var Resources = {
 	"Oak" : {
 		"Count" : 0,
 		"Level" : 1,
 		"Woodcamps": 0,
 		"Production" : 100, # %
+		"MarketSellPercentage": 50, # %
+		"BotSellPercentage": 100, # %
+		"Bots": 0,
 	},
 	"Apple" : {
 		"Count" : 0,
 		"Level" : 1,
 		"Woodcamps": 0,
 		"Production" : 100, # %
+		"MarketSellPercentage": 50, # %
+		"BotSellPercentage": 100, # %
+		"Bots": 0,
 	},
 	"Maple" : {
 		"Count" : 0,
 		"Level" : 1,
 		"Woodcamps": 0,
 		"Production" : 100, # %
+		"MarketSellPercentage": 50, # %
+		"BotSellPercentage": 100, # %
+		"Bots": 0,
 	},
 	"Birch" : {
 		"Count" : 0,
 		"Level" : 1,
 		"Woodcamps": 0,
 		"Production" : 100, # %
+		"MarketSellPercentage": 50, # %
+		"BotSellPercentage": 100, # %
+		"Bots": 0,
 	},
 	"Spruce" : {
 		"Count" : 0,
 		"Level" : 1,
 		"Woodcamps": 0,
 		"Production" : 100, # %
+		"MarketSellPercentage": 50, # %
+		"BotSellPercentage": 100, # %
+		"Bots": 0,
 	},
 	"Chestnut" : {
 		"Count" : 0,
 		"Level" : 1,
 		"Woodcamps": 0,
 		"Production" : 100, # %
+		"MarketSellPercentage": 50, # %
+		"BotSellPercentage": 100, # %
+		"Bots": 0,
 	},
 	"Cherry" : {
 		"Count" : 0,
 		"Level" : 1,
 		"Woodcamps": 0,
 		"Production" : 100, # %
+		"MarketSellPercentage": 50, # %
+		"BotSellPercentage": 100, # %
+		"Bots": 0,
 	},
 	"Ash" : {
 		"Count" : 0,
 		"Level" : 1,
 		"Woodcamps": 0,
 		"Production" : 100, # %
+		"MarketSellPercentage": 50, # %
+		"BotSellPercentage": 100, # %
+		"Bots": 0,
 	},
 	"Cedar" : {
 		"Count" : 0,
 		"Level" : 1,
 		"Woodcamps": 0,
 		"Production" : 100, # %
+		"MarketSellPercentage": 50, # %
+		"BotSellPercentage": 100, # %
+		"Bots": 0,
 	},
 	"Mahogany" : {
 		"Count" : 0,
 		"Level" : 1,
 		"Woodcamps": 0,
 		"Production" : 100, # %
+		"MarketSellPercentage": 50, # %
+		"BotSellPercentage": 100, # %
+		"Bots": 0,
 	},
 	"Ebony" : {
 		"Count" : 0,
 		"Level" : 1,
 		"Woodcamps": 0,
 		"Production" : 100, # %
+		"MarketSellPercentage": 50, # %
+		"BotSellPercentage": 100, # %
+		"Bots": 0,
 	},
 	"Dogwood" : {
 		"Count" : 0,
 		"Level" : 1,
 		"Woodcamps": 0,
 		"Production" : 100, # %
+		"MarketSellPercentage": 50, # %
+		"BotSellPercentage": 100, # %
+		"Bots": 0,
 	},
 	"Rosewood" : {
 		"Count" : 0,
 		"Level" : 1,
 		"Woodcamps": 0,
 		"Production" : 100, # %
+		"MarketSellPercentage": 50, # %
+		"BotSellPercentage": 100, # %
+		"Bots": 0,
 	},
 	"Ghost Gum" : {
 		"Count" : 0,
 		"Level" : 1,
 		"Woodcamps": 0,
 		"Production" : 100, # %
+		"MarketSellPercentage": 50, # %
+		"BotSellPercentage": 100, # %
+		"Bots": 0,
 	},
 	"Dragonwood" : {
 		"Count" : 0,
 		"Level" : 1,
 		"Woodcamps": 0,
 		"Production" : 100, # %
-	},
-	"Gold" : {
-		"Count" : 0,
+		"MarketSellPercentage": 50, # %
+		"BotSellPercentage": 100, # %
+		"Bots": 0,
 	},
 }
 

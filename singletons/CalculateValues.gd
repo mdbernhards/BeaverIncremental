@@ -39,12 +39,12 @@ func CalculateWoodPerClick(woodType, upgrades):
 				var upgradeLevel = SaveData.Upgrades[upgradeWoodType][id]["Level"]
 				
 				if upgradeLevel != 0:
-					if woodType == "Oak":
+					if upgradeWoodType == "Oak":
 						if id == "1":
 							baseWoodClick += upgradeLevel
 						if id == "4":
 							woodClickMultiplier *= (upgradeLevel + 1)
-					if woodType == "Apple":
+					if upgradeWoodType == "Apple":
 						if id == "1":
 							baseWoodClick += (2 * upgradeLevel)
 						if id == "3":
@@ -66,12 +66,12 @@ func CalculateWoodPerSecondGain(woodType, upgrades):
 				var upgradeLevel = SaveData.Upgrades[upgradeWoodType][id]["Level"]
 				
 				if upgradeLevel != 0:
-					if woodType == "Oak":
+					if upgradeWoodType == "Oak":
 						if id == "6":
 							woodCampsPSIncrease += upgradeLevel
 						if id == "7":
 							woodCampsMultiplier *= (1 + log(Values.ResourceValues[woodType]["PerClick"]) * upgradeLevel)
-					if woodType == "Apple":
+					if upgradeWoodType == "Apple":
 						if id == "4":
 							woodCampsPSIncrease += (2 * upgradeLevel)
 						if id == "8":
@@ -95,7 +95,7 @@ func CalculateWoodPerSecondLoss(woodType, upgrades):
 				var upgradeLevel = SaveData.Upgrades[upgradeWoodType][id]["Level"]
 				
 				if upgradeLevel != 0:
-					if woodType == "Apple":
+					if upgradeWoodType == "Apple":
 						if id == "9":
 							lossMultiplier *= pow(0.99, upgradeLevel)
 		
@@ -114,12 +114,12 @@ func CalculateWoodStorage(woodType, upgrades):
 				var upgradeLevel = SaveData.Upgrades[upgradeWoodType][id]["Level"]
 				
 				if upgradeLevel != 0:
-					if woodType == "Oak":
+					if upgradeWoodType == "Oak":
 						if id == "2":
 							storageIncrease += upgradeLevel * 10
 						if id == "3":
 							storageMultiplier *= upgradeLevel + 1
-					if woodType == "Apple":
+					if upgradeWoodType == "Apple":
 						if id == "2":
 							storageIncrease += upgradeLevel * 20
 						if id == "5":

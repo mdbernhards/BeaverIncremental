@@ -97,5 +97,5 @@ func _on_level_buy_button_button_down():
 	pass
 
 func _on_resource_production_slider_value_changed(value):
-		SaveData.Resources[WoodType]["Production"] = value
-		CalculateValues.calculateAllValues()
+	SaveData.Resources[WoodType]["Production"] = value
+	CalculateValues.calculateAllValues()

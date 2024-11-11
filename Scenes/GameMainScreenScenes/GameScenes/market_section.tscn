@@ -1,0 +1,97 @@
+[gd_scene load_steps=3 format=3 uid="uid://btne0bg2tjivh"]
+
+[ext_resource type="PackedScene" uid="uid://ci2fcxc5eos5e" path="res://Scenes/GameMainScreenScenes/GameScenes/MarketSection/market_item.tscn" id="1_ilmxg"]
+[ext_resource type="Script" path="res://Scenes/GameMainScreenScenes/GameScenes/market_section.gd" id="1_xx4uw"]
+
+[node name="MarketSection" type="VBoxContainer"]
+custom_minimum_size = Vector2(798, 926)
+script = ExtResource("1_xx4uw")
+
+[node name="TopHBox" type="HBoxContainer" parent="."]
+layout_mode = 2
+size_flags_vertical = 0
+alignment = 2
+
+[node name="TitleMC" type="MarginContainer" parent="TopHBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_bottom = 6
+
+[node name="TitleLabel" type="Label" parent="TopHBox/TitleMC"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "Market"
+
+[node name="SellPageMC" type="MarginContainer" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_right = 15
+
+[node name="MarketVBox" type="VBoxContainer" parent="SellPageMC"]
+layout_mode = 2
+theme_override_constants/separation = 23
+
+[node name="MarketItem1" parent="SellPageMC/MarketVBox" instance=ExtResource("1_ilmxg")]
+layout_mode = 2
+
+[node name="MarketItem2" parent="SellPageMC/MarketVBox" instance=ExtResource("1_ilmxg")]
+layout_mode = 2
+
+[node name="MarketItem3" parent="SellPageMC/MarketVBox" instance=ExtResource("1_ilmxg")]
+layout_mode = 2
+
+[node name="MarketItem4" parent="SellPageMC/MarketVBox" instance=ExtResource("1_ilmxg")]
+layout_mode = 2
+
+[node name="MarketItem5" parent="SellPageMC/MarketVBox" instance=ExtResource("1_ilmxg")]
+layout_mode = 2
+
+[node name="PageButtonsMC" type="MarginContainer" parent="SellPageMC/MarketVBox"]
+custom_minimum_size = Vector2(0, 45)
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_right = 5
+
+[node name="ColorRect" type="ColorRect" parent="SellPageMC/MarketVBox/PageButtonsMC"]
+visible = false
+layout_mode = 2
+color = Color(0.352941, 0.262745, 0.262745, 1)
+
+[node name="HBox" type="HBoxContainer" parent="SellPageMC/MarketVBox/PageButtonsMC"]
+layout_mode = 2
+alignment = 1
+
+[node name="PageButtonMC" type="MarginContainer" parent="SellPageMC/MarketVBox/PageButtonsMC/HBox"]
+custom_minimum_size = Vector2(185, 0)
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_bottom = 8
+
+[node name="HBox" type="HBoxContainer" parent="SellPageMC/MarketVBox/PageButtonsMC/HBox/PageButtonMC"]
+layout_mode = 2
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="PageButton1" type="Button" parent="SellPageMC/MarketVBox/PageButtonsMC/HBox/PageButtonMC/HBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 11
+text = "Page 1"
+
+[node name="PageButton2" type="Button" parent="SellPageMC/MarketVBox/PageButtonsMC/HBox/PageButtonMC/HBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 11
+text = "Page 2"
+
+[node name="PageButton3" type="Button" parent="SellPageMC/MarketVBox/PageButtonsMC/HBox/PageButtonMC/HBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 11
+text = "Page 3"
+
+[connection signal="button_down" from="SellPageMC/MarketVBox/PageButtonsMC/HBox/PageButtonMC/HBox/PageButton1" to="." method="_on_page_button_1_button_down"]
+[connection signal="button_down" from="SellPageMC/MarketVBox/PageButtonsMC/HBox/PageButtonMC/HBox/PageButton2" to="." method="_on_page_button_2_button_down"]
+[connection signal="button_down" from="SellPageMC/MarketVBox/PageButtonsMC/HBox/PageButtonMC/HBox/PageButton3" to="." method="_on_page_button_3_button_down"]
