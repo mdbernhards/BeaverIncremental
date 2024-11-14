@@ -25,7 +25,7 @@ func _ready():
 	setNodePaths()
 	changeBarValues()
 
-func _process(delta):
+func _process(_delta):
 	updateBarValues()
 
 func changeBarValues(woodType = WoodType):
@@ -47,7 +47,7 @@ func updateBarValues(woodType = WoodType):
 	
 	LevelLabel.text = "LvL " + str(SaveData.Resources[WoodType]["Level"])
 	PerClickLabel.text = str(roundi(Values.ResourceValues[WoodType]["PerClick"])) + " per click"
-	PerSecondLabel.text = str(roundi(Values.ResourceValues[WoodType]["PerSecondIncrease"] - Values.ResourceValues[WoodType]["PerSecondLoss"])) + " per second"
+	PerSecondLabel.text = str(roundi(Values.ResourceValues[WoodType]["RealPerSecondIncrease"] - Values.ResourceValues[WoodType]["RealPerSecondLoss"])) + " per second"
 	StorageLabel.text = str(roundi(SaveData.Resources[WoodType]["Count"])) + " / " + str(roundi(Values.ResourceValues[WoodType]["Storage"]))
 	WoodProgressBar.value = remap(SaveData.Resources[WoodType]["Count"], 0, Values.ResourceValues[WoodType]["Storage"], 0, 100)
 	

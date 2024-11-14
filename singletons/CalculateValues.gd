@@ -6,7 +6,7 @@ var ResourceValues
 func _ready():
 	calculateAllValues()
 
-func _process(delta):
+func _process(_delta):
 	pass
 
 func calculateAllValues():
@@ -85,8 +85,11 @@ func CalculateWoodPerSecondLoss(woodType, upgrades):
 		
 	var lossMultiplier = 1
 	
-	CalculateWoodPerSecondGain(WoodTypes[WoodTypes.find(woodType) + 1], Values.ResourceApplicableUpgrades[woodType]["PerSecondIncrease"])
-	var nextWoodProduction = Values.ResourceValues[WoodTypes[WoodTypes.find(woodType) + 1]]["PerSecondIncrease"]
+	var nextWoodType = WoodTypes[WoodTypes.find(woodType) + 1]
+	
+	CalculateWoodPerSecondGain(nextWoodType, Values.ResourceApplicableUpgrades[nextWoodType]["PerSecondIncrease"])
+	CalculateWoodPerSecondGain(woodType, Values.ResourceApplicableUpgrades[woodType]["PerSecondIncrease"])
+	var nextWoodProduction = Values.ResourceValues[nextWoodType]["PerSecondIncrease"]
 	
 	for upgradeWoodType in upgrades:
 		if upgrades.has(upgradeWoodType) and upgrades[upgradeWoodType]:
@@ -124,5 +127,6 @@ func CalculateWoodStorage(woodType, upgrades):
 							storageIncrease += upgradeLevel * 20
 						if id == "5":
 							storageIncreaseMultiplier *= maxi((upgradeLevel) * 2, 1)
-		
-	Values.ResourceValues[woodType]["Storage"] = (baseStorage + (storageIncrease * storageIncreaseMultiplier)) * storageMultiplier
+	var storagePerWoodCamp = SaveData.Resources[woodType]["Woodcamps"] * 100
+	
+	Values.ResourceValues[woodType]["Storage"] = (baseStorage + (storageIncrease * storageIncreaseMultiplier)) * storageMultiplier + storagePerWoodCamp

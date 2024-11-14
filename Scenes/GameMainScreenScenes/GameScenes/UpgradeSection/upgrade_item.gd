@@ -21,7 +21,7 @@ func _ready():
 	setNodePaths()
 	changeUpgrade(WoodType)
 
-func _process(delta):
+func _process(_delta):
 	if CurrentPrice <= SaveData.Resources[WoodType]["Count"]:
 		CantAffordColorRect.visible = false
 	else:

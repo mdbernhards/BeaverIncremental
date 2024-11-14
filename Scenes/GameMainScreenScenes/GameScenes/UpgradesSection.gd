@@ -6,7 +6,7 @@ var UpgradePage
 func _ready():
 	setNodePaths()
 
-func _process(delta):
+func _process(_delta):
 	pass
 
 func _on_page_1_button_button_down():

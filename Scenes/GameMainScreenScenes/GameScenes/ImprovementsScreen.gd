@@ -10,7 +10,7 @@ var DamSection
 func _ready():
 	pass
 
-func _process(delta):
+func _process(_delta):
 	setNodePaths()
 
 func _on_upgrades_button_button_down():

@@ -9,7 +9,7 @@ var ItemGrid
 func _ready():
 	setNodePaths()
 
-func _process(delta):
+func _process(_delta):
 	pass
 
 func setupUpgradeTabForWoodType(type):

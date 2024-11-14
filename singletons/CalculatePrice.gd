@@ -3,7 +3,7 @@ extends Node
 func getWoodcampCost(woodcampCount, woodType):
 	match woodType :
 		"Oak" :
-			return round(pow(1.28, woodcampCount) + 1.3 * pow(woodcampCount, 2.8)) + 66
+			return round(pow(1.28, woodcampCount) + 1.3 * pow(woodcampCount, 2.8)) + 4
 		"Apple" :
 			return round(pow(1.28, woodcampCount) + 1.3 * pow(woodcampCount, 2.8)) + 7
 		"Maple" :

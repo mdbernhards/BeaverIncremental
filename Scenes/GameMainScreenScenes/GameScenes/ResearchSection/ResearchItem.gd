@@ -17,7 +17,7 @@ var IsResearchStarted = false
 func _ready():
 	setNodePaths()
 
-func _process(delta):
+func _process(_delta):
 	if IsResearchStarted:
 		updateProgressBar()
 	else:

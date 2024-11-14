@@ -23,7 +23,7 @@ func _ready():
 	setNodePaths()
 	changeItemType()
 
-func _process(delta):
+func _process(_delta):
 	updateValues()
 
 func changeItemType(woodType = WoodType):
@@ -31,6 +31,8 @@ func changeItemType(woodType = WoodType):
 	
 	ItemTitleLabel.text = WoodType
 	color = Values.ResourceValues[WoodType]["Color"]
+	BotCountLabel.text = str(SaveData.Resources[WoodType]["Bots"])
+	BotEffectivnesSlider.value = SaveData.Resources[WoodType]["BotSellPercentage"]
 	
 func updateValues():
 	CurrentWoodCountLabel.text = str(SaveData.Resources[WoodType]["Count"]) + " " + WoodType
@@ -56,3 +58,10 @@ func setNodePaths():
 func _on_sell_amount_slider_value_changed(value):
 	SaveData.Resources[WoodType]["MarketSellPercentage"] = value
 	SellPrecentigeLabel.text = str(value) + "%"
+
+func _on_buy_button_button_down():
+	BotCountLabel.text = str(SaveData.Gold["Bots"])
+
+func _on_bot_effectivnes_slider_value_changed(value):
+	SaveData.Resources[WoodType]["BotSellPercentage"] = value
+	BotEffectivnesLabel.text = "Effect: " + str(value) + "%"

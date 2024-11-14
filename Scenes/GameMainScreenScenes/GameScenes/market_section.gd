@@ -10,7 +10,7 @@ func _ready():
 	setNodePaths()
 	changePage(1)
 
-func _process(delta):
+func _process(_delta):
 	pass
 
 func changePage(nr):

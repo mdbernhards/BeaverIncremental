@@ -1,6 +1,5 @@
 extends Node
 
-
 var Gold = {
 		"Count" : 0,
 	}
