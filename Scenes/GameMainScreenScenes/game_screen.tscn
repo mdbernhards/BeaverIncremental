@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://bor0f34yh2ofm"]
+[gd_scene load_steps=8 format=3 uid="uid://bor0f34yh2ofm"]
 
 [ext_resource type="PackedScene" uid="uid://drsuhja1myvjv" path="res://Scenes/GameMainScreenScenes/GameScenes/resource_screen.tscn" id="1_xrfx0"]
 [ext_resource type="PackedScene" uid="uid://3les52jwhf8" path="res://Scenes/GameMainScreenScenes/GameScenes/upgrades_section.tscn" id="2_2ryuy"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://2xsk4oroe8q7" path="res://Scenes/GameMainScreenScenes/GameScenes/research_section.tscn" id="4_lynq2"]
 [ext_resource type="Script" path="res://Scenes/GameMainScreenScenes/GameScenes/ResourceTicks.gd" id="4_ojdqe"]
 [ext_resource type="PackedScene" uid="uid://btne0bg2tjivh" path="res://Scenes/GameMainScreenScenes/GameScenes/market_section.tscn" id="5_htdo4"]
+[ext_resource type="PackedScene" uid="uid://dmpunawnh13ed" path="res://Scenes/GameMainScreenScenes/GameScenes/magic_section.tscn" id="6_b5lsl"]
 
 [node name="GameScreen" type="Control"]
 layout_mode = 3
@@ -111,177 +112,13 @@ visible = false
 layout_mode = 2
 
 [node name="MarketSection" parent="GameScreenHBox/ImprovementsScreen/RightVBox/TabsMC" instance=ExtResource("5_htdo4")]
-layout_mode = 2
-
-[node name="MagicSection" type="MarginContainer" parent="GameScreenHBox/ImprovementsScreen/RightVBox/TabsMC"]
 visible = false
 layout_mode = 2
-theme_override_constants/margin_left = 15
-theme_override_constants/margin_right = 15
 
-[node name="VBoxContainer" type="VBoxContainer" parent="GameScreenHBox/ImprovementsScreen/RightVBox/TabsMC/MagicSection"]
+[node name="MagicSection" parent="GameScreenHBox/ImprovementsScreen/RightVBox/TabsMC" instance=ExtResource("6_b5lsl")]
 layout_mode = 2
-
-[node name="TopHBox" type="HBoxContainer" parent="GameScreenHBox/ImprovementsScreen/RightVBox/TabsMC/MagicSection/VBoxContainer"]
-layout_mode = 2
-size_flags_vertical = 0
-alignment = 2
-
-[node name="TitleMC" type="MarginContainer" parent="GameScreenHBox/ImprovementsScreen/RightVBox/TabsMC/MagicSection/VBoxContainer/TopHBox"]
-layout_mode = 2
-size_flags_horizontal = 3
-theme_override_constants/margin_left = 5
-
-[node name="TitleLabel" type="Label" parent="GameScreenHBox/ImprovementsScreen/RightVBox/TabsMC/MagicSection/VBoxContainer/TopHBox/TitleMC"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 40
-text = "Magic Store"
-
-[node name="MagicButtonsGrid" type="GridContainer" parent="GameScreenHBox/ImprovementsScreen/RightVBox/TabsMC/MagicSection/VBoxContainer"]
-layout_mode = 2
-size_flags_vertical = 3
-theme_override_constants/h_separation = 16
-theme_override_constants/v_separation = 18
-columns = 3
-
-[node name="ButtonMC" type="MarginContainer" parent="GameScreenHBox/ImprovementsScreen/RightVBox/TabsMC/MagicSection/VBoxContainer/MagicButtonsGrid"]
-custom_minimum_size = Vector2(245, 75)
-layout_mode = 2
-
-[node name="MagicButton" type="Button" parent="GameScreenHBox/ImprovementsScreen/RightVBox/TabsMC/MagicSection/VBoxContainer/MagicButtonsGrid/ButtonMC"]
-layout_mode = 2
-
-[node name="MC" type="MarginContainer" parent="GameScreenHBox/ImprovementsScreen/RightVBox/TabsMC/MagicSection/VBoxContainer/MagicButtonsGrid/ButtonMC/MagicButton"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/margin_left = 5
-theme_override_constants/margin_top = 5
-theme_override_constants/margin_right = 5
-theme_override_constants/margin_bottom = 5
-
-[node name="VBox" type="VBoxContainer" parent="GameScreenHBox/ImprovementsScreen/RightVBox/TabsMC/MagicSection/VBoxContainer/MagicButtonsGrid/ButtonMC/MagicButton/MC"]
-layout_mode = 2
-
-[node name="NameLabel" type="Label" parent="GameScreenHBox/ImprovementsScreen/RightVBox/TabsMC/MagicSection/VBoxContainer/MagicButtonsGrid/ButtonMC/MagicButton/MC/VBox"]
-layout_mode = 2
-size_flags_vertical = 6
-text = "Double Trouble"
-
-[node name="CostLabel" type="Label" parent="GameScreenHBox/ImprovementsScreen/RightVBox/TabsMC/MagicSection/VBoxContainer/MagicButtonsGrid/ButtonMC/MagicButton/MC/VBox"]
-layout_mode = 2
-size_flags_vertical = 6
-text = "2 Magic"
-horizontal_alignment = 2
-vertical_alignment = 2
-
-[node name="ButtonMC2" type="MarginContainer" parent="GameScreenHBox/ImprovementsScreen/RightVBox/TabsMC/MagicSection/VBoxContainer/MagicButtonsGrid"]
-custom_minimum_size = Vector2(245, 75)
-layout_mode = 2
-
-[node name="MagicButton" type="Button" parent="GameScreenHBox/ImprovementsScreen/RightVBox/TabsMC/MagicSection/VBoxContainer/MagicButtonsGrid/ButtonMC2"]
-layout_mode = 2
-
-[node name="MC" type="MarginContainer" parent="GameScreenHBox/ImprovementsScreen/RightVBox/TabsMC/MagicSection/VBoxContainer/MagicButtonsGrid/ButtonMC2/MagicButton"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/margin_left = 5
-theme_override_constants/margin_top = 5
-theme_override_constants/margin_right = 5
-theme_override_constants/margin_bottom = 5
-
-[node name="VBox" type="VBoxContainer" parent="GameScreenHBox/ImprovementsScreen/RightVBox/TabsMC/MagicSection/VBoxContainer/MagicButtonsGrid/ButtonMC2/MagicButton/MC"]
-layout_mode = 2
-
-[node name="NameLabel" type="Label" parent="GameScreenHBox/ImprovementsScreen/RightVBox/TabsMC/MagicSection/VBoxContainer/MagicButtonsGrid/ButtonMC2/MagicButton/MC/VBox"]
-layout_mode = 2
-size_flags_vertical = 6
-text = "Double Trouble"
-
-[node name="CostLabel" type="Label" parent="GameScreenHBox/ImprovementsScreen/RightVBox/TabsMC/MagicSection/VBoxContainer/MagicButtonsGrid/ButtonMC2/MagicButton/MC/VBox"]
-layout_mode = 2
-size_flags_vertical = 6
-text = "2 Magic"
-horizontal_alignment = 2
-vertical_alignment = 2
-
-[node name="ButtonMC3" type="MarginContainer" parent="GameScreenHBox/ImprovementsScreen/RightVBox/TabsMC/MagicSection/VBoxContainer/MagicButtonsGrid"]
-custom_minimum_size = Vector2(245, 75)
-layout_mode = 2
-
-[node name="MagicButton" type="Button" parent="GameScreenHBox/ImprovementsScreen/RightVBox/TabsMC/MagicSection/VBoxContainer/MagicButtonsGrid/ButtonMC3"]
-layout_mode = 2
-
-[node name="MC" type="MarginContainer" parent="GameScreenHBox/ImprovementsScreen/RightVBox/TabsMC/MagicSection/VBoxContainer/MagicButtonsGrid/ButtonMC3/MagicButton"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/margin_left = 5
-theme_override_constants/margin_top = 5
-theme_override_constants/margin_right = 5
-theme_override_constants/margin_bottom = 5
-
-[node name="VBox" type="VBoxContainer" parent="GameScreenHBox/ImprovementsScreen/RightVBox/TabsMC/MagicSection/VBoxContainer/MagicButtonsGrid/ButtonMC3/MagicButton/MC"]
-layout_mode = 2
-
-[node name="NameLabel" type="Label" parent="GameScreenHBox/ImprovementsScreen/RightVBox/TabsMC/MagicSection/VBoxContainer/MagicButtonsGrid/ButtonMC3/MagicButton/MC/VBox"]
-layout_mode = 2
-size_flags_vertical = 6
-text = "Double Trouble"
-
-[node name="CostLabel" type="Label" parent="GameScreenHBox/ImprovementsScreen/RightVBox/TabsMC/MagicSection/VBoxContainer/MagicButtonsGrid/ButtonMC3/MagicButton/MC/VBox"]
-layout_mode = 2
-size_flags_vertical = 6
-text = "2 Magic"
-horizontal_alignment = 2
-vertical_alignment = 2
-
-[node name="ButtonMC4" type="MarginContainer" parent="GameScreenHBox/ImprovementsScreen/RightVBox/TabsMC/MagicSection/VBoxContainer/MagicButtonsGrid"]
-custom_minimum_size = Vector2(245, 75)
-layout_mode = 2
-
-[node name="MagicButton" type="Button" parent="GameScreenHBox/ImprovementsScreen/RightVBox/TabsMC/MagicSection/VBoxContainer/MagicButtonsGrid/ButtonMC4"]
-layout_mode = 2
-
-[node name="MC" type="MarginContainer" parent="GameScreenHBox/ImprovementsScreen/RightVBox/TabsMC/MagicSection/VBoxContainer/MagicButtonsGrid/ButtonMC4/MagicButton"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/margin_left = 5
-theme_override_constants/margin_top = 5
-theme_override_constants/margin_right = 5
-theme_override_constants/margin_bottom = 5
-
-[node name="VBox" type="VBoxContainer" parent="GameScreenHBox/ImprovementsScreen/RightVBox/TabsMC/MagicSection/VBoxContainer/MagicButtonsGrid/ButtonMC4/MagicButton/MC"]
-layout_mode = 2
-
-[node name="NameLabel" type="Label" parent="GameScreenHBox/ImprovementsScreen/RightVBox/TabsMC/MagicSection/VBoxContainer/MagicButtonsGrid/ButtonMC4/MagicButton/MC/VBox"]
-layout_mode = 2
-size_flags_vertical = 6
-text = "Double Trouble"
-
-[node name="CostLabel" type="Label" parent="GameScreenHBox/ImprovementsScreen/RightVBox/TabsMC/MagicSection/VBoxContainer/MagicButtonsGrid/ButtonMC4/MagicButton/MC/VBox"]
-layout_mode = 2
-size_flags_vertical = 6
-text = "2 Magic"
-horizontal_alignment = 2
-vertical_alignment = 2
 
 [node name="DamSection" type="MarginContainer" parent="GameScreenHBox/ImprovementsScreen/RightVBox/TabsMC"]
-visible = false
 layout_mode = 2
 
 [node name="DamSectionHBox" type="HBoxContainer" parent="GameScreenHBox/ImprovementsScreen/RightVBox/TabsMC/DamSection"]

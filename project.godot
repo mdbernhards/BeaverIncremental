@@ -33,6 +33,7 @@ CalculateValues="*res://singletons/CalculateValues.gd"
 CalculatePrice="*res://singletons/CalculatePrice.gd"
 Research="*res://singletons/constantData/Research.gd"
 Upgrades="*res://singletons/constantData/Upgrades.gd"
+Magic="*res://singletons/constantData/Magic.gd"
 
 [display]
 
