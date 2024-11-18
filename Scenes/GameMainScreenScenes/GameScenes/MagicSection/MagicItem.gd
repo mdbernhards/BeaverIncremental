@@ -10,7 +10,7 @@ var Upgrade
 
 func _ready():
 	setNodePaths()
-	setMagicUpgrade(Nr)
+	setMagicUpgrade()
 
 func _process(delta):
 	if Upgrade && (SaveData.Magic["Count"] >= Upgrade["Cost"]):
@@ -18,8 +18,8 @@ func _process(delta):
 	else:
 		CantAffordRect.visible = true
 
-func setMagicUpgrade(nr):
-	Upgrade = Magic.Magic[str(nr)]
+func setMagicUpgrade():
+	Upgrade = Magic.Magic[str(Nr)]
 	
 	NameLabel.text = Upgrade["Name"]
 	CostLabel.text = str(Upgrade["Cost"]) + " Magic"

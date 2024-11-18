@@ -2,7 +2,7 @@ extends MarginContainer
 
 @export var UpgradeNumber = 1
 
-var WoodType = "Oak"
+var ResourceType = "Oak"
 
 var Name
 var Description
@@ -19,24 +19,33 @@ var CantAffordColorRect
 func _ready():
 	CurrentPrice = 100
 	setNodePaths()
-	changeUpgrade(WoodType)
+	changeUpgrade(ResourceType)
 
 func _process(_delta):
-	if CurrentPrice <= SaveData.Resources[WoodType]["Count"]:
-		CantAffordColorRect.visible = false
+	updateAffordabilityIndicator()
+
+func updateAffordabilityIndicator():
+	if ResourceType == "Gold":
+		if CurrentPrice <= SaveData.Gold["Count"]:
+			CantAffordColorRect.visible = false
+		else:
+			CantAffordColorRect.visible = true
 	else:
-		CantAffordColorRect.visible = true
-		 
+		if CurrentPrice <= SaveData.Resources[ResourceType]["Count"]:
+			CantAffordColorRect.visible = false
+		else:
+			CantAffordColorRect.visible = true
+	
 
 func changeUpgrade(woodType):
-	WoodType = woodType
-	$Color.color = Values.ResourceValues[WoodType]["Color"]
+	ResourceType = woodType
+	$Color.color = Values.ResourceValues[ResourceType]["Color"]
 	
-	var upgrade = Upgrades.Upgrades[WoodType][str(UpgradeNumber)]
-	SaveDataValues = SaveData.Upgrades[WoodType][str(UpgradeNumber)]
+	var upgrade = Upgrades.Upgrades[ResourceType][str(UpgradeNumber)]
+	SaveDataValues = SaveData.Upgrades[ResourceType][str(UpgradeNumber)]
 	
 	if SaveDataValues:
-		CurrentPrice = CalculatePrice.getUpgradeCost(SaveDataValues["Level"], WoodType, str(UpgradeNumber))
+		CurrentPrice = CalculatePrice.getUpgradeCost(SaveDataValues["Level"], ResourceType, str(UpgradeNumber))
 	
 	if !upgrade or !SaveDataValues:
 		NameLabel.text = "????"
@@ -48,7 +57,7 @@ func changeUpgrade(woodType):
 	setUpgradePriceAndLevel()
 
 func setUpgradePriceAndLevel():
-	CurrentPrice = CalculatePrice.getUpgradeCost(SaveDataValues["Level"], WoodType, str(UpgradeNumber))
+	CurrentPrice = CalculatePrice.getUpgradeCost(SaveDataValues["Level"], ResourceType, str(UpgradeNumber))
 	
 	PriceLabel.text = "price: " + str(CurrentPrice)
 	LevelLabel.text = "LvL " + str(SaveDataValues["Level"])
@@ -63,8 +72,15 @@ func _on_buy_button_button_down():
 	if !SaveDataValues:
 		return
 	
-	if CurrentPrice <= SaveData.Resources[WoodType]["Count"]:
-		SaveData.Resources[WoodType]["Count"] -= CurrentPrice
-		SaveDataValues["Level"] += 1
-		setUpgradePriceAndLevel()
-		CalculateValues.calculateAllValues()
+	if ResourceType == "Gold":
+		if CurrentPrice <= SaveData.Gold["Count"]:
+			SaveData.Gold["Count"] -= CurrentPrice
+			SaveDataValues["Level"] += 1
+			setUpgradePriceAndLevel()
+			CalculateValues.calculateAllValues()
+	else:
+		if CurrentPrice <= SaveData.Resources[ResourceType]["Count"]:
+			SaveData.Resources[ResourceType]["Count"] -= CurrentPrice
+			SaveDataValues["Level"] += 1
+			setUpgradePriceAndLevel()
+			CalculateValues.calculateAllValues()

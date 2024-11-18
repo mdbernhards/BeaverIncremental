@@ -36,7 +36,7 @@ func getWoodcampCost(woodcampCount, woodType):
 func getLevelCost(level, woodType):
 	match woodType :
 		"Oak" :
-			return round(pow(1.28, level) + 1.3 * pow(level, 2.8)) + 66
+			return round(pow(1.28, level) + 1.3 * pow(level, 2.8)) + 3
 		"Apple" :
 			return round(pow(1.28, level) + 1.3 * pow(level, 2.8)) + 7
 		"Maple" :
@@ -638,3 +638,74 @@ func getUpgradeCost(level, woodType, upgradeNr):
 					return round(pow(1.28, level) + 1.3 * pow(level, 2.8)) + 7
 				"18" :
 					return round(pow(1.28, level) + 1.3 * pow(level, 2.8)) + 7
+		"Gold" :
+			match upgradeNr :
+				"1" :
+					return round(pow(1.28, level) + 1.3 * pow(level, 2.8)) + 7
+				"2" :
+					return round(pow(1.28, level) + 1.3 * pow(level, 2.8)) + 7
+				"3" :
+					return round(pow(1.28, level) + 1.3 * pow(level, 2.8)) + 7
+				"4" :
+					return round(pow(1.28, level) + 1.3 * pow(level, 2.8)) + 7
+				"5" :
+					return round(pow(1.28, level) + 1.3 * pow(level, 2.8)) + 7
+				"6" :
+					return round(pow(1.28, level) + 1.3 * pow(level, 2.8)) + 7
+				"7" :
+					return round(pow(1.28, level) + 1.3 * pow(level, 2.8)) + 7
+				"8" :
+					return round(pow(1.28, level) + 1.3 * pow(level, 2.8)) + 7
+				"9" :
+					return round(pow(1.28, level) + 1.3 * pow(level, 2.8)) + 7
+				"10" :
+					return round(pow(1.28, level) + 1.3 * pow(level, 2.8)) + 7
+				"11" :
+					return round(pow(1.28, level) + 1.3 * pow(level, 2.8)) + 7
+				"12" :
+					return round(pow(1.28, level) + 1.3 * pow(level, 2.8)) + 7
+				"13" :
+					return round(pow(1.28, level) + 1.3 * pow(level, 2.8)) + 7
+				"14" :
+					return round(pow(1.28, level) + 1.3 * pow(level, 2.8)) + 7
+				"15" :
+					return round(pow(1.28, level) + 1.3 * pow(level, 2.8)) + 7
+				"16" :
+					return round(pow(1.28, level) + 1.3 * pow(level, 2.8)) + 7
+				"17" :
+					return round(pow(1.28, level) + 1.3 * pow(level, 2.8)) + 7
+				"18" :
+					return round(pow(1.28, level) + 1.3 * pow(level, 2.8)) + 7
+
+func getBotCost(botCount, woodType):
+	match woodType :
+		"Oak" :
+			return round(pow(1.28, botCount) + 1.3 * pow(botCount, 2.8)) + 1
+		"Apple" :
+			return round(pow(1.28, botCount) + 1.3 * pow(botCount, 2.8)) + 2
+		"Maple" :
+			return round(pow(1.28, botCount) + 1.3 * pow(botCount, 2.8)) + 3
+		"Birch" :
+			return round(pow(1.28, botCount) + 1.3 * pow(botCount, 2.8)) + 4
+		"Spruce" :
+			return round(pow(1.28, botCount) + 1.3 * pow(botCount, 2.8)) + 5
+		"Chestnut" :
+			return round(pow(1.28, botCount) + 1.3 * pow(botCount, 2.8)) + 6
+		"Cherry" :
+			return round(pow(1.28, botCount) + 1.3 * pow(botCount, 2.8)) + 7
+		"Ash" :
+			return round(pow(1.28, botCount) + 1.3 * pow(botCount, 2.8)) + 888
+		"Cedar" :
+			return round(pow(1.28, botCount) + 1.3 * pow(botCount, 2.8)) + 9
+		"Mahogany" :
+			return round(pow(1.28, botCount) + 1.3 * pow(botCount, 2.8)) + 111
+		"Ebony" :
+			return round(pow(1.28, botCount) + 1.3 * pow(botCount, 2.8)) + 137
+		"Dogwood" :
+			return round(pow(1.28, botCount) + 1.3 * pow(botCount, 2.8)) + 167
+		"Rosewood" :
+			return round(pow(1.28, botCount) + 1.3 * pow(botCount, 2.8)) + 1127
+		"Ghost Gum" :
+			return round(pow(1.28, botCount) + 1.3 * pow(botCount, 2.8)) + 2222
+		"Dragonwood" :
+			return round(pow(1.28, botCount) + 1.3 * pow(botCount, 2.8)) + 3333

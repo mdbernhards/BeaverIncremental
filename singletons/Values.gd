@@ -230,6 +230,7 @@ var ResourceValues = {
 		"Color" : Color("836a3e"),
 		"RealPerSecondIncrease": 0,
 		"RealPerSecondLoss": 0,
+		"SoldFor": 0.01,
 	},
 	"Apple" : {
 		"PerClick" : 100,
@@ -239,6 +240,7 @@ var ResourceValues = {
 		"Color" : Color(0.79215687513351, 0.49411764740944, 0.32549020648003),
 		"RealPerSecondIncrease": 0,
 		"RealPerSecondLoss": 0,
+		"SoldFor": 0.05,
 	},
 	"Maple" : {
 		"PerClick" : 100,
@@ -248,6 +250,7 @@ var ResourceValues = {
 		"Color" : Color(0.92941176891327, 0.81568628549576, 0.74509805440903),
 		"RealPerSecondIncrease": 0,
 		"RealPerSecondLoss": 0,
+		"SoldFor": 0.25,
 	},
 	"Birch" : {
 		"PerClick" : 100,
@@ -257,6 +260,7 @@ var ResourceValues = {
 		"Color" : Color(0.85098040103912, 0.71372550725937, 0.60392159223557),
 		"RealPerSecondIncrease": 0,
 		"RealPerSecondLoss": 0,
+		"SoldFor": 0.70,
 	},
 	"Spruce" : {
 		"PerClick" : 100,
@@ -266,6 +270,7 @@ var ResourceValues = {
 		"Color" : Color(0.2549019753933, 0.15686275064945, 0.08627451211214),
 		"RealPerSecondIncrease": 0,
 		"RealPerSecondLoss": 0,
+		"SoldFor": 2.55,
 	},
 	"Chestnut" : {
 		"PerClick" : 100,
@@ -275,6 +280,7 @@ var ResourceValues = {
 		"Color" : Color(0.59215688705444, 0.35686275362968, 0.16078431904316),
 		"RealPerSecondIncrease": 0,
 		"RealPerSecondLoss": 0,
+		"SoldFor": 7,
 	},
 	"Cherry" : {
 		"PerClick" : 100,
@@ -284,6 +290,7 @@ var ResourceValues = {
 		"Color" : Color(0.64705884456635, 0.34117648005486, 0.21568627655506),
 		"RealPerSecondIncrease": 0,
 		"RealPerSecondLoss": 0,
+		"SoldFor": 13,
 	},
 	"Ash" : {
 		"PerClick" : 100,
@@ -293,6 +300,7 @@ var ResourceValues = {
 		"Color" : Color(0.92549020051956, 0.82352942228317, 0.69803923368454),
 		"RealPerSecondIncrease": 0,
 		"RealPerSecondLoss": 0,
+		"SoldFor": 33,
 	},
 	"Cedar" : {
 		"PerClick" : 100000000,
@@ -302,6 +310,7 @@ var ResourceValues = {
 		"Color" : Color(0.60784316062927, 0.2352941185236, 0.2392156869173),
 		"RealPerSecondIncrease": 0,
 		"RealPerSecondLoss": 0,
+		"SoldFor": 80,
 	},
 	"Mahogany" : {
 		"PerClick" : 100,
@@ -311,6 +320,7 @@ var ResourceValues = {
 		"Color" : Color(0.50980395078659, 0.19215686619282, 0.05098039284348),
 		"RealPerSecondIncrease": 0,
 		"RealPerSecondLoss": 0,
+		"SoldFor": 140,
 	},
 	"Ebony" : {
 		"PerClick" : 100,
@@ -320,6 +330,7 @@ var ResourceValues = {
 		"Color" : Color(0.16862745583057, 0.15294118225574, 0.19215686619282),
 		"RealPerSecondIncrease": 0,
 		"RealPerSecondLoss": 0,
+		"SoldFor": 500,
 	},
 	"Dogwood" : {
 		"PerClick" : 100,
@@ -329,6 +340,7 @@ var ResourceValues = {
 		"Color" : Color(0.71764707565308, 0.54509806632996, 0.419607847929),
 		"RealPerSecondIncrease": 0,
 		"RealPerSecondLoss": 0,
+		"SoldFor": 1400,
 	},
 	"Rosewood" : {
 		"PerClick" : 100,
@@ -338,6 +350,7 @@ var ResourceValues = {
 		"Color" : Color(0.4745098054409, 0.24705882370472, 0.2549019753933),
 		"RealPerSecondIncrease": 0,
 		"RealPerSecondLoss": 0,
+		"SoldFor": 3600,
 	},
 	"Ghost Gum" : {
 		"PerClick" : 100,
@@ -347,6 +360,7 @@ var ResourceValues = {
 		"Color" : Color(0.7843137383461, 0.70980393886566, 0.64705884456635),
 		"RealPerSecondIncrease": 0,
 		"RealPerSecondLoss": 0,
+		"SoldFor": 9999,
 	},
 	"Dragonwood" : {
 		"PerClick" : 100,
@@ -356,9 +370,11 @@ var ResourceValues = {
 		"Color" : Color(0.55686277151108, 0.42352941632271, 0.26274511218071),
 		"RealPerSecondIncrease": 0,
 		"RealPerSecondLoss": 0,
+		"SoldFor": 22222,
 	},
 	"Gold" : {
-		"PerSecond": 10,	
+		"PerSecond": 10,
+		"Color" : Color(0.87843137979507, 0.76078432798386, 0.40000000596046),
 	},
 }
 

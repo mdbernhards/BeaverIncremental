@@ -183,16 +183,19 @@ theme_override_constants/separation = 15
 alignment = 1
 
 [node name="Page1Button" type="Button" parent="PageButtonsMC/ColorRect/MC/HBox"]
+custom_minimum_size = Vector2(70, 0)
 layout_mode = 2
-text = "Page 1"
+text = "Classic"
 
 [node name="Page2Button" type="Button" parent="PageButtonsMC/ColorRect/MC/HBox"]
+custom_minimum_size = Vector2(70, 0)
 layout_mode = 2
-text = "Page 2"
+text = "Rare"
 
 [node name="Page3Button" type="Button" parent="PageButtonsMC/ColorRect/MC/HBox"]
+custom_minimum_size = Vector2(70, 0)
 layout_mode = 2
-text = "Page 3"
+text = "Mythic"
 
 [node name="MC" type="MarginContainer" parent="."]
 layout_mode = 2

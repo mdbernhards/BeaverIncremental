@@ -18,6 +18,10 @@ var BotEffectivnesSlider
 var BotEffectivnesLabel
 var PerSecondWoodSoldLabel
 var PerSecondGoldGainLabel
+var BotPriceLabel
+
+var WoodLossIfSold
+var GoldGainedIfSold
 
 func _ready():
 	setNodePaths()
@@ -35,9 +39,13 @@ func changeItemType(woodType = WoodType):
 	BotEffectivnesSlider.value = SaveData.Resources[WoodType]["BotSellPercentage"]
 	
 func updateValues():
-	CurrentWoodCountLabel.text = str(SaveData.Resources[WoodType]["Count"]) + " " + WoodType
-	SellAmountLabel.text = str(SaveData.Resources[WoodType]["Count"] * SellAmountSlider.value / 100) + " " + WoodType
-	SellGoldGainLabel.text = str(SaveData.Resources[WoodType]["Count"] * SellAmountSlider.value / 1000) + " Gold"
+	WoodLossIfSold = SaveData.Resources[WoodType]["Count"] * SellAmountSlider.value / 100
+	GoldGainedIfSold = WoodLossIfSold * Values.ResourceValues[WoodType]["SoldFor"]
+	
+	CurrentWoodCountLabel.text = str(roundi(SaveData.Resources[WoodType]["Count"])) + " " + WoodType
+	SellAmountLabel.text = str(roundi(WoodLossIfSold)) + " " + WoodType
+	SellGoldGainLabel.text = str(roundi(GoldGainedIfSold)) + " Gold"
+	BotPriceLabel.text = "Price: " + str(roundi(CalculatePrice.getBotCost(SaveData.Resources[WoodType]["Bots"], WoodType))) + " gold"
 
 func setNodePaths():
 	# Nodes for selling
@@ -54,14 +62,19 @@ func setNodePaths():
 	BotEffectivnesLabel = $HBox/MC2/VBox/HBox/MC/MC/BotEffectivnesLabel
 	PerSecondWoodSoldLabel = $HBox/MC2/VBox/HBox/MC2/VBox/MC2/PerSecondSoldLabel
 	PerSecondGoldGainLabel = $HBox/MC2/VBox/HBox/MC3/VBox/MC2/PerSecondGainLabel
+	BotPriceLabel = $HBox/MC2/VBox/HBox2/MC2/VBox/BotPriceLabel
 
 func _on_sell_amount_slider_value_changed(value):
 	SaveData.Resources[WoodType]["MarketSellPercentage"] = value
 	SellPrecentigeLabel.text = str(value) + "%"
 
 func _on_buy_button_button_down():
-	BotCountLabel.text = str(SaveData.Gold["Bots"])
+	BotCountLabel.text = str(SaveData.Resources[WoodType]["Bots"])
 
 func _on_bot_effectivnes_slider_value_changed(value):
 	SaveData.Resources[WoodType]["BotSellPercentage"] = value
 	BotEffectivnesLabel.text = "Effect: " + str(value) + "%"
+
+func _on_sell_button_button_down():
+	SaveData.Resources[WoodType]["Count"] -= WoodLossIfSold
+	SaveData.Gold["Count"] += GoldGainedIfSold

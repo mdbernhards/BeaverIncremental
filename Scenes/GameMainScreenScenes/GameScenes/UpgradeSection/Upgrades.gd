@@ -1,6 +1,6 @@
 extends MarginContainer
 
-var WoodType
+var ResourceType
 
 # Nodes
 var UpgradeTabTitle
@@ -13,17 +13,15 @@ func _process(_delta):
 	pass
 
 func setupUpgradeTabForWoodType(type):
-	WoodType = type
-	UpgradeTabTitle.text = type
-	
-	UpgradeTabTitle.text = WoodType
+	ResourceType = type
+	UpgradeTabTitle.text = ResourceType
 	setupUpgrades()
 
 func setupUpgrades():
 	var upgradeItems = ItemGrid.get_children()
 	
 	for item in upgradeItems:
-		item.changeUpgrade(WoodType)
+		item.changeUpgrade(ResourceType)
 	
 func setNodePaths():
 	UpgradeTabTitle = $VBox/TopHBox/TitleMC/TitleLabel

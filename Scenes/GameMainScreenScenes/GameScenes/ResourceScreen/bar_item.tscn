@@ -183,7 +183,7 @@ alignment = 1
 layout_mode = 2
 text = "Buy"
 
-[node name="CantAffordColorRect" type="ColorRect" parent="HBox/WoodCampMC/WoodCampHBox/MC2/VBox/WoodCampBuyButton"]
+[node name="WCCantAffordRect" type="ColorRect" parent="HBox/WoodCampMC/WoodCampHBox/MC2/VBox/WoodCampBuyButton"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -251,6 +251,15 @@ alignment = 1
 [node name="LevelBuyButton" type="Button" parent="HBox/LevelMC/LevelHBox/MC2/VBox"]
 layout_mode = 2
 text = "Buy"
+
+[node name="LevelCantAffordRect" type="ColorRect" parent="HBox/LevelMC/LevelHBox/MC2/VBox/LevelBuyButton"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.513726, 0.0941176, 0, 0.301961)
 
 [node name="LevelBuyMaxButton" type="Button" parent="HBox/LevelMC/LevelHBox/MC2/VBox"]
 layout_mode = 2

@@ -27,6 +27,7 @@ color = Color(0.352941, 0.262745, 0.262745, 1)
 
 [node name="HBox" type="HBoxContainer" parent="UpgradePage/UpgradeTabs"]
 layout_mode = 2
+alignment = 2
 
 [node name="TabButtonsMC" type="MarginContainer" parent="UpgradePage/UpgradeTabs/HBox"]
 layout_mode = 2
@@ -245,19 +246,28 @@ theme_override_constants/separation = 20
 alignment = 1
 
 [node name="Page1Button" type="Button" parent="PageButtons/HBox/PageButtonMC/HBox"]
+custom_minimum_size = Vector2(70, 0)
 layout_mode = 2
-theme_override_font_sizes/font_size = 11
-text = "Page 1"
+theme_override_font_sizes/font_size = 14
+text = "Classic"
 
 [node name="Page2Button" type="Button" parent="PageButtons/HBox/PageButtonMC/HBox"]
+custom_minimum_size = Vector2(70, 0)
 layout_mode = 2
-theme_override_font_sizes/font_size = 11
-text = "Page 2"
+theme_override_font_sizes/font_size = 14
+text = "Rare"
 
 [node name="Page3Button" type="Button" parent="PageButtons/HBox/PageButtonMC/HBox"]
+custom_minimum_size = Vector2(70, 0)
 layout_mode = 2
-theme_override_font_sizes/font_size = 11
-text = "Page 3"
+theme_override_font_sizes/font_size = 14
+text = "Mythic"
+
+[node name="Page4Button" type="Button" parent="PageButtons/HBox/PageButtonMC/HBox"]
+custom_minimum_size = Vector2(70, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+text = "Gold"
 
 [connection signal="button_down" from="UpgradePage/UpgradeTabs/HBox/TabButtonsMC/HBox/UpgradeTabButton1" to="UpgradePage" method="_on_upgrade_tab_button_1_button_down"]
 [connection signal="button_down" from="UpgradePage/UpgradeTabs/HBox/TabButtonsMC/HBox/UpgradeTabButton2" to="UpgradePage" method="_on_upgrade_tab_button_2_button_down"]
@@ -267,3 +277,4 @@ text = "Page 3"
 [connection signal="button_down" from="PageButtons/HBox/PageButtonMC/HBox/Page1Button" to="." method="_on_page_1_button_button_down"]
 [connection signal="button_down" from="PageButtons/HBox/PageButtonMC/HBox/Page2Button" to="." method="_on_page_2_button_button_down"]
 [connection signal="button_down" from="PageButtons/HBox/PageButtonMC/HBox/Page3Button" to="." method="_on_page_3_button_button_down"]
+[connection signal="button_down" from="PageButtons/HBox/PageButtonMC/HBox/Page4Button" to="." method="_on_page_4_button_button_down"]

@@ -2,10 +2,10 @@ extends VBoxContainer
 
 var PageNr = 1
 
-var woodTypes = ["Oak", "Apple", "Maple", "Birch", "Spruce"]
+var ResourceTypes = ["Oak", "Apple", "Maple", "Birch", "Spruce"]
 
 # Nodes
-var Upgrades
+var UpgradesNode
 var TabButtons = []
 
 func _ready():
@@ -19,18 +19,25 @@ func changePage(nr):
 	
 	match PageNr:
 		1:
-			woodTypes = ["Oak", "Apple", "Maple", "Birch", "Spruce"]
+			ResourceTypes = ["Oak", "Apple", "Maple", "Birch", "Spruce"]
 		2:
-			woodTypes = ["Chestnut", "Cherry", "Ash", "Cedar", "Mahogany"]
+			ResourceTypes = ["Chestnut", "Cherry", "Ash", "Cedar", "Mahogany"]
 		3:
-			woodTypes = ["Ebony", "Dogwood", "Rosewood", "Ghost Gum", "Dragonwood"]
+			ResourceTypes = ["Ebony", "Dogwood", "Rosewood", "Ghost Gum", "Dragonwood"]
+		4:
+			ResourceTypes = ["Gold"]
 	
 	setUpgradeTabButtons()
-	Upgrades.setupUpgradeTabForWoodType(woodTypes[0])
+	UpgradesNode.setupUpgradeTabForWoodType(ResourceTypes[0])
 
 func setUpgradeTabButtons():
-	for i in TabButtons.size():
-		TabButtons[i].text = woodTypes[i]
+	if ResourceTypes[0] == "Gold":
+		$UpgradeTabs/HBox.visible = false
+	else:
+		$UpgradeTabs/HBox.visible = true
+
+	for i in ResourceTypes.size():
+		TabButtons[i].text = ResourceTypes[i]
 
 func setNodePaths():
 	TabButtons.append($UpgradeTabs/HBox/TabButtonsMC/HBox/UpgradeTabButton1)
@@ -39,19 +46,19 @@ func setNodePaths():
 	TabButtons.append($UpgradeTabs/HBox/TabButtonsMC/HBox/UpgradeTabButton4)
 	TabButtons.append($UpgradeTabs/HBox/TabButtonsMC/HBox/UpgradeTabButton5)
 	
-	Upgrades = $Upgrades
+	UpgradesNode = $Upgrades
 
 func _on_upgrade_tab_button_1_button_down():
-	Upgrades.setupUpgradeTabForWoodType(woodTypes[0])
+	UpgradesNode.setupUpgradeTabForWoodType(ResourceTypes[0])
 
 func _on_upgrade_tab_button_2_button_down():
-	Upgrades.setupUpgradeTabForWoodType(woodTypes[1])
+	UpgradesNode.setupUpgradeTabForWoodType(ResourceTypes[1])
 
 func _on_upgrade_tab_button_3_button_down():
-	Upgrades.setupUpgradeTabForWoodType(woodTypes[2])
+	UpgradesNode.setupUpgradeTabForWoodType(ResourceTypes[2])
 
 func _on_upgrade_tab_button_4_button_down():
-	Upgrades.setupUpgradeTabForWoodType(woodTypes[3])
+	UpgradesNode.setupUpgradeTabForWoodType(ResourceTypes[3])
 
 func _on_upgrade_tab_button_5_button_down():
-	Upgrades.setupUpgradeTabForWoodType(woodTypes[4])
+	UpgradesNode.setupUpgradeTabForWoodType(ResourceTypes[4])

@@ -1,0 +1,445 @@
+[gd_scene format=3 uid="uid://dgw2ln358unw8"]
+
+[node name="DamSection" type="MarginContainer"]
+
+[node name="VBox" type="VBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="TitleMC" type="MarginContainer" parent="VBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 20
+
+[node name="TitleLabel" type="Label" parent="VBox/TitleMC"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "Dams"
+
+[node name="DamSectionHBox" type="HBoxContainer" parent="VBox"]
+layout_mode = 2
+
+[node name="MC" type="MarginContainer" parent="VBox/DamSectionHBox"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_right = 25
+
+[node name="DamSelectionVBox" type="VBoxContainer" parent="VBox/DamSectionHBox/MC"]
+custom_minimum_size = Vector2(215, 0)
+layout_mode = 2
+theme_override_constants/separation = 45
+
+[node name="SmallDamButton" type="Button" parent="VBox/DamSectionHBox/MC/DamSelectionVBox"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 25
+text = "Small Dam"
+
+[node name="MediumDamButton" type="Button" parent="VBox/DamSectionHBox/MC/DamSelectionVBox"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 25
+text = "Medium Dam"
+
+[node name="BigDamButton" type="Button" parent="VBox/DamSectionHBox/MC/DamSelectionVBox"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 25
+text = "Big Dam"
+
+[node name="GiantDamButton" type="Button" parent="VBox/DamSectionHBox/MC/DamSelectionVBox"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 25
+text = "Giant Dam"
+
+[node name="MC2" type="MarginContainer" parent="VBox/DamSectionHBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_right = 25
+
+[node name="ColorRect" type="ColorRect" parent="VBox/DamSectionHBox/MC2"]
+layout_mode = 2
+color = Color(0.396078, 0.396078, 0.396078, 1)
+
+[node name="MC" type="MarginContainer" parent="VBox/DamSectionHBox/MC2"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="SmallDamPage" type="VBoxContainer" parent="VBox/DamSectionHBox/MC2/MC"]
+layout_mode = 2
+theme_override_constants/separation = 25
+
+[node name="DamSection1" type="Control" parent="VBox/DamSectionHBox/MC2/MC/SmallDamPage"]
+custom_minimum_size = Vector2(0, 190)
+layout_mode = 2
+
+[node name="ColorRect" type="ColorRect" parent="VBox/DamSectionHBox/MC2/MC/SmallDamPage/DamSection1"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.494118, 0.494118, 0.494118, 1)
+
+[node name="Grid" type="GridContainer" parent="VBox/DamSectionHBox/MC2/MC/SmallDamPage/DamSection1"]
+custom_minimum_size = Vector2(0, 190)
+layout_mode = 2
+offset_right = 487.0
+offset_bottom = 190.0
+columns = 2
+
+[node name="MC" type="MarginContainer" parent="VBox/DamSectionHBox/MC2/MC/SmallDamPage/DamSection1/Grid"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 7
+
+[node name="Label" type="Label" parent="VBox/DamSectionHBox/MC2/MC/SmallDamPage/DamSection1/Grid/MC"]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 22
+text = "Foundations"
+
+[node name="MC2" type="MarginContainer" parent="VBox/DamSectionHBox/MC2/MC/SmallDamPage/DamSection1/Grid"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/margin_left = 0
+theme_override_constants/margin_top = 7
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 0
+
+[node name="Label" type="Label" parent="VBox/DamSectionHBox/MC2/MC/SmallDamPage/DamSection1/Grid/MC2"]
+layout_mode = 2
+size_flags_vertical = 1
+text = "Cost:
+10k wood
+30m cherry wood"
+horizontal_alignment = 2
+
+[node name="MC3" type="MarginContainer" parent="VBox/DamSectionHBox/MC2/MC/SmallDamPage/DamSection1/Grid"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_bottom = 7
+
+[node name="Label" type="Label" parent="VBox/DamSectionHBox/MC2/MC/SmallDamPage/DamSection1/Grid/MC3"]
+layout_mode = 2
+size_flags_vertical = 1
+text = "Effect:
+15% increased click power"
+vertical_alignment = 2
+
+[node name="MC4" type="MarginContainer" parent="VBox/DamSectionHBox/MC2/MC/SmallDamPage/DamSection1/Grid"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/margin_left = 35
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 7
+
+[node name="Button" type="Button" parent="VBox/DamSectionHBox/MC2/MC/SmallDamPage/DamSection1/Grid/MC4"]
+layout_mode = 2
+text = "Build"
+
+[node name="DamSection2" type="Control" parent="VBox/DamSectionHBox/MC2/MC/SmallDamPage"]
+custom_minimum_size = Vector2(0, 190)
+layout_mode = 2
+
+[node name="ColorRect" type="ColorRect" parent="VBox/DamSectionHBox/MC2/MC/SmallDamPage/DamSection2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.494118, 0.494118, 0.494118, 1)
+
+[node name="Grid" type="GridContainer" parent="VBox/DamSectionHBox/MC2/MC/SmallDamPage/DamSection2"]
+custom_minimum_size = Vector2(0, 190)
+layout_mode = 2
+offset_right = 487.0
+offset_bottom = 190.0
+columns = 2
+
+[node name="MC" type="MarginContainer" parent="VBox/DamSectionHBox/MC2/MC/SmallDamPage/DamSection2/Grid"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 7
+
+[node name="Label" type="Label" parent="VBox/DamSectionHBox/MC2/MC/SmallDamPage/DamSection2/Grid/MC"]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 22
+text = "Foundations"
+
+[node name="MC2" type="MarginContainer" parent="VBox/DamSectionHBox/MC2/MC/SmallDamPage/DamSection2/Grid"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/margin_left = 0
+theme_override_constants/margin_top = 7
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 0
+
+[node name="Label" type="Label" parent="VBox/DamSectionHBox/MC2/MC/SmallDamPage/DamSection2/Grid/MC2"]
+layout_mode = 2
+size_flags_vertical = 1
+text = "Cost:
+10k wood
+30m cherry wood"
+horizontal_alignment = 2
+
+[node name="MC3" type="MarginContainer" parent="VBox/DamSectionHBox/MC2/MC/SmallDamPage/DamSection2/Grid"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_bottom = 7
+
+[node name="Label" type="Label" parent="VBox/DamSectionHBox/MC2/MC/SmallDamPage/DamSection2/Grid/MC3"]
+layout_mode = 2
+size_flags_vertical = 1
+text = "Effect:
+15% increased click power"
+vertical_alignment = 2
+
+[node name="MC4" type="MarginContainer" parent="VBox/DamSectionHBox/MC2/MC/SmallDamPage/DamSection2/Grid"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/margin_left = 35
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 7
+
+[node name="Button" type="Button" parent="VBox/DamSectionHBox/MC2/MC/SmallDamPage/DamSection2/Grid/MC4"]
+layout_mode = 2
+text = "Build"
+
+[node name="DamSection3" type="Control" parent="VBox/DamSectionHBox/MC2/MC/SmallDamPage"]
+custom_minimum_size = Vector2(0, 190)
+layout_mode = 2
+
+[node name="ColorRect" type="ColorRect" parent="VBox/DamSectionHBox/MC2/MC/SmallDamPage/DamSection3"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.494118, 0.494118, 0.494118, 1)
+
+[node name="Grid" type="GridContainer" parent="VBox/DamSectionHBox/MC2/MC/SmallDamPage/DamSection3"]
+custom_minimum_size = Vector2(0, 190)
+layout_mode = 2
+offset_right = 487.0
+offset_bottom = 190.0
+columns = 2
+
+[node name="MC" type="MarginContainer" parent="VBox/DamSectionHBox/MC2/MC/SmallDamPage/DamSection3/Grid"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 7
+
+[node name="Label" type="Label" parent="VBox/DamSectionHBox/MC2/MC/SmallDamPage/DamSection3/Grid/MC"]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 22
+text = "Foundations"
+
+[node name="MC2" type="MarginContainer" parent="VBox/DamSectionHBox/MC2/MC/SmallDamPage/DamSection3/Grid"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/margin_left = 0
+theme_override_constants/margin_top = 7
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 0
+
+[node name="Label" type="Label" parent="VBox/DamSectionHBox/MC2/MC/SmallDamPage/DamSection3/Grid/MC2"]
+layout_mode = 2
+size_flags_vertical = 1
+text = "Cost:
+10k wood
+30m cherry wood"
+horizontal_alignment = 2
+
+[node name="MC3" type="MarginContainer" parent="VBox/DamSectionHBox/MC2/MC/SmallDamPage/DamSection3/Grid"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_bottom = 7
+
+[node name="Label" type="Label" parent="VBox/DamSectionHBox/MC2/MC/SmallDamPage/DamSection3/Grid/MC3"]
+layout_mode = 2
+size_flags_vertical = 1
+text = "Effect:
+15% increased click power"
+vertical_alignment = 2
+
+[node name="MC4" type="MarginContainer" parent="VBox/DamSectionHBox/MC2/MC/SmallDamPage/DamSection3/Grid"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/margin_left = 35
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 7
+
+[node name="Button" type="Button" parent="VBox/DamSectionHBox/MC2/MC/SmallDamPage/DamSection3/Grid/MC4"]
+layout_mode = 2
+text = "Build"
+
+[node name="DamSection4" type="Control" parent="VBox/DamSectionHBox/MC2/MC/SmallDamPage"]
+custom_minimum_size = Vector2(0, 190)
+layout_mode = 2
+
+[node name="ColorRect" type="ColorRect" parent="VBox/DamSectionHBox/MC2/MC/SmallDamPage/DamSection4"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.494118, 0.494118, 0.494118, 1)
+
+[node name="Grid" type="GridContainer" parent="VBox/DamSectionHBox/MC2/MC/SmallDamPage/DamSection4"]
+custom_minimum_size = Vector2(0, 190)
+layout_mode = 2
+offset_right = 487.0
+offset_bottom = 190.0
+columns = 2
+
+[node name="MC" type="MarginContainer" parent="VBox/DamSectionHBox/MC2/MC/SmallDamPage/DamSection4/Grid"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 7
+
+[node name="Label" type="Label" parent="VBox/DamSectionHBox/MC2/MC/SmallDamPage/DamSection4/Grid/MC"]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 22
+text = "Foundations"
+
+[node name="MC2" type="MarginContainer" parent="VBox/DamSectionHBox/MC2/MC/SmallDamPage/DamSection4/Grid"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/margin_left = 0
+theme_override_constants/margin_top = 7
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 0
+
+[node name="Label" type="Label" parent="VBox/DamSectionHBox/MC2/MC/SmallDamPage/DamSection4/Grid/MC2"]
+layout_mode = 2
+size_flags_vertical = 1
+text = "Cost:
+10k wood
+30m cherry wood"
+horizontal_alignment = 2
+
+[node name="MC3" type="MarginContainer" parent="VBox/DamSectionHBox/MC2/MC/SmallDamPage/DamSection4/Grid"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_bottom = 7
+
+[node name="Label" type="Label" parent="VBox/DamSectionHBox/MC2/MC/SmallDamPage/DamSection4/Grid/MC3"]
+layout_mode = 2
+size_flags_vertical = 1
+text = "Effect:
+15% increased click power"
+vertical_alignment = 2
+
+[node name="MC4" type="MarginContainer" parent="VBox/DamSectionHBox/MC2/MC/SmallDamPage/DamSection4/Grid"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/margin_left = 35
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 7
+
+[node name="Button" type="Button" parent="VBox/DamSectionHBox/MC2/MC/SmallDamPage/DamSection4/Grid/MC4"]
+layout_mode = 2
+text = "Build"
+
+[node name="MediumDamPageHBox" type="Control" parent="VBox/DamSectionHBox/MC2"]
+layout_mode = 2
+
+[node name="DamSectionButton1" type="Control" parent="VBox/DamSectionHBox/MC2/MediumDamPageHBox"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="DamSectionButton2" type="Control" parent="VBox/DamSectionHBox/MC2/MediumDamPageHBox"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="DamSectionButton3" type="Control" parent="VBox/DamSectionHBox/MC2/MediumDamPageHBox"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="BigDamPageHBox" type="Control" parent="VBox/DamSectionHBox/MC2"]
+layout_mode = 2
+
+[node name="DamSectionButton1" type="Control" parent="VBox/DamSectionHBox/MC2/BigDamPageHBox"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="DamSectionButton2" type="Control" parent="VBox/DamSectionHBox/MC2/BigDamPageHBox"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="DamSectionButton3" type="Control" parent="VBox/DamSectionHBox/MC2/BigDamPageHBox"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="GiantDamPageHBox" type="Control" parent="VBox/DamSectionHBox/MC2"]
+layout_mode = 2
+
+[node name="DamSectionButton1" type="Control" parent="VBox/DamSectionHBox/MC2/GiantDamPageHBox"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="DamSectionButton2" type="Control" parent="VBox/DamSectionHBox/MC2/GiantDamPageHBox"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="DamSectionButton3" type="Control" parent="VBox/DamSectionHBox/MC2/GiantDamPageHBox"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0

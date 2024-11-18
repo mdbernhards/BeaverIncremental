@@ -262,35 +262,45 @@ size_flags_horizontal = 3
 theme_override_constants/margin_left = 5
 theme_override_constants/margin_top = 7
 theme_override_constants/margin_right = 7
-theme_override_constants/margin_bottom = 15
+theme_override_constants/margin_bottom = 0
 
-[node name="HBox" type="HBoxContainer" parent="HBox/MC2/VBox/HBox2/MC2"]
+[node name="VBox" type="VBoxContainer" parent="HBox/MC2/VBox/HBox2/MC2"]
+layout_mode = 2
+
+[node name="HBox" type="HBoxContainer" parent="HBox/MC2/VBox/HBox2/MC2/VBox"]
 layout_mode = 2
 theme_override_constants/separation = 6
 
-[node name="BuyButton" type="Button" parent="HBox/MC2/VBox/HBox2/MC2/HBox"]
+[node name="BuyButton" type="Button" parent="HBox/MC2/VBox/HBox2/MC2/VBox/HBox"]
 custom_minimum_size = Vector2(42, 0)
 layout_mode = 2
 theme_override_font_sizes/font_size = 12
 text = "Buy"
 
-[node name="Buy10xButton" type="Button" parent="HBox/MC2/VBox/HBox2/MC2/HBox"]
+[node name="Buy10xButton" type="Button" parent="HBox/MC2/VBox/HBox2/MC2/VBox/HBox"]
 custom_minimum_size = Vector2(42, 0)
 layout_mode = 2
 theme_override_font_sizes/font_size = 12
 text = "10x"
 
-[node name="Buy100xButton" type="Button" parent="HBox/MC2/VBox/HBox2/MC2/HBox"]
+[node name="Buy100xButton" type="Button" parent="HBox/MC2/VBox/HBox2/MC2/VBox/HBox"]
 custom_minimum_size = Vector2(42, 0)
 layout_mode = 2
 theme_override_font_sizes/font_size = 12
 text = "100x"
 
-[node name="Buy1000xButton" type="Button" parent="HBox/MC2/VBox/HBox2/MC2/HBox"]
+[node name="Buy1000xButton" type="Button" parent="HBox/MC2/VBox/HBox2/MC2/VBox/HBox"]
 custom_minimum_size = Vector2(42, 0)
 layout_mode = 2
 theme_override_font_sizes/font_size = 12
 text = "1000x"
+
+[node name="BotPriceLabel" type="Label" parent="HBox/MC2/VBox/HBox2/MC2/VBox"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 13
+text = "Price: 1,000,000,000,000 gold"
+vertical_alignment = 1
 
 [node name="HBox" type="HBoxContainer" parent="HBox/MC2/VBox"]
 custom_minimum_size = Vector2(0, 50)
@@ -350,7 +360,7 @@ theme_override_constants/margin_bottom = -2
 [node name="SellLabel" type="Label" parent="HBox/MC2/VBox/HBox/MC2/VBox/MC"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 16
-text = "SELLING"
+text = "SELL"
 horizontal_alignment = 1
 
 [node name="MC2" type="MarginContainer" parent="HBox/MC2/VBox/HBox/MC2/VBox"]
@@ -392,7 +402,7 @@ theme_override_constants/margin_bottom = -2
 [node name="GetLabel" type="Label" parent="HBox/MC2/VBox/HBox/MC3/VBox/MC"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 16
-text = "GETTING"
+text = "GET"
 horizontal_alignment = 1
 
 [node name="MC2" type="MarginContainer" parent="HBox/MC2/VBox/HBox/MC3/VBox"]
@@ -409,5 +419,6 @@ text = "128 gold"
 horizontal_alignment = 1
 
 [connection signal="value_changed" from="HBox/VBox/MC/VBox/MC2/SellAmountSlider" to="." method="_on_sell_amount_slider_value_changed"]
-[connection signal="button_down" from="HBox/MC2/VBox/HBox2/MC2/HBox/BuyButton" to="." method="_on_buy_button_button_down"]
+[connection signal="button_down" from="HBox/VBox/MC/VBox/HBox/MC3/SellButton" to="." method="_on_sell_button_button_down"]
+[connection signal="button_down" from="HBox/MC2/VBox/HBox2/MC2/VBox/HBox/BuyButton" to="." method="_on_buy_button_button_down"]
 [connection signal="value_changed" from="HBox/MC2/VBox/HBox/MC/BotEffectivnesSlider" to="." method="_on_bot_effectivnes_slider_value_changed"]
