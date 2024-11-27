@@ -27,7 +27,7 @@ func calculateAllValues():
 				CalculateWoodPerSecondLoss(woodType, upgrades)
 			if upgradeType == "Storage":
 				CalculateWoodStorage(woodType, upgrades)
-				
+
 func CalculateWoodPerClick(woodType, upgrades):
 	var baseWoodClick = 0
 	var woodClickMultiplier = 1
@@ -155,7 +155,7 @@ func SetUpgradeValue(woodType, upgradeId):
 				"3":
 					TempValues[woodType]["WpsPerWc"] += upgradeLevel
 				"4":
-					TempValues[woodType]["ClickBeaverUpgrades"] += upgradeLevel
+					TempValues[woodType]["BeaverUpgrades"] += upgradeLevel
 				"5":
 					print("param3 is 3!") #unlock apple wood
 				"6":
@@ -164,26 +164,26 @@ func SetUpgradeValue(woodType, upgradeId):
 					for i in upgradeLevel:
 						TempValues["Research"]["Time"] *= (1 - 0.004) # 99.6%
 				"8":
-					TempValues[woodType]["storageMultip"] *= maxf(upgradeLevel * 1.06, 1)
+					TempValues[woodType]["WcStorageMultip"] *= maxf(upgradeLevel * 1.06, 1)
 				"9":
 					for i in upgradeLevel:
-						TempValues[woodType]["levelPriceMultip"] *= (1 - 0.003) # 99.7%
+						TempValues[woodType]["LevelPriceMultip"] *= (1 - 0.003) # 99.7%
 				"10":
 					for i in upgradeLevel:
-						TempValues[woodType]["upgradePriceMultip"] *= (1 - 0.015) # 98.5%
+						TempValues[woodType]["UpgradePriceMultip"] *= (1 - 0.015) # 98.5%
 				"11":
 					for i in upgradeLevel:
-						TempValues[woodType]["botPriceMultip"] *= (1 - 0.003) # 99.7%
+						TempValues[woodType]["BotPriceMultip"] *= (1 - 0.003) # 99.7%
 				"12":
-					TempValues[woodType]["storageMultip"] *= maxf(upgradeLevel * 1.0018 * level, 1)
+					TempValues[woodType]["StorageMultip"] *= maxf(upgradeLevel * 1.0018 * level, 1)
 				"13":
 					print("param3 is 3!") #fix: doesn't make sense for the first wood to lower production costs, right?
 				"14":
-					TempValues[woodType]["basePrice"] += upgradeLevel * 0.1
+					TempValues[woodType]["BaseWoodPrice"] += upgradeLevel * 0.1
 				"15":
-					TempValues[woodType]["wpsMultip"] *= maxf(upgradeLevel * 1.02 * level, 1)
+					TempValues[woodType]["WpsMultip"] *= maxf(upgradeLevel * 1.02 * level, 1)
 				"16":
-					TempValues[woodType]["storageMultip"] *= upgradeLevel + 1
+					TempValues[woodType]["StorageMultip"] *= upgradeLevel + 1
 				"17":
 					print("param3 is 3!") #replace this or 11
 				"18":
@@ -197,47 +197,207 @@ func SetUpgradeValue(woodType, upgradeId):
 				"3":
 					TempValues[woodType]["WpsPerWc"] += upgradeLevel * 2
 				"4":
-					TempValues[woodType]["wcStorageMultip"] *= maxf(upgradeLevel * 1.07, 1) #stoped at this one
+					TempValues[woodType]["WcStorageMultip"] *= maxf(upgradeLevel * 1.07, 1)
 				"5":
-					print("param3 is 3!") #unlock apple wood
+					TempValues["Oak"]["BeaverMultip"] *= maxf(upgradeLevel * 1.03, 1)
 				"6":
-					TempValues[woodType]["Beavers"] += upgradeLevel * woodCamps
+					print("param3 is 3!") #unlock Research
 				"7":
-					for i in upgradeLevel:
-						TempValues["Research"]["Time"] *= (1 - 0.004) # 99.6%
+					TempValues[woodType]["BeaverUpgrades"] += upgradeLevel
 				"8":
-					TempValues[woodType]["storageMultip"] *= upgradeLevel * 1.06
+					TempValues[woodType]["StorageMultip"] *= upgradeLevel + 1
 				"9":
 					for i in upgradeLevel:
-						TempValues[woodType]["levelPriceMultip"] *= (1 - 0.003) # 99.7%
+						TempValues[woodType]["WpsCostMultip"] *= (1 - 0.01) # 99%
 				"10":
 					for i in upgradeLevel:
-						TempValues[woodType]["upgradePriceMultip"] *= (1 - 0.015) # 98.5%
+						TempValues["Research"]["Time"] *= (1 - 0.001) # 99.9%
 				"11":
-					for i in upgradeLevel:
-						TempValues[woodType]["botPriceMultip"] *= (1 - 0.003) # 99.7%
+					TempValues[woodType]["BaseWoodPrice"] += upgradeLevel
 				"12":
-					TempValues[woodType]["storageMultip"] *= upgradeLevel * 1.0018 * level
+					pass
+					# TempValues[woodType]["wpsMultip"] *= maxf(upgradeLevel * 1.02 * level, 1) idk about this one need to calculate after? myb after signal after last calc
 				"13":
-					print("param3 is 3!") #fix: doesn't make sense for the first wood to lower production costs, right?
+					for i in upgradeLevel:
+						TempValues[woodType]["LevelPriceMultip"] *= (1 - 0.006) # 99.4%
 				"14":
-					TempValues[woodType]["basePrice"] += upgradeLevel * 0.1
+					TempValues[woodType]["BotBaseSell"] += upgradeLevel * 10
 				"15":
-					TempValues[woodType]["wpsMultip"] *= upgradeLevel * 1.02 * level
+					TempValues["Fish"]["FishingWoodMultip"] *= maxf(upgradeLevel * 1.01, 1)
 				"16":
-					TempValues[woodType]["storageMultip"] *= upgradeLevel + 1
+					TempValues["Dam"]["Multip"] *= maxf(upgradeLevel * 1.0015, 1)
 				"17":
-					print("param3 is 3!") #replace this or 11
+					TempValues["Fish"]["MoreFishMultip"] *= maxf(upgradeLevel * 1.009, 1)
 				"18":
-					TempValues["Fish"]["PriceMultip"] *= upgradeLevel * 1.02
+					TempValues[woodType]["LevelEffectMultip"] *= maxf(upgradeLevel * 1.04, 1)
 		"Maple":
-			print("param3 is 3!")
+			match upgradeId:
+				"1":
+					TempValues[woodType]["Beavers"] += upgradeLevel * 3
+				"2":
+					TempValues[woodType]["BaseStorage"] += upgradeLevel * 30
+				"3":
+					TempValues[woodType]["WpsPerWc"] += upgradeLevel * 3
+				"4":
+					for i in upgradeLevel:
+						TempValues[woodType]["WcPriceMultip"] *= (1 - 0.01) # 99%
+				"5":
+					pass # prob change
+				"6":
+					TempValues[woodType]["WcStorageMultip"] *= maxf(upgradeLevel * 1.075, 1)
+				"7":
+					for i in upgradeLevel:
+						TempValues["Research"]["Cost"] *= (1 - 0.007) # 99.3%
+				"8":
+					TempValues[woodType]["WpsMultip"] *= maxf(upgradeLevel * 1.0015 * level, 1)
+				"9":
+					for i in upgradeLevel:
+						TempValues[woodType]["LevelPriceMultip"] *= (1 - 0.008) # 99.2%
+				"10":
+					TempValues["Global"]["WpsMultip"] *= maxf(upgradeLevel * 1.0005, 1) # 99.3%
+				"11":
+					TempValues[woodType]["BotSellMultip"] *= maxf(upgradeLevel * 1.04, 1)
+				"12":
+					pass # idk about this one cheff
+				"13":
+					for i in upgradeLevel:
+						TempValues["Fish"]["BaitPriceMultip"] *= (1 - 0.04) # 99.4%
+				"14":
+					TempValues[woodType]["WoodPriceMultip"] += upgradeLevel * 1.05
+				"15":
+					pass #i don't think this makes sense
+				"16":
+					TempValues[woodType]["BeaverUpgrades"] += upgradeLevel
+				"17":
+					TempValues[woodType]["FishStorageMultip"] *= maxf(upgradeLevel * 1.07, 1)
+				"18":
+					TempValues["Magic"]["Multip"] *= maxf(upgradeLevel * 1.12, 1)
 		"Birch":
-			print("param3 is not 3!")
+			match upgradeId:
+				"1":
+					TempValues[woodType]["Beavers"] += upgradeLevel * 4
+				"2":
+					TempValues[woodType]["BaseStorage"] += upgradeLevel * 40
+				"3":
+					TempValues[woodType]["WpsPerWc"] += upgradeLevel * 4
+				"4":
+					TempValues[woodType]["StorageMultip"] *= upgradeLevel + 1
+				"5":
+					pass # think about this more with more perspective
+				"6":
+					TempValues[woodType]["WpsMultip"] *= maxf(upgradeLevel * 1.04 * level, 1)
+				"7":
+					TempValues[woodType]["BeaverMultip"] *= maxf(upgradeLevel * 1.07, 1)
+				"8":
+					TempValues["Magic"]["Multip"] *= maxf(upgradeLevel * 1.03, 1)
+				"9":
+					TempValues[woodType]["WpsMultip"] *= maxf(upgradeLevel * 1.013, 1)
+				"10":
+					for i in upgradeLevel:
+						TempValues["Fish"]["BaitPriceMultip"] *= (1 - 0.025) # 97.5%
+				"11":
+					TempValues["Fish"]["FishEffectMultip"] *= maxf(upgradeLevel * 1.0011, 1)
+				"12":
+					TempValues[woodType]["StorageMultip"] *= maxf(upgradeLevel * 1.0017 * level, 1)
+				"13":
+					for i in upgradeLevel:
+						TempValues[woodType]["WpsCostMultip"] *= (1 - 0.035) # 99%
+				"14":
+					TempValues[woodType]["BotBaseSell"] += upgradeLevel * 20
+				"15":
+					pass #i don't think this makes sense
+				"16":
+					TempValues[woodType]["WoodPriceMultip"] += upgradeLevel * 1.04
+				"17":
+					for i in upgradeLevel:
+						TempValues["Dam"]["PriceMultip"] *= (1 - 0.02) # 98%
+				"18":
+					for i in upgradeLevel:
+						TempValues[woodType]["BotPriceMultip"] *= (1 - 0.005) # 99.5%
 		"Spruce":
-			print("param3 is 3!")
+			match upgradeId:
+				"1":
+					TempValues[woodType]["Beavers"] += upgradeLevel * 5
+				"2":
+					TempValues[woodType]["BaseStorage"] += upgradeLevel * 50
+				"3":
+					TempValues[woodType]["WpsPerWc"] += upgradeLevel * 5
+				"4":
+					TempValues[woodType]["BeaverMultip"] *= maxf(upgradeLevel * 1.06 * woodCamps, 1)
+				"5":
+					TempValues[woodType]["WpsMultip"] *= maxf(upgradeLevel * 1.025, 1)
+				"6":
+					for i in upgradeLevel:
+						TempValues["Research"]["Cost"] *= (1 - 0.006) # 99.4%
+				"7":
+					for i in upgradeLevel:
+						TempValues["Global"]["UpgradePriceMultip"] *= (1 - 0.01) # 99%
+				"8":
+					TempValues["Gold"]["GainMultip"] *= maxf(upgradeLevel * 1.03 * level, 1)
+				"9":
+					TempValues[woodType]["BaseWoodPrice"] += upgradeLevel * 10
+				"10":
+					TempValues[woodType]["StorageMultip"] *= maxf(upgradeLevel * 1.02, 1)
+				"11":
+					TempValues[woodType]["WcEffectMultip"] *= maxf(upgradeLevel * 1.01, 1)
+				"12":
+					pass #storage fish
+				"13":
+					TempValues[woodType]["LevelEffectMultip"] *= maxf(upgradeLevel * 1.03, 1)
+				"14":
+					for i in upgradeLevel:
+						TempValues["Fish"]["BaitPriceMultip"] *= (1 - 0.02) # 98%
+				"15":
+					TempValues["Fish"]["LongerFishMultip"] *= maxf(upgradeLevel * 1.0015, 1)
+				"16":
+					TempValues[woodType]["BotBaseSell"] += upgradeLevel * 15
+				"17":
+					TempValues[woodType]["BeaverUpgrades"] += upgradeLevel
+				"18":
+					for i in upgradeLevel:
+						TempValues["Magic"]["PriceMultip"] *= (1 - 0.0033) # 99.67%
 		"Chestnut":
-			print("param3 is not 3!")
+			match upgradeId:
+				"1":
+					TempValues[woodType]["Beavers"] += upgradeLevel * 6
+				"2":
+					TempValues[woodType]["BaseStorage"] += upgradeLevel * 60
+				"3":
+					TempValues[woodType]["WpsPerWc"] += upgradeLevel * 6 # Stopped here
+				"4":
+					TempValues[woodType]["BeaverMultip"] *= maxf(upgradeLevel * 1.06 * woodCamps, 1)
+				"5":
+					TempValues[woodType]["WpsMultip"] *= maxf(upgradeLevel * 1.025, 1)
+				"6":
+					for i in upgradeLevel:
+						TempValues["Research"]["Cost"] *= (1 - 0.006) # 99.4%
+				"7":
+					for i in upgradeLevel:
+						TempValues["Global"]["UpgradePriceMultip"] *= (1 - 0.01) # 99%
+				"8":
+					TempValues["Gold"]["GainMultip"] *= maxf(upgradeLevel * 1.03 * level, 1)
+				"9":
+					TempValues[woodType]["BaseWoodPrice"] += upgradeLevel * 10
+				"10":
+					TempValues[woodType]["StorageMultip"] *= maxf(upgradeLevel * 1.02, 1)
+				"11":
+					TempValues[woodType]["WcEffectMultip"] *= maxf(upgradeLevel * 1.01, 1)
+				"12":
+					pass #storage fish
+				"13":
+					TempValues[woodType]["LevelEffectMultip"] *= maxf(upgradeLevel * 1.03, 1)
+				"14":
+					for i in upgradeLevel:
+						TempValues["Fish"]["BaitPriceMultip"] *= (1 - 0.02) # 98%
+				"15":
+					TempValues["Fish"]["LongerFishMultip"] *= maxf(upgradeLevel * 1.0015, 1)
+				"16":
+					TempValues[woodType]["BotBaseSell"] += upgradeLevel * 15
+				"17":
+					TempValues[woodType]["BeaverUpgrades"] += upgradeLevel
+				"18":
+					for i in upgradeLevel:
+						TempValues["Magic"]["PriceMultip"] *= (1 - 0.0033) # 99.67%
 		"Cherry":
 			print("param3 is 3!")
 		"Ash":
@@ -258,27 +418,55 @@ func SetUpgradeValue(woodType, upgradeId):
 			print("param3 is not 3!")
 
 var TempValues = {
+	"Global" : {
+		"WpsMultip" : 1, # 100%
+		"UpgradePriceMultip" : 1, # 100%
+	},
 	"Fish" : {
 		"PriceMultip" : 1, # 100%
+		"FishingWoodMultip" : 1,
+		"MoreFishMultip" : 1,
+		"LongerFishMultip" : 1,
+		"FishEffectMultip" : 1,
+		"BaitMultip" : 1,
+		"BaitPriceMultip" : 1,
 	},
 	"Research" : {
 		"Time" : 1, # 100%
 		"Cost" : 1, # 100%
 	},
 	"Gold" : {
-		"Beavers" : 1,
+		"GainMultip" : 1,
+	},
+	"Magic" : {
+		"Multip" : 1,
+		"PriceMultip" : 1,
+	},
+	"Dam" : {
+		"Multip" : 1,
+		"PriceMultip" : 1,
 	},
 	"Oak" : {
-		"Beavers" : 1,
-		"BaseStorage" : 25,
+		"Beavers" : 1, # beavers
+		"BeaverUpgrades" : 1,
+		"BeaverMultip" : 1,
+		"BaseStorage" : 25, # storage
+		"StorageMultip" : 1,
+		"WcStorageMultip" : 1,
+		"WcEffectMultip" : 1,
+		"FishStorageMultip" : 1,
+		"WcPriceMultip" : 1, # wps
 		"WpsPerWc": 1,
-		"storageMultip" : 1,
-		"levelPriceMultip" : 1,
-		"upgradePriceMultip" : 1,
-		"botPriceMultip" : 1,
-		"wpsMultip" : 1,
-		"basePrice" : 1,
-		"wcStorageMultip" : 1,
+		"WpsMultip" : 1,
+		"WpsCostMultip" : 1, # Not used for oak?
+		"LevelPriceMultip" : 1, # levels
+		"LevelEffectMultip" : 1,
+		"UpgradePriceMultip" : 1, # upgrades
+		"BotPriceMultip" : 1, # markets
+		"BotBaseSell" : 10, # base value of how mutch a bot sells
+		"BotSellMultip" : 1,
+		"BaseWoodPrice" : 1,
+		"WoodPriceMultip" : 1,
 	},
 	"Apple" : {
 		"Beavers" : 1,
