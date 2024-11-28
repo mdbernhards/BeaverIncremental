@@ -4,233 +4,55 @@ var WoodTypes = ["Oak", "Apple", "Maple", "Birch", "Spruce",
 				 "Chestnut", "Cherry", "Ash", "Cedar", "Mahogany",
 				 "Ebony", "Dogwood", "Rosewood", "Ghost Gum", "Dragonwood",]
 
-var ResourceApplicableUpgrades = {
-	"Oak" : {
-		"PerClick" : {
-			"Oak" : [1, 4],	
-			"Apple" : [3],	
-		},
-		"PerSecondIncrease" : {
-			"Oak" : [6, 7],
-		},
-		"PerSecondLoss" : {
-			"Apple" : [9],
-		},
-		"Storage" : {
-			"Oak" : [2, 3],
-		},
+var ResourceValues = {
+	"Fish" : {
+		"PriceMultip": 1,
+		"FishingWoodMultip" : 1,
+		"MoreFishMultip" : 1,
+		"BetterFishMultip" : 1,
+		"LongerFishMultip" : 1,
+		"FishEffectMultip" : 1,
+		"BaitMultip" : 1,
+		"BaitPriceMultip" : 1,
 	},
-	"Apple" : {
-		"PerClick" : {
-			"Apple" : [1, 7],	
-		},
-		"PerSecondIncrease" : {
-			"Apple" : [4, 8],
-		},
-		"PerSecondLoss" : {
-			"Apple" : false,
-		},
-		"Storage" : {
-			"Apple" : [2, 5],
-		},
-	},
-	"Maple" : {
-		"PerClick" : {
-			"Maple" : false,	
-		},
-		"PerSecondIncrease" : {
-			"Maple" : false,
-		},
-		"PerSecondLoss" : {
-			"Maple" : false,
-		},
-		"Storage" : {
-			"Maple" : false,
-		},
-	},
-	"Birch" : {
-		"PerClick" : {
-			"Birch" : false,	
-		},
-		"PerSecondIncrease" : {
-			"Birch" : false,
-		},
-		"PerSecondLoss" : {
-			"Birch" : false,
-		},
-		"Storage" : {
-			"Birch" : false,
-		},
-	},
-	"Spruce" : {
-		"PerClick" : {
-			"Spruce" : false,	
-		},
-		"PerSecondIncrease" : {
-			"Spruce" : false,
-		},
-		"PerSecondLoss" : {
-			"Spruce" : false,
-		},
-		"Storage" : {
-			"Spruce" : false,
-		},
-	},
-	"Chestnut" : {
-		"PerClick" : {
-			"Chestnut" : false,	
-		},
-		"PerSecondIncrease" : {
-			"Chestnut" : false,
-		},
-		"PerSecondLoss" : {
-			"Chestnut" : false,
-		},
-		"Storage" : {
-			"Chestnut" : false,
-		},
-	},
-	"Cherry" : {
-		"PerClick" : {
-			"Cherry" : false,	
-		},
-		"PerSecondIncrease" : {
-			"Cherry" : false,
-		},
-		"PerSecondLoss" : {
-			"Cherry" : false,
-		},
-		"Storage" : {
-			"Cherry" : false,
-		},
-	},
-	"Ash" : {
-		"PerClick" : {
-			"Ash" : false,	
-		},
-		"PerSecondIncrease" : {
-			"Ash" : false,
-		},
-		"PerSecondLoss" : {
-			"Ash" : false,
-		},
-		"Storage" : {
-			"Ash" : false,
-		},	
-	},
-	"Cedar" : {
-		"PerClick" : {
-			"Cedar" : false,	
-		},
-		"PerSecondIncrease" : {
-			"Cedar" : false,
-		},
-		"PerSecondLoss" : {
-			"Cedar" : false,
-		},
-		"Storage" : {
-			"Cedar" : false,
-		},	
-	},
-	"Mahogany" : {
-		"PerClick" : {
-			"Mahogany" : false,	
-		},
-		"PerSecondIncrease" : {
-			"Mahogany" : false,
-		},
-		"PerSecondLoss" : {
-			"Mahogany" : false,
-		},
-		"Storage" : {
-			"Mahogany" : false,
-		},
-	},
-	"Ebony" : {
-		"PerClick" : {
-			"Ebony" : false,	
-		},
-		"PerSecondIncrease" : {
-			"Ebony" : false,
-		},
-		"PerSecondLoss" : {
-			"Ebony" : false,
-		},
-		"Storage" : {
-			"Ebony" : false,
-		},	
-	},
-	"Dogwood" : {
-		"PerClick" : {
-			"Dogwood" : false,	
-		},
-		"PerSecondIncrease" : {
-			"Dogwood" : false,
-		},
-		"PerSecondLoss" : {
-			"Dogwood" : false,
-		},
-		"Storage" : {
-			"Dogwood" : false,
-		},	
-	},
-	"Rosewood" : {
-		"PerClick" : {
-			"Rosewood" : false,	
-		},
-		"PerSecondIncrease" : {
-			"Rosewood" : false,
-		},
-		"PerSecondLoss" : {
-			"Rosewood" : false,
-		},
-		"Storage" : {
-			"Rosewood" : false,
-		},
-	},
-	"Ghost Gum" : {
-		"PerClick" : {
-			"Ghost Gum" : false,	
-		},
-		"PerSecondIncrease" : {
-			"Ghost Gum" : false,
-		},
-		"PerSecondLoss" : {
-			"Ghost Gum" : false,
-		},
-		"Storage" : {
-			"Ghost Gum" : false,
-		},
-	},
-	"Dragonwood" : {
-		"PerClick" : {
-			"Dragonwood" : false,	
-		},
-		"PerSecondIncrease" : {
-			"Dragonwood" : false,
-		},
-		"PerSecondLoss" : {
-			"Dragonwood" : false,
-		},
-		"Storage" : {
-			"Dragonwood" : false,
-		},
+	"Research" : {
+		"TimeMultip": 1,
+		"CostMultip" : 1,
 	},
 	"Gold" : {
-		"PerSecond": 10,	
+		"PerSecond": 0,
+		"GainMultip": 1,
+		"UpgradeEffectMultip": 1,
+		"UpgradePriceMultip": 1,
+		"Color" : Color(0.87843137979507, 0.76078432798386, 0.40000000596046),
 	},
-}
-
-var ResourceValues = {
+	"Magic" : {
+		"ProductionMultip": 1,
+		"EffectMultip" : 1,
+		"PriceMultip" : 1,
+		"AscendingMultip" : 1,
+	},
+	"Dam" : {
+		"EffectMultip": 1,
+		"PriceMultip" : 1,
+		"GoldGainMultip" : 1,
+		"WoodGainMultip" : 1,
+	},
 	"Oak" : {
 		"PerClick" : 100,
 		"PerSecondIncrease": 0,
 		"PerSecondLoss": 0,
 		"Storage" : 100,
 		"Color" : Color("836a3e"),
+		"SecondaryColor" : Color("836a3e"),
 		"RealPerSecondIncrease": 0,
 		"RealPerSecondLoss": 0,
 		"SoldFor": 0.01,
+		"UpgradePriceMultip": 1,
+		"WcPriceMultip": 1,
+		"LevelPriceMultip": 1,
+		"BotPriceMultip": 1,
+		"BotEffectMultip": 1,
 	},
 	"Apple" : {
 		"PerClick" : 100,
@@ -372,9 +194,4 @@ var ResourceValues = {
 		"RealPerSecondLoss": 0,
 		"SoldFor": 22222,
 	},
-	"Gold" : {
-		"PerSecond": 10,
-		"Color" : Color(0.87843137979507, 0.76078432798386, 0.40000000596046),
-	},
 }
-

@@ -23,5 +23,3 @@ func _on_page_4_button_button_down():
 	
 func setNodePaths():
 	UpgradePage = $UpgradePage
-
-

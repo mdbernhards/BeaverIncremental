@@ -95,4 +95,3 @@ func spawnStatusEffectIcon(type):
 	effectInstance.effectName = type
 	
 	$Grid.add_child(effectInstance)
-

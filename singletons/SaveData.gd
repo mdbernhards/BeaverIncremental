@@ -172,16 +172,36 @@ var Upgrades = {
 		"8" :  {
 			"Level" : 0,
 		},
-		"9" : false,
-		"10" : false,
-		"11" : false,
-		"12" : false,
-		"13" : false,
-		"14" : false,
-		"15" : false,
-		"16" : false,
-		"17" : false,
-		"18" : false,
+		"9" :  {
+			"Level" : 0,
+		},
+		"10" :  {
+			"Level" : 0,
+		},
+		"11" :  {
+			"Level" : 0,
+		},
+		"12" :  {
+			"Level" : 0,
+		},
+		"13" :  {
+			"Level" : 0,
+		},
+		"14" :  {
+			"Level" : 0,
+		},
+		"15" :  {
+			"Level" : 0,
+		},
+		"16" :  {
+			"Level" : 0,
+		},
+		"17" :  {
+			"Level" : 0,
+		},
+		"18" :  {
+			"Level" : 0,
+		},
 	},
 	"Apple" : {
 		"1" : {
@@ -211,295 +231,817 @@ var Upgrades = {
 		"9" :  {
 			"Level" : 0,
 		},
-		"10" : false,
-		"11" : false,
-		"12" : false,
-		"13" : false,
-		"14" : false,
-		"15" : false,
-		"16" : false,
-		"17" : false,
-		"18" : false,
+		"10" :  {
+			"Level" : 0,
+		},
+		"11" :  {
+			"Level" : 0,
+		},
+		"12" :  {
+			"Level" : 0,
+		},
+		"13" :  {
+			"Level" : 0,
+		},
+		"14" :  {
+			"Level" : 0,
+		},
+		"15" :  {
+			"Level" : 0,
+		},
+		"16" :  {
+			"Level" : 0,
+		},
+		"17" :  {
+			"Level" : 0,
+		},
+		"18" :  {
+			"Level" : 0,
+		},
 	},
 	"Maple" : {
-		"1" : false,
-		"2" : false,
-		"3" : false,
-		"4" : false,
-		"5" : false,
-		"6" : false,
-		"7" : false,
-		"8" : false,
-		"9" : false,
-		"10" : false,
-		"11" : false,
-		"12" : false,
-		"13" : false,
-		"14" : false,
-		"15" : false,
-		"16" : false,
-		"17" : false,
-		"18" : false,
+		"1" : {
+			"Level" : 0,
+		},
+		"2" :  {
+			"Level" : 0,
+		},
+		"3" :  {
+			"Level" : 0,
+		},
+		"4" :  {
+			"Level" : 0,
+		},
+		"5" :  {
+			"Level" : 0,
+		},
+		"6" :  {
+			"Level" : 0,
+		},
+		"7" :  {
+			"Level" : 0,
+		},
+		"8" :  {
+			"Level" : 0,
+		},
+		"9" :  {
+			"Level" : 0,
+		},
+		"10" :  {
+			"Level" : 0,
+		},
+		"11" :  {
+			"Level" : 0,
+		},
+		"12" :  {
+			"Level" : 0,
+		},
+		"13" :  {
+			"Level" : 0,
+		},
+		"14" :  {
+			"Level" : 0,
+		},
+		"15" :  {
+			"Level" : 0,
+		},
+		"16" :  {
+			"Level" : 0,
+		},
+		"17" :  {
+			"Level" : 0,
+		},
+		"18" :  {
+			"Level" : 0,
+		},
 	},
 	"Birch" : {
-		"1" : false,
-		"2" : false,
-		"3" : false,
-		"4" : false,
-		"5" : false,
-		"6" : false,
-		"7" : false,
-		"8" : false,
-		"9" : false,
-		"10" : false,
-		"11" : false,
-		"12" : false,
-		"13" : false,
-		"14" : false,
-		"15" : false,
-		"16" : false,
-		"17" : false,
-		"18" : false,
+		"1" : {
+			"Level" : 0,
+		},
+		"2" :  {
+			"Level" : 0,
+		},
+		"3" :  {
+			"Level" : 0,
+		},
+		"4" :  {
+			"Level" : 0,
+		},
+		"5" :  {
+			"Level" : 0,
+		},
+		"6" :  {
+			"Level" : 0,
+		},
+		"7" :  {
+			"Level" : 0,
+		},
+		"8" :  {
+			"Level" : 0,
+		},
+		"9" :  {
+			"Level" : 0,
+		},
+		"10" :  {
+			"Level" : 0,
+		},
+		"11" :  {
+			"Level" : 0,
+		},
+		"12" :  {
+			"Level" : 0,
+		},
+		"13" :  {
+			"Level" : 0,
+		},
+		"14" :  {
+			"Level" : 0,
+		},
+		"15" :  {
+			"Level" : 0,
+		},
+		"16" :  {
+			"Level" : 0,
+		},
+		"17" :  {
+			"Level" : 0,
+		},
+		"18" :  {
+			"Level" : 0,
+		},
 	},
 	"Spruce" : {
-		"1" : false,
-		"2" : false,
-		"3" : false,
-		"4" : false,
-		"5" : false,
-		"6" : false,
-		"7" : false,
-		"8" : false,
-		"9" : false,
-		"10" : false,
-		"11" : false,
-		"12" : false,
-		"13" : false,
-		"14" : false,
-		"15" : false,
-		"16" : false,
-		"17" : false,
-		"18" : false,
+		"1" : {
+			"Level" : 0,
+		},
+		"2" :  {
+			"Level" : 0,
+		},
+		"3" :  {
+			"Level" : 0,
+		},
+		"4" :  {
+			"Level" : 0,
+		},
+		"5" :  {
+			"Level" : 0,
+		},
+		"6" :  {
+			"Level" : 0,
+		},
+		"7" :  {
+			"Level" : 0,
+		},
+		"8" :  {
+			"Level" : 0,
+		},
+		"9" :  {
+			"Level" : 0,
+		},
+		"10" :  {
+			"Level" : 0,
+		},
+		"11" :  {
+			"Level" : 0,
+		},
+		"12" :  {
+			"Level" : 0,
+		},
+		"13" :  {
+			"Level" : 0,
+		},
+		"14" :  {
+			"Level" : 0,
+		},
+		"15" :  {
+			"Level" : 0,
+		},
+		"16" :  {
+			"Level" : 0,
+		},
+		"17" :  {
+			"Level" : 0,
+		},
+		"18" :  {
+			"Level" : 0,
+		},
 	},
 	"Chestnut" : {
-		"1" : false,
-		"2" : false,
-		"3" : false,
-		"4" : false,
-		"5" : false,
-		"6" : false,
-		"7" : false,
-		"8" : false,
-		"9" : false,
-		"10" : false,
-		"11" : false,
-		"12" : false,
-		"13" : false,
-		"14" : false,
-		"15" : false,
-		"16" : false,
-		"17" : false,
-		"18" : false,
+		"1" : {
+			"Level" : 0,
+		},
+		"2" :  {
+			"Level" : 0,
+		},
+		"3" :  {
+			"Level" : 0,
+		},
+		"4" :  {
+			"Level" : 0,
+		},
+		"5" :  {
+			"Level" : 0,
+		},
+		"6" :  {
+			"Level" : 0,
+		},
+		"7" :  {
+			"Level" : 0,
+		},
+		"8" :  {
+			"Level" : 0,
+		},
+		"9" :  {
+			"Level" : 0,
+		},
+		"10" :  {
+			"Level" : 0,
+		},
+		"11" :  {
+			"Level" : 0,
+		},
+		"12" :  {
+			"Level" : 0,
+		},
+		"13" :  {
+			"Level" : 0,
+		},
+		"14" :  {
+			"Level" : 0,
+		},
+		"15" :  {
+			"Level" : 0,
+		},
+		"16" :  {
+			"Level" : 0,
+		},
+		"17" :  {
+			"Level" : 0,
+		},
+		"18" :  {
+			"Level" : 0,
+		},
 	},
 	"Cherry" : {
-		"1" : false,
-		"2" : false,
-		"3" : false,
-		"4" : false,
-		"5" : false,
-		"6" : false,
-		"7" : false,
-		"8" : false,
-		"9" : false,
-		"10" : false,
-		"11" : false,
-		"12" : false,
-		"13" : false,
-		"14" : false,
-		"15" : false,
-		"16" : false,
-		"17" : false,
-		"18" : false,
+		"1" : {
+			"Level" : 0,
+		},
+		"2" :  {
+			"Level" : 0,
+		},
+		"3" :  {
+			"Level" : 0,
+		},
+		"4" :  {
+			"Level" : 0,
+		},
+		"5" :  {
+			"Level" : 0,
+		},
+		"6" :  {
+			"Level" : 0,
+		},
+		"7" :  {
+			"Level" : 0,
+		},
+		"8" :  {
+			"Level" : 0,
+		},
+		"9" :  {
+			"Level" : 0,
+		},
+		"10" :  {
+			"Level" : 0,
+		},
+		"11" :  {
+			"Level" : 0,
+		},
+		"12" :  {
+			"Level" : 0,
+		},
+		"13" :  {
+			"Level" : 0,
+		},
+		"14" :  {
+			"Level" : 0,
+		},
+		"15" :  {
+			"Level" : 0,
+		},
+		"16" :  {
+			"Level" : 0,
+		},
+		"17" :  {
+			"Level" : 0,
+		},
+		"18" :  {
+			"Level" : 0,
+		},
 	},
 	"Ash" : {
-		"1" : false,
-		"2" : false,
-		"3" : false,
-		"4" : false,
-		"5" : false,
-		"6" : false,
-		"7" : false,
-		"8" : false,
-		"9" : false,
-		"10" : false,
-		"11" : false,
-		"12" : false,
-		"13" : false,
-		"14" : false,
-		"15" : false,
-		"16" : false,
-		"17" : false,
-		"18" : false,
+		"1" : {
+			"Level" : 0,
+		},
+		"2" :  {
+			"Level" : 0,
+		},
+		"3" :  {
+			"Level" : 0,
+		},
+		"4" :  {
+			"Level" : 0,
+		},
+		"5" :  {
+			"Level" : 0,
+		},
+		"6" :  {
+			"Level" : 0,
+		},
+		"7" :  {
+			"Level" : 0,
+		},
+		"8" :  {
+			"Level" : 0,
+		},
+		"9" :  {
+			"Level" : 0,
+		},
+		"10" :  {
+			"Level" : 0,
+		},
+		"11" :  {
+			"Level" : 0,
+		},
+		"12" :  {
+			"Level" : 0,
+		},
+		"13" :  {
+			"Level" : 0,
+		},
+		"14" :  {
+			"Level" : 0,
+		},
+		"15" :  {
+			"Level" : 0,
+		},
+		"16" :  {
+			"Level" : 0,
+		},
+		"17" :  {
+			"Level" : 0,
+		},
+		"18" :  {
+			"Level" : 0,
+		},
 	},
 	"Cedar" : {
-		"1" : false,
-		"2" : false,
-		"3" : false,
-		"4" : false,
-		"5" : false,
-		"6" : false,
-		"7" : false,
-		"8" : false,
-		"9" : false,
-		"10" : false,
-		"11" : false,
-		"12" : false,
-		"13" : false,
-		"14" : false,
-		"15" : false,
-		"16" : false,
-		"17" : false,
-		"18" : false,
+		"1" : {
+			"Level" : 0,
+		},
+		"2" :  {
+			"Level" : 0,
+		},
+		"3" :  {
+			"Level" : 0,
+		},
+		"4" :  {
+			"Level" : 0,
+		},
+		"5" :  {
+			"Level" : 0,
+		},
+		"6" :  {
+			"Level" : 0,
+		},
+		"7" :  {
+			"Level" : 0,
+		},
+		"8" :  {
+			"Level" : 0,
+		},
+		"9" :  {
+			"Level" : 0,
+		},
+		"10" :  {
+			"Level" : 0,
+		},
+		"11" :  {
+			"Level" : 0,
+		},
+		"12" :  {
+			"Level" : 0,
+		},
+		"13" :  {
+			"Level" : 0,
+		},
+		"14" :  {
+			"Level" : 0,
+		},
+		"15" :  {
+			"Level" : 0,
+		},
+		"16" :  {
+			"Level" : 0,
+		},
+		"17" :  {
+			"Level" : 0,
+		},
+		"18" :  {
+			"Level" : 0,
+		},
 	},
 	"Mahogany" : {
-		"1" : false,
-		"2" : false,
-		"3" : false,
-		"4" : false,
-		"5" : false,
-		"6" : false,
-		"7" : false,
-		"8" : false,
-		"9" : false,
-		"10" : false,
-		"11" : false,
-		"12" : false,
-		"13" : false,
-		"14" : false,
-		"15" : false,
-		"16" : false,
-		"17" : false,
-		"18" : false,
+		"1" : {
+			"Level" : 0,
+		},
+		"2" :  {
+			"Level" : 0,
+		},
+		"3" :  {
+			"Level" : 0,
+		},
+		"4" :  {
+			"Level" : 0,
+		},
+		"5" :  {
+			"Level" : 0,
+		},
+		"6" :  {
+			"Level" : 0,
+		},
+		"7" :  {
+			"Level" : 0,
+		},
+		"8" :  {
+			"Level" : 0,
+		},
+		"9" :  {
+			"Level" : 0,
+		},
+		"10" :  {
+			"Level" : 0,
+		},
+		"11" :  {
+			"Level" : 0,
+		},
+		"12" :  {
+			"Level" : 0,
+		},
+		"13" :  {
+			"Level" : 0,
+		},
+		"14" :  {
+			"Level" : 0,
+		},
+		"15" :  {
+			"Level" : 0,
+		},
+		"16" :  {
+			"Level" : 0,
+		},
+		"17" :  {
+			"Level" : 0,
+		},
+		"18" :  {
+			"Level" : 0,
+		},
 	},
 	"Ebony" : {
-		"1" : false,
-		"2" : false,
-		"3" : false,
-		"4" : false,
-		"5" : false,
-		"6" : false,
-		"7" : false,
-		"8" : false,
-		"9" : false,
-		"10" : false,
-		"11" : false,
-		"12" : false,
-		"13" : false,
-		"14" : false,
-		"15" : false,
-		"16" : false,
-		"17" : false,
-		"18" : false,
+		"1" : {
+			"Level" : 0,
+		},
+		"2" :  {
+			"Level" : 0,
+		},
+		"3" :  {
+			"Level" : 0,
+		},
+		"4" :  {
+			"Level" : 0,
+		},
+		"5" :  {
+			"Level" : 0,
+		},
+		"6" :  {
+			"Level" : 0,
+		},
+		"7" :  {
+			"Level" : 0,
+		},
+		"8" :  {
+			"Level" : 0,
+		},
+		"9" :  {
+			"Level" : 0,
+		},
+		"10" :  {
+			"Level" : 0,
+		},
+		"11" :  {
+			"Level" : 0,
+		},
+		"12" :  {
+			"Level" : 0,
+		},
+		"13" :  {
+			"Level" : 0,
+		},
+		"14" :  {
+			"Level" : 0,
+		},
+		"15" :  {
+			"Level" : 0,
+		},
+		"16" :  {
+			"Level" : 0,
+		},
+		"17" :  {
+			"Level" : 0,
+		},
+		"18" :  {
+			"Level" : 0,
+		},
 	},
 	"Dogwood" : {
-		"1" : false,
-		"2" : false,
-		"3" : false,
-		"4" : false,
-		"5" : false,
-		"6" : false,
-		"7" : false,
-		"8" : false,
-		"9" : false,
-		"10" : false,
-		"11" : false,
-		"12" : false,
-		"13" : false,
-		"14" : false,
-		"15" : false,
-		"16" : false,
-		"17" : false,
-		"18" : false,
+		"1" : {
+			"Level" : 0,
+		},
+		"2" :  {
+			"Level" : 0,
+		},
+		"3" :  {
+			"Level" : 0,
+		},
+		"4" :  {
+			"Level" : 0,
+		},
+		"5" :  {
+			"Level" : 0,
+		},
+		"6" :  {
+			"Level" : 0,
+		},
+		"7" :  {
+			"Level" : 0,
+		},
+		"8" :  {
+			"Level" : 0,
+		},
+		"9" :  {
+			"Level" : 0,
+		},
+		"10" :  {
+			"Level" : 0,
+		},
+		"11" :  {
+			"Level" : 0,
+		},
+		"12" :  {
+			"Level" : 0,
+		},
+		"13" :  {
+			"Level" : 0,
+		},
+		"14" :  {
+			"Level" : 0,
+		},
+		"15" :  {
+			"Level" : 0,
+		},
+		"16" :  {
+			"Level" : 0,
+		},
+		"17" :  {
+			"Level" : 0,
+		},
+		"18" :  {
+			"Level" : 0,
+		},
 	},
 	"Rosewood" : {
-		"1" : false,
-		"2" : false,
-		"3" : false,
-		"4" : false,
-		"5" : false,
-		"6" : false,
-		"7" : false,
-		"8" : false,
-		"9" : false,
-		"10" : false,
-		"11" : false,
-		"12" : false,
-		"13" : false,
-		"14" : false,
-		"15" : false,
-		"16" : false,
-		"17" : false,
-		"18" : false,
+		"1" : {
+			"Level" : 0,
+		},
+		"2" :  {
+			"Level" : 0,
+		},
+		"3" :  {
+			"Level" : 0,
+		},
+		"4" :  {
+			"Level" : 0,
+		},
+		"5" :  {
+			"Level" : 0,
+		},
+		"6" :  {
+			"Level" : 0,
+		},
+		"7" :  {
+			"Level" : 0,
+		},
+		"8" :  {
+			"Level" : 0,
+		},
+		"9" :  {
+			"Level" : 0,
+		},
+		"10" :  {
+			"Level" : 0,
+		},
+		"11" :  {
+			"Level" : 0,
+		},
+		"12" :  {
+			"Level" : 0,
+		},
+		"13" :  {
+			"Level" : 0,
+		},
+		"14" :  {
+			"Level" : 0,
+		},
+		"15" :  {
+			"Level" : 0,
+		},
+		"16" :  {
+			"Level" : 0,
+		},
+		"17" :  {
+			"Level" : 0,
+		},
+		"18" :  {
+			"Level" : 0,
+		},
 	},
 	"Ghost Gum" : {
-		"1" : false,
-		"2" : false,
-		"3" : false,
-		"4" : false,
-		"5" : false,
-		"6" : false,
-		"7" : false,
-		"8" : false,
-		"9" : false,
-		"10" : false,
-		"11" : false,
-		"12" : false,
-		"13" : false,
-		"14" : false,
-		"15" : false,
-		"16" : false,
-		"17" : false,
-		"18" : false,
+		"1" : {
+			"Level" : 0,
+		},
+		"2" :  {
+			"Level" : 0,
+		},
+		"3" :  {
+			"Level" : 0,
+		},
+		"4" :  {
+			"Level" : 0,
+		},
+		"5" :  {
+			"Level" : 0,
+		},
+		"6" :  {
+			"Level" : 0,
+		},
+		"7" :  {
+			"Level" : 0,
+		},
+		"8" :  {
+			"Level" : 0,
+		},
+		"9" :  {
+			"Level" : 0,
+		},
+		"10" :  {
+			"Level" : 0,
+		},
+		"11" :  {
+			"Level" : 0,
+		},
+		"12" :  {
+			"Level" : 0,
+		},
+		"13" :  {
+			"Level" : 0,
+		},
+		"14" :  {
+			"Level" : 0,
+		},
+		"15" :  {
+			"Level" : 0,
+		},
+		"16" :  {
+			"Level" : 0,
+		},
+		"17" :  {
+			"Level" : 0,
+		},
+		"18" :  {
+			"Level" : 0,
+		},
 	},
 	"Dragonwood" : {
-		"1" : false,
-		"2" : false,
-		"3" : false,
-		"4" : false,
-		"5" : false,
-		"6" : false,
-		"7" : false,
-		"8" : false,
-		"9" : false,
-		"10" : false,
-		"11" : false,
-		"12" : false,
-		"13" : false,
-		"14" : false,
-		"15" : false,
-		"16" : false,
-		"17" : false,
-		"18" : false,
+		"1" : {
+			"Level" : 0,
+		},
+		"2" :  {
+			"Level" : 0,
+		},
+		"3" :  {
+			"Level" : 0,
+		},
+		"4" :  {
+			"Level" : 0,
+		},
+		"5" :  {
+			"Level" : 0,
+		},
+		"6" :  {
+			"Level" : 0,
+		},
+		"7" :  {
+			"Level" : 0,
+		},
+		"8" :  {
+			"Level" : 0,
+		},
+		"9" :  {
+			"Level" : 0,
+		},
+		"10" :  {
+			"Level" : 0,
+		},
+		"11" :  {
+			"Level" : 0,
+		},
+		"12" :  {
+			"Level" : 0,
+		},
+		"13" :  {
+			"Level" : 0,
+		},
+		"14" :  {
+			"Level" : 0,
+		},
+		"15" :  {
+			"Level" : 0,
+		},
+		"16" :  {
+			"Level" : 0,
+		},
+		"17" :  {
+			"Level" : 0,
+		},
+		"18" :  {
+			"Level" : 0,
+		},
 	},
 	"Gold" : {
-		"1" : false,
-		"2" : false,
-		"3" : false,
-		"4" : false,
-		"5" : false,
-		"6" : false,
-		"7" : false,
-		"8" : false,
-		"9" : false,
-		"10" : false,
-		"11" : false,
-		"12" : false,
-		"13" : false,
-		"14" : false,
-		"15" : false,
-		"16" : false,
-		"17" : false,
-		"18" : false,
+		"1" : {
+			"Level" : 0,
+		},
+		"2" :  {
+			"Level" : 0,
+		},
+		"3" :  {
+			"Level" : 0,
+		},
+		"4" :  {
+			"Level" : 0,
+		},
+		"5" :  {
+			"Level" : 0,
+		},
+		"6" :  {
+			"Level" : 0,
+		},
+		"7" :  {
+			"Level" : 0,
+		},
+		"8" :  {
+			"Level" : 0,
+		},
+		"9" :  {
+			"Level" : 0,
+		},
+		"10" :  {
+			"Level" : 0,
+		},
+		"11" :  {
+			"Level" : 0,
+		},
+		"12" :  {
+			"Level" : 0,
+		},
+		"13" :  {
+			"Level" : 0,
+		},
+		"14" :  {
+			"Level" : 0,
+		},
+		"15" :  {
+			"Level" : 0,
+		},
+		"16" :  {
+			"Level" : 0,
+		},
+		"17" :  {
+			"Level" : 0,
+		},
+		"18" :  {
+			"Level" : 0,
+		},
 	},
 }
 
@@ -511,6 +1053,71 @@ var UnlockedResearch = {
 	"5" : false,
 	"6" : false,
 	"7" : false,
+	"8" : false,
+	"9" : false,
+	"10" : false,
+	"11" : false,
+	"12" : false,
+	"13" : false,
+	"14" : false,
+	"15" : false,
+	"16" : false,
+	"17" : false,
+	"18" : false,
+	"19" : false,
+	"20" : false,
+	"21" : false,
+	"22" : false,
+	"23" : false,
+	"24" : false,
+	"25" : false,
+	"26" : false,
+	"27" : false,
+	"28" : false,
+	"29" : false,
+	"30" : false,
+	"31" : false,
+	"32" : false,
+	"33" : false,
+	"34" : false,
+	"35" : false,
+	"36" : false,
+	"37" : false,
+	"38" : false,
+	"39" : false,
+	"40" : false,
+	"41" : false,
+	"42" : false,
+	"43" : false,
+	"44" : false,
+	"45" : false,
+	"46" : false,
+	"47" : false,
+	"48" : false,
+	"49" : false,
+	"50" : false,
+	"51" : false,
+	"52" : false,
+	"53" : false,
+	"54" : false,
+	"55" : false,
+	"56" : false,
+	"57" : false,
+	"58" : false,
+	"59" : false,
+	"60" : false,
+	"61" : false,
+	"62" : false,
+	"63" : false,
+	"64" : false,
+	"65" : false,
+	"65b" : false,
+	"66" : false,
+	"67" : false,
+	"68" : false,
+	"69" : false,
+	"70" : false,
+	"71" : false,
 }
 
 var UnlockedMagicUpgrades = {
