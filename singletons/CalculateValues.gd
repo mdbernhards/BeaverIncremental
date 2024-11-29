@@ -34,7 +34,7 @@ func CalculateRealValues():
 		
 		ResourceValues[woodType]["PerClick"] = (TempValues[woodType]["Beavers"] + (TempValues["Global"]["AddLevelToBaseWoodClick"] * level)) * TempValues[woodType]["BeaverUpgrades"] * TempValues[woodType]["BeaverMultip"] * TempValues["Global"]["BeaverMultip"] * levelEffect
 		ResourceValues[woodType]["PerSecondIncrease"] = pow(woodCamps * TempValues[woodType]["WpsPerWc"] * TempValues[woodType]["WpsMultip"] * TempValues["Global"]["WpsMultip"] * TempValues[woodType]["WcEffectMultip"], TempValues["Global"]["WpsPow"]) * levelEffect
-		ResourceValues[woodType]["Storage"] = TempValues[woodType]["BaseStorage"] * TempValues[woodType]["StorageMultip"] * TempValues["Global"]["StorageMultip"] + TempValues[woodType]["WcBaseStorage"] * TempValues[woodType]["WcStorageMultip"] * TempValues["Global"]["WcStorageMultip"] * TempValues[woodType]["WcEffectMultip"] * levelEffect
+		ResourceValues[woodType]["Storage"] = TempValues[woodType]["BaseStorage"] * TempValues[woodType]["StorageMultip"] * TempValues["Global"]["StorageMultip"] + woodCamps * TempValues[woodType]["WcBaseStorage"] * TempValues[woodType]["WcStorageMultip"] * TempValues["Global"]["WcStorageMultip"] * TempValues[woodType]["WcEffectMultip"] * levelEffect
 		ResourceValues[woodType]["SoldFor"] = (TempValues[woodType]["BaseWoodPrice"] + TempValues[woodType]["BotBaseSell"]) * TempValues[woodType]["BotSellMultip"] * TempValues[woodType]["WoodPriceMultip"] * TempValues["Global"]["WoodPriceMultip"] * levelEffect # Fix this
 		ResourceValues[woodType]["UpgradePriceMultip"] = TempValues["Global"]["UpgradePriceMultip"] * TempValues[woodType]["UpgradePriceMultip"] / levelEffect
 		ResourceValues[woodType]["WcPriceMultip"] = TempValues["Global"]["WcPriceMultip"] * TempValues[woodType]["WcPriceMultip"] / levelEffect
@@ -328,7 +328,7 @@ func SetUpgradeValue(woodType, upgradeId):
 				"1":
 					TempValues[woodType]["Beavers"] += upgradeLevel
 				"2":
-					TempValues[woodType]["BaseStorage"] += upgradeLevel * 10
+					TempValues[woodType]["BaseStorage"] += upgradeLevel * 100
 				"3":
 					TempValues[woodType]["WpsPerWc"] += upgradeLevel
 				"4":
@@ -994,7 +994,7 @@ var OriginalTempValues = {
 		"BeaverMultip" : 1,
 		"BaseStorage" : 25, # storage
 		"StorageMultip" : 1,
-		"WcBaseStorage" : 100, # 100%
+		"WcBaseStorage" : 99, # 100%
 		"WcStorageMultip" : 1,
 		"WcEffectMultip" : 1,
 		"WcPriceMultip" : 1, # wps

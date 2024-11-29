@@ -8,12 +8,12 @@ var Upgrades = {
 			"OtherText" : "",
 		},
 		"2" :  {
-			"Name" : "Oak storage +10",
+			"Name" : "Oak storage +100",
 			"Description" : "Increases Oak wood storage capacity by 10",
 			"OtherText" : "",
 		},
 		"3" :  {
-			"Name" : "Wps per woodcamp +1",
+			"Name" : "WPS per WC +1",
 			"Description" : "Doubles storage capacity",
 			"OtherText" : "",
 		},
@@ -28,7 +28,7 @@ var Upgrades = {
 			"OtherText" : "",
 		},
 		"6" :  {
-			"Name" : "Increase WPS based on WPC",
+			"Name" : "WPS based on WPC",
 			"Description" : "",
 			"OtherText" : "",
 		},
@@ -38,7 +38,7 @@ var Upgrades = {
 			"OtherText" : "",
 		},
 		"8" :  {
-			"Name" : "6% storage from woodcamps",
+			"Name" : "6% storage from WC",
 			"Description" : "",
 			"OtherText" : "",
 		},
@@ -58,12 +58,12 @@ var Upgrades = {
 			"OtherText" : "",
 		},
 		"12" :  {
-			"Name" : "Per level give storage 0.18%",
+			"Name" : "Per level +storage 0.18%",
 			"Description" : "",
 			"OtherText" : "",
 		},
 		"13" :  {
-			"Name" : "Cheaper on amount of achiv",
+			"Name" : "Cheaper per achiv",
 			"Description" : "",
 			"OtherText" : "",
 		},
@@ -73,7 +73,7 @@ var Upgrades = {
 			"OtherText" : "",
 		},
 		"15" :  {
-			"Name" : "Wood per click 2% increase per level",
+			"Name" : "WPC 2% per level",
 			"Description" : "",
 			"OtherText" : "",
 		},
@@ -88,7 +88,7 @@ var Upgrades = {
 			"OtherText" : "",
 		},
 		"18" :  {
-			"Name" : "Fish sell for more 2%",
+			"Name" : "Fish price 2%",
 			"Description" : "",
 			"OtherText" : "",
 		},
@@ -105,17 +105,17 @@ var Upgrades = {
 			"OtherText" : "",
 		},
 		"3" :  {
-			"Name" : "wps per woodcamp +2",
+			"Name" : "WPS per WC +2",
 			"Description" : "",
 			"OtherText" : "",
 		},
 		"4" :  {
-			"Name" : "7% storage from woodcamps",
+			"Name" : "7% storage from WCs",
 			"Description" : "",
 			"OtherText" : "",
 		},
 		"5" :  {
-			"Name" : "Increase Oak per click 3%",
+			"Name" : "WPS 3%",
 			"Description" : "",
 			"OtherText" : "",
 		},
@@ -135,12 +135,12 @@ var Upgrades = {
 			"OtherText" : "",
 		},
 		"9" :  {
-			"Name" : "lower wood production costs 1%",
+			"Name" : "use 1% less wood",
 			"Description" : "",
 			"OtherText" : "",
 		},
 		"10" :  {
-			"Name" : "faster research 0.1%",
+			"Name" : "Faster research 0.1%",
 			"Description" : "",
 			"OtherText" : "",
 		},
@@ -150,7 +150,7 @@ var Upgrades = {
 			"OtherText" : "",
 		},
 		"12" :  {
-			"Name" : "add 2% of lower wood production",
+			"Name" : "2% of lower WPS",
 			"Description" : "",
 			"OtherText" : "",
 		},
@@ -160,7 +160,7 @@ var Upgrades = {
 			"OtherText" : "",
 		},
 		"14" :  {
-			"Name" : "bots sell 10 more wood",
+			"Name" : "bots sell +10 wood",
 			"Description" : "",
 			"OtherText" : "",
 		},
@@ -175,12 +175,12 @@ var Upgrades = {
 			"OtherText" : "",
 		},
 		"17" :  {
-			"Name" : "more fish appear 0.9%",
+			"Name" : "more fish 0.9%",
 			"Description" : "",
 			"OtherText" : "",
 		},
 		"18" :  {
-			"Name" : "levels effects 4%",
+			"Name" : "level effects 4%",
 			"Description" : "",
 			"OtherText" : "",
 		},
@@ -197,22 +197,22 @@ var Upgrades = {
 			"OtherText" : "",
 		},
 		"3" :  {
-			"Name" : "wps per woodcamp +3",
+			"Name" : "wps per WC +3",
 			"Description" : "",
 			"OtherText" : "",
 		},
 		"4" :  {
-			"Name" : "cheaper woodcamps 1%",
+			"Name" : "cheaper WC 1%",
 			"Description" : "",
 			"OtherText" : "",
 		},
 		"5" :  {
-			"Name" : "wood per click add 1% wps",
+			"Name" : "WPC add 1% wps",
 			"Description" : "",
 			"OtherText" : "",
 		},
 		"6" :  {
-			"Name" : "7.5% storage from woodcamps",
+			"Name" : "7.5% storage from WC",
 			"Description" : "Unlocks Research",
 			"OtherText" : "",
 		},
@@ -242,7 +242,7 @@ var Upgrades = {
 			"OtherText" : "",
 		},
 		"12" :  {
-			"Name" : "add 1.1% of wpc to wps",
+			"Name" : "1.1% of wpc to wps",
 			"Description" : "",
 			"OtherText" : "",
 		},
@@ -289,7 +289,7 @@ var Upgrades = {
 			"OtherText" : "",
 		},
 		"3" :  {
-			"Name" : "wps per woodcamp +4",
+			"Name" : "wps per WC +4",
 			"Description" : "",
 			"OtherText" : "",
 		},
@@ -299,7 +299,7 @@ var Upgrades = {
 			"OtherText" : "",
 		},
 		"5" :  {
-			"Name" : "wpc from research 1%",
+			"Name" : "WPC from research 1%",
 			"Description" : "",
 			"OtherText" : "",
 		},
@@ -309,17 +309,17 @@ var Upgrades = {
 			"OtherText" : "",
 		},
 		"7" :  {
-			"Name" : "4% more wood per click",
+			"Name" : "4% more WPC",
 			"Description" : "",
 			"OtherText" : "",
 		},
 		"8" :  {
-			"Name" : "ascending gain more magic 3%",
+			"Name" : "ascending more magic 3%",
 			"Description" : "",
 			"OtherText" : "",
 		},
 		"9" :  {
-			"Name" : "wps 1.3%",
+			"Name" : "WPS 1.3%",
 			"Description" : "",
 			"OtherText" : "",
 		},
@@ -334,17 +334,17 @@ var Upgrades = {
 			"OtherText" : "",
 		},
 		"12" :  {
-			"Name" : "per level give storage 0.17%",
+			"Name" : "+0.17% storage per level ",
 			"Description" : "",
 			"OtherText" : "",
 		},
 		"13" :  {
-			"Name" : "lower wood production costs 3.5%",
+			"Name" : "lower production cost 3.5%",
 			"Description" : "",
 			"OtherText" : "",
 		},
 		"14" :  {
-			"Name" : "bots sell 20 more wood",
+			"Name" : "bots sell +20 wood",
 			"Description" : "",
 			"OtherText" : "",
 		},
@@ -364,7 +364,7 @@ var Upgrades = {
 			"OtherText" : "",
 		},
 		"18" :  {
-			"Name" : "bots sell better price 0.5%",
+			"Name" : "wood price 0.5%",
 			"Description" : "",
 			"OtherText" : "",
 		},
@@ -381,12 +381,12 @@ var Upgrades = {
 			"OtherText" : "",
 		},
 		"3" :  {
-			"Name" : "wps per woodcamp +5",
+			"Name" : "wps per WC +5",
 			"Description" : "",
 			"OtherText" : "",
 		},
 		"4" :  {
-			"Name" : "woodcamps increase wpc 6%",
+			"Name" : "WC increase wpc 6%",
 			"Description" : "",
 			"OtherText" : "",
 		},
@@ -421,7 +421,7 @@ var Upgrades = {
 			"OtherText" : "",
 		},
 		"11" :  {
-			"Name" : "all woodcamps effects 1%",
+			"Name" : "all WC effects 1%",
 			"Description" : "",
 			"OtherText" : "",
 		},
@@ -473,7 +473,7 @@ var Upgrades = {
 			"OtherText" : "",
 		},
 		"3" :  {
-			"Name" : "wps per woodcamp +6",
+			"Name" : "wps per WC +6",
 			"Description" : "",
 			"OtherText" : "",
 		},
@@ -483,17 +483,17 @@ var Upgrades = {
 			"OtherText" : "",
 		},
 		"5" :  {
-			"Name" : "level wps 2%",
+			"Name" : "level WPS 2%",
 			"Description" : "",
 			"OtherText" : "",
 		},
 		"6" :  {
-			"Name" : "fish types increase magic gain",
+			"Name" : "fish add magic gain",
 			"Description" : "Unlocks Research",
 			"OtherText" : "",
 		},
 		"7" :  {
-			"Name" : "all woodcamps effects 2%",
+			"Name" : "all WC effects 2%",
 			"Description" : "",
 			"OtherText" : "",
 		},
@@ -523,7 +523,7 @@ var Upgrades = {
 			"OtherText" : "",
 		},
 		"13" :  {
-			"Name" : "all woodcamps effects 1.5%",
+			"Name" : "all WC effects 1.5%",
 			"Description" : "",
 			"OtherText" : "",
 		},
@@ -533,7 +533,7 @@ var Upgrades = {
 			"OtherText" : "",
 		},
 		"15" :  {
-			"Name" : "1% of this storage added to lower tier storage",
+			"Name" : "1% storage to lower tiers",
 			"Description" : "",
 			"OtherText" : "",
 		},
@@ -543,12 +543,12 @@ var Upgrades = {
 			"OtherText" : "",
 		},
 		"17" :  {
-			"Name" : "woodcamps increase wpc 4.5%",
+			"Name" : "WC increase wpc 4.5%",
 			"Description" : "",
 			"OtherText" : "",
 		},
 		"18" :  {
-			"Name" : "wps 1.9%",
+			"Name" : "WPS 1.9%",
 			"Description" : "",
 			"OtherText" : "",
 		},
