@@ -17,16 +17,6 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-GameValues="*res://singletons/V1/GameValues.gd"
-SetResearchUnlocks="*res://singletons/V1/SetResearchUnlocks.gd"
-SetUpgradeUnlocks="*res://singletons/V1/SetUpgradeUnlocks.gd"
-ConstBonusValues="*res://singletons/V1/ConstBonusValues.gd"
-ConstStatusEffectValues="*res://singletons/V1/ConstStatusEffectValues.gd"
-ConstTextLogValues="*res://singletons/V1/ConstTextLogValues.gd"
-ConstUpgradeValues="*res://singletons/V1/ConstUpgradeValues.gd"
-DefaultValues="*res://singletons/V1/DefaultValues.gd"
-SetGameValues="*res://singletons/V1/SetGameValues.gd"
-SetTextLog="*res://singletons/V1/SetTextLog.gd"
 SaveData="*res://singletons/SaveData.gd"
 Values="*res://singletons/Values.gd"
 CalculateValues="*res://singletons/CalculateValues.gd"
@@ -34,6 +24,7 @@ CalculatePrice="*res://singletons/CalculatePrice.gd"
 Research="*res://singletons/constantData/Research.gd"
 Upgrades="*res://singletons/constantData/Upgrades.gd"
 Magic="*res://singletons/constantData/Magic.gd"
+Unlocks="*res://singletons/Unlocks.gd"
 
 [display]
 
