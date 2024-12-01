@@ -1188,4 +1188,14 @@ var GeneralInfo = {
 	"LastTimeSaved" : true,
 	"MasterVolume" : false,
 	"MusicVolume" : false,
+	"AchievementCount" : countAchivements(),
 }
+
+func countAchivements():
+	var achievementCount = 0
+	
+	for achievementId in UnlockedAchievements:
+		if UnlockedAchievements[achievementId]:
+			achievementCount += 1
+	
+	return achievementCount

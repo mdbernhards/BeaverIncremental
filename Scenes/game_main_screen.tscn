@@ -1,5 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://dopio2pmdmjpx"]
+[gd_scene load_steps=7 format=3 uid="uid://dopio2pmdmjpx"]
 
+[ext_resource type="Script" path="res://Scenes/game_main_screen.gd" id="1_3ecd0"]
 [ext_resource type="PackedScene" uid="uid://bor0f34yh2ofm" path="res://Scenes/GameMainScreenScenes/game_screen.tscn" id="1_8477q"]
 [ext_resource type="PackedScene" uid="uid://dy25pvs37m84w" path="res://Scenes/GameMainScreenScenes/fishing_screen.tscn" id="2_17x50"]
 [ext_resource type="PackedScene" uid="uid://msehiccnr5t8" path="res://Scenes/GameMainScreenScenes/achievement_screen.tscn" id="2_kma5e"]
@@ -14,6 +15,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
+script = ExtResource("1_3ecd0")
 
 [node name="BackgroundColor" type="ColorRect" parent="."]
 layout_mode = 1
@@ -96,7 +98,7 @@ visible = false
 layout_mode = 1
 mouse_filter = 1
 
-[node name="Settings" parent="." instance=ExtResource("5_tqmh8")]
+[node name="SettingsScreen" parent="." instance=ExtResource("5_tqmh8")]
 visible = false
 layout_mode = 1
 
@@ -142,3 +144,9 @@ text = "Home"
 [node name="SettingsButton" type="Button" parent="BackgroundButtons/MenuButtonsVBox"]
 layout_mode = 2
 text = "Settings"
+
+[connection signal="button_down" from="BackgroundButtons/MenuButtonsVBox/AchievementsButton" to="." method="_on_achievements_button_button_down"]
+[connection signal="button_down" from="BackgroundButtons/MenuButtonsVBox/AscensionButton" to="." method="_on_ascension_button_button_down"]
+[connection signal="button_down" from="BackgroundButtons/MenuButtonsVBox/FishingButton" to="." method="_on_fishing_button_button_down"]
+[connection signal="button_down" from="BackgroundButtons/MenuButtonsVBox/HomeButton" to="." method="_on_home_button_button_down"]
+[connection signal="button_down" from="BackgroundButtons/MenuButtonsVBox/SettingsButton" to="." method="_on_settings_button_button_down"]

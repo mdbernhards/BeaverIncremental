@@ -63,7 +63,7 @@ var Upgrades = {
 			"OtherText" : "",
 		},
 		"13" :  {
-			"Name" : "Cheaper per achiv",
+			"Name" : "WPC add 1% to WPS",
 			"Description" : "",
 			"OtherText" : "",
 		},
@@ -150,7 +150,7 @@ var Upgrades = {
 			"OtherText" : "",
 		},
 		"12" :  {
-			"Name" : "2% of lower WPS",
+			"Name" : "2% of Oak Production",
 			"Description" : "",
 			"OtherText" : "",
 		},
@@ -207,7 +207,7 @@ var Upgrades = {
 			"OtherText" : "",
 		},
 		"5" :  {
-			"Name" : "WPC add 1% wps",
+			"Name" : "per achiv -0.2% WC price",
 			"Description" : "",
 			"OtherText" : "",
 		},
@@ -523,7 +523,7 @@ var Upgrades = {
 			"OtherText" : "",
 		},
 		"13" :  {
-			"Name" : "all WC effects 1.5%",
+			"Name" : "WPC add 2% wps",
 			"Description" : "",
 			"OtherText" : "",
 		},
@@ -575,7 +575,7 @@ var Upgrades = {
 			"OtherText" : "",
 		},
 		"5" :  {
-			"Name" : "All production upgrades 0.3% effect",
+			"Name" : "All production +0.3%",
 			"Description" : "",
 			"OtherText" : "",
 		},
@@ -600,7 +600,7 @@ var Upgrades = {
 			"OtherText" : "",
 		},
 		"10" :  {
-			"Name" : "wood per click add 2% wps",
+			"Name" : "All WC effects 1.5%",
 			"Description" : "",
 			"OtherText" : "",
 		},
@@ -615,7 +615,7 @@ var Upgrades = {
 			"OtherText" : "",
 		},
 		"13" :  {
-			"Name" : "amount of achivements",
+			"Name" : "0.09% wps per achievement",
 			"Description" : "",
 			"OtherText" : "",
 		},
@@ -809,7 +809,7 @@ var Upgrades = {
 			"OtherText" : "",
 		},
 		"15" :  {
-			"Name" : "market fish upgrade 1.4%",
+			"Name" : "increase storage by 18%",
 			"Description" : "",
 			"OtherText" : "",
 		},
@@ -901,7 +901,7 @@ var Upgrades = {
 			"OtherText" : "",
 		},
 		"15" :  {
-			"Name" : "increase storage by 18%",
+			"Name" : "market fish upgrade 1.4%",
 			"Description" : "",
 			"OtherText" : "",
 		},
@@ -916,7 +916,7 @@ var Upgrades = {
 			"OtherText" : "",
 		},
 		"18" :  {
-			"Name" : "lvl effect per achivem. 0.02%",
+			"Name" : "each dam 1% wood gain",
 			"Description" : "",
 			"OtherText" : "",
 		},
@@ -973,7 +973,7 @@ var Upgrades = {
 			"OtherText" : "",
 		},
 		"11" :  {
-			"Name" : "each dam 1% wood gain",
+			"Name" : "lvl effect per achivem. 0.02%",
 			"Description" : "",
 			"OtherText" : "",
 		},
@@ -1095,7 +1095,7 @@ var Upgrades = {
 			"OtherText" : "",
 		},
 		"17" :  {
-			"Name" : "bots sell better price 0.2%",
+			"Name" : "Wpc 0.2% per achievement",
 			"Description" : "",
 			"OtherText" : "",
 		},
@@ -1127,7 +1127,7 @@ var Upgrades = {
 			"OtherText" : "",
 		},
 		"5" :  {
-			"Name" : "wood per click add 3% wps",
+			"Name" : "bots sell better price 0.2%",
 			"Description" : "",
 			"OtherText" : "",
 		},
@@ -1234,7 +1234,7 @@ var Upgrades = {
 			"OtherText" : "",
 		},
 		"8" :  {
-			"Name" : "amount of achivements",
+			"Name" : "WPC add 3% WPS",
 			"Description" : "",
 			"OtherText" : "",
 		},
