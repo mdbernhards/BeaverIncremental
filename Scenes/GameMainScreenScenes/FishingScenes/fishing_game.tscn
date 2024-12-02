@@ -11,6 +11,7 @@ script = ExtResource("1_rdjpf")
 [node name="FishingGameLogicNode" type="Node" parent="."]
 
 [node name="FishButton" parent="FishingGameLogicNode" instance=ExtResource("2_p5n1t")]
+FishType = 13
 
 [node name="FishButton2" parent="FishingGameLogicNode" instance=ExtResource("2_p5n1t")]
 offset_left = 320.0

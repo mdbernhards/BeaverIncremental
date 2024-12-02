@@ -8,6 +8,16 @@ var RNG = RandomNumberGenerator.new()
 var VerticalSpeed = 1
 var HorizontalSpeed = 1
 
+var Fish
+
+@export var FishType: Fishing.FishEnum = Fishing.FishEnum.Boot :
+	set(value):
+		Fish = Fishing.Fish[value] as Fishing.FishObject
+		ChangeFishName()
+
+func ChangeFishName():
+	text = Fish.Name
+
 func _ready() -> void:
 	pass
 
