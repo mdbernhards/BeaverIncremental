@@ -46,6 +46,9 @@ func updateValues():
 	SellAmountLabel.text = str(roundi(WoodLossIfSold)) + " " + WoodType
 	SellGoldGainLabel.text = str(roundi(GoldGainedIfSold)) + " Gold"
 	BotPriceLabel.text = "Price: " + str(roundi(CalculatePrice.getBotCost(SaveData.Resources[WoodType]["Bots"], WoodType))) + " gold"
+	
+	PerSecondWoodSoldLabel.text = str(Values.ResourceValues[WoodType]["WoodSoldPerSecond"])
+	PerSecondGoldGainLabel.text = str(Values.ResourceValues[WoodType]["GoldGainPerSecond"])
 
 func setNodePaths():
 	# Nodes for selling
@@ -68,8 +71,13 @@ func _on_sell_amount_slider_value_changed(value):
 	SaveData.Resources[WoodType]["MarketSellPercentage"] = value
 	SellPrecentigeLabel.text = str(value) + "%"
 
-func _on_buy_button_button_down():
-	BotCountLabel.text = str(SaveData.Resources[WoodType]["Bots"])
+func _on_buy_button_button_down(): #bot buy
+	var price = CalculatePrice.getBotCost(SaveData.Resources[WoodType]["Bots"], WoodType) * Values.ResourceValues[WoodType]["BotPriceMultip"]
+	
+	if SaveData.Gold["Count"] >= price:
+		SaveData.Gold["Count"] -= price
+		SaveData.Resources[WoodType]["Bots"] += 1
+		BotCountLabel.text = str(SaveData.Resources[WoodType]["Bots"])
 
 func _on_bot_effectivnes_slider_value_changed(value):
 	SaveData.Resources[WoodType]["BotSellPercentage"] = value

@@ -52,7 +52,9 @@ var ResourceValues = {
 		"WcPriceMultip": 1,
 		"LevelPriceMultip": 1,
 		"BotPriceMultip": 1,
-		"BotEffectMultip": 1,
+		"BotBaseSell": 1,
+		"WoodSoldPerSecond": 10,
+		"GoldGainPerSecond": 10, # from bots selling
 	},
 	"Apple" : {
 		"PerClick" : 100,
@@ -63,6 +65,13 @@ var ResourceValues = {
 		"RealPerSecondIncrease": 0,
 		"RealPerSecondLoss": 0,
 		"SoldFor": 0.05,
+		"UpgradePriceMultip": 1,
+		"WcPriceMultip": 1,
+		"LevelPriceMultip": 1,
+		"BotPriceMultip": 1,
+		"BotBaseSell": 1,
+		"WoodSoldPerSecond": 10,
+		"GoldGainPerSecond": 10, # from bots selling
 	},
 	"Maple" : {
 		"PerClick" : 100,
@@ -73,6 +82,13 @@ var ResourceValues = {
 		"RealPerSecondIncrease": 0,
 		"RealPerSecondLoss": 0,
 		"SoldFor": 0.25,
+		"UpgradePriceMultip": 1,
+		"WcPriceMultip": 1,
+		"LevelPriceMultip": 1,
+		"BotPriceMultip": 1,
+		"BotBaseSell": 1,
+		"WoodSoldPerSecond": 10,
+		"GoldGainPerSecond": 10, # from bots selling
 	},
 	"Birch" : {
 		"PerClick" : 100,
@@ -83,6 +99,13 @@ var ResourceValues = {
 		"RealPerSecondIncrease": 0,
 		"RealPerSecondLoss": 0,
 		"SoldFor": 0.70,
+		"UpgradePriceMultip": 1,
+		"WcPriceMultip": 1,
+		"LevelPriceMultip": 1,
+		"BotPriceMultip": 1,
+		"BotBaseSell": 1,
+		"WoodSoldPerSecond": 10,
+		"GoldGainPerSecond": 10, # from bots selling
 	},
 	"Spruce" : {
 		"PerClick" : 100,
@@ -93,6 +116,13 @@ var ResourceValues = {
 		"RealPerSecondIncrease": 0,
 		"RealPerSecondLoss": 0,
 		"SoldFor": 2.55,
+		"UpgradePriceMultip": 1,
+		"WcPriceMultip": 1,
+		"LevelPriceMultip": 1,
+		"BotPriceMultip": 1,
+		"BotBaseSell": 1,
+		"WoodSoldPerSecond": 10,
+		"GoldGainPerSecond": 10, # from bots selling
 	},
 	"Chestnut" : {
 		"PerClick" : 100,
@@ -103,6 +133,13 @@ var ResourceValues = {
 		"RealPerSecondIncrease": 0,
 		"RealPerSecondLoss": 0,
 		"SoldFor": 7,
+		"UpgradePriceMultip": 1,
+		"WcPriceMultip": 1,
+		"LevelPriceMultip": 1,
+		"BotPriceMultip": 1,
+		"BotBaseSell": 1,
+		"WoodSoldPerSecond": 10,
+		"GoldGainPerSecond": 10, # from bots selling
 	},
 	"Cherry" : {
 		"PerClick" : 100,
@@ -113,6 +150,13 @@ var ResourceValues = {
 		"RealPerSecondIncrease": 0,
 		"RealPerSecondLoss": 0,
 		"SoldFor": 13,
+		"UpgradePriceMultip": 1,
+		"WcPriceMultip": 1,
+		"LevelPriceMultip": 1,
+		"BotPriceMultip": 1,
+		"BotBaseSell": 1,
+		"WoodSoldPerSecond": 10,
+		"GoldGainPerSecond": 10, # from bots selling
 	},
 	"Ash" : {
 		"PerClick" : 100,
@@ -123,6 +167,13 @@ var ResourceValues = {
 		"RealPerSecondIncrease": 0,
 		"RealPerSecondLoss": 0,
 		"SoldFor": 33,
+		"UpgradePriceMultip": 1,
+		"WcPriceMultip": 1,
+		"LevelPriceMultip": 1,
+		"BotPriceMultip": 1,
+		"BotBaseSell": 1,
+		"WoodSoldPerSecond": 10,
+		"GoldGainPerSecond": 10, # from bots selling
 	},
 	"Cedar" : {
 		"PerClick" : 100000000,
@@ -133,6 +184,13 @@ var ResourceValues = {
 		"RealPerSecondIncrease": 0,
 		"RealPerSecondLoss": 0,
 		"SoldFor": 80,
+		"UpgradePriceMultip": 1,
+		"WcPriceMultip": 1,
+		"LevelPriceMultip": 1,
+		"BotPriceMultip": 1,
+		"BotBaseSell": 1,
+		"WoodSoldPerSecond": 10,
+		"GoldGainPerSecond": 10, # from bots selling
 	},
 	"Mahogany" : {
 		"PerClick" : 100,
@@ -143,6 +201,13 @@ var ResourceValues = {
 		"RealPerSecondIncrease": 0,
 		"RealPerSecondLoss": 0,
 		"SoldFor": 140,
+		"UpgradePriceMultip": 1,
+		"WcPriceMultip": 1,
+		"LevelPriceMultip": 1,
+		"BotPriceMultip": 1,
+		"BotBaseSell": 1,
+		"WoodSoldPerSecond": 10,
+		"GoldGainPerSecond": 10, # from bots selling
 	},
 	"Ebony" : {
 		"PerClick" : 100,
@@ -153,6 +218,13 @@ var ResourceValues = {
 		"RealPerSecondIncrease": 0,
 		"RealPerSecondLoss": 0,
 		"SoldFor": 500,
+		"UpgradePriceMultip": 1,
+		"WcPriceMultip": 1,
+		"LevelPriceMultip": 1,
+		"BotPriceMultip": 1,
+		"BotBaseSell": 1,
+		"WoodSoldPerSecond": 10,
+		"GoldGainPerSecond": 10, # from bots selling
 	},
 	"Dogwood" : {
 		"PerClick" : 100,
@@ -163,6 +235,13 @@ var ResourceValues = {
 		"RealPerSecondIncrease": 0,
 		"RealPerSecondLoss": 0,
 		"SoldFor": 1400,
+		"UpgradePriceMultip": 1,
+		"WcPriceMultip": 1,
+		"LevelPriceMultip": 1,
+		"BotPriceMultip": 1,
+		"BotBaseSell": 1,
+		"WoodSoldPerSecond": 10,
+		"GoldGainPerSecond": 10, # from bots selling
 	},
 	"Rosewood" : {
 		"PerClick" : 100,
@@ -173,6 +252,13 @@ var ResourceValues = {
 		"RealPerSecondIncrease": 0,
 		"RealPerSecondLoss": 0,
 		"SoldFor": 3600,
+		"UpgradePriceMultip": 1,
+		"WcPriceMultip": 1,
+		"LevelPriceMultip": 1,
+		"BotPriceMultip": 1,
+		"BotBaseSell": 1,
+		"WoodSoldPerSecond": 10,
+		"GoldGainPerSecond": 10, # from bots selling
 	},
 	"Ghost Gum" : {
 		"PerClick" : 100,
@@ -183,6 +269,13 @@ var ResourceValues = {
 		"RealPerSecondIncrease": 0,
 		"RealPerSecondLoss": 0,
 		"SoldFor": 9999,
+		"UpgradePriceMultip": 1,
+		"WcPriceMultip": 1,
+		"LevelPriceMultip": 1,
+		"BotPriceMultip": 1,
+		"BotBaseSell": 1,
+		"WoodSoldPerSecond": 10,
+		"GoldGainPerSecond": 10, # from bots selling
 	},
 	"Dragonwood" : {
 		"PerClick" : 100,
@@ -193,5 +286,12 @@ var ResourceValues = {
 		"RealPerSecondIncrease": 0,
 		"RealPerSecondLoss": 0,
 		"SoldFor": 22222,
+		"UpgradePriceMultip": 1,
+		"WcPriceMultip": 1,
+		"LevelPriceMultip": 1,
+		"BotPriceMultip": 1,
+		"BotBaseSell": 1,
+		"WoodSoldPerSecond": 10,
+		"GoldGainPerSecond": 10, # from bots selling
 	},
 }

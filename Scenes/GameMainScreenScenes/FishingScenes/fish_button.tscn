@@ -1,0 +1,19 @@
+[gd_scene load_steps=2 format=3 uid="uid://3j6oh2o8nb3f"]
+
+[ext_resource type="Script" path="res://Scenes/GameMainScreenScenes/FishingScenes/FishButton.gd" id="1_ipjx1"]
+
+[node name="FishButton" type="Button"]
+offset_left = 678.0
+offset_top = 416.0
+offset_right = 734.0
+offset_bottom = 459.0
+theme_override_font_sizes/font_size = 25
+text = "Fish"
+script = ExtResource("1_ipjx1")
+
+[node name="ChangeDirectionTimer" type="Timer" parent="."]
+wait_time = 2.0
+autostart = true
+
+[connection signal="button_down" from="." to="." method="_on_button_down"]
+[connection signal="timeout" from="ChangeDirectionTimer" to="." method="_on_change_direction_timer_timeout"]

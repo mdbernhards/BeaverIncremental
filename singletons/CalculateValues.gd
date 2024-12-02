@@ -32,17 +32,17 @@ func CalculateRealValues():
 		var woodCamps = SaveData.Resources[woodType]["Woodcamps"]
 		var level = SaveData.Resources[woodType]["Level"]
 		
-		var levelEffect =  maxf(pow(1.01, level) * TempValues["Global"]["LevelEffectMultip"] * TempValues[woodType]["LevelEffectMultip"], 1)
+		var levelEffect =  maxf(pow(1.01, level - 1) * TempValues["Global"]["LevelEffectMultip"] * TempValues[woodType]["LevelEffectMultip"], 1)
 		
 		ResourceValues[woodType]["PerClick"] = (TempValues[woodType]["Beavers"] + (TempValues["Global"]["AddLevelToBaseWoodClick"] * level)) * TempValues[woodType]["BeaverUpgrades"] * TempValues[woodType]["BeaverMultip"] * TempValues["Global"]["BeaverMultip"] * levelEffect
 		ResourceValues[woodType]["PerSecondIncrease"] = pow(woodCamps * TempValues[woodType]["WpsPerWc"] * TempValues[woodType]["WpsMultip"] * TempValues["Global"]["WpsMultip"] * TempValues[woodType]["WcEffectMultip"], TempValues["Global"]["WpsPow"]) * levelEffect * TempValues["Global"]["ProductionUpgradeMultip"]
 		ResourceValues[woodType]["Storage"] = TempValues[woodType]["BaseStorage"] * TempValues[woodType]["StorageMultip"] * TempValues["Global"]["StorageMultip"] + woodCamps * TempValues[woodType]["WcBaseStorage"] * TempValues[woodType]["WcStorageMultip"] * TempValues["Global"]["WcStorageMultip"] * TempValues[woodType]["WcEffectMultip"] * levelEffect
-		ResourceValues[woodType]["SoldFor"] = (TempValues[woodType]["BaseWoodPrice"] + TempValues[woodType]["BotBaseSell"]) * TempValues[woodType]["BotSellMultip"] * TempValues[woodType]["WoodPriceMultip"] * TempValues["Global"]["WoodPriceMultip"] * levelEffect # Fix this
+		ResourceValues[woodType]["SoldFor"] = TempValues[woodType]["BaseWoodPrice"] * TempValues[woodType]["WoodPriceMultip"] * TempValues["Global"]["WoodPriceMultip"] * levelEffect
 		ResourceValues[woodType]["UpgradePriceMultip"] = TempValues["Global"]["UpgradePriceMultip"] * TempValues[woodType]["UpgradePriceMultip"] / levelEffect
 		ResourceValues[woodType]["WcPriceMultip"] = TempValues["Global"]["WcPriceMultip"] * TempValues[woodType]["WcPriceMultip"] / levelEffect
 		ResourceValues[woodType]["LevelPriceMultip"] = TempValues["Global"]["LevelPriceMultip"] * TempValues[woodType]["LevelPriceMultip"] / levelEffect
 		ResourceValues[woodType]["BotPriceMultip"] = TempValues["Global"]["BotPriceMultip"] * TempValues[woodType]["BotPriceMultip"] / levelEffect
-		ResourceValues[woodType]["BotEffectMultip"] = TempValues["Global"]["BotEffectMultip"] * levelEffect
+		ResourceValues[woodType]["BotBaseSell"] = TempValues[woodType]["BotBaseSell"] * TempValues[woodType]["BotSellMultip"] * TempValues["Global"]["BotEffectMultip"] * levelEffect
 	
 	# Fishing
 	ResourceValues["Fish"]["PriceMultip"] = TempValues["Fish"]["PriceMultip"]
@@ -76,12 +76,15 @@ func CalculateRealValues():
 	ResourceValues["Dam"]["WoodGainMultip"] = TempValues["Dam"]["WoodGainMultip"]
 	
 func CalculateRealAfterValues():
+	var lastWoodType
+	
 	for woodType in WoodTypes:
 		ResourceValues[woodType]["PerSecondIncrease"] *= TempValues[woodType]["WpcToWpsMultip"]
 		
 		if woodType != "Oak":
-			ResourceValues[woodType]["PerSecondIncrease"] += (1 - TempValues[woodType]["LowerWpsAddMultip"]) * ResourceValues[WoodTypes.find(woodType) - 1]["PerSecondIncrease"]
-		TempValues[woodType]["LowerWpsAddMultip"]
+			ResourceValues[woodType]["PerSecondIncrease"] += (1 - TempValues[woodType]["LowerWpsAddMultip"]) * ResourceValues[lastWoodType]["PerSecondIncrease"]
+		
+		lastWoodType = woodType
 	
 	for woodType in WoodTypes:
 		var woodCamps = SaveData.Resources[woodType]["Woodcamps"]
@@ -346,7 +349,7 @@ func SetUpgradeValue(woodType, upgradeId):
 				"5":
 					Unlocks.Unlocks["Apple"]["Unlocked"] = true
 				"6":
-					TempValues[woodType]["Beavers"] += upgradeLevel * woodCamps * 2
+					TempValues[woodType]["Beavers"] += upgradeLevel * woodCamps
 				"7":
 					TempValues["Research"]["Time"] *= pow(1 - 0.004, upgradeLevel) # 99.6%
 				"8":
@@ -484,7 +487,7 @@ func SetUpgradeValue(woodType, upgradeId):
 				"17":
 					TempValues["Dam"]["PriceMultip"] *= pow(1 - 0.02, upgradeLevel)
 				"18":
-					TempValues[woodType]["BotSellMultip"] *= pow(1.005, upgradeLevel)
+					TempValues[woodType]["WoodPriceMultip"] *= pow(1.005, upgradeLevel) # same as 16,need to change
 		"Spruce":
 			match upgradeId:
 				"1":
@@ -552,7 +555,7 @@ func SetUpgradeValue(woodType, upgradeId):
 				"13":
 					TempValues[woodType]["WpcToWpsMultip"] *= pow(1.02, upgradeLevel)
 				"14":
-					TempValues[woodType]["BotSellMultip"] *= pow(1.003, upgradeLevel)
+					TempValues[woodType]["WoodPriceMultip"] *= pow(1.003, upgradeLevel) # same as 8,need to change
 				"15":
 					pass # idk yet / prob new upgrade :/
 				"16":
@@ -628,7 +631,7 @@ func SetUpgradeValue(woodType, upgradeId):
 				"13":
 					TempValues[woodType]["WpsMultip"] *= pow(pow(1.01, level), upgradeLevel)
 				"14":
-					pass # idk
+					TempValues[woodType]["BotPriceMultip"] *= pow(pow(1 - 0.0006, upgradeLevel),achievementCount) #kinda the same same as 7
 				"15":
 					pass # idk
 				"16":
@@ -700,7 +703,7 @@ func SetUpgradeValue(woodType, upgradeId):
 				"11":
 					TempValues[woodType]["WpsMultip"] *= pow(pow(1.0018, upgradeLevel), achievementCount)
 				"12":
-					TempValues[woodType]["BotSellMultip"] *= pow(1.004, upgradeLevel)
+					TempValues[woodType]["WoodPriceMultip"] *= pow(1.026, upgradeLevel)
 				"13":
 					Unlocks.Unlocks["Fishing"]["Bait"]["WoodBait"] = true
 				"14":
@@ -885,7 +888,7 @@ func SetUpgradeValue(woodType, upgradeId):
 				"8":
 					TempValues[woodType]["WcPriceMultip"] *= pow(1 - 0.015, upgradeLevel)
 				"9":
-					TempValues[woodType]["WoodPriceMultip"] *= pow(1.001, upgradeLevel) #wrong
+					TempValues[woodType]["WoodPriceMultip"] *= pow(1.031, upgradeLevel)
 				"10":
 					TempValues["Magic"]["EffectMultip"] *= pow(1.007, upgradeLevel)
 				"11":
@@ -973,9 +976,9 @@ var OriginalTempValues = {
 		"LevelEffectMultip" : 1,
 		"UpgradePriceMultip" : 1, # upgrades
 		"BotPriceMultip" : 1, # markets
-		"BotBaseSell" : 10, # base value of how mutch a bot sells
+		"BotBaseSell" : 1, # base value of how mutch a bot sells
 		"BotSellMultip" : 1,
-		"BaseWoodPrice" : 1,
+		"BaseWoodPrice" : 0.01,
 		"WoodPriceMultip" : 1,
 		"WpcToWpsMultip" : 1,
 		"LowerWpsAddMultip" : 1, # 100%
@@ -998,9 +1001,9 @@ var OriginalTempValues = {
 		"LevelEffectMultip" : 1,
 		"UpgradePriceMultip" : 1, # upgrades
 		"BotPriceMultip" : 1, # markets
-		"BotBaseSell" : 10, # base value of how mutch a bot sells
+		"BotBaseSell" : 1, # base value of how mutch a bot sells
 		"BotSellMultip" : 1,
-		"BaseWoodPrice" : 1,
+		"BaseWoodPrice" : 0.05,
 		"WoodPriceMultip" : 1,
 		"WpcToWpsMultip" : 1,
 		"LowerWpsAddMultip" : 1, # 100%
@@ -1023,9 +1026,9 @@ var OriginalTempValues = {
 		"LevelEffectMultip" : 1,
 		"UpgradePriceMultip" : 1, # upgrades
 		"BotPriceMultip" : 1, # markets
-		"BotBaseSell" : 10, # base value of how mutch a bot sells
+		"BotBaseSell" : 1, # base value of how mutch a bot sells
 		"BotSellMultip" : 1,
-		"BaseWoodPrice" : 1,
+		"BaseWoodPrice" : 0.25,
 		"WoodPriceMultip" : 1,
 		"WpcToWpsMultip" : 1,
 		"LowerWpsAddMultip" : 1, # 100%
@@ -1048,9 +1051,9 @@ var OriginalTempValues = {
 		"LevelEffectMultip" : 1,
 		"UpgradePriceMultip" : 1, # upgrades
 		"BotPriceMultip" : 1, # markets
-		"BotBaseSell" : 10, # base value of how mutch a bot sells
+		"BotBaseSell" : 1, # base value of how mutch a bot sells
 		"BotSellMultip" : 1,
-		"BaseWoodPrice" : 1,
+		"BaseWoodPrice" : 0.70,
 		"WoodPriceMultip" : 1,
 		"WpcToWpsMultip" : 1,
 		"LowerWpsAddMultip" : 1, # 100%
@@ -1073,9 +1076,9 @@ var OriginalTempValues = {
 		"LevelEffectMultip" : 1,
 		"UpgradePriceMultip" : 1, # upgrades
 		"BotPriceMultip" : 1, # markets
-		"BotBaseSell" : 10, # base value of how mutch a bot sells
+		"BotBaseSell" : 1, # base value of how mutch a bot sells
 		"BotSellMultip" : 1,
-		"BaseWoodPrice" : 1,
+		"BaseWoodPrice" : 2.55,
 		"WoodPriceMultip" : 1,
 		"WpcToWpsMultip" : 1,
 		"LowerWpsAddMultip" : 1, # 100%
@@ -1098,9 +1101,9 @@ var OriginalTempValues = {
 		"LevelEffectMultip" : 1,
 		"UpgradePriceMultip" : 1, # upgrades
 		"BotPriceMultip" : 1, # markets
-		"BotBaseSell" : 10, # base value of how mutch a bot sells
+		"BotBaseSell" : 1, # base value of how mutch a bot sells
 		"BotSellMultip" : 1,
-		"BaseWoodPrice" : 1,
+		"BaseWoodPrice" : 7,
 		"WoodPriceMultip" : 1,
 		"WpcToWpsMultip" : 1,
 		"LowerWpsAddMultip" : 1, # 100%
@@ -1123,9 +1126,9 @@ var OriginalTempValues = {
 		"LevelEffectMultip" : 1,
 		"UpgradePriceMultip" : 1, # upgrades
 		"BotPriceMultip" : 1, # markets
-		"BotBaseSell" : 10, # base value of how mutch a bot sells
+		"BotBaseSell" : 1, # base value of how mutch a bot sells
 		"BotSellMultip" : 1,
-		"BaseWoodPrice" : 1,
+		"BaseWoodPrice" : 13,
 		"WoodPriceMultip" : 1,
 		"WpcToWpsMultip" : 1,
 		"LowerWpsAddMultip" : 1, # 100%
@@ -1148,9 +1151,9 @@ var OriginalTempValues = {
 		"LevelEffectMultip" : 1,
 		"UpgradePriceMultip" : 1, # upgrades
 		"BotPriceMultip" : 1, # markets
-		"BotBaseSell" : 10, # base value of how mutch a bot sells
+		"BotBaseSell" : 1, # base value of how mutch a bot sells
 		"BotSellMultip" : 1,
-		"BaseWoodPrice" : 1,
+		"BaseWoodPrice" : 33,
 		"WoodPriceMultip" : 1,
 		"WpcToWpsMultip" : 1,
 		"LowerWpsAddMultip" : 1, # 100%
@@ -1173,9 +1176,9 @@ var OriginalTempValues = {
 		"LevelEffectMultip" : 1,
 		"UpgradePriceMultip" : 1, # upgrades
 		"BotPriceMultip" : 1, # markets
-		"BotBaseSell" : 10, # base value of how mutch a bot sells
+		"BotBaseSell" : 1, # base value of how mutch a bot sells
 		"BotSellMultip" : 1,
-		"BaseWoodPrice" : 1,
+		"BaseWoodPrice" : 80,
 		"WoodPriceMultip" : 1,
 		"WpcToWpsMultip" : 1,
 		"LowerWpsAddMultip" : 1, # 100%
@@ -1198,9 +1201,9 @@ var OriginalTempValues = {
 		"LevelEffectMultip" : 1,
 		"UpgradePriceMultip" : 1, # upgrades
 		"BotPriceMultip" : 1, # markets
-		"BotBaseSell" : 10, # base value of how mutch a bot sells
+		"BotBaseSell" : 1, # base value of how mutch a bot sells
 		"BotSellMultip" : 1,
-		"BaseWoodPrice" : 1,
+		"BaseWoodPrice" : 140,
 		"WoodPriceMultip" : 1,
 		"WpcToWpsMultip" : 1,
 		"LowerWpsAddMultip" : 1, # 100%
@@ -1223,9 +1226,9 @@ var OriginalTempValues = {
 		"LevelEffectMultip" : 1,
 		"UpgradePriceMultip" : 1, # upgrades
 		"BotPriceMultip" : 1, # markets
-		"BotBaseSell" : 10, # base value of how mutch a bot sells
+		"BotBaseSell" : 1, # base value of how mutch a bot sells
 		"BotSellMultip" : 1,
-		"BaseWoodPrice" : 1,
+		"BaseWoodPrice" : 500,
 		"WoodPriceMultip" : 1,
 		"WpcToWpsMultip" : 1,
 		"LowerWpsAddMultip" : 1, # 100%
@@ -1248,9 +1251,9 @@ var OriginalTempValues = {
 		"LevelEffectMultip" : 1,
 		"UpgradePriceMultip" : 1, # upgrades
 		"BotPriceMultip" : 1, # markets
-		"BotBaseSell" : 10, # base value of how mutch a bot sells
+		"BotBaseSell" : 1, # base value of how mutch a bot sells
 		"BotSellMultip" : 1,
-		"BaseWoodPrice" : 1,
+		"BaseWoodPrice" : 1400,
 		"WoodPriceMultip" : 1,
 		"WpcToWpsMultip" : 1,
 		"LowerWpsAddMultip" : 1, # 100%
@@ -1273,9 +1276,9 @@ var OriginalTempValues = {
 		"LevelEffectMultip" : 1,
 		"UpgradePriceMultip" : 1, # upgrades
 		"BotPriceMultip" : 1, # markets
-		"BotBaseSell" : 10, # base value of how mutch a bot sells
+		"BotBaseSell" : 1, # base value of how mutch a bot sells
 		"BotSellMultip" : 1,
-		"BaseWoodPrice" : 1,
+		"BaseWoodPrice" : 3600,
 		"WoodPriceMultip" : 1,
 		"WpcToWpsMultip" : 1,
 		"LowerWpsAddMultip" : 1, # 100%
@@ -1298,9 +1301,9 @@ var OriginalTempValues = {
 		"LevelEffectMultip" : 1,
 		"UpgradePriceMultip" : 1, # upgrades
 		"BotPriceMultip" : 1, # markets
-		"BotBaseSell" : 10, # base value of how mutch a bot sells
+		"BotBaseSell" : 1, # base value of how mutch a bot sells
 		"BotSellMultip" : 1,
-		"BaseWoodPrice" : 1,
+		"BaseWoodPrice" : 9999,
 		"WoodPriceMultip" : 1,
 		"WpcToWpsMultip" : 1,
 		"LowerWpsAddMultip" : 1, # 100%
@@ -1323,9 +1326,9 @@ var OriginalTempValues = {
 		"LevelEffectMultip" : 1,
 		"UpgradePriceMultip" : 1, # upgrades
 		"BotPriceMultip" : 1, # markets
-		"BotBaseSell" : 10, # base value of how mutch a bot sells
+		"BotBaseSell" : 1, # base value of how mutch a bot sells
 		"BotSellMultip" : 1,
-		"BaseWoodPrice" : 1,
+		"BaseWoodPrice" : 22222,
 		"WoodPriceMultip" : 1,
 		"WpcToWpsMultip" : 1,
 		"LowerWpsAddMultip" : 1, # 100%

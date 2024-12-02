@@ -33,3 +33,4 @@ func _on_magic_button_button_down():
 	if SaveData.Magic["Count"] >= Upgrade["Cost"]:
 		SaveData.Magic["Count"] -= Upgrade["Cost"]
 		SaveData.UnlockedMagicUpgrades[Nr] = true
+		$MagicButton.visible = false

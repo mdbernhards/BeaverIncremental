@@ -418,6 +418,8 @@ theme_override_font_sizes/font_size = 13
 text = "128 gold"
 horizontal_alignment = 1
 
+[node name="BotSellControl" type="Node" parent="."]
+
 [connection signal="value_changed" from="HBox/VBox/MC/VBox/MC2/SellAmountSlider" to="." method="_on_sell_amount_slider_value_changed"]
 [connection signal="button_down" from="HBox/VBox/MC/VBox/HBox/MC3/SellButton" to="." method="_on_sell_button_button_down"]
 [connection signal="button_down" from="HBox/MC2/VBox/HBox2/MC2/VBox/HBox/BuyButton" to="." method="_on_buy_button_button_down"]

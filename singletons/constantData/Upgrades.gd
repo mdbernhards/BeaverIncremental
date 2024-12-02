@@ -28,7 +28,7 @@ var Upgrades = {
 			"OtherText" : "",
 		},
 		"6" :  {
-			"Name" : "WPS based on WPC",
+			"Name" : "1+ beaver from WC",
 			"Description" : "",
 			"OtherText" : "",
 		},
@@ -364,7 +364,7 @@ var Upgrades = {
 			"OtherText" : "",
 		},
 		"18" :  {
-			"Name" : "wood price 0.5%",
+			"Name" : "Better wood price 0.5%",
 			"Description" : "",
 			"OtherText" : "",
 		},
@@ -528,7 +528,7 @@ var Upgrades = {
 			"OtherText" : "",
 		},
 		"14" :  {
-			"Name" : "bots sell better price 0.3%",
+			"Name" : "Better wood price 0.3%",
 			"Description" : "",
 			"OtherText" : "",
 		},
@@ -886,7 +886,7 @@ var Upgrades = {
 			"OtherText" : "",
 		},
 		"12" :  {
-			"Name" : "bots sell better price 0.4%",
+			"Name" : "Better wood price 2.6%",
 			"Description" : "",
 			"OtherText" : "",
 		},
@@ -1331,7 +1331,7 @@ var Upgrades = {
 			"OtherText" : "",
 		},
 		"9" :  {
-			"Name" : "bots sell better price 0.1%",
+			"Name" : "Better wood price 3.1%",
 			"Description" : "",
 			"OtherText" : "",
 		},
