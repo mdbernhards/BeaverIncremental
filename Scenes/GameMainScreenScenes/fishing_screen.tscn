@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://dy25pvs37m84w"]
+[gd_scene load_steps=4 format=3 uid="uid://dy25pvs37m84w"]
 
 [ext_resource type="PackedScene" uid="uid://da0054l6vw7u0" path="res://Scenes/GameMainScreenScenes/FishingScenes/fishing_game.tscn" id="1_1im5g"]
+[ext_resource type="Script" path="res://Scenes/GameMainScreenScenes/fishing_screen.gd" id="1_nm6k8"]
+[ext_resource type="PackedScene" uid="uid://45ggwxc6rcjg" path="res://Scenes/GameMainScreenScenes/FishingScenes/fish_page.tscn" id="3_o2ikf"]
 
 [node name="FishingScreen" type="Control"]
 layout_mode = 3
@@ -10,6 +12,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
+script = ExtResource("1_nm6k8")
 
 [node name="MC" type="MarginContainer" parent="."]
 layout_mode = 1
@@ -147,7 +150,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/margin_left = 10
 theme_override_constants/margin_top = 25
-theme_override_constants/margin_right = 25
+theme_override_constants/margin_right = 15
 theme_override_constants/margin_bottom = 25
 
 [node name="ColorRect" type="ColorRect" parent="MC/HBox/FishingImprovementsMenusHBox"]
@@ -158,7 +161,7 @@ color = Color(0.266667, 0.266667, 0.266667, 1)
 layout_mode = 2
 
 [node name="MC" type="MarginContainer" parent="MC/HBox/FishingImprovementsMenusHBox/VBox"]
-custom_minimum_size = Vector2(400, 100)
+custom_minimum_size = Vector2(570, 100)
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_constants/margin_left = 15
@@ -188,10 +191,23 @@ theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 5
 theme_override_constants/margin_bottom = 10
 
-[node name="Button" type="Button" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/MC/ColorRect/HBox/MC"]
+[node name="FishButton" type="Button" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/MC/ColorRect/HBox/MC"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 23
-text = "Shop"
+text = "Fish"
+
+[node name="MC3" type="MarginContainer" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/MC/ColorRect/HBox"]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 10
+
+[node name="BaitButton" type="Button" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/MC/ColorRect/HBox/MC3"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 23
+text = "Bait"
 
 [node name="MC2" type="MarginContainer" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/MC/ColorRect/HBox"]
 custom_minimum_size = Vector2(150, 0)
@@ -201,25 +217,28 @@ theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 5
 theme_override_constants/margin_bottom = 10
 
-[node name="Button" type="Button" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/MC/ColorRect/HBox/MC2"]
+[node name="SpotButton" type="Button" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/MC/ColorRect/HBox/MC2"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 23
-text = "Fishing Spots"
+text = "Spots"
 
 [node name="PagesMC" type="MarginContainer" parent="MC/HBox/FishingImprovementsMenusHBox/VBox"]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="ShopPage" type="VBoxContainer" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC"]
+[node name="FishPage" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC" instance=ExtResource("3_o2ikf")]
+layout_mode = 2
+
+[node name="BaitPage" type="VBoxContainer" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC"]
 visible = false
 layout_mode = 2
 
-[node name="MC" type="MarginContainer" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/ShopPage"]
+[node name="MC" type="MarginContainer" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/BaitPage"]
 layout_mode = 2
 theme_override_constants/margin_left = 40
 theme_override_constants/margin_right = 40
 
-[node name="Label" type="Label" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/ShopPage/MC"]
+[node name="Label" type="Label" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/BaitPage/MC"]
 layout_mode = 2
 size_flags_vertical = 1
 theme_override_font_sizes/font_size = 45
@@ -227,7 +246,7 @@ text = "Shop"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Label2" type="Label" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/ShopPage/MC"]
+[node name="Label2" type="Label" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/BaitPage/MC"]
 layout_mode = 2
 size_flags_vertical = 1
 theme_override_colors/font_color = Color(0.752941, 0.627451, 0.627451, 1)
@@ -235,7 +254,7 @@ text = "Inventory"
 horizontal_alignment = 2
 vertical_alignment = 2
 
-[node name="MC2" type="MarginContainer" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/ShopPage"]
+[node name="MC2" type="MarginContainer" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/BaitPage"]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_constants/margin_left = 25
@@ -243,57 +262,57 @@ theme_override_constants/margin_top = 35
 theme_override_constants/margin_right = 15
 theme_override_constants/margin_bottom = 25
 
-[node name="ScrollContainer" type="ScrollContainer" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/ShopPage/MC2"]
+[node name="ScrollContainer" type="ScrollContainer" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/BaitPage/MC2"]
 layout_mode = 2
 
-[node name="MC" type="MarginContainer" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/ShopPage/MC2/ScrollContainer"]
+[node name="MC" type="MarginContainer" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/BaitPage/MC2/ScrollContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_constants/margin_right = 5
 
-[node name="VBox" type="VBoxContainer" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/ShopPage/MC2/ScrollContainer/MC"]
+[node name="VBox" type="VBoxContainer" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/BaitPage/MC2/ScrollContainer/MC"]
 layout_mode = 2
 
-[node name="PlaceItem1" type="MarginContainer" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/ShopPage/MC2/ScrollContainer/MC/VBox"]
+[node name="PlaceItem1" type="MarginContainer" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/BaitPage/MC2/ScrollContainer/MC/VBox"]
 custom_minimum_size = Vector2(0, 130)
 layout_mode = 2
 theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 0
 theme_override_constants/margin_bottom = 10
 
-[node name="ColorRect" type="ColorRect" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/ShopPage/MC2/ScrollContainer/MC/VBox/PlaceItem1"]
+[node name="ColorRect" type="ColorRect" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/BaitPage/MC2/ScrollContainer/MC/VBox/PlaceItem1"]
 layout_mode = 2
 color = Color(0.196078, 0.196078, 0.196078, 1)
 
-[node name="HBox" type="HBoxContainer" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/ShopPage/MC2/ScrollContainer/MC/VBox/PlaceItem1"]
+[node name="HBox" type="HBoxContainer" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/BaitPage/MC2/ScrollContainer/MC/VBox/PlaceItem1"]
 layout_mode = 2
 
-[node name="MC1" type="MarginContainer" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/ShopPage/MC2/ScrollContainer/MC/VBox/PlaceItem1/HBox"]
+[node name="MC1" type="MarginContainer" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/BaitPage/MC2/ScrollContainer/MC/VBox/PlaceItem1/HBox"]
 layout_mode = 2
 theme_override_constants/margin_left = 10
 theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 10
 
-[node name="VBox" type="VBoxContainer" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/ShopPage/MC2/ScrollContainer/MC/VBox/PlaceItem1/HBox/MC1"]
+[node name="VBox" type="VBoxContainer" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/BaitPage/MC2/ScrollContainer/MC/VBox/PlaceItem1/HBox/MC1"]
 layout_mode = 2
 
-[node name="MC" type="MarginContainer" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/ShopPage/MC2/ScrollContainer/MC/VBox/PlaceItem1/HBox/MC1/VBox"]
+[node name="MC" type="MarginContainer" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/BaitPage/MC2/ScrollContainer/MC/VBox/PlaceItem1/HBox/MC1/VBox"]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="Label" type="Label" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/ShopPage/MC2/ScrollContainer/MC/VBox/PlaceItem1/HBox/MC1/VBox/MC"]
+[node name="Label" type="Label" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/BaitPage/MC2/ScrollContainer/MC/VBox/PlaceItem1/HBox/MC1/VBox/MC"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 25
 text = "Oak Bait"
 
-[node name="MC2" type="MarginContainer" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/ShopPage/MC2/ScrollContainer/MC/VBox/PlaceItem1/HBox/MC1/VBox"]
+[node name="MC2" type="MarginContainer" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/BaitPage/MC2/ScrollContainer/MC/VBox/PlaceItem1/HBox/MC1/VBox"]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_constants/margin_left = 20
 
-[node name="Label" type="Label" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/ShopPage/MC2/ScrollContainer/MC/VBox/PlaceItem1/HBox/MC1/VBox/MC2"]
+[node name="Label" type="Label" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/BaitPage/MC2/ScrollContainer/MC/VBox/PlaceItem1/HBox/MC1/VBox/MC2"]
 custom_minimum_size = Vector2(220, 0)
 layout_mode = 2
 size_flags_vertical = 1
@@ -301,7 +320,7 @@ theme_override_font_sizes/font_size = 12
 text = "5% fishing power"
 autowrap_mode = 3
 
-[node name="MC2" type="MarginContainer" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/ShopPage/MC2/ScrollContainer/MC/VBox/PlaceItem1/HBox"]
+[node name="MC2" type="MarginContainer" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/BaitPage/MC2/ScrollContainer/MC/VBox/PlaceItem1/HBox"]
 custom_minimum_size = Vector2(220, 0)
 layout_mode = 2
 theme_override_constants/margin_left = 10
@@ -309,37 +328,37 @@ theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 10
 
-[node name="GridContainer" type="GridContainer" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/ShopPage/MC2/ScrollContainer/MC/VBox/PlaceItem1/HBox/MC2"]
+[node name="GridContainer" type="GridContainer" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/BaitPage/MC2/ScrollContainer/MC/VBox/PlaceItem1/HBox/MC2"]
 layout_mode = 2
 theme_override_constants/h_separation = 15
 theme_override_constants/v_separation = 10
 columns = 2
 
-[node name="Button" type="Button" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/ShopPage/MC2/ScrollContainer/MC/VBox/PlaceItem1/HBox/MC2/GridContainer"]
+[node name="Button" type="Button" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/BaitPage/MC2/ScrollContainer/MC/VBox/PlaceItem1/HBox/MC2/GridContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "Buy"
 
-[node name="Button2" type="Button" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/ShopPage/MC2/ScrollContainer/MC/VBox/PlaceItem1/HBox/MC2/GridContainer"]
+[node name="Button2" type="Button" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/BaitPage/MC2/ScrollContainer/MC/VBox/PlaceItem1/HBox/MC2/GridContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "10x"
 
-[node name="Button3" type="Button" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/ShopPage/MC2/ScrollContainer/MC/VBox/PlaceItem1/HBox/MC2/GridContainer"]
+[node name="Button3" type="Button" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/BaitPage/MC2/ScrollContainer/MC/VBox/PlaceItem1/HBox/MC2/GridContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "100x"
 
-[node name="Button4" type="Button" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/ShopPage/MC2/ScrollContainer/MC/VBox/PlaceItem1/HBox/MC2/GridContainer"]
+[node name="Button4" type="Button" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/BaitPage/MC2/ScrollContainer/MC/VBox/PlaceItem1/HBox/MC2/GridContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "1000x"
 
-[node name="MC3" type="MarginContainer" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/ShopPage/MC2/ScrollContainer/MC/VBox/PlaceItem1/HBox"]
+[node name="MC3" type="MarginContainer" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/BaitPage/MC2/ScrollContainer/MC/VBox/PlaceItem1/HBox"]
 custom_minimum_size = Vector2(110, 0)
 layout_mode = 2
 theme_override_constants/margin_left = 10
@@ -347,11 +366,11 @@ theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 10
 
-[node name="ColorRect" type="ColorRect" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/ShopPage/MC2/ScrollContainer/MC/VBox/PlaceItem1/HBox/MC3"]
+[node name="ColorRect" type="ColorRect" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/BaitPage/MC2/ScrollContainer/MC/VBox/PlaceItem1/HBox/MC3"]
 layout_mode = 2
 color = Color(0.388235, 0.388235, 0.388235, 1)
 
-[node name="Label" type="Label" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/ShopPage/MC2/ScrollContainer/MC/VBox/PlaceItem1/HBox/MC3"]
+[node name="Label" type="Label" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/BaitPage/MC2/ScrollContainer/MC/VBox/PlaceItem1/HBox/MC3"]
 layout_mode = 2
 size_flags_vertical = 1
 theme_override_font_sizes/font_size = 25
@@ -359,45 +378,45 @@ text = "22"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="PlaceItem2" type="MarginContainer" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/ShopPage/MC2/ScrollContainer/MC/VBox"]
+[node name="PlaceItem2" type="MarginContainer" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/BaitPage/MC2/ScrollContainer/MC/VBox"]
 custom_minimum_size = Vector2(0, 130)
 layout_mode = 2
 theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 0
 theme_override_constants/margin_bottom = 10
 
-[node name="ColorRect" type="ColorRect" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/ShopPage/MC2/ScrollContainer/MC/VBox/PlaceItem2"]
+[node name="ColorRect" type="ColorRect" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/BaitPage/MC2/ScrollContainer/MC/VBox/PlaceItem2"]
 layout_mode = 2
 color = Color(0.196078, 0.196078, 0.196078, 1)
 
-[node name="HBox" type="HBoxContainer" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/ShopPage/MC2/ScrollContainer/MC/VBox/PlaceItem2"]
+[node name="HBox" type="HBoxContainer" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/BaitPage/MC2/ScrollContainer/MC/VBox/PlaceItem2"]
 layout_mode = 2
 
-[node name="MC1" type="MarginContainer" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/ShopPage/MC2/ScrollContainer/MC/VBox/PlaceItem2/HBox"]
+[node name="MC1" type="MarginContainer" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/BaitPage/MC2/ScrollContainer/MC/VBox/PlaceItem2/HBox"]
 layout_mode = 2
 theme_override_constants/margin_left = 10
 theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 10
 
-[node name="VBox" type="VBoxContainer" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/ShopPage/MC2/ScrollContainer/MC/VBox/PlaceItem2/HBox/MC1"]
+[node name="VBox" type="VBoxContainer" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/BaitPage/MC2/ScrollContainer/MC/VBox/PlaceItem2/HBox/MC1"]
 layout_mode = 2
 
-[node name="MC" type="MarginContainer" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/ShopPage/MC2/ScrollContainer/MC/VBox/PlaceItem2/HBox/MC1/VBox"]
+[node name="MC" type="MarginContainer" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/BaitPage/MC2/ScrollContainer/MC/VBox/PlaceItem2/HBox/MC1/VBox"]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="Label" type="Label" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/ShopPage/MC2/ScrollContainer/MC/VBox/PlaceItem2/HBox/MC1/VBox/MC"]
+[node name="Label" type="Label" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/BaitPage/MC2/ScrollContainer/MC/VBox/PlaceItem2/HBox/MC1/VBox/MC"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 25
 text = "Oak Bait"
 
-[node name="MC2" type="MarginContainer" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/ShopPage/MC2/ScrollContainer/MC/VBox/PlaceItem2/HBox/MC1/VBox"]
+[node name="MC2" type="MarginContainer" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/BaitPage/MC2/ScrollContainer/MC/VBox/PlaceItem2/HBox/MC1/VBox"]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_constants/margin_left = 20
 
-[node name="Label" type="Label" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/ShopPage/MC2/ScrollContainer/MC/VBox/PlaceItem2/HBox/MC1/VBox/MC2"]
+[node name="Label" type="Label" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/BaitPage/MC2/ScrollContainer/MC/VBox/PlaceItem2/HBox/MC1/VBox/MC2"]
 custom_minimum_size = Vector2(220, 0)
 layout_mode = 2
 size_flags_vertical = 1
@@ -405,7 +424,7 @@ theme_override_font_sizes/font_size = 12
 text = "5% fishing power"
 autowrap_mode = 3
 
-[node name="MC2" type="MarginContainer" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/ShopPage/MC2/ScrollContainer/MC/VBox/PlaceItem2/HBox"]
+[node name="MC2" type="MarginContainer" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/BaitPage/MC2/ScrollContainer/MC/VBox/PlaceItem2/HBox"]
 custom_minimum_size = Vector2(220, 0)
 layout_mode = 2
 theme_override_constants/margin_left = 10
@@ -413,37 +432,37 @@ theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 10
 
-[node name="GridContainer" type="GridContainer" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/ShopPage/MC2/ScrollContainer/MC/VBox/PlaceItem2/HBox/MC2"]
+[node name="GridContainer" type="GridContainer" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/BaitPage/MC2/ScrollContainer/MC/VBox/PlaceItem2/HBox/MC2"]
 layout_mode = 2
 theme_override_constants/h_separation = 15
 theme_override_constants/v_separation = 10
 columns = 2
 
-[node name="Button" type="Button" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/ShopPage/MC2/ScrollContainer/MC/VBox/PlaceItem2/HBox/MC2/GridContainer"]
+[node name="Button" type="Button" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/BaitPage/MC2/ScrollContainer/MC/VBox/PlaceItem2/HBox/MC2/GridContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "Buy"
 
-[node name="Button2" type="Button" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/ShopPage/MC2/ScrollContainer/MC/VBox/PlaceItem2/HBox/MC2/GridContainer"]
+[node name="Button2" type="Button" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/BaitPage/MC2/ScrollContainer/MC/VBox/PlaceItem2/HBox/MC2/GridContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "10x"
 
-[node name="Button3" type="Button" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/ShopPage/MC2/ScrollContainer/MC/VBox/PlaceItem2/HBox/MC2/GridContainer"]
+[node name="Button3" type="Button" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/BaitPage/MC2/ScrollContainer/MC/VBox/PlaceItem2/HBox/MC2/GridContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "100x"
 
-[node name="Button4" type="Button" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/ShopPage/MC2/ScrollContainer/MC/VBox/PlaceItem2/HBox/MC2/GridContainer"]
+[node name="Button4" type="Button" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/BaitPage/MC2/ScrollContainer/MC/VBox/PlaceItem2/HBox/MC2/GridContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "1000x"
 
-[node name="MC3" type="MarginContainer" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/ShopPage/MC2/ScrollContainer/MC/VBox/PlaceItem2/HBox"]
+[node name="MC3" type="MarginContainer" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/BaitPage/MC2/ScrollContainer/MC/VBox/PlaceItem2/HBox"]
 custom_minimum_size = Vector2(110, 0)
 layout_mode = 2
 theme_override_constants/margin_left = 10
@@ -451,11 +470,11 @@ theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 10
 
-[node name="ColorRect" type="ColorRect" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/ShopPage/MC2/ScrollContainer/MC/VBox/PlaceItem2/HBox/MC3"]
+[node name="ColorRect" type="ColorRect" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/BaitPage/MC2/ScrollContainer/MC/VBox/PlaceItem2/HBox/MC3"]
 layout_mode = 2
 color = Color(0.388235, 0.388235, 0.388235, 1)
 
-[node name="Label" type="Label" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/ShopPage/MC2/ScrollContainer/MC/VBox/PlaceItem2/HBox/MC3"]
+[node name="Label" type="Label" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/BaitPage/MC2/ScrollContainer/MC/VBox/PlaceItem2/HBox/MC3"]
 layout_mode = 2
 size_flags_vertical = 1
 theme_override_font_sizes/font_size = 25
@@ -463,45 +482,45 @@ text = "22"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="PlaceItem3" type="MarginContainer" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/ShopPage/MC2/ScrollContainer/MC/VBox"]
+[node name="PlaceItem3" type="MarginContainer" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/BaitPage/MC2/ScrollContainer/MC/VBox"]
 custom_minimum_size = Vector2(0, 130)
 layout_mode = 2
 theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 0
 theme_override_constants/margin_bottom = 10
 
-[node name="ColorRect" type="ColorRect" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/ShopPage/MC2/ScrollContainer/MC/VBox/PlaceItem3"]
+[node name="ColorRect" type="ColorRect" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/BaitPage/MC2/ScrollContainer/MC/VBox/PlaceItem3"]
 layout_mode = 2
 color = Color(0.196078, 0.196078, 0.196078, 1)
 
-[node name="HBox" type="HBoxContainer" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/ShopPage/MC2/ScrollContainer/MC/VBox/PlaceItem3"]
+[node name="HBox" type="HBoxContainer" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/BaitPage/MC2/ScrollContainer/MC/VBox/PlaceItem3"]
 layout_mode = 2
 
-[node name="MC1" type="MarginContainer" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/ShopPage/MC2/ScrollContainer/MC/VBox/PlaceItem3/HBox"]
+[node name="MC1" type="MarginContainer" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/BaitPage/MC2/ScrollContainer/MC/VBox/PlaceItem3/HBox"]
 layout_mode = 2
 theme_override_constants/margin_left = 10
 theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 10
 
-[node name="VBox" type="VBoxContainer" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/ShopPage/MC2/ScrollContainer/MC/VBox/PlaceItem3/HBox/MC1"]
+[node name="VBox" type="VBoxContainer" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/BaitPage/MC2/ScrollContainer/MC/VBox/PlaceItem3/HBox/MC1"]
 layout_mode = 2
 
-[node name="MC" type="MarginContainer" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/ShopPage/MC2/ScrollContainer/MC/VBox/PlaceItem3/HBox/MC1/VBox"]
+[node name="MC" type="MarginContainer" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/BaitPage/MC2/ScrollContainer/MC/VBox/PlaceItem3/HBox/MC1/VBox"]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="Label" type="Label" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/ShopPage/MC2/ScrollContainer/MC/VBox/PlaceItem3/HBox/MC1/VBox/MC"]
+[node name="Label" type="Label" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/BaitPage/MC2/ScrollContainer/MC/VBox/PlaceItem3/HBox/MC1/VBox/MC"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 25
 text = "Oak Bait"
 
-[node name="MC2" type="MarginContainer" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/ShopPage/MC2/ScrollContainer/MC/VBox/PlaceItem3/HBox/MC1/VBox"]
+[node name="MC2" type="MarginContainer" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/BaitPage/MC2/ScrollContainer/MC/VBox/PlaceItem3/HBox/MC1/VBox"]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_constants/margin_left = 20
 
-[node name="Label" type="Label" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/ShopPage/MC2/ScrollContainer/MC/VBox/PlaceItem3/HBox/MC1/VBox/MC2"]
+[node name="Label" type="Label" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/BaitPage/MC2/ScrollContainer/MC/VBox/PlaceItem3/HBox/MC1/VBox/MC2"]
 custom_minimum_size = Vector2(220, 0)
 layout_mode = 2
 size_flags_vertical = 1
@@ -509,7 +528,7 @@ theme_override_font_sizes/font_size = 12
 text = "5% fishing power"
 autowrap_mode = 3
 
-[node name="MC2" type="MarginContainer" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/ShopPage/MC2/ScrollContainer/MC/VBox/PlaceItem3/HBox"]
+[node name="MC2" type="MarginContainer" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/BaitPage/MC2/ScrollContainer/MC/VBox/PlaceItem3/HBox"]
 custom_minimum_size = Vector2(220, 0)
 layout_mode = 2
 theme_override_constants/margin_left = 10
@@ -517,37 +536,37 @@ theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 10
 
-[node name="GridContainer" type="GridContainer" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/ShopPage/MC2/ScrollContainer/MC/VBox/PlaceItem3/HBox/MC2"]
+[node name="GridContainer" type="GridContainer" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/BaitPage/MC2/ScrollContainer/MC/VBox/PlaceItem3/HBox/MC2"]
 layout_mode = 2
 theme_override_constants/h_separation = 15
 theme_override_constants/v_separation = 10
 columns = 2
 
-[node name="Button" type="Button" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/ShopPage/MC2/ScrollContainer/MC/VBox/PlaceItem3/HBox/MC2/GridContainer"]
+[node name="Button" type="Button" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/BaitPage/MC2/ScrollContainer/MC/VBox/PlaceItem3/HBox/MC2/GridContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "Buy"
 
-[node name="Button2" type="Button" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/ShopPage/MC2/ScrollContainer/MC/VBox/PlaceItem3/HBox/MC2/GridContainer"]
+[node name="Button2" type="Button" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/BaitPage/MC2/ScrollContainer/MC/VBox/PlaceItem3/HBox/MC2/GridContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "10x"
 
-[node name="Button3" type="Button" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/ShopPage/MC2/ScrollContainer/MC/VBox/PlaceItem3/HBox/MC2/GridContainer"]
+[node name="Button3" type="Button" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/BaitPage/MC2/ScrollContainer/MC/VBox/PlaceItem3/HBox/MC2/GridContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "100x"
 
-[node name="Button4" type="Button" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/ShopPage/MC2/ScrollContainer/MC/VBox/PlaceItem3/HBox/MC2/GridContainer"]
+[node name="Button4" type="Button" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/BaitPage/MC2/ScrollContainer/MC/VBox/PlaceItem3/HBox/MC2/GridContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "1000x"
 
-[node name="MC3" type="MarginContainer" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/ShopPage/MC2/ScrollContainer/MC/VBox/PlaceItem3/HBox"]
+[node name="MC3" type="MarginContainer" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/BaitPage/MC2/ScrollContainer/MC/VBox/PlaceItem3/HBox"]
 custom_minimum_size = Vector2(110, 0)
 layout_mode = 2
 theme_override_constants/margin_left = 10
@@ -555,11 +574,11 @@ theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 10
 
-[node name="ColorRect" type="ColorRect" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/ShopPage/MC2/ScrollContainer/MC/VBox/PlaceItem3/HBox/MC3"]
+[node name="ColorRect" type="ColorRect" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/BaitPage/MC2/ScrollContainer/MC/VBox/PlaceItem3/HBox/MC3"]
 layout_mode = 2
 color = Color(0.388235, 0.388235, 0.388235, 1)
 
-[node name="Label" type="Label" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/ShopPage/MC2/ScrollContainer/MC/VBox/PlaceItem3/HBox/MC3"]
+[node name="Label" type="Label" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/BaitPage/MC2/ScrollContainer/MC/VBox/PlaceItem3/HBox/MC3"]
 layout_mode = 2
 size_flags_vertical = 1
 theme_override_font_sizes/font_size = 25
@@ -567,45 +586,45 @@ text = "22"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="PlaceItem4" type="MarginContainer" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/ShopPage/MC2/ScrollContainer/MC/VBox"]
+[node name="PlaceItem4" type="MarginContainer" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/BaitPage/MC2/ScrollContainer/MC/VBox"]
 custom_minimum_size = Vector2(0, 130)
 layout_mode = 2
 theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 0
 theme_override_constants/margin_bottom = 10
 
-[node name="ColorRect" type="ColorRect" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/ShopPage/MC2/ScrollContainer/MC/VBox/PlaceItem4"]
+[node name="ColorRect" type="ColorRect" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/BaitPage/MC2/ScrollContainer/MC/VBox/PlaceItem4"]
 layout_mode = 2
 color = Color(0.196078, 0.196078, 0.196078, 1)
 
-[node name="HBox" type="HBoxContainer" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/ShopPage/MC2/ScrollContainer/MC/VBox/PlaceItem4"]
+[node name="HBox" type="HBoxContainer" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/BaitPage/MC2/ScrollContainer/MC/VBox/PlaceItem4"]
 layout_mode = 2
 
-[node name="MC1" type="MarginContainer" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/ShopPage/MC2/ScrollContainer/MC/VBox/PlaceItem4/HBox"]
+[node name="MC1" type="MarginContainer" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/BaitPage/MC2/ScrollContainer/MC/VBox/PlaceItem4/HBox"]
 layout_mode = 2
 theme_override_constants/margin_left = 10
 theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 10
 
-[node name="VBox" type="VBoxContainer" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/ShopPage/MC2/ScrollContainer/MC/VBox/PlaceItem4/HBox/MC1"]
+[node name="VBox" type="VBoxContainer" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/BaitPage/MC2/ScrollContainer/MC/VBox/PlaceItem4/HBox/MC1"]
 layout_mode = 2
 
-[node name="MC" type="MarginContainer" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/ShopPage/MC2/ScrollContainer/MC/VBox/PlaceItem4/HBox/MC1/VBox"]
+[node name="MC" type="MarginContainer" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/BaitPage/MC2/ScrollContainer/MC/VBox/PlaceItem4/HBox/MC1/VBox"]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="Label" type="Label" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/ShopPage/MC2/ScrollContainer/MC/VBox/PlaceItem4/HBox/MC1/VBox/MC"]
+[node name="Label" type="Label" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/BaitPage/MC2/ScrollContainer/MC/VBox/PlaceItem4/HBox/MC1/VBox/MC"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 25
 text = "Oak Bait"
 
-[node name="MC2" type="MarginContainer" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/ShopPage/MC2/ScrollContainer/MC/VBox/PlaceItem4/HBox/MC1/VBox"]
+[node name="MC2" type="MarginContainer" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/BaitPage/MC2/ScrollContainer/MC/VBox/PlaceItem4/HBox/MC1/VBox"]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_constants/margin_left = 20
 
-[node name="Label" type="Label" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/ShopPage/MC2/ScrollContainer/MC/VBox/PlaceItem4/HBox/MC1/VBox/MC2"]
+[node name="Label" type="Label" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/BaitPage/MC2/ScrollContainer/MC/VBox/PlaceItem4/HBox/MC1/VBox/MC2"]
 custom_minimum_size = Vector2(220, 0)
 layout_mode = 2
 size_flags_vertical = 1
@@ -613,7 +632,7 @@ theme_override_font_sizes/font_size = 12
 text = "5% fishing power"
 autowrap_mode = 3
 
-[node name="MC2" type="MarginContainer" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/ShopPage/MC2/ScrollContainer/MC/VBox/PlaceItem4/HBox"]
+[node name="MC2" type="MarginContainer" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/BaitPage/MC2/ScrollContainer/MC/VBox/PlaceItem4/HBox"]
 custom_minimum_size = Vector2(220, 0)
 layout_mode = 2
 theme_override_constants/margin_left = 10
@@ -621,37 +640,37 @@ theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 10
 
-[node name="GridContainer" type="GridContainer" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/ShopPage/MC2/ScrollContainer/MC/VBox/PlaceItem4/HBox/MC2"]
+[node name="GridContainer" type="GridContainer" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/BaitPage/MC2/ScrollContainer/MC/VBox/PlaceItem4/HBox/MC2"]
 layout_mode = 2
 theme_override_constants/h_separation = 15
 theme_override_constants/v_separation = 10
 columns = 2
 
-[node name="Button" type="Button" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/ShopPage/MC2/ScrollContainer/MC/VBox/PlaceItem4/HBox/MC2/GridContainer"]
+[node name="Button" type="Button" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/BaitPage/MC2/ScrollContainer/MC/VBox/PlaceItem4/HBox/MC2/GridContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "Buy"
 
-[node name="Button2" type="Button" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/ShopPage/MC2/ScrollContainer/MC/VBox/PlaceItem4/HBox/MC2/GridContainer"]
+[node name="Button2" type="Button" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/BaitPage/MC2/ScrollContainer/MC/VBox/PlaceItem4/HBox/MC2/GridContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "10x"
 
-[node name="Button3" type="Button" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/ShopPage/MC2/ScrollContainer/MC/VBox/PlaceItem4/HBox/MC2/GridContainer"]
+[node name="Button3" type="Button" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/BaitPage/MC2/ScrollContainer/MC/VBox/PlaceItem4/HBox/MC2/GridContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "100x"
 
-[node name="Button4" type="Button" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/ShopPage/MC2/ScrollContainer/MC/VBox/PlaceItem4/HBox/MC2/GridContainer"]
+[node name="Button4" type="Button" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/BaitPage/MC2/ScrollContainer/MC/VBox/PlaceItem4/HBox/MC2/GridContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "1000x"
 
-[node name="MC3" type="MarginContainer" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/ShopPage/MC2/ScrollContainer/MC/VBox/PlaceItem4/HBox"]
+[node name="MC3" type="MarginContainer" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/BaitPage/MC2/ScrollContainer/MC/VBox/PlaceItem4/HBox"]
 custom_minimum_size = Vector2(110, 0)
 layout_mode = 2
 theme_override_constants/margin_left = 10
@@ -659,11 +678,11 @@ theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 10
 
-[node name="ColorRect" type="ColorRect" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/ShopPage/MC2/ScrollContainer/MC/VBox/PlaceItem4/HBox/MC3"]
+[node name="ColorRect" type="ColorRect" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/BaitPage/MC2/ScrollContainer/MC/VBox/PlaceItem4/HBox/MC3"]
 layout_mode = 2
 color = Color(0.388235, 0.388235, 0.388235, 1)
 
-[node name="Label" type="Label" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/ShopPage/MC2/ScrollContainer/MC/VBox/PlaceItem4/HBox/MC3"]
+[node name="Label" type="Label" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/BaitPage/MC2/ScrollContainer/MC/VBox/PlaceItem4/HBox/MC3"]
 layout_mode = 2
 size_flags_vertical = 1
 theme_override_font_sizes/font_size = 25
@@ -671,45 +690,45 @@ text = "22"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="PlaceItem5" type="MarginContainer" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/ShopPage/MC2/ScrollContainer/MC/VBox"]
+[node name="PlaceItem5" type="MarginContainer" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/BaitPage/MC2/ScrollContainer/MC/VBox"]
 custom_minimum_size = Vector2(0, 130)
 layout_mode = 2
 theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 0
 theme_override_constants/margin_bottom = 10
 
-[node name="ColorRect" type="ColorRect" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/ShopPage/MC2/ScrollContainer/MC/VBox/PlaceItem5"]
+[node name="ColorRect" type="ColorRect" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/BaitPage/MC2/ScrollContainer/MC/VBox/PlaceItem5"]
 layout_mode = 2
 color = Color(0.196078, 0.196078, 0.196078, 1)
 
-[node name="HBox" type="HBoxContainer" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/ShopPage/MC2/ScrollContainer/MC/VBox/PlaceItem5"]
+[node name="HBox" type="HBoxContainer" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/BaitPage/MC2/ScrollContainer/MC/VBox/PlaceItem5"]
 layout_mode = 2
 
-[node name="MC1" type="MarginContainer" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/ShopPage/MC2/ScrollContainer/MC/VBox/PlaceItem5/HBox"]
+[node name="MC1" type="MarginContainer" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/BaitPage/MC2/ScrollContainer/MC/VBox/PlaceItem5/HBox"]
 layout_mode = 2
 theme_override_constants/margin_left = 10
 theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 10
 
-[node name="VBox" type="VBoxContainer" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/ShopPage/MC2/ScrollContainer/MC/VBox/PlaceItem5/HBox/MC1"]
+[node name="VBox" type="VBoxContainer" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/BaitPage/MC2/ScrollContainer/MC/VBox/PlaceItem5/HBox/MC1"]
 layout_mode = 2
 
-[node name="MC" type="MarginContainer" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/ShopPage/MC2/ScrollContainer/MC/VBox/PlaceItem5/HBox/MC1/VBox"]
+[node name="MC" type="MarginContainer" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/BaitPage/MC2/ScrollContainer/MC/VBox/PlaceItem5/HBox/MC1/VBox"]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="Label" type="Label" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/ShopPage/MC2/ScrollContainer/MC/VBox/PlaceItem5/HBox/MC1/VBox/MC"]
+[node name="Label" type="Label" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/BaitPage/MC2/ScrollContainer/MC/VBox/PlaceItem5/HBox/MC1/VBox/MC"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 25
 text = "Oak Bait"
 
-[node name="MC2" type="MarginContainer" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/ShopPage/MC2/ScrollContainer/MC/VBox/PlaceItem5/HBox/MC1/VBox"]
+[node name="MC2" type="MarginContainer" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/BaitPage/MC2/ScrollContainer/MC/VBox/PlaceItem5/HBox/MC1/VBox"]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_constants/margin_left = 20
 
-[node name="Label" type="Label" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/ShopPage/MC2/ScrollContainer/MC/VBox/PlaceItem5/HBox/MC1/VBox/MC2"]
+[node name="Label" type="Label" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/BaitPage/MC2/ScrollContainer/MC/VBox/PlaceItem5/HBox/MC1/VBox/MC2"]
 custom_minimum_size = Vector2(220, 0)
 layout_mode = 2
 size_flags_vertical = 1
@@ -717,7 +736,7 @@ theme_override_font_sizes/font_size = 12
 text = "5% fishing power"
 autowrap_mode = 3
 
-[node name="MC2" type="MarginContainer" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/ShopPage/MC2/ScrollContainer/MC/VBox/PlaceItem5/HBox"]
+[node name="MC2" type="MarginContainer" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/BaitPage/MC2/ScrollContainer/MC/VBox/PlaceItem5/HBox"]
 custom_minimum_size = Vector2(220, 0)
 layout_mode = 2
 theme_override_constants/margin_left = 10
@@ -725,37 +744,37 @@ theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 10
 
-[node name="GridContainer" type="GridContainer" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/ShopPage/MC2/ScrollContainer/MC/VBox/PlaceItem5/HBox/MC2"]
+[node name="GridContainer" type="GridContainer" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/BaitPage/MC2/ScrollContainer/MC/VBox/PlaceItem5/HBox/MC2"]
 layout_mode = 2
 theme_override_constants/h_separation = 15
 theme_override_constants/v_separation = 10
 columns = 2
 
-[node name="Button" type="Button" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/ShopPage/MC2/ScrollContainer/MC/VBox/PlaceItem5/HBox/MC2/GridContainer"]
+[node name="Button" type="Button" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/BaitPage/MC2/ScrollContainer/MC/VBox/PlaceItem5/HBox/MC2/GridContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "Buy"
 
-[node name="Button2" type="Button" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/ShopPage/MC2/ScrollContainer/MC/VBox/PlaceItem5/HBox/MC2/GridContainer"]
+[node name="Button2" type="Button" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/BaitPage/MC2/ScrollContainer/MC/VBox/PlaceItem5/HBox/MC2/GridContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "10x"
 
-[node name="Button3" type="Button" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/ShopPage/MC2/ScrollContainer/MC/VBox/PlaceItem5/HBox/MC2/GridContainer"]
+[node name="Button3" type="Button" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/BaitPage/MC2/ScrollContainer/MC/VBox/PlaceItem5/HBox/MC2/GridContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "100x"
 
-[node name="Button4" type="Button" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/ShopPage/MC2/ScrollContainer/MC/VBox/PlaceItem5/HBox/MC2/GridContainer"]
+[node name="Button4" type="Button" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/BaitPage/MC2/ScrollContainer/MC/VBox/PlaceItem5/HBox/MC2/GridContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "1000x"
 
-[node name="MC3" type="MarginContainer" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/ShopPage/MC2/ScrollContainer/MC/VBox/PlaceItem5/HBox"]
+[node name="MC3" type="MarginContainer" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/BaitPage/MC2/ScrollContainer/MC/VBox/PlaceItem5/HBox"]
 custom_minimum_size = Vector2(110, 0)
 layout_mode = 2
 theme_override_constants/margin_left = 10
@@ -763,11 +782,11 @@ theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 10
 
-[node name="ColorRect" type="ColorRect" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/ShopPage/MC2/ScrollContainer/MC/VBox/PlaceItem5/HBox/MC3"]
+[node name="ColorRect" type="ColorRect" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/BaitPage/MC2/ScrollContainer/MC/VBox/PlaceItem5/HBox/MC3"]
 layout_mode = 2
 color = Color(0.388235, 0.388235, 0.388235, 1)
 
-[node name="Label" type="Label" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/ShopPage/MC2/ScrollContainer/MC/VBox/PlaceItem5/HBox/MC3"]
+[node name="Label" type="Label" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/BaitPage/MC2/ScrollContainer/MC/VBox/PlaceItem5/HBox/MC3"]
 layout_mode = 2
 size_flags_vertical = 1
 theme_override_font_sizes/font_size = 25
@@ -775,45 +794,45 @@ text = "22"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="PlaceItem6" type="MarginContainer" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/ShopPage/MC2/ScrollContainer/MC/VBox"]
+[node name="PlaceItem6" type="MarginContainer" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/BaitPage/MC2/ScrollContainer/MC/VBox"]
 custom_minimum_size = Vector2(0, 130)
 layout_mode = 2
 theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 0
 theme_override_constants/margin_bottom = 10
 
-[node name="ColorRect" type="ColorRect" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/ShopPage/MC2/ScrollContainer/MC/VBox/PlaceItem6"]
+[node name="ColorRect" type="ColorRect" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/BaitPage/MC2/ScrollContainer/MC/VBox/PlaceItem6"]
 layout_mode = 2
 color = Color(0.196078, 0.196078, 0.196078, 1)
 
-[node name="HBox" type="HBoxContainer" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/ShopPage/MC2/ScrollContainer/MC/VBox/PlaceItem6"]
+[node name="HBox" type="HBoxContainer" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/BaitPage/MC2/ScrollContainer/MC/VBox/PlaceItem6"]
 layout_mode = 2
 
-[node name="MC1" type="MarginContainer" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/ShopPage/MC2/ScrollContainer/MC/VBox/PlaceItem6/HBox"]
+[node name="MC1" type="MarginContainer" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/BaitPage/MC2/ScrollContainer/MC/VBox/PlaceItem6/HBox"]
 layout_mode = 2
 theme_override_constants/margin_left = 10
 theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 10
 
-[node name="VBox" type="VBoxContainer" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/ShopPage/MC2/ScrollContainer/MC/VBox/PlaceItem6/HBox/MC1"]
+[node name="VBox" type="VBoxContainer" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/BaitPage/MC2/ScrollContainer/MC/VBox/PlaceItem6/HBox/MC1"]
 layout_mode = 2
 
-[node name="MC" type="MarginContainer" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/ShopPage/MC2/ScrollContainer/MC/VBox/PlaceItem6/HBox/MC1/VBox"]
+[node name="MC" type="MarginContainer" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/BaitPage/MC2/ScrollContainer/MC/VBox/PlaceItem6/HBox/MC1/VBox"]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="Label" type="Label" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/ShopPage/MC2/ScrollContainer/MC/VBox/PlaceItem6/HBox/MC1/VBox/MC"]
+[node name="Label" type="Label" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/BaitPage/MC2/ScrollContainer/MC/VBox/PlaceItem6/HBox/MC1/VBox/MC"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 25
 text = "Oak Bait"
 
-[node name="MC2" type="MarginContainer" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/ShopPage/MC2/ScrollContainer/MC/VBox/PlaceItem6/HBox/MC1/VBox"]
+[node name="MC2" type="MarginContainer" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/BaitPage/MC2/ScrollContainer/MC/VBox/PlaceItem6/HBox/MC1/VBox"]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_constants/margin_left = 20
 
-[node name="Label" type="Label" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/ShopPage/MC2/ScrollContainer/MC/VBox/PlaceItem6/HBox/MC1/VBox/MC2"]
+[node name="Label" type="Label" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/BaitPage/MC2/ScrollContainer/MC/VBox/PlaceItem6/HBox/MC1/VBox/MC2"]
 custom_minimum_size = Vector2(220, 0)
 layout_mode = 2
 size_flags_vertical = 1
@@ -821,7 +840,7 @@ theme_override_font_sizes/font_size = 12
 text = "5% fishing power"
 autowrap_mode = 3
 
-[node name="MC2" type="MarginContainer" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/ShopPage/MC2/ScrollContainer/MC/VBox/PlaceItem6/HBox"]
+[node name="MC2" type="MarginContainer" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/BaitPage/MC2/ScrollContainer/MC/VBox/PlaceItem6/HBox"]
 custom_minimum_size = Vector2(220, 0)
 layout_mode = 2
 theme_override_constants/margin_left = 10
@@ -829,37 +848,37 @@ theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 10
 
-[node name="GridContainer" type="GridContainer" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/ShopPage/MC2/ScrollContainer/MC/VBox/PlaceItem6/HBox/MC2"]
+[node name="GridContainer" type="GridContainer" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/BaitPage/MC2/ScrollContainer/MC/VBox/PlaceItem6/HBox/MC2"]
 layout_mode = 2
 theme_override_constants/h_separation = 15
 theme_override_constants/v_separation = 10
 columns = 2
 
-[node name="Button" type="Button" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/ShopPage/MC2/ScrollContainer/MC/VBox/PlaceItem6/HBox/MC2/GridContainer"]
+[node name="Button" type="Button" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/BaitPage/MC2/ScrollContainer/MC/VBox/PlaceItem6/HBox/MC2/GridContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "Buy"
 
-[node name="Button2" type="Button" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/ShopPage/MC2/ScrollContainer/MC/VBox/PlaceItem6/HBox/MC2/GridContainer"]
+[node name="Button2" type="Button" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/BaitPage/MC2/ScrollContainer/MC/VBox/PlaceItem6/HBox/MC2/GridContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "10x"
 
-[node name="Button3" type="Button" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/ShopPage/MC2/ScrollContainer/MC/VBox/PlaceItem6/HBox/MC2/GridContainer"]
+[node name="Button3" type="Button" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/BaitPage/MC2/ScrollContainer/MC/VBox/PlaceItem6/HBox/MC2/GridContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "100x"
 
-[node name="Button4" type="Button" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/ShopPage/MC2/ScrollContainer/MC/VBox/PlaceItem6/HBox/MC2/GridContainer"]
+[node name="Button4" type="Button" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/BaitPage/MC2/ScrollContainer/MC/VBox/PlaceItem6/HBox/MC2/GridContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "1000x"
 
-[node name="MC3" type="MarginContainer" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/ShopPage/MC2/ScrollContainer/MC/VBox/PlaceItem6/HBox"]
+[node name="MC3" type="MarginContainer" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/BaitPage/MC2/ScrollContainer/MC/VBox/PlaceItem6/HBox"]
 custom_minimum_size = Vector2(110, 0)
 layout_mode = 2
 theme_override_constants/margin_left = 10
@@ -867,11 +886,11 @@ theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 10
 
-[node name="ColorRect" type="ColorRect" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/ShopPage/MC2/ScrollContainer/MC/VBox/PlaceItem6/HBox/MC3"]
+[node name="ColorRect" type="ColorRect" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/BaitPage/MC2/ScrollContainer/MC/VBox/PlaceItem6/HBox/MC3"]
 layout_mode = 2
 color = Color(0.388235, 0.388235, 0.388235, 1)
 
-[node name="Label" type="Label" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/ShopPage/MC2/ScrollContainer/MC/VBox/PlaceItem6/HBox/MC3"]
+[node name="Label" type="Label" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/BaitPage/MC2/ScrollContainer/MC/VBox/PlaceItem6/HBox/MC3"]
 layout_mode = 2
 size_flags_vertical = 1
 theme_override_font_sizes/font_size = 25
@@ -880,6 +899,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="FishingSpotsPage" type="VBoxContainer" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC"]
+visible = false
 layout_mode = 2
 
 [node name="MC" type="MarginContainer" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/FishingSpotsPage"]
@@ -1372,3 +1392,7 @@ color = Color(0.564706, 0.6, 0.415686, 1)
 layout_mode = 2
 theme_override_font_sizes/font_size = 26
 text = "GO"
+
+[connection signal="button_down" from="MC/HBox/FishingImprovementsMenusHBox/VBox/MC/ColorRect/HBox/MC/FishButton" to="." method="_on_fish_button_button_down"]
+[connection signal="button_down" from="MC/HBox/FishingImprovementsMenusHBox/VBox/MC/ColorRect/HBox/MC3/BaitButton" to="." method="_on_bait_button_button_down"]
+[connection signal="button_down" from="MC/HBox/FishingImprovementsMenusHBox/VBox/MC/ColorRect/HBox/MC2/SpotButton" to="." method="_on_spot_button_button_down"]

@@ -1,0 +1,41 @@
+[gd_scene load_steps=3 format=3 uid="uid://45ggwxc6rcjg"]
+
+[ext_resource type="Script" path="res://Scenes/GameMainScreenScenes/FishingScenes/fish_page.gd" id="1_bf012"]
+[ext_resource type="PackedScene" uid="uid://bjat6birf87xk" path="res://Scenes/GameMainScreenScenes/FishingScenes/FishPage/fish_item.tscn" id="2_em4sw"]
+
+[node name="FishPage" type="VBoxContainer"]
+custom_minimum_size = Vector2(657, 926)
+script = ExtResource("1_bf012")
+
+[node name="MC" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_left = 40
+theme_override_constants/margin_right = 40
+
+[node name="Label" type="Label" parent="MC"]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 45
+text = "Fish"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MC2" type="MarginContainer" parent="."]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 25
+
+[node name="Scroll" type="ScrollContainer" parent="MC2"]
+layout_mode = 2
+
+[node name="Grid" type="GridContainer" parent="MC2/Scroll"]
+layout_mode = 2
+theme_override_constants/h_separation = 8
+theme_override_constants/v_separation = 8
+columns = 3
+
+[node name="FishItem" parent="MC2/Scroll/Grid" instance=ExtResource("2_em4sw")]
+layout_mode = 2

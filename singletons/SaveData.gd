@@ -1192,55 +1192,202 @@ var GeneralInfo = {
 }
 
 var CaughtFish = {
-	Fishing.FishEnum.Boot : 0,
-	Fishing.FishEnum.Seaweed : 0,
-	Fishing.FishEnum.ColaBottle : 0,
-	Fishing.FishEnum.Catfish : 0,
-	Fishing.FishEnum.GoldPotI : 0,
-	Fishing.FishEnum.GoldPotII : 0,
-	Fishing.FishEnum.GoldPotIII : 0,
-	Fishing.FishEnum.GoldFish : 0,
-	Fishing.FishEnum.MagicPotI : 0,
-	Fishing.FishEnum.MagicPotII : 0,
-	Fishing.FishEnum.MagicPotIII : 0,
-	Fishing.FishEnum.MagicFish : 0,
-	Fishing.FishEnum.SpeedFish : 0,
-	Fishing.FishEnum.StorageBox : 0,
-	Fishing.FishEnum.ResearchFish : 0,
-	Fishing.FishEnum.WoodFish : 0,
-	Fishing.FishEnum.DamFish : 0,
-	Fishing.FishEnum.LuckyFish : 0,
-	Fishing.FishEnum.CrateFish : 0,
-	Fishing.FishEnum.BotFish : 0,
-	Fishing.FishEnum.IceFish : 0,
-	Fishing.FishEnum.BaitFish : 0,
-	Fishing.FishEnum.ElectricEal : 0,
-	Fishing.FishEnum.ElectricJellyfish : 0,
-	Fishing.FishEnum.ElectricSponge : 0,
-	Fishing.FishEnum.ConstructionShark : 0,
-	Fishing.FishEnum.SalmonLumberJack : 0,
-	Fishing.FishEnum.AscentionFish : 0,
-	Fishing.FishEnum.DescentionFish : 0,
-	Fishing.FishEnum.BigFish : 0,
-	Fishing.FishEnum.Clownfish : 0,
-	Fishing.FishEnum.Stick : 0,
-	Fishing.FishEnum.OakCrate : 0,
-	Fishing.FishEnum.AppleCrate : 0,
-	Fishing.FishEnum.MapleCrate : 0,
-	Fishing.FishEnum.BirchCrate : 0,
-	Fishing.FishEnum.SpruceCrate : 0,
-	Fishing.FishEnum.ChestnutCrate : 0,
-	Fishing.FishEnum.CherryCrate : 0,
-	Fishing.FishEnum.AshCrate : 0,
-	Fishing.FishEnum.CedarCrate : 0,
-	Fishing.FishEnum.MahoganyCrate : 0,
-	Fishing.FishEnum.EbonyCrate : 0,
-	Fishing.FishEnum.DogwoodCrate : 0,
-	Fishing.FishEnum.RosewoodCrate : 0,
-	Fishing.FishEnum.GhostGumCrate : 0,
-	Fishing.FishEnum.DragonwoodCrate : 0,
-	Fishing.FishEnum.BlueWhale : 0,
-	Fishing.FishEnum.MultiplyingFish : 0,
+	Fishing.FishEnum.Boot : {
+		"Count" : 0,
+		"Caught" : false, # at least once
+	},
+	Fishing.FishEnum.Seaweed : {
+		"Count" : 0,
+		"Caught" : false,
+	},
+	Fishing.FishEnum.ColaBottle : {
+		"Count" : 0,
+		"Caught" : false,
+	},
+	Fishing.FishEnum.Catfish : {
+		"Count" : 0,
+		"Caught" : false,
+	},
+	Fishing.FishEnum.GoldPotI : {
+		"Count" : 0,
+		"Caught" : false,
+	},
+	Fishing.FishEnum.GoldPotII : {
+		"Count" : 0,
+		"Caught" : false,
+	},
+	Fishing.FishEnum.GoldPotIII : {
+		"Count" : 0,
+		"Caught" : false,
+	},
+	Fishing.FishEnum.GoldFish : {
+		"Count" : 0,
+		"Caught" : false,
+	},
+	Fishing.FishEnum.MagicPotI : {
+		"Count" : 0,
+		"Caught" : false,
+	},
+	Fishing.FishEnum.MagicPotII : {
+		"Count" : 0,
+		"Caught" : false,
+	},
+	Fishing.FishEnum.MagicPotIII : {
+		"Count" : 0,
+		"Caught" : false,
+	},
+	Fishing.FishEnum.MagicFish : {
+		"Count" : 0,
+		"Caught" : false,
+	},
+	Fishing.FishEnum.SpeedFish : {
+		"Count" : 0,
+		"Caught" : false,
+	},
+	Fishing.FishEnum.StorageBox : {
+		"Count" : 0,
+		"Caught" : false,
+	},
+	Fishing.FishEnum.ResearchFish : {
+		"Count" : 0,
+		"Caught" : false,
+	},
+	Fishing.FishEnum.WoodFish : {
+		"Count" : 0,
+		"Caught" : false,
+	},
+	Fishing.FishEnum.DamFish : {
+		"Count" : 0,
+		"Caught" : false,
+	},
+	Fishing.FishEnum.LuckyFish : {
+		"Count" : 0,
+		"Caught" : false,
+	},
+	Fishing.FishEnum.CrateFish : {
+		"Count" : 0,
+		"Caught" : false,
+	},
+	Fishing.FishEnum.BotFish : {
+		"Count" : 0,
+		"Caught" : false,
+	},
+	Fishing.FishEnum.IceFish : {
+		"Count" : 0,
+		"Caught" : false,
+	},
+	Fishing.FishEnum.BaitFish : {
+		"Count" : 0,
+		"Caught" : false,
+	},
+	Fishing.FishEnum.ElectricEal : {
+		"Count" : 0,
+		"Caught" : false,
+	},
+	Fishing.FishEnum.ElectricJellyfish : {
+		"Count" : 0,
+		"Caught" : false,
+	},
+	Fishing.FishEnum.ElectricSponge : {
+		"Count" : 0,
+		"Caught" : false,
+	},
+	Fishing.FishEnum.ConstructionShark : {
+		"Count" : 0,
+		"Caught" : false,
+	},
+	Fishing.FishEnum.SalmonLumberJack : {
+		"Count" : 0,
+		"Caught" : false,
+	},
+	Fishing.FishEnum.AscentionFish : {
+		"Count" : 0,
+		"Caught" : false,
+	},
+	Fishing.FishEnum.DescentionFish : {
+		"Count" : 0,
+		"Caught" : false,
+	},
+	Fishing.FishEnum.BigFish : {
+		"Count" : 0,
+		"Caught" : false,
+	},
+	Fishing.FishEnum.Clownfish : {
+		"Count" : 0,
+		"Caught" : false,
+	},
+	Fishing.FishEnum.Stick : {
+		"Count" : 0,
+		"Caught" : false,
+	},
+	Fishing.FishEnum.OakCrate : {
+		"Count" : 0,
+		"Caught" : false,
+	},
+	Fishing.FishEnum.AppleCrate : {
+		"Count" : 0,
+		"Caught" : false,
+	},
+	Fishing.FishEnum.MapleCrate : {
+		"Count" : 0,
+		"Caught" : false,
+	},
+	Fishing.FishEnum.BirchCrate : {
+		"Count" : 0,
+		"Caught" : false,
+	},
+	Fishing.FishEnum.SpruceCrate : {
+		"Count" : 0,
+		"Caught" : false,
+	},
+	Fishing.FishEnum.ChestnutCrate : {
+		"Count" : 0,
+		"Caught" : false,
+	},
+	Fishing.FishEnum.CherryCrate : {
+		"Count" : 0,
+		"Caught" : false,
+	},
+	Fishing.FishEnum.AshCrate : {
+		"Count" : 0,
+		"Caught" : false,
+	},
+	Fishing.FishEnum.CedarCrate : {
+		"Count" : 0,
+		"Caught" : false,
+	},
+	Fishing.FishEnum.MahoganyCrate : {
+		"Count" : 0,
+		"Caught" : false,
+	},
+	Fishing.FishEnum.EbonyCrate : {
+		"Count" : 0,
+		"Caught" : false,
+	},
+	Fishing.FishEnum.DogwoodCrate : {
+		"Count" : 0,
+		"Caught" : false,
+	},
+	Fishing.FishEnum.RosewoodCrate : {
+		"Count" : 0,
+		"Caught" : false,
+	},
+	Fishing.FishEnum.GhostGumCrate : {
+		"Count" : 0,
+		"Caught" : false,
+	},
+	Fishing.FishEnum.DragonwoodCrate : {
+		"Count" : 0,
+		"Caught" : false,
+	},
+	Fishing.FishEnum.BlueWhale : {
+		"Count" : 0,
+		"Caught" : false,
+	},
+	Fishing.FishEnum.MultiplyingFish : {
+		"Count" : 0,
+		"Caught" : false,
+	},
 }
 
 func countAchivements():
