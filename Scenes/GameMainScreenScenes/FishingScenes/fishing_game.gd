@@ -62,6 +62,7 @@ func _on_fish_button_button_down() -> void:
 func checkIfFishCaught():
 	if FishBounceBar.value >= 60 and FishBounceBar.value <= 80:
 		SaveData.CaughtFish[BouncingFishType]["Count"] += 1
+		get_tree().get_first_node_in_group("FishPage").addAllCaughtFish()
 	
 	IsBouncing = false
 

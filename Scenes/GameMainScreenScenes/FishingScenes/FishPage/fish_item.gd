@@ -4,14 +4,13 @@ extends MarginContainer
 var NameLabel
 var CountLabel
 
-var Fish
-
-var FishType := Fishing.FishEnum.Boot :
+var Fish: Fishing.FishObject = Fishing.Fish[Fishing.FishEnum.Boot] :
 	set(value):
-		Fish = Fishing.Fish[value] as Fishing.FishObject
+		setupNodePaths()
+		Fish = value
 		
 		NameLabel.text = Fish.Name
-		CountLabel.text = SaveData.CaughtFish[value]["Count"]
+		CountLabel.text = str(SaveData.CaughtFish[Fish.Type]["Count"])
 
 func _ready() -> void:
 	setupNodePaths()
@@ -20,8 +19,9 @@ func _process(delta: float) -> void:
 	updateData()
 
 func updateData():
-	NameLabel.text = Fish.Name
-	CountLabel.text = SaveData.CaughtFish[FishType]["Count"]
+	if Fish:
+		NameLabel.text = Fish.Name
+		CountLabel.text = str(SaveData.CaughtFish[Fish.Type]["Count"])
 
 func setupNodePaths():
 	NameLabel = $HBox/MC1/VBox/MC/NameLabel

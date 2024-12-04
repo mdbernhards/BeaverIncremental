@@ -2,8 +2,11 @@ extends VBoxContainer
 
 var FishTypes
 
+var FishItemGrid
+
 func _ready() -> void:
 	FishTypes = Fishing.FishEnum
+	SetupNodePaths()
 
 func _process(delta: float) -> void:
 	pass
@@ -13,15 +16,15 @@ func addAllCaughtFish():
 	
 	var existingItems = get_tree().get_nodes_in_group("FishShopItem")
 	
-	var fishInShop = false
-	
 	for fish in fishes:
-		if fishes[fish]["Caught"]:
-			for existingItem in existingItems:
-				if existingItem.FishType == fish:
-					fishInShop = true
+		var fishInShop = false
 		
-		if !fishInShop:
+		if fishes[fish]["Count"] > 0 and !fishes[fish]["Caught"]:
+			fishes[fish]["Caught"] = true
 			var fishItem = load("res://Scenes/GameMainScreenScenes/FishingScenes/FishPage/fish_item.tscn")
-			fishItem.instantiate()
-			fishItem.FishType = fish
+			fishItem = fishItem.instantiate()
+			fishItem.Fish = Fishing.Fish[fish]
+			FishItemGrid.add_child(fishItem)
+
+func SetupNodePaths():
+	FishItemGrid = $MC2/Scroll/Grid

@@ -38,6 +38,7 @@ window/stretch/aspect="ignore"
 [global_group]
 
 BarItem=""
+FishPage=""
 
 [gui]
 

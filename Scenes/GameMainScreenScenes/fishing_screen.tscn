@@ -226,7 +226,7 @@ text = "Spots"
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="FishPage" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC" instance=ExtResource("3_o2ikf")]
+[node name="FishPage" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC" groups=["FishPage"] instance=ExtResource("3_o2ikf")]
 layout_mode = 2
 
 [node name="BaitPage" type="VBoxContainer" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC"]
