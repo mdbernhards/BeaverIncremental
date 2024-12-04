@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Scenes/GameMainScreenScenes/FishingScenes/FishButton.gd" id="1_ipjx1"]
 
-[node name="FishButton" type="Button"]
+[node name="FishButton" type="Button" groups=["FishObject"]]
 offset_left = 678.0
 offset_top = 416.0
 offset_right = 734.0

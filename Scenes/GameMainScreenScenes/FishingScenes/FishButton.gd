@@ -1,5 +1,7 @@
 extends Button
 
+signal FishHooked(FishType)
+
 var Up = true
 var Right = true
 
@@ -35,17 +37,18 @@ func move(delta):
 	else:
 		position.x -= HorizontalSpeed * delta * 144 * Fish.Speed
 		
-	if position.x > 940 and Right: # Need to account for size
+	if position.x > (1030 - size.x) and Right: # Need to account for size
 		Right = false
-	elif position.x < 25 and !Right:
+	elif position.x < 0 and !Right:
 		Right = true
 		
-	if position.y < 25 and Up:
+	if position.y < 0 and Up:
 		Up = false
-	elif position.y > 760 and !Up:  # Need to account for size
+	elif position.y > (785 - size.y) and !Up: # Need to account for size
 		Up = true
 
 func _on_button_down() -> void:
+	emit_signal("FishHooked", Fish.Type)
 	queue_free()
 
 func _on_change_direction_timer_timeout() -> void:
