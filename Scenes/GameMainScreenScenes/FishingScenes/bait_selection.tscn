@@ -1,0 +1,93 @@
+[gd_scene load_steps=2 format=3 uid="uid://bijsbcpjdhp2w"]
+
+[ext_resource type="PackedScene" uid="uid://cvsnnxwfl5str" path="res://Scenes/GameMainScreenScenes/FishingScenes/FishPage/bait_button.tscn" id="1_t2b4x"]
+
+[node name="BaitSelection" type="MarginContainer"]
+custom_minimum_size = Vector2(170, 0)
+theme_override_constants/margin_top = 25
+theme_override_constants/margin_bottom = 25
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 2
+color = Color(0.266667, 0.266667, 0.266667, 1)
+
+[node name="VBox" type="VBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="MC" type="MarginContainer" parent="VBox"]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
+
+[node name="ColorRect" type="ColorRect" parent="VBox/MC"]
+layout_mode = 2
+color = Color(0.380392, 0.309804, 0.309804, 1)
+
+[node name="UsedBaitLabel" type="Label" parent="VBox/MC"]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 24
+text = "Used Bait"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BaitButtons" type="MarginContainer" parent="VBox"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 5
+
+[node name="VBox" type="VBoxContainer" parent="VBox/BaitButtons"]
+layout_mode = 2
+theme_override_constants/separation = 17
+
+[node name="NoBaitButton" parent="VBox/BaitButtons/VBox" instance=ExtResource("1_t2b4x")]
+layout_mode = 2
+
+[node name="LeafBaitButton" parent="VBox/BaitButtons/VBox" instance=ExtResource("1_t2b4x")]
+layout_mode = 2
+BaitType = 1
+
+[node name="WormBaitButton" parent="VBox/BaitButtons/VBox" instance=ExtResource("1_t2b4x")]
+layout_mode = 2
+BaitType = 2
+
+[node name="JigBaitButton" parent="VBox/BaitButtons/VBox" instance=ExtResource("1_t2b4x")]
+layout_mode = 2
+BaitType = 3
+
+[node name="CricketBaitButton" parent="VBox/BaitButtons/VBox" instance=ExtResource("1_t2b4x")]
+layout_mode = 2
+BaitType = 4
+
+[node name="CatarpillerBaitButton" parent="VBox/BaitButtons/VBox" instance=ExtResource("1_t2b4x")]
+layout_mode = 2
+BaitType = 5
+
+[node name="LeechBaitButton" parent="VBox/BaitButtons/VBox" instance=ExtResource("1_t2b4x")]
+layout_mode = 2
+BaitType = 6
+
+[node name="CrateAtractorBaitButton" parent="VBox/BaitButtons/VBox" instance=ExtResource("1_t2b4x")]
+layout_mode = 2
+BaitType = 7
+
+[node name="SquidTentacleBaitButton" parent="VBox/BaitButtons/VBox" instance=ExtResource("1_t2b4x")]
+layout_mode = 2
+BaitType = 8
+
+[node name="WyvernBaitButton" parent="VBox/BaitButtons/VBox" instance=ExtResource("1_t2b4x")]
+layout_mode = 2
+BaitType = 9
+
+[node name="DevilTongueBaitButton" parent="VBox/BaitButtons/VBox" instance=ExtResource("1_t2b4x")]
+layout_mode = 2
+BaitType = 10
+
+[node name="ShinyWormBaitButton" parent="VBox/BaitButtons/VBox" instance=ExtResource("1_t2b4x")]
+layout_mode = 2
+BaitType = 11

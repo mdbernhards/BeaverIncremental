@@ -1,0 +1,140 @@
+[gd_scene format=3 uid="uid://chithml6pwn6b"]
+
+[node name="BaitPage" type="VBoxContainer"]
+custom_minimum_size = Vector2(657, 926)
+
+[node name="MC" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_left = 40
+theme_override_constants/margin_right = 40
+
+[node name="Label" type="Label" parent="MC"]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 45
+text = "Bait Shop"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MC2" type="MarginContainer" parent="."]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="Scroll" type="ScrollContainer" parent="MC2"]
+layout_mode = 2
+
+[node name="MC" type="MarginContainer" parent="MC2/Scroll"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/margin_right = 15
+
+[node name="VBox" type="VBoxContainer" parent="MC2/Scroll/MC"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="BaitItem" type="MarginContainer" parent="MC2/Scroll/MC/VBox"]
+custom_minimum_size = Vector2(0, 95)
+layout_mode = 2
+theme_override_constants/margin_right = 0
+
+[node name="ColorRect" type="ColorRect" parent="MC2/Scroll/MC/VBox/BaitItem"]
+layout_mode = 2
+color = Color(0.196078, 0.196078, 0.196078, 1)
+
+[node name="HBox" type="HBoxContainer" parent="MC2/Scroll/MC/VBox/BaitItem"]
+layout_mode = 2
+
+[node name="MC1" type="MarginContainer" parent="MC2/Scroll/MC/VBox/BaitItem/HBox"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VBox" type="VBoxContainer" parent="MC2/Scroll/MC/VBox/BaitItem/HBox/MC1"]
+layout_mode = 2
+
+[node name="MC" type="MarginContainer" parent="MC2/Scroll/MC/VBox/BaitItem/HBox/MC1/VBox"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="MC2/Scroll/MC/VBox/BaitItem/HBox/MC1/VBox/MC"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "Oak Bait"
+
+[node name="MC2" type="MarginContainer" parent="MC2/Scroll/MC/VBox/BaitItem/HBox/MC1/VBox"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 20
+
+[node name="Label" type="Label" parent="MC2/Scroll/MC/VBox/BaitItem/HBox/MC1/VBox/MC2"]
+custom_minimum_size = Vector2(220, 0)
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 12
+text = "5% fishing power"
+autowrap_mode = 3
+
+[node name="MC2" type="MarginContainer" parent="MC2/Scroll/MC/VBox/BaitItem/HBox"]
+custom_minimum_size = Vector2(220, 0)
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="GridContainer" type="GridContainer" parent="MC2/Scroll/MC/VBox/BaitItem/HBox/MC2"]
+layout_mode = 2
+theme_override_constants/h_separation = 15
+theme_override_constants/v_separation = 10
+columns = 2
+
+[node name="Button" type="Button" parent="MC2/Scroll/MC/VBox/BaitItem/HBox/MC2/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Buy"
+
+[node name="Button2" type="Button" parent="MC2/Scroll/MC/VBox/BaitItem/HBox/MC2/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "10x"
+
+[node name="Button3" type="Button" parent="MC2/Scroll/MC/VBox/BaitItem/HBox/MC2/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "100x"
+
+[node name="Button4" type="Button" parent="MC2/Scroll/MC/VBox/BaitItem/HBox/MC2/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "1000x"
+
+[node name="MC3" type="MarginContainer" parent="MC2/Scroll/MC/VBox/BaitItem/HBox"]
+custom_minimum_size = Vector2(110, 0)
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="ColorRect" type="ColorRect" parent="MC2/Scroll/MC/VBox/BaitItem/HBox/MC3"]
+layout_mode = 2
+color = Color(0.388235, 0.388235, 0.388235, 1)
+
+[node name="Label" type="Label" parent="MC2/Scroll/MC/VBox/BaitItem/HBox/MC3"]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 25
+text = "22"
+horizontal_alignment = 1
+vertical_alignment = 1

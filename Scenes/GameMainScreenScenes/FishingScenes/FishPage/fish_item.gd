@@ -28,4 +28,6 @@ func setupNodePaths():
 	CountLabel = $HBox/MC1/VBox/MC3/CountLabel
 
 func _on_sell_button_button_down() -> void:
-	pass # Replace with function body.
+	if SaveData.CaughtFish[Fish.Type]["Count"] > 0:
+		SaveData.CaughtFish[Fish.Type]["Count"] -= 1
+		SaveData.Gold["Count"] += Fishing.FishPrice[Fish.Type]

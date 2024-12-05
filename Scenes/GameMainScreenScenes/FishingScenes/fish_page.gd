@@ -2,14 +2,17 @@ extends VBoxContainer
 
 var FishTypes
 
+# Nodes
 var FishItemGrid
+var CurrentGoldLabel
 
 func _ready() -> void:
 	FishTypes = Fishing.FishEnum
 	SetupNodePaths()
 
 func _process(delta: float) -> void:
-	pass
+	if CurrentGoldLabel:
+		CurrentGoldLabel.text = "Gold: " + str(SaveData.Gold["Count"])
 
 func addAllCaughtFish():
 	var fishes = SaveData.CaughtFish
@@ -28,3 +31,4 @@ func addAllCaughtFish():
 
 func SetupNodePaths():
 	FishItemGrid = $MC2/Scroll/Grid
+	CurrentGoldLabel = $MC/CurrentGoldLabel

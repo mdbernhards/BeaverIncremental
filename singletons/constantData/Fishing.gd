@@ -1,7 +1,5 @@
 extends Node
 
-var Bait
-
 var Spots
 
 class FishObject:
@@ -72,6 +70,136 @@ var Fish = { # type, name, speed, size, angle, lifeTime
 	FishEnum.DragonwoodCrate : FishObject.new(FishEnum.DragonwoodCrate,"Dragonwood Crate", 0.4, 3, 0.6, 5, 5),
 	FishEnum.BlueWhale : FishObject.new(FishEnum.BlueWhale,"Blue Whale", 0.4, 3, 0.6, 5, 5),
 	FishEnum.MultiplyingFish : FishObject.new(FishEnum.MultiplyingFish,"Multiplying Fish", 0.4, 3, 0.6, 5, 5),
+}
+
+var FishPrice = {
+	FishEnum.Boot : 5,
+	FishEnum.Seaweed : 3,
+	FishEnum.ColaBottle : 7,
+	FishEnum.Catfish : 25,
+	FishEnum.GoldPotI : 100,
+	FishEnum.GoldPotII : 3000,
+	FishEnum.GoldPotIII : 50000,
+	FishEnum.GoldFish : 600,
+	FishEnum.MagicPotI : 70,
+	FishEnum.MagicPotII : 700,
+	FishEnum.MagicPotIII : 7000,
+	FishEnum.MagicFish : 1500,
+	FishEnum.SpeedFish : 900,
+	FishEnum.StorageBox : 750,
+	FishEnum.ResearchFish : 3000,
+	FishEnum.WoodFish : 220,
+	FishEnum.DamFish : 2500,
+	FishEnum.LuckyFish : 250,
+	FishEnum.CrateFish : 99,
+	FishEnum.BotFish : 500,
+	FishEnum.IceFish : 17,
+	FishEnum.BaitFish : 670,
+	FishEnum.ElectricEal : 1000,
+	FishEnum.ElectricJellyfish : 2000,
+	FishEnum.ElectricSponge : 3000,
+	FishEnum.ConstructionShark : 55,
+	FishEnum.SalmonLumberJack : 95,
+	FishEnum.AscentionFish : 4400,
+	FishEnum.DescentionFish : 9900,
+	FishEnum.BigFish : 37,
+	FishEnum.Clownfish : 450,
+	FishEnum.Stick : 6,
+	FishEnum.OakCrate : 100,
+	FishEnum.AppleCrate : 200,
+	FishEnum.MapleCrate : 300,
+	FishEnum.BirchCrate : 400,
+	FishEnum.SpruceCrate : 500,
+	FishEnum.ChestnutCrate : 600,
+	FishEnum.CherryCrate : 700,
+	FishEnum.AshCrate : 800,
+	FishEnum.CedarCrate : 900,
+	FishEnum.MahoganyCrate : 1000,
+	FishEnum.EbonyCrate : 1100,
+	FishEnum.DogwoodCrate : 1200,
+	FishEnum.RosewoodCrate : 1300,
+	FishEnum.GhostGumCrate : 1400,
+	FishEnum.DragonwoodCrate : 1500,
+	FishEnum.BlueWhale : 5000,
+	FishEnum.MultiplyingFish : 7400,
+}
+
+enum BaitEnum {
+	NoBait,
+	Leaf,
+	Worm,
+	Jig,
+	Cricket,
+	Catarpiller,
+	Leech,
+	CrateAtractor,
+	GiantSquidsTentacle,
+	WyvernsFeather,
+	DevilsTongue,
+	ShinyWorm,
+}
+
+var Bait = {
+	BaitEnum.NoBait : {
+		"Name" : "No Bait",
+		"Price" : 0,
+		"Effect" : 0,
+	},
+	BaitEnum.Leaf : {
+		"Name" : "Leaf",
+		"Price" : 1000,
+		"Effect" : 5,
+	},
+	BaitEnum.Worm : {
+		"Name" : "Worm",
+		"Price" : 15000,
+		"Effect" : 10,
+	},
+	BaitEnum.Jig : {
+		"Name" : "Jig",
+		"Price" : 175000,
+		"Effect" : 20,
+	},
+	BaitEnum.Cricket : {
+		"Name" : "Cricket",
+		"Price" : 2000000,
+		"Effect" : 35,
+	},
+	BaitEnum.Catarpiller : {
+		"Name" : "Catarpiller",
+		"Price" : 25000000,
+		"Effect" : 55,
+	},
+	BaitEnum.Leech : {
+		"Name" : "Leech",
+		"Price" : 300000000,
+		"Effect" : 80,
+	},
+	BaitEnum.CrateAtractor : {
+		"Name" : "Crate Atractor",
+		"Price" : 500000000,
+		"Effect" : 100,
+	},
+	BaitEnum.GiantSquidsTentacle : {
+		"Name" : "G. S. Tentacle",
+		"Price" : 4000000000,
+		"Effect" : 110,
+	},
+	BaitEnum.WyvernsFeather : {
+		"Name" : "Wyverns Feather",
+		"Price" : 45000000000,
+		"Effect" : 145,
+	},
+	BaitEnum.DevilsTongue : {
+		"Name" : "Devils Tongue",
+		"Price" : 500000000000,
+		"Effect" : 185,
+	},
+	BaitEnum.ShinyWorm : {
+		"Name" : "Shiny Worm",
+		"Price" : 6000000000000,
+		"Effect" : 230,
+	},
 }
 
 enum FishEnum {

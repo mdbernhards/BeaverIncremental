@@ -1390,6 +1390,57 @@ var CaughtFish = {
 	},
 }
 
+var Bait = {
+	Fishing.BaitEnum.NoBait : {
+		"Count" : 0,
+		"Unlocked" : true,
+	},
+	Fishing.BaitEnum.Leaf : {
+		"Count" : 0,
+		"Unlocked" : false,
+	},
+	Fishing.BaitEnum.Worm : {
+		"Count" : 0,
+		"Unlocked" : false,
+	},
+	Fishing.BaitEnum.Jig : {
+		"Count" : 0,
+		"Unlocked" : false,
+	},
+	Fishing.BaitEnum.Cricket : {
+		"Count" : 0,
+		"Unlocked" : false,
+	},
+	Fishing.BaitEnum.Catarpiller : {
+		"Count" : 0,
+		"Unlocked" : false,
+	},
+	Fishing.BaitEnum.Leech : {
+		"Count" : 0,
+		"Unlocked" : false,
+	},
+	Fishing.BaitEnum.CrateAtractor : {
+		"Count" : 0,
+		"Unlocked" : false,
+	},
+	Fishing.BaitEnum.GiantSquidsTentacle : {
+		"Count" : 0,
+		"Unlocked" : false,
+	},
+	Fishing.BaitEnum.WyvernsFeather : {
+		"Count" : 0,
+		"Unlocked" : false,
+	},
+	Fishing.BaitEnum.DevilsTongue : {
+		"Count" : 0,
+		"Unlocked" : false,
+	},
+	Fishing.BaitEnum.ShinyWorm : {
+		"Count" : 0,
+		"Unlocked" : false,
+	},
+}
+
 func countAchivements():
 	var achievementCount = 0
 	

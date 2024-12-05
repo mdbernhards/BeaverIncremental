@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://cvsnnxwfl5str"]
+
+[ext_resource type="Script" path="res://Scenes/GameMainScreenScenes/FishingScenes/bait_button.gd" id="1_mxvjs"]
+
+[node name="BaitButton" type="Button" groups=["BaitButton"]]
+theme_override_font_sizes/font_size = 21
+text = "No Bait"
+script = ExtResource("1_mxvjs")
+
+[connection signal="button_down" from="." to="." method="_on_button_down"]
