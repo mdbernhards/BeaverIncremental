@@ -31,15 +31,6 @@ size_flags_vertical = 0
 theme_override_font_sizes/font_size = 30
 text = "Oak"
 
-[node name="MC2" type="MarginContainer" parent="HBox/BarVBox/BarLabels"]
-layout_mode = 2
-
-[node name="LevelLabel" type="Label" parent="HBox/BarVBox/BarLabels/MC2"]
-layout_mode = 2
-size_flags_vertical = 8
-theme_override_font_sizes/font_size = 17
-text = "LVL 10"
-
 [node name="MC3" type="MarginContainer" parent="HBox/BarVBox/BarLabels"]
 layout_mode = 2
 size_flags_horizontal = 3
@@ -127,6 +118,75 @@ offset_bottom = 0.943001
 theme_override_font_sizes/font_size = 13
 text = "Maple production: 25%"
 
+[node name="BeaverMC" type="MarginContainer" parent="HBox"]
+custom_minimum_size = Vector2(210, 0)
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_right = 10
+
+[node name="ColorRect" type="ColorRect" parent="HBox/BeaverMC"]
+layout_mode = 2
+color = Color(0.396078, 0.576471, 0.643137, 1)
+
+[node name="BeaverHBox" type="HBoxContainer" parent="HBox/BeaverMC"]
+layout_mode = 2
+
+[node name="MC" type="MarginContainer" parent="HBox/BeaverMC/BeaverHBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_top = 8
+
+[node name="VBox" type="VBoxContainer" parent="HBox/BeaverMC/BeaverHBox/MC"]
+layout_mode = 2
+
+[node name="BeaverCountLabel" type="Label" parent="HBox/BeaverMC/BeaverHBox/MC/VBox"]
+custom_minimum_size = Vector2(0, 45)
+layout_mode = 2
+theme_override_font_sizes/font_size = 19
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PriceTitleLabel" type="Label" parent="HBox/BeaverMC/BeaverHBox/MC/VBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 13
+text = "Price"
+horizontal_alignment = 1
+
+[node name="BeaverPriceLabel" type="Label" parent="HBox/BeaverMC/BeaverHBox/MC/VBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+text = "0"
+horizontal_alignment = 1
+
+[node name="MC2" type="MarginContainer" parent="HBox/BeaverMC/BeaverHBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_right = 10
+
+[node name="VBox" type="VBoxContainer" parent="HBox/BeaverMC/BeaverHBox/MC2"]
+layout_mode = 2
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="BeaverBuyButton" type="Button" parent="HBox/BeaverMC/BeaverHBox/MC2/VBox"]
+layout_mode = 2
+text = "Buy"
+
+[node name="BeaverCantAffordRect" type="ColorRect" parent="HBox/BeaverMC/BeaverHBox/MC2/VBox/BeaverBuyButton"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.513726, 0.0941176, 0, 0.301961)
+
+[node name="BeaverBuyMaxButton" type="Button" parent="HBox/BeaverMC/BeaverHBox/MC2/VBox"]
+layout_mode = 2
+text = "Buy Max"
+
 [node name="WoodCampMC" type="MarginContainer" parent="HBox"]
 custom_minimum_size = Vector2(210, 0)
 layout_mode = 2
@@ -196,76 +256,7 @@ color = Color(0.513726, 0.0941176, 0, 0.301961)
 layout_mode = 2
 text = "Buy Max"
 
-[node name="LevelMC" type="MarginContainer" parent="HBox"]
-custom_minimum_size = Vector2(210, 0)
-layout_mode = 2
-theme_override_constants/margin_left = 10
-theme_override_constants/margin_right = 10
-
-[node name="ColorRect" type="ColorRect" parent="HBox/LevelMC"]
-layout_mode = 2
-color = Color(0.396078, 0.576471, 0.643137, 1)
-
-[node name="LevelHBox" type="HBoxContainer" parent="HBox/LevelMC"]
-layout_mode = 2
-
-[node name="MC" type="MarginContainer" parent="HBox/LevelMC/LevelHBox"]
-layout_mode = 2
-size_flags_horizontal = 3
-theme_override_constants/margin_top = 8
-
-[node name="VBox" type="VBoxContainer" parent="HBox/LevelMC/LevelHBox/MC"]
-layout_mode = 2
-
-[node name="CurrentLevelLabel" type="Label" parent="HBox/LevelMC/LevelHBox/MC/VBox"]
-custom_minimum_size = Vector2(0, 45)
-layout_mode = 2
-theme_override_font_sizes/font_size = 19
-text = "0"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="PriceTitleLabel" type="Label" parent="HBox/LevelMC/LevelHBox/MC/VBox"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 13
-text = "Price"
-horizontal_alignment = 1
-
-[node name="LevelPriceLabel" type="Label" parent="HBox/LevelMC/LevelHBox/MC/VBox"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 14
-text = "0"
-horizontal_alignment = 1
-
-[node name="MC2" type="MarginContainer" parent="HBox/LevelMC/LevelHBox"]
-layout_mode = 2
-size_flags_horizontal = 3
-theme_override_constants/margin_left = 10
-theme_override_constants/margin_right = 10
-
-[node name="VBox" type="VBoxContainer" parent="HBox/LevelMC/LevelHBox/MC2"]
-layout_mode = 2
-theme_override_constants/separation = 10
-alignment = 1
-
-[node name="LevelBuyButton" type="Button" parent="HBox/LevelMC/LevelHBox/MC2/VBox"]
-layout_mode = 2
-text = "Buy"
-
-[node name="LevelCantAffordRect" type="ColorRect" parent="HBox/LevelMC/LevelHBox/MC2/VBox/LevelBuyButton"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0.513726, 0.0941176, 0, 0.301961)
-
-[node name="LevelBuyMaxButton" type="Button" parent="HBox/LevelMC/LevelHBox/MC2/VBox"]
-layout_mode = 2
-text = "Buy Max"
-
 [connection signal="button_down" from="HBox/BarVBox/BarRect/HBox/MC2/ClickButton" to="." method="_on_click_button_button_down"]
 [connection signal="value_changed" from="HBox/BarVBox/BarRect/ResourceProductionSlider" to="." method="_on_resource_production_slider_value_changed"]
+[connection signal="button_down" from="HBox/BeaverMC/BeaverHBox/MC2/VBox/BeaverBuyButton" to="." method="_on_level_buy_button_button_down"]
 [connection signal="button_down" from="HBox/WoodCampMC/WoodCampHBox/MC2/VBox/WoodCampBuyButton" to="." method="_on_wood_camp_buy_button_button_down"]
-[connection signal="button_down" from="HBox/LevelMC/LevelHBox/MC2/VBox/LevelBuyButton" to="." method="_on_level_buy_button_button_down"]

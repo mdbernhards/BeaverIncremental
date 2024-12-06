@@ -14,6 +14,8 @@ func _on_resource_gain_tick_timeout():
 
 func ApplyBotsSellingWood():
 	for woodType in WoodTypes:
+		Values.ResourceValues[woodType]["RealPerSecondLoss"] = 0
+		
 		if SaveData.Resources[woodType]["Bots"] > 0:
 			var woodSold = SaveData.Resources[woodType]["Bots"] * Values.ResourceValues[woodType]["BotBaseSell"] * SaveData.Resources[woodType]["BotSellPercentage"] / 100.0
 			

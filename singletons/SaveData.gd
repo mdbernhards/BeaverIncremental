@@ -1,7 +1,7 @@
 extends Node
 
 var Gold = {
-		"Count" : 0,
+		"Count" : 989898989,
 	}
 
 var Magic = {
@@ -1397,15 +1397,15 @@ var Bait = {
 	},
 	Fishing.BaitEnum.Leaf : {
 		"Count" : 0,
-		"Unlocked" : false,
+		"Unlocked" : true,
 	},
 	Fishing.BaitEnum.Worm : {
 		"Count" : 0,
-		"Unlocked" : false,
+		"Unlocked" : true,
 	},
 	Fishing.BaitEnum.Jig : {
-		"Count" : 0,
-		"Unlocked" : false,
+		"Count" : 5,
+		"Unlocked" : true,
 	},
 	Fishing.BaitEnum.Cricket : {
 		"Count" : 0,

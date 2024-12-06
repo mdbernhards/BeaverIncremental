@@ -33,7 +33,7 @@ var Upgrades = {
 			"OtherText" : "",
 		},
 		"7" :  {
-			"Name" : "Faster research 0.4%",
+			"Name" : "Faster research 2%",
 			"Description" : "",
 			"OtherText" : "",
 		},
@@ -100,7 +100,7 @@ var Upgrades = {
 			"OtherText" : "",
 		},
 		"2" :  {
-			"Name" : "Apple storage +20",
+			"Name" : "Apple storage +110",
 			"Description" : "",
 			"OtherText" : "",
 		},
@@ -110,12 +110,12 @@ var Upgrades = {
 			"OtherText" : "",
 		},
 		"4" :  {
-			"Name" : "7% storage from WCs",
+			"Name" : "13% storage",
 			"Description" : "",
 			"OtherText" : "",
 		},
 		"5" :  {
-			"Name" : "WPS 3%",
+			"Name" : "Oak WPS 17.5%",
 			"Description" : "",
 			"OtherText" : "",
 		},
@@ -140,7 +140,7 @@ var Upgrades = {
 			"OtherText" : "",
 		},
 		"10" :  {
-			"Name" : "Faster research 0.1%",
+			"Name" : "Faster research 1%",
 			"Description" : "",
 			"OtherText" : "",
 		},
@@ -192,7 +192,7 @@ var Upgrades = {
 			"OtherText" : "",
 		},
 		"2" :  {
-			"Name" : "Maple storage +30",
+			"Name" : "Maple storage +120",
 			"Description" : "",
 			"OtherText" : "",
 		},
@@ -202,7 +202,7 @@ var Upgrades = {
 			"OtherText" : "",
 		},
 		"4" :  {
-			"Name" : "cheaper WC 1%",
+			"Name" : "cheaper WC 5%",
 			"Description" : "",
 			"OtherText" : "",
 		},
@@ -284,7 +284,7 @@ var Upgrades = {
 			"OtherText" : "",
 		},
 		"2" :  {
-			"Name" : "Birch storage +40",
+			"Name" : "Birch storage +130",
 			"Description" : "",
 			"OtherText" : "",
 		},
@@ -376,7 +376,7 @@ var Upgrades = {
 			"OtherText" : "",
 		},
 		"2" :  {
-			"Name" : "Spruce storage +50",
+			"Name" : "Spruce storage +140",
 			"Description" : "",
 			"OtherText" : "",
 		},
@@ -468,7 +468,7 @@ var Upgrades = {
 			"OtherText" : "",
 		},
 		"2" :  {
-			"Name" : "Chestnut storage +60",
+			"Name" : "Chestnut storage +150",
 			"Description" : "",
 			"OtherText" : "",
 		},
@@ -560,7 +560,7 @@ var Upgrades = {
 			"OtherText" : "",
 		},
 		"2" :  {
-			"Name" : "Cherry storage +70",
+			"Name" : "Cherry storage +160",
 			"Description" : "",
 			"OtherText" : "",
 		},
@@ -652,7 +652,7 @@ var Upgrades = {
 			"OtherText" : "",
 		},
 		"2" :  {
-			"Name" : "Ash storage +80",
+			"Name" : "Ash storage +170",
 			"Description" : "",
 			"OtherText" : "",
 		},
@@ -744,7 +744,7 @@ var Upgrades = {
 			"OtherText" : "",
 		},
 		"2" :  {
-			"Name" : "Cedar storage +90",
+			"Name" : "Cedar storage +180",
 			"Description" : "",
 			"OtherText" : "",
 		},
@@ -836,7 +836,7 @@ var Upgrades = {
 			"OtherText" : "",
 		},
 		"2" :  {
-			"Name" : "Mahogany storage +100",
+			"Name" : "Mahogany storage +190",
 			"Description" : "",
 			"OtherText" : "",
 		},
@@ -928,7 +928,7 @@ var Upgrades = {
 			"OtherText" : "",
 		},
 		"2" :  {
-			"Name" : "Ebony storage +110",
+			"Name" : "Ebony storage +200",
 			"Description" : "",
 			"OtherText" : "",
 		},
@@ -1020,7 +1020,7 @@ var Upgrades = {
 			"OtherText" : "",
 		},
 		"2" :  {
-			"Name" : "Dogwood storage +120",
+			"Name" : "Dogwood storage +210",
 			"Description" : "",
 			"OtherText" : "",
 		},
@@ -1112,7 +1112,7 @@ var Upgrades = {
 			"OtherText" : "",
 		},
 		"2" :  {
-			"Name" : "Rosewood storage +130",
+			"Name" : "Rosewood storage +220",
 			"Description" : "",
 			"OtherText" : "",
 		},
@@ -1204,7 +1204,7 @@ var Upgrades = {
 			"OtherText" : "",
 		},
 		"2" :  {
-			"Name" : "Ghost Gum storage +140",
+			"Name" : "Ghost Gum storage +230",
 			"Description" : "",
 			"OtherText" : "",
 		},
@@ -1296,7 +1296,7 @@ var Upgrades = {
 			"OtherText" : "",
 		},
 		"2" :  {
-			"Name" : "Apple storage +150",
+			"Name" : "Apple storage +240",
 			"Description" : "",
 			"OtherText" : "",
 		},

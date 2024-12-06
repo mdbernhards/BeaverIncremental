@@ -96,7 +96,6 @@ func CalculateRealAfterValues():
 			
 			ResourceValues[woodType]["PerSecondLoss"] = nextWoodProduction * 2 * TempValues["Global"]["WcCostsMultip"] * TempValues[woodType]["WpsCostMultip"]
 
-
 func ApplyUpgrades():
 	for woodType in WoodTypes:
 		var existingUpgrades = SaveData.Upgrades[woodType]
@@ -185,12 +184,14 @@ func SetResearchValue(researchNr):
 		"2" :
 			TempValues["Oak"]["BeaverMultip"] *= 2
 			TempValues["Oak"]["WpsMultip"] *= 2
+			TempValues["Oak"]["StorageMultip"] *= 2
 		"3" :
-			TempValues["Global"]["StorageMultip"] *= 1.3
+			TempValues["Global"]["StorageMultip"] *= 1.65
 		"4" :
 			Unlocks.Unlocks["Maple"]["Unlocked"] = true
 		"5" :
-			TempValues["Global"]["UpgradePriceMultip"] *= 0.95
+			TempValues["Oak"]["UpgradePriceMultip"] *= 0.85
+			TempValues["Apple"]["UpgradePriceMultip"] *= 0.85
 		"6" :
 			TempValues["Global"]["WpsMultip"] *= 2
 		"7" :
@@ -200,7 +201,7 @@ func SetResearchValue(researchNr):
 		"9" :
 			Unlocks.Unlocks["Market"]["Unlocked"] = true
 		"10" :
-			TempValues["Global"]["WcPriceMultip"] *= 0.93
+			TempValues["Global"]["WcPriceMultip"] *= 0.65
 		"11" :
 			TempValues["Global"]["WoodPriceMultip"] *= 1.22
 		"12" :
@@ -351,7 +352,7 @@ func SetUpgradeValue(woodType, upgradeId):
 				"6":
 					TempValues[woodType]["Beavers"] += upgradeLevel * woodCamps
 				"7":
-					TempValues["Research"]["Time"] *= pow(1 - 0.004, upgradeLevel) # 99.6%
+					TempValues["Research"]["Time"] *= pow(1 - 0.02, upgradeLevel) # 99.6%
 				"8":
 					TempValues[woodType]["WcStorageMultip"] *= pow(1.06, upgradeLevel)
 				"9":
@@ -379,13 +380,13 @@ func SetUpgradeValue(woodType, upgradeId):
 				"1":
 					TempValues[woodType]["Beavers"] += upgradeLevel * 2
 				"2":
-					TempValues[woodType]["BaseStorage"] += upgradeLevel * 20
+					TempValues[woodType]["BaseStorage"] += upgradeLevel * 110
 				"3":
 					TempValues[woodType]["WpsPerWc"] += upgradeLevel * 2
 				"4":
-					TempValues[woodType]["WcStorageMultip"] *= pow(1.07, upgradeLevel)
+					TempValues[woodType]["StorageMultip"] *= pow(1.13, upgradeLevel)
 				"5":
-					TempValues["Oak"]["BeaverMultip"] *= pow(1.03, upgradeLevel)
+					TempValues["Oak"]["WpsMultip"] *= pow(1.175, upgradeLevel)
 				"6":
 					Unlocks.Unlocks["Research"]["Unlocked"] = true
 				"7":
@@ -395,7 +396,7 @@ func SetUpgradeValue(woodType, upgradeId):
 				"9":
 					TempValues[woodType]["WpsCostMultip"] *= pow(1 - 0.01, upgradeLevel)
 				"10":
-					TempValues["Research"]["Time"] *= pow(1 - 0.001, upgradeLevel)
+					TempValues["Research"]["Time"] *= pow(1 - 0.01, upgradeLevel)
 				"11":
 					TempValues[woodType]["BaseWoodPrice"] += upgradeLevel
 				"12":
@@ -417,11 +418,11 @@ func SetUpgradeValue(woodType, upgradeId):
 				"1":
 					TempValues[woodType]["Beavers"] += upgradeLevel * 3
 				"2":
-					TempValues[woodType]["BaseStorage"] += upgradeLevel * 30
+					TempValues[woodType]["BaseStorage"] += upgradeLevel * 120
 				"3":
 					TempValues[woodType]["WpsPerWc"] += upgradeLevel * 3
 				"4":
-					TempValues[woodType]["WcPriceMultip"] *= pow(1 - 0.01, upgradeLevel)
+					TempValues[woodType]["WcPriceMultip"] *= pow(1 - 0.05, upgradeLevel)
 				"5":
 					TempValues[woodType]["WcPriceMultip"] *= pow(pow(1 - 0.002, upgradeLevel), achievementCount)
 				"6":
@@ -455,7 +456,7 @@ func SetUpgradeValue(woodType, upgradeId):
 				"1":
 					TempValues[woodType]["Beavers"] += upgradeLevel * 4
 				"2":
-					TempValues[woodType]["BaseStorage"] += upgradeLevel * 40
+					TempValues[woodType]["BaseStorage"] += upgradeLevel * 130
 				"3":
 					TempValues[woodType]["WpsPerWc"] += upgradeLevel * 4
 				"4":
@@ -493,7 +494,7 @@ func SetUpgradeValue(woodType, upgradeId):
 				"1":
 					TempValues[woodType]["Beavers"] += upgradeLevel * 5
 				"2":
-					TempValues[woodType]["BaseStorage"] += upgradeLevel * 50
+					TempValues[woodType]["BaseStorage"] += upgradeLevel * 140
 				"3":
 					TempValues[woodType]["WpsPerWc"] += upgradeLevel * 5
 				"4":
@@ -531,7 +532,7 @@ func SetUpgradeValue(woodType, upgradeId):
 				"1":
 					TempValues[woodType]["Beavers"] += upgradeLevel * 6
 				"2":
-					TempValues[woodType]["BaseStorage"] += upgradeLevel * 60
+					TempValues[woodType]["BaseStorage"] += upgradeLevel * 150
 				"3":
 					TempValues[woodType]["WpsPerWc"] += upgradeLevel * 6
 				"4":
@@ -569,7 +570,7 @@ func SetUpgradeValue(woodType, upgradeId):
 				"1":
 					TempValues[woodType]["Beavers"] += upgradeLevel * 7
 				"2":
-					TempValues[woodType]["BaseStorage"] += upgradeLevel * 70
+					TempValues[woodType]["BaseStorage"] += upgradeLevel * 160
 				"3":
 					TempValues[woodType]["WpsPerWc"] += upgradeLevel * 7
 				"4":
@@ -607,7 +608,7 @@ func SetUpgradeValue(woodType, upgradeId):
 				"1":
 					TempValues[woodType]["Beavers"] += upgradeLevel * 8
 				"2":
-					TempValues[woodType]["BaseStorage"] += upgradeLevel * 80
+					TempValues[woodType]["BaseStorage"] += upgradeLevel * 170
 				"3":
 					TempValues[woodType]["WpsPerWc"] += upgradeLevel * 8
 				"4":
@@ -645,7 +646,7 @@ func SetUpgradeValue(woodType, upgradeId):
 				"1":
 					TempValues[woodType]["Beavers"] += upgradeLevel * 9
 				"2":
-					TempValues[woodType]["BaseStorage"] += upgradeLevel * 90
+					TempValues[woodType]["BaseStorage"] += upgradeLevel * 180
 				"3":
 					TempValues[woodType]["WpsPerWc"] += upgradeLevel * 9
 				"4":
@@ -683,7 +684,7 @@ func SetUpgradeValue(woodType, upgradeId):
 				"1":
 					TempValues[woodType]["Beavers"] += upgradeLevel * 10
 				"2":
-					TempValues[woodType]["BaseStorage"] += upgradeLevel * 100
+					TempValues[woodType]["BaseStorage"] += upgradeLevel * 190
 				"3":
 					TempValues[woodType]["WpsPerWc"] += upgradeLevel * 10
 				"4":
@@ -721,7 +722,7 @@ func SetUpgradeValue(woodType, upgradeId):
 				"1":
 					TempValues[woodType]["Beavers"] += upgradeLevel * 11
 				"2":
-					TempValues[woodType]["BaseStorage"] += upgradeLevel * 110
+					TempValues[woodType]["BaseStorage"] += upgradeLevel * 200
 				"3":
 					TempValues[woodType]["WpsPerWc"] += upgradeLevel * 11
 				"4":
@@ -759,7 +760,7 @@ func SetUpgradeValue(woodType, upgradeId):
 				"1":
 					TempValues[woodType]["Beavers"] += upgradeLevel * 12
 				"2":
-					TempValues[woodType]["BaseStorage"] += upgradeLevel * 120
+					TempValues[woodType]["BaseStorage"] += upgradeLevel * 210
 				"3":
 					TempValues[woodType]["WpsPerWc"] += upgradeLevel * 12
 				"4":
@@ -797,7 +798,7 @@ func SetUpgradeValue(woodType, upgradeId):
 				"1":
 					TempValues[woodType]["Beavers"] += upgradeLevel * 13
 				"2":
-					TempValues[woodType]["BaseStorage"] += upgradeLevel * 130
+					TempValues[woodType]["BaseStorage"] += upgradeLevel * 220
 				"3":
 					TempValues[woodType]["WpsPerWc"] += upgradeLevel * 13
 				"4":
@@ -836,7 +837,7 @@ func SetUpgradeValue(woodType, upgradeId):
 				"1":
 					TempValues[woodType]["Beavers"] += upgradeLevel * 14
 				"2":
-					TempValues[woodType]["BaseStorage"] += upgradeLevel * 140
+					TempValues[woodType]["BaseStorage"] += upgradeLevel * 230
 				"3":
 					TempValues[woodType]["WpsPerWc"] += upgradeLevel * 14
 				"4":
@@ -874,7 +875,7 @@ func SetUpgradeValue(woodType, upgradeId):
 				"1":
 					TempValues[woodType]["Beavers"] += upgradeLevel * 15
 				"2":
-					TempValues[woodType]["BaseStorage"] += upgradeLevel * 150
+					TempValues[woodType]["BaseStorage"] += upgradeLevel * 240
 				"3":
 					TempValues[woodType]["WpsPerWc"] += upgradeLevel * 15
 				"4":

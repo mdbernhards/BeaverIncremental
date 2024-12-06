@@ -18,6 +18,7 @@ func _ready():
 	setNodePaths()
 
 func _process(_delta):
+	updateResearch()
 	if IsResearchStarted:
 		updateProgressBar()
 	else:
@@ -34,9 +35,15 @@ func setResearch(ResearchNr):
 	
 	NameLabel.text = ResearchData["Name"]
 	DescriptionLabel.text = ResearchData["Description"]
-	TimeLeftLabel.text = timeConvert(ResearchData["Time"])
+	
+	updateResearch()
+
+func updateResearch():
+	ResearchData = Research.Research[ItemId]
+	TimeLeftLabel.text = timeConvert(ResearchData["Time"] * Values.ResourceValues["Research"]["TimeMultip"])
 	PriceLabel.text = getPriceText()
-	ResearchTimer.wait_time = ResearchData["Time"]
+	ResearchTimer.wait_time = ResearchData["Time"] * Values.ResourceValues["Research"]["TimeMultip"]
+	
 
 func timeConvert(timeInSeconds):
 	timeInSeconds = int(timeInSeconds)
@@ -94,8 +101,26 @@ func setNodePaths():
 
 func _on_start_research_button_button_down():
 	if checkIfCanAfford():
+		removeResources()
 		IsResearchStarted = true
 		ResearchTimer.start()
+
+func removeResources():
+	SaveData.Resources["Oak"]["Count"] -= ResearchData["OakCost"]
+	SaveData.Resources["Apple"]["Count"] -= ResearchData["AppleCost"]
+	SaveData.Resources["Maple"]["Count"] -= ResearchData["MapleCost"]
+	SaveData.Resources["Birch"]["Count"] -= ResearchData["BirchCost"]
+	SaveData.Resources["Spruce"]["Count"] -= ResearchData["SpruceCost"]
+	SaveData.Resources["Chestnut"]["Count"] -= ResearchData["ChestnutCost"]
+	SaveData.Resources["Cherry"]["Count"] -= ResearchData["CherryCost"]
+	SaveData.Resources["Ash"]["Count"] -= ResearchData["AshCost"]
+	SaveData.Resources["Cedar"]["Count"] -= ResearchData["CedarCost"]
+	SaveData.Resources["Mahogany"]["Count"] -= ResearchData["MahoganyCost"]
+	SaveData.Resources["Ebony"]["Count"] -= ResearchData["EbonyCost"]
+	SaveData.Resources["Dogwood"]["Count"] -= ResearchData["DogwoodCost"]
+	SaveData.Resources["Rosewood"]["Count"] -= ResearchData["RosewoodCost"]
+	SaveData.Resources["Ghost Gum"]["Count"] -= ResearchData["Ghost GumCost"]
+	SaveData.Resources["Dragonwood"]["Count"] -= ResearchData["DragonwoodCost"]
 
 func checkIfCanAfford():
 	if ResearchData == null:
@@ -126,4 +151,5 @@ func updateProgressBar():
 
 func _on_research_timer_timeout():
 	SaveData.UnlockedResearch[str(ItemId)] = true
+	CalculateValues.calculateAllValues()
 	queue_free()

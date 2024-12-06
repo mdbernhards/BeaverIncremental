@@ -47,50 +47,35 @@ text = "5% fishing power"
 autowrap_mode = 3
 
 [node name="MC2" type="MarginContainer" parent="HBox"]
-custom_minimum_size = Vector2(220, 0)
+custom_minimum_size = Vector2(190, 0)
 layout_mode = 2
 theme_override_constants/margin_left = 10
 theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 10
 
-[node name="GridContainer" type="GridContainer" parent="HBox/MC2"]
+[node name="VBox" type="VBoxContainer" parent="HBox/MC2"]
 layout_mode = 2
-theme_override_constants/h_separation = 15
-theme_override_constants/v_separation = 10
-columns = 2
 
-[node name="BuyButton" type="Button" parent="HBox/MC2/GridContainer"]
+[node name="BuyButton" type="Button" parent="HBox/MC2/VBox"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "Buy"
 
-[node name="Buy10Button" type="Button" parent="HBox/MC2/GridContainer"]
+[node name="PriceLabel" type="Label" parent="HBox/MC2/VBox"]
 layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-text = "10x"
-
-[node name="Buy100Button" type="Button" parent="HBox/MC2/GridContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-text = "100x"
-
-[node name="Buy1000Button" type="Button" parent="HBox/MC2/GridContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-text = "1000x"
+theme_override_font_sizes/font_size = 17
+text = "Price : 1000"
+horizontal_alignment = 2
 
 [node name="MC3" type="MarginContainer" parent="HBox"]
 custom_minimum_size = Vector2(110, 0)
 layout_mode = 2
-theme_override_constants/margin_left = 10
-theme_override_constants/margin_top = 10
-theme_override_constants/margin_right = 10
-theme_override_constants/margin_bottom = 10
+theme_override_constants/margin_left = 0
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 20
 
 [node name="ColorRect" type="ColorRect" parent="HBox/MC3"]
 layout_mode = 2
@@ -99,7 +84,9 @@ color = Color(0.388235, 0.388235, 0.388235, 1)
 [node name="BaitCountLabel" type="Label" parent="HBox/MC3"]
 layout_mode = 2
 size_flags_vertical = 1
-theme_override_font_sizes/font_size = 25
+theme_override_font_sizes/font_size = 20
 text = "22"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[connection signal="button_down" from="HBox/MC2/VBox/BuyButton" to="." method="_on_buy_button_button_down"]

@@ -23,6 +23,7 @@ func _ready():
 
 func _process(_delta):
 	updateAffordabilityIndicator()
+	setUpgradePriceAndLevel()
 
 func updateAffordabilityIndicator():
 	if ResourceType == "Gold":
@@ -35,7 +36,6 @@ func updateAffordabilityIndicator():
 			CantAffordColorRect.visible = false
 		else:
 			CantAffordColorRect.visible = true
-	
 
 func changeUpgrade(woodType):
 	ResourceType = woodType
@@ -43,10 +43,7 @@ func changeUpgrade(woodType):
 	
 	var upgrade = Upgrades.Upgrades[ResourceType][str(UpgradeNumber)]
 	SaveDataValues = SaveData.Upgrades[ResourceType][str(UpgradeNumber)]
-	
-	if SaveDataValues:
-		CurrentPrice = CalculatePrice.getUpgradeCost(SaveDataValues["Level"], ResourceType, str(UpgradeNumber))
-	
+
 	if !upgrade or !SaveDataValues:
 		NameLabel.text = "????"
 		PriceLabel.text = "???"
@@ -57,7 +54,7 @@ func changeUpgrade(woodType):
 	setUpgradePriceAndLevel()
 
 func setUpgradePriceAndLevel():
-	CurrentPrice = CalculatePrice.getUpgradeCost(SaveDataValues["Level"], ResourceType, str(UpgradeNumber))
+	CurrentPrice = round(CalculatePrice.getUpgradeCost(SaveDataValues["Level"], ResourceType, str(UpgradeNumber)) * Values.ResourceValues[ResourceType]["UpgradePriceMultip"])
 	
 	PriceLabel.text = "price: " + str(CurrentPrice)
 	LevelLabel.text = "LvL " + str(SaveDataValues["Level"])

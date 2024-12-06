@@ -1,98 +1,98 @@
 extends Node
 
 var Research = {
+	"3" :  {
+		"Name" : "65% more storage",
+		"Description" : "Doubles Storage for all Classic Wood",
+		"Time" : 30, # Seconds
+		"OakCost" : 500, "AppleCost" : 500, "MapleCost" : 0, "BirchCost" : 0, "SpruceCost" : 0,
+		"ChestnutCost" : 0, "CherryCost" : 0, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 0,
+		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 0,
+	},
 	"1" : {
 		"Name" : "Unlock Woodcamps",
 		"Description" : "Allows building woodcamps, unlocks woodcamp upgrades",
 		"Time" : 60, # Seconds
-		"OakCost" : 20, "AppleCost" : 10, "MapleCost" : 0, "BirchCost" : 0, "SpruceCost" : 0,
+		"OakCost" : 1300, "AppleCost" : 2000, "MapleCost" : 0, "BirchCost" : 0, "SpruceCost" : 0,
+		"ChestnutCost" : 0, "CherryCost" : 0, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 0,
+		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 0,
+	},
+	"5" :  {
+		"Name" : "Oak and Apple upgrades -15%",
+		"Description" : "Make Apple and Oak upgrades -15% cheaper",
+		"Time" : 100, # Seconds
+		"OakCost" : 1500, "AppleCost" : 2500, "MapleCost" : 0, "BirchCost" : 0, "SpruceCost" : 0,
 		"ChestnutCost" : 0, "CherryCost" : 0, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 0,
 		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 0,
 	},
 	"2" :  {
-		"Name" : "Double Oak WPS and WPC",
+		"Name" : "Double Oak WPS and WPC and Storage",
 		"Description" : "Maple Yum!",
-		"Time" : 180, # Seconds
-		"OakCost" : 7000, "AppleCost" : 3000, "MapleCost" : 0, "BirchCost" : 0, "SpruceCost" : 0,
-		"ChestnutCost" : 0, "CherryCost" : 0, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 0,
-		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 0,
-	},
-	"3" :  {
-		"Name" : "30% more storage",
-		"Description" : "Doubles Storage for all Classic Wood",
-		"Time" : 360, # Seconds
-		"OakCost" : 11000, "AppleCost" : 6000, "MapleCost" : 1000, "BirchCost" : 0, "SpruceCost" : 0,
+		"Time" : 165, # Seconds
+		"OakCost" : 5000, "AppleCost" : 6000, "MapleCost" : 0, "BirchCost" : 0, "SpruceCost" : 0,
 		"ChestnutCost" : 0, "CherryCost" : 0, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 0,
 		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 0,
 	},
 	"4" :  {
 		"Name" : "Unlock Maple Wood",
 		"Description" : "Doubles Storage for all Classic Wood",
-		"Time" : 360, # Seconds
-		"OakCost" : 11000, "AppleCost" : 6000, "MapleCost" : 1000, "BirchCost" : 0, "SpruceCost" : 0,
-		"ChestnutCost" : 0, "CherryCost" : 0, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 0,
-		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 0,
-	},
-	"5" :  {
-		"Name" : "cheaper upgrades 5%",
-		"Description" : "Doubles Storage for all Classic Wood",
-		"Time" : 360, # Seconds
-		"OakCost" : 11000, "AppleCost" : 6000, "MapleCost" : 1000, "BirchCost" : 0, "SpruceCost" : 0,
+		"Time" : 300, # Seconds
+		"OakCost" : 11000, "AppleCost" : 6000, "MapleCost" : 0, "BirchCost" : 0, "SpruceCost" : 0,
 		"ChestnutCost" : 0, "CherryCost" : 0, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 0,
 		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 0,
 	},
 	"6" :  {
-		"Name" : "10% more wps",
+		"Name" : "2x more wps",
 		"Description" : "Doubles Storage for all Classic Wood",
 		"Time" : 360, # Seconds
-		"OakCost" : 11000, "AppleCost" : 6000, "MapleCost" : 1000, "BirchCost" : 0, "SpruceCost" : 0,
-		"ChestnutCost" : 0, "CherryCost" : 0, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 0,
-		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 0,
-	},
-	"7" :  {
-		"Name" : "Maple WPS 3x",
-		"Description" : "Doubles Storage for all Classic Wood",
-		"Time" : 360, # Seconds
-		"OakCost" : 11000, "AppleCost" : 6000, "MapleCost" : 1000, "BirchCost" : 0, "SpruceCost" : 0,
+		"OakCost" : 20000, "AppleCost" : 20000, "MapleCost" : 1000, "BirchCost" : 0, "SpruceCost" : 0,
 		"ChestnutCost" : 0, "CherryCost" : 0, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 0,
 		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 0,
 	},
 	"8" :  {
 		"Name" : "woodcamps use 7% less wood",
 		"Description" : "Doubles Storage for all Classic Wood",
-		"Time" : 360, # Seconds
-		"OakCost" : 11000, "AppleCost" : 6000, "MapleCost" : 1000, "BirchCost" : 0, "SpruceCost" : 0,
+		"Time" : 450, # Seconds
+		"OakCost" : 50000, "AppleCost" : 23000, "MapleCost" : 1500, "BirchCost" : 0, "SpruceCost" : 0,
+		"ChestnutCost" : 0, "CherryCost" : 0, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 0,
+		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 0,
+	},
+	"7" :  {
+		"Name" : "Maple WPS 3x",
+		"Description" : "Doubles Storage for all Classic Wood",
+		"Time" : 550, # Seconds
+		"OakCost" : 15000, "AppleCost" : 25000, "MapleCost" : 3000, "BirchCost" : 0, "SpruceCost" : 0,
 		"ChestnutCost" : 0, "CherryCost" : 0, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 0,
 		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 0,
 	},
 	"9" :  {
 		"Name" : "Unlock Markets",
 		"Description" : "Doubles Storage for all Classic Wood",
-		"Time" : 360, # Seconds
-		"OakCost" : 11000, "AppleCost" : 6000, "MapleCost" : 1000, "BirchCost" : 0, "SpruceCost" : 0,
+		"Time" : 620, # Seconds
+		"OakCost" : 70000, "AppleCost" : 0, "MapleCost" : 0, "BirchCost" : 0, "SpruceCost" : 0,
 		"ChestnutCost" : 0, "CherryCost" : 0, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 0,
 		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 0,
 	},
 	"10" :  {
-		"Name" : "WoodCamps 5% cheaper",
+		"Name" : "WoodCamps 35% cheaper",
 		"Description" : "Doubles Storage for all Classic Wood",
-		"Time" : 360, # Seconds
-		"OakCost" : 11000, "AppleCost" : 6000, "MapleCost" : 1000, "BirchCost" : 0, "SpruceCost" : 0,
+		"Time" : 780, # Seconds
+		"OakCost" : 100000, "AppleCost" : 36000, "MapleCost" : 6000, "BirchCost" : 0, "SpruceCost" : 0,
 		"ChestnutCost" : 0, "CherryCost" : 0, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 0,
 		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 0,
 	},
 	"11" :  {
 		"Name" : "wood sells for 22% more gold",
 		"Description" : "Doubles Storage for all Classic Wood",
-		"Time" : 360, # Seconds
-		"OakCost" : 11000, "AppleCost" : 6000, "MapleCost" : 1000, "BirchCost" : 0, "SpruceCost" : 0,
+		"Time" : 940, # Seconds
+		"OakCost" : 125000, "AppleCost" : 6000, "MapleCost" : 1000, "BirchCost" : 0, "SpruceCost" : 0,
 		"ChestnutCost" : 0, "CherryCost" : 0, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 0,
 		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 0,
 	},
-	"12" :  {
+	"12" :  { # delete, unlock with markets
 		"Name" : "unlock levels",
 		"Description" : "Maple Yum!",
-		"Time" : 180, # Seconds
+		"Time" : 1180, # Seconds
 		"OakCost" : 7000, "AppleCost" : 3000, "MapleCost" : 0, "BirchCost" : 0, "SpruceCost" : 0,
 		"ChestnutCost" : 0, "CherryCost" : 0, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 0,
 		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 0,

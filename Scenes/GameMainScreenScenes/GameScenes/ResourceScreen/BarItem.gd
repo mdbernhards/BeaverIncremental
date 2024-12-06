@@ -6,7 +6,6 @@ var LevelCurrentPrice = 0
 
 # Nodes
 var NameLabel
-var LevelLabel
 var PerClickLabel
 var PerSecondLabel
 var StorageLabel
@@ -21,10 +20,10 @@ var WCCountLabel
 var WCPriceLabel
 var WCCantAffordRect
 
-# Level Nodes
-var CurrentLevelLabel
-var LevelPriceLabel
-var LevelCantAffordRect
+# Beaver Nodes
+var BeaverCountLabel
+var BeaverPriceLabel
+var BeaverCantAffordRect
 
 func _ready():
 	WCCurrentPrice = 0
@@ -52,7 +51,6 @@ func changeBarValues(woodType = WoodType):
 func updateBarValues(woodType = WoodType):
 	WoodType = woodType
 	
-	LevelLabel.text = "LvL " + str(SaveData.Resources[WoodType]["Level"])
 	PerClickLabel.text = str(roundi(Values.ResourceValues[WoodType]["PerClick"])) + " per click"
 	PerSecondLabel.text = str(roundi(Values.ResourceValues[WoodType]["RealPerSecondIncrease"] - Values.ResourceValues[WoodType]["RealPerSecondLoss"])) + " per second"
 	StorageLabel.text = str(roundi(SaveData.Resources[WoodType]["Count"])) + " / " + str(roundi(Values.ResourceValues[WoodType]["Storage"]))
@@ -62,7 +60,7 @@ func updateBarValues(woodType = WoodType):
 	ProductionLabel.text = WoodType + " production: " + str(ResourceProductionSlider.value) + "%"
 	
 	# Woodcamp
-	WCCurrentPrice = CalculatePrice.getWoodcampCost(SaveData.Resources[WoodType]["Woodcamps"], WoodType)
+	WCCurrentPrice = round(CalculatePrice.getWoodcampCost(SaveData.Resources[WoodType]["Woodcamps"], WoodType) * Values.ResourceValues[WoodType]["WcPriceMultip"])
 	
 	WCCountLabel.text = str(SaveData.Resources[WoodType]["Woodcamps"])
 	WCPriceLabel.text = str(WCCurrentPrice)
@@ -75,17 +73,16 @@ func updateBarValues(woodType = WoodType):
 	# Levels
 	LevelCurrentPrice = CalculatePrice.getLevelCost(SaveData.Resources[WoodType]["Level"], WoodType)
 	
-	CurrentLevelLabel.text = str(SaveData.Resources[WoodType]["Level"])
-	LevelPriceLabel.text = str(LevelCurrentPrice)
+	BeaverCountLabel.text = str(SaveData.Resources[WoodType]["Level"])
+	BeaverPriceLabel.text = str(LevelCurrentPrice)
 	
 	if LevelCurrentPrice <= SaveData.Gold["Count"]:
-		LevelCantAffordRect.visible = false
+		BeaverCantAffordRect.visible = false
 	else:
-		LevelCantAffordRect.visible = true
+		BeaverCantAffordRect.visible = true
 
 func setNodePaths():
 	NameLabel = $HBox/BarVBox/BarLabels/MC/TitleLabel
-	LevelLabel = $HBox/BarVBox/BarLabels/MC2/LevelLabel
 	PerClickLabel = $HBox/BarVBox/BarRect/HBox/MC/VBox/PerClickLabel
 	PerSecondLabel = $HBox/BarVBox/BarRect/HBox/MC/VBox/PerSecondLabel
 	StorageLabel = $HBox/BarVBox/BarLabels/MC3/StorageLabel
@@ -98,9 +95,9 @@ func setNodePaths():
 	WCPriceLabel = $HBox/WoodCampMC/WoodCampHBox/MC/VBox/wcPriceLabel
 	WCCantAffordRect = $HBox/WoodCampMC/WoodCampHBox/MC2/VBox/WoodCampBuyButton/WCCantAffordRect
 	
-	CurrentLevelLabel = $HBox/LevelMC/LevelHBox/MC/VBox/CurrentLevelLabel
-	LevelPriceLabel = $HBox/LevelMC/LevelHBox/MC/VBox/LevelPriceLabel
-	LevelCantAffordRect = $HBox/LevelMC/LevelHBox/MC2/VBox/LevelBuyButton/LevelCantAffordRect
+	BeaverCountLabel = $HBox/LevelMC/LevelHBox/MC/VBox/CurrentLevelLabel
+	BeaverPriceLabel = $HBox/LevelMC/LevelHBox/MC/VBox/LevelPriceLabel
+	BeaverCantAffordRect = $HBox/LevelMC/LevelHBox/MC2/VBox/LevelBuyButton/LevelCantAffordRect
 
 func _on_click_button_button_down():
 	if Values.ResourceValues[WoodType]["Storage"] > (SaveData.Resources[WoodType]["Count"] + Values.ResourceValues[WoodType]["PerClick"]):

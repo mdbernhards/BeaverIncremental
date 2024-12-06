@@ -1,7 +1,11 @@
-[gd_scene format=3 uid="uid://chithml6pwn6b"]
+[gd_scene load_steps=3 format=3 uid="uid://chithml6pwn6b"]
+
+[ext_resource type="PackedScene" uid="uid://bnaeq0jnl2qm8" path="res://Scenes/GameMainScreenScenes/FishingScenes/BaitPage/bait_item.tscn" id="1_cx1mo"]
+[ext_resource type="Script" path="res://Scenes/GameMainScreenScenes/FishingScenes/bait_page.gd" id="1_rt511"]
 
 [node name="BaitPage" type="VBoxContainer"]
 custom_minimum_size = Vector2(657, 926)
+script = ExtResource("1_rt511")
 
 [node name="MC" type="MarginContainer" parent="."]
 layout_mode = 2
@@ -15,6 +19,15 @@ theme_override_font_sizes/font_size = 45
 text = "Bait Shop"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="CurrentGoldLabel" type="Label" parent="MC"]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(0.909827, 0.887426, 0.456742, 1)
+theme_override_font_sizes/font_size = 20
+text = "Gold: 100"
+horizontal_alignment = 2
+vertical_alignment = 2
 
 [node name="MC2" type="MarginContainer" parent="."]
 layout_mode = 2
@@ -37,104 +50,46 @@ theme_override_constants/margin_right = 15
 layout_mode = 2
 theme_override_constants/separation = 10
 
-[node name="BaitItem" type="MarginContainer" parent="MC2/Scroll/MC/VBox"]
-custom_minimum_size = Vector2(0, 95)
+[node name="BaitItem" parent="MC2/Scroll/MC/VBox" instance=ExtResource("1_cx1mo")]
 layout_mode = 2
-theme_override_constants/margin_right = 0
+BaitType = 1
 
-[node name="ColorRect" type="ColorRect" parent="MC2/Scroll/MC/VBox/BaitItem"]
+[node name="BaitItem2" parent="MC2/Scroll/MC/VBox" instance=ExtResource("1_cx1mo")]
 layout_mode = 2
-color = Color(0.196078, 0.196078, 0.196078, 1)
+BaitType = 2
 
-[node name="HBox" type="HBoxContainer" parent="MC2/Scroll/MC/VBox/BaitItem"]
+[node name="BaitItem3" parent="MC2/Scroll/MC/VBox" instance=ExtResource("1_cx1mo")]
 layout_mode = 2
+BaitType = 3
 
-[node name="MC1" type="MarginContainer" parent="MC2/Scroll/MC/VBox/BaitItem/HBox"]
+[node name="BaitItem4" parent="MC2/Scroll/MC/VBox" instance=ExtResource("1_cx1mo")]
 layout_mode = 2
-theme_override_constants/margin_left = 10
-theme_override_constants/margin_top = 10
-theme_override_constants/margin_right = 10
-theme_override_constants/margin_bottom = 10
+BaitType = 4
 
-[node name="VBox" type="VBoxContainer" parent="MC2/Scroll/MC/VBox/BaitItem/HBox/MC1"]
+[node name="BaitItem5" parent="MC2/Scroll/MC/VBox" instance=ExtResource("1_cx1mo")]
 layout_mode = 2
+BaitType = 5
 
-[node name="MC" type="MarginContainer" parent="MC2/Scroll/MC/VBox/BaitItem/HBox/MC1/VBox"]
+[node name="BaitItem6" parent="MC2/Scroll/MC/VBox" instance=ExtResource("1_cx1mo")]
 layout_mode = 2
-size_flags_vertical = 3
+BaitType = 6
 
-[node name="Label" type="Label" parent="MC2/Scroll/MC/VBox/BaitItem/HBox/MC1/VBox/MC"]
+[node name="BaitItem7" parent="MC2/Scroll/MC/VBox" instance=ExtResource("1_cx1mo")]
 layout_mode = 2
-theme_override_font_sizes/font_size = 25
-text = "Oak Bait"
+BaitType = 7
 
-[node name="MC2" type="MarginContainer" parent="MC2/Scroll/MC/VBox/BaitItem/HBox/MC1/VBox"]
+[node name="BaitItem8" parent="MC2/Scroll/MC/VBox" instance=ExtResource("1_cx1mo")]
 layout_mode = 2
-size_flags_vertical = 3
-theme_override_constants/margin_left = 20
+BaitType = 8
 
-[node name="Label" type="Label" parent="MC2/Scroll/MC/VBox/BaitItem/HBox/MC1/VBox/MC2"]
-custom_minimum_size = Vector2(220, 0)
+[node name="BaitItem9" parent="MC2/Scroll/MC/VBox" instance=ExtResource("1_cx1mo")]
 layout_mode = 2
-size_flags_vertical = 1
-theme_override_font_sizes/font_size = 12
-text = "5% fishing power"
-autowrap_mode = 3
+BaitType = 9
 
-[node name="MC2" type="MarginContainer" parent="MC2/Scroll/MC/VBox/BaitItem/HBox"]
-custom_minimum_size = Vector2(220, 0)
+[node name="BaitItem10" parent="MC2/Scroll/MC/VBox" instance=ExtResource("1_cx1mo")]
 layout_mode = 2
-theme_override_constants/margin_left = 10
-theme_override_constants/margin_top = 10
-theme_override_constants/margin_right = 10
-theme_override_constants/margin_bottom = 10
+BaitType = 10
 
-[node name="GridContainer" type="GridContainer" parent="MC2/Scroll/MC/VBox/BaitItem/HBox/MC2"]
+[node name="BaitItem11" parent="MC2/Scroll/MC/VBox" instance=ExtResource("1_cx1mo")]
 layout_mode = 2
-theme_override_constants/h_separation = 15
-theme_override_constants/v_separation = 10
-columns = 2
-
-[node name="Button" type="Button" parent="MC2/Scroll/MC/VBox/BaitItem/HBox/MC2/GridContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-text = "Buy"
-
-[node name="Button2" type="Button" parent="MC2/Scroll/MC/VBox/BaitItem/HBox/MC2/GridContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-text = "10x"
-
-[node name="Button3" type="Button" parent="MC2/Scroll/MC/VBox/BaitItem/HBox/MC2/GridContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-text = "100x"
-
-[node name="Button4" type="Button" parent="MC2/Scroll/MC/VBox/BaitItem/HBox/MC2/GridContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-text = "1000x"
-
-[node name="MC3" type="MarginContainer" parent="MC2/Scroll/MC/VBox/BaitItem/HBox"]
-custom_minimum_size = Vector2(110, 0)
-layout_mode = 2
-theme_override_constants/margin_left = 10
-theme_override_constants/margin_top = 10
-theme_override_constants/margin_right = 10
-theme_override_constants/margin_bottom = 10
-
-[node name="ColorRect" type="ColorRect" parent="MC2/Scroll/MC/VBox/BaitItem/HBox/MC3"]
-layout_mode = 2
-color = Color(0.388235, 0.388235, 0.388235, 1)
-
-[node name="Label" type="Label" parent="MC2/Scroll/MC/VBox/BaitItem/HBox/MC3"]
-layout_mode = 2
-size_flags_vertical = 1
-theme_override_font_sizes/font_size = 25
-text = "22"
-horizontal_alignment = 1
-vertical_alignment = 1
+BaitType = 11
