@@ -2,7 +2,7 @@ extends MarginContainer
 
 var WoodType = "Oak"
 var WCCurrentPrice = 0
-var LevelCurrentPrice = 0
+var BeaverCurrentPrice = 0
 
 # Nodes
 var NameLabel
@@ -27,7 +27,7 @@ var BeaverCantAffordRect
 
 func _ready():
 	WCCurrentPrice = 0
-	LevelCurrentPrice = 0
+	BeaverCurrentPrice = 0
 	setNodePaths()
 	changeBarValues()
 
@@ -65,18 +65,18 @@ func updateBarValues(woodType = WoodType):
 	WCCountLabel.text = str(SaveData.Resources[WoodType]["Woodcamps"])
 	WCPriceLabel.text = str(WCCurrentPrice)
 	
-	if WCCurrentPrice <= SaveData.Resources[WoodType]["Count"]:
+	if WCCurrentPrice <= SaveData.Gold["Count"]:
 		WCCantAffordRect.visible = false
 	else:
 		WCCantAffordRect.visible = true
 	
 	# Levels
-	LevelCurrentPrice = CalculatePrice.getLevelCost(SaveData.Resources[WoodType]["Level"], WoodType)
+	BeaverCurrentPrice = round(CalculatePrice.getBeaverCost(SaveData.Resources[WoodType]["Beavers"], WoodType) * Values.ResourceValues[WoodType]["BeaverPriceMultip"])
 	
-	BeaverCountLabel.text = str(SaveData.Resources[WoodType]["Level"])
-	BeaverPriceLabel.text = str(LevelCurrentPrice)
+	BeaverCountLabel.text = str(SaveData.Resources[WoodType]["Beavers"])
+	BeaverPriceLabel.text = str(BeaverCurrentPrice)
 	
-	if LevelCurrentPrice <= SaveData.Gold["Count"]:
+	if BeaverCurrentPrice <= SaveData.Resources[WoodType]["Count"]:
 		BeaverCantAffordRect.visible = false
 	else:
 		BeaverCantAffordRect.visible = true
@@ -95,9 +95,9 @@ func setNodePaths():
 	WCPriceLabel = $HBox/WoodCampMC/WoodCampHBox/MC/VBox/wcPriceLabel
 	WCCantAffordRect = $HBox/WoodCampMC/WoodCampHBox/MC2/VBox/WoodCampBuyButton/WCCantAffordRect
 	
-	BeaverCountLabel = $HBox/LevelMC/LevelHBox/MC/VBox/CurrentLevelLabel
-	BeaverPriceLabel = $HBox/LevelMC/LevelHBox/MC/VBox/LevelPriceLabel
-	BeaverCantAffordRect = $HBox/LevelMC/LevelHBox/MC2/VBox/LevelBuyButton/LevelCantAffordRect
+	BeaverCountLabel = $HBox/BeaverMC/BeaverHBox/MC/VBox/BeaverCountLabel
+	BeaverPriceLabel = $HBox/BeaverMC/BeaverHBox/MC/VBox/BeaverPriceLabel
+	BeaverCantAffordRect = $HBox/BeaverMC/BeaverHBox/MC2/VBox/BeaverBuyButton/BeaverCantAffordRect
 
 func _on_click_button_button_down():
 	if Values.ResourceValues[WoodType]["Storage"] > (SaveData.Resources[WoodType]["Count"] + Values.ResourceValues[WoodType]["PerClick"]):
@@ -106,16 +106,16 @@ func _on_click_button_button_down():
 		SaveData.Resources[WoodType]["Count"] = Values.ResourceValues[WoodType]["Storage"]
 
 func _on_wood_camp_buy_button_button_down():
-	if WCCurrentPrice <= SaveData.Resources[WoodType]["Count"]:
-		SaveData.Resources[WoodType]["Count"] -= WCCurrentPrice
+	if WCCurrentPrice <= SaveData.Gold["Count"]:
+		SaveData.Gold["Count"] -= WCCurrentPrice
 		SaveData.Resources[WoodType]["Woodcamps"] += 1
 		updateBarValues()
 		CalculateValues.calculateAllValues()
 
-func _on_level_buy_button_button_down():
-	if LevelCurrentPrice <= SaveData.Gold["Count"]:
-		SaveData.Gold["Count"] -= LevelCurrentPrice
-		SaveData.Resources[WoodType]["Level"] += 1
+func _on_level_buy_button_button_down(): # beaver buy
+	if BeaverCurrentPrice <= SaveData.Resources[WoodType]["Count"]:
+		SaveData.Resources[WoodType]["Count"] -= BeaverCurrentPrice
+		SaveData.Resources[WoodType]["Beavers"] += 1
 		updateBarValues()
 		CalculateValues.calculateAllValues()
 

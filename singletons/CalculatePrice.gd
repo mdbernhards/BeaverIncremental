@@ -1,91 +1,91 @@
 extends Node
 
+func getBeaverCost(beaverCount, woodType):
+	match woodType :
+		"Oak" :
+			return round(pow(1.26, beaverCount) + 1.21 * pow(beaverCount, 2.7)) + 8
+		"Apple" :
+			return round(pow(1.32, beaverCount) + 1.26 * pow(beaverCount, 2.64)) + 12
+		"Maple" :
+			return round(pow(1.37, beaverCount) + 1.34 * pow(beaverCount, 2.59)) + 20
+		"Birch" :
+			return round(pow(1.30, beaverCount) + 1.21 * pow(beaverCount, 2.83)) + 34
+		"Spruce" :
+			return round(pow(1.30, beaverCount) + 1.29 * pow(beaverCount, 2.77)) + 36
+		"Chestnut" :
+			return round(pow(1.40, beaverCount) + 1.30 * pow(beaverCount, 2.72)) + 39
+		"Cherry" :
+			return round(pow(1.30, beaverCount) + 1.35 * pow(beaverCount, 2.42)) + 44
+		"Ash" :
+			return round(pow(1.32, beaverCount) + 1.26 * pow(beaverCount, 2.84)) + 44
+		"Cedar" :
+			return round(pow(1.22, beaverCount) + 1.35 * pow(beaverCount, 2.59)) + 44
+		"Mahogany" :
+			return round(pow(1.21, beaverCount) + 1.29 * pow(beaverCount, 2.75)) + 47
+		"Ebony" :
+			return round(pow(1.23, beaverCount) + 1.29 * pow(beaverCount, 2.48)) + 47
+		"Dogwood" :
+			return round(pow(1.36, beaverCount) + 1.23 * pow(beaverCount, 2.94)) + 49
+		"Rosewood" :
+			return round(pow(1.22, beaverCount) + 1.32 * pow(beaverCount, 2.43)) + 52
+		"Ghost Gum" :
+			return round(pow(1.37, beaverCount) + 1.26 * pow(beaverCount, 2.67)) + 53
+		"Dragonwood" :
+			return round(pow(1.24, beaverCount) + 1.28 * pow(beaverCount, 2.59)) + 66
+
 func getWoodcampCost(woodcampCount, woodType):
 	match woodType :
 		"Oak" :
-			return round(pow(1.26, woodcampCount) + 1.21 * pow(woodcampCount, 2.68)) + 1200
+			return round(pow(1.32, woodcampCount) + 1.37 * pow(woodcampCount, 2.84)) + 149
 		"Apple" :
-			return round(pow(1.32, woodcampCount) + 1.26 * pow(woodcampCount, 2.64)) + 2200
+			return round(pow(1.41, woodcampCount) + 1.38 * pow(woodcampCount, 2.94)) + 249
 		"Maple" :
-			return round(pow(1.37, woodcampCount) + 1.34 * pow(woodcampCount, 2.59)) + 3469
+			return round(pow(1.56, woodcampCount) + 1.42 * pow(woodcampCount, 2.96)) + 499
 		"Birch" :
-			return round(pow(1.30, woodcampCount) + 1.21 * pow(woodcampCount, 2.83)) + 3479
+			return round(pow(1.61, woodcampCount) + 1.53 * pow(woodcampCount, 3.26)) + 999
 		"Spruce" :
-			return round(pow(1.30, woodcampCount) + 1.29 * pow(woodcampCount, 2.77)) + 3609
+			return round(pow(1.21, woodcampCount) + 1.19 * pow(woodcampCount, 2.37)) + 6188
 		"Chestnut" :
-			return round(pow(1.40, woodcampCount) + 1.30 * pow(woodcampCount, 2.72)) + 3969
+			return round(pow(1.29, woodcampCount) + 1.29 * pow(woodcampCount, 2.37)) + 9423
 		"Cherry" :
-			return round(pow(1.30, woodcampCount) + 1.35 * pow(woodcampCount, 2.42)) + 4409
+			return round(pow(1.19, woodcampCount) + 1.29 * pow(woodcampCount, 2.53)) + 9738
 		"Ash" :
-			return round(pow(1.32, woodcampCount) + 1.26 * pow(woodcampCount, 2.84)) + 4419
+			return round(pow(1.38, woodcampCount) + 1.3 * pow(woodcampCount, 3.08)) + 10568
 		"Cedar" :
-			return round(pow(1.22, woodcampCount) + 1.35 * pow(woodcampCount, 2.59)) + 4429
+			return round(pow(1.24, woodcampCount) + 1.22 * pow(woodcampCount, 3.1)) + 11187
 		"Mahogany" :
-			return round(pow(1.21, woodcampCount) + 1.29 * pow(woodcampCount, 2.75)) + 4729
+			return round(pow(1.22, woodcampCount) + 1.31 * pow(woodcampCount, 3.13)) + 11931
 		"Ebony" :
-			return round(pow(1.23, woodcampCount) + 1.29 * pow(woodcampCount, 2.48)) + 4779
+			return round(pow(1.37, woodcampCount) + 1.36 * pow(woodcampCount, 3.26)) + 12753
 		"Dogwood" :
-			return round(pow(1.36, woodcampCount) + 1.23 * pow(woodcampCount, 2.94)) + 4909
+			return round(pow(1.35, woodcampCount) + 1.33 * pow(woodcampCount, 3.32)) + 13415
 		"Rosewood" :
-			return round(pow(1.22, woodcampCount) + 1.32 * pow(woodcampCount, 2.43)) + 5209
+			return round(pow(1.42, woodcampCount) + 1.26 * pow(woodcampCount, 3.57)) + 13957
 		"Ghost Gum" :
-			return round(pow(1.37, woodcampCount) + 1.26 * pow(woodcampCount, 2.67)) + 5349
+			return round(pow(1.25, woodcampCount) + 1.19 * pow(woodcampCount, 3.58)) + 13958
 		"Dragonwood" :
-			return round(pow(1.24, woodcampCount) + 1.28 * pow(woodcampCount, 2.59)) + 5369
-
-func getLevelCost(level, woodType):
-	match woodType :
-		"Oak" :
-			return round(pow(1.32, level) + 1.27 * pow(level, 2.21)) + 2001
-		"Apple" :
-			return round(pow(1.31, level) + 1.26 * pow(level, 2.24)) + 4735
-		"Maple" :
-			return round(pow(1.26, level) + 1.42 * pow(level, 2.26)) + 4792
-		"Birch" :
-			return round(pow(1.31, level) + 1.33 * pow(level, 2.36)) + 6146
-		"Spruce" :
-			return round(pow(1.21, level) + 1.19 * pow(level, 2.37)) + 6188
-		"Chestnut" :
-			return round(pow(1.29, level) + 1.29 * pow(level, 2.37)) + 9423
-		"Cherry" :
-			return round(pow(1.19, level) + 1.29 * pow(level, 2.53)) + 9738
-		"Ash" :
-			return round(pow(1.38, level) + 1.3 * pow(level, 3.08)) + 10568
-		"Cedar" :
-			return round(pow(1.24, level) + 1.22 * pow(level, 3.1)) + 11187
-		"Mahogany" :
-			return round(pow(1.22, level) + 1.31 * pow(level, 3.13)) + 11931
-		"Ebony" :
-			return round(pow(1.37, level) + 1.36 * pow(level, 3.26)) + 12753
-		"Dogwood" :
-			return round(pow(1.35, level) + 1.33 * pow(level, 3.32)) + 13415
-		"Rosewood" :
-			return round(pow(1.42, level) + 1.26 * pow(level, 3.57)) + 13957
-		"Ghost Gum" :
-			return round(pow(1.25, level) + 1.19 * pow(level, 3.58)) + 13958
-		"Dragonwood" :
-			return round(pow(1.18, level) + 1.38 * pow(level, 3.91)) + 14100
+			return round(pow(1.18, woodcampCount) + 1.38 * pow(woodcampCount, 3.91)) + 14100
 
 func getUpgradeCost(level, woodType, upgradeNr): # first number more later, second n third more at the start but later nothing
 	match woodType :
 		"Oak" :
 			match upgradeNr :
 				"1" :
-					return round(pow(1.26, level) + 1.26 * pow(level, 2.8)) + (level + 1) * 4 + 5
+					return round(pow(1.26, level) + 1.26 * pow(level, 2.8)) + (level + 1) * 6 + 23
 				"2" :
-					return round(pow(1.21, level) + 5 * pow(level, 2.3)) + (level + 1) * 11 + 8
+					return round(pow(1.21, level) + 4.5 * pow(level, 2.3)) + (level + 1) * 11 + 28
 				"3" :
-					return round(pow(1.16, level) + 1.15 * pow(level, 2.3)) + 4 * (level + 1) * 8 + 2000
+					return round(pow(1.16, level) + 1.15 * pow(level, 2.3)) + 332 * (level + 1) + 1700
 				"4" :
-					return round(pow(1.5, level) + 3 * pow(level, 3.65)) + (level + 1) * 35 + 16
+					return round(pow(1.5, level) + 3 * pow(level, 3.7)) + (level + 1) * 35 + 64
 				"5" :
-					return 500
+					return round(pow(1.56, level) + 1.42 * pow(level, 2.96)) + 499
 				"6" :
 					return round(pow(1.543, level) + 3.443 * pow(level, 2.3)) + 32 * (level + 1) * 55 + 16000
 				"7" :
 					return round(pow(1.6, level) + 4 * pow(level, 2)) + 150 * (level + 1) + 2100
 				"8" :
-					return round(pow(1.107, level) + 1.438 * pow(level, 2.55)) + 32772 * (level + 1) * 78
+					return round(pow(1.107, level) + 1.438 * pow(level, 2.55)) + 32772 * (level + 1) * 88
 				"9" :
 					return round(pow(1.481, level) + 1.282 * pow(level, 2.43)) + 266 * (level + 1) * 63 + 50000
 				"10" :
@@ -97,11 +97,11 @@ func getUpgradeCost(level, woodType, upgradeNr): # first number more later, seco
 				"13" :
 					return round(pow(1.187, level) + 1.139 * pow(level, 2.62)) + 4096 * (level + 1) * 69
 				"14" :
-					return round(pow(1.423, level) + 1.330 * pow(level, 2.86)) + 8192 * (level + 1) * 71
+					return round(pow(1.523, level) + 1.130 * pow(level, 2.56)) + 892 * (level + 1) + 5000
 				"15" :
 					return round(pow(1.327, level) + 1.347 * pow(level, 1.73)) + 16386 * (level + 1) * 71
 				"16" :
-					return round(pow(1.5, level) + 4 * pow(level, 3)) + 2350 * (level + 1) + 2200
+					return round(pow(1.677, level) + 4.75 * pow(level, 3.772)) + 3850 * (level + 1) + 1800
 				"17" :
 					return round(pow(1.129, level) + 1.465 * pow(level, 3.16)) + 65544 * (level + 1) * 83
 				"18" :
@@ -109,9 +109,9 @@ func getUpgradeCost(level, woodType, upgradeNr): # first number more later, seco
 		"Apple" :
 			match upgradeNr :
 				"1" :
-					return round(pow(1.5, level) + 1.9 * pow(level, 3.5)) + 1 * (level + 1) * 25 -15
+					return round(pow(1.5, level) + 1.9 * pow(level, 3.5)) + 1 * (level + 1) * 25 - 16
 				"2" :
-					return round(pow(1.145, level) + 1.47 * pow(level, 2.6)) + (level + 1) * 33 - 14
+					return round(pow(1.4, level) + 1.3 * pow(level, 2.4)) + (level + 1) * 31 - 12
 				"3" :
 					return round(pow(1.453, level) + 1.483 * pow(level, 2.41)) + 4 * (level + 1) * 15 + 1900
 				"4" :
@@ -119,11 +119,11 @@ func getUpgradeCost(level, woodType, upgradeNr): # first number more later, seco
 				"5" :
 					return round(pow(1.323, level) + 1.169 * pow(level, 4.13)) + 16 * (level + 1) * 30 + 5000
 				"6" :
-					return 1000
+					return round(pow(1.313, level) + 1.129 * pow(level, 3.06)) + 120 * (level + 1) + 879
 				"7" :
 					return round(pow(1.45, level) + 2.5 * pow(level, 4)) + 100 * (level + 1) + 99
 				"8" :
-					return round(pow(1.141, level) + 1.147 * pow(level, 4.84)) + 128 * (level + 1) * 48
+					return round(pow(1.141, level) + 1.147 * pow(level, 4.84)) + 128 * (level + 1) * 48 + 9999999
 				"9" :
 					return round(pow(1.298, level) + 1.375 * pow(level, 2.07)) + 256 * (level + 1) * 53
 				"10" :

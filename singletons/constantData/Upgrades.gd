@@ -3,7 +3,7 @@ extends Node
 var Upgrades = {
 	"Oak" : {
 		"1" : {
-			"Name" : "Oak Per Click +1",
+			"Name" : "+0.25 Oak per Beaver",
 			"Description" : "Increases Oak wood gathered per click by 1",
 			"OtherText" : "",
 		},
@@ -18,17 +18,18 @@ var Upgrades = {
 			"OtherText" : "",
 		},
 		"4" :  {
-			"Name" : "Better Oak click",
+			"Name" : "10% cheaper Beavers",
 			"Description" : "Increases wood gathered per click by an additional 1",
 			"OtherText" : "",
 		},
 		"5" :  {
 			"Name" : "Unlock Apple Wood",
+			"OtherName" : "2% wpc tp wps",
 			"Description" : "Unlocks Apple wood for production",
 			"OtherText" : "",
 		},
 		"6" :  {
-			"Name" : "1+ beaver from WC",
+			"Name" : "+1 beaver from WC",
 			"Description" : "",
 			"OtherText" : "",
 		},
@@ -38,64 +39,64 @@ var Upgrades = {
 			"OtherText" : "",
 		},
 		"8" :  {
-			"Name" : "6% storage from WC",
+			"Name" : "12% storage from WC",
 			"Description" : "",
 			"OtherText" : "",
 		},
 		"9" :  {
-			"Name" : "Levels cheaper 0.3%",
+			"Name" : "7% cheaper WC's",
 			"Description" : "",
 			"OtherText" : "",
 		},
 		"10" :  {
-			"Name" : "Upgrades 1.5% cheaper",
+			"Name" : "Upgrades 2.25% cheaper",
 			"Description" : "",
 			"OtherText" : "",
 		},
 		"11" :  {
-			"Name" : "Cheaper bots 0.03%",
+			"Name" : "6% Cheaper bots",
 			"Description" : "",
 			"OtherText" : "",
 		},
 		"12" :  {
-			"Name" : "Per level +storage 0.18%",
+			"Name" : "5% more Magic",
 			"Description" : "",
 			"OtherText" : "",
 		},
 		"13" :  {
-			"Name" : "WPC add 1% to WPS",
+			"Name" : " add 2% WPC to WPS",
 			"Description" : "",
 			"OtherText" : "",
 		},
 		"14" :  {
-			"Name" : "Better wood price 0.1",
+			"Name" : "Better wood price 0.01",
 			"Description" : "",
 			"OtherText" : "",
 		},
 		"15" :  {
-			"Name" : "WPC 2% per level",
+			"Name" : "2% more fish",
 			"Description" : "",
 			"OtherText" : "",
 		},
 		"16" :  {
-			"Name" : "Multiply storage",
+			"Name" : "17.5% storage",
 			"Description" : "",
 			"OtherText" : "",
 		},
 		"17" :  {
-			"Name" : "Cheaper bots 2.2%",
+			"Name" : "Cheaper bots 4%",
 			"Description" : "",
 			"OtherText" : "",
 		},
 		"18" :  {
-			"Name" : "Fish price 2%",
+			"Name" : "Fish price 5%",
 			"Description" : "",
 			"OtherText" : "",
 		},
 	},
 	"Apple" : {
 		"1" : {
-			"Name" : "Apple per click +2",
+			"Name" : "+0.3 Apple per Beaver",
 			"Description" : "Increases wood gathered per click by 2",
 			"OtherText" : "",
 		},
@@ -110,33 +111,34 @@ var Upgrades = {
 			"OtherText" : "",
 		},
 		"4" :  {
-			"Name" : "13% storage",
+			"Name" : "21% storage",
 			"Description" : "",
 			"OtherText" : "",
 		},
 		"5" :  {
-			"Name" : "Oak WPS 17.5%",
+			"Name" : "Oak WPS 12.5%",
 			"Description" : "",
 			"OtherText" : "",
 		},
 		"6" :  {
 			"Name" : "Unlock Research",
+			"OtherName" : "wps 4.5%",
 			"Description" : "Unlocks Research",
 			"OtherText" : "",
 		},
 		"7" :  {
-			"Name" : "Better Apple Click",
+			"Name" : "9% cheaper Beavers",
 			"Description" : "",
 			"OtherText" : "",
 		},
 		"8" :  {
-			"Name" : "multiply storage",
+			"Name" : "1.75x storage",
 			"Description" : "",
 			"OtherText" : "",
 		},
 		"9" :  {
-			"Name" : "use 1% less wood",
-			"Description" : "",
+			"Name" : "WC use 2.5% less wood",
+			"Description" : "in wood production use 2.5% less lower tier wood",
 			"OtherText" : "",
 		},
 		"10" :  {
@@ -145,7 +147,7 @@ var Upgrades = {
 			"OtherText" : "",
 		},
 		"11" :  {
-			"Name" : "Better wood price 1%",
+			"Name" : "Better wood price +1",
 			"Description" : "",
 			"OtherText" : "",
 		},
@@ -155,7 +157,7 @@ var Upgrades = {
 			"OtherText" : "",
 		},
 		"13" :  {
-			"Name" : "levels cheaper 0.6%",
+			"Name" : "Gold upgrades -0.7% cheaper",
 			"Description" : "",
 			"OtherText" : "",
 		},
@@ -165,12 +167,12 @@ var Upgrades = {
 			"OtherText" : "",
 		},
 		"15" :  {
-			"Name" : "fish better wood 1%",
+			"Name" : "fish better wood 2%",
 			"Description" : "",
 			"OtherText" : "",
 		},
 		"16" :  {
-			"Name" : "dam effects 0.15%",
+			"Name" : "dam effects 1.5%",
 			"Description" : "",
 			"OtherText" : "",
 		},
@@ -180,14 +182,14 @@ var Upgrades = {
 			"OtherText" : "",
 		},
 		"18" :  {
-			"Name" : "level effects 4%",
+			"Name" : "WC effects 5%",
 			"Description" : "",
 			"OtherText" : "",
 		},
 	},
 	"Maple" : {
 		"1" : {
-			"Name" : "Maple per click +3",
+			"Name" : "+0.35 Maple per Beaver",
 			"Description" : "Increases wood gathered per click by 2",
 			"OtherText" : "",
 		},
