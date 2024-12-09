@@ -37,39 +37,44 @@ func ApplyBotsSellingWood():
 
 func ApplyWoodGainAndLoss():
 	var lastWoodType
-	
-	var woodGain
-	var woodLoss = 0
-	var woodLossPrecentige = 1 #100%
-	
+
 	for woodType in WoodTypes:
 		var woodCount = SaveData.Resources[woodType]["Count"]
+		var storage = Values.ResourceValues[woodType]["Storage"]
 		
-		woodGain = Values.ResourceValues[woodType]["PerSecondIncrease"]
+		var woodGain = Values.ResourceValues[woodType]["PerSecondIncrease"]
+		var woodLoss = 0
 		
-		if woodType != "Oak":
+		var woodLossPercentage = 1.0
+
+		if lastWoodType != null:
 			woodLoss = Values.ResourceValues[lastWoodType]["PerSecondLoss"]
-			
+
 			if woodLoss > SaveData.Resources[lastWoodType]["Count"]:
-				woodLossPrecentige = SaveData.Resources[lastWoodType]["Count"] / woodLoss
+				woodLossPercentage = SaveData.Resources[lastWoodType]["Count"] / woodLoss
 			else:
-				woodLossPrecentige = 1
-		
-		woodGain *= (woodLossPrecentige)
-		
-		if woodType != "Oak":
-			Values.ResourceValues[lastWoodType]["RealPerSecondLoss"] += woodLoss * woodLossPrecentige
-			SaveData.Resources[lastWoodType]["Count"] -= woodLoss * woodLossPrecentige
-		
-		if Values.ResourceValues[woodType]["Storage"] > (woodCount + woodGain):
-			Values.ResourceValues[woodType]["RealPerSecondIncrease"] = woodGain
-			SaveData.Resources[woodType]["Count"] += woodGain
-		else:
-			Values.ResourceValues[woodType]["RealPerSecondIncrease"] = Values.ResourceValues[woodType]["Storage"] - woodCount
-			woodLossPrecentige = (woodCount - Values.ResourceValues[woodType]["Storage"]) / (1 + woodGain)
-			SaveData.Resources[woodType]["Count"] = Values.ResourceValues[woodType]["Storage"]
-			
+				woodLossPercentage = 1.0
+
+		Values.ResourceValues[woodType]["RealPerSecondIncrease"] = woodGain * woodLossPercentage
+		SaveData.Resources[woodType]["Count"] += woodGain
+
+		if lastWoodType != null and woodLoss > 0:
+			var actualLoss = woodLoss * woodLossPercentage
+
+			if woodCount < storage:
+				SaveData.Resources[lastWoodType]["Count"] -= actualLoss
+				Values.ResourceValues[lastWoodType]["RealPerSecondLoss"] = actualLoss
+			else:
+				Values.ResourceValues[lastWoodType]["RealPerSecondLoss"] = 0
+				
 		lastWoodType = woodType
+
+	for woodType in WoodTypes:
+		if SaveData.Resources[woodType]["Count"] >= Values.ResourceValues[woodType]["Storage"]:
+			Values.ResourceValues[woodType]["RealPerSecondLoss"] = 0
+			Values.ResourceValues[woodType]["RealPerSecondIncrease"] = 0
+		
+		SaveData.Resources[woodType]["Count"] = clampi(SaveData.Resources[woodType]["Count"], 0, Values.ResourceValues[woodType]["Storage"])
 
 func UpdateAllBarValues():
 	var BarItems = get_tree().get_nodes_in_group("BarItem")

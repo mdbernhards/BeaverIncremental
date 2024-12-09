@@ -31,6 +31,7 @@ var ResourceValues = {
 		"EffectMultip" : 1,
 		"PriceMultip" : 1,
 		"AscendingMultip" : 1,
+		"PotentialMagic" : 0,
 	},
 	"Dam" : {
 		"EffectMultip": 1,

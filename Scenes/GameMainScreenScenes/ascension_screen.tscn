@@ -1,4 +1,6 @@
-[gd_scene format=3 uid="uid://dtv4rjhuhfki5"]
+[gd_scene load_steps=2 format=3 uid="uid://dtv4rjhuhfki5"]
+
+[ext_resource type="Script" path="res://Scenes/GameMainScreenScenes/ascension_screen.gd" id="1_c68tc"]
 
 [node name="AscensionScreen" type="Control"]
 layout_mode = 3
@@ -7,6 +9,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_c68tc")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 2
@@ -90,13 +93,13 @@ size_flags_vertical = 0
 theme_override_font_sizes/font_size = 145
 text = "Ascension"
 
-[node name="MagicRecivedLabel" type="MarginContainer" parent="MC/AscensionVBox"]
+[node name="MC2" type="MarginContainer" parent="MC/AscensionVBox"]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_constants/margin_left = 15
-theme_override_constants/margin_bottom = 15
+theme_override_constants/margin_bottom = 20
 
-[node name="MagicGainLabel" type="Label" parent="MC/AscensionVBox/MagicRecivedLabel"]
+[node name="MagicGainLabel" type="Label" parent="MC/AscensionVBox/MC2"]
 layout_mode = 2
 size_flags_vertical = 1
 theme_override_font_sizes/font_size = 55
@@ -104,12 +107,13 @@ text = "You will receive 33 Magic"
 horizontal_alignment = 1
 vertical_alignment = 2
 
-[node name="AscendButton" type="MarginContainer" parent="MC/AscensionVBox"]
+[node name="MC" type="MarginContainer" parent="MC/AscensionVBox"]
 layout_mode = 2
 theme_override_constants/margin_left = 750
 theme_override_constants/margin_right = 710
+theme_override_constants/margin_bottom = 35
 
-[node name="Button" type="Button" parent="MC/AscensionVBox/AscendButton"]
+[node name="AscendButton" type="Button" parent="MC/AscensionVBox/MC"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 80
 text = "Ascend"
@@ -117,3 +121,5 @@ text = "Ascend"
 [node name="EmptySpace" type="Control" parent="MC/AscensionVBox"]
 custom_minimum_size = Vector2(0, 265)
 layout_mode = 2
+
+[connection signal="button_down" from="MC/AscensionVBox/MC/AscendButton" to="." method="_on_ascend_button_button_down"]

@@ -32,7 +32,7 @@ func CalculateRealValues():
 		var woodCamps = SaveData.Resources[woodType]["Woodcamps"]
 		var Beavers = SaveData.Resources[woodType]["Beavers"] + TempValues[woodType]["ExtraBeavers"] + TempValues["Global"]["ExtraBeavers"] # fix this also big time!!!
 		
-		ResourceValues[woodType]["PerClick"] = Beavers * TempValues[woodType]["BeaverUpgrades"] * TempValues[woodType]["BeaverMultip"] * TempValues["Global"]["BeaverMultip"]
+		ResourceValues[woodType]["PerClick"] =((woodCamps * TempValues["Global"]["WcToBeaverMultip"]) + Beavers) * TempValues[woodType]["BeaverUpgrades"] * TempValues[woodType]["BeaverMultip"] * TempValues["Global"]["BeaverMultip"]
 		ResourceValues[woodType]["PerSecondIncrease"] = pow(woodCamps * TempValues[woodType]["WpsPerWc"] * TempValues[woodType]["WpsMultip"] * TempValues["Global"]["WpsMultip"] * TempValues[woodType]["WcEffectMultip"], TempValues["Global"]["WpsPow"]) * TempValues["Global"]["ProductionUpgradeMultip"] * SaveData.Resources[woodType]["Production"] / 100
 		ResourceValues[woodType]["Storage"] = (TempValues[woodType]["BaseStorage"] + Beavers * 15 + woodCamps * TempValues[woodType]["WcBaseStorage"] * TempValues[woodType]["WcStorageMultip"] * TempValues["Global"]["WcStorageMultip"] * TempValues[woodType]["WcEffectMultip"]) * TempValues[woodType]["StorageMultip"] * TempValues["Global"]["StorageMultip"]
 		ResourceValues[woodType]["SoldFor"] = TempValues[woodType]["BaseWoodPrice"] * TempValues[woodType]["WoodPriceMultip"] * TempValues["Global"]["WoodPriceMultip"]
@@ -201,10 +201,12 @@ func SetResearchValue(researchNr):
 		"4" :
 			Unlocks.Unlocks["Maple"]["Unlocked"] = true
 		"5" :
-			TempValues["Oak"]["UpgradePriceMultip"] *= 0.85
-			TempValues["Apple"]["UpgradePriceMultip"] *= 0.85
+			TempValues["Oak"]["UpgradePriceMultip"] *= 0.75
+			TempValues["Apple"]["UpgradePriceMultip"] *= 0.75
 		"6" :
 			TempValues["Global"]["WpsMultip"] *= 1.25
+		"6c" :
+			TempValues["Global"]["StorageMultip"] *= 6
 		"7" :
 			TempValues["Maple"]["WpsMultip"] *= 3
 		"8" :
@@ -241,6 +243,8 @@ func SetResearchValue(researchNr):
 			TempValues["Global"]["BeaverEffectMultip"] *= 1.3 #change
 		"23" :
 			Unlocks.Unlocks["Market"]["Bots"]["Unlocked"] = true
+		"23b" :
+			TempValues["Global"]["WcToBeaverMultip"] += 1
 		"24" :
 			TempValues["Global"]["WpsMultip"] *= 3
 		"25" :
@@ -410,12 +414,12 @@ func SetUpgradeValue(woodType, upgradeId):
 				"3":
 					TempValues[woodType]["WpsPerWc"] += upgradeLevel
 				"4":
-					TempValues[woodType]["BeaverPriceMultip"] *= pow(1 - 0.1, upgradeLevel)
+					TempValues[woodType]["WpcToWpsMultip"] *= pow(1.02, upgradeLevel)
 				"5":
 					if upgradeLevel == 1:
 						Unlocks.Unlocks["Apple"]["Unlocked"] = true
 					elif upgradeLevel > 1:
-						TempValues[woodType]["WpcToWpsMultip"] *= pow(1.02, upgradeLevel)
+						TempValues[woodType]["BeaverPriceMultip"] *= pow(1 - 0.1, upgradeLevel - 1)
 				"6":
 					TempValues[woodType]["ExtraBeavers"] += upgradeLevel * woodCamps
 				"7":
@@ -433,11 +437,11 @@ func SetUpgradeValue(woodType, upgradeId):
 				"13":
 					TempValues[woodType]["WpcToWpsMultip"] *= pow(1.02, upgradeLevel)
 				"14":
-					TempValues[woodType]["BaseWoodPrice"] += upgradeLevel * 0.01
+					TempValues[woodType]["BaseWoodPrice"] += upgradeLevel * 0.005
 				"15":
 					TempValues["Fish"]["MoreFishMultip"] *= pow(1.02, upgradeLevel)
 				"16":
-					TempValues[woodType]["StorageMultip"] *= pow(1.095, upgradeLevel)
+					TempValues[woodType]["StorageMultip"] *= pow(1.045, upgradeLevel)
 				"17":
 					TempValues[woodType]["BotPriceMultip"] *= pow(1 - 0.04, upgradeLevel)
 				"18":
@@ -451,14 +455,14 @@ func SetUpgradeValue(woodType, upgradeId):
 				"3":
 					TempValues[woodType]["WpsPerWc"] += upgradeLevel * 2
 				"4":
-					TempValues[woodType]["StorageMultip"] *= pow(1.075, upgradeLevel)
+					TempValues[woodType]["WpsMultip"] *= pow(1.045, upgradeLevel)
 				"5":
 					TempValues["Oak"]["WpsMultip"] *= pow(1.125, upgradeLevel)
 				"6":
 					if upgradeLevel == 1:
 						Unlocks.Unlocks["Research"]["Unlocked"] = true
 					elif upgradeLevel > 1:
-						TempValues[woodType]["WpsMultip"] *= pow(1.045, upgradeLevel)
+						TempValues[woodType]["StorageMultip"] *= pow(1.075, upgradeLevel - 1)
 				"7":
 					TempValues[woodType]["BeaverPriceMultip"] *= pow(1 - 0.09, upgradeLevel)
 				"8":
@@ -990,6 +994,7 @@ var OriginalTempValues = {
 		"UpgradePriceMultip" : 1, # 100%
 		"StorageMultip" : 1, # 100%
 		"WcStorageMultip" : 1, # 100%
+		"WcToBeaverMultip" : 0, # 100%
 		"WcCostsMultip" : 1, # 100%
 		"WcPriceMultip" : 1, # 100%
 		"WcBaseStorage" : 0,
@@ -1039,7 +1044,7 @@ var OriginalTempValues = {
 		"BeaverMultip" : 1,
 		"BaseStorage" : 25, # storage
 		"StorageMultip" : 1,
-		"WcBaseStorage" : 99, # 100%
+		"WcBaseStorage" : 99,
 		"WcStorageMultip" : 1,
 		"WcEffectMultip" : 1,
 		"WcPriceMultip" : 1, # wps
@@ -1064,7 +1069,7 @@ var OriginalTempValues = {
 		"BeaverMultip" : 1,
 		"BaseStorage" : 25, # storage
 		"StorageMultip" : 1,
-		"WcBaseStorage" : 100, # 100%
+		"WcBaseStorage" : 99,
 		"WcStorageMultip" : 1,
 		"WcEffectMultip" : 1,
 		"WcPriceMultip" : 1, # wps
@@ -1089,7 +1094,7 @@ var OriginalTempValues = {
 		"BeaverMultip" : 1,
 		"BaseStorage" : 25, # storage
 		"StorageMultip" : 1,
-		"WcBaseStorage" : 100, # 100%
+		"WcBaseStorage" : 99,
 		"WcStorageMultip" : 1,
 		"WcEffectMultip" : 1,
 		"WcPriceMultip" : 1, # wps
@@ -1114,7 +1119,7 @@ var OriginalTempValues = {
 		"BeaverMultip" : 1,
 		"BaseStorage" : 25, # storage
 		"StorageMultip" : 1,
-		"WcBaseStorage" : 100, # 100%
+		"WcBaseStorage" : 99,
 		"WcStorageMultip" : 1,
 		"WcEffectMultip" : 1,
 		"WcPriceMultip" : 1, # wps
@@ -1139,7 +1144,7 @@ var OriginalTempValues = {
 		"BeaverMultip" : 1,
 		"BaseStorage" : 25, # storage
 		"StorageMultip" : 1,
-		"WcBaseStorage" : 100, # 100%
+		"WcBaseStorage" : 99,
 		"WcStorageMultip" : 1,
 		"WcEffectMultip" : 1,
 		"WcPriceMultip" : 1, # wps
@@ -1164,7 +1169,7 @@ var OriginalTempValues = {
 		"BeaverMultip" : 1,
 		"BaseStorage" : 25, # storage
 		"StorageMultip" : 1,
-		"WcBaseStorage" : 100, # 100%
+		"WcBaseStorage" : 99,
 		"WcStorageMultip" : 1,
 		"WcEffectMultip" : 1,
 		"WcPriceMultip" : 1, # wps
@@ -1189,7 +1194,7 @@ var OriginalTempValues = {
 		"BeaverMultip" : 1,
 		"BaseStorage" : 25, # storage
 		"StorageMultip" : 1,
-		"WcBaseStorage" : 100, # 100%
+		"WcBaseStorage" : 99,
 		"WcStorageMultip" : 1,
 		"WcEffectMultip" : 1,
 		"WcPriceMultip" : 1, # wps
@@ -1214,7 +1219,7 @@ var OriginalTempValues = {
 		"BeaverMultip" : 1,
 		"BaseStorage" : 25, # storage
 		"StorageMultip" : 1,
-		"WcBaseStorage" : 100, # 100%
+		"WcBaseStorage" : 99,
 		"WcStorageMultip" : 1,
 		"WcEffectMultip" : 1,
 		"WcPriceMultip" : 1, # wps
@@ -1239,7 +1244,7 @@ var OriginalTempValues = {
 		"BeaverMultip" : 1,
 		"BaseStorage" : 25, # storage
 		"StorageMultip" : 1,
-		"WcBaseStorage" : 100, # 100%
+		"WcBaseStorage" : 99,
 		"WcStorageMultip" : 1,
 		"WcEffectMultip" : 1,
 		"WcPriceMultip" : 1, # wps
@@ -1264,7 +1269,7 @@ var OriginalTempValues = {
 		"BeaverMultip" : 1,
 		"BaseStorage" : 25, # storage
 		"StorageMultip" : 1,
-		"WcBaseStorage" : 100, # 100%
+		"WcBaseStorage" : 99,
 		"WcStorageMultip" : 1,
 		"WcEffectMultip" : 1,
 		"WcPriceMultip" : 1, # wps
@@ -1289,7 +1294,7 @@ var OriginalTempValues = {
 		"BeaverMultip" : 1,
 		"BaseStorage" : 25, # storage
 		"StorageMultip" : 1,
-		"WcBaseStorage" : 100, # 100%
+		"WcBaseStorage" : 99,
 		"WcStorageMultip" : 1,
 		"WcEffectMultip" : 1,
 		"WcPriceMultip" : 1, # wps
@@ -1314,7 +1319,7 @@ var OriginalTempValues = {
 		"BeaverMultip" : 1,
 		"BaseStorage" : 25, # storage
 		"StorageMultip" : 1,
-		"WcBaseStorage" : 100, # 100%
+		"WcBaseStorage" : 99,
 		"WcStorageMultip" : 1,
 		"WcEffectMultip" : 1,
 		"WcPriceMultip" : 1, # wps
@@ -1339,7 +1344,7 @@ var OriginalTempValues = {
 		"BeaverMultip" : 1,
 		"BaseStorage" : 25, # storage
 		"StorageMultip" : 1,
-		"WcBaseStorage" : 100, # 100%
+		"WcBaseStorage" : 99,
 		"WcStorageMultip" : 1,
 		"WcEffectMultip" : 1,
 		"WcPriceMultip" : 1, # wps
@@ -1364,7 +1369,7 @@ var OriginalTempValues = {
 		"BeaverMultip" : 1,
 		"BaseStorage" : 25, # storage
 		"StorageMultip" : 1,
-		"WcBaseStorage" : 100, # 100%
+		"WcBaseStorage" : 99,
 		"WcStorageMultip" : 1,
 		"WcEffectMultip" : 1,
 		"WcPriceMultip" : 1, # wps
@@ -1389,7 +1394,7 @@ var OriginalTempValues = {
 		"BeaverMultip" : 1,
 		"BaseStorage" : 25, # storage
 		"StorageMultip" : 1,
-		"WcBaseStorage" : 100, # 100%
+		"WcBaseStorage" : 99,
 		"WcStorageMultip" : 1,
 		"WcEffectMultip" : 1,
 		"WcPriceMultip" : 1, # wps

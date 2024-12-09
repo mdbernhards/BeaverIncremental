@@ -1,5 +1,24 @@
 extends Node
 
+var UpgradePositions = {
+	"Oak" : [0, 1, 2, 4, 3, 6, 15, 5, 13, 9, 10, 11, 12, 8, 14, 7, 16, 17],
+	"Apple" : [0, 1, 2, 5, 6, 3, 4, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17],
+	"Maple" : [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17],
+	"Birch" : [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17],
+	"Spruce" : [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17],
+	"Chestnut" : [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17],
+	"Cherry" : [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17],
+	"Ash" : [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17],
+	"Cedar" : [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17],
+	"Mahogany" : [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17],
+	"Ebony" : [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17],
+	"Dogwood" : [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17],
+	"Rosewood" : [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17],
+	"Ghost Gum" : [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17],
+	"Dragonwood" : [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17],
+	"Gold" : [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17],
+}
+
 var Upgrades = {
 	"Oak" : {
 		"1" : {
@@ -18,13 +37,13 @@ var Upgrades = {
 			"OtherText" : "",
 		},
 		"4" :  {
-			"Name" : "10% cheaper Beavers",
+			"Name" : "2% wpc tp wps",
 			"Description" : "Increases wood gathered per click by an additional 1",
 			"OtherText" : "",
 		},
 		"5" :  {
 			"Name" : "Unlock Apple Wood",
-			"SecondaryName" : "2% wpc tp wps",
+			"SecondaryName" : "10% cheaper Beavers",
 			"Description" : "Unlocks Apple wood for production",
 			"OtherText" : "",
 		},
@@ -69,7 +88,7 @@ var Upgrades = {
 			"OtherText" : "",
 		},
 		"14" :  {
-			"Name" : "Better wood price 0.01",
+			"Name" : "Better wood price 0.005",
 			"Description" : "",
 			"OtherText" : "",
 		},
@@ -79,7 +98,7 @@ var Upgrades = {
 			"OtherText" : "",
 		},
 		"16" :  {
-			"Name" : "9.5% storage",
+			"Name" : "4.5% storage",
 			"Description" : "",
 			"OtherText" : "",
 		},
@@ -111,7 +130,7 @@ var Upgrades = {
 			"OtherText" : "",
 		},
 		"4" :  {
-			"Name" : "7.5% storage",
+			"Name" : "wps 4.5%",
 			"Description" : "",
 			"OtherText" : "",
 		},
@@ -122,7 +141,7 @@ var Upgrades = {
 		},
 		"6" :  {
 			"Name" : "Unlock Research",
-			"SecondaryName" : "wps 4.5%",
+			"SecondaryName" : "7.5% storage",
 			"Description" : "Unlocks Research",
 			"OtherText" : "",
 		},

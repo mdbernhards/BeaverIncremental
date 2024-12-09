@@ -22,6 +22,9 @@ func setupUpgrades():
 	
 	for item in upgradeItems:
 		item.changeUpgrade(ResourceType)
+		
+	for nr in 18:
+		ItemGrid.move_child(ItemGrid.get_child(Upgrades.UpgradePositions[ResourceType][nr]), nr)
 	
 func setNodePaths():
 	UpgradeTabTitle = $VBox/TopHBox/TitleMC/TitleLabel

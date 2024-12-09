@@ -81,6 +81,7 @@ layout_mode = 2
 mouse_filter = 1
 
 [node name="GameScreen" parent="Gameplay" instance=ExtResource("1_8477q")]
+visible = false
 layout_mode = 1
 mouse_filter = 1
 
@@ -94,7 +95,6 @@ layout_mode = 1
 mouse_filter = 1
 
 [node name="AscensionScreen" parent="." instance=ExtResource("3_cexxl")]
-visible = false
 layout_mode = 1
 mouse_filter = 1
 
