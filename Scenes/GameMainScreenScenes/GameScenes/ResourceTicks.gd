@@ -57,6 +57,10 @@ func ApplyWoodGainAndLoss():
 		
 		woodGain *= (woodLossPrecentige)
 		
+		if woodType != "Oak":
+			Values.ResourceValues[lastWoodType]["RealPerSecondLoss"] += woodLoss * woodLossPrecentige
+			SaveData.Resources[lastWoodType]["Count"] -= woodLoss * woodLossPrecentige
+		
 		if Values.ResourceValues[woodType]["Storage"] > (woodCount + woodGain):
 			Values.ResourceValues[woodType]["RealPerSecondIncrease"] = woodGain
 			SaveData.Resources[woodType]["Count"] += woodGain
@@ -64,10 +68,6 @@ func ApplyWoodGainAndLoss():
 			Values.ResourceValues[woodType]["RealPerSecondIncrease"] = Values.ResourceValues[woodType]["Storage"] - woodCount
 			woodLossPrecentige = (woodCount - Values.ResourceValues[woodType]["Storage"]) / (1 + woodGain)
 			SaveData.Resources[woodType]["Count"] = Values.ResourceValues[woodType]["Storage"]
-		
-		if woodType != "Oak":
-			Values.ResourceValues[lastWoodType]["RealPerSecondLoss"] += woodLoss * woodLossPrecentige
-			SaveData.Resources[lastWoodType]["Count"] -= woodLoss * woodLossPrecentige
 			
 		lastWoodType = woodType
 

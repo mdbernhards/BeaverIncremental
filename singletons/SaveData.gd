@@ -1,12 +1,12 @@
 extends Node
 
 var Gold = {
-		"Count" : 0,
-	}
+	"Count" : 0,
+}
 
 var Magic = {
-		"Count" : 10,
-	}
+	"Count" : 10,
+}
 
 var Resources = {
 	"Oak" : {
@@ -220,8 +220,6 @@ var TestUnlockedResearch = {
 	"70" : false,
 	"71" : false,
 }
-
-
 
 var TestResources = {
 	"Oak" : {
@@ -1259,7 +1257,6 @@ var TestUpgrades = {
 		},
 	},
 }
-
 
 var Upgrades = {
 	"Oak" : {

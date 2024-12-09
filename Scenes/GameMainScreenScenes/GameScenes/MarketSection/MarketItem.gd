@@ -47,8 +47,8 @@ func updateValues():
 	SellGoldGainLabel.text = str(roundi(GoldGainedIfSold)) + " Gold"
 	BotPriceLabel.text = "Price: " + str(roundi(CalculatePrice.getBotCost(SaveData.Resources[WoodType]["Bots"], WoodType))) + " gold"
 	
-	PerSecondWoodSoldLabel.text = str(Values.ResourceValues[WoodType]["WoodSoldPerSecond"])
-	PerSecondGoldGainLabel.text = str(Values.ResourceValues[WoodType]["GoldGainPerSecond"])
+	PerSecondWoodSoldLabel.text = str(roundi(Values.ResourceValues[WoodType]["WoodSoldPerSecond"]))
+	PerSecondGoldGainLabel.text = str(roundi(Values.ResourceValues[WoodType]["GoldGainPerSecond"]))
 
 func setNodePaths():
 	# Nodes for selling

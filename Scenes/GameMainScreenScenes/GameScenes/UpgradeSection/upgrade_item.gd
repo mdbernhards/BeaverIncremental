@@ -10,6 +10,7 @@ var CurrentPrice
 var UpgradeColor
 var SaveDataValues
 
+var SecondaryName
 # Nodes
 var NameLabel
 var PriceLabel
@@ -23,7 +24,7 @@ func _ready():
 
 func _process(_delta):
 	updateAffordabilityIndicator()
-	setUpgradePriceAndLevel()
+	updateUpgradeValues()
 
 func updateAffordabilityIndicator():
 	if ResourceType == "Gold":
@@ -51,13 +52,24 @@ func changeUpgrade(woodType):
 		return
 	
 	NameLabel.text = upgrade.Name
-	setUpgradePriceAndLevel()
+	SecondaryName = null
+	
+	if upgrade.has("SecondaryName"):
+		SecondaryName = upgrade.SecondaryName
+	
+	updateUpgradeValues()
 
-func setUpgradePriceAndLevel():
-	CurrentPrice = round(CalculatePrice.getUpgradeCost(SaveDataValues["Level"], ResourceType, str(UpgradeNumber)) * Values.ResourceValues[ResourceType]["UpgradePriceMultip"])
+func updateUpgradeValues():
+	if ResourceType == "Gold":
+		CurrentPrice = round(CalculatePrice.getGoldUpgradeCost(SaveDataValues["Level"], str(UpgradeNumber)) * Values.ResourceValues[ResourceType]["UpgradePriceMultip"] * Values.ResourceValues["Gold"]["UpgradePriceMultip"])
+	else:
+		CurrentPrice = round(CalculatePrice.getUpgradeCost(SaveDataValues["Level"], ResourceType, str(UpgradeNumber)) * Values.ResourceValues[ResourceType]["UpgradePriceMultip"])
 	
 	PriceLabel.text = "price: " + str(CurrentPrice)
 	LevelLabel.text = "LvL " + str(SaveDataValues["Level"])
+	
+	if SecondaryName and SecondaryName != NameLabel.text and SaveDataValues["Level"] > 0:
+		NameLabel.text = SecondaryName
 
 func setNodePaths():
 	NameLabel = $Color/VBox/MC/NameLabel
@@ -73,11 +85,11 @@ func _on_buy_button_button_down():
 		if CurrentPrice <= SaveData.Gold["Count"]:
 			SaveData.Gold["Count"] -= CurrentPrice
 			SaveDataValues["Level"] += 1
-			setUpgradePriceAndLevel()
+			updateUpgradeValues()
 			CalculateValues.calculateAllValues()
 	else:
 		if CurrentPrice <= SaveData.Resources[ResourceType]["Count"]:
 			SaveData.Resources[ResourceType]["Count"] -= CurrentPrice
 			SaveDataValues["Level"] += 1
-			setUpgradePriceAndLevel()
+			updateUpgradeValues()
 			CalculateValues.calculateAllValues()
