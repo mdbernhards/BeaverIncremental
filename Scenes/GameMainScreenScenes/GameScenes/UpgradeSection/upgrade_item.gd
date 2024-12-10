@@ -11,11 +11,13 @@ var UpgradeColor
 var SaveDataValues
 
 var SecondaryName
+
 # Nodes
 var NameLabel
 var PriceLabel
 var LevelLabel
 var CantAffordColorRect
+var NrLabel
 
 func _ready():
 	CurrentPrice = 100
@@ -38,7 +40,9 @@ func updateAffordabilityIndicator():
 		else:
 			CantAffordColorRect.visible = true
 
-func changeUpgrade(woodType):
+func changeUpgrade(woodType, upgradeNr = UpgradeNumber):
+	UpgradeNumber = upgradeNr
+	
 	ResourceType = woodType
 	$Color.color = Values.ResourceValues[ResourceType]["Color"]
 	
@@ -67,6 +71,7 @@ func updateUpgradeValues():
 	
 	PriceLabel.text = "price: " + str(CurrentPrice)
 	LevelLabel.text = "LvL " + str(SaveDataValues["Level"])
+	NrLabel.text = str(UpgradeNumber)
 	
 	if SecondaryName and SecondaryName != NameLabel.text and SaveDataValues["Level"] > 0:
 		NameLabel.text = SecondaryName
@@ -76,6 +81,7 @@ func setNodePaths():
 	PriceLabel = $Color/VBox/MC2/PriceLabel
 	LevelLabel = $Color/VBox/MC3/HBox/MC3/LevelLabel
 	CantAffordColorRect = $CantAffordColorRect
+	NrLabel = $Color/VBox/MC/NrLabel
 
 func _on_buy_button_button_down():
 	if !SaveDataValues:

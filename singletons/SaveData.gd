@@ -1,7 +1,7 @@
 extends Node
 
 var Gold = {
-	"Count" : 0,
+	"Count" : 9999999999,
 }
 
 var Magic = {
@@ -14,7 +14,7 @@ var Resources = {
 		"Beavers" : 1,
 		"Woodcamps": 0,
 		"Production" : 100, # %
-		"MarketSellPercentage": 50, # %
+		"MarketSellPercentage": 100, # %
 		"BotSellPercentage": 100, # %
 		"Bots": 0,
 	},
@@ -23,7 +23,7 @@ var Resources = {
 		"Beavers" : 1,
 		"Woodcamps": 0,
 		"Production" : 100, # %
-		"MarketSellPercentage": 50, # %
+		"MarketSellPercentage": 100, # %
 		"BotSellPercentage": 100, # %
 		"Bots": 0,
 	},
@@ -32,7 +32,7 @@ var Resources = {
 		"Beavers" : 1,
 		"Woodcamps": 0,
 		"Production" : 100, # %
-		"MarketSellPercentage": 50, # %
+		"MarketSellPercentage": 100, # %
 		"BotSellPercentage": 100, # %
 		"Bots": 0,
 	},
@@ -41,7 +41,7 @@ var Resources = {
 		"Beavers" : 1,
 		"Woodcamps": 0,
 		"Production" : 100, # %
-		"MarketSellPercentage": 50, # %
+		"MarketSellPercentage": 100, # %
 		"BotSellPercentage": 100, # %
 		"Bots": 0,
 	},

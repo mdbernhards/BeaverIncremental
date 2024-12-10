@@ -414,7 +414,7 @@ func SetUpgradeValue(woodType, upgradeId):
 				"3":
 					TempValues[woodType]["WpsPerWc"] += upgradeLevel
 				"4":
-					TempValues[woodType]["WpcToWpsMultip"] *= pow(1.02, upgradeLevel)
+					TempValues[woodType]["WpcToWpsMultip"] *= pow(1.015, upgradeLevel)
 				"5":
 					if upgradeLevel == 1:
 						Unlocks.Unlocks["Apple"]["Unlocked"] = true

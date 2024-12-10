@@ -93,7 +93,7 @@ var Research = {
 		"Name" : "Maple WPS 3x",
 		"Description" : "Doubles Storage for all Classic Wood",
 		"Time" : 450, # Seconds
-		"OakCost" : 65000, "AppleCost" : 45000, "MapleCost" : 0, "BirchCost" : 0, "SpruceCost" : 0,
+		"OakCost" : 77500, "AppleCost" : 65000, "MapleCost" : 0, "BirchCost" : 0, "SpruceCost" : 0,
 		"ChestnutCost" : 0, "CherryCost" : 0, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 0,
 		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 0,
 	},
@@ -101,7 +101,7 @@ var Research = {
 		"Name" : "WoodCamps use 10% less wood",
 		"Description" : "WoodCamps use 10% less wood",
 		"Time" : 580, # Seconds
-		"OakCost" : 0, "AppleCost" : 0, "MapleCost" : 15000, "BirchCost" : 0, "SpruceCost" : 0,
+		"OakCost" : 0, "AppleCost" : 0, "MapleCost" : 20000, "BirchCost" : 0, "SpruceCost" : 0,
 		"ChestnutCost" : 0, "CherryCost" : 0, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 0,
 		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 0,
 	},
@@ -125,7 +125,7 @@ var Research = {
 		"Name" : "wpc per wc +10",
 		"Description" : "Doubles Storage for all Classic Wood",
 		"Time" : 360, # Seconds
-		"OakCost" : 0, "AppleCost" : 100000, "MapleCost" : 15000, "BirchCost" : 0, "SpruceCost" : 0,
+		"OakCost" : 0, "AppleCost" : 110000, "MapleCost" : 15000, "BirchCost" : 0, "SpruceCost" : 0,
 		"ChestnutCost" : 0, "CherryCost" : 0, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 0,
 		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 0,
 	},

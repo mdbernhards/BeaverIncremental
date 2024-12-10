@@ -56,7 +56,7 @@ func ApplyWoodGainAndLoss():
 				woodLossPercentage = 1.0
 
 		Values.ResourceValues[woodType]["RealPerSecondIncrease"] = woodGain * woodLossPercentage
-		SaveData.Resources[woodType]["Count"] += woodGain
+		SaveData.Resources[woodType]["Count"] += woodGain * woodLossPercentage
 
 		if lastWoodType != null and woodLoss > 0:
 			var actualLoss = woodLoss * woodLossPercentage
