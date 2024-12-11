@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Scenes/GameMainScreenScenes/GameScenes/research_section.gd" id="1_mg01o"]
 
-[node name="ResearchSection" type="VBoxContainer"]
+[node name="ResearchSection" type="VBoxContainer" groups=["ResearchSection"]]
 custom_minimum_size = Vector2(798, 926)
 script = ExtResource("1_mg01o")
 

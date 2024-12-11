@@ -27,6 +27,7 @@ Magic="*res://singletons/constantData/Magic.gd"
 Unlocks="*res://singletons/Unlocks.gd"
 CalculateFishing="*res://singletons/CalculateFishing.gd"
 Fishing="*res://singletons/constantData/Fishing.gd"
+Achievements="*res://singletons/constantData/Achievements.gd"
 
 [display]
 
@@ -39,6 +40,7 @@ window/stretch/aspect="ignore"
 
 BarItem=""
 FishPage=""
+ResearchSection=""
 
 [gui]
 

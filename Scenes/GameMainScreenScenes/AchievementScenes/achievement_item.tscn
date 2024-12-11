@@ -1,0 +1,31 @@
+[gd_scene load_steps=2 format=3 uid="uid://brl2vwyp21sf2"]
+
+[ext_resource type="Script" path="res://Scenes/GameMainScreenScenes/AchievementScenes/achievement_item.gd" id="1_s0ptn"]
+
+[node name="AchievementItem" type="MarginContainer"]
+custom_minimum_size = Vector2(100, 100)
+script = ExtResource("1_s0ptn")
+
+[node name="UnlockedRect" type="ColorRect" parent="."]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+color = Color(0.150209, 0.32538, 0.248933, 1)
+
+[node name="LockedRect" type="ColorRect" parent="."]
+custom_minimum_size = Vector2(76, 76)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+color = Color(0.403524, 0.225799, 0.244768, 1)
+
+[node name="Label" type="Label" parent="LockedRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 49
+text = "?"
+horizontal_alignment = 1
+vertical_alignment = 1

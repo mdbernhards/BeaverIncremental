@@ -9,13 +9,13 @@ var ResearchItemScene
 var ResearchList
 
 func _ready():
-	setNodePaths()
-	SetupResearchItems()
+	setupNodePaths()
+	setupResearchItems()
 
 func _process(_delta):
 	pass
 
-func SetupResearchItems():
+func setupResearchItems():
 	ResearchItemScene = load("res://Scenes/GameMainScreenScenes/GameScenes/ResearchSection/research_item.tscn")
 	
 	for researchId in AllResearchData:
@@ -24,5 +24,14 @@ func SetupResearchItems():
 		researchItem.setResearch(researchId)
 		ResearchList.add_child(researchItem)
 
-func setNodePaths():
+func deleteAllResearchItems():
+	for researchItem in ResearchList.get_children():
+		ResearchList.remove_child(researchItem)
+		researchItem.queue_free()
+
+func resetResearch():
+	deleteAllResearchItems()
+	setupResearchItems()
+
+func setupNodePaths():
 	ResearchList = $MC/ScrollBar/ResearchList

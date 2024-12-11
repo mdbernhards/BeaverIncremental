@@ -77,7 +77,7 @@ theme_override_constants/margin_bottom = -6
 [node name="SellPrecentigeLabel" type="Label" parent="HBox/VBox/MC/VBox/MC"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
-text = "15%"
+text = "100%"
 horizontal_alignment = 1
 
 [node name="MC2" type="MarginContainer" parent="HBox/VBox/MC/VBox"]
@@ -89,7 +89,7 @@ theme_override_constants/margin_bottom = -2
 
 [node name="SellAmountSlider" type="HSlider" parent="HBox/VBox/MC/VBox/MC2"]
 layout_mode = 2
-value = 15.0
+value = 100.0
 
 [node name="HBox" type="HBoxContainer" parent="HBox/VBox/MC/VBox"]
 custom_minimum_size = Vector2(0, 50)

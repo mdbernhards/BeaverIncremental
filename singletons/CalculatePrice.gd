@@ -3,7 +3,7 @@ extends Node
 func getBeaverCost(beaverCount, woodType):
 	match woodType :
 		"Oak" :
-			return round(pow(1.365, beaverCount) + 1.27 * pow(beaverCount, 3.36)) + beaverCount * 6 + 5
+			return round(pow(1.365, beaverCount) + 1.27 * pow(beaverCount, 3.36)) + beaverCount * 6 + 1
 		"Apple" :
 			return round(pow(1.35, beaverCount) + 1.277 * pow(beaverCount, 2.96)) + beaverCount * 8 + 9
 		"Maple" :
@@ -110,15 +110,15 @@ func getUpgradeCost(level, woodType, upgradeNr): # first number more later, seco
 		"Oak" :
 			match upgradeNr :
 				"1" :
-					return round(pow(1.499, level) + 1.55 * pow(level, 2.65)) + level * 12 + 29
+					return round(pow(1.51, level) + 1.69 * pow(level, 2.76)) + level * 13 + 29
 				"2" :
 					return round(pow(1.215, level) + 3.95 * pow(level, 2.055)) + level * 15 + 39
 				"3" :
 					return round(pow(1.355, level) + 1.65 * pow(level, 3.65)) + 900 * (level + 1) + 1200
 				"4" :
-					return round(pow(1.475, level) + 3.45 * pow(level, 3.56)) + (level + 1) * 1499 - 1000
+					return round(pow(1.575, level) + 3.75 * pow(level, 3.76)) + (level + 1) * 1799 - 1000
 				"5" :
-					return round(pow(1.555, level) + 2.55 * pow(level, 3.26)) + level * 55 + 499
+					return round(pow(1.57, level) + 2.77 * pow(level, 3.46)) + level * 55 + 499
 				"6" :
 					return round(pow(1.563, level) + 3.99 * pow(level, 4.15)) + level * 15000 + 10000
 				"7" :
@@ -140,7 +140,7 @@ func getUpgradeCost(level, woodType, upgradeNr): # first number more later, seco
 				"15" :
 					return round(pow(1.327, level) + 1.347 * pow(level, 1.73)) + 16386 * (level + 1) * 71
 				"16" :
-					return round(pow(1.457, level) + 6.985 * pow(level, 4.382)) + 4850 * (level + 1) + 800
+					return round(pow(1.457, level) + 6.985 * pow(level, 4.382)) + 4850 * (level + 1) + 1815
 				"17" :
 					return round(pow(1.129, level) + 1.465 * pow(level, 3.16)) + 65544 * (level + 1) * 83
 				"18" :
@@ -152,7 +152,7 @@ func getUpgradeCost(level, woodType, upgradeNr): # first number more later, seco
 				"2" :
 					return round(pow(1.4, level) + 1.3 * pow(level, 2.5)) + (level + 1) * 31 - 12
 				"3" :
-					return round(pow(1.453, level) + 2.485 * pow(level, 2.34)) + 1000 * (level + 1) + 1000
+					return round(pow(1.458, level) + 2.486 * pow(level, 2.54)) + 1000 * (level + 1) + 1499
 				"4" :
 					return round(pow(1.313, level) + 1.129 * pow(level, 3.16)) + 120 * (level + 1) + 2999
 				"5" :

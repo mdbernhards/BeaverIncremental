@@ -1,5 +1,42 @@
 extends Node
 
+# Don't reset Magic, FoS and Achievements, and others with upgrades
+
+var OriginalGold
+var OriginalResources
+var OriginalUpgrades
+var OriginalUnlockedResearch
+var OriginalUnlockedMagicUpgrades
+var OriginalUnlockedDams
+var OriginalCaughtFish
+var OriginalBait
+
+func _ready():
+	getOriginalValues()
+
+func getOriginalValues():
+	OriginalGold = Gold.duplicate(true)
+	OriginalResources = Resources.duplicate(true)
+	OriginalUpgrades = Upgrades.duplicate(true)
+	OriginalUnlockedResearch = UnlockedResearch.duplicate(true)
+	OriginalUnlockedMagicUpgrades = UnlockedMagicUpgrades.duplicate(true)
+	OriginalUnlockedDams = UnlockedDams.duplicate(true)
+	OriginalCaughtFish = CaughtFish.duplicate(true)
+	OriginalBait = Bait.duplicate(true)
+
+func resetValues():
+	Gold = OriginalGold.duplicate(true)
+	Resources = OriginalResources.duplicate(true)
+	Upgrades = OriginalUpgrades.duplicate(true)
+	UnlockedResearch = OriginalUnlockedResearch.duplicate(true)
+	UnlockedMagicUpgrades = OriginalUnlockedMagicUpgrades.duplicate(true)
+	UnlockedDams = OriginalUnlockedDams.duplicate(true)
+	CaughtFish = OriginalCaughtFish.duplicate(true)
+	Bait = OriginalBait.duplicate(true)
+	
+	CalculateValues.calculateAllValues()
+	get_tree().get_first_node_in_group("ResearchSection").resetResearch()
+
 var Gold = {
 	"Count" : 9999999999,
 }
@@ -2266,7 +2303,7 @@ var UnlockedMagicUpgrades = {
 }
 
 var UnlockedAchievements = {
-	"1" : false,
+	"1" : true,
 	"2" : false,
 	"3" : false,
 	"4" : false,

@@ -74,4 +74,5 @@ func setupNodePaths():
 	MagicGainLabel = $MC/AscensionVBox/MC2/MagicGainLabel
 
 func _on_ascend_button_button_down() -> void:
-	pass # Replace with function body.
+	SaveData.Magic["Count"] += Values.ResourceValues["Magic"]["PotentialMagic"]
+	SaveData.resetValues()

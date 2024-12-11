@@ -64,6 +64,8 @@ func changeUpgrade(woodType, upgradeNr = UpgradeNumber):
 	updateUpgradeValues()
 
 func updateUpgradeValues():
+	SaveDataValues = SaveData.Upgrades[ResourceType][str(UpgradeNumber)]
+	
 	if ResourceType == "Gold":
 		CurrentPrice = round(CalculatePrice.getGoldUpgradeCost(SaveDataValues["Level"], str(UpgradeNumber)) * Values.ResourceValues[ResourceType]["UpgradePriceMultip"] * Values.ResourceValues["Gold"]["UpgradePriceMultip"])
 	else:
