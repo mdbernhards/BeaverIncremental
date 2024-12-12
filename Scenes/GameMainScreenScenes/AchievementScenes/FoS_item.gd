@@ -14,7 +14,7 @@ func _process(delta: float) -> void:
 	pass
 
 func setFoS():
-	
+	pass
 
 func setupNodePaths():
 	SubItems = $MC2/SubItemHBox

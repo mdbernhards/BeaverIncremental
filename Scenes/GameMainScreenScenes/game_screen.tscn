@@ -105,6 +105,7 @@ theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 15
 
 [node name="UpgradesSection" parent="GameScreenHBox/ImprovementsScreen/RightVBox/TabsMC" instance=ExtResource("2_2ryuy")]
+visible = false
 layout_mode = 2
 
 [node name="ResearchSection" parent="GameScreenHBox/ImprovementsScreen/RightVBox/TabsMC" instance=ExtResource("4_lynq2")]
@@ -120,7 +121,6 @@ visible = false
 layout_mode = 2
 
 [node name="DamSection" parent="GameScreenHBox/ImprovementsScreen/RightVBox/TabsMC" instance=ExtResource("7_esmds")]
-visible = false
 layout_mode = 2
 
 [node name="ResourceTicks" type="Node" parent="."]

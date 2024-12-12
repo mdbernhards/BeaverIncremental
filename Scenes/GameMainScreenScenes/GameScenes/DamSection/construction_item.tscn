@@ -1,0 +1,214 @@
+[gd_scene load_steps=2 format=3 uid="uid://kvlpuirjyaao"]
+
+[ext_resource type="Script" path="res://Scenes/GameMainScreenScenes/GameScenes/DamSection/construction_item.gd" id="1_g58jm"]
+
+[node name="ConstructionItem" type="MarginContainer"]
+custom_minimum_size = Vector2(240, 230)
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 10
+script = ExtResource("1_g58jm")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 2
+color = Color(0.31802, 0.31802, 0.31802, 1)
+
+[node name="CurrentConstructionVBox" type="VBoxContainer" parent="."]
+layout_mode = 2
+theme_override_constants/separation = 13
+
+[node name="MC" type="MarginContainer" parent="CurrentConstructionVBox"]
+visible = false
+custom_minimum_size = Vector2(0, 35)
+layout_mode = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 6
+theme_override_constants/margin_right = 12
+
+[node name="ColorRect" type="ColorRect" parent="CurrentConstructionVBox/MC"]
+layout_mode = 2
+color = Color(0.419813, 0.419813, 0.419813, 1)
+
+[node name="ConstructionNameLabel" type="Label" parent="CurrentConstructionVBox/MC"]
+layout_mode = 2
+text = "Building small dam.."
+horizontal_alignment = 1
+
+[node name="MC2" type="MarginContainer" parent="CurrentConstructionVBox"]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_right = 20
+
+[node name="VBox" type="VBoxContainer" parent="CurrentConstructionVBox/MC2"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="ColorRect" type="ColorRect" parent="CurrentConstructionVBox/MC2/VBox"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+color = Color(0.427451, 0.47451, 0.337255, 1)
+
+[node name="CurrentStageLabel" type="Label" parent="CurrentConstructionVBox/MC2/VBox/ColorRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 21
+text = "Current Stage"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ColorRect2" type="ColorRect" parent="CurrentConstructionVBox/MC2/VBox"]
+custom_minimum_size = Vector2(0, 85)
+layout_mode = 2
+color = Color(0.286275, 0.521569, 0.509804, 1)
+
+[node name="StageNameLabel" type="Label" parent="CurrentConstructionVBox/MC2/VBox/ColorRect2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.329158, 0.329158, 0.329158, 1)
+theme_override_font_sizes/font_size = 21
+text = "Getting a Team
+of Beavers"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MC3" type="MarginContainer" parent="CurrentConstructionVBox"]
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_right = 20
+
+[node name="ColorRect" type="ColorRect" parent="CurrentConstructionVBox/MC3"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+color = Color(0.286275, 0.521569, 0.509804, 1)
+
+[node name="MC" type="MarginContainer" parent="CurrentConstructionVBox/MC3"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VBox" type="VBoxContainer" parent="CurrentConstructionVBox/MC3/MC"]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="ConstructionResource" type="ColorRect" parent="CurrentConstructionVBox/MC3/MC/VBox"]
+custom_minimum_size = Vector2(0, 85)
+layout_mode = 2
+color = Color(0.64073, 0.635153, 0.205061, 1)
+
+[node name="MC" type="MarginContainer" parent="CurrentConstructionVBox/MC3/MC/VBox/ConstructionResource"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="VBox" type="VBoxContainer" parent="CurrentConstructionVBox/MC3/MC/VBox/ConstructionResource/MC"]
+layout_mode = 2
+
+[node name="ResourceNameLabel" type="Label" parent="CurrentConstructionVBox/MC3/MC/VBox/ConstructionResource/MC/VBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 17
+text = "Gold"
+vertical_alignment = 1
+
+[node name="MC" type="MarginContainer" parent="CurrentConstructionVBox/MC3/MC/VBox/ConstructionResource/MC/VBox"]
+layout_mode = 2
+theme_override_constants/margin_top = -14
+
+[node name="ResourceSpentLabel" type="Label" parent="CurrentConstructionVBox/MC3/MC/VBox/ConstructionResource/MC/VBox/MC"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.325441, 0.325441, 0.325441, 1)
+theme_override_font_sizes/font_size = 13
+text = "1.4k / 10k"
+horizontal_alignment = 2
+
+[node name="MC2" type="MarginContainer" parent="CurrentConstructionVBox/MC3/MC/VBox/ConstructionResource/MC/VBox"]
+layout_mode = 2
+
+[node name="ResourceProgressBar" type="ProgressBar" parent="CurrentConstructionVBox/MC3/MC/VBox/ConstructionResource/MC/VBox/MC2"]
+layout_mode = 2
+
+[node name="MC3" type="MarginContainer" parent="CurrentConstructionVBox/MC3/MC/VBox/ConstructionResource/MC/VBox"]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+theme_override_constants/margin_left = 6
+theme_override_constants/margin_top = -3
+
+[node name="ResourcePerSecondLabel" type="Label" parent="CurrentConstructionVBox/MC3/MC/VBox/ConstructionResource/MC/VBox/MC3"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.325441, 0.325441, 0.325441, 1)
+theme_override_font_sizes/font_size = 10
+text = "100 Gold Per Second"
+
+[node name="VBox" type="VBoxContainer" parent="CurrentConstructionVBox"]
+layout_mode = 2
+size_flags_vertical = 3
+alignment = 2
+
+[node name="MC" type="MarginContainer" parent="CurrentConstructionVBox/VBox"]
+custom_minimum_size = Vector2(0, 90)
+layout_mode = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 15
+
+[node name="ColorRect" type="ColorRect" parent="CurrentConstructionVBox/VBox/MC"]
+layout_mode = 2
+color = Color(0.525101, 0.525101, 0.525101, 1)
+
+[node name="VBox" type="VBoxContainer" parent="CurrentConstructionVBox/VBox/MC/ColorRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 3
+
+[node name="MC" type="MarginContainer" parent="CurrentConstructionVBox/VBox/MC/ColorRect/VBox"]
+layout_mode = 2
+theme_override_constants/margin_left = 0
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 0
+theme_override_constants/margin_bottom = 6
+
+[node name="ConstructionSpeedLabel" type="Label" parent="CurrentConstructionVBox/VBox/MC/ColorRect/VBox/MC"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 16
+text = "Construction Speed"
+horizontal_alignment = 1
+
+[node name="MC2" type="MarginContainer" parent="CurrentConstructionVBox/VBox/MC/ColorRect/VBox"]
+layout_mode = 2
+theme_override_constants/margin_bottom = -3
+
+[node name="ContructionPrecentigeLabel" type="Label" parent="CurrentConstructionVBox/VBox/MC/ColorRect/VBox/MC2"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.219501, 0.219501, 0.219501, 1)
+theme_override_font_sizes/font_size = 12
+text = "80%"
+horizontal_alignment = 1
+
+[node name="MC3" type="MarginContainer" parent="CurrentConstructionVBox/VBox/MC/ColorRect/VBox"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_right = 10
+
+[node name="ConstructionSpeedSlider" type="HSlider" parent="CurrentConstructionVBox/VBox/MC/ColorRect/VBox/MC3"]
+layout_mode = 2
