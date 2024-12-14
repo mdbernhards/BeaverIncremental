@@ -1,4 +1,6 @@
-[gd_scene format=3 uid="uid://dnnaegnbqppxc"]
+[gd_scene load_steps=2 format=3 uid="uid://dnnaegnbqppxc"]
+
+[ext_resource type="Script" path="res://Scenes/settings.gd" id="1_7fsul"]
 
 [node name="Settings" type="Control"]
 layout_mode = 3
@@ -7,6 +9,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_7fsul")
 
 [node name="Background" type="ColorRect" parent="."]
 layout_mode = 0
@@ -28,25 +31,25 @@ theme_override_constants/margin_top = 25
 theme_override_constants/margin_right = 25
 theme_override_constants/margin_bottom = 25
 
-[node name="AscensionVBox" type="VBoxContainer" parent="MC"]
+[node name="VBox" type="VBoxContainer" parent="MC"]
 layout_mode = 2
 alignment = 2
 
-[node name="TopHBox" type="HBoxContainer" parent="MC/AscensionVBox"]
+[node name="TitleHBox" type="HBoxContainer" parent="MC/VBox"]
 layout_mode = 2
 
-[node name="MC" type="MarginContainer" parent="MC/AscensionVBox/TopHBox"]
+[node name="MC" type="MarginContainer" parent="MC/VBox/TitleHBox"]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="SettingsTitleLabel" type="Label" parent="MC/AscensionVBox/TopHBox/MC"]
+[node name="SettingsTitleLabel" type="Label" parent="MC/VBox/TitleHBox/MC"]
 layout_mode = 2
 size_flags_vertical = 0
 theme_override_font_sizes/font_size = 145
 text = "Settings"
 horizontal_alignment = 1
 
-[node name="SettingsMC" type="MarginContainer" parent="MC/AscensionVBox"]
+[node name="SettingsMC" type="MarginContainer" parent="MC/VBox"]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_constants/margin_left = 25
@@ -54,18 +57,18 @@ theme_override_constants/margin_top = 25
 theme_override_constants/margin_right = 25
 theme_override_constants/margin_bottom = 25
 
-[node name="GridContainer" type="GridContainer" parent="MC/AscensionVBox/SettingsMC"]
+[node name="Grid" type="GridContainer" parent="MC/VBox/SettingsMC"]
 layout_mode = 2
 theme_override_constants/h_separation = 47
 theme_override_constants/v_separation = 40
 columns = 3
 
-[node name="SoundSettings" type="ColorRect" parent="MC/AscensionVBox/SettingsMC/GridContainer"]
+[node name="SoundSettings" type="ColorRect" parent="MC/VBox/SettingsMC/Grid"]
 custom_minimum_size = Vector2(575, 275)
 layout_mode = 2
 color = Color(0.329412, 0.329412, 0.329412, 1)
 
-[node name="MC" type="MarginContainer" parent="MC/AscensionVBox/SettingsMC/GridContainer/SoundSettings"]
+[node name="MC" type="MarginContainer" parent="MC/VBox/SettingsMC/Grid/SoundSettings"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -77,20 +80,20 @@ theme_override_constants/margin_top = 15
 theme_override_constants/margin_right = 15
 theme_override_constants/margin_bottom = 15
 
-[node name="VBox" type="VBoxContainer" parent="MC/AscensionVBox/SettingsMC/GridContainer/SoundSettings/MC"]
+[node name="VBox" type="VBoxContainer" parent="MC/VBox/SettingsMC/Grid/SoundSettings/MC"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="MC/AscensionVBox/SettingsMC/GridContainer/SoundSettings/MC/VBox"]
+[node name="NameLabel" type="Label" parent="MC/VBox/SettingsMC/Grid/SoundSettings/MC/VBox"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 30
 text = "Sound"
 
-[node name="NumberSettings" type="ColorRect" parent="MC/AscensionVBox/SettingsMC/GridContainer"]
+[node name="NumberSettings" type="ColorRect" parent="MC/VBox/SettingsMC/Grid"]
 custom_minimum_size = Vector2(575, 275)
 layout_mode = 2
 color = Color(0.329412, 0.329412, 0.329412, 1)
 
-[node name="MC" type="MarginContainer" parent="MC/AscensionVBox/SettingsMC/GridContainer/NumberSettings"]
+[node name="MC" type="MarginContainer" parent="MC/VBox/SettingsMC/Grid/NumberSettings"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -102,20 +105,20 @@ theme_override_constants/margin_top = 15
 theme_override_constants/margin_right = 15
 theme_override_constants/margin_bottom = 15
 
-[node name="VBox" type="VBoxContainer" parent="MC/AscensionVBox/SettingsMC/GridContainer/NumberSettings/MC"]
+[node name="VBox" type="VBoxContainer" parent="MC/VBox/SettingsMC/Grid/NumberSettings/MC"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="MC/AscensionVBox/SettingsMC/GridContainer/NumberSettings/MC/VBox"]
+[node name="NameLabel" type="Label" parent="MC/VBox/SettingsMC/Grid/NumberSettings/MC/VBox"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 30
-text = "Sound"
+text = "Numbers"
 
-[node name="SavesSettings" type="ColorRect" parent="MC/AscensionVBox/SettingsMC/GridContainer"]
+[node name="SaveSettings" type="ColorRect" parent="MC/VBox/SettingsMC/Grid"]
 custom_minimum_size = Vector2(575, 275)
 layout_mode = 2
 color = Color(0.329412, 0.329412, 0.329412, 1)
 
-[node name="MC" type="MarginContainer" parent="MC/AscensionVBox/SettingsMC/GridContainer/SavesSettings"]
+[node name="MC" type="MarginContainer" parent="MC/VBox/SettingsMC/Grid/SaveSettings"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -127,20 +130,28 @@ theme_override_constants/margin_top = 15
 theme_override_constants/margin_right = 15
 theme_override_constants/margin_bottom = 15
 
-[node name="VBox" type="VBoxContainer" parent="MC/AscensionVBox/SettingsMC/GridContainer/SavesSettings/MC"]
+[node name="VBox" type="VBoxContainer" parent="MC/VBox/SettingsMC/Grid/SaveSettings/MC"]
 layout_mode = 2
+theme_override_constants/separation = 15
 
-[node name="Label" type="Label" parent="MC/AscensionVBox/SettingsMC/GridContainer/SavesSettings/MC/VBox"]
+[node name="NameLabel" type="Label" parent="MC/VBox/SettingsMC/Grid/SaveSettings/MC/VBox"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 30
-text = "Sound"
+text = "Game Saves"
 
-[node name="ControlsSettings" type="ColorRect" parent="MC/AscensionVBox/SettingsMC/GridContainer"]
+[node name="SaveLoadButton" type="Button" parent="MC/VBox/SettingsMC/Grid/SaveSettings/MC/VBox"]
+custom_minimum_size = Vector2(250, 70)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 30
+text = "Save | Load"
+
+[node name="ControlsSettings" type="ColorRect" parent="MC/VBox/SettingsMC/Grid"]
 custom_minimum_size = Vector2(575, 275)
 layout_mode = 2
 color = Color(0.329412, 0.329412, 0.329412, 1)
 
-[node name="MC" type="MarginContainer" parent="MC/AscensionVBox/SettingsMC/GridContainer/ControlsSettings"]
+[node name="MC" type="MarginContainer" parent="MC/VBox/SettingsMC/Grid/ControlsSettings"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -152,20 +163,27 @@ theme_override_constants/margin_top = 15
 theme_override_constants/margin_right = 15
 theme_override_constants/margin_bottom = 15
 
-[node name="VBox" type="VBoxContainer" parent="MC/AscensionVBox/SettingsMC/GridContainer/ControlsSettings/MC"]
+[node name="VBox" type="VBoxContainer" parent="MC/VBox/SettingsMC/Grid/ControlsSettings/MC"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="MC/AscensionVBox/SettingsMC/GridContainer/ControlsSettings/MC/VBox"]
+[node name="Label" type="Label" parent="MC/VBox/SettingsMC/Grid/ControlsSettings/MC/VBox"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 30
-text = "Sound"
+text = "Controls"
 
-[node name="idk" type="ColorRect" parent="MC/AscensionVBox/SettingsMC/GridContainer"]
+[node name="MC" type="MarginContainer" parent="MC/VBox/SettingsMC/Grid"]
+layout_mode = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
+
+[node name="Gameplay" type="ColorRect" parent="MC/VBox/SettingsMC/Grid"]
 custom_minimum_size = Vector2(575, 275)
 layout_mode = 2
 color = Color(0.329412, 0.329412, 0.329412, 1)
 
-[node name="MC" type="MarginContainer" parent="MC/AscensionVBox/SettingsMC/GridContainer/idk"]
+[node name="MC" type="MarginContainer" parent="MC/VBox/SettingsMC/Grid/Gameplay"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -177,35 +195,12 @@ theme_override_constants/margin_top = 15
 theme_override_constants/margin_right = 15
 theme_override_constants/margin_bottom = 15
 
-[node name="VBox" type="VBoxContainer" parent="MC/AscensionVBox/SettingsMC/GridContainer/idk/MC"]
+[node name="VBox" type="VBoxContainer" parent="MC/VBox/SettingsMC/Grid/Gameplay/MC"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="MC/AscensionVBox/SettingsMC/GridContainer/idk/MC/VBox"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 30
-text = "Sound"
-
-[node name="Gameplay" type="ColorRect" parent="MC/AscensionVBox/SettingsMC/GridContainer"]
-custom_minimum_size = Vector2(575, 275)
-layout_mode = 2
-color = Color(0.329412, 0.329412, 0.329412, 1)
-
-[node name="MC" type="MarginContainer" parent="MC/AscensionVBox/SettingsMC/GridContainer/Gameplay"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/margin_left = 15
-theme_override_constants/margin_top = 15
-theme_override_constants/margin_right = 15
-theme_override_constants/margin_bottom = 15
-
-[node name="VBox" type="VBoxContainer" parent="MC/AscensionVBox/SettingsMC/GridContainer/Gameplay/MC"]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="MC/AscensionVBox/SettingsMC/GridContainer/Gameplay/MC/VBox"]
+[node name="Label" type="Label" parent="MC/VBox/SettingsMC/Grid/Gameplay/MC/VBox"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 30
-text = "Sound"
+text = "Gameplay"
+
+[connection signal="button_down" from="MC/VBox/SettingsMC/Grid/SaveSettings/MC/VBox/SaveLoadButton" to="." method="_on_save_load_button_button_down"]

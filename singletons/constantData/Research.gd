@@ -37,15 +37,15 @@ var Research = {
 		"Name" : "Oak and Apple upgrades -25%",
 		"Description" : "Make Apple and Oak upgrades -15% cheaper",
 		"Time" : 140, # Seconds
-		"OakCost" : 3000, "AppleCost" : 2500, "MapleCost" : 0, "BirchCost" : 0, "SpruceCost" : 0,
+		"OakCost" : 3200, "AppleCost" : 2500, "MapleCost" : 0, "BirchCost" : 0, "SpruceCost" : 0,
 		"ChestnutCost" : 0, "CherryCost" : 0, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 0,
 		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 0,
 	},
 	"2" :  {
-		"Name" : "Double Oak WPS and WPC and Storage",
+		"Name" : "1.2x Oak WPS and WPC and 2x Storage",
 		"Description" : "Maple Yum!",
 		"Time" : 210, # Seconds
-		"OakCost" : 4400, "AppleCost" : 5400, "MapleCost" : 0, "BirchCost" : 0, "SpruceCost" : 0,
+		"OakCost" : 5000, "AppleCost" : 5100, "MapleCost" : 0, "BirchCost" : 0, "SpruceCost" : 0,
 		"ChestnutCost" : 0, "CherryCost" : 0, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 0,
 		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 0,
 	},
@@ -53,7 +53,7 @@ var Research = {
 		"Name" : "1.5x Apple WPS",
 		"Description" : "Maple Yum!",
 		"Time" : 220, # Seconds
-		"OakCost" : 12000, "AppleCost" : 7500, "MapleCost" : 0, "BirchCost" : 0, "SpruceCost" : 0,
+		"OakCost" : 12500, "AppleCost" : 7300, "MapleCost" : 0, "BirchCost" : 0, "SpruceCost" : 0,
 		"ChestnutCost" : 0, "CherryCost" : 0, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 0,
 		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 0,
 	},
@@ -61,7 +61,7 @@ var Research = {
 		"Name" : "Unlock Maple Wood",
 		"Description" : "Doubles Storage for all Classic Wood",
 		"Time" : 260, # Seconds
-		"OakCost" : 15000, "AppleCost" : 11000, "MapleCost" : 0, "BirchCost" : 0, "SpruceCost" : 0,
+		"OakCost" : 14500, "AppleCost" : 10500, "MapleCost" : 0, "BirchCost" : 0, "SpruceCost" : 0,
 		"ChestnutCost" : 0, "CherryCost" : 0, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 0,
 		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 0,
 	},
@@ -74,7 +74,7 @@ var Research = {
 		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 0,
 	},
 	"6c" :  {
-		"Name" : "6x Storage",
+		"Name" : "2.5x Storage",
 		"Description" : "Doubles Storage for all Classic Wood",
 		"Time" : 350, # Seconds
 		"OakCost" : 27000, "AppleCost" : 19000, "MapleCost" : 1250, "BirchCost" : 0, "SpruceCost" : 0,

@@ -95,11 +95,11 @@ layout_mode = 1
 mouse_filter = 1
 
 [node name="AscensionScreen" parent="." instance=ExtResource("3_cexxl")]
+visible = false
 layout_mode = 1
 mouse_filter = 1
 
 [node name="SettingsScreen" parent="." instance=ExtResource("5_tqmh8")]
-visible = false
 layout_mode = 1
 
 [node name="BackgroundButtons" type="Control" parent="."]

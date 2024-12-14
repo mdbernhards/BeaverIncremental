@@ -1,16 +1,18 @@
-[gd_scene load_steps=4 format=3 uid="uid://bdjorvu5y30qm"]
+[gd_scene load_steps=5 format=3 uid="uid://bdjorvu5y30qm"]
 
 [ext_resource type="PackedScene" uid="uid://cc8a2sbrqy5ew" path="res://Scenes/main_menu.tscn" id="1_5ya8i"]
+[ext_resource type="Script" path="res://Scenes/game.gd" id="1_846an"]
 [ext_resource type="PackedScene" uid="uid://bh8e34tborwh1" path="res://Scenes/load_game.tscn" id="2_q55r7"]
 [ext_resource type="PackedScene" uid="uid://dopio2pmdmjpx" path="res://Scenes/game_main_screen.tscn" id="4_btfnp"]
 
-[node name="Game" type="Control"]
+[node name="Game" type="Control" groups=["Game"]]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_846an")
 
 [node name="BackgroundColor" type="ColorRect" parent="."]
 layout_mode = 1
@@ -30,13 +32,12 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="MainMenu" parent="." instance=ExtResource("1_5ya8i")]
+[node name="MainMenu" parent="." groups=["MainMenu"] instance=ExtResource("1_5ya8i")]
 visible = false
 layout_mode = 1
 
-[node name="LoadGame" parent="." instance=ExtResource("2_q55r7")]
-visible = false
+[node name="LoadGame" parent="." groups=["LoadGame"] instance=ExtResource("2_q55r7")]
 layout_mode = 1
 
-[node name="GameMainScreen" parent="." instance=ExtResource("4_btfnp")]
+[node name="GameMainScreen" parent="." groups=["GameMainScreen"] instance=ExtResource("4_btfnp")]
 layout_mode = 1

@@ -2,7 +2,7 @@ extends MarginContainer
 
 # Nodes
 var DamNameLabel
-var DamEffectsLabel
+var DamCountLabel
 
 func _ready() -> void:
 	setupNodePaths()
@@ -12,7 +12,7 @@ func _process(delta: float) -> void:
 
 func setupNodePaths():
 	DamNameLabel = $ColorRect/VBox/DamNameLabel
-	DamEffectsLabel = $ColorRect/VBox/ColorRect3/DamEffectsLabel
+	DamCountLabel = $ColorRect/VBox/ColorRect/DamCountLabel
 
 func _on_build_button_button_down() -> void:
 	pass # Replace with function body.

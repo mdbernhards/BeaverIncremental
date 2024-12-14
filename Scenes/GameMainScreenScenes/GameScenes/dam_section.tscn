@@ -25,74 +25,77 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 40
 text = "Dams"
 
-[node name="DamSectionHBox" type="VBoxContainer" parent="VBox"]
+[node name="DamsHBox" type="VBoxContainer" parent="VBox"]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="MC" type="MarginContainer" parent="VBox/DamSectionHBox"]
+[node name="DamSelection" type="MarginContainer" parent="VBox/DamsHBox"]
 layout_mode = 2
 
-[node name="ColorRect" type="ColorRect" parent="VBox/DamSectionHBox/MC"]
+[node name="ColorRect" type="ColorRect" parent="VBox/DamsHBox/DamSelection"]
 layout_mode = 2
 color = Color(0.396078, 0.396078, 0.396078, 1)
 
-[node name="MC" type="MarginContainer" parent="VBox/DamSectionHBox/MC"]
-custom_minimum_size = Vector2(0, 175)
+[node name="MC" type="MarginContainer" parent="VBox/DamsHBox/DamSelection"]
 layout_mode = 2
 theme_override_constants/margin_left = 20
 theme_override_constants/margin_right = 20
 
-[node name="DamSelectionVBox" type="HBoxContainer" parent="VBox/DamSectionHBox/MC/MC"]
+[node name="DamSelectionVBox" type="HBoxContainer" parent="VBox/DamsHBox/DamSelection/MC"]
 custom_minimum_size = Vector2(245, 0)
 layout_mode = 2
 theme_override_constants/separation = 13
 
-[node name="DamItem1" parent="VBox/DamSectionHBox/MC/MC/DamSelectionVBox" instance=ExtResource("1_2fc4b")]
+[node name="DamItem1" parent="VBox/DamsHBox/DamSelection/MC/DamSelectionVBox" instance=ExtResource("1_2fc4b")]
 layout_mode = 2
 
-[node name="DamItem2" parent="VBox/DamSectionHBox/MC/MC/DamSelectionVBox" instance=ExtResource("1_2fc4b")]
+[node name="DamItem2" parent="VBox/DamsHBox/DamSelection/MC/DamSelectionVBox" instance=ExtResource("1_2fc4b")]
 layout_mode = 2
 
-[node name="DamItem3" parent="VBox/DamSectionHBox/MC/MC/DamSelectionVBox" instance=ExtResource("1_2fc4b")]
+[node name="DamItem3" parent="VBox/DamsHBox/DamSelection/MC/DamSelectionVBox" instance=ExtResource("1_2fc4b")]
 layout_mode = 2
 
-[node name="DamItem4" parent="VBox/DamSectionHBox/MC/MC/DamSelectionVBox" instance=ExtResource("1_2fc4b")]
+[node name="DamItem4" parent="VBox/DamsHBox/DamSelection/MC/DamSelectionVBox" instance=ExtResource("1_2fc4b")]
 layout_mode = 2
 
-[node name="DamItem5" parent="VBox/DamSectionHBox/MC/MC/DamSelectionVBox" instance=ExtResource("1_2fc4b")]
+[node name="DamItem5" parent="VBox/DamsHBox/DamSelection/MC/DamSelectionVBox" instance=ExtResource("1_2fc4b")]
 layout_mode = 2
 
-[node name="ConstructionLabel" type="Label" parent="VBox/DamSectionHBox"]
+[node name="DamConstruction" type="VBoxContainer" parent="VBox/DamsHBox"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="ConstructionLabel" type="Label" parent="VBox/DamsHBox/DamConstruction"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 40
-text = "Construction"
+text = "Small Dam Construction"
 horizontal_alignment = 1
 
-[node name="MC2" type="MarginContainer" parent="VBox/DamSectionHBox"]
+[node name="MC2" type="MarginContainer" parent="VBox/DamsHBox/DamConstruction"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="ColorRect" type="ColorRect" parent="VBox/DamSectionHBox/MC2"]
+[node name="ColorRect" type="ColorRect" parent="VBox/DamsHBox/DamConstruction/MC2"]
 layout_mode = 2
 color = Color(0.396078, 0.396078, 0.396078, 1)
 
-[node name="MC" type="MarginContainer" parent="VBox/DamSectionHBox/MC2"]
+[node name="MC" type="MarginContainer" parent="VBox/DamsHBox/DamConstruction/MC2"]
 layout_mode = 2
 theme_override_constants/margin_left = 15
 theme_override_constants/margin_top = 5
 theme_override_constants/margin_right = 15
 theme_override_constants/margin_bottom = 5
 
-[node name="ConstructionHBox" type="HBoxContainer" parent="VBox/DamSectionHBox/MC2/MC"]
+[node name="ConstructionHBox" type="HBoxContainer" parent="VBox/DamsHBox/DamConstruction/MC2/MC"]
 layout_mode = 2
 theme_override_constants/separation = 9
 
-[node name="ConstructionItem1" parent="VBox/DamSectionHBox/MC2/MC/ConstructionHBox" instance=ExtResource("2_5c1rf")]
+[node name="ConstructionItem1" parent="VBox/DamsHBox/DamConstruction/MC2/MC/ConstructionHBox" instance=ExtResource("2_5c1rf")]
 layout_mode = 2
 
-[node name="ConstructionItem2" parent="VBox/DamSectionHBox/MC2/MC/ConstructionHBox" instance=ExtResource("2_5c1rf")]
+[node name="ConstructionItem2" parent="VBox/DamsHBox/DamConstruction/MC2/MC/ConstructionHBox" instance=ExtResource("2_5c1rf")]
 layout_mode = 2
 
-[node name="ConstructionItem3" parent="VBox/DamSectionHBox/MC2/MC/ConstructionHBox" instance=ExtResource("2_5c1rf")]
+[node name="ConstructionItem3" parent="VBox/DamsHBox/DamConstruction/MC2/MC/ConstructionHBox" instance=ExtResource("2_5c1rf")]
 layout_mode = 2

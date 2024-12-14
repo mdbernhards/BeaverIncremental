@@ -25,6 +25,9 @@ func setupResearchItems():
 		ResearchList.add_child(researchItem)
 
 func deleteAllResearchItems():
+	if !ResearchList:
+		return
+	
 	for researchItem in ResearchList.get_children():
 		ResearchList.remove_child(researchItem)
 		researchItem.queue_free()

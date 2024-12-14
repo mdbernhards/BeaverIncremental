@@ -28,6 +28,7 @@ Unlocks="*res://singletons/Unlocks.gd"
 CalculateFishing="*res://singletons/CalculateFishing.gd"
 Fishing="*res://singletons/constantData/Fishing.gd"
 Achievements="*res://singletons/constantData/Achievements.gd"
+GameSaves="*res://singletons/Saving/GameSaves.gd"
 
 [display]
 
@@ -41,6 +42,10 @@ window/stretch/aspect="ignore"
 BarItem=""
 FishPage=""
 ResearchSection=""
+LoadGame=""
+Game=""
+GameMainScreen=""
+MainMenu=""
 
 [gui]
 

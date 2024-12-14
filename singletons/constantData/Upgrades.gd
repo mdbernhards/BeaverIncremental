@@ -32,7 +32,7 @@ var Upgrades = {
 			"OtherText" : "",
 		},
 		"3" :  {
-			"Name" : "WPS per WC +1",
+			"Name" : "WPS per WC +0.5",
 			"Description" : "Doubles storage capacity",
 			"OtherText" : "",
 		},
@@ -125,7 +125,7 @@ var Upgrades = {
 			"OtherText" : "",
 		},
 		"3" :  {
-			"Name" : "WPS per WC +2",
+			"Name" : "WPS per WC +1",
 			"Description" : "",
 			"OtherText" : "",
 		},
@@ -218,7 +218,7 @@ var Upgrades = {
 			"OtherText" : "",
 		},
 		"3" :  {
-			"Name" : "wps per WC +3",
+			"Name" : "wps per WC +1.5",
 			"Description" : "",
 			"OtherText" : "",
 		},
@@ -310,7 +310,7 @@ var Upgrades = {
 			"OtherText" : "",
 		},
 		"3" :  {
-			"Name" : "wps per WC +4",
+			"Name" : "wps per WC +2",
 			"Description" : "",
 			"OtherText" : "",
 		},
@@ -402,7 +402,7 @@ var Upgrades = {
 			"OtherText" : "",
 		},
 		"3" :  {
-			"Name" : "wps per WC +5",
+			"Name" : "wps per WC +2.5",
 			"Description" : "",
 			"OtherText" : "",
 		},
@@ -494,7 +494,7 @@ var Upgrades = {
 			"OtherText" : "",
 		},
 		"3" :  {
-			"Name" : "wps per WC +6",
+			"Name" : "wps per WC +3",
 			"Description" : "",
 			"OtherText" : "",
 		},
@@ -586,7 +586,7 @@ var Upgrades = {
 			"OtherText" : "",
 		},
 		"3" :  {
-			"Name" : "wps per woodcamp +7",
+			"Name" : "wps per woodcamp +3.5",
 			"Description" : "",
 			"OtherText" : "",
 		},
@@ -678,7 +678,7 @@ var Upgrades = {
 			"OtherText" : "",
 		},
 		"3" :  {
-			"Name" : "wps per woodcamp +8",
+			"Name" : "wps per woodcamp +4",
 			"Description" : "",
 			"OtherText" : "",
 		},
@@ -770,7 +770,7 @@ var Upgrades = {
 			"OtherText" : "",
 		},
 		"3" :  {
-			"Name" : "wps per woodcamp +9",
+			"Name" : "wps per woodcamp +4.5",
 			"Description" : "",
 			"OtherText" : "",
 		},
@@ -862,7 +862,7 @@ var Upgrades = {
 			"OtherText" : "",
 		},
 		"3" :  {
-			"Name" : "wps per woodcamp +10",
+			"Name" : "wps per woodcamp +5",
 			"Description" : "",
 			"OtherText" : "",
 		},
@@ -954,7 +954,7 @@ var Upgrades = {
 			"OtherText" : "",
 		},
 		"3" :  {
-			"Name" : "wps per woodcamp +11",
+			"Name" : "wps per woodcamp +5.5",
 			"Description" : "",
 			"OtherText" : "",
 		},
@@ -1046,7 +1046,7 @@ var Upgrades = {
 			"OtherText" : "",
 		},
 		"3" :  {
-			"Name" : "wps per woodcamp +12",
+			"Name" : "wps per woodcamp +6",
 			"Description" : "",
 			"OtherText" : "",
 		},
@@ -1138,7 +1138,7 @@ var Upgrades = {
 			"OtherText" : "",
 		},
 		"3" :  {
-			"Name" : "wps per woodcamp +13",
+			"Name" : "wps per woodcamp +6.5",
 			"Description" : "",
 			"OtherText" : "",
 		},
@@ -1230,7 +1230,7 @@ var Upgrades = {
 			"OtherText" : "",
 		},
 		"3" :  {
-			"Name" : "wps per woodcamp +14",
+			"Name" : "wps per woodcamp +7",
 			"Description" : "",
 			"OtherText" : "",
 		},
@@ -1322,7 +1322,7 @@ var Upgrades = {
 			"OtherText" : "",
 		},
 		"3" :  {
-			"Name" : "wps per woodcamp +15",
+			"Name" : "wps per woodcamp +7.5",
 			"Description" : "",
 			"OtherText" : "",
 		},

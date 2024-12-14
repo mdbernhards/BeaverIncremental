@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://Scenes/GameMainScreenScenes/GameScenes/DamSection/construction_item.gd" id="1_g58jm"]
 
 [node name="ConstructionItem" type="MarginContainer"]
-custom_minimum_size = Vector2(240, 230)
+custom_minimum_size = Vector2(240, 409)
 theme_override_constants/margin_left = 5
 theme_override_constants/margin_top = 5
 theme_override_constants/margin_right = 5
@@ -15,11 +15,11 @@ layout_mode = 2
 color = Color(0.31802, 0.31802, 0.31802, 1)
 
 [node name="CurrentConstructionVBox" type="VBoxContainer" parent="."]
+visible = false
 layout_mode = 2
 theme_override_constants/separation = 13
 
 [node name="MC" type="MarginContainer" parent="CurrentConstructionVBox"]
-visible = false
 custom_minimum_size = Vector2(0, 35)
 layout_mode = 2
 theme_override_constants/margin_left = 12
@@ -30,9 +30,19 @@ theme_override_constants/margin_right = 12
 layout_mode = 2
 color = Color(0.419813, 0.419813, 0.419813, 1)
 
-[node name="ConstructionNameLabel" type="Label" parent="CurrentConstructionVBox/MC"]
+[node name="VBox" type="VBoxContainer" parent="CurrentConstructionVBox/MC"]
 layout_mode = 2
-text = "Building small dam.."
+
+[node name="ConstructionNameLabel" type="Label" parent="CurrentConstructionVBox/MC/VBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 21
+text = "CONSTRUCTING.."
+horizontal_alignment = 1
+
+[node name="TimeLeftLabel" type="Label" parent="CurrentConstructionVBox/MC/VBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+text = "Time Left: 3:31"
 horizontal_alignment = 1
 
 [node name="MC2" type="MarginContainer" parent="CurrentConstructionVBox"]
@@ -45,7 +55,7 @@ layout_mode = 2
 theme_override_constants/separation = 0
 
 [node name="ColorRect" type="ColorRect" parent="CurrentConstructionVBox/MC2/VBox"]
-custom_minimum_size = Vector2(0, 40)
+custom_minimum_size = Vector2(0, 35)
 layout_mode = 2
 color = Color(0.427451, 0.47451, 0.337255, 1)
 
@@ -74,7 +84,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0.329158, 0.329158, 0.329158, 1)
-theme_override_font_sizes/font_size = 21
+theme_override_font_sizes/font_size = 23
 text = "Getting a Team
 of Beavers"
 horizontal_alignment = 1
@@ -212,3 +222,47 @@ theme_override_constants/margin_right = 10
 
 [node name="ConstructionSpeedSlider" type="HSlider" parent="CurrentConstructionVBox/VBox/MC/ColorRect/VBox/MC3"]
 layout_mode = 2
+
+[node name="LockedVBox" type="VBoxContainer" parent="."]
+visible = false
+layout_mode = 2
+
+[node name="Label" type="Label" parent="LockedVBox"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 30
+text = "Do Research 
+To Unlock"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="UnlockedVBox" type="VBoxContainer" parent="."]
+layout_mode = 2
+theme_override_constants/separation = 25
+alignment = 1
+
+[node name="Label" type="Label" parent="UnlockedVBox"]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 30
+text = "Waiting For
+Action"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ColorRect" type="ColorRect" parent="UnlockedVBox"]
+custom_minimum_size = Vector2(145, 90)
+layout_mode = 2
+size_flags_horizontal = 4
+color = Color(0.266667, 0.584314, 0.388235, 1)
+
+[node name="StartBuildingButton" type="Button" parent="UnlockedVBox/ColorRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 23
+text = "Start 
+Building"
