@@ -1,5 +1,7 @@
 extends Node
 
+var CurrentSaveName
+
 var WoodTypes = ["Oak", "Apple", "Maple", "Birch", "Spruce",
 				 "Chestnut", "Cherry", "Ash", "Cedar", "Mahogany",
 				 "Ebony", "Dogwood", "Rosewood", "Ghost Gum", "Dragonwood",]

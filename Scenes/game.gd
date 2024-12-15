@@ -20,6 +20,7 @@ func goToSavesFromMenu():
 	MainMenu.visible = false
 	LoadGame.visible = true
 	LoadGame.BackTrackTo = BackTrackEnum.ToMainMenu
+	LoadGame.loadSaves()
 
 func goToMenuFromSaves():
 	MainMenu.visible = true 
@@ -29,6 +30,10 @@ func goToSavesFromSettings():
 	GameMainScreen.visible = false
 	LoadGame.visible = true
 	LoadGame.BackTrackTo = BackTrackEnum.ToSettings
+	LoadGame.loadSaves()
+
+func goToGameFromSaves():
+	goToSettingsFromSaves()
 
 func goToSettingsFromSaves():
 	GameMainScreen.visible = true

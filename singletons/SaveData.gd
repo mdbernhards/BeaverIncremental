@@ -1,7 +1,6 @@
 extends Node
 
 # Don't reset Magic, FoS and Achievements, and others with upgrades
-
 var OriginalGold
 var OriginalResources
 var OriginalUpgrades
@@ -2588,6 +2587,9 @@ var GeneralInfo = {
 	"MasterVolume" : false,
 	"MusicVolume" : false,
 	"AchievementCount" : countAchivements(),
+}
+
+var SavesInfo = {
 }
 
 func countAchivements():

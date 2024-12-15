@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://bh8e34tborwh1"]
+[gd_scene load_steps=3 format=3 uid="uid://bh8e34tborwh1"]
 
 [ext_resource type="Script" path="res://Scenes/load_game.gd" id="1_gtias"]
+[ext_resource type="PackedScene" uid="uid://ythlbv3he2rh" path="res://Scenes/LoadGameScenes/save_item.tscn" id="2_nxdnb"]
 
 [node name="LoadGame" type="Control"]
 layout_mode = 3
@@ -98,101 +99,30 @@ theme_override_constants/margin_bottom = 60
 layout_mode = 2
 color = Color(0.466667, 0.258824, 0.258824, 0.160784)
 
-[node name="MC" type="MarginContainer" parent="MC/LoadGameVBox/MC2/VBox/MC2"]
+[node name="Scroll" type="ScrollContainer" parent="MC/LoadGameVBox/MC2/VBox/MC2"]
+layout_mode = 2
+
+[node name="MC" type="MarginContainer" parent="MC/LoadGameVBox/MC2/VBox/MC2/Scroll"]
 layout_mode = 2
 theme_override_constants/margin_left = 30
 theme_override_constants/margin_top = 30
 theme_override_constants/margin_right = 30
 theme_override_constants/margin_bottom = 15
 
-[node name="VBox" type="VBoxContainer" parent="MC/LoadGameVBox/MC2/VBox/MC2/MC"]
+[node name="SaveGames" type="VBoxContainer" parent="MC/LoadGameVBox/MC2/VBox/MC2/Scroll/MC"]
 layout_mode = 2
 theme_override_constants/separation = 25
 
-[node name="SaveItem" type="MarginContainer" parent="MC/LoadGameVBox/MC2/VBox/MC2/MC/VBox"]
-custom_minimum_size = Vector2(1610, 120)
+[node name="SaveItem" parent="MC/LoadGameVBox/MC2/VBox/MC2/Scroll/MC/SaveGames" instance=ExtResource("2_nxdnb")]
 layout_mode = 2
 
-[node name="ColorRect" type="ColorRect" parent="MC/LoadGameVBox/MC2/VBox/MC2/MC/VBox/SaveItem"]
-custom_minimum_size = Vector2(0, 120)
+[node name="SaveItem2" parent="MC/LoadGameVBox/MC2/VBox/MC2/Scroll/MC/SaveGames" instance=ExtResource("2_nxdnb")]
 layout_mode = 2
-color = Color(0.380392, 0.164706, 0.164706, 0.376471)
 
-[node name="HBox" type="HBoxContainer" parent="MC/LoadGameVBox/MC2/VBox/MC2/MC/VBox/SaveItem/ColorRect"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="MC" type="MarginContainer" parent="MC/LoadGameVBox/MC2/VBox/MC2/MC/VBox/SaveItem/ColorRect/HBox"]
-custom_minimum_size = Vector2(375, 0)
+[node name="SaveItem3" parent="MC/LoadGameVBox/MC2/VBox/MC2/Scroll/MC/SaveGames" instance=ExtResource("2_nxdnb")]
 layout_mode = 2
-size_flags_horizontal = 3
-theme_override_constants/margin_left = 15
-theme_override_constants/margin_top = 8
-theme_override_constants/margin_right = 10
-theme_override_constants/margin_bottom = 15
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MC/LoadGameVBox/MC2/VBox/MC2/MC/VBox/SaveItem/ColorRect/HBox/MC"]
+[node name="SaveItem4" parent="MC/LoadGameVBox/MC2/VBox/MC2/Scroll/MC/SaveGames" instance=ExtResource("2_nxdnb")]
 layout_mode = 2
-theme_override_constants/separation = 7
-
-[node name="SaveNameLabel" type="Label" parent="MC/LoadGameVBox/MC2/VBox/MC2/MC/VBox/SaveItem/ColorRect/HBox/MC/VBoxContainer"]
-layout_mode = 2
-size_flags_vertical = 1
-theme_override_colors/font_color = Color(0.901961, 0.631373, 0.623529, 1)
-theme_override_font_sizes/font_size = 30
-text = "Game 1"
-
-[node name="TimePlayedLabel" type="Label" parent="MC/LoadGameVBox/MC2/VBox/MC2/MC/VBox/SaveItem/ColorRect/HBox/MC/VBoxContainer"]
-layout_mode = 2
-size_flags_vertical = 1
-theme_override_colors/font_color = Color(0.164706, 0.0784314, 0.0823529, 1)
-theme_override_font_sizes/font_size = 28
-text = "Last Saved: 14.12.2024 17:02"
-
-[node name="MC2" type="MarginContainer" parent="MC/LoadGameVBox/MC2/VBox/MC2/MC/VBox/SaveItem/ColorRect/HBox"]
-custom_minimum_size = Vector2(375, 0)
-layout_mode = 2
-size_flags_horizontal = 3
-theme_override_constants/margin_left = 15
-theme_override_constants/margin_top = 10
-theme_override_constants/margin_right = 10
-theme_override_constants/margin_bottom = 15
-
-[node name="VBox" type="VBoxContainer" parent="MC/LoadGameVBox/MC2/VBox/MC2/MC/VBox/SaveItem/ColorRect/HBox/MC2"]
-layout_mode = 2
-theme_override_constants/separation = 5
-
-[node name="TimePlayedLabel" type="Label" parent="MC/LoadGameVBox/MC2/VBox/MC2/MC/VBox/SaveItem/ColorRect/HBox/MC2/VBox"]
-layout_mode = 2
-size_flags_vertical = 1
-theme_override_colors/font_color = Color(0.164706, 0.0784314, 0.0823529, 1)
-theme_override_font_sizes/font_size = 28
-text = "Time Played: 22h"
-
-[node name="MagicEarnedLabel" type="Label" parent="MC/LoadGameVBox/MC2/VBox/MC2/MC/VBox/SaveItem/ColorRect/HBox/MC2/VBox"]
-layout_mode = 2
-size_flags_vertical = 1
-theme_override_colors/font_color = Color(0.164706, 0.0784314, 0.0823529, 1)
-theme_override_font_sizes/font_size = 28
-text = "Magic earned: 432e16"
-
-[node name="MC3" type="MarginContainer" parent="MC/LoadGameVBox/MC2/VBox/MC2/MC/VBox/SaveItem/ColorRect/HBox"]
-custom_minimum_size = Vector2(375, 0)
-layout_mode = 2
-size_flags_horizontal = 3
-theme_override_constants/margin_left = 50
-theme_override_constants/margin_top = 18
-theme_override_constants/margin_right = 50
-theme_override_constants/margin_bottom = 18
-
-[node name="LoadGameButton" type="Button" parent="MC/LoadGameVBox/MC2/VBox/MC2/MC/VBox/SaveItem/ColorRect/HBox/MC3"]
-layout_mode = 2
-theme_override_colors/font_color = Color(0.901961, 0.631373, 0.623529, 1)
-theme_override_font_sizes/font_size = 30
-text = "Load Game"
 
 [connection signal="button_down" from="MC/LoadGameVBox/MC/HBox/MC/BackButton" to="." method="_on_back_button_button_down"]

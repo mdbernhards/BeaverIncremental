@@ -1,4 +1,6 @@
-[gd_scene format=3 uid="uid://cc8a2sbrqy5ew"]
+[gd_scene load_steps=2 format=3 uid="uid://cc8a2sbrqy5ew"]
+
+[ext_resource type="Script" path="res://Scenes/main_menu.gd" id="1_jq41p"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -7,6 +9,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_jq41p")
 
 [node name="Background" type="ColorRect" parent="."]
 layout_mode = 0
@@ -40,19 +43,19 @@ theme_override_font_sizes/font_size = 90
 text = "Beaver Incremental"
 horizontal_alignment = 1
 
-[node name="NewGameButton" type="Button" parent="MC/MenuVBox"]
+[node name="PlayButton" type="Button" parent="MC/MenuVBox"]
 custom_minimum_size = Vector2(280, 85)
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_font_sizes/font_size = 42
-text = "NEW GAME"
+text = "PLAY"
 
-[node name="LoadGameButton" type="Button" parent="MC/MenuVBox"]
+[node name="ContinueButton" type="Button" parent="MC/MenuVBox"]
 custom_minimum_size = Vector2(280, 85)
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_font_sizes/font_size = 42
-text = "LOAD GAME"
+text = "CONTINUE"
 
 [node name="SettingsButton" type="Button" parent="MC/MenuVBox"]
 custom_minimum_size = Vector2(280, 85)
@@ -67,3 +70,8 @@ layout_mode = 2
 size_flags_horizontal = 4
 theme_override_font_sizes/font_size = 42
 text = "QUIT"
+
+[connection signal="button_down" from="MC/MenuVBox/PlayButton" to="." method="_on_play_button_button_down"]
+[connection signal="button_down" from="MC/MenuVBox/ContinueButton" to="." method="_on_continue_button_button_down"]
+[connection signal="button_down" from="MC/MenuVBox/SettingsButton" to="." method="_on_settings_button_button_down"]
+[connection signal="button_down" from="MC/MenuVBox/QuitButton" to="." method="_on_quit_button_button_down"]

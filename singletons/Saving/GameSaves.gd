@@ -1,15 +1,59 @@
 extends Node
 
 func _ready() -> void:
-	pass
-	#saveGame()
-	#loadGame()
+	checkInfoFileForSaves()
 
 func _process(delta: float) -> void:
 	pass
 
-func saveGame():
-	var saveFile = FileAccess.open("user://savegame.save", FileAccess.WRITE)
+func checkInfoFileForSaves():
+	if not FileAccess.file_exists("user://info.save"):
+		return
+		
+	var infoFile = FileAccess.open("user://info.save", FileAccess.READ)
+	
+	var jsonInfo = infoFile.get_line()
+	SaveData.SavesInfo = parseJson(jsonInfo)
+
+func addSaveFileToInfo(saveName):
+	checkInfoFileForSaves()
+	
+	var infoFile = FileAccess.open("user://info.save", FileAccess.WRITE)
+	
+	SaveData.SavesInfo[saveName] = {
+		"SaveName" = saveName,
+		"LastSavedTimeStamp" = Time.get_time_dict_from_system(),
+		"TimePlayed" = 0,
+		"MagicEarned" = 0,
+	}
+	
+	var jsonSaveInfo = JSON.stringify(var_to_str(SaveData.SavesInfo))
+	infoFile.store_line(jsonSaveInfo)
+
+	var SaveName
+	var LastSavedTimeStamp
+	var TimePlayed
+	var MagicEarned
+
+func updateSaveFileInfo(saveName):
+	checkInfoFileForSaves()
+	
+	var infoFile = FileAccess.open("user://info.save", FileAccess.WRITE)
+	
+	SaveData.SavesInfo[saveName].LastSavedTimeStamp = Time.get_time_dict_from_system()
+	SaveData.SavesInfo[saveName].TimePlayed += 1
+	SaveData.SavesInfo[saveName].MagicEarned += SaveData.Magic["Count"]
+	
+	var jsonSaveInfo = JSON.stringify(var_to_str(SaveData.SavesInfo))
+	infoFile.store_line(jsonSaveInfo)
+
+func saveGame(saveName):
+	if not FileAccess.file_exists("user://" + saveName + ".save"):
+		addSaveFileToInfo(saveName)
+	else:
+		updateSaveFileInfo(saveName)
+	
+	var saveFile = FileAccess.open("user://" + saveName + ".save", FileAccess.WRITE)
 	
 	var jsonGold = JSON.stringify(var_to_str(SaveData.Gold))
 	saveFile.store_line(jsonGold)
@@ -32,11 +76,11 @@ func saveGame():
 	var jsonBait = JSON.stringify(var_to_str(SaveData.Bait))
 	saveFile.store_line(jsonBait)
 	
-func loadGame():
-	if not FileAccess.file_exists("user://savegame.save"):
+func loadGame(saveName):
+	if not FileAccess.file_exists("user://" + saveName + ".save"):
 		return
 
-	var saveFile = FileAccess.open("user://savegame.save", FileAccess.READ)
+	var saveFile = FileAccess.open("user://" + saveName + ".save", FileAccess.READ)
 	
 	var jsonGold = saveFile.get_line()
 	SaveData.Gold = parseJson(jsonGold)
@@ -60,6 +104,8 @@ func loadGame():
 	SaveData.Bait = parseJson(jsonBait)
 	
 	SaveData.recalculateValues()
+	
+	Values.CurrentSaveName = saveName
 
 func parseJson(jsonString):
 	var json = JSON.new()
@@ -69,4 +115,4 @@ func parseJson(jsonString):
 		print("JSON Parse Error: ", json.get_error_message(), " in ", jsonString, " at line ", json.get_error_line())
 		return
 	
-	return str_to_var(json.get_data()) as Dictionary
+	return str_to_var(json.get_data())

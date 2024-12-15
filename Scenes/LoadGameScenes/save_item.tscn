@@ -1,0 +1,158 @@
+[gd_scene load_steps=2 format=3 uid="uid://ythlbv3he2rh"]
+
+[ext_resource type="Script" path="res://Scenes/LoadGameScenes/save_item.gd" id="1_8vepp"]
+
+[node name="SaveItem" type="MarginContainer"]
+custom_minimum_size = Vector2(1610, 120)
+script = ExtResource("1_8vepp")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+custom_minimum_size = Vector2(0, 120)
+layout_mode = 2
+color = Color(0.380392, 0.164706, 0.164706, 0.376471)
+
+[node name="LoadGame" type="HBoxContainer" parent="ColorRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MC" type="MarginContainer" parent="ColorRect/LoadGame"]
+custom_minimum_size = Vector2(375, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 15
+
+[node name="VBox" type="VBoxContainer" parent="ColorRect/LoadGame/MC"]
+layout_mode = 2
+theme_override_constants/separation = 7
+
+[node name="SaveNameLabel" type="Label" parent="ColorRect/LoadGame/MC/VBox"]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(0.901961, 0.631373, 0.623529, 1)
+theme_override_font_sizes/font_size = 30
+text = "Game 1"
+
+[node name="SaveTimeStampLabel" type="Label" parent="ColorRect/LoadGame/MC/VBox"]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(0.164706, 0.0784314, 0.0823529, 1)
+theme_override_font_sizes/font_size = 28
+text = "Last Saved: 14.12.2024 17:02"
+
+[node name="MC2" type="MarginContainer" parent="ColorRect/LoadGame"]
+custom_minimum_size = Vector2(375, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 15
+
+[node name="VBox" type="VBoxContainer" parent="ColorRect/LoadGame/MC2"]
+layout_mode = 2
+theme_override_constants/separation = 5
+
+[node name="TimePlayedLabel" type="Label" parent="ColorRect/LoadGame/MC2/VBox"]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(0.164706, 0.0784314, 0.0823529, 1)
+theme_override_font_sizes/font_size = 28
+text = "Time Played: 22h"
+
+[node name="MagicEarnedLabel" type="Label" parent="ColorRect/LoadGame/MC2/VBox"]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(0.164706, 0.0784314, 0.0823529, 1)
+theme_override_font_sizes/font_size = 28
+text = "Magic earned: 432e16"
+
+[node name="MC3" type="MarginContainer" parent="ColorRect/LoadGame"]
+custom_minimum_size = Vector2(375, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 18
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 18
+
+[node name="HBox" type="HBoxContainer" parent="ColorRect/LoadGame/MC3"]
+layout_mode = 2
+theme_override_constants/separation = 19
+
+[node name="LoadGameButton" type="Button" parent="ColorRect/LoadGame/MC3/HBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.901961, 0.631373, 0.623529, 1)
+theme_override_font_sizes/font_size = 30
+text = "Load Game"
+
+[node name="DeleteButton" type="Button" parent="ColorRect/LoadGame/MC3/HBox"]
+custom_minimum_size = Vector2(0, 55)
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_colors/font_color = Color(0.796078, 0.219608, 0.388235, 1)
+theme_override_colors/icon_normal_color = Color(0.688482, 0.236427, 0.220821, 1)
+theme_override_font_sizes/font_size = 30
+text = "Delete"
+
+[node name="NewGame" type="HBoxContainer" parent="ColorRect"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MC" type="MarginContainer" parent="ColorRect/NewGame"]
+custom_minimum_size = Vector2(708, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 45
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 35
+theme_override_constants/margin_bottom = 20
+
+[node name="SaveNameLineEdit" type="LineEdit" parent="ColorRect/NewGame/MC"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 35
+placeholder_text = "Enter Save Name"
+max_length = 255
+
+[node name="MC2" type="MarginContainer" parent="ColorRect/NewGame"]
+custom_minimum_size = Vector2(360, 0)
+layout_mode = 2
+
+[node name="ErrorLabel" type="Label" parent="ColorRect/NewGame/MC2"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_font_sizes/font_size = 28
+text = "Can't Have That Name!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MC3" type="MarginContainer" parent="ColorRect/NewGame"]
+custom_minimum_size = Vector2(375, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 18
+theme_override_constants/margin_right = 50
+theme_override_constants/margin_bottom = 18
+
+[node name="NewGameButton" type="Button" parent="ColorRect/NewGame/MC3"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.901961, 0.631373, 0.623529, 1)
+theme_override_font_sizes/font_size = 30
+text = "New Game"
+
+[connection signal="button_down" from="ColorRect/LoadGame/MC3/HBox/LoadGameButton" to="." method="_on_load_game_button_button_down"]
+[connection signal="button_down" from="ColorRect/LoadGame/MC3/HBox/DeleteButton" to="." method="_on_delete_button_button_down"]
+[connection signal="button_down" from="ColorRect/NewGame/MC3/NewGameButton" to="." method="_on_new_game_button_button_down"]
