@@ -74,7 +74,7 @@ func ApplyWoodGainAndLoss():
 			Values.ResourceValues[woodType]["RealPerSecondLoss"] = 0
 			Values.ResourceValues[woodType]["RealPerSecondIncrease"] = 0
 		
-		SaveData.Resources[woodType]["Count"] = clampi(SaveData.Resources[woodType]["Count"], 0, Values.ResourceValues[woodType]["Storage"])
+		SaveData.Resources[woodType]["Count"] = clampf(SaveData.Resources[woodType]["Count"], 0, Values.ResourceValues[woodType]["Storage"])
 
 func UpdateAllBarValues():
 	var BarItems = get_tree().get_nodes_in_group("BarItem")
