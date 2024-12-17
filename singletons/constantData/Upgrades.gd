@@ -1,5 +1,7 @@
 extends Node
 
+# Notes: think about each playtrough randomising the upgrades that unlock first, ofc based on unlocked mechanics
+
 var UpgradePositions = {
 	"Oak" : [1, 2, 3, 5, 4, 7, 16, 6, 14, 10, 11, 12, 13, 9, 15, 8, 17, 18],
 	"Apple" : [1, 2, 3, 6, 7, 4, 5, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18],
@@ -23,17 +25,17 @@ var Upgrades = {
 	"Oak" : {
 		"1" : {
 			"Name" : "+0.25 Oak per Beaver",
-			"Description" : "Increases Oak wood gathered per click by 1",
+			"Description" : "Increases base Oak gathered by Beaver by 0.25",
 			"OtherText" : "",
 		},
 		"2" :  {
 			"Name" : "Oak storage +100",
-			"Description" : "Increases Oak wood storage capacity by 10",
+			"Description" : "Increases base Oak storage capacity by 100",
 			"OtherText" : "",
 		},
 		"3" :  {
-			"Name" : "WPS per WC +0.5",
-			"Description" : "Doubles storage capacity",
+			"Name" : "Woodcamp WPS +0.5",
+			"Description" : "Increases The Oak woodcamp base wood gain by 0.5",
 			"OtherText" : "",
 		},
 		"4" :  {
@@ -116,16 +118,16 @@ var Upgrades = {
 	"Apple" : {
 		"1" : {
 			"Name" : "+0.3 Apple per Beaver",
-			"Description" : "Increases wood gathered per click by 2",
+			"Description" : "Increases base Apple gathered by Beaver by 0.3",
 			"OtherText" : "",
 		},
 		"2" :  {
 			"Name" : "Apple storage +110",
-			"Description" : "",
+			"Description" : "Increases base Apple storage capacity by 110",
 			"OtherText" : "",
 		},
 		"3" :  {
-			"Name" : "WPS per WC +1",
+			"Name" : "Woodcamp WPS +1",
 			"Description" : "",
 			"OtherText" : "",
 		},
@@ -209,16 +211,16 @@ var Upgrades = {
 	"Maple" : {
 		"1" : {
 			"Name" : "+0.35 Maple per Beaver",
-			"Description" : "Increases wood gathered per click by 2",
+			"Description" : "Increases base Maple gathered by Beaver by 0.35",
 			"OtherText" : "",
 		},
 		"2" :  {
 			"Name" : "Maple storage +120",
-			"Description" : "",
+			"Description" : "Increases base Maple storage capacity by 120",
 			"OtherText" : "",
 		},
 		"3" :  {
-			"Name" : "wps per WC +1.5",
+			"Name" : "Woodcamp WPS +1.5",
 			"Description" : "",
 			"OtherText" : "",
 		},
@@ -300,17 +302,17 @@ var Upgrades = {
 	},
 	"Birch" : {
 		"1" : {
-			"Name" : "Birch per click +4",
-			"Description" : "Increases wood gathered per click by 2",
+			"Name" : "+0.4 Birch per Beaver",
+			"Description" : "Increases base Birch gathered by Beaver by 0.4",
 			"OtherText" : "",
 		},
 		"2" :  {
 			"Name" : "Birch storage +130",
-			"Description" : "",
+			"Description" : "Increases base Birch storage capacity by 130",
 			"OtherText" : "",
 		},
 		"3" :  {
-			"Name" : "wps per WC +2",
+			"Name" : "Woodcamp WPS +2",
 			"Description" : "",
 			"OtherText" : "",
 		},
@@ -392,17 +394,17 @@ var Upgrades = {
 	},
 	"Spruce" : {
 		"1" : {
-			"Name" : "Spruce per click +5",
-			"Description" : "Increases wood gathered per click by 2",
+			"Name" : "+0.45 Birch per Beaver",
+			"Description" : "Increases base Spruce gathered by Beaver by 0.45",
 			"OtherText" : "",
 		},
 		"2" :  {
 			"Name" : "Spruce storage +140",
-			"Description" : "",
+			"Description" : "Increases base Spruce storage capacity by 140",
 			"OtherText" : "",
 		},
 		"3" :  {
-			"Name" : "wps per WC +2.5",
+			"Name" : "Woodcamp WPS +2.5",
 			"Description" : "",
 			"OtherText" : "",
 		},
@@ -484,17 +486,17 @@ var Upgrades = {
 	},
 	"Chestnut" : {
 		"1" : {
-			"Name" : "Chestnut per click +6",
-			"Description" : "Increases wood gathered per click by 2",
+			"Name" : "+0.5 Chestnut per Beaver",
+			"Description" : "Increases base Chestnut gathered by Beaver by 0.5",
 			"OtherText" : "",
 		},
 		"2" :  {
 			"Name" : "Chestnut storage +150",
-			"Description" : "",
+			"Description" : "Increases base Chestnut storage capacity by 150",
 			"OtherText" : "",
 		},
 		"3" :  {
-			"Name" : "wps per WC +3",
+			"Name" : "Woodcamp WPS +3",
 			"Description" : "",
 			"OtherText" : "",
 		},
@@ -576,17 +578,17 @@ var Upgrades = {
 	},
 	"Cherry" : {
 		"1" : {
-			"Name" : "Cherry per click +7",
-			"Description" : "Increases wood gathered per click by 7",
+			"Name" : "+0.55 Cherry per Beaver",
+			"Description" : "Increases base Cherry gathered by Beaver by 0.55",
 			"OtherText" : "",
 		},
 		"2" :  {
 			"Name" : "Cherry storage +160",
-			"Description" : "",
+			"Description" : "Increases base Cherry storage capacity by 160",
 			"OtherText" : "",
 		},
 		"3" :  {
-			"Name" : "wps per woodcamp +3.5",
+			"Name" : "Woodcamp WPS +3.5",
 			"Description" : "",
 			"OtherText" : "",
 		},
@@ -668,17 +670,17 @@ var Upgrades = {
 	},
 	"Ash" : {
 		"1" : {
-			"Name" : "Ash per click +8",
-			"Description" : "Increases wood gathered per click by 2",
+			"Name" : "+0.6 Ash per Beaver",
+			"Description" : "Increases base Ash gathered by Beaver by 0.6",
 			"OtherText" : "",
 		},
 		"2" :  {
 			"Name" : "Ash storage +170",
-			"Description" : "",
+			"Description" : "Increases base Ash storage capacity by 170",
 			"OtherText" : "",
 		},
 		"3" :  {
-			"Name" : "wps per woodcamp +4",
+			"Name" : "Woodcamp WPS +4",
 			"Description" : "",
 			"OtherText" : "",
 		},
@@ -760,17 +762,17 @@ var Upgrades = {
 	},
 	"Cedar" : {
 		"1" : {
-			"Name" : "Cedar per click +9",
-			"Description" : "Increases wood gathered per click by 2",
+			"Name" : "+0.65 Cedar per Beaver",
+			"Description" : "Increases base Cedar gathered by Beaver by 0.65",
 			"OtherText" : "",
 		},
 		"2" :  {
 			"Name" : "Cedar storage +180",
-			"Description" : "",
+			"Description" : "Increases base Cedar storage capacity by 180",
 			"OtherText" : "",
 		},
 		"3" :  {
-			"Name" : "wps per woodcamp +4.5",
+			"Name" : "Woodcamp WPS +4.5",
 			"Description" : "",
 			"OtherText" : "",
 		},
@@ -852,17 +854,17 @@ var Upgrades = {
 	},
 	"Mahogany" : {
 		"1" : {
-			"Name" : "Mahogany per click +10",
-			"Description" : "Increases wood gathered per click by 10",
+			"Name" : "+0.7 Mahogany per Beaver",
+			"Description" : "Increases base Mahogany gathered by Beaver by 0.7",
 			"OtherText" : "",
 		},
 		"2" :  {
 			"Name" : "Mahogany storage +190",
-			"Description" : "",
+			"Description" : "Increases base Mahogany storage capacity by 190",
 			"OtherText" : "",
 		},
 		"3" :  {
-			"Name" : "wps per woodcamp +5",
+			"Name" : "Woodcamp WPS +5",
 			"Description" : "",
 			"OtherText" : "",
 		},
@@ -944,17 +946,17 @@ var Upgrades = {
 	},
 	"Ebony" : {
 		"1" : {
-			"Name" : "Ebony per click +11",
-			"Description" : "Increases wood gathered per click by 11",
+			"Name" : "+0.75 Ebony per Beaver",
+			"Description" : "Increases base Ebony gathered by Beaver by 0.75",
 			"OtherText" : "",
 		},
 		"2" :  {
 			"Name" : "Ebony storage +200",
-			"Description" : "",
+			"Description" : "Increases base Ebony storage capacity by 200",
 			"OtherText" : "",
 		},
 		"3" :  {
-			"Name" : "wps per woodcamp +5.5",
+			"Name" : "Woodcamp WPS +5.5",
 			"Description" : "",
 			"OtherText" : "",
 		},
@@ -1036,17 +1038,17 @@ var Upgrades = {
 	},
 	"Dogwood" : {
 		"1" : {
-			"Name" : "Dogwood per click +12",
-			"Description" : "Increases wood gathered per click by 12",
+			"Name" : "+0.8 Dogwood per Beaver",
+			"Description" : "Increases base Dogwood gathered by Beaver by 0.8",
 			"OtherText" : "",
 		},
 		"2" :  {
 			"Name" : "Dogwood storage +210",
-			"Description" : "",
+			"Description" : "Increases base Dogwood storage capacity by 210",
 			"OtherText" : "",
 		},
 		"3" :  {
-			"Name" : "wps per woodcamp +6",
+			"Name" : "Woodcamp WPS +6",
 			"Description" : "",
 			"OtherText" : "",
 		},
@@ -1128,13 +1130,13 @@ var Upgrades = {
 	},
 	"Rosewood" : {
 		"1" : {
-			"Name" : "Rosewood per click +13",
-			"Description" : "Increases wood gathered per click by 13",
+			"Name" : "+0.85 Rosewood per Beaver",
+			"Description" : "Increases base Rosewood gathered by Beaver by 0.85",
 			"OtherText" : "",
 		},
 		"2" :  {
 			"Name" : "Rosewood storage +220",
-			"Description" : "",
+			"Description" : "Increases base Rosewood storage capacity by 220",
 			"OtherText" : "",
 		},
 		"3" :  {
@@ -1220,17 +1222,17 @@ var Upgrades = {
 	},
 	"Ghost Gum" : {
 		"1" : {
-			"Name" : "Ghost Gum per click +14",
-			"Description" : "Increases wood gathered per click by 14",
+			"Name" : "+0.9 Ghost Gum per Beaver",
+			"Description" : "Increases base Ghost Gum gathered by Beaver by 0.9",
 			"OtherText" : "",
 		},
 		"2" :  {
 			"Name" : "Ghost Gum storage +230",
-			"Description" : "",
+			"Description" : "Increases base Ghost Gum storage capacity by 230",
 			"OtherText" : "",
 		},
 		"3" :  {
-			"Name" : "wps per woodcamp +7",
+			"Name" : "Woodcamp WPS +7",
 			"Description" : "",
 			"OtherText" : "",
 		},
@@ -1312,17 +1314,17 @@ var Upgrades = {
 	},
 	"Dragonwood" : {
 		"1" : {
-			"Name" : "Apple per click +15",
-			"Description" : "Increases wood gathered per click by 15",
+			"Name" : "+0.95 Dragonwood per Beaver",
+			"Description" : "Increases base Dragonwood gathered by Beaver by 0.95",
 			"OtherText" : "",
 		},
 		"2" :  {
-			"Name" : "Apple storage +240",
-			"Description" : "",
+			"Name" : "Dragonwood storage +240",
+			"Description" : "Increases base Dragonwood storage capacity by 240",
 			"OtherText" : "",
 		},
 		"3" :  {
-			"Name" : "wps per woodcamp +7.5",
+			"Name" : "Woodcamp WPS +7.5",
 			"Description" : "",
 			"OtherText" : "",
 		},

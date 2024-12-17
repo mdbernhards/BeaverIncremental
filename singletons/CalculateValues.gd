@@ -528,7 +528,7 @@ func SetUpgradeValue(woodType, upgradeId):
 		"Birch":
 			match upgradeId:
 				"1":
-					TempValues[woodType]["ExtraBeavers"] += upgradeLevel * 4
+					TempValues[woodType]["BeaverUpgrades"] += 0.4 * upgradeLevel
 				"2":
 					TempValues[woodType]["BaseStorage"] += upgradeLevel * 130
 				"3":
@@ -566,7 +566,7 @@ func SetUpgradeValue(woodType, upgradeId):
 		"Spruce":
 			match upgradeId:
 				"1":
-					TempValues[woodType]["ExtraBeavers"] += upgradeLevel * 5
+					TempValues[woodType]["BeaverUpgrades"] += 0.45 * upgradeLevel
 				"2":
 					TempValues[woodType]["BaseStorage"] += upgradeLevel * 140
 				"3":
@@ -604,7 +604,7 @@ func SetUpgradeValue(woodType, upgradeId):
 		"Chestnut":
 			match upgradeId:
 				"1":
-					TempValues[woodType]["ExtraBeavers"] += upgradeLevel * 6
+					TempValues[woodType]["BeaverUpgrades"] += 0.5 * upgradeLevel
 				"2":
 					TempValues[woodType]["BaseStorage"] += upgradeLevel * 150
 				"3":
@@ -642,7 +642,7 @@ func SetUpgradeValue(woodType, upgradeId):
 		"Cherry":
 			match upgradeId:
 				"1":
-					TempValues[woodType]["ExtraBeavers"] += upgradeLevel * 7
+					TempValues[woodType]["BeaverUpgrades"] += 0.55 * upgradeLevel
 				"2":
 					TempValues[woodType]["BaseStorage"] += upgradeLevel * 160
 				"3":
@@ -680,7 +680,7 @@ func SetUpgradeValue(woodType, upgradeId):
 		"Ash":
 			match upgradeId:
 				"1":
-					TempValues[woodType]["ExtraBeavers"] += upgradeLevel * 8
+					TempValues[woodType]["BeaverUpgrades"] += 0.6 * upgradeLevel
 				"2":
 					TempValues[woodType]["BaseStorage"] += upgradeLevel * 170
 				"3":
@@ -718,7 +718,7 @@ func SetUpgradeValue(woodType, upgradeId):
 		"Cedar":
 			match upgradeId:
 				"1":
-					TempValues[woodType]["ExtraBeavers"] += upgradeLevel * 9
+					TempValues[woodType]["BeaverUpgrades"] += 0.65 * upgradeLevel
 				"2":
 					TempValues[woodType]["BaseStorage"] += upgradeLevel * 180
 				"3":
@@ -756,7 +756,7 @@ func SetUpgradeValue(woodType, upgradeId):
 		"Mahogany":
 			match upgradeId:
 				"1":
-					TempValues[woodType]["ExtraBeavers"] += upgradeLevel * 10
+					TempValues[woodType]["BeaverUpgrades"] += 0.7 * upgradeLevel
 				"2":
 					TempValues[woodType]["BaseStorage"] += upgradeLevel * 190
 				"3":
@@ -794,7 +794,7 @@ func SetUpgradeValue(woodType, upgradeId):
 		"Ebony":
 			match upgradeId:
 				"1":
-					TempValues[woodType]["ExtraBeavers"] += upgradeLevel * 11
+					TempValues[woodType]["BeaverUpgrades"] += 0.75 * upgradeLevel
 				"2":
 					TempValues[woodType]["BaseStorage"] += upgradeLevel * 200
 				"3":
@@ -832,7 +832,7 @@ func SetUpgradeValue(woodType, upgradeId):
 		"Dogwood":
 			match upgradeId:
 				"1":
-					TempValues[woodType]["ExtraBeavers"] += upgradeLevel * 12
+					TempValues[woodType]["BeaverUpgrades"] += 0.8 * upgradeLevel
 				"2":
 					TempValues[woodType]["BaseStorage"] += upgradeLevel * 210
 				"3":
@@ -870,7 +870,7 @@ func SetUpgradeValue(woodType, upgradeId):
 		"Rosewood":
 			match upgradeId:
 				"1":
-					TempValues[woodType]["ExtraBeavers"] += upgradeLevel * 13
+					TempValues[woodType]["BeaverUpgrades"] += 0.85 * upgradeLevel
 				"2":
 					TempValues[woodType]["BaseStorage"] += upgradeLevel * 220
 				"3":
@@ -909,7 +909,7 @@ func SetUpgradeValue(woodType, upgradeId):
 		"Ghost Gum":
 			match upgradeId:
 				"1":
-					TempValues[woodType]["ExtraBeavers"] += upgradeLevel * 14
+					TempValues[woodType]["BeaverUpgrades"] += 0.9 * upgradeLevel
 				"2":
 					TempValues[woodType]["BaseStorage"] += upgradeLevel * 230
 				"3":
@@ -947,7 +947,7 @@ func SetUpgradeValue(woodType, upgradeId):
 		"Dragonwood":
 			match upgradeId:
 				"1":
-					TempValues[woodType]["ExtraBeavers"] += upgradeLevel * 15
+					TempValues[woodType]["BeaverUpgrades"] += 0.95 * upgradeLevel
 				"2":
 					TempValues[woodType]["BaseStorage"] += upgradeLevel * 240
 				"3":
