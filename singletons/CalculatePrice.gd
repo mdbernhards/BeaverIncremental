@@ -719,32 +719,32 @@ func getUpgradeCost(level, woodType, upgradeNr): # first number more later, seco
 func getBotCost(botCount, woodType):
 	match woodType :
 		"Oak" :
-			return round(pow(1.227, botCount) + 1.123 * pow(botCount, 2.44)) + 1
+			return round(pow(1.227, botCount) + 1.123 * pow(botCount, 2.44)) + botCount * 1250 + 4999
 		"Apple" :
-			return round(pow(1.194, botCount) + 1.488 * pow(botCount, 2.52)) + 20
+			return round(pow(1.194, botCount) + 1.488 * pow(botCount, 2.52)) + botCount * 2250 + 7999
 		"Maple" :
-			return round(pow(1.220, botCount) + 1.398 * pow(botCount, 2.59)) + 300
+			return round(pow(1.220, botCount) + 1.398 * pow(botCount, 2.59)) + botCount * 4250 + 12999
 		"Birch" :
-			return round(pow(1.108, botCount) + 1.126 * pow(botCount, 2.64)) + 4000
+			return round(pow(1.108, botCount) + 1.126 * pow(botCount, 2.64)) + botCount * 9250 + 17999
 		"Spruce" :
-			return round(pow(1.126, botCount) + 1.248 * pow(botCount, 2.66)) + 25000
+			return round(pow(1.126, botCount) + 1.248 * pow(botCount, 2.66)) + botCount * 14250 + 27999
 		"Chestnut" :
-			return round(pow(1.337, botCount) + 1.102 * pow(botCount, 2.69)) + 69000
+			return round(pow(1.337, botCount) + 1.102 * pow(botCount, 2.69)) + botCount * 22250 + 43999
 		"Cherry" :
-			return round(pow(1.429, botCount) + 1.243 * pow(botCount, 2.74)) + 270000
+			return round(pow(1.429, botCount) + 1.243 * pow(botCount, 2.74)) + botCount * 28250 + 67999
 		"Ash" :
-			return round(pow(1.494, botCount) + 1.405 * pow(botCount, 2.77)) + 888000
+			return round(pow(1.494, botCount) + 1.405 * pow(botCount, 2.77)) + botCount * 32250 + 86999
 		"Cedar" :
-			return round(pow(1.131, botCount) + 1.140 * pow(botCount, 2.80)) + 1900000
+			return round(pow(1.131, botCount) + 1.140 * pow(botCount, 2.80)) + botCount * 48250 + 97999
 		"Mahogany" :
-			return round(pow(1.128, botCount) + 1.333 * pow(botCount, 2.84)) + 7110000
+			return round(pow(1.128, botCount) + 1.333 * pow(botCount, 2.84)) + botCount * 62250 + 147999
 		"Ebony" :
-			return round(pow(1.470, botCount) + 1.535 * pow(botCount, 2.86)) + 14555000
+			return round(pow(1.470, botCount) + 1.535 * pow(botCount, 2.86)) + botCount * 82250 + 217999
 		"Dogwood" :
-			return round(pow(1.394, botCount) + 1.581 * pow(botCount, 2.89)) + 67555000
+			return round(pow(1.394, botCount) + 1.581 * pow(botCount, 2.89)) + botCount * 112250 + 337999
 		"Rosewood" :
-			return round(pow(1.590, botCount) + 1.319 * pow(botCount, 2.92)) + 122555000
+			return round(pow(1.590, botCount) + 1.319 * pow(botCount, 2.92)) + botCount * 152250 + 457999
 		"Ghost Gum" :
-			return round(pow(1.301, botCount) + 1.415 * pow(botCount, 2.95)) + 642555000
+			return round(pow(1.301, botCount) + 1.415 * pow(botCount, 2.95)) + botCount * 222250 + 777999
 		"Dragonwood" :
-			return round(pow(1.173, botCount) + 1.334 * pow(botCount, 2.98)) + 2121215000
+			return round(pow(1.173, botCount) + 1.334 * pow(botCount, 2.98)) + botCount * 352250 + 999999

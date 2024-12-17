@@ -19,10 +19,11 @@ func setupResearchItems():
 	ResearchItemScene = load("res://Scenes/GameMainScreenScenes/GameScenes/ResearchSection/research_item.tscn")
 	
 	for researchId in AllResearchData:
-		var researchItem = ResearchItemScene.instantiate()
-		
-		researchItem.setResearch(researchId)
-		ResearchList.add_child(researchItem)
+		if !SaveData.UnlockedResearch.has(researchId) or (SaveData.UnlockedResearch.has(researchId) and !SaveData.UnlockedResearch[researchId]):
+			var researchItem = ResearchItemScene.instantiate()
+			
+			researchItem.setResearch(researchId)
+			ResearchList.add_child(researchItem)
 
 func deleteAllResearchItems():
 	if !ResearchList:

@@ -106,6 +106,20 @@ func loadGame(saveName):
 	SaveData.recalculateValues()
 	
 	Values.CurrentSaveName = saveName
+	
+func deleteGame(saveName):
+	if not FileAccess.file_exists("user://" + saveName + ".save"):
+		return
+		
+	DirAccess.remove_absolute("user://" + saveName + ".save")
+	
+	checkInfoFileForSaves()
+	
+	SaveData.SavesInfo.erase(saveName)
+	var jsonSaveInfo = JSON.stringify(var_to_str(SaveData.SavesInfo))
+	
+	var infoFile = FileAccess.open("user://info.save", FileAccess.WRITE)
+	infoFile.store_line(jsonSaveInfo)
 
 func parseJson(jsonString):
 	var json = JSON.new()

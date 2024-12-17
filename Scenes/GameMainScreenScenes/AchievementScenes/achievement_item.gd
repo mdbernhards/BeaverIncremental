@@ -5,7 +5,6 @@ var AchievementId :
 		AchievementId = value
 
 var AchievementValues
-
 var Unlocked = false
 
 # Nodes

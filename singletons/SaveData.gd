@@ -1152,6 +1152,14 @@ var UnlockedResearch = {
 	"71" : false,
 }
 
+var CurrentResearch = { # Need to implement
+}
+
+var Shablon = {
+	"UpgradeId" : "4",
+	"TimeLeft" : 4 #TimeDate
+}
+
 var UnlockedDams = {
 	"1" : false,
 	"2" : false,

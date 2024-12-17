@@ -58,7 +58,8 @@ func _on_load_game_button_button_down() -> void:
 	get_tree().get_first_node_in_group("Game").goToGameFromSaves()
 
 func _on_delete_button_button_down() -> void:
-	pass
+	SaveState = SaveSlotEnum.New
+	GameSaves.deleteGame(SaveInfo.SaveName)
 
 func _on_new_game_button_button_down() -> void:
 	var saveName = SaveNameLineEdit.text
