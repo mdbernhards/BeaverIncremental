@@ -66,8 +66,8 @@ func _on_new_game_button_button_down() -> void:
 	
 	if checkIfSaveNameIsValid(saveName):
 		GameSaves.addSaveFileToInfo(saveName)
-		GameSaves.saveGame(saveName)
-		Values.CurrentSaveName = saveName
+		GameSaves.saveNewGame(saveName)
+		GameSaves.loadGame(saveName)
 		
 		ErrorLabel.visible = false
 		get_tree().get_first_node_in_group("Game").goToGameFromSaves()

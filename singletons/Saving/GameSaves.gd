@@ -67,8 +67,8 @@ func saveGame(saveName):
 	var jsonUnlockedResearch = JSON.stringify(var_to_str(SaveData.UnlockedResearch))
 	saveFile.store_line(jsonUnlockedResearch)
 	
-	var jsonCurrentResearch = JSON.stringify(var_to_str(get_tree().get_first_node_in_group("ResearchSection").getActiveResearch()))
-	saveFile.store_line(jsonCurrentResearch)
+	var jsonResearchInfo = JSON.stringify(var_to_str(SaveData.ResearchInfo))
+	saveFile.store_line(jsonResearchInfo)
 	
 	var jsonUnlockedDams = JSON.stringify(var_to_str(SaveData.UnlockedDams))
 	saveFile.store_line(jsonUnlockedDams)
@@ -78,6 +78,68 @@ func saveGame(saveName):
 	
 	var jsonBait = JSON.stringify(var_to_str(SaveData.Bait))
 	saveFile.store_line(jsonBait)
+	
+	var jsonMagic = JSON.stringify(var_to_str(SaveData.Magic))
+	saveFile.store_line(jsonMagic)
+	
+	var jsonUnlockedMagicUpgrades = JSON.stringify(var_to_str(SaveData.UnlockedMagicUpgrades))
+	saveFile.store_line(jsonUnlockedMagicUpgrades)
+	
+	var jsonUnlockedAchievements = JSON.stringify(var_to_str(SaveData.UnlockedAchievements))
+	saveFile.store_line(jsonUnlockedAchievements)
+	
+	var jsonUnlockedFeatsOfStrength = JSON.stringify(var_to_str(SaveData.UnlockedFeatsOfStrength))
+	saveFile.store_line(jsonUnlockedFeatsOfStrength)
+	
+	var jsonGeneralInfo = JSON.stringify(var_to_str(SaveData.GeneralInfo))
+	saveFile.store_line(jsonGeneralInfo)
+
+func saveNewGame(saveName):
+	if not FileAccess.file_exists("user://" + saveName + ".save"):
+		addSaveFileToInfo(saveName)
+	else:
+		updateSaveFileInfo(saveName)
+	
+	var saveFile = FileAccess.open("user://" + saveName + ".save", FileAccess.WRITE)
+	
+	var jsonGold = JSON.stringify(var_to_str(SaveData.OriginalGold))
+	saveFile.store_line(jsonGold)
+	
+	var jsonResources = JSON.stringify(var_to_str(SaveData.OriginalResources))
+	saveFile.store_line(jsonResources)
+	
+	var jsonUpgrades = JSON.stringify(var_to_str(SaveData.OriginalUpgrades))
+	saveFile.store_line(jsonUpgrades)
+	
+	var jsonUnlockedResearch = JSON.stringify(var_to_str(SaveData.OriginalUnlockedResearch))
+	saveFile.store_line(jsonUnlockedResearch)
+	
+	var jsonResearchInfo = JSON.stringify(var_to_str(SaveData.OriginalResearchInfo))
+	saveFile.store_line(jsonResearchInfo)
+	
+	var jsonUnlockedDams = JSON.stringify(var_to_str(SaveData.OriginalUnlockedDams))
+	saveFile.store_line(jsonUnlockedDams)
+	
+	var jsonCaughtFish = JSON.stringify(var_to_str(SaveData.OriginalCaughtFish))
+	saveFile.store_line(jsonCaughtFish)
+	
+	var jsonBait = JSON.stringify(var_to_str(SaveData.OriginalBait))
+	saveFile.store_line(jsonBait)
+	
+	var jsonMagic = JSON.stringify(var_to_str(SaveData.OriginalMagic))
+	saveFile.store_line(jsonMagic)
+	
+	var jsonUnlockedMagicUpgrades = JSON.stringify(var_to_str(SaveData.OriginalUnlockedMagicUpgrades))
+	saveFile.store_line(jsonUnlockedMagicUpgrades)
+	
+	var jsonUnlockedAchievements = JSON.stringify(var_to_str(SaveData.OriginalUnlockedAchievements))
+	saveFile.store_line(jsonUnlockedAchievements)
+	
+	var jsonUnlockedFeatsOfStrength = JSON.stringify(var_to_str(SaveData.OriginalUnlockedFeatsOfStrength))
+	saveFile.store_line(jsonUnlockedFeatsOfStrength)
+	
+	var jsonGeneralInfo = JSON.stringify(var_to_str(SaveData.OriginalGeneralInfo))
+	saveFile.store_line(jsonGeneralInfo)
 	
 func loadGame(saveName):
 	if not FileAccess.file_exists("user://" + saveName + ".save"):
@@ -97,8 +159,8 @@ func loadGame(saveName):
 	var jsonUnlockedResearch = saveFile.get_line()
 	SaveData.UnlockedResearch = parseJson(jsonUnlockedResearch)
 	
-	var jsonCurrentResearch = saveFile.get_line()
-	SaveData.CurrentResearch = parseJson(jsonCurrentResearch)
+	var jsonResearchInfo = saveFile.get_line()
+	SaveData.ResearchInfo = parseJson(jsonResearchInfo)
 	
 	var jsonUnlockedDams = saveFile.get_line()
 	SaveData.UnlockedDams = parseJson(jsonUnlockedDams)
@@ -108,6 +170,21 @@ func loadGame(saveName):
 	
 	var jsonBait = saveFile.get_line()
 	SaveData.Bait = parseJson(jsonBait)
+	
+	var jsonMagic = saveFile.get_line()
+	SaveData.Magic = parseJson(jsonMagic)
+	
+	var jsonUnlockedMagicUpgrades = saveFile.get_line()
+	SaveData.UnlockedMagicUpgrades = parseJson(jsonUnlockedMagicUpgrades)
+	
+	var jsonUnlockedAchievements = saveFile.get_line()
+	SaveData.UnlockedAchievements = parseJson(jsonUnlockedAchievements)
+	
+	var jsonUnlockedFeatsOfStrength = saveFile.get_line()
+	SaveData.UnlockedFeatsOfStrength = parseJson(jsonUnlockedFeatsOfStrength)
+	
+	var jsonGeneralInfo = saveFile.get_line()
+	SaveData.GeneralInfo = parseJson(jsonGeneralInfo)
 	
 	SaveData.recalculateValues()
 	

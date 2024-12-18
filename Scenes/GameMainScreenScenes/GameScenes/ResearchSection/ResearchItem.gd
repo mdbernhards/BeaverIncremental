@@ -10,9 +10,25 @@ var TimeLeftLabel
 var PriceLabel
 var ResearchProgressBar
 var ResearchTimer
-var CantAffordColorRect
+var ResearchCantAffordColorRect
+var QueueCantAffordColorRect
+var StartResearchButton
+var QueueButton
+var ResearchingRect
+var ResearchingLabel
+var CancelButton
 
 var IsResearchStarted = false
+var InQueue = false
+
+var IsMouseOnCancel = false
+
+enum ResearchStatesEnum {
+	CurrentlyResearching,
+	Queued,
+	CanResearch,
+	CanQueue,
+}
 
 func _ready():
 	setNodePaths()
@@ -21,11 +37,41 @@ func _process(_delta):
 	updateResearch()
 	if IsResearchStarted:
 		updateProgressBar()
+		
+		if ResearchTimer.is_stopped():
+			ResearchTimer.start()
 	else:
 		if checkIfCanAfford():
-			CantAffordColorRect.visible = false
+			ResearchCantAffordColorRect.visible = false
+			QueueCantAffordColorRect.visible = false
 		else:
-			CantAffordColorRect.visible = true	
+			ResearchCantAffordColorRect.visible = true
+			QueueCantAffordColorRect.visible = true	
+			
+	setCancelButtonText()
+
+func setCancelButtonText():
+	if IsMouseOnCancel:
+		CancelButton.text = "Remove?"
+	else:
+		var spotInQueue = 1
+		var buttonText
+			
+		for queueId in SaveData.ResearchInfo["Queue"]:
+			if ItemId == queueId:
+				break
+			spotInQueue += 1
+		
+		if spotInQueue == 1:
+			buttonText = "1st"
+		elif spotInQueue == 2:
+			buttonText = "2nd"
+		elif spotInQueue == 3:
+			buttonText = "3rd"
+		else:
+			buttonText = str(spotInQueue) + "th"
+		
+		CancelButton.text = buttonText + " in Queue"
 
 func setResearch(ResearchNr):
 	setNodePaths()
@@ -96,17 +142,34 @@ func setNodePaths():
 	PriceLabel = $BG/HBox/MC/VBox/MC3/PriceLabel
 	ResearchProgressBar = $BG/HBox/MC2/VBox/MC/ResearchProgressBar
 	ResearchTimer = $ResearchTimer
-	CantAffordColorRect = $BG/HBox/MC2/VBox/MC2/StartResearchButton/CantAffordColorRect
+	ResearchCantAffordColorRect = $BG/HBox/MC2/VBox/MC2/StartResearchButton/ResearchCantAffordColorRect
+	QueueCantAffordColorRect = $BG/HBox/MC2/VBox/MC2/QueueButton/QueueCantAffordColorRect
+	StartResearchButton = $BG/HBox/MC2/VBox/MC2/StartResearchButton
+	QueueButton = $BG/HBox/MC2/VBox/MC2/QueueButton
+	ResearchingRect = $BG/HBox/MC2/VBox/MC2/ResearchingRect
+	ResearchingLabel = $BG/HBox/MC2/VBox/MC2/ResearchingRect/ResearchingLabel
+	CancelButton = $BG/HBox/MC2/VBox/MC2/CancelButton
 
 func _on_start_research_button_button_down():
 	if checkIfCanAfford():
 		removeResources()
-		IsResearchStarted = true
-		ResearchTimer.start()
+		startResearch()
+
+func _on_queue_button_button_down() -> void:
+	if checkIfCanAfford():
+		removeResources()
+		SaveData.ResearchInfo["Queue"].append(ItemId)
+		InQueue = true
+
+func startResearch():
+	InQueue = false
+	SaveData.ResearchInfo["Queue"].erase(ItemId)
+	IsResearchStarted = true
+	ResearchTimer.start()
 
 func resumeResearch(timeLeft):
-		IsResearchStarted = true
-		ResearchTimer.start(timeLeft)
+	IsResearchStarted = true
+	ResearchTimer.start(timeLeft)
 
 func removeResources():
 	SaveData.Resources["Oak"]["Count"] -= ResearchData["OakCost"]
@@ -156,3 +219,51 @@ func _on_research_timer_timeout():
 	SaveData.UnlockedResearch[str(ItemId)] = true
 	CalculateValues.calculateAllValues()
 	queue_free()
+
+func setResearchState(state):
+	hideAllResearchStates()
+	
+	match state:
+		ResearchStatesEnum.CurrentlyResearching:
+			ResearchingRect.visible = true
+		ResearchStatesEnum.Queued:
+			CancelButton.visible = true
+		ResearchStatesEnum.CanResearch:
+			StartResearchButton.visible = true
+		ResearchStatesEnum.CanQueue:
+			QueueButton.visible = true
+
+func hideAllResearchStates():
+	StartResearchButton.visible = false
+	QueueButton.visible = false
+	ResearchingRect.visible = false
+	CancelButton.visible = false
+	
+func refundResources():
+	SaveData.Resources["Oak"]["Count"] += ResearchData["OakCost"] * 0.75
+	SaveData.Resources["Apple"]["Count"] += ResearchData["AppleCost"] * 0.75
+	SaveData.Resources["Maple"]["Count"] += ResearchData["MapleCost"] * 0.75
+	SaveData.Resources["Birch"]["Count"] += ResearchData["BirchCost"] * 0.75
+	SaveData.Resources["Spruce"]["Count"] += ResearchData["SpruceCost"] * 0.75
+	SaveData.Resources["Chestnut"]["Count"] += ResearchData["ChestnutCost"] * 0.75
+	SaveData.Resources["Cherry"]["Count"] += ResearchData["CherryCost"] * 0.75
+	SaveData.Resources["Ash"]["Count"] += ResearchData["AshCost"] * 0.75
+	SaveData.Resources["Cedar"]["Count"] += ResearchData["CedarCost"] * 0.75
+	SaveData.Resources["Mahogany"]["Count"] += ResearchData["MahoganyCost"] * 0.75
+	SaveData.Resources["Ebony"]["Count"] += ResearchData["EbonyCost"] * 0.75
+	SaveData.Resources["Dogwood"]["Count"] += ResearchData["DogwoodCost"] * 0.75
+	SaveData.Resources["Rosewood"]["Count"] += ResearchData["RosewoodCost"] * 0.75
+	SaveData.Resources["Ghost Gum"]["Count"] += ResearchData["Ghost GumCost"] * 0.75
+	SaveData.Resources["Dragonwood"]["Count"] += ResearchData["DragonwoodCost"] * 0.75
+
+func _on_cancel_button_button_down() -> void:
+	SaveData.ResearchInfo["Queue"].erase(ItemId)
+	refundResources()
+	InQueue = false
+	IsResearchStarted = false
+
+func _on_cancel_button_mouse_entered() -> void:
+	IsMouseOnCancel = true
+
+func _on_cancel_button_mouse_exited() -> void:
+	IsMouseOnCancel = false
