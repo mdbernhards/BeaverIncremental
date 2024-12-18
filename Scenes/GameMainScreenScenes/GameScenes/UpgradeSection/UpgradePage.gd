@@ -3,16 +3,32 @@ extends VBoxContainer
 var PageNr = 1
 
 var ResourceTypes = ["Oak", "Apple", "Maple", "Birch", "Spruce"]
+var CurrentResourceType = "Oak"
 
 # Nodes
-var UpgradesNode
 var TabButtons = []
+var UpgradesNode
+var AllTabsCantAffordRect
 
 func _ready():
 	setNodePaths()
 
 func _process(_delta):
-	pass
+	checkIfCanAfford()
+
+func checkIfCanAfford():
+	var canAfford = false
+	
+	for resourceType in ResourceTypes:
+		UpgradesNode.setupUpgradeTabForWoodType(resourceType)
+		if UpgradesNode.checkIfCanAfford():
+			canAfford = true
+			break
+	
+	UpgradesNode.setupUpgradeTabForWoodType(CurrentResourceType)
+	
+	AllTabsCantAffordRect.visible = !canAfford
+	return canAfford
 
 func changePage(nr):
 	PageNr = nr
@@ -28,6 +44,7 @@ func changePage(nr):
 			ResourceTypes = ["Gold"]
 	
 	setUpgradeTabButtons()
+	CurrentResourceType = ResourceTypes[0]
 	UpgradesNode.setupUpgradeTabForWoodType(ResourceTypes[0])
 
 func setUpgradeTabButtons():
@@ -47,18 +64,31 @@ func setNodePaths():
 	TabButtons.append($UpgradeTabs/HBox/TabButtonsMC/HBox/UpgradeTabButton5)
 	
 	UpgradesNode = $Upgrades
+	AllTabsCantAffordRect = $UpgradeTabs/HBox/BuyMaxMC/AllTabsBuyMaxButton/AllTabsCantAffordRect
 
 func _on_upgrade_tab_button_1_button_down():
+	CurrentResourceType = ResourceTypes[0]
 	UpgradesNode.setupUpgradeTabForWoodType(ResourceTypes[0])
 
 func _on_upgrade_tab_button_2_button_down():
+	CurrentResourceType = ResourceTypes[1]
 	UpgradesNode.setupUpgradeTabForWoodType(ResourceTypes[1])
 
 func _on_upgrade_tab_button_3_button_down():
+	CurrentResourceType = ResourceTypes[2]
 	UpgradesNode.setupUpgradeTabForWoodType(ResourceTypes[2])
 
 func _on_upgrade_tab_button_4_button_down():
+	CurrentResourceType = ResourceTypes[3]
 	UpgradesNode.setupUpgradeTabForWoodType(ResourceTypes[3])
 
 func _on_upgrade_tab_button_5_button_down():
+	CurrentResourceType = ResourceTypes[4]
 	UpgradesNode.setupUpgradeTabForWoodType(ResourceTypes[4])
+
+func _on_all_tabs_buy_max_button_button_down() -> void:
+	for resourceType in ResourceTypes:
+		UpgradesNode.setupUpgradeTabForWoodType(resourceType)
+		UpgradesNode._on_tab_buy_max_button_button_down()
+		
+	UpgradesNode.setupUpgradeTabForWoodType(CurrentResourceType)

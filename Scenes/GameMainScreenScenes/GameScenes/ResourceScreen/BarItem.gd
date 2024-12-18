@@ -19,11 +19,13 @@ var ProductionLabel
 var WCCountLabel
 var WCPriceLabel
 var WCCantAffordRect
+var WCMaxCantAffordRect
 
 # Beaver Nodes
 var BeaverCountLabel
 var BeaverPriceLabel
 var BeaverCantAffordRect
+var BeaverMaxCantAffordRect
 
 func _ready():
 	WCCurrentPrice = 0
@@ -66,8 +68,10 @@ func updateBarValues(woodType = WoodType):
 	
 	if WCCurrentPrice <= SaveData.Gold["Count"]:
 		WCCantAffordRect.visible = false
+		WCMaxCantAffordRect.visible = false
 	else:
 		WCCantAffordRect.visible = true
+		WCMaxCantAffordRect.visible = true
 	
 	# Levels
 	BeaverCurrentPrice = round(CalculatePrice.getBeaverCost(SaveData.Resources[WoodType]["Beavers"], WoodType) * Values.ResourceValues[WoodType]["BeaverPriceMultip"])
@@ -77,8 +81,10 @@ func updateBarValues(woodType = WoodType):
 	
 	if BeaverCurrentPrice <= SaveData.Resources[WoodType]["Count"]:
 		BeaverCantAffordRect.visible = false
+		BeaverMaxCantAffordRect.visible = false
 	else:
 		BeaverCantAffordRect.visible = true
+		BeaverMaxCantAffordRect.visible = true
 
 func setNodePaths():
 	NameLabel = $HBox/BarVBox/BarLabels/MC/TitleLabel
@@ -93,10 +99,12 @@ func setNodePaths():
 	WCCountLabel = $HBox/WoodCampMC/WoodCampHBox/MC/VBox/wcCountLabel
 	WCPriceLabel = $HBox/WoodCampMC/WoodCampHBox/MC/VBox/wcPriceLabel
 	WCCantAffordRect = $HBox/WoodCampMC/WoodCampHBox/MC2/VBox/WoodCampBuyButton/WCCantAffordRect
+	WCMaxCantAffordRect = $HBox/WoodCampMC/WoodCampHBox/MC2/VBox/WoodCampBuyMaxButton/WCMaxCantAffordRect
 	
 	BeaverCountLabel = $HBox/BeaverMC/BeaverHBox/MC/VBox/BeaverCountLabel
 	BeaverPriceLabel = $HBox/BeaverMC/BeaverHBox/MC/VBox/BeaverPriceLabel
 	BeaverCantAffordRect = $HBox/BeaverMC/BeaverHBox/MC2/VBox/BeaverBuyButton/BeaverCantAffordRect
+	BeaverMaxCantAffordRect = $HBox/BeaverMC/BeaverHBox/MC2/VBox/BeaverBuyMaxButton/BeaverMaxCantAffordRect
 
 func _on_click_button_button_down():
 	if Values.ResourceValues[WoodType]["Storage"] > (SaveData.Resources[WoodType]["Count"] + Values.ResourceValues[WoodType]["PerClick"]):
@@ -110,13 +118,31 @@ func _on_wood_camp_buy_button_button_down():
 		SaveData.Resources[WoodType]["Woodcamps"] += 1
 		updateBarValues()
 		CalculateValues.calculateAllValues()
+		return true
+	
+	return false
 
-func _on_level_buy_button_button_down(): # beaver buy
+func _on_wood_camp_buy_max_button_button_down() -> void:
+	var keepBuying = true
+	
+	while keepBuying:
+		keepBuying = _on_wood_camp_buy_button_button_down()
+
+func _on_beaver_buy_button_button_down():
 	if BeaverCurrentPrice <= SaveData.Resources[WoodType]["Count"]:
 		SaveData.Resources[WoodType]["Count"] -= BeaverCurrentPrice
 		SaveData.Resources[WoodType]["Beavers"] += 1
 		updateBarValues()
 		CalculateValues.calculateAllValues()
+		return true
+	
+	return false
+
+func _on_beaver_buy_max_button_button_down() -> void:
+	var keepBuying = true
+	
+	while keepBuying:
+		keepBuying = _on_beaver_buy_button_button_down()
 
 func _on_resource_production_slider_value_changed(value):
 	SaveData.Resources[WoodType]["Production"] = value

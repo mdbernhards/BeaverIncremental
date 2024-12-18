@@ -67,6 +67,9 @@ func saveGame(saveName):
 	var jsonUnlockedResearch = JSON.stringify(var_to_str(SaveData.UnlockedResearch))
 	saveFile.store_line(jsonUnlockedResearch)
 	
+	var jsonCurrentResearch = JSON.stringify(var_to_str(get_tree().get_first_node_in_group("ResearchSection").getActiveResearch()))
+	saveFile.store_line(jsonCurrentResearch)
+	
 	var jsonUnlockedDams = JSON.stringify(var_to_str(SaveData.UnlockedDams))
 	saveFile.store_line(jsonUnlockedDams)
 	
@@ -93,6 +96,9 @@ func loadGame(saveName):
 	
 	var jsonUnlockedResearch = saveFile.get_line()
 	SaveData.UnlockedResearch = parseJson(jsonUnlockedResearch)
+	
+	var jsonCurrentResearch = saveFile.get_line()
+	SaveData.CurrentResearch = parseJson(jsonCurrentResearch)
 	
 	var jsonUnlockedDams = saveFile.get_line()
 	SaveData.UnlockedDams = parseJson(jsonUnlockedDams)

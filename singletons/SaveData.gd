@@ -1152,7 +1152,7 @@ var UnlockedResearch = {
 	"71" : false,
 }
 
-var CurrentResearch = { # Need to implement
+var CurrentResearch = {
 }
 
 var Shablon = {

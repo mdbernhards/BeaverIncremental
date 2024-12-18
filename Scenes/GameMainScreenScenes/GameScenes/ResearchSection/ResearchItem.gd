@@ -43,7 +43,6 @@ func updateResearch():
 	TimeLeftLabel.text = timeConvert(ResearchData["Time"] * Values.ResourceValues["Research"]["TimeMultip"])
 	PriceLabel.text = getPriceText()
 	ResearchTimer.wait_time = ResearchData["Time"] * Values.ResourceValues["Research"]["TimeMultip"]
-	
 
 func timeConvert(timeInSeconds):
 	timeInSeconds = int(timeInSeconds)
@@ -104,6 +103,10 @@ func _on_start_research_button_button_down():
 		removeResources()
 		IsResearchStarted = true
 		ResearchTimer.start()
+
+func resumeResearch(timeLeft):
+		IsResearchStarted = true
+		ResearchTimer.start(timeLeft)
 
 func removeResources():
 	SaveData.Resources["Oak"]["Count"] -= ResearchData["OakCost"]

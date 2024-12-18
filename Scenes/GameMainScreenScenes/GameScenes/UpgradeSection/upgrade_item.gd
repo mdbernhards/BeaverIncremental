@@ -32,13 +32,17 @@ func updateAffordabilityIndicator():
 	if ResourceType == "Gold":
 		if CurrentPrice <= SaveData.Gold["Count"]:
 			CantAffordColorRect.visible = false
+			return true
 		else:
 			CantAffordColorRect.visible = true
+			return false
 	else:
 		if CurrentPrice <= SaveData.Resources[ResourceType]["Count"]:
 			CantAffordColorRect.visible = false
+			return true
 		else:
 			CantAffordColorRect.visible = true
+			return false
 
 func changeUpgrade(woodType, upgradeNr = UpgradeNumber):
 	UpgradeNumber = upgradeNr
@@ -86,8 +90,10 @@ func setNodePaths():
 	NrLabel = $Color/VBox/MC/NrLabel
 
 func _on_buy_button_button_down():
+	var upgradeBought = false
+	
 	if !SaveDataValues:
-		return
+		return upgradeBought
 	
 	if ResourceType == "Gold":
 		if CurrentPrice <= SaveData.Gold["Count"]:
@@ -95,9 +101,19 @@ func _on_buy_button_button_down():
 			SaveDataValues["Level"] += 1
 			updateUpgradeValues()
 			CalculateValues.calculateAllValues()
+			upgradeBought = true
 	else:
 		if CurrentPrice <= SaveData.Resources[ResourceType]["Count"]:
 			SaveData.Resources[ResourceType]["Count"] -= CurrentPrice
 			SaveDataValues["Level"] += 1
 			updateUpgradeValues()
 			CalculateValues.calculateAllValues()
+			upgradeBought = true
+	
+	return upgradeBought
+
+func _on_buy_max_button_button_down() -> void:
+	var keepBuying = true
+	
+	while keepBuying:
+		keepBuying = _on_buy_button_button_down()

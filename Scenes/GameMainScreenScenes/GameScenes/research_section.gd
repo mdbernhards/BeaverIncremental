@@ -24,6 +24,11 @@ func setupResearchItems():
 			
 			researchItem.setResearch(researchId)
 			ResearchList.add_child(researchItem)
+			
+	for currentResearchId in SaveData.CurrentResearch:
+		for researchItem in ResearchList.get_children():
+			if researchItem.ItemId == currentResearchId:
+				researchItem.resumeResearch(SaveData.CurrentResearch[currentResearchId]["TimeLeft"])
 
 func deleteAllResearchItems():
 	if !ResearchList:
@@ -32,6 +37,18 @@ func deleteAllResearchItems():
 	for researchItem in ResearchList.get_children():
 		ResearchList.remove_child(researchItem)
 		researchItem.queue_free()
+
+func getActiveResearch():
+	var activeResearch = {}
+	
+	for researchItem in ResearchList.get_children():
+		if researchItem.IsResearchStarted:
+			if not activeResearch.has(researchItem.ItemId):
+				activeResearch[researchItem.ItemId] = {}
+				
+			activeResearch[researchItem.ItemId]["TimeLeft"] = researchItem.ResearchTimer.time_left
+	
+	return activeResearch
 
 func resetResearch():
 	deleteAllResearchItems()
