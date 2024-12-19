@@ -6,6 +6,13 @@ var ResearchItemScene
 # Nodes
 var ResearchList
 
+enum ResearchStatesEnum {
+	CurrentlyResearching,
+	Queued,
+	CanResearch,
+	CanQueue,
+}
+
 func _ready():
 	setupNodePaths()
 	setupResearchItems()
@@ -48,13 +55,6 @@ func checkQueue():
 		for researchItem in ResearchList.get_children():
 			if researchItem.ItemId == QueueResearchId and SaveData.ResearchInfo["ResearchAtATime"] > getActiveResearch().size():
 				researchItem.startResearch()
-
-enum ResearchStatesEnum {
-	CurrentlyResearching,
-	Queued,
-	CanResearch,
-	CanQueue,
-}
 
 func setResearchStates():
 	var researchState

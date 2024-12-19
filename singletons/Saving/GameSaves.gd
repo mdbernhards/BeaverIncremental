@@ -40,7 +40,7 @@ func updateSaveFileInfo(saveName):
 	
 	var infoFile = FileAccess.open("user://info.save", FileAccess.WRITE)
 	
-	SaveData.SavesInfo[saveName].LastSavedTimeStamp = Time.get_time_dict_from_system()
+	SaveData.SavesInfo[saveName].LastSavedTimeStamp = Time.get_datetime_dict_from_system()
 	SaveData.SavesInfo[saveName].TimePlayed += 1
 	SaveData.SavesInfo[saveName].MagicEarned += SaveData.Magic["Count"]
 	

@@ -34,7 +34,7 @@ func CalculateRealValues():
 		
 		ResourceValues[woodType]["PerClick"] =((woodCamps * TempValues["Global"]["WcToBeaverMultip"]) + Beavers) * TempValues[woodType]["BeaverUpgrades"] * TempValues[woodType]["BeaverMultip"] * TempValues["Global"]["BeaverMultip"]
 		ResourceValues[woodType]["PerSecondIncrease"] = pow(woodCamps * TempValues[woodType]["WpsPerWc"] * TempValues[woodType]["WpsMultip"] * TempValues["Global"]["WpsMultip"] * TempValues[woodType]["WcEffectMultip"], TempValues["Global"]["WpsPow"]) * TempValues["Global"]["ProductionUpgradeMultip"] * SaveData.Resources[woodType]["Production"] / 100
-		ResourceValues[woodType]["Storage"] = (TempValues[woodType]["BaseStorage"] + Beavers * 15 + woodCamps * TempValues[woodType]["WcBaseStorage"] * TempValues[woodType]["WcStorageMultip"] * TempValues["Global"]["WcStorageMultip"] * TempValues[woodType]["WcEffectMultip"]) * TempValues[woodType]["StorageMultip"] * TempValues["Global"]["StorageMultip"]
+		ResourceValues[woodType]["Storage"] = (TempValues[woodType]["BaseStorage"] + Beavers * 15 + woodCamps * (TempValues[woodType]["WcBaseStorage"] + TempValues["Global"]["WcBaseStorage"]) * TempValues[woodType]["WcStorageMultip"] * TempValues["Global"]["WcStorageMultip"] * TempValues[woodType]["WcEffectMultip"]) * TempValues[woodType]["StorageMultip"] * TempValues["Global"]["StorageMultip"]
 		ResourceValues[woodType]["SoldFor"] = TempValues[woodType]["BaseWoodPrice"] * TempValues[woodType]["WoodPriceMultip"] * TempValues["Global"]["WoodPriceMultip"]
 		ResourceValues[woodType]["UpgradePriceMultip"] = TempValues["Global"]["UpgradePriceMultip"] * TempValues[woodType]["UpgradePriceMultip"]
 		ResourceValues[woodType]["WcPriceMultip"] = TempValues["Global"]["WcPriceMultip"] * TempValues[woodType]["WcPriceMultip"]
@@ -206,7 +206,7 @@ func SetResearchValue(researchNr):
 		"6" :
 			TempValues["Global"]["WpsMultip"] *= 1.25
 		"6c" :
-			TempValues["Global"]["StorageMultip"] *= 6
+			TempValues["Global"]["StorageMultip"] *= 2.5
 		"7" :
 			TempValues["Maple"]["WpsMultip"] *= 3
 		"8" :
@@ -218,7 +218,7 @@ func SetResearchValue(researchNr):
 		"11" :
 			TempValues["Global"]["WoodPriceMultip"] *= 1.22
 		"12" :
-			TempValues["Global"]["WcBaseStorage"] += 200
+			TempValues["Global"]["WcBaseStorage"] += 500
 		"13" :
 			pass # idk
 		"14" :

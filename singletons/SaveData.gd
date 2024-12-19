@@ -50,7 +50,7 @@ func recalculateValues():
 	get_tree().get_first_node_in_group("ResearchSection").resetResearch()
 
 var Gold = {
-	"Count" : 9999999999,
+	"Count" : 0,
 }
 
 var Resources = {
@@ -1445,7 +1445,7 @@ var Bait = {
 }
 
 var Magic = {
-	"Count" : 10,
+	"Count" : 0,
 }
 
 var UnlockedMagicUpgrades = {

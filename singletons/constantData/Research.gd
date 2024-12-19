@@ -5,7 +5,7 @@ var Research = {
 		"Name" : "65% more storage",
 		"Description" : "All storage capacity increased by 65%",
 		"Time" : 25, # Seconds
-		"OakCost" : 1, "AppleCost" : 1, "MapleCost" : 0, "BirchCost" : 0, "SpruceCost" : 0,
+		"OakCost" : 500, "AppleCost" : 750, "MapleCost" : 0, "BirchCost" : 0, "SpruceCost" : 0,
 		"ChestnutCost" : 0, "CherryCost" : 0, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 0,
 		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 0,
 	},
@@ -13,7 +13,7 @@ var Research = {
 		"Name" : "1.5x Oak and Apple wpc",
 		"Description" : "Multiplies Oak and Apple Wood Per Click gain by 1.5",
 		"Time" : 35, # Seconds
-		"OakCost" : 1, "AppleCost" : 1, "MapleCost" : 0, "BirchCost" : 0, "SpruceCost" : 0,
+		"OakCost" : 2000, "AppleCost" : 2000, "MapleCost" : 0, "BirchCost" : 0, "SpruceCost" : 0,
 		"ChestnutCost" : 0, "CherryCost" : 0, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 0,
 		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 0,
 	},
@@ -21,7 +21,7 @@ var Research = {
 		"Name" : "Unlock Markets",
 		"Description" : "Unlocks the Market Tab allows selling wood",
 		"Time" : 110, # Seconds
-		"OakCost" : 1, "AppleCost" : 0, "MapleCost" : 0, "BirchCost" : 0, "SpruceCost" : 0,
+		"OakCost" : 2450, "AppleCost" : 0, "MapleCost" : 0, "BirchCost" : 0, "SpruceCost" : 0,
 		"ChestnutCost" : 0, "CherryCost" : 0, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 0,
 		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 0,
 	},
@@ -29,7 +29,7 @@ var Research = {
 		"Name" : "Unlock Woodcamps",
 		"Description" : "Unlocks woodcamps, that are used for wood over time gain",
 		"Time" : 120, # Seconds
-		"OakCost" : 1, "AppleCost" : 1, "MapleCost" : 0, "BirchCost" : 0, "SpruceCost" : 0,
+		"OakCost" : 2550, "AppleCost" : 2550, "MapleCost" : 0, "BirchCost" : 0, "SpruceCost" : 0,
 		"ChestnutCost" : 0, "CherryCost" : 0, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 0,
 		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 0,
 	},
@@ -77,7 +77,7 @@ var Research = {
 		"Name" : "2.5x Storage",
 		"Description" : "Multiplies all wood type storage by 2.5",
 		"Time" : 350, # Seconds
-		"OakCost" : 27000, "AppleCost" : 19000, "MapleCost" : 1250, "BirchCost" : 0, "SpruceCost" : 0,
+		"OakCost" : 24000, "AppleCost" : 20000, "MapleCost" : 2000, "BirchCost" : 0, "SpruceCost" : 0,
 		"ChestnutCost" : 0, "CherryCost" : 0, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 0,
 		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 0,
 	},
@@ -85,7 +85,7 @@ var Research = {
 		"Name" : "woodcamps 30% cheaper",
 		"Description" : "Lowers all wood type woodcamp cost by 30%",
 		"Time" : 350, # Seconds
-		"OakCost" : 43000, "AppleCost" : 31500, "MapleCost" : 4000, "BirchCost" : 0, "SpruceCost" : 0,
+		"OakCost" : 43000, "AppleCost" : 34500, "MapleCost" : 4000, "BirchCost" : 0, "SpruceCost" : 0,
 		"ChestnutCost" : 0, "CherryCost" : 0, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 0,
 		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 0,
 	},
@@ -93,7 +93,7 @@ var Research = {
 		"Name" : "Maple WPS 3x",
 		"Description" : "Triples Maple wood gain per second",
 		"Time" : 450, # Seconds
-		"OakCost" : 77500, "AppleCost" : 65000, "MapleCost" : 0, "BirchCost" : 0, "SpruceCost" : 0,
+		"OakCost" : 67500, "AppleCost" : 55000, "MapleCost" : 0, "BirchCost" : 0, "SpruceCost" : 0,
 		"ChestnutCost" : 0, "CherryCost" : 0, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 0,
 		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 0,
 	},
@@ -109,23 +109,23 @@ var Research = {
 		"Name" : "wood sells for 22% more gold",
 		"Description" : "All wood types sell for 22% more gold in the Market",
 		"Time" : 640, # Seconds
-		"OakCost" : 120000, "AppleCost" : 85000, "MapleCost" : 22500, "BirchCost" : 0, "SpruceCost" : 0,
+		"OakCost" : 100000, "AppleCost" : 85000, "MapleCost" : 22500, "BirchCost" : 0, "SpruceCost" : 0,
 		"ChestnutCost" : 0, "CherryCost" : 0, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 0,
 		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 0,
 	},
 	"12" :  {
-		"Name" : "Woodcamp base storage +200",
-		"Description" : "Increases all woodcamp base storage by 200",
+		"Name" : "Woodcamp base storage +500",
+		"Description" : "Increases all woodcamp base storage by 500",
 		"Time" : 1180, # Seconds
-		"OakCost" : 200000, "AppleCost" : 0, "MapleCost" : 0, "BirchCost" : 0, "SpruceCost" : 0,
+		"OakCost" : 105000, "AppleCost" : 0, "MapleCost" : 0, "BirchCost" : 0, "SpruceCost" : 0,
 		"ChestnutCost" : 0, "CherryCost" : 0, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 0,
 		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 0,
 	},
-	"13" :  {
+	"13" :  { # Rethink
 		"Name" : "wpc per wc +10",
 		"Description" : "Doubles Storage for all Classic Wood",
 		"Time" : 360, # Seconds
-		"OakCost" : 0, "AppleCost" : 110000, "MapleCost" : 15000, "BirchCost" : 0, "SpruceCost" : 0,
+		"OakCost" : 0, "AppleCost" : 125000, "MapleCost" : 35000, "BirchCost" : 0, "SpruceCost" : 0,
 		"ChestnutCost" : 0, "CherryCost" : 0, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 0,
 		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 0,
 	},
@@ -133,11 +133,11 @@ var Research = {
 		"Name" : "Unlock Birch Wood",
 		"Description" : "Doubles Storage for all Classic Wood",
 		"Time" : 360, # Seconds
-		"OakCost" : 275000, "AppleCost" : 150000, "MapleCost" : 25000, "BirchCost" : 0, "SpruceCost" : 0,
+		"OakCost" : 110000, "AppleCost" : 150000, "MapleCost" : 45000, "BirchCost" : 0, "SpruceCost" : 0,
 		"ChestnutCost" : 0, "CherryCost" : 0, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 0,
 		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 0,
 	},
-	"14b" :  {
+	"14b" :  { # This needs to be a Magic upgrade
 		"Name" : "All wood types start with 5 beavers",
 		"Description" : "Maple Yum!",
 		"Time" : 1180, # Seconds

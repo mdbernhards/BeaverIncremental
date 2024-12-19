@@ -1,6 +1,6 @@
 extends ColorRect
 
-var FishingStarted = false
+var IsFishing = false
 
 var RNG = RandomNumberGenerator.new()
 
@@ -12,8 +12,14 @@ var BetterFishMultiplier
 var LongerTimeFishMultiplier
 var BaitMultiplier
 
+# Nodes
 var SpawnTimer
 var FishBounceBar
+var Fish
+var FishingGameLogic
+var FishingTimeoutTimer
+var TimeoutBar
+var TimeoutLabel
 
 var IsBouncing = false
 var BarUp = true
@@ -30,6 +36,13 @@ func _process(delta: float) -> void:
 	
 	if IsBouncing:
 		RunBounceProgressBar(delta)
+		
+	if IsFishing:
+		TimeoutBar.visible = true
+		TimeoutBar.value = remap(FishingTimeoutTimer.time_left, 0, 20, 0, 100)
+		TimeoutLabel.text = str(roundi(FishingTimeoutTimer.time_left))
+	else:
+		TimeoutBar.visible = false
 
 func RunBounceProgressBar(delta):
 	if BarUp:
@@ -45,6 +58,10 @@ func RunBounceProgressBar(delta):
 func startFishing():
 	updateFishingValues()
 	StartSpawningFish()
+	StartFishingTimeout()
+
+func StartFishingTimeout():
+	FishingTimeoutTimer.start()
 
 func updateFishingValues():
 	FishingWoodMultiplier = Values.ResourceValues["Fish"]["FishingWoodMultip"]
@@ -67,16 +84,21 @@ func checkIfFishCaught():
 	IsBouncing = false
 
 func SetNodePaths():
-	SpawnTimer = $FishingGameLogicNode/SpawnTimer
-	FishBounceBar = $FishingGameLogicNode/FishBounceBar
+	SpawnTimer = $FishingGameLogic/SpawnTimer
+	FishBounceBar = $FishingGameLogic/FishBounceBar
+	Fish = $FishingGameLogic/Fish
+	FishingGameLogic = $FishingGameLogic
+	FishingTimeoutTimer = $FishingGameLogic/FishingTimeoutTimer
+	TimeoutBar = $FishingGameLogic/TimeoutBar
+	TimeoutLabel = $FishingGameLogic/TimeoutBar/TimeoutLabel
 
 func StartSpawningFish():
-	FishingStarted = true
+	IsFishing = true
 	SpawnTimer.wait_time = RNG.randf_range(2, 7)
 	SpawnTimer.start()
 
 func StopSpawningFish():
-	FishingStarted = false
+	IsFishing = false
 	SpawnTimer.stop()
 
 func _on_spawn_timer_timeout() -> void:
@@ -89,7 +111,7 @@ func spawnFish():
 	var tempFish = FishObjectScene.instantiate()
 	tempFish.FishType = fishType
 	tempFish.FishHooked.connect(startFishCatchPhase)
-	$FishingGameLogicNode.add_child(tempFish)
+	Fish.add_child(tempFish)
 
 func startFishCatchPhase(fishType):
 	IsBouncing = true
@@ -100,5 +122,9 @@ func addSignalToAllTestingFish():
 		fish.FishHooked.connect(startFishCatchPhase)
 
 func deleteAllFish():
-	for fish in $FishingGameLogicNode.get_children():
+	for fish in Fish.get_children():
 		fish.queue_free()
+
+func _on_fishing_timeout_timer_timeout() -> void:
+	StopSpawningFish()
+	deleteAllFish()
