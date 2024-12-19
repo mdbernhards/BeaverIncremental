@@ -24,7 +24,7 @@ var UpgradePositions = {
 var Upgrades = {
 	"Oak" : {
 		"1" : {
-			"Name" : "+0.25 Oak per Beaver",
+			"Name" : "Oak per Beaver +0.25",
 			"Description" : "Increases base Oak gathered by Beaver by 0.25",
 			"OtherText" : "",
 		},
@@ -50,7 +50,7 @@ var Upgrades = {
 			"OtherText" : "",
 		},
 		"6" :  {
-			"Name" : "+1 beaver from WC",
+			"Name" : "Per WC +1 Beaver",
 			"Description" : "",
 			"OtherText" : "",
 		},
@@ -80,7 +80,7 @@ var Upgrades = {
 			"OtherText" : "",
 		},
 		"12" :  {
-			"Name" : "5% more Magic",
+			"Name" : "5% More Magic",
 			"Description" : "",
 			"OtherText" : "",
 		},
@@ -95,7 +95,7 @@ var Upgrades = {
 			"OtherText" : "",
 		},
 		"15" :  {
-			"Name" : "2% more fish",
+			"Name" : "2% More Fish",
 			"Description" : "",
 			"OtherText" : "",
 		},
@@ -117,7 +117,7 @@ var Upgrades = {
 	},
 	"Apple" : {
 		"1" : {
-			"Name" : "+0.3 Apple per Beaver",
+			"Name" : "Apple per Beaver +0.3",
 			"Description" : "Increases base Apple gathered by Beaver by 0.3",
 			"OtherText" : "",
 		},
@@ -132,7 +132,7 @@ var Upgrades = {
 			"OtherText" : "",
 		},
 		"4" :  {
-			"Name" : "wps 4.5%",
+			"Name" : "WPS 4.5%",
 			"Description" : "",
 			"OtherText" : "",
 		},
@@ -143,12 +143,12 @@ var Upgrades = {
 		},
 		"6" :  {
 			"Name" : "Unlock Research",
-			"SecondaryName" : "7.5% storage",
+			"SecondaryName" : "7.5% Storage",
 			"Description" : "Unlocks Research",
 			"OtherText" : "",
 		},
 		"7" :  {
-			"Name" : "9% cheaper Beavers",
+			"Name" : "9% Cheaper Beavers",
 			"Description" : "",
 			"OtherText" : "",
 		},
@@ -210,7 +210,7 @@ var Upgrades = {
 	},
 	"Maple" : {
 		"1" : {
-			"Name" : "+0.35 Maple per Beaver",
+			"Name" : "Maple per Beaver +0.35",
 			"Description" : "Increases base Maple gathered by Beaver by 0.35",
 			"OtherText" : "",
 		},
@@ -302,7 +302,7 @@ var Upgrades = {
 	},
 	"Birch" : {
 		"1" : {
-			"Name" : "+0.4 Birch per Beaver",
+			"Name" : "Birch per Beaver +0.4",
 			"Description" : "Increases base Birch gathered by Beaver by 0.4",
 			"OtherText" : "",
 		},
@@ -394,7 +394,7 @@ var Upgrades = {
 	},
 	"Spruce" : {
 		"1" : {
-			"Name" : "+0.45 Birch per Beaver",
+			"Name" : "Birch per Beaver +0.45",
 			"Description" : "Increases base Spruce gathered by Beaver by 0.45",
 			"OtherText" : "",
 		},
@@ -486,7 +486,7 @@ var Upgrades = {
 	},
 	"Chestnut" : {
 		"1" : {
-			"Name" : "+0.5 Chestnut per Beaver",
+			"Name" : "Chestnut per Beaver +0.5",
 			"Description" : "Increases base Chestnut gathered by Beaver by 0.5",
 			"OtherText" : "",
 		},
@@ -578,7 +578,7 @@ var Upgrades = {
 	},
 	"Cherry" : {
 		"1" : {
-			"Name" : "+0.55 Cherry per Beaver",
+			"Name" : "Cherry per Beaver +0.55",
 			"Description" : "Increases base Cherry gathered by Beaver by 0.55",
 			"OtherText" : "",
 		},
@@ -670,7 +670,7 @@ var Upgrades = {
 	},
 	"Ash" : {
 		"1" : {
-			"Name" : "+0.6 Ash per Beaver",
+			"Name" : "Ash per Beaver +0.6",
 			"Description" : "Increases base Ash gathered by Beaver by 0.6",
 			"OtherText" : "",
 		},
@@ -762,7 +762,7 @@ var Upgrades = {
 	},
 	"Cedar" : {
 		"1" : {
-			"Name" : "+0.65 Cedar per Beaver",
+			"Name" : "Cedar per Beaver +0.65",
 			"Description" : "Increases base Cedar gathered by Beaver by 0.65",
 			"OtherText" : "",
 		},
@@ -854,7 +854,7 @@ var Upgrades = {
 	},
 	"Mahogany" : {
 		"1" : {
-			"Name" : "+0.7 Mahogany per Beaver",
+			"Name" : "Mahogany per Beaver +0.7",
 			"Description" : "Increases base Mahogany gathered by Beaver by 0.7",
 			"OtherText" : "",
 		},
@@ -946,7 +946,7 @@ var Upgrades = {
 	},
 	"Ebony" : {
 		"1" : {
-			"Name" : "+0.75 Ebony per Beaver",
+			"Name" : "Ebony per Beaver +0.75",
 			"Description" : "Increases base Ebony gathered by Beaver by 0.75",
 			"OtherText" : "",
 		},
@@ -1038,7 +1038,7 @@ var Upgrades = {
 	},
 	"Dogwood" : {
 		"1" : {
-			"Name" : "+0.8 Dogwood per Beaver",
+			"Name" : "Dogwood per Beaver +0.8",
 			"Description" : "Increases base Dogwood gathered by Beaver by 0.8",
 			"OtherText" : "",
 		},
@@ -1130,7 +1130,7 @@ var Upgrades = {
 	},
 	"Rosewood" : {
 		"1" : {
-			"Name" : "+0.85 Rosewood per Beaver",
+			"Name" : "Rosewood per Beaver +0.85",
 			"Description" : "Increases base Rosewood gathered by Beaver by 0.85",
 			"OtherText" : "",
 		},
@@ -1222,7 +1222,7 @@ var Upgrades = {
 	},
 	"Ghost Gum" : {
 		"1" : {
-			"Name" : "+0.9 Ghost Gum per Beaver",
+			"Name" : "Ghost Gum per Beaver +0.9",
 			"Description" : "Increases base Ghost Gum gathered by Beaver by 0.9",
 			"OtherText" : "",
 		},
@@ -1314,7 +1314,7 @@ var Upgrades = {
 	},
 	"Dragonwood" : {
 		"1" : {
-			"Name" : "+0.95 Dragonwood per Beaver",
+			"Name" : "Dragonwood per Beaver +0.95",
 			"Description" : "Increases base Dragonwood gathered by Beaver by 0.95",
 			"OtherText" : "",
 		},

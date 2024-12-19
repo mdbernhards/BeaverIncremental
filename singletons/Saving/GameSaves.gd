@@ -22,7 +22,7 @@ func addSaveFileToInfo(saveName):
 	
 	SaveData.SavesInfo[saveName] = {
 		"SaveName" = saveName,
-		"LastSavedTimeStamp" = Time.get_time_dict_from_system(),
+		"LastSavedTimeStamp" = Time.get_datetime_dict_from_system(),
 		"TimePlayed" = 0,
 		"MagicEarned" = 0,
 	}
@@ -70,8 +70,8 @@ func saveGame(saveName):
 	var jsonResearchInfo = JSON.stringify(var_to_str(SaveData.ResearchInfo))
 	saveFile.store_line(jsonResearchInfo)
 	
-	var jsonUnlockedDams = JSON.stringify(var_to_str(SaveData.UnlockedDams))
-	saveFile.store_line(jsonUnlockedDams)
+	var jsonDamData = JSON.stringify(var_to_str(SaveData.DamData))
+	saveFile.store_line(jsonDamData)
 	
 	var jsonCaughtFish = JSON.stringify(var_to_str(SaveData.CaughtFish))
 	saveFile.store_line(jsonCaughtFish)
@@ -117,8 +117,8 @@ func saveNewGame(saveName):
 	var jsonResearchInfo = JSON.stringify(var_to_str(SaveData.OriginalResearchInfo))
 	saveFile.store_line(jsonResearchInfo)
 	
-	var jsonUnlockedDams = JSON.stringify(var_to_str(SaveData.OriginalUnlockedDams))
-	saveFile.store_line(jsonUnlockedDams)
+	var jsonDamData = JSON.stringify(var_to_str(SaveData.OriginalDamData))
+	saveFile.store_line(jsonDamData)
 	
 	var jsonCaughtFish = JSON.stringify(var_to_str(SaveData.OriginalCaughtFish))
 	saveFile.store_line(jsonCaughtFish)
@@ -162,8 +162,8 @@ func loadGame(saveName):
 	var jsonResearchInfo = saveFile.get_line()
 	SaveData.ResearchInfo = parseJson(jsonResearchInfo)
 	
-	var jsonUnlockedDams = saveFile.get_line()
-	SaveData.UnlockedDams = parseJson(jsonUnlockedDams)
+	var jsonDamData = saveFile.get_line()
+	SaveData.DamData = parseJson(jsonDamData)
 	
 	var jsonCaughtFish = saveFile.get_line()
 	SaveData.CaughtFish = parseJson(jsonCaughtFish)

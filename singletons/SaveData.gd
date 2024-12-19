@@ -6,7 +6,7 @@ var OriginalResources
 var OriginalUpgrades
 var OriginalUnlockedResearch
 var OriginalResearchInfo
-var OriginalUnlockedDams
+var OriginalDamData
 var OriginalCaughtFish
 var OriginalBait
 var OriginalMagic
@@ -23,7 +23,7 @@ func getOriginalValues():
 	OriginalResources = Resources.duplicate(true)
 	OriginalUpgrades = Upgrades.duplicate(true)
 	OriginalUnlockedResearch = UnlockedResearch.duplicate(true)
-	OriginalUnlockedDams = UnlockedDams.duplicate(true)
+	OriginalDamData = DamData.duplicate(true)
 	OriginalCaughtFish = CaughtFish.duplicate(true)
 	OriginalBait = Bait.duplicate(true)
 	OriginalResearchInfo = ResearchInfo.duplicate(true)
@@ -38,7 +38,7 @@ func resetValues():
 	Resources = OriginalResources.duplicate(true)
 	Upgrades = OriginalUpgrades.duplicate(true)
 	UnlockedResearch = OriginalUnlockedResearch.duplicate(true)
-	UnlockedDams = OriginalUnlockedDams.duplicate(true)
+	DamData = OriginalDamData.duplicate(true)
 	CaughtFish = OriginalCaughtFish.duplicate(true)
 	Bait = OriginalBait.duplicate(true)
 	ResearchInfo = OriginalResearchInfo.duplicate(true)
@@ -1171,11 +1171,27 @@ var ResearchInfo = {
 	"ResearchAtATime" : 1,
 }
 
-var UnlockedDams = {
-	"1" : false,
-	"2" : false,
-	"3" : false,
-	"4" : false,
+var DamData = {
+	Dams.DamEnum.SmallDam : {
+		"Count" : 0,
+		"CurrentlyInProgress" : [],
+	},
+	Dams.DamEnum.MediumDam : {
+		"Count" : 0,
+		"CurrentlyInProgress" : [],
+	},
+	Dams.DamEnum.BigDam : {
+		"Count" : 0,
+		"CurrentlyInProgress" : [],
+	},
+	Dams.DamEnum.GiantDam : {
+		"Count" : 0,
+		"CurrentlyInProgress" : [],
+	},
+	Dams.DamEnum.MegaDam : {
+		"Count" : 0,
+		"CurrentlyInProgress" : [],
+	},
 }
 
 var CaughtFish = {

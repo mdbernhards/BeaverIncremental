@@ -46,10 +46,13 @@ func getSaveData(saveName):
 	
 	SaveInfo = SaveData.SavesInfo[saveName]
 	
+	var dateDictionary = SaveInfo.LastSavedTimeStamp
+	var timeStamp = str(dateDictionary.hour) + ":" + str(dateDictionary.minute) + ":" + str(dateDictionary.second) + "  " + str(dateDictionary.day) + "." + str(dateDictionary.month) + "." + str(dateDictionary.year)
+	
 	SaveNameLabel.text = SaveInfo.SaveName
-	SaveTimeStampLabel.text = str(SaveInfo.LastSavedTimeStamp)
-	TimePlayedLabel.text = str(SaveInfo.TimePlayed)
-	MagicEarnedLabel.text = str(SaveInfo.MagicEarned)
+	SaveTimeStampLabel.text = "Last Saved: " + timeStamp
+	TimePlayedLabel.text = "Time Played: " + str(SaveInfo.TimePlayed)
+	MagicEarnedLabel.text = "Magic: " + str(SaveInfo.MagicEarned)
 	
 	SaveState = SaveSlotEnum.Existing
 

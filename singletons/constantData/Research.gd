@@ -3,7 +3,7 @@ extends Node
 var Research = {
 	"3" :  {
 		"Name" : "65% more storage",
-		"Description" : "Doubles Storage for all Classic Wood",
+		"Description" : "All storage capacity increased by 65%",
 		"Time" : 25, # Seconds
 		"OakCost" : 1, "AppleCost" : 1, "MapleCost" : 0, "BirchCost" : 0, "SpruceCost" : 0,
 		"ChestnutCost" : 0, "CherryCost" : 0, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 0,
@@ -11,7 +11,7 @@ var Research = {
 	},
 	"6b" :  {
 		"Name" : "1.5x Oak and Apple wpc",
-		"Description" : "Doubles Storage for all Classic Wood",
+		"Description" : "Multiplies Oak and Apple Wood Per Click gain by 1.5",
 		"Time" : 35, # Seconds
 		"OakCost" : 1, "AppleCost" : 1, "MapleCost" : 0, "BirchCost" : 0, "SpruceCost" : 0,
 		"ChestnutCost" : 0, "CherryCost" : 0, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 0,
@@ -19,7 +19,7 @@ var Research = {
 	},
 	"9" :  {
 		"Name" : "Unlock Markets",
-		"Description" : "Doubles Storage for all Classic Wood",
+		"Description" : "Unlocks the Market Tab allows selling wood",
 		"Time" : 110, # Seconds
 		"OakCost" : 1, "AppleCost" : 0, "MapleCost" : 0, "BirchCost" : 0, "SpruceCost" : 0,
 		"ChestnutCost" : 0, "CherryCost" : 0, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 0,
@@ -27,7 +27,7 @@ var Research = {
 	},
 	"1" : {
 		"Name" : "Unlock Woodcamps",
-		"Description" : "Allows building woodcamps, unlocks woodcamp upgrades",
+		"Description" : "Unlocks woodcamps, that are used for wood over time gain",
 		"Time" : 120, # Seconds
 		"OakCost" : 1, "AppleCost" : 1, "MapleCost" : 0, "BirchCost" : 0, "SpruceCost" : 0,
 		"ChestnutCost" : 0, "CherryCost" : 0, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 0,
@@ -35,7 +35,7 @@ var Research = {
 	},
 	"5" :  {
 		"Name" : "Oak and Apple upgrades -25%",
-		"Description" : "Make Apple and Oak upgrades -15% cheaper",
+		"Description" : "Makes Apple and Oak upgrades 25% cheaper",
 		"Time" : 140, # Seconds
 		"OakCost" : 3200, "AppleCost" : 2500, "MapleCost" : 0, "BirchCost" : 0, "SpruceCost" : 0,
 		"ChestnutCost" : 0, "CherryCost" : 0, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 0,
@@ -43,7 +43,7 @@ var Research = {
 	},
 	"2" :  {
 		"Name" : "1.2x Oak WPS and WPC and 2x Storage",
-		"Description" : "Maple Yum!",
+		"Description" : "Multiplies Oaks Wood per second and Wood per click by 1.2 and storage by 2",
 		"Time" : 210, # Seconds
 		"OakCost" : 5000, "AppleCost" : 5100, "MapleCost" : 0, "BirchCost" : 0, "SpruceCost" : 0,
 		"ChestnutCost" : 0, "CherryCost" : 0, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 0,
@@ -51,7 +51,7 @@ var Research = {
 	},
 	"2b" :  {
 		"Name" : "1.5x Apple WPS",
-		"Description" : "Maple Yum!",
+		"Description" : "Increases Apple Wood Per Second by 1.5",
 		"Time" : 220, # Seconds
 		"OakCost" : 12500, "AppleCost" : 7300, "MapleCost" : 0, "BirchCost" : 0, "SpruceCost" : 0,
 		"ChestnutCost" : 0, "CherryCost" : 0, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 0,
@@ -59,7 +59,7 @@ var Research = {
 	},
 	"4" :  {
 		"Name" : "Unlock Maple Wood",
-		"Description" : "Doubles Storage for all Classic Wood",
+		"Description" : "Unlock Maple Wood",
 		"Time" : 260, # Seconds
 		"OakCost" : 14500, "AppleCost" : 10500, "MapleCost" : 0, "BirchCost" : 0, "SpruceCost" : 0,
 		"ChestnutCost" : 0, "CherryCost" : 0, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 0,
@@ -67,7 +67,7 @@ var Research = {
 	},
 	"6" :  {
 		"Name" : "25% more WPS",
-		"Description" : "Doubles Storage for all Classic Wood",
+		"Description" : "Increases per second gain for all wood types by 25%",
 		"Time" : 310, # Seconds
 		"OakCost" : 20000, "AppleCost" : 14000, "MapleCost" : 1000, "BirchCost" : 0, "SpruceCost" : 0,
 		"ChestnutCost" : 0, "CherryCost" : 0, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 0,
@@ -75,7 +75,7 @@ var Research = {
 	},
 	"6c" :  {
 		"Name" : "2.5x Storage",
-		"Description" : "Doubles Storage for all Classic Wood",
+		"Description" : "Multiplies all wood type storage by 2.5",
 		"Time" : 350, # Seconds
 		"OakCost" : 27000, "AppleCost" : 19000, "MapleCost" : 1250, "BirchCost" : 0, "SpruceCost" : 0,
 		"ChestnutCost" : 0, "CherryCost" : 0, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 0,
@@ -83,7 +83,7 @@ var Research = {
 	},
 	"8" :  {
 		"Name" : "woodcamps 30% cheaper",
-		"Description" : "Doubles Storage for all Classic Wood",
+		"Description" : "Lowers all wood type woodcamp cost by 30%",
 		"Time" : 350, # Seconds
 		"OakCost" : 43000, "AppleCost" : 31500, "MapleCost" : 4000, "BirchCost" : 0, "SpruceCost" : 0,
 		"ChestnutCost" : 0, "CherryCost" : 0, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 0,
@@ -91,15 +91,15 @@ var Research = {
 	},
 	"7" :  {
 		"Name" : "Maple WPS 3x",
-		"Description" : "Doubles Storage for all Classic Wood",
+		"Description" : "Triples Maple wood gain per second",
 		"Time" : 450, # Seconds
 		"OakCost" : 77500, "AppleCost" : 65000, "MapleCost" : 0, "BirchCost" : 0, "SpruceCost" : 0,
 		"ChestnutCost" : 0, "CherryCost" : 0, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 0,
 		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 0,
 	},
 	"10" :  {
-		"Name" : "WoodCamps use 10% less wood",
-		"Description" : "WoodCamps use 10% less wood",
+		"Name" : "Woodcamps use 10% less wood",
+		"Description" : "Woodcamps use 10% less lower tier wood to produce higher tier wood",
 		"Time" : 580, # Seconds
 		"OakCost" : 0, "AppleCost" : 0, "MapleCost" : 20000, "BirchCost" : 0, "SpruceCost" : 0,
 		"ChestnutCost" : 0, "CherryCost" : 0, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 0,
@@ -107,7 +107,7 @@ var Research = {
 	},
 	"11" :  {
 		"Name" : "wood sells for 22% more gold",
-		"Description" : "Doubles Storage for all Classic Wood",
+		"Description" : "All wood types sell for 22% more gold in the Market",
 		"Time" : 640, # Seconds
 		"OakCost" : 120000, "AppleCost" : 85000, "MapleCost" : 22500, "BirchCost" : 0, "SpruceCost" : 0,
 		"ChestnutCost" : 0, "CherryCost" : 0, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 0,
@@ -115,7 +115,7 @@ var Research = {
 	},
 	"12" :  {
 		"Name" : "Woodcamp base storage +200",
-		"Description" : "Maple Yum!",
+		"Description" : "Increases all woodcamp base storage by 200",
 		"Time" : 1180, # Seconds
 		"OakCost" : 200000, "AppleCost" : 0, "MapleCost" : 0, "BirchCost" : 0, "SpruceCost" : 0,
 		"ChestnutCost" : 0, "CherryCost" : 0, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 0,
