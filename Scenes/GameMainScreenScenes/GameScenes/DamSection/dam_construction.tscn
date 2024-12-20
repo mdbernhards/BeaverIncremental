@@ -38,6 +38,8 @@ layout_mode = 2
 
 [node name="ConstructionItem2" parent="MC2/MC/ConstructionHBox" instance=ExtResource("1_qe463")]
 layout_mode = 2
+ItemNum = 1
 
 [node name="ConstructionItem3" parent="MC2/MC/ConstructionHBox" instance=ExtResource("1_qe463")]
 layout_mode = 2
+ItemNum = 2

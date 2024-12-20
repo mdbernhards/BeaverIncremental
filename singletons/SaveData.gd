@@ -1173,22 +1173,27 @@ var ResearchInfo = {
 
 var DamData = {
 	Dams.DamEnum.SmallDam : {
+		"AvailableBuilds" : 1,
 		"Count" : 0,
 		"CurrentlyInProgress" : [],
 	},
 	Dams.DamEnum.MediumDam : {
+		"AvailableBuilds" : 1,
 		"Count" : 0,
 		"CurrentlyInProgress" : [],
 	},
 	Dams.DamEnum.BigDam : {
+		"AvailableBuilds" : 1,
 		"Count" : 0,
 		"CurrentlyInProgress" : [],
 	},
 	Dams.DamEnum.GiantDam : {
+		"AvailableBuilds" : 1,
 		"Count" : 0,
 		"CurrentlyInProgress" : [],
 	},
 	Dams.DamEnum.MegaDam : {
+		"AvailableBuilds" : 1,
 		"Count" : 0,
 		"CurrentlyInProgress" : [],
 	},
