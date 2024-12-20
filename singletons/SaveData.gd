@@ -1175,7 +1175,7 @@ var DamData = {
 	Dams.DamEnum.SmallDam : {
 		"AvailableBuilds" : 1,
 		"Count" : 0,
-		"CurrentlyInProgress" : [],
+		"CurrentlyInProgress" : [4],
 	},
 	Dams.DamEnum.MediumDam : {
 		"AvailableBuilds" : 1,

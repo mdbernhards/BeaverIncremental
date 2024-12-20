@@ -15,6 +15,12 @@ enum DamParts {
 	Fourth,
 }
 
+enum ItemNumberEnum {
+	one = 1,
+	two = 2,
+	three = 3,
+}
+
 var Dams = {
 	DamEnum.SmallDam : {
 		"Name" : "Small Dam",

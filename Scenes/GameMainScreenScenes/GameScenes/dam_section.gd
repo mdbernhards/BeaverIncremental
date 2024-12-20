@@ -7,17 +7,9 @@ var BigDamConstruction
 var GiantDamConstruction
 var MegaDamConstruction
 
-enum DamEnum {
-	SmallDam,
-	MediumDam,
-	BigDam,
-	GiantDam,
-	MegaDam,
-}
-
 func _ready() -> void:
 	setupNodePaths()
-	showConstructionPage(DamEnum.SmallDam)
+	showConstructionPage(Dams.DamEnum.SmallDam)
 
 func _process(delta: float) -> void:
 	pass
@@ -26,15 +18,15 @@ func showConstructionPage(damType):
 	hideAllConstruction()
 	
 	match damType:
-		DamEnum.SmallDam:
+		Dams.DamEnum.SmallDam:
 			SmallDamConstruction.visible = true
-		DamEnum.MediumDam:
+		Dams.DamEnum.MediumDam:
 			MediumDamConstruction.visible = true
-		DamEnum.BigDam:
+		Dams.DamEnum.BigDam:
 			BigDamConstruction.visible = true
-		DamEnum.GiantDam:
+		Dams.DamEnum.GiantDam:
 			GiantDamConstruction.visible = true
-		DamEnum.MegaDam:
+		Dams.DamEnum.MegaDam:
 			MegaDamConstruction.visible = true
 
 func hideAllConstruction():

@@ -1,0 +1,57 @@
+To do all things I can think of:
+First:
+Production slider value doesn't get saved (need to set the value when loading)
+Buy max buttons logic for markets
+Missing upgrades (need to add new upgrades for the new dam logic, like: resource cost (buying to start), how mutch resources used(building, resources over time))
+have first 9 upgrades about improving the wood it self and the last nine about improving other stuff
+add secondary color use in resource bars and markets, myb other places
+All Dam Logic
+maybe rename ascension to prestege
+bait shop logic
+Fish screen if no fish show "no fish!"
+make saves nice (maybe show gold on save info and show gold and magic labels only when you get some)
+Fix issue of the amount being that you can aford, but you actualy can't (for all count labels always round down)
+set up first 9 upgrades for maple
+apple upgrade 11 lower wood price effect and make more expensive 150k+?
+There probably shouldn't be permanent research (only when proper upgrade), so move magic upgrades to just be when you have had atleast 1 magic
+And maybe achievements could be a magic upgrade
+FoS visible when achievements unlocked, but achievemnts hidden until unlocked or specific research
+Research 14b needs to be moved to magic upgrades
+TempValues["Global"]["WcBaseStorage"] specificaly research 12 doesn't seem to get applied and idk why?? 
+Apple upgrade 12 works in reverse
+
+Later:
+Buy max buttons logic for fishing (or myb ctrl click to max buy or a toggle like in other games i think?)
+Think if more magic upgrades need to be added
+balancing all of the game
+Start adding achievemnent and FoS triggers
+Tooltips for everything
+Think what will magic buff, display the effects in ascension screen
+Fish swim, spawn, despawn logic
+Bait logic
+Add fishing spot logic, different fish in different spots
+Settings screen
+Music, music player
+Sound effects?
+Change achievements to be icons from icon packs
+scroll log, story
+tooltips for different things in scroll log (now I know it's doable in google doc)
+All upgrade, research, magic, dam, achievement names and descriptions (maybe upgrade descriptive names, cute descriptions and for research other way around but rename description to effect:)
+Use big numbers like 1.33 * 10^15
+All unlock locations and triggers added,
+Research history
+Storage overloading
+Upgrade level cap at 100
+Add upgrade beavers to the beaver count as a seperate value like (+ 5)
+check if maple upgrade 7 gets applied and then display it in research (cheaper research) maybe actualy remove it because its not good, just let research values be static?
+
+
+Done:
+Add save delete button DONE
+Fix unlocked research being able to be seen and research after game load from save DONE
+Look at bot price DONE
+buy max for woodcamps, beavers, upgrades, upgrade tab and upgrade page DONE
+Need to save inprogress upgrades aswell DONE
+Something is fucked with saves, current research gets carried over when loading DONE
+Implement Research queue DONE
+Fishing time out DONE

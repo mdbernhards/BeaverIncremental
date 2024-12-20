@@ -16,6 +16,7 @@ layout_mode = 2
 color = Color(0.31802, 0.31802, 0.31802, 1)
 
 [node name="CurrentConstructionVBox" type="VBoxContainer" parent="."]
+visible = false
 layout_mode = 2
 theme_override_constants/separation = 13
 
@@ -160,7 +161,7 @@ theme_override_constants/margin_bottom = -3
 layout_mode = 2
 theme_override_colors/font_color = Color(0.219501, 0.219501, 0.219501, 1)
 theme_override_font_sizes/font_size = 12
-text = "80%"
+text = "100%"
 horizontal_alignment = 1
 
 [node name="MC3" type="MarginContainer" parent="CurrentConstructionVBox/VBox/MC/ColorRect/VBox"]
@@ -170,6 +171,7 @@ theme_override_constants/margin_right = 10
 
 [node name="ConstructionSpeedSlider" type="HSlider" parent="CurrentConstructionVBox/VBox/MC/ColorRect/VBox/MC3"]
 layout_mode = 2
+value = 100.0
 
 [node name="LockedVBox" type="VBoxContainer" parent="."]
 visible = false
@@ -185,12 +187,11 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="UnlockedVBox" type="VBoxContainer" parent="."]
-visible = false
 layout_mode = 2
-theme_override_constants/separation = 25
-alignment = 1
+theme_override_constants/separation = 12
 
 [node name="WaitingLabel" type="Label" parent="UnlockedVBox"]
+custom_minimum_size = Vector2(0, 130)
 layout_mode = 2
 size_flags_vertical = 1
 theme_override_font_sizes/font_size = 30
@@ -215,3 +216,51 @@ grow_vertical = 2
 theme_override_font_sizes/font_size = 23
 text = "Start 
 Building"
+
+[node name="CantAffordRect" type="ColorRect" parent="UnlockedVBox/ColorRect/StartBuildingButton"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.941176, 0, 0, 0.32549)
+
+[node name="MC" type="MarginContainer" parent="UnlockedVBox"]
+layout_mode = 2
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_right = 25
+theme_override_constants/margin_bottom = 0
+
+[node name="Rect" type="ColorRect" parent="UnlockedVBox/MC"]
+layout_mode = 2
+color = Color(0.266575, 0.266575, 0.266575, 1)
+
+[node name="VBox" type="VBoxContainer" parent="UnlockedVBox/MC"]
+layout_mode = 2
+theme_override_constants/separation = 6
+
+[node name="PriceTextLabel" type="Label" parent="UnlockedVBox/MC/VBox"]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 20
+text = "Price"
+horizontal_alignment = 1
+
+[node name="PriceLabel" type="Label" parent="UnlockedVBox/MC/VBox"]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 13
+text = "1 Oak wood
+3 Apple wood
+3 Apple wood
+3 Apple wood
+3 Apple wood"
+horizontal_alignment = 1
+
+[node name="EmptySpace" type="MarginContainer" parent="UnlockedVBox/MC/VBox"]
+layout_mode = 2
+
+[connection signal="value_changed" from="CurrentConstructionVBox/VBox/MC/ColorRect/VBox/MC3/ConstructionSpeedSlider" to="." method="_on_construction_speed_slider_value_changed"]
+[connection signal="button_down" from="UnlockedVBox/ColorRect/StartBuildingButton" to="." method="_on_start_building_button_button_down"]

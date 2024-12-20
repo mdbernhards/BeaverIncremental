@@ -2,31 +2,30 @@ extends VBoxContainer
 
 # Nodes
 var ConstructionLabel
+var ConstructionItem1
+var ConstructionItem2
+var ConstructionItem3
 
-@export var DamType : DamEnum:
+@export var DamType : Dams.DamEnum:
 	set(value):
 		setupNodePaths()
 		DamType = value
 		
 		match value:
-			DamEnum.SmallDam:
+			Dams.DamEnum.SmallDam:
 				ConstructionLabel.text = "Small Dam Construction"
-			DamEnum.MediumDam:
+			Dams.DamEnum.MediumDam:
 				ConstructionLabel.text = "Medium Dam Construction"
-			DamEnum.BigDam:
+			Dams.DamEnum.BigDam:
 				ConstructionLabel.text = "Big Dam Construction"
-			DamEnum.GiantDam:
+			Dams.DamEnum.GiantDam:
 				ConstructionLabel.text = "Giant Dam Construction"
-			DamEnum.MegaDam:
+			Dams.DamEnum.MegaDam:
 				ConstructionLabel.text = "Mega Dam Construction"
-
-enum DamEnum {
-	SmallDam,
-	MediumDam,
-	BigDam,
-	GiantDam,
-	MegaDam,
-}
+		
+		ConstructionItem1.DamType = value
+		ConstructionItem2.DamType = value
+		ConstructionItem3.DamType = value
 
 func _ready() -> void:
 	setupNodePaths()
@@ -36,3 +35,6 @@ func _process(delta: float) -> void:
 
 func setupNodePaths():
 	ConstructionLabel = $ConstructionLabel
+	ConstructionItem1 = $MC2/MC/ConstructionHBox/ConstructionItem1
+	ConstructionItem2 = $MC2/MC/ConstructionHBox/ConstructionItem2
+	ConstructionItem3 = $MC2/MC/ConstructionHBox/ConstructionItem3

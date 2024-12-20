@@ -32,7 +32,7 @@ vertical_alignment = 1
 layout_mode = 2
 theme_override_constants/margin_top = -14
 
-[node name="ResourceSpentLabel" type="Label" parent="MC/VBox/MC"]
+[node name="ResourceNeededLabel" type="Label" parent="MC/VBox/MC"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.325441, 0.325441, 0.325441, 1)
 theme_override_font_sizes/font_size = 13
