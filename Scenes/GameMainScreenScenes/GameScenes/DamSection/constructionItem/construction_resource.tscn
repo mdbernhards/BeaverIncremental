@@ -1,0 +1,58 @@
+[gd_scene load_steps=2 format=3 uid="uid://bv0jyp7y3jsvw"]
+
+[ext_resource type="Script" path="res://Scenes/GameMainScreenScenes/GameScenes/DamSection/constructionItem/construction_resource.gd" id="1_d3yun"]
+
+[node name="ConstructionResource" type="ColorRect"]
+custom_minimum_size = Vector2(170, 85)
+color = Color(0.64073, 0.635153, 0.205061, 1)
+script = ExtResource("1_d3yun")
+
+[node name="MC" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="VBox" type="VBoxContainer" parent="MC"]
+layout_mode = 2
+
+[node name="ResourceNameLabel" type="Label" parent="MC/VBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 17
+text = "Gold"
+vertical_alignment = 1
+
+[node name="MC" type="MarginContainer" parent="MC/VBox"]
+layout_mode = 2
+theme_override_constants/margin_top = -14
+
+[node name="ResourceSpentLabel" type="Label" parent="MC/VBox/MC"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.325441, 0.325441, 0.325441, 1)
+theme_override_font_sizes/font_size = 13
+text = "1.4k / 10k"
+horizontal_alignment = 2
+
+[node name="MC2" type="MarginContainer" parent="MC/VBox"]
+layout_mode = 2
+
+[node name="ResourceProgressBar" type="ProgressBar" parent="MC/VBox/MC2"]
+layout_mode = 2
+
+[node name="MC3" type="MarginContainer" parent="MC/VBox"]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+theme_override_constants/margin_left = 6
+theme_override_constants/margin_top = -3
+
+[node name="ResourcePerSecondLabel" type="Label" parent="MC/VBox/MC3"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.325441, 0.325441, 0.325441, 1)
+theme_override_font_sizes/font_size = 10
+text = "100 Gold Per Second"
