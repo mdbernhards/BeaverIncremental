@@ -16,6 +16,10 @@ var DamStage : DamStageEnum:
 		DamStage = value
 		setItemVisability(value)
 
+var BuildingStage := Dams.DamParts.First:
+	set(value):
+		BuildingStage = value
+
 enum DamStageEnum {
 	Construction,
 	Ready,
@@ -82,10 +86,53 @@ func hideAllConstructionStages():
 func _on_start_building_button_button_down() -> void:
 	if checkIfCanAfford():
 		removeResources()
-		DamStage = DamStageEnum.Construction
+		startConstruction()
 
 func startConstruction():
-	DamType = Dams.DamEnum
+	DamStage = DamStageEnum.Construction
+	
+	var damData = Dams.Dams[DamType][BuildingStage]
+	StageNameLabel.text = damData.Name
+	
+	var ConstructionResourceSceen = load("res://Scenes/GameMainScreenScenes/GameScenes/DamSection/constructionItem/construction_resource.tscn")
+	
+	for cost in damData["StartingPrice"]:
+		var resourceItem = ConstructionResourceSceen.instanciate()
+		
+		if cost == "OakCost":
+			resourceItem.ResourceType = "Oak"
+		elif cost == "AppleCost":
+			resourceItem.ResourceType = "Apple"
+		elif cost == "MapleCost":
+			resourceItem.ResourceType = "Maple"
+		elif cost == "BirchCost":
+			resourceItem.ResourceType = "Birch"
+		elif cost == "SpruceCost":
+			resourceItem.ResourceType = "Spruce"
+		elif cost == "ChestnutCost":
+			resourceItem.ResourceType = "Chestnut"
+		elif cost == "CherryCost":
+			resourceItem.ResourceType = "Cherry"
+		elif cost == "AshCost":
+			resourceItem.ResourceType = "Ash"
+		elif cost == "CedarCost":
+			resourceItem.ResourceType = "Cedar"
+		elif cost == "MahoganyCost":
+			resourceItem.ResourceType = "Mahogany"
+		elif cost == "EbonyCost":
+			resourceItem.ResourceType = "Ebony"
+		elif cost == "DogwoodCost":
+			resourceItem.ResourceType = "Dogwood"
+		elif cost == "RosewoodCost":
+			resourceItem.ResourceType = "Rosewood"
+		elif cost == "Ghost GumCost":
+			resourceItem.ResourceType = "Ghost Gum"
+		elif cost == "DragonwoodCost":
+			resourceItem.ResourceType = "Dragonwood"
+		elif cost == "GoldCost":
+			resourceItem.ResourceType = "Gold"
+			
+		ResourceList.add_child(resourceItem)
 
 func getPriceText():
 	var PriceText = ""
@@ -142,7 +189,6 @@ func checkIfCanAfford():
 	and DamCosts["DragonwoodCost"] <= Storage["Dragonwood"]["Count"]
 	and DamCosts["GoldCost"] <= SaveData.Gold["Count"]):
 		return true
-	
 	return false
 
 func setupNodePaths():
