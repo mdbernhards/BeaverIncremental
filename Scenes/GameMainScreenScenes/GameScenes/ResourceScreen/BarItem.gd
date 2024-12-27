@@ -54,7 +54,7 @@ func updateBarValues(woodType = WoodType):
 	WoodType = woodType
 	PerClickLabel.text = str(roundi(Values.ResourceValues[WoodType]["PerClick"])) + " per click"
 	PerSecondLabel.text = str(roundi(Values.ResourceValues[WoodType]["RealPerSecondIncrease"] - Values.ResourceValues[WoodType]["RealPerSecondLoss"])) + " per second"
-	StorageLabel.text = str(roundi(SaveData.Resources[WoodType]["Count"])) + " / " + str(roundi(Values.ResourceValues[WoodType]["Storage"]))
+	StorageLabel.text = str(floor(SaveData.Resources[WoodType]["Count"])) + " / " + str(floor(Values.ResourceValues[WoodType]["Storage"]))
 	WoodProgressBar.value = remap(SaveData.Resources[WoodType]["Count"], 0, Values.ResourceValues[WoodType]["Storage"], 0, 100)
 	
 	# Slider

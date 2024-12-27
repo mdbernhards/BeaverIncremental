@@ -32,18 +32,18 @@ var Upgrades = {
 			"OtherText" : "",
 		},
 		"3" :  {
-			"Name" : " +0.5 Woodcamp WPS",
-			"Description" : "Increases The Oak woodcamp base wood gain by 0.5",
-			"OtherText" : "",
-		},
-		"4" :  {
 			"Name" : "Unlock Apple Wood",
 			"SecondaryName" : "10% Cheaper Beavers",
 			"Description" : "Unlocks Apple wood for production",
 			"OtherText" : "",
 		},
+		"4" :  {
+			"Name" : " +0.5 Woodcamp WPS",
+			"Description" : "Increases The Oak woodcamp base wood gain by 0.5",
+			"OtherText" : "",
+		},
 		"5" :  {
-			"Name" : "4.5% More Storage",
+			"Name" : "6.5% More Storage",
 			"Description" : "Increases wood gathered per click by an additional 1",
 			"OtherText" : "",
 		},
@@ -85,14 +85,14 @@ var Upgrades = {
 			"OtherText" : "",
 		},
 		"3" :  {
-			"Name" : "+1 Woodcamp WPS",
-			"Description" : "",
-			"OtherText" : "",
-		},
-		"4" :  {
 			"Name" : "Unlock Research",
 			"SecondaryName" : "7.5% More Storage",
 			"Description" : "Unlocks Research",
+			"OtherText" : "",
+		},
+		"4" :  {
+			"Name" : "+1 Woodcamp WPS",
+			"Description" : "",
 			"OtherText" : "",
 		},
 		"5" :  {

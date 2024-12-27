@@ -161,9 +161,9 @@ theme_override_constants/margin_bottom = 15
 [node name="ItemGrid" type="GridContainer" parent="UpgradePage/Upgrades/VBox/ScrollBar/MC"]
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_constants/h_separation = 38
-theme_override_constants/v_separation = 30
-columns = 3
+theme_override_constants/h_separation = 35
+theme_override_constants/v_separation = 29
+columns = 2
 
 [node name="UpgradeItem1" parent="UpgradePage/Upgrades/VBox/ScrollBar/MC/ItemGrid" instance=ExtResource("4_myle6")]
 layout_mode = 2
@@ -203,38 +203,6 @@ UpgradeNumber = 9
 [node name="UpgradeItem10" parent="UpgradePage/Upgrades/VBox/ScrollBar/MC/ItemGrid" instance=ExtResource("4_myle6")]
 layout_mode = 2
 UpgradeNumber = 10
-
-[node name="UpgradeItem11" parent="UpgradePage/Upgrades/VBox/ScrollBar/MC/ItemGrid" instance=ExtResource("4_myle6")]
-layout_mode = 2
-UpgradeNumber = 11
-
-[node name="UpgradeItem12" parent="UpgradePage/Upgrades/VBox/ScrollBar/MC/ItemGrid" instance=ExtResource("4_myle6")]
-layout_mode = 2
-UpgradeNumber = 12
-
-[node name="UpgradeItem13" parent="UpgradePage/Upgrades/VBox/ScrollBar/MC/ItemGrid" instance=ExtResource("4_myle6")]
-layout_mode = 2
-UpgradeNumber = 13
-
-[node name="UpgradeItem14" parent="UpgradePage/Upgrades/VBox/ScrollBar/MC/ItemGrid" instance=ExtResource("4_myle6")]
-layout_mode = 2
-UpgradeNumber = 14
-
-[node name="UpgradeItem15" parent="UpgradePage/Upgrades/VBox/ScrollBar/MC/ItemGrid" instance=ExtResource("4_myle6")]
-layout_mode = 2
-UpgradeNumber = 15
-
-[node name="UpgradeItem16" parent="UpgradePage/Upgrades/VBox/ScrollBar/MC/ItemGrid" instance=ExtResource("4_myle6")]
-layout_mode = 2
-UpgradeNumber = 16
-
-[node name="UpgradeItem17" parent="UpgradePage/Upgrades/VBox/ScrollBar/MC/ItemGrid" instance=ExtResource("4_myle6")]
-layout_mode = 2
-UpgradeNumber = 17
-
-[node name="UpgradeItem18" parent="UpgradePage/Upgrades/VBox/ScrollBar/MC/ItemGrid" instance=ExtResource("4_myle6")]
-layout_mode = 2
-UpgradeNumber = 18
 
 [node name="PageButtons" type="MarginContainer" parent="."]
 custom_minimum_size = Vector2(0, 45)

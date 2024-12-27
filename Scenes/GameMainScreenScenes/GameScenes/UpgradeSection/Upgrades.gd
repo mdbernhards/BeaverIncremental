@@ -34,7 +34,7 @@ func setupUpgradeTabForWoodType(type):
 func setupUpgrades():
 	var upgradeItems = ItemGrid.get_children()
 	
-	for nr in 18:
+	for nr in 10:
 		ItemGrid.get_child(nr).UpgradeNumber = Upgrades.UpgradePositions[ResourceType][nr]
 	
 	for item in upgradeItems:
