@@ -213,7 +213,7 @@ func SetResearchValue(researchNr):
 		"7" :
 			TempValues["Maple"]["WpsMultip"] *= 1.75
 		"8" :
-			TempValues["Global"]["WcCostsMultip"] *= 0.7
+			TempValues["Global"]["WcPriceMultip"] *= 0.7
 		"9" :
 			Unlocks.Unlocks["Market"]["Unlocked"] = true
 		"10" :
@@ -222,6 +222,8 @@ func SetResearchValue(researchNr):
 			TempValues["Global"]["WoodPriceMultip"] *= 1.25
 		"12" :
 			TempValues["Global"]["WcBaseStorage"] += 150
+		"12b" :
+			TempValues["Oak"]["ExtraWoodcamps"] += 3
 		"13" :
 			pass # idk
 		"14" :

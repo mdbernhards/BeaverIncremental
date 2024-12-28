@@ -24,16 +24,12 @@ func addSaveFileToInfo(saveName):
 		"SaveName" = saveName,
 		"LastSavedTimeStamp" = Time.get_datetime_dict_from_system(),
 		"TimePlayed" = 0,
-		"MagicEarned" = 0,
+		"CurrentMagic" = 0,
+		"CurrentGold" = 0,
 	}
 	
 	var jsonSaveInfo = JSON.stringify(var_to_str(SaveData.SavesInfo))
 	infoFile.store_line(jsonSaveInfo)
-
-	var SaveName
-	var LastSavedTimeStamp
-	var TimePlayed
-	var MagicEarned
 
 func updateSaveFileInfo(saveName):
 	checkInfoFileForSaves()
@@ -42,7 +38,8 @@ func updateSaveFileInfo(saveName):
 	
 	SaveData.SavesInfo[saveName].LastSavedTimeStamp = Time.get_datetime_dict_from_system()
 	SaveData.SavesInfo[saveName].TimePlayed += 1
-	SaveData.SavesInfo[saveName].MagicEarned += SaveData.Magic["Count"]
+	SaveData.SavesInfo[saveName].CurrentMagic += SaveData.Magic["Count"]
+	SaveData.SavesInfo[saveName].CurrentGold += SaveData.Gold["Count"]
 	
 	var jsonSaveInfo = JSON.stringify(var_to_str(SaveData.SavesInfo))
 	infoFile.store_line(jsonSaveInfo)

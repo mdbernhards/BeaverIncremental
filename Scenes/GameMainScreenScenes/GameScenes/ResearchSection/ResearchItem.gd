@@ -17,6 +17,7 @@ var QueueButton
 var ResearchingRect
 var ResearchingLabel
 var CancelButton
+var ResearchIdLabel
 
 var IsResearchStarted = false
 var InQueue = false
@@ -81,6 +82,7 @@ func setResearch(ResearchNr):
 	
 	NameLabel.text = ResearchData["Name"]
 	DescriptionLabel.text = ResearchData["Description"]
+	ResearchIdLabel.text = str(ResearchNr)
 	
 	updateResearch()
 
@@ -149,6 +151,7 @@ func setNodePaths():
 	ResearchingRect = $BG/HBox/MC2/VBox/MC2/ResearchingRect
 	ResearchingLabel = $BG/HBox/MC2/VBox/MC2/ResearchingRect/ResearchingLabel
 	CancelButton = $BG/HBox/MC2/VBox/MC2/CancelButton
+	ResearchIdLabel = $BG/ResearchIdLabel
 
 func _on_start_research_button_button_down():
 	if checkIfCanAfford():

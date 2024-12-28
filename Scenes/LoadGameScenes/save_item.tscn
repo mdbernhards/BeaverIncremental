@@ -30,7 +30,7 @@ theme_override_constants/margin_bottom = 15
 
 [node name="VBox" type="VBoxContainer" parent="ColorRect/LoadGame/MC"]
 layout_mode = 2
-theme_override_constants/separation = 15
+theme_override_constants/separation = 21
 
 [node name="SaveNameLabel" type="Label" parent="ColorRect/LoadGame/MC/VBox"]
 layout_mode = 2
@@ -57,21 +57,28 @@ theme_override_constants/margin_bottom = 15
 
 [node name="VBox" type="VBoxContainer" parent="ColorRect/LoadGame/MC2"]
 layout_mode = 2
-theme_override_constants/separation = 10
+theme_override_constants/separation = 8
 
 [node name="TimePlayedLabel" type="Label" parent="ColorRect/LoadGame/MC2/VBox"]
 layout_mode = 2
 size_flags_vertical = 1
-theme_override_colors/font_color = Color(0.164706, 0.0784314, 0.0823529, 1)
-theme_override_font_sizes/font_size = 25
+theme_override_colors/font_color = Color(0.263647, 0.139138, 0.144744, 1)
+theme_override_font_sizes/font_size = 20
 text = "Time Played: 22h"
 
-[node name="MagicEarnedLabel" type="Label" parent="ColorRect/LoadGame/MC2/VBox"]
+[node name="CurrentMagicLabel" type="Label" parent="ColorRect/LoadGame/MC2/VBox"]
 layout_mode = 2
 size_flags_vertical = 1
-theme_override_colors/font_color = Color(0.164706, 0.0784314, 0.0823529, 1)
-theme_override_font_sizes/font_size = 25
+theme_override_colors/font_color = Color(0.262745, 0.137255, 0.145098, 1)
+theme_override_font_sizes/font_size = 20
 text = "Magic earned: 432e16"
+
+[node name="CurrentGoldLabel" type="Label" parent="ColorRect/LoadGame/MC2/VBox"]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(0.262745, 0.137255, 0.145098, 1)
+theme_override_font_sizes/font_size = 20
+text = "Gold earned: 432e16"
 
 [node name="MC3" type="MarginContainer" parent="ColorRect/LoadGame"]
 custom_minimum_size = Vector2(375, 0)

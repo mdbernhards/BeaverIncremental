@@ -45,3 +45,12 @@ layout_mode = 2
 theme_override_constants/h_separation = 8
 theme_override_constants/v_separation = 8
 columns = 3
+
+[node name="NoFishLabel" type="Label" parent="MC2"]
+visible = false
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 60
+text = "NO FISH!"
+horizontal_alignment = 1
+vertical_alignment = 1

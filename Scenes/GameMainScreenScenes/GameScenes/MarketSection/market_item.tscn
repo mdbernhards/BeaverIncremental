@@ -61,7 +61,7 @@ theme_override_constants/margin_top = 0
 theme_override_constants/margin_right = 5
 theme_override_constants/margin_bottom = 8
 
-[node name="ColorRect" type="ColorRect" parent="HBox/VBox/MC"]
+[node name="LeftColorRect" type="ColorRect" parent="HBox/VBox/MC"]
 layout_mode = 2
 color = Color(0.4, 0.305882, 0.137255, 1)
 
@@ -196,7 +196,7 @@ theme_override_constants/margin_top = 8
 theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 8
 
-[node name="ColorRect" type="ColorRect" parent="HBox/MC2"]
+[node name="RightColorRect" type="ColorRect" parent="HBox/MC2"]
 layout_mode = 2
 color = Color(0.4, 0.305882, 0.137255, 1)
 
@@ -236,16 +236,16 @@ horizontal_alignment = 1
 [node name="MC2" type="MarginContainer" parent="HBox/MC2/VBox/HBox2/MC3/VBox"]
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_constants/margin_left = 17
-theme_override_constants/margin_top = -4
-theme_override_constants/margin_right = 17
-theme_override_constants/margin_bottom = 6
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 0
 
-[node name="ColorRect" type="ColorRect" parent="HBox/MC2/VBox/HBox2/MC3/VBox/MC2"]
+[node name="BotCountRect" type="ColorRect" parent="HBox/MC2/VBox/HBox2/MC3/VBox/MC2"]
 layout_mode = 2
 color = Color(0.486275, 0.352941, 0.105882, 1)
 
-[node name="BotCountLabel" type="Label" parent="HBox/MC2/VBox/HBox2/MC3/VBox/MC2/ColorRect"]
+[node name="BotCountLabel" type="Label" parent="HBox/MC2/VBox/HBox2/MC3/VBox/MC2/BotCountRect"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0

@@ -49,6 +49,7 @@ LoadGame=""
 Game=""
 GameMainScreen=""
 MainMenu=""
+ResourcePage=""
 
 [gui]
 

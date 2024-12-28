@@ -58,6 +58,7 @@ text = "Resources"
 
 [node name="MC" type="MarginContainer" parent="BarsMC/MC/TitleVBox"]
 layout_mode = 2
+theme_override_constants/margin_left = 15
 theme_override_constants/margin_top = 9
 theme_override_constants/margin_right = 22
 theme_override_constants/margin_bottom = 15
@@ -71,7 +72,6 @@ alignment = 2
 [node name="GoldMC" type="MarginContainer" parent="BarsMC/MC/TitleVBox/MC/LabelHBox"]
 layout_mode = 2
 size_flags_horizontal = 3
-theme_override_constants/margin_left = 15
 
 [node name="ColorRect" type="ColorRect" parent="BarsMC/MC/TitleVBox/MC/LabelHBox/GoldMC"]
 layout_mode = 2
@@ -88,8 +88,32 @@ grow_vertical = 2
 [node name="GoldLabel" type="Label" parent="BarsMC/MC/TitleVBox/MC/LabelHBox/GoldMC/ColorRect/MC"]
 layout_mode = 2
 size_flags_vertical = 1
-theme_override_font_sizes/font_size = 32
+theme_override_font_sizes/font_size = 27
 text = "Gold: 10k"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MagicMC" type="MarginContainer" parent="BarsMC/MC/TitleVBox/MC/LabelHBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ColorRect" type="ColorRect" parent="BarsMC/MC/TitleVBox/MC/LabelHBox/MagicMC"]
+layout_mode = 2
+color = Color(0.462745, 0.254902, 0.8, 1)
+
+[node name="MC" type="MarginContainer" parent="BarsMC/MC/TitleVBox/MC/LabelHBox/MagicMC/ColorRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MagicLabel" type="Label" parent="BarsMC/MC/TitleVBox/MC/LabelHBox/MagicMC/ColorRect/MC"]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 27
+text = "Magic: 10k"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -127,7 +151,7 @@ text = "Woodcamps"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="ResourcePage" type="MarginContainer" parent="BarsMC/MC/TitleVBox"]
+[node name="ResourcePage" type="MarginContainer" parent="BarsMC/MC/TitleVBox" groups=["ResourcePage"]]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_constants/margin_left = 15

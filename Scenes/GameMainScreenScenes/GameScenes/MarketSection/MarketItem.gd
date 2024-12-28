@@ -11,6 +11,7 @@ var SellAmountSlider
 var SellPrecentigeLabel
 var SellAmountLabel
 var SellGoldGainLabel
+var LeftColorRect
 
 # Nodes for bots
 var BotCountLabel
@@ -19,6 +20,8 @@ var BotEffectivnesLabel
 var PerSecondWoodSoldLabel
 var PerSecondGoldGainLabel
 var BotPriceLabel
+var RightColorRect
+var BotCountRect
 
 var WoodLossIfSold
 var GoldGainedIfSold
@@ -34,7 +37,12 @@ func changeItemType(woodType = WoodType):
 	WoodType = woodType
 	
 	ItemTitleLabel.text = WoodType
+	
 	color = Values.ResourceValues[WoodType]["Color"]
+	LeftColorRect.color = Values.ResourceValues[WoodType]["SecondaryColor"]
+	RightColorRect.color = Values.ResourceValues[WoodType]["SecondaryColor"]
+	BotCountRect.color = Values.ResourceValues[WoodType]["Color"]
+	
 	BotCountLabel.text = str(SaveData.Resources[WoodType]["Bots"])
 	BotEffectivnesSlider.value = SaveData.Resources[WoodType]["BotSellPercentage"]
 	
@@ -58,14 +66,17 @@ func setNodePaths():
 	SellPrecentigeLabel = $HBox/VBox/MC/VBox/MC/SellPrecentigeLabel
 	SellAmountLabel = $HBox/VBox/MC/VBox/HBox/MC/VBox/MC2/SellAmountLabel
 	SellGoldGainLabel = $HBox/VBox/MC/VBox/HBox/MC2/VBox/MC2/GoldGainLabel
+	LeftColorRect = $HBox/VBox/MC/LeftColorRect
 
 	# Nodes for bots
-	BotCountLabel = $HBox/MC2/VBox/HBox2/MC3/VBox/MC2/ColorRect/BotCountLabel
+	BotCountLabel = $HBox/MC2/VBox/HBox2/MC3/VBox/MC2/BotCountRect/BotCountLabel
 	BotEffectivnesSlider = $HBox/MC2/VBox/HBox/MC/BotEffectivnesSlider
 	BotEffectivnesLabel = $HBox/MC2/VBox/HBox/MC/MC/BotEffectivnesLabel
 	PerSecondWoodSoldLabel = $HBox/MC2/VBox/HBox/MC2/VBox/MC2/PerSecondSoldLabel
 	PerSecondGoldGainLabel = $HBox/MC2/VBox/HBox/MC3/VBox/MC2/PerSecondGainLabel
 	BotPriceLabel = $HBox/MC2/VBox/HBox2/MC2/VBox/BotPriceLabel
+	RightColorRect = $HBox/MC2/RightColorRect
+	BotCountRect = $HBox/MC2/VBox/HBox2/MC3/VBox/MC2/BotCountRect
 
 func _on_sell_amount_slider_value_changed(value):
 	SaveData.Resources[WoodType]["MarketSellPercentage"] = value

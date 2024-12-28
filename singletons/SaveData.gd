@@ -48,6 +48,7 @@ func resetValues():
 func recalculateValues():
 	CalculateValues.calculateAllValues()
 	get_tree().get_first_node_in_group("ResearchSection").resetResearch()
+	get_tree().get_first_node_in_group("ResourcePage").updateBars()
 
 var Gold = {
 	"Count" : 0,

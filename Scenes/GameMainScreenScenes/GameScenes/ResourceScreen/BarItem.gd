@@ -10,6 +10,7 @@ var PerClickLabel
 var PerSecondLabel
 var StorageLabel
 var WoodProgressBar
+var WoodBarRect
 
 # Slider Nodes
 var ResourceProductionSlider
@@ -42,6 +43,7 @@ func changeBarValues(woodType = WoodType):
 	
 	ResourceProductionSlider.value = SaveData.Resources[WoodType]["Production"]
 	WoodProgressBar.tint_progress = Values.ResourceValues[WoodType]["Color"]
+	WoodBarRect.color = Values.ResourceValues[WoodType]["SecondaryColor"]
 	
 	updateBarValues()
 	
@@ -92,6 +94,7 @@ func setNodePaths():
 	PerSecondLabel = $HBox/BarVBox/BarRect/HBox/MC/VBox/PerSecondLabel
 	StorageLabel = $HBox/BarVBox/BarLabels/MC3/StorageLabel
 	WoodProgressBar = $HBox/BarVBox/BarRect/ProgressBar
+	WoodBarRect = $HBox/BarVBox/BarRect
 	
 	ResourceProductionSlider = $HBox/BarVBox/BarRect/ResourceProductionSlider
 	ProductionLabel = $HBox/BarVBox/BarRect/ResourceProductionSlider/ProductionLabel

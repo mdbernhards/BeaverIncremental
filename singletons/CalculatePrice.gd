@@ -3,7 +3,7 @@ extends Node
 func getBeaverCost(beaverCount, woodType):
 	match woodType :
 		"Oak" :
-			return round(pow(1.375, beaverCount) + 1.294 * pow(beaverCount, 3.2)) + beaverCount * 6 + 1
+			return round(pow(1.399, beaverCount) + 1.299 * pow(beaverCount, 3.25)) + beaverCount * 6 + 1
 		"Apple" :
 			return round(pow(1.35, beaverCount) + 1.277 * pow(beaverCount, 2.96)) + beaverCount * 8 + 9
 		"Maple" :
@@ -96,17 +96,17 @@ func getUpgradeCost(level, woodType, upgradeNr): # first number more later, seco
 				"1" :
 					return round(pow(1.566, level) + 1.88 * pow(level, 3.18)) + level * 34 + 29
 				"2" :
-					return round(pow(1.283, level) + 3.99 * pow(level, 2.39)) + level * 29 + 39
+					return round(pow(1.345, level) + 4.02 * pow(level, 2.42)) + level * 29 + 39
 				"3" :
 					return round(pow(1.575, level) + 3.75 * pow(level, 3.76)) + level * 899 + 499
 				"4" :
 					return round(pow(1.355, level) + 1.65 * pow(level, 3.65)) + level * 900 + 1499
 				"5" :
-					return round(pow(1.57, level) + 2.77 * pow(level, 3.46)) + level * 655 + 499
+					return round(pow(1.575, level) + 2.85 * pow(level, 3.54)) + level * 655 + 499
 				"6" :
-					return round(pow(1.563, level) + 3.99 * pow(level, 4.15)) + level * 15000 + 19999
+					return round(pow(1.573, level) + 4.05 * pow(level, 4.3)) + level * 21500 + 19999
 				"7" :
-					return round(pow(1.61, level) + 4.1 * pow(level, 2.45)) + level * 275 + 34500
+					return round(pow(1.75, level) + 17.5 * pow(level, 5.55)) + level * 55000 + 39500
 				"8" :
 					return round(pow(1.107, level) + 1.438 * pow(level, 2.55)) + level * 32772 + 66890
 				"9" :
@@ -124,11 +124,11 @@ func getUpgradeCost(level, woodType, upgradeNr): # first number more later, seco
 				"4" :
 					return round(pow(1.458, level) + 2.486 * pow(level, 2.54)) + level * 1000 + 1499
 				"5" :
-					return round(pow(1.476, level) + 1.669 * pow(level, 4.46)) + level * 1250 + 4499
+					return round(pow(1.476, level) + 1.669 * pow(level, 4.46)) + level * 3950 + 7499
 				"6" :
-					return round(pow(1.488, level) + 1.7 * pow(level, 2.85)) + level * 2250 + 7999
+					return round(pow(1.488, level) + 1.7 * pow(level, 2.85)) + level * 7250 + 23999
 				"7" :
-					return round(pow(1.45, level) + 2.5 * pow(level, 4.1)) + level * 6250 + 14499
+					return round(pow(1.45, level) + 2.5 * pow(level, 4.1)) + level * 14250 + 55499
 				"8" :
 					return round(pow(1.141, level) + 1.147 * pow(level, 4.84)) + level * 18128 + 99999
 				"9" :
@@ -140,21 +140,21 @@ func getUpgradeCost(level, woodType, upgradeNr): # first number more later, seco
 				"1" :
 					return round(pow(1.65, level) + 3.428 * pow(level, 3.978)) + level * 35 + 9
 				"2" :
-					return round(pow(1.45, level) + 2.833 * pow(level, 3.13)) + level * 79 + 24
+					return round(pow(1.44, level) + 6.56 * pow(level, 2.29)) + level * 79 + 24
 				"3" :
-					return round(pow(1.55, level) + 2.11 * pow(level, 3.79)) + level * 425 + 1679
+					return round(pow(1.67, level) + 3.27 * pow(level, 4.17)) + level * 1859 + 1889
 				"4" :
 					return round(pow(1.395, level) + 2.44 * pow(level, 4.11)) + level * 822 + 7329
 				"5" :
 					return round(pow(1.32, level) + 2.465 * pow(level, 2.895)) + level * 1222 + 21000
 				"6" :
-					return round(pow(1.509, level) + 2.107 * pow(level, 4.09)) + level * 1722  + 21000
+					return round(pow(1.509, level) + 2.107 * pow(level, 4.09)) + level * 3722  + 41000
 				"7" :
-					return round(pow(1.354, level) + 1.141 * pow(level, 1.67)) + level * 2622  + 41000
+					return round(pow(1.354, level) + 1.141 * pow(level, 1.67)) + level * 6622  + 75000
 				"8" :
-					return round(pow(1.396, level) + 1.425 * pow(level, 4.55)) + level * 5522  + 121000
+					return round(pow(1.396, level) + 1.425 * pow(level, 4.55)) + level * 13522  + 251000
 				"9" :
-					return round(pow(1.132, level) + 1.102 * pow(level, 4.3)) + level * 16622  + 321000
+					return round(pow(1.132, level) + 1.102 * pow(level, 4.3)) + level * 26622  + 321000
 				"10" :
 					return round(pow(1.451, level) + 1.323 * pow(level, 4.31)) + level * 99922  + 921000
 		"Birch" :

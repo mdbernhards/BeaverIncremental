@@ -1,15 +1,8 @@
 To do all things I can think of:
 First:
-Fix/Change/Remove Gold Upgrade multip (for lower price upgrades, really broken)
-Production slider value doesn't get saved (need to set the value when loading)
 Buy max buttons logic for markets
-add secondary color use in resource bars and markets, myb other places
 All Dam Logic
-maybe rename ascension to prestege
 bait shop logic
-Fish screen if no fish show "no fish!"
-make saves nice (maybe show gold on save info and show gold and magic labels only when you get some)
-Fix issue of the amount being that you can aford, but you actualy can't (for all count labels always round down)
 There probably shouldn't be permanent research (only when proper upgrade), so move magic upgrades to just be when you have had atleast 1 magic
 And maybe achievements could be a magic upgrade
 FoS visible when achievements unlocked, but achievemnts hidden until unlocked or specific research
@@ -17,6 +10,7 @@ Research 14b needs to be moved to magic upgrades
 TempValues["Global"]["WcBaseStorage"] specificaly research 12 doesn't seem to get applied and idk why??
 
 Later:
+Fix/Change/Remove Gold Upgrade multip (for lower price upgrades, really broken)
 Buy max buttons logic for fishing (or myb ctrl click to max buy or a toggle like in other games i think?)
 Think if more magic upgrades need to be added
 balancing all of the game
@@ -40,6 +34,8 @@ Storage overloading
 Upgrade level cap at 100
 Add upgrade beavers to the beaver count as a seperate value like (+ 5)
 check if maple upgrade 7 gets applied and then display it in research (cheaper research) maybe actualy remove it because its not good, just let research values be static?
+Rename ascension to prestege
+show in save info gold or magic only when u get some
 
 
 Done:
@@ -53,3 +49,8 @@ Implement Research queue DONE
 Fishing time out DONE
 set up all upgrades for all resources DONE
 Missing upgrades (need to add new upgrades for the new dam logic, like: resource cost (buying to start), how mutch resources used(building, resources over time)) DONE
+Fix issue of the amount being that you can aford, but you actualy can't (for all count labels always round down) DONE
+add secondary color use in resource bars and markets DONE
+Fish screen if no fish show "no fish!" DONE
+make saves nicer DONE
+Production slider value doesn't get saved (need to set the value when loading) DONE
