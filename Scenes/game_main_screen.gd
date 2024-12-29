@@ -33,7 +33,7 @@ func _on_home_button_button_down() -> void:
 
 func _on_settings_button_button_down() -> void:
 	HideAllScreens()
-	SettingsScreen.visible = true
+	SettingsScreen.goToSettings(false)
 
 func HideAllScreens():
 	Gameplay.visible = false

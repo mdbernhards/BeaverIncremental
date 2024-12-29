@@ -50,6 +50,9 @@ Game=""
 GameMainScreen=""
 MainMenu=""
 ResourcePage=""
+Settings=""
+Gameplay=""
+BackgroundButtons=""
 
 [gui]
 

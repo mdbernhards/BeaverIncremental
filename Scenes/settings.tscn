@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Scenes/settings.gd" id="1_7fsul"]
 
-[node name="Settings" type="Control"]
+[node name="Settings" type="Control" groups=["Settings"]]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -19,6 +19,18 @@ offset_right = 1895.0
 offset_bottom = 1055.0
 color = Color(0.266667, 0.266667, 0.266667, 1)
 
+[node name="BackButton" type="Button" parent="." groups=["Settings"]]
+custom_minimum_size = Vector2(200, 100)
+layout_mode = 2
+offset_left = 52.0
+offset_top = 52.0
+offset_right = 252.0
+offset_bottom = 152.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 50
+text = "BACK"
+
 [node name="MC" type="MarginContainer" parent="."]
 layout_mode = 1
 anchors_preset = 15
@@ -26,6 +38,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 theme_override_constants/margin_left = 25
 theme_override_constants/margin_top = 25
 theme_override_constants/margin_right = 25
@@ -33,14 +46,17 @@ theme_override_constants/margin_bottom = 25
 
 [node name="VBox" type="VBoxContainer" parent="MC"]
 layout_mode = 2
+mouse_filter = 2
 alignment = 2
 
 [node name="TitleHBox" type="HBoxContainer" parent="MC/VBox"]
 layout_mode = 2
+mouse_filter = 2
 
 [node name="MC" type="MarginContainer" parent="MC/VBox/TitleHBox"]
 layout_mode = 2
 size_flags_horizontal = 3
+mouse_filter = 2
 
 [node name="SettingsTitleLabel" type="Label" parent="MC/VBox/TitleHBox/MC"]
 layout_mode = 2
@@ -235,5 +251,6 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 30
 text = "Gameplay"
 
+[connection signal="button_down" from="BackButton" to="." method="_on_back_button_button_down"]
 [connection signal="button_down" from="MC/VBox/SettingsMC/Grid/SaveSettings/MC/VBox/Grid/LoadButton" to="." method="_on_load_button_button_down"]
 [connection signal="button_down" from="MC/VBox/SettingsMC/Grid/SaveSettings/MC/VBox/Grid/SaveButton" to="." method="_on_save_button_button_down"]

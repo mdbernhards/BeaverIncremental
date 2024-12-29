@@ -1,6 +1,5 @@
 To do all things I can think of:
 First:
-Buy max buttons logic for markets
 All Dam Logic
 bait shop logic
 There probably shouldn't be permanent research (only when proper upgrade), so move magic upgrades to just be when you have had atleast 1 magic
@@ -10,6 +9,8 @@ Research 14b needs to be moved to magic upgrades
 TempValues["Global"]["WcBaseStorage"] specificaly research 12 doesn't seem to get applied and idk why??
 
 Later:
+Add real play time counter
+Add auto saves with changable intervals
 Fix/Change/Remove Gold Upgrade multip (for lower price upgrades, really broken)
 Buy max buttons logic for fishing (or myb ctrl click to max buy or a toggle like in other games i think?)
 Think if more magic upgrades need to be added
@@ -29,11 +30,9 @@ tooltips for different things in scroll log (now I know it's doable in google do
 All upgrade, research, magic, dam, achievement names and descriptions (maybe upgrade descriptive names, cute descriptions and for research other way around but rename description to effect:)
 Use big numbers like 1.33 * 10^15
 All unlock locations and triggers added,
-Research history
 Storage overloading
 Upgrade level cap at 100
 Add upgrade beavers to the beaver count as a seperate value like (+ 5)
-check if maple upgrade 7 gets applied and then display it in research (cheaper research) maybe actualy remove it because its not good, just let research values be static?
 Rename ascension to prestege
 show in save info gold or magic only when u get some
 
@@ -54,3 +53,5 @@ add secondary color use in resource bars and markets DONE
 Fish screen if no fish show "no fish!" DONE
 make saves nicer DONE
 Production slider value doesn't get saved (need to set the value when loading) DONE
+Buy max buttons logic for markets DONE
+Research history DONE

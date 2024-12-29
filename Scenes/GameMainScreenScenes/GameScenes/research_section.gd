@@ -5,6 +5,13 @@ var ResearchItemScene
 
 # Nodes
 var ResearchList
+var HistoryList
+var ResearchTab
+var HistoryTab
+var SectionTitleLabel
+var HistoryButton
+
+var IsHistoryOpen = false
 
 enum ResearchStatesEnum {
 	CurrentlyResearching,
@@ -16,6 +23,7 @@ enum ResearchStatesEnum {
 func _ready():
 	setupNodePaths()
 	setupResearchItems()
+	setupHistoryItems()
 
 func _process(_delta):
 	setResearchStates()
@@ -40,6 +48,16 @@ func setupResearchItems():
 		for researchItem in ResearchList.get_children():
 			if researchItem.ItemId == queueResearchId:
 				researchItem.InQueue = true
+
+func setupHistoryItems():
+	var historyItemScene = load("res://Scenes/GameMainScreenScenes/GameScenes/ResearchSection/history_item.tscn")
+	
+	for researchId in SaveData.UnlockedResearch:
+		if SaveData.UnlockedResearch[researchId]:
+			var historyItem = historyItemScene.instantiate()
+			
+			historyItem.setResearch(researchId)
+			HistoryList.add_child(historyItem)
 
 func deleteAllResearchItems():
 	if !ResearchList:
@@ -88,6 +106,26 @@ func getActiveResearch():
 func resetResearch():
 	deleteAllResearchItems()
 	setupResearchItems()
+	setupHistoryItems()
 
 func setupNodePaths():
-	ResearchList = $MC/ScrollBar/ResearchList
+	ResearchList = $Research/ScrollBar/MC/ResearchList
+	HistoryList = $History/Scroll/MC/HistoryList
+	ResearchTab = $Research
+	HistoryTab = $History
+	SectionTitleLabel = $TopHBox/TitleMC/TitleLabel
+	HistoryButton = $TopHBox/TitleMC/HistoryButton
+
+func _on_history_button_button_down() -> void:
+	IsHistoryOpen = !IsHistoryOpen
+	
+	if IsHistoryOpen:
+		ResearchTab.visible = false
+		HistoryTab.visible = true
+		SectionTitleLabel.text = "Research History"
+		HistoryButton.text = "Back"
+	else:
+		ResearchTab.visible = true
+		HistoryTab.visible = false
+		SectionTitleLabel.text = "Research"
+		HistoryButton.text = "History"

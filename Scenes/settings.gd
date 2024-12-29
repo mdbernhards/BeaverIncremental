@@ -1,7 +1,11 @@
 extends Control
 
+# Nodes
+var BackButton
+var SaveButton
+
 func _ready() -> void:
-	pass
+	setupNodePaths()
 
 func _process(delta: float) -> void:
 	pass
@@ -11,3 +15,24 @@ func _on_load_button_button_down() -> void:
 
 func _on_save_button_button_down() -> void:
 	GameSaves.saveGame(Values.CurrentSaveName)
+
+func setupNodePaths():
+	BackButton = $BackButton
+	SaveButton = $MC/VBox/SettingsMC/Grid/SaveSettings/MC/VBox/Grid/SaveButton
+
+func goToSettings(backToMainMenu):
+	visible = true
+	
+	if backToMainMenu:
+		BackButton.visible = true
+		get_tree().get_first_node_in_group("BackgroundButtons").visible = false
+		SaveButton.visible = false
+	else:
+		BackButton.visible = false
+		get_tree().get_first_node_in_group("BackgroundButtons").visible = true
+		SaveButton.visible = true
+
+func _on_back_button_button_down() -> void:
+	visible = false
+	get_tree().get_first_node_in_group("Game").goToMainMenuFromSettings()
+		

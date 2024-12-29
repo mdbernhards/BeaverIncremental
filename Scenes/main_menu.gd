@@ -15,7 +15,7 @@ func _on_continue_button_button_down() -> void:
 	pass
 
 func _on_settings_button_button_down() -> void:
-	pass
+	Game.goToSettingsFromMainMenu()
 
 func _on_quit_button_button_down() -> void:
 	get_tree().quit()

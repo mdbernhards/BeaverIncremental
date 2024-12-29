@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://dtv4rjhuhfki5" path="res://Scenes/GameMainScreenScenes/ascension_screen.tscn" id="3_cexxl"]
 [ext_resource type="PackedScene" uid="uid://dnnaegnbqppxc" path="res://Scenes/settings.tscn" id="5_tqmh8"]
 
-[node name="GameMainScreen" type="Control"]
+[node name="GameMainScreen" type="Control" groups=["GameMainScreen"]]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -102,7 +102,7 @@ mouse_filter = 1
 visible = false
 layout_mode = 1
 
-[node name="BackgroundButtons" type="Control" parent="."]
+[node name="BackgroundButtons" type="Control" parent="." groups=["BackgroundButtons"]]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0

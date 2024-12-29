@@ -277,11 +277,31 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 12
 text = "Buy"
 
+[node name="CantAffordRect" type="ColorRect" parent="HBox/MC2/VBox/HBox2/MC2/VBox/HBox/BuyButton"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.513726, 0.0941176, 0, 0.301961)
+
 [node name="Buy10xButton" type="Button" parent="HBox/MC2/VBox/HBox2/MC2/VBox/HBox"]
 custom_minimum_size = Vector2(42, 0)
 layout_mode = 2
 theme_override_font_sizes/font_size = 12
 text = "10x"
+
+[node name="10CantAffordRect" type="ColorRect" parent="HBox/MC2/VBox/HBox2/MC2/VBox/HBox/Buy10xButton"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.513726, 0.0941176, 0, 0.301961)
 
 [node name="Buy100xButton" type="Button" parent="HBox/MC2/VBox/HBox2/MC2/VBox/HBox"]
 custom_minimum_size = Vector2(42, 0)
@@ -289,11 +309,31 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 12
 text = "100x"
 
+[node name="100CantAffordRect" type="ColorRect" parent="HBox/MC2/VBox/HBox2/MC2/VBox/HBox/Buy100xButton"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.513726, 0.0941176, 0, 0.301961)
+
 [node name="Buy1000xButton" type="Button" parent="HBox/MC2/VBox/HBox2/MC2/VBox/HBox"]
 custom_minimum_size = Vector2(42, 0)
 layout_mode = 2
 theme_override_font_sizes/font_size = 12
 text = "1000x"
+
+[node name="1000CantAffordRect" type="ColorRect" parent="HBox/MC2/VBox/HBox2/MC2/VBox/HBox/Buy1000xButton"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.513726, 0.0941176, 0, 0.301961)
 
 [node name="BotPriceLabel" type="Label" parent="HBox/MC2/VBox/HBox2/MC2/VBox"]
 layout_mode = 2
@@ -423,4 +463,7 @@ horizontal_alignment = 1
 [connection signal="value_changed" from="HBox/VBox/MC/VBox/MC2/SellAmountSlider" to="." method="_on_sell_amount_slider_value_changed"]
 [connection signal="button_down" from="HBox/VBox/MC/VBox/HBox/MC3/SellButton" to="." method="_on_sell_button_button_down"]
 [connection signal="button_down" from="HBox/MC2/VBox/HBox2/MC2/VBox/HBox/BuyButton" to="." method="_on_buy_button_button_down"]
+[connection signal="button_down" from="HBox/MC2/VBox/HBox2/MC2/VBox/HBox/Buy10xButton" to="." method="_on_buy_10x_button_button_down"]
+[connection signal="button_down" from="HBox/MC2/VBox/HBox2/MC2/VBox/HBox/Buy100xButton" to="." method="_on_buy_100x_button_button_down"]
+[connection signal="button_down" from="HBox/MC2/VBox/HBox2/MC2/VBox/HBox/Buy1000xButton" to="." method="_on_buy_1000x_button_button_down"]
 [connection signal="value_changed" from="HBox/MC2/VBox/HBox/MC/BotEffectivnesSlider" to="." method="_on_bot_effectivnes_slider_value_changed"]

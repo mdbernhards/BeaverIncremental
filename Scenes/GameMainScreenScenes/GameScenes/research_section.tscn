@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://2xsk4oroe8q7"]
+[gd_scene load_steps=3 format=3 uid="uid://2xsk4oroe8q7"]
 
 [ext_resource type="Script" path="res://Scenes/GameMainScreenScenes/GameScenes/research_section.gd" id="1_mg01o"]
+[ext_resource type="PackedScene" uid="uid://dkl3g6cduc8jj" path="res://Scenes/GameMainScreenScenes/GameScenes/ResearchSection/history_item.tscn" id="2_i8o5j"]
 
 [node name="ResearchSection" type="VBoxContainer" groups=["ResearchSection"]]
 custom_minimum_size = Vector2(798, 926)
@@ -15,24 +16,67 @@ alignment = 2
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/margin_left = 20
+theme_override_constants/margin_right = 15
 
 [node name="TitleLabel" type="Label" parent="TopHBox/TitleMC"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 40
 text = "Research"
 
-[node name="MC" type="MarginContainer" parent="."]
+[node name="HistoryButton" type="Button" parent="TopHBox/TitleMC"]
+custom_minimum_size = Vector2(100, 40)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 18
+text = "History"
+
+[node name="Research" type="MarginContainer" parent="."]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_constants/margin_left = 5
 theme_override_constants/margin_right = 1
 
-[node name="ScrollBar" type="ScrollContainer" parent="MC"]
+[node name="ScrollBar" type="ScrollContainer" parent="Research"]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="ResearchList" type="VBoxContainer" parent="MC/ScrollBar"]
+[node name="MC" type="MarginContainer" parent="Research/ScrollBar"]
 layout_mode = 2
-size_flags_horizontal = 4
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/margin_right = 9
+
+[node name="ResearchList" type="VBoxContainer" parent="Research/ScrollBar/MC"]
+layout_mode = 2
+size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_constants/separation = 15
+
+[node name="History" type="MarginContainer" parent="."]
+visible = false
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_right = 1
+
+[node name="Scroll" type="ScrollContainer" parent="History"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="MC" type="MarginContainer" parent="History/Scroll"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/margin_right = 9
+
+[node name="HistoryList" type="VBoxContainer" parent="History/Scroll/MC"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 15
+
+[node name="HistoryItem" parent="History/Scroll/MC/HistoryList" instance=ExtResource("2_i8o5j")]
+layout_mode = 2
+
+[connection signal="button_down" from="TopHBox/TitleMC/HistoryButton" to="." method="_on_history_button_button_down"]

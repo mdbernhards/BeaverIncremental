@@ -125,7 +125,7 @@ var Research = {
 		"Name" : "+3 Oak Woodcamps",
 		"Description" : "Adds 3 Extra Oak Woodcamps",
 		"Time" : 370, # Seconds
-		"OakCost" : 0, "AppleCost" : 37000, "MapleCost" : 7500, "BirchCost" : 0, "SpruceCost" : 0,
+		"OakCost" : 0, "AppleCost" : 46000, "MapleCost" : 7500, "BirchCost" : 0, "SpruceCost" : 0,
 		"ChestnutCost" : 0, "CherryCost" : 0, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 0,
 		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 0,
 	},
@@ -137,7 +137,7 @@ var Research = {
 		"ChestnutCost" : 0, "CherryCost" : 0, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 0,
 		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 0,
 	},
-	"14" :  {
+	"14" :  { # prob something more before
 		"Name" : "Unlock Birch Wood",
 		"Description" : "Doubles Storage for all Classic Wood",
 		"Time" : 430, # Seconds
@@ -153,7 +153,7 @@ var Research = {
 		"ChestnutCost" : 0, "CherryCost" : 0, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 0,
 		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 0,
 	},
-	"15" :  {
+	"15" :  { # Rethink
 		"Name" : "woodcamps give storage 3x",
 		"Description" : "Doubles Storage for all Classic Wood",
 		"Time" : 500, # Seconds
@@ -161,7 +161,7 @@ var Research = {
 		"ChestnutCost" : 0, "CherryCost" : 0, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 0,
 		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 0,
 	},
-	"16" :  {
+	"16" :  { # Rethink
 		"Name" : "levels give a little storage",
 		"Description" : "Doubles Storage for all Classic Wood",
 		"Time" : 550, # Seconds
@@ -169,7 +169,7 @@ var Research = {
 		"ChestnutCost" : 0, "CherryCost" : 0, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 0,
 		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 0,
 	},
-	"21" :  {
+	"21" :  { # Move
 		"Name" : "Unlock Ascention",
 		"Description" : "Doubles Storage for all Classic Wood",
 		"Time" : 600, # Seconds
@@ -177,7 +177,7 @@ var Research = {
 		"ChestnutCost" : 0, "CherryCost" : 0, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 0,
 		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 0,
 	},
-	"17" :  { # might want to move to magic upgrades
+	"17" :  { # Move
 		"Name" : "Unlock Achievements",
 		"Description" : "Doubles Storage for all Classic Wood",
 		"Time" : 660, # Seconds
@@ -185,7 +185,7 @@ var Research = {
 		"ChestnutCost" : 0, "CherryCost" : 0, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 0,
 		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 0,
 	},
-	"18" :  {
+	"18" :  { # Rethink
 		"Name" : "wps ^2",
 		"Description" : "Doubles Storage for all Classic Wood",
 		"Time" : 720, # Seconds
@@ -201,7 +201,7 @@ var Research = {
 		"ChestnutCost" : 0, "CherryCost" : 0, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 0,
 		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 0,
 	},
-	"22" :  {
+	"22" :  { # Rethink
 		"Name" : "level effects 30%",
 		"Description" : "Maple Yum!",
 		"Time" : 1000, # Seconds
@@ -217,7 +217,7 @@ var Research = {
 		"ChestnutCost" : 0, "CherryCost" : 0, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 0,
 		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 0,
 	},
-	"23" :  {
+	"23" :  { # Move
 		"Name" : "Unlock Bots",
 		"Description" : "Doubles Storage for all Classic Wood",
 		"Time" : 1250, # Seconds
@@ -257,7 +257,7 @@ var Research = {
 		"ChestnutCost" : 0, "CherryCost" : 0, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 0,
 		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 0,
 	},
-	"27" :  {
+	"27" :  { # Rethink
 		"Name" : "Unlock Magic Upgrades",
 		"Description" : "Doubles Storage for all Classic Wood",
 		"Time" : 1900, # Seconds
