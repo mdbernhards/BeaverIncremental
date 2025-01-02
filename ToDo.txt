@@ -7,6 +7,8 @@ And maybe achievements could be a magic upgrade
 FoS visible when achievements unlocked, but achievemnts hidden until unlocked or specific research
 Research 14b needs to be moved to magic upgrades
 TempValues["Global"]["WcBaseStorage"] specificaly research 12 doesn't seem to get applied and idk why??
+For Last 3 upgrades for each wood add a lock that can be unlocked with magic, it gives global upgrade
+Display the extra woodcamps and the extra beavers
 
 Later:
 Add real play time counter

@@ -39,6 +39,6 @@ layout_mode = 1
 visible = false
 layout_mode = 1
 
-[node name="GameMainScreen" parent="." groups=["GameMainScreen"] instance=ExtResource("4_btfnp")]
+[node name="GameMainScreen" parent="." instance=ExtResource("4_btfnp")]
 visible = false
 layout_mode = 1

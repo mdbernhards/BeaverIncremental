@@ -28,6 +28,6 @@ func changePage(nr):
 func updateBars():
 	for i in 5:
 		BarList.get_node("BarItem" + str(i + 1)).changeBarValues(woodTypes[i])
-		
+
 func setNodePaths():
 	BarList = $BarList

@@ -55,7 +55,7 @@ func goToMainMenuFromSettings():
 	LoadGame.visible = false
 	MainMenu.visible = true
 	get_tree().get_first_node_in_group("Settings").visible = false
-	
+
 func setupNodePaths():
 	MainMenu = $MainMenu
 	LoadGame = $LoadGame

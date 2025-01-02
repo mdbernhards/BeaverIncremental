@@ -1,9 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://msehiccnr5t8"]
+[gd_scene load_steps=3 format=3 uid="uid://msehiccnr5t8"]
 
 [ext_resource type="Script" path="res://Scenes/GameMainScreenScenes/achievement_screen.gd" id="1_y4nkc"]
-[ext_resource type="Script" path="res://Scenes/GameMainScreenScenes/AchievementScenes/FoS_item.gd" id="2_ew5uj"]
 [ext_resource type="PackedScene" uid="uid://brl2vwyp21sf2" path="res://Scenes/GameMainScreenScenes/AchievementScenes/achievement_item.tscn" id="2_i6vah"]
-[ext_resource type="Script" path="res://Scenes/GameMainScreenScenes/AchievementScenes/FoSItem/sub_item.gd" id="3_k6rwp"]
 
 [node name="AchievementScreen" type="Control"]
 layout_mode = 3
@@ -22,293 +20,17 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="FeatsOfStrengthVBox" type="VBoxContainer" parent="AchievementScreenHBox"]
-custom_minimum_size = Vector2(895, 0)
-layout_mode = 2
-
-[node name="FoSTitleMC" type="MarginContainer" parent="AchievementScreenHBox/FeatsOfStrengthVBox"]
-custom_minimum_size = Vector2(0, 70)
-layout_mode = 2
-theme_override_constants/margin_left = 290
-theme_override_constants/margin_top = 13
-theme_override_constants/margin_right = 290
-theme_override_constants/margin_bottom = 3
-
-[node name="ColorRect" type="ColorRect" parent="AchievementScreenHBox/FeatsOfStrengthVBox/FoSTitleMC"]
-layout_mode = 2
-color = Color(0.305882, 0.352941, 0.392157, 1)
-
-[node name="TitleLabel" type="Label" parent="AchievementScreenHBox/FeatsOfStrengthVBox/FoSTitleMC/ColorRect"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_font_sizes/font_size = 30
-text = "Feats of Strength"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="MC" type="MarginContainer" parent="AchievementScreenHBox/FeatsOfStrengthVBox"]
-layout_mode = 2
-size_flags_vertical = 3
-
-[node name="Scroll" type="ScrollContainer" parent="AchievementScreenHBox/FeatsOfStrengthVBox/MC"]
-layout_mode = 2
-
-[node name="FoSVBox" type="VBoxContainer" parent="AchievementScreenHBox/FeatsOfStrengthVBox/MC/Scroll"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 3
-
-[node name="FoSItem" type="VBoxContainer" parent="AchievementScreenHBox/FeatsOfStrengthVBox/MC/Scroll/FoSVBox"]
-custom_minimum_size = Vector2(900, 186)
-layout_mode = 2
-script = ExtResource("2_ew5uj")
-
-[node name="MC" type="MarginContainer" parent="AchievementScreenHBox/FeatsOfStrengthVBox/MC/Scroll/FoSVBox/FoSItem"]
-layout_mode = 2
-theme_override_constants/margin_left = 25
-theme_override_constants/margin_top = 15
-
-[node name="FoSNameLabel" type="Label" parent="AchievementScreenHBox/FeatsOfStrengthVBox/MC/Scroll/FoSVBox/FoSItem/MC"]
-layout_mode = 2
-size_flags_vertical = 1
-theme_override_font_sizes/font_size = 32
-text = "Oak Wood"
-
-[node name="MC2" type="MarginContainer" parent="AchievementScreenHBox/FeatsOfStrengthVBox/MC/Scroll/FoSVBox/FoSItem"]
-layout_mode = 2
-theme_override_constants/margin_left = 25
-theme_override_constants/margin_top = 2
-theme_override_constants/margin_right = 25
-theme_override_constants/margin_bottom = 20
-
-[node name="SubItemHBox" type="HBoxContainer" parent="AchievementScreenHBox/FeatsOfStrengthVBox/MC/Scroll/FoSVBox/FoSItem/MC2"]
-layout_mode = 2
-theme_override_constants/separation = 25
-
-[node name="SubItem" type="MarginContainer" parent="AchievementScreenHBox/FeatsOfStrengthVBox/MC/Scroll/FoSVBox/FoSItem/MC2/SubItemHBox"]
-custom_minimum_size = Vector2(100, 100)
-layout_mode = 2
-script = ExtResource("3_k6rwp")
-
-[node name="UnlockedRect" type="ColorRect" parent="AchievementScreenHBox/FeatsOfStrengthVBox/MC/Scroll/FoSVBox/FoSItem/MC2/SubItemHBox/SubItem"]
-custom_minimum_size = Vector2(100, 100)
-layout_mode = 2
-color = Color(0.150209, 0.32538, 0.248933, 1)
-
-[node name="LockedRect" type="ColorRect" parent="AchievementScreenHBox/FeatsOfStrengthVBox/MC/Scroll/FoSVBox/FoSItem/MC2/SubItemHBox/SubItem"]
-custom_minimum_size = Vector2(76, 76)
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-color = Color(0.403524, 0.225799, 0.244768, 1)
-
-[node name="Label" type="Label" parent="AchievementScreenHBox/FeatsOfStrengthVBox/MC/Scroll/FoSVBox/FoSItem/MC2/SubItemHBox/SubItem/LockedRect"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_font_sizes/font_size = 49
-text = "?"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="SubItem2" type="MarginContainer" parent="AchievementScreenHBox/FeatsOfStrengthVBox/MC/Scroll/FoSVBox/FoSItem/MC2/SubItemHBox"]
-custom_minimum_size = Vector2(100, 100)
-layout_mode = 2
-
-[node name="UnlockedRect" type="ColorRect" parent="AchievementScreenHBox/FeatsOfStrengthVBox/MC/Scroll/FoSVBox/FoSItem/MC2/SubItemHBox/SubItem2"]
-custom_minimum_size = Vector2(100, 100)
-layout_mode = 2
-color = Color(0.150209, 0.32538, 0.248933, 1)
-
-[node name="LockedRect" type="ColorRect" parent="AchievementScreenHBox/FeatsOfStrengthVBox/MC/Scroll/FoSVBox/FoSItem/MC2/SubItemHBox/SubItem2"]
-custom_minimum_size = Vector2(76, 76)
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-color = Color(0.403524, 0.225799, 0.244768, 1)
-
-[node name="Label" type="Label" parent="AchievementScreenHBox/FeatsOfStrengthVBox/MC/Scroll/FoSVBox/FoSItem/MC2/SubItemHBox/SubItem2/LockedRect"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_font_sizes/font_size = 49
-text = "?"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="SubItem3" type="MarginContainer" parent="AchievementScreenHBox/FeatsOfStrengthVBox/MC/Scroll/FoSVBox/FoSItem/MC2/SubItemHBox"]
-custom_minimum_size = Vector2(100, 100)
-layout_mode = 2
-
-[node name="UnlockedRect" type="ColorRect" parent="AchievementScreenHBox/FeatsOfStrengthVBox/MC/Scroll/FoSVBox/FoSItem/MC2/SubItemHBox/SubItem3"]
-custom_minimum_size = Vector2(100, 100)
-layout_mode = 2
-color = Color(0.150209, 0.32538, 0.248933, 1)
-
-[node name="LockedRect" type="ColorRect" parent="AchievementScreenHBox/FeatsOfStrengthVBox/MC/Scroll/FoSVBox/FoSItem/MC2/SubItemHBox/SubItem3"]
-custom_minimum_size = Vector2(76, 76)
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-color = Color(0.403524, 0.225799, 0.244768, 1)
-
-[node name="Label" type="Label" parent="AchievementScreenHBox/FeatsOfStrengthVBox/MC/Scroll/FoSVBox/FoSItem/MC2/SubItemHBox/SubItem3/LockedRect"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_font_sizes/font_size = 49
-text = "?"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="SubItem4" type="MarginContainer" parent="AchievementScreenHBox/FeatsOfStrengthVBox/MC/Scroll/FoSVBox/FoSItem/MC2/SubItemHBox"]
-custom_minimum_size = Vector2(100, 100)
-layout_mode = 2
-
-[node name="UnlockedRect" type="ColorRect" parent="AchievementScreenHBox/FeatsOfStrengthVBox/MC/Scroll/FoSVBox/FoSItem/MC2/SubItemHBox/SubItem4"]
-custom_minimum_size = Vector2(100, 100)
-layout_mode = 2
-color = Color(0.150209, 0.32538, 0.248933, 1)
-
-[node name="LockedRect" type="ColorRect" parent="AchievementScreenHBox/FeatsOfStrengthVBox/MC/Scroll/FoSVBox/FoSItem/MC2/SubItemHBox/SubItem4"]
-custom_minimum_size = Vector2(76, 76)
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-color = Color(0.403524, 0.225799, 0.244768, 1)
-
-[node name="Label" type="Label" parent="AchievementScreenHBox/FeatsOfStrengthVBox/MC/Scroll/FoSVBox/FoSItem/MC2/SubItemHBox/SubItem4/LockedRect"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_font_sizes/font_size = 49
-text = "?"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="SubItem5" type="MarginContainer" parent="AchievementScreenHBox/FeatsOfStrengthVBox/MC/Scroll/FoSVBox/FoSItem/MC2/SubItemHBox"]
-custom_minimum_size = Vector2(100, 100)
-layout_mode = 2
-
-[node name="UnlockedRect" type="ColorRect" parent="AchievementScreenHBox/FeatsOfStrengthVBox/MC/Scroll/FoSVBox/FoSItem/MC2/SubItemHBox/SubItem5"]
-custom_minimum_size = Vector2(100, 100)
-layout_mode = 2
-color = Color(0.150209, 0.32538, 0.248933, 1)
-
-[node name="LockedRect" type="ColorRect" parent="AchievementScreenHBox/FeatsOfStrengthVBox/MC/Scroll/FoSVBox/FoSItem/MC2/SubItemHBox/SubItem5"]
-custom_minimum_size = Vector2(76, 76)
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-color = Color(0.403524, 0.225799, 0.244768, 1)
-
-[node name="Label" type="Label" parent="AchievementScreenHBox/FeatsOfStrengthVBox/MC/Scroll/FoSVBox/FoSItem/MC2/SubItemHBox/SubItem5/LockedRect"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_font_sizes/font_size = 49
-text = "?"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="SubItem6" type="MarginContainer" parent="AchievementScreenHBox/FeatsOfStrengthVBox/MC/Scroll/FoSVBox/FoSItem/MC2/SubItemHBox"]
-custom_minimum_size = Vector2(100, 100)
-layout_mode = 2
-
-[node name="UnlockedRect" type="ColorRect" parent="AchievementScreenHBox/FeatsOfStrengthVBox/MC/Scroll/FoSVBox/FoSItem/MC2/SubItemHBox/SubItem6"]
-custom_minimum_size = Vector2(100, 100)
-layout_mode = 2
-color = Color(0.150209, 0.32538, 0.248933, 1)
-
-[node name="LockedRect" type="ColorRect" parent="AchievementScreenHBox/FeatsOfStrengthVBox/MC/Scroll/FoSVBox/FoSItem/MC2/SubItemHBox/SubItem6"]
-custom_minimum_size = Vector2(76, 76)
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-color = Color(0.403524, 0.225799, 0.244768, 1)
-
-[node name="Label" type="Label" parent="AchievementScreenHBox/FeatsOfStrengthVBox/MC/Scroll/FoSVBox/FoSItem/MC2/SubItemHBox/SubItem6/LockedRect"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_font_sizes/font_size = 49
-text = "?"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="SubItem7" type="MarginContainer" parent="AchievementScreenHBox/FeatsOfStrengthVBox/MC/Scroll/FoSVBox/FoSItem/MC2/SubItemHBox"]
-custom_minimum_size = Vector2(100, 100)
-layout_mode = 2
-
-[node name="UnlockedRect" type="ColorRect" parent="AchievementScreenHBox/FeatsOfStrengthVBox/MC/Scroll/FoSVBox/FoSItem/MC2/SubItemHBox/SubItem7"]
-custom_minimum_size = Vector2(100, 100)
-layout_mode = 2
-color = Color(0.150209, 0.32538, 0.248933, 1)
-
-[node name="LockedRect" type="ColorRect" parent="AchievementScreenHBox/FeatsOfStrengthVBox/MC/Scroll/FoSVBox/FoSItem/MC2/SubItemHBox/SubItem7"]
-custom_minimum_size = Vector2(76, 76)
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-color = Color(0.403524, 0.225799, 0.244768, 1)
-
-[node name="Label" type="Label" parent="AchievementScreenHBox/FeatsOfStrengthVBox/MC/Scroll/FoSVBox/FoSItem/MC2/SubItemHBox/SubItem7/LockedRect"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_font_sizes/font_size = 49
-text = "?"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="MC" type="MarginContainer" parent="AchievementScreenHBox"]
-custom_minimum_size = Vector2(180, 0)
-layout_mode = 2
-theme_override_constants/margin_left = 10
-theme_override_constants/margin_top = 13
-theme_override_constants/margin_right = 10
-theme_override_constants/margin_bottom = 265
-
-[node name="ColorRect" type="ColorRect" parent="AchievementScreenHBox/MC"]
-layout_mode = 2
-color = Color(0.486275, 0.486275, 0.486275, 1)
-
 [node name="AchievementsVBox" type="VBoxContainer" parent="AchievementScreenHBox"]
 layout_mode = 2
 size_flags_horizontal = 3
 
 [node name="FoSTitleMC" type="MarginContainer" parent="AchievementScreenHBox/AchievementsVBox"]
-custom_minimum_size = Vector2(0, 70)
+custom_minimum_size = Vector2(0, 90)
 layout_mode = 2
-theme_override_constants/margin_left = 270
-theme_override_constants/margin_top = 13
-theme_override_constants/margin_right = 270
-theme_override_constants/margin_bottom = 3
+theme_override_constants/margin_left = 630
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 630
+theme_override_constants/margin_bottom = 0
 
 [node name="ColorRect" type="ColorRect" parent="AchievementScreenHBox/AchievementsVBox/FoSTitleMC"]
 layout_mode = 2
@@ -321,7 +43,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_font_sizes/font_size = 30
+theme_override_font_sizes/font_size = 45
 text = "Achievements"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -330,9 +52,13 @@ vertical_alignment = 1
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_constants/margin_left = 15
-theme_override_constants/margin_top = 15
+theme_override_constants/margin_top = 20
 theme_override_constants/margin_right = 25
-theme_override_constants/margin_bottom = 20
+theme_override_constants/margin_bottom = 270
+
+[node name="ColorRect" type="ColorRect" parent="AchievementScreenHBox/AchievementsVBox/MC"]
+layout_mode = 2
+color = Color(0.303233, 0.303233, 0.303233, 1)
 
 [node name="Scroll" type="ScrollContainer" parent="AchievementScreenHBox/AchievementsVBox/MC"]
 layout_mode = 2
@@ -341,9 +67,9 @@ layout_mode = 2
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme_override_constants/h_separation = 13
-theme_override_constants/v_separation = 16
-columns = 7
+theme_override_constants/h_separation = 18
+theme_override_constants/v_separation = 18
+columns = 16
 
 [node name="AchievementItem" parent="AchievementScreenHBox/AchievementsVBox/MC/Scroll/AchievementGrid" instance=ExtResource("2_i6vah")]
 layout_mode = 2

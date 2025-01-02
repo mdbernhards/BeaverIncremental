@@ -2,92 +2,114 @@ extends Node
 
 var Achievements = {
 	"1" : {
-		"Name" : "Unlock 5 wood types",
-		"Description" : "First",
+		"Name" : "Have 250k Oak",
+		"Description" : "Collect 250k Oak Wood",
+		"Trigger" : SaveData.Resources["Oak"]["Count"] > 250000,
 	},
 	"2" : {
-		"Name" : "Unlock 10 wood types",
-		"Description" : "First",
+		"Name" : "Have 1m Oak",
+		"Description" : "Collect 1m Oak Wood",
+		"Trigger" : SaveData.Resources["Oak"]["Count"] > pow(10, 6),
 	},
 	"3" : {
-		"Name" : "Unlock all wood types",
-		"Description" : "First",
+		"Name" : "Have 10m Oak",
+		"Description" : "Collect 10m Oak Wood",
+		"Trigger" : SaveData.Resources["Oak"]["Count"] > pow(10, 7),
 	},
 	"4" : {
-		"Name" : "click on this achievement",
-		"Description" : "First",
+		"Name" : "Have 10^9 Oak",
+		"Description" : "Collect 10^9 Oak Wood",
+		"Trigger" : SaveData.Resources["Oak"]["Count"] > pow(10, 9),
 	},
 	"5" : {
-		"Name" : "Unlocked Bots",
-		"Description" : "First",
+		"Name" : "Have 10^13 Oak",
+		"Description" : "Collect 10^13 Oak Wood",
+		"Trigger" : SaveData.Resources["Oak"]["Count"] > pow(10, 13),
 	},
 	"6" : {
-		"Name" : "Unlocked Dam construction",
-		"Description" : "First",
+		"Name" : "Have 10^17 Oak",
+		"Description" : "Collect 10^17 Oak Wood",
+		"Trigger" : SaveData.Resources["Oak"]["Count"] > pow(10, 17),
 	},
 	"7" : {
-		"Name" : "Unlocked Fishing",
-		"Description" : "First",
+		"Name" : "Have 10^23 Oak",
+		"Description" : "Collect 10^23 Oak Wood",
+		"Trigger" : SaveData.Resources["Oak"]["Count"] > pow(10, 23),
 	},
 	"8" : {
-		"Name" : "Unlocked fishing spot 1",
-		"Description" : "First",
+		"Name" : "Have 10^29 Oak",
+		"Description" : "Collect 10^29 Oak Wood",
+		"Trigger" : SaveData.Resources["Oak"]["Count"] > pow(10, 29),
 	},
 	"9" : {
-		"Name" : "Unlocked fishing spot 2",
-		"Description" : "First",
+		"Name" : "Have 10^6 Apple",
+		"Description" : "Collect 10^6 Apple Wood",
+		"Trigger" : SaveData.Resources["Apple"]["Count"] > pow(10, 6),
 	},
 	"10" : {
-		"Name" : "Unlocked fishing spot 3",
-		"Description" : "First",
+		"Name" : "Have 10^8 Apple",
+		"Description" : "Collect 10^8 Apple Wood",
+		"Trigger" : SaveData.Resources["Apple"]["Count"] > pow(10, 8),
 	},
 	"11" : {
-		"Name" : "Unlocked fishing spot 4",
-		"Description" : "First",
+		"Name" : "Have 10^10 Apple",
+		"Description" : "Collect 10^10 Apple Wood",
+		"Trigger" : SaveData.Resources["Apple"]["Count"] > pow(10, 10),
 	},
 	"12" : {
-		"Name" : "Unlocked fishing spot 5",
-		"Description" : "First",
+		"Name" : "Have 10^13 Apple",
+		"Description" : "Collect 10^13 Apple Wood",
+		"Trigger" : SaveData.Resources["Apple"]["Count"] > pow(10, 13),
 	},
 	"13" : {
-		"Name" : "Have 100 woodcamps",
-		"Description" : "First",
+		"Name" : "Have 10^15 Apple",
+		"Description" : "Collect 10^15 Apple Wood",
+		"Trigger" : SaveData.Resources["Apple"]["Count"] > pow(10, 15),
 	},
 	"14" : {
-		"Name" : "Have 1000 woodcamps",
-		"Description" : "First",
+		"Name" : "Have 10^20 Apple",
+		"Description" : "Collect 10^20 Apple Wood",
+		"Trigger" : SaveData.Resources["Apple"]["Count"] > pow(10, 20),
 	},
 	"15" : {
-		"Name" : "Have 10000 woodcamps",
-		"Description" : "First",
+		"Name" : "Have 10^25 Apple",
+		"Description" : "Collect 10^25 Apple Wood",
+		"Trigger" : SaveData.Resources["Apple"]["Count"] > pow(10, 25),
 	},
 	"16" : {
-		"Name" : "Have 100000 woodcamps",
-		"Description" : "First",
+		"Name" : "Have 10^4 Maple",
+		"Description" : "Collect 10^4 Maple Wood",
+		"Trigger" : SaveData.Resources["Maple"]["Count"] > pow(10, 4),
 	},
 	"17" : {
-		"Name" : "Have 10^6 woodcamps",
-		"Description" : "First",
+		"Name" : "Have 10^7 Maple",
+		"Description" : "Collect 10^7 Maple Wood",
+		"Trigger" : SaveData.Resources["Maple"]["Count"] > pow(10, 7),
 	},
 	"18" : {
-		"Name" : "Have 10^7 woodcamps",
-		"Description" : "First",
+		"Name" : "Have 10^11 Maple",
+		"Description" : "Collect 10^11 Maple Wood",
+		"Trigger" : SaveData.Resources["Maple"]["Count"] > pow(10, 11),
 	},
 	"19" : {
-		"Name" : "Have 10^8 woodcamps",
-		"Description" : "First",
+		"Name" : "Have 10^15 Maple",
+		"Description" : "Collect 10^15 Maple Wood",
+		"Trigger" : SaveData.Resources["Maple"]["Count"] > pow(10, 15),
 	},
 	"20" : {
-		"Name" : "Have 10^9 woodcamps",
-		"Description" : "First",
+		"Name" : "Have 10^18 Maple",
+		"Description" : "Collect 10^18 Maple Wood",
+		"Trigger" : SaveData.Resources["Maple"]["Count"] > pow(10, 18),
 	},
 	"21" : {
-		"Name" : "Have 10^10 woodcamps",
-		"Description" : "First",
+		"Name" : "Have 10^24 Maple",
+		"Description" : "Collect 10^24 Maple Wood",
+		"Trigger" : SaveData.Resources["Maple"]["Count"] > pow(10, 24),
 	},
 	"22" : {
-		"Name" : "Have 100 beavers",
-		"Description" : "First",
+		"Name" : "Have 10^26 Maple",
+		"Description" : "Collect 10^26 Maple Wood",
+		"Trigger" : SaveData.Resources["Maple"]["Count"] > pow(10, 26),
 	},
 	"23" : {
 		"Name" : "Have 1000 beavers",
@@ -252,620 +274,5 @@ var Achievements = {
 	"63" : {
 		"Name" : "Buy all magic upgrades",
 		"Description" : "First",
-	},
-}
-
-var FeatsOfStrength = {
-	"1" : {
-		"Name" : "Total Beavers",
-		"Description" : "First",
-		"Stages" : {
-			"1" : {
-				"Name" = "100 Beavers",
-				"Unlocked" = false,
-			},
-			"2" : {
-				"Name" = "1000 Beavers",
-				"Unlocked" = false,
-			},
-			"3" : {
-				"Name" = "10000 Beavers",
-				"Unlocked" = false,
-			},
-			"4" : {
-				"Name" = "50000 Beavers",
-				"Unlocked" = false,
-			},
-			"5" : {
-				"Name" = "250000 Beavers",
-				"Unlocked" = false,
-			},
-			"6" : {
-				"Name" = "1000000 Beavers",
-				"Unlocked" = false,
-			},
-			"7" : {
-				"Name" = "10000000 Beavers",
-				"Unlocked" = false,
-			},
-		},
-	}, 
-	"2" : {
-		"Name" : "Total Woodcamps", # Don't Reset on Ascension
-		"Description" : "First",
-		"Stages" : {
-			"1" : {
-				"Name" = "100 Woodcamps",
-				"Unlocked" = false,
-			},
-			"2" : {
-				"Name" = "1000 Woodcamps",
-				"Unlocked" = false,
-			},
-			"3" : {
-				"Name" = "10000 Woodcamps",
-				"Unlocked" = false,
-			},
-			"4" : {
-				"Name" = "50000 Woodcamps",
-				"Unlocked" = false,
-			},
-			"5" : {
-				"Name" = "250000 Woodcamps",
-				"Unlocked" = false,
-			},
-			"6" : {
-				"Name" = "1000000 Woodcamps",
-				"Unlocked" = false,
-			},
-			"7" : {
-				"Name" = "10000000 Woodcamps",
-				"Unlocked" = false,
-			},
-		},
-	},
-	"3" : {
-		"Name" : "Total Wood Gained",
-		"Description" : "First",
-		"Stages" : {
-			"1" : {
-				"Name" = "100k",
-				"Unlocked" = false,
-			},
-			"2" : {
-				"Name" = "1m",
-				"Unlocked" = false,
-			},
-			"3" : {
-				"Name" = "1t",
-				"Unlocked" = false,
-			},
-			"4" : {
-				"Name" = "10^12",
-				"Unlocked" = false,
-			},
-			"5" : {
-				"Name" = "10^15",
-				"Unlocked" = false,
-			},
-			"6" : {
-				"Name" = "10^18",
-				"Unlocked" = false,
-			},
-			"7" : {
-				"Name" = "10^21",
-				"Unlocked" = false,
-			},
-		},
-	},
-	"4" : {
-		"Name" : "Total Wood Sold With Bots",
-		"Description" : "First",
-		"Stages" : {
-			"1" : {
-				"Name" = "10k",
-				"Unlocked" = false,
-			},
-			"2" : {
-				"Name" = "100k",
-				"Unlocked" = false,
-			},
-			"3" : {
-				"Name" = "1b",
-				"Unlocked" = false,
-			},
-			"4" : {
-				"Name" = "10^11",
-				"Unlocked" = false,
-			},
-			"5" : {
-				"Name" = "10^14",
-				"Unlocked" = false,
-			},
-			"6" : {
-				"Name" = "10^17",
-				"Unlocked" = false,
-			},
-			"7" : {
-				"Name" = "10^20",
-				"Unlocked" = false,
-			},
-		},
-	},
-	"5" : {
-		"Name" : "Total Gold gained",
-		"Description" : "First",
-		"Stages" : {
-			"1" : {
-				"Name" = "10k",
-				"Unlocked" = false,
-			},
-			"2" : {
-				"Name" = "100k",
-				"Unlocked" = false,
-			},
-			"3" : {
-				"Name" = "1m",
-				"Unlocked" = false,
-			},
-			"4" : {
-				"Name" = "10^9",
-				"Unlocked" = false,
-			},
-			"5" : {
-				"Name" = "10^11",
-				"Unlocked" = false,
-			},
-			"6" : {
-				"Name" = "10^14",
-				"Unlocked" = false,
-			},
-			"7" : {
-				"Name" = "10^16",
-				"Unlocked" = false,
-			},
-		},
-	},
-	"6" : {
-		"Name" : "Gold Gain Per Second",
-		"Description" : "First",
-		"Stages" : {
-			"1" : {
-				"Name" = "1k",
-				"Unlocked" = false,
-			},
-			"2" : {
-				"Name" = "100k",
-				"Unlocked" = false,
-			},
-			"3" : {
-				"Name" = "100m",
-				"Unlocked" = false,
-			},
-			"4" : {
-				"Name" = "1t",
-				"Unlocked" = false,
-			},
-			"5" : {
-				"Name" = "10^12",
-				"Unlocked" = false,
-			},
-			"6" : {
-				"Name" = "10^14",
-				"Unlocked" = false,
-			},
-			"7" : {
-				"Name" = "10^16",
-				"Unlocked" = false,
-			},
-		},
-	},
-	"7" : {
-		"Name" : "Total Reaserch Done",
-		"Description" : "First",
-		"Stages" : {
-			"1" : {
-				"Name" = "20",
-				"Unlocked" = false,
-			},
-			"2" : {
-				"Name" = "60",
-				"Unlocked" = false,
-			},
-			"3" : {
-				"Name" = "130",
-				"Unlocked" = false,
-			},
-			"4" : {
-				"Name" = "250",
-				"Unlocked" = false,
-			},
-			"5" : {
-				"Name" = "400",
-				"Unlocked" = false,
-			},
-			"6" : {
-				"Name" = "750",
-				"Unlocked" = false,
-			},
-			"7" : {
-				"Name" = "1000",
-				"Unlocked" = false,
-			},
-		},
-	},
-	"8" : {
-		"Name" : "Total Upgrades bought",
-		"Description" : "First",
-		"Stages" : {
-			"1" : {
-				"Name" = "500",
-				"Unlocked" = false,
-			},
-			"2" : {
-				"Name" = "2500",
-				"Unlocked" = false,
-			},
-			"3" : {
-				"Name" = "5000",
-				"Unlocked" = false,
-			},
-			"4" : {
-				"Name" = "10000",
-				"Unlocked" = false,
-			},
-			"5" : {
-				"Name" = "20000",
-				"Unlocked" = false,
-			},
-			"6" : {
-				"Name" = "30000",
-				"Unlocked" = false,
-			},
-			"7" : {
-				"Name" = "50000",
-				"Unlocked" = false,
-			},
-		},
-	},
-	"9" : {
-		"Name" : "Total Bots Bought",
-		"Description" : "First",
-		"Stages" : {
-			"1" : {
-				"Name" = "100",
-				"Unlocked" = false,
-			},
-			"2" : {
-				"Name" = "400",
-				"Unlocked" = false,
-			},
-			"3" : {
-				"Name" = "950",
-				"Unlocked" = false,
-			},
-			"4" : {
-				"Name" = "2000",
-				"Unlocked" = false,
-			},
-			"5" : {
-				"Name" = "3000",
-				"Unlocked" = false,
-			},
-			"6" : {
-				"Name" = "5000",
-				"Unlocked" = false,
-			},
-			"7" : {
-				"Name" = "7500",
-				"Unlocked" = false,
-			},
-		},
-	},
-	"10" : {
-		"Name" : "Times Ascended",
-		"Description" : "First",
-		"Stages" : {
-			"1" : {
-				"Name" = "1",
-				"Unlocked" = false,
-			},
-			"2" : {
-				"Name" = "3",
-				"Unlocked" = false,
-			},
-			"3" : {
-				"Name" = "10",
-				"Unlocked" = false,
-			},
-			"4" : {
-				"Name" = "20",
-				"Unlocked" = false,
-			},
-			"5" : {
-				"Name" = "35",
-				"Unlocked" = false,
-			},
-			"6" : {
-				"Name" = "50",
-				"Unlocked" = false,
-			},
-			"7" : {
-				"Name" = "75",
-				"Unlocked" = false,
-			},
-		},
-	},
-	"11" : {
-		"Name" : "Magic Upgrades Bought",
-		"Description" : "First",
-		"Stages" : {
-			"1" : {
-				"Name" = "1",
-				"Unlocked" = false,
-			},
-			"2" : {
-				"Name" = "5",
-				"Unlocked" = false,
-			},
-			"3" : {
-				"Name" = "10",
-				"Unlocked" = false,
-			},
-			"4" : {
-				"Name" = "15",
-				"Unlocked" = false,
-			},
-			"5" : {
-				"Name" = "20",
-				"Unlocked" = false,
-			},
-			"6" : {
-				"Name" = "25",
-				"Unlocked" = false,
-			},
-			"7" : {
-				"Name" = "30",
-				"Unlocked" = false,
-			},
-		},
-	},
-	"12" : {
-		"Name" : "Total Magic Gathered",
-		"Description" : "First",
-		"Stages" : {
-			"1" : {
-				"Name" = "15",
-				"Unlocked" = false,
-			},
-			"2" : {
-				"Name" = "100",
-				"Unlocked" = false,
-			},
-			"3" : {
-				"Name" = "1000",
-				"Unlocked" = false,
-			},
-			"4" : {
-				"Name" = "10000",
-				"Unlocked" = false,
-			},
-			"5" : {
-				"Name" = "50000",
-				"Unlocked" = false,
-			},
-			"6" : {
-				"Name" = "250000",
-				"Unlocked" = false,
-			},
-			"7" : {
-				"Name" = "1000000",
-				"Unlocked" = false,
-			},
-		},
-	},
-	"13" : {
-		"Name" : "Total Dams Built",
-		"Description" : "First",
-		"Stages" : {
-			"1" : {
-				"Name" = "1",
-				"Unlocked" = false,
-			},
-			"2" : {
-				"Name" = "5",
-				"Unlocked" = false,
-			},
-			"3" : {
-				"Name" = "25",
-				"Unlocked" = false,
-			},
-			"4" : {
-				"Name" = "80",
-				"Unlocked" = false,
-			},
-			"5" : {
-				"Name" = "200",
-				"Unlocked" = false,
-			},
-			"6" : {
-				"Name" = "500",
-				"Unlocked" = false,
-			},
-			"7" : {
-				"Name" = "1250",
-				"Unlocked" = false,
-			},
-		},
-	},
-	"14" : {
-		"Name" : "Fish types caught",
-		"Description" : "First",
-		"Stages" : {
-			"1" : {
-				"Name" = "1",
-				"Unlocked" = false,
-			},
-			"2" : {
-				"Name" = "10",
-				"Unlocked" = false,
-			},
-			"3" : {
-				"Name" = "20",
-				"Unlocked" = false,
-			},
-			"4" : {
-				"Name" = "30",
-				"Unlocked" = false,
-			},
-			"5" : {
-				"Name" = "40",
-				"Unlocked" = false,
-			},
-			"6" : {
-				"Name" = "50",
-				"Unlocked" = false,
-			},
-			"7" : {
-				"Name" = "70",
-				"Unlocked" = false,
-			},
-		},
-	},
-	"15" : {
-		"Name" : "Total Times Fished",
-		"Description" : "First",
-		"Stages" : {
-			"1" : {
-				"Name" = "1",
-				"Unlocked" = false,
-			},
-			"2" : {
-				"Name" = "35",
-				"Unlocked" = false,
-			},
-			"3" : {
-				"Name" = "75",
-				"Unlocked" = false,
-			},
-			"4" : {
-				"Name" = "125",
-				"Unlocked" = false,
-			},
-			"5" : {
-				"Name" = "250",
-				"Unlocked" = false,
-			},
-			"6" : {
-				"Name" = "500",
-				"Unlocked" = false,
-			},
-			"7" : {
-				"Name" = "1000",
-				"Unlocked" = false,
-			},
-		},
-	},
-	"16" : {
-		"Name" : "Times clicked",
-		"Description" : "First",
-		"Stages" : {
-			"1" : {
-				"Name" = "10000",
-				"Unlocked" = false,
-			},
-			"2" : {
-				"Name" = "30000",
-				"Unlocked" = false,
-			},
-			"3" : {
-				"Name" = "60000",
-				"Unlocked" = false,
-			},
-			"4" : {
-				"Name" = "100000",
-				"Unlocked" = false,
-			},
-			"5" : {
-				"Name" = "150000",
-				"Unlocked" = false,
-			},
-			"6" : {
-				"Name" = "210000",
-				"Unlocked" = false,
-			},
-			"7" : {
-				"Name" = "300000",
-				"Unlocked" = false,
-			},
-		},
-	},
-	"17" : {
-		"Name" : "Time played",
-		"Description" : "First",
-		"Stages" : {
-			"1" : {
-				"Name" = "5h",
-				"Unlocked" = false,
-			},
-			"2" : {
-				"Name" = "10h",
-				"Unlocked" = false,
-			},
-			"3" : {
-				"Name" = "20h",
-				"Unlocked" = false,
-			},
-			"4" : {
-				"Name" = "30h",
-				"Unlocked" = false,
-			},
-			"5" : {
-				"Name" = "50h",
-				"Unlocked" = false,
-			},
-			"6" : {
-				"Name" = "70h",
-				"Unlocked" = false,
-			},
-			"7" : {
-				"Name" = "100h",
-				"Unlocked" = false,
-			},
-		},
-	},
-	"18" : {
-		"Name" : "Achievements Unlocked",
-		"Description" : "First",
-		"Stages" : {
-			"1" : {
-				"Name" = "1",
-				"Unlocked" = false,
-			},
-			"2" : {
-				"Name" = "10",
-				"Unlocked" = false,
-			},
-			"3" : {
-				"Name" = "20",
-				"Unlocked" = false,
-			},
-			"4" : {
-				"Name" = "30",
-				"Unlocked" = false,
-			},
-			"5" : {
-				"Name" = "40",
-				"Unlocked" = false,
-			},
-			"6" : {
-				"Name" = "50",
-				"Unlocked" = false,
-			},
-			"7" : {
-				"Name" = "60",
-				"Unlocked" = false,
-			},
-		},
 	},
 }

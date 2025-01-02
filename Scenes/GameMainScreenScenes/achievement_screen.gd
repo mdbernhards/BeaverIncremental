@@ -1,13 +1,11 @@
 extends Control
 
 # Nodes
-var FoSVBox
 var AchievementGrid
 
 func _ready() -> void:
 	setupNodePaths()
 	setupAchievements()
-	setupFoS()
 
 func _process(delta: float) -> void:
 	pass
@@ -22,9 +20,5 @@ func setupAchievements():
 		
 		AchievementGrid.add_child(achievementItem)
 
-func setupFoS():
-	pass
-
 func setupNodePaths():
-	FoSVBox = $AchievementScreenHBox/FeatsOfStrengthVBox/MC/Scroll/FoSVBox
 	AchievementGrid = $AchievementScreenHBox/AchievementsVBox/MC/Scroll/AchievementGrid

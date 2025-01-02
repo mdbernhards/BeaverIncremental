@@ -75,7 +75,7 @@ func updateUpgradeValues():
 	else:
 		CurrentPrice = round(CalculatePrice.getUpgradeCost(SaveDataValues["Level"], ResourceType, str(UpgradeNumber)) * Values.ResourceValues[ResourceType]["UpgradePriceMultip"])
 	
-	PriceLabel.text = "price: " + str(CurrentPrice)
+	PriceLabel.text = "price: " + str(NumberFormatting.formatNumber(CurrentPrice, NumberFormatting.NotationTypesEnum.Engineering))
 	LevelLabel.text = "LvL " + str(SaveDataValues["Level"])
 	NrLabel.text = str(UpgradeNumber)
 	

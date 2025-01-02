@@ -2,151 +2,306 @@ extends Node
 
 var Magic = {
 	"1" : {
-		"Name" : "Unlock gold upgrades",
-		"Description" : "Allows building woodcamps, unlocks woodcamp upgrades",
-		"Cost" : 2,
+		"Name" : "Unlock Achievements and FoS",
+		"Description" : "Unlock The Achievements and Feats of Strength section",
+		"Cost" : 1,
 	},
 	"2" : {
-		"Name" : "5x wood production",
-		"Description" : "Allows building woodcamps, unlocks woodcamp upgrades",
-		"Cost" : 4,
+		"Name" : "20% WPS",
+		"Description" : "Improve Wood per Second gain by 20%",
+		"Cost" : 3,
 	},
 	"3" : {
-		"Name" : "15x storage from wc",
-		"Description" : "Allows building woodcamps, unlocks woodcamp upgrades",
-		"Cost" : 8,
+		"Name" : "2x Storage From WC",
+		"Description" : "2x The Storage gained from Woodcamps",
+		"Cost" : 5,
 	},
 	"4" : {
-		"Name" : "Research Times / 2",
-		"Description" : "Allows building woodcamps, unlocks woodcamp upgrades",
-		"Cost" : 14,
+		"Name" : "Starting Beavers +2",
+		"Description" : "All wood types start with 2 more beavers",
+		"Cost" : 8,
 	},
 	"5" : {
-		"Name" : "7.5x wpc",
-		"Description" : "Allows building woodcamps, unlocks woodcamp upgrades",
-		"Cost" : 35,
+		"Name" : "Per Achievement 0.1% WPS",
+		"Description" : "",
+		"Cost" : 12,
 	},
 	"6" : {
-		"Name" : "Research 2 at a time",
-		"Description" : "Allows building woodcamps, unlocks woodcamp upgrades",
-		"Cost" : 220,
+		"Name" : "Unlock Storage Overloading",
+		"Description" : "",
+		"Cost" : 25,
 	},
 	"7" : {
-		"Name" : "Gain 3x Magic",
-		"Description" : "Allows building woodcamps, unlocks woodcamp upgrades",
-		"Cost" : 444,
+		"Name" : "Research Times / 2",
+		"Description" : "",
+		"Cost" : 45,
 	},
 	"8" : {
-		"Name" : "50% cheaper woodcamps",
+		"Name" : "0.05% WPC Per Achievement",
 		"Description" : "Allows building woodcamps, unlocks woodcamp upgrades",
-		"Cost" : 950,
+		"Cost" : 90,
 	},
 	"9" : {
-		"Name" : "Unlock Spruce Wood",
+		"Name" : "5% WPC To WPS",
 		"Description" : "Allows building woodcamps, unlocks woodcamp upgrades",
-		"Cost" : 1880,
+		"Cost" : 130,
 	},
 	"10" : {
-		"Name" : "10x storage",
+		"Name" : "Unlock Fishing",
+		"Description" : "Allows building woodcamps, unlocks woodcamp upgrades",
+		"Cost" : 180,
+	},
+	"11" : {
+		"Name" : "Gain 30% More Magic",
+		"Description" : "Allows building woodcamps, unlocks woodcamp upgrades",
+		"Cost" : 300,
+	},
+	"12" : {
+		"Name" : "50% Cheaper Woodcamps",
+		"Description" : "Allows building woodcamps, unlocks woodcamp upgrades",
+		"Cost" : 500,
+	},
+	"13" : {
+		"Name" : "Unlock Research Slot 2",
+		"Description" : "Allows building woodcamps, unlocks woodcamp upgrades",
+		"Cost" : 600,
+	},
+	"14" : {
+		"Name" : "2x Storage",
+		"Description" : "Allows building woodcamps, unlocks woodcamp upgrades",
+		"Cost" : 750,
+	},
+	"15" : {
+		"Name" : "Fish Sell For 22.5% More",
+		"Description" : "Allows building woodcamps, unlocks woodcamp upgrades",
+		"Cost" : 1000,
+	},
+	"16" : {
+		"Name" : "Unlock Bots",
+		"Description" : "Allows building woodcamps, unlocks woodcamp upgrades",
+		"Cost" : 1300,
+	},
+	"17" : {
+		"Name" : "5% WPC",
+		"Description" : "Allows building woodcamps, unlocks woodcamp upgrades",
+		"Cost" : 1750,
+	},
+	"18" : {
+		"Name" : "Unlock Fishing Spot",
+		"Description" : "Allows building woodcamps, unlocks woodcamp upgrades",
+		"Cost" : 2500,
+	},
+	"19" : {
+		"Name" : "Keep First 10 Research",
+		"Description" : "Allows building woodcamps, unlocks woodcamp upgrades",
+		"Cost" : 3000,
+	},
+	"20" : {
+		"Name" : "WC Effects +15%",
+		"Description" : "Allows building woodcamps, unlocks woodcamp upgrades",
+		"Cost" : 3500,
+	},
+	"21" : {
+		"Name" : "Fish Price 5x",
+		"Description" : "Allows building woodcamps, unlocks woodcamp upgrades",
+		"Cost" : 4200,
+	},
+	"22" : {
+		"Name" : "3.5% of Lower Tier Storage Added",
 		"Description" : "Allows building woodcamps, unlocks woodcamp upgrades",
 		"Cost" : 5000,
 	},
-	"11" : {
-		"Name" : "wc count adds to base click",
+	"23" : {
+		"Name" : "Unlock Gold Upgrades",
+		"Description" : "Allows building woodcamps, unlocks woodcamp upgrades",
+		"Cost" : 6100,
+	},
+	"24" : {
+		"Name" : "Wood Price 1.5x",
+		"Description" : "Allows building woodcamps, unlocks woodcamp upgrades",
+		"Cost" : 7500,
+	},
+	"25" : {
+		"Name" : "Unlock Baits",
+		"Description" : "Allows building woodcamps, unlocks woodcamp upgrades",
+		"Cost" : 10000,
+	},
+	"26" : {
+		"Name" : "Lower WC Production Costs 15%",
 		"Description" : "Allows building woodcamps, unlocks woodcamp upgrades",
 		"Cost" : 12000,
 	},
-	"12" : {
-		"Name" : "Keep Classic Wood Upgrades",
+	"27" : {
+		"Name" : "35% Storage From Woodcamps",
 		"Description" : "Allows building woodcamps, unlocks woodcamp upgrades",
-		"Cost" : 18000,
+		"Cost" : 15000,
 	},
-	"13" : {
-		"Name" : "Research 3 at a time",
+	"28" : {
+		"Name" : "Unlock Fishing Spot",
+		"Description" : "Allows building woodcamps, unlocks woodcamp upgrades",
+		"Cost" : 17000,
+	},
+	"29" : {
+		"Name" : "Bait Effects 15%",
+		"Description" : "Allows building woodcamps, unlocks woodcamp upgrades",
+		"Cost" : 20000,
+	},
+	"30" : {
+		"Name" : "Oak WPS 2x",
+		"Description" : "Allows building woodcamps, unlocks woodcamp upgrades",
+		"Cost" : 22500,
+	},
+	"31" : {
+		"Name" : "More Fish Appear 25%",
+		"Description" : "Allows building woodcamps, unlocks woodcamp upgrades",
+		"Cost" : 25000,
+	},
+	"32" : {
+		"Name" : "Per Achievement -0.1% WC Price",
 		"Description" : "Allows building woodcamps, unlocks woodcamp upgrades",
 		"Cost" : 29000,
 	},
-	"14" : {
-		"Name" : "Unlock Fishing spot",
+	"33" : {
+		"Name" : "Unlock Research Slot 3",
+		"Description" : "Allows building woodcamps, unlocks woodcamp upgrades",
+		"Cost" : 35000,
+	},
+	"34" : {
+		"Name" : "Magic Effects 2x",
+		"Description" : "Allows building woodcamps, unlocks woodcamp upgrades",
+		"Cost" : 45000,
+	},
+	"35" : {
+		"Name" : "Add 5% of Lower Tier Wood WPS",
 		"Description" : "Allows building woodcamps, unlocks woodcamp upgrades",
 		"Cost" : 56000,
 	},
-	"15" : {
-		"Name" : "Keep Research",
+	"36" : {
+		"Name" : "Wood Price +50%",
 		"Description" : "Allows building woodcamps, unlocks woodcamp upgrades",
-		"Cost" : 87900,
+		"Cost" : 69000,
 	},
-	"16" : {
-		"Name" : "Unlock Cedar Wood",
+	"37" : {
+		"Name" : "Unlock Fishing Spot",
 		"Description" : "Allows building woodcamps, unlocks woodcamp upgrades",
-		"Cost" : 126900,
+		"Cost" : 85000,
 	},
-	"17" : {
-		"Name" : "Keep Rare Wood Upgrades",
+	"38" : {
+		"Name" : "0.2% Storage Per Achievement",
 		"Description" : "Allows building woodcamps, unlocks woodcamp upgrades",
-		"Cost" : 274950,
+		"Cost" : 99000,
 	},
-	"18" : {
-		"Name" : "fish are worth 5x",
+	"39" : {
+		"Name" : "Fish Rarer Fish 27.5%",
 		"Description" : "Allows building woodcamps, unlocks woodcamp upgrades",
-		"Cost" : 600000,
+		"Cost" : 111000,
 	},
-	"19" : {
-		"Name" : "Wood price 2.5x",
+	"40" : {
+		"Name" : "Unlock Dams",
 		"Description" : "Allows building woodcamps, unlocks woodcamp upgrades",
-		"Cost" : 1100000,
+		"Cost" : 150000,
 	},
-	"20" : {
-		"Name" : "Dams 30% cheaper",
+	"41" : {
+		"Name" : "40% Cheaper Bots",
 		"Description" : "Allows building woodcamps, unlocks woodcamp upgrades",
-		"Cost" : 1760000,
+		"Cost" : 175000,
 	},
-	"21" : {
-		"Name" : "Keep Mythic Wood Upgrades",
+	"42" : {
+		"Name" : "Starting Woodcamps +10",
 		"Description" : "Allows building woodcamps, unlocks woodcamp upgrades",
-		"Cost" : 3255000,
+		"Cost" : 225000,
 	},
-	"22" : {
-		"Name" : "bait effects 15%",
+	"43" : {
+		"Name" : "Unlock Auto Research",
 		"Description" : "Allows building woodcamps, unlocks woodcamp upgrades",
-		"Cost" : 7000000,
+		"Cost" : 275000,
 	},
-	"23" : {
-		"Name" : "Oak wps 100x",
+	"44" : {
+		"Name" : "Each Dam Gives 1% WPS",
 		"Description" : "Allows building woodcamps, unlocks woodcamp upgrades",
-		"Cost" : 14500000,
+		"Cost" : 400000,
 	},
-	"24" : {
+	"45" : {
+		"Name" : "Per WC +1 Beaver",
+		"Description" : "Allows building woodcamps, unlocks woodcamp upgrades",
+		"Cost" : 500000,
+	},
+	"46" : {
+		"Name" : "Fish Stay 25% Longer",
+		"Description" : "Allows building woodcamps, unlocks woodcamp upgrades",
+		"Cost" : 800000,
+	},
+	"47" : {
+		"Name" : "Gain Magic Without Ascention",
+		"Description" : "Allows building woodcamps, unlocks woodcamp upgrades",
+		"Cost" : 1000000,
+	},
+	"48" : {
+		"Name" : "Gold Upgrades 35% Cheaper",
+		"Description" : "Allows building woodcamps, unlocks woodcamp upgrades",
+		"Cost" : 1600000,
+	},
+	"49" : {
+		"Name" : "Keep Classic Wood Upgrades",
+		"Description" : "Allows building woodcamps, unlocks woodcamp upgrades",
+		"Cost" : 2800000,
+	},
+	"50" : {
+		"Name" : "Dam Effects 15%",
+		"Description" : "Allows building woodcamps, unlocks woodcamp upgrades",
+		"Cost" : 3500000,
+	},
+	"51" : {
 		"Name" : "Unlock Fishing spot",
 		"Description" : "Allows building woodcamps, unlocks woodcamp upgrades",
-		"Cost" : 25900000,
+		"Cost" : 8000000,
 	},
-	"25" : {
+	"52" : {
+		"Name" : "Each Dam Gives 1% Gold PS",
+		"Description" : "Allows building woodcamps, unlocks woodcamp upgrades",
+		"Cost" : 15000000,
+	},
+	"53" : {
+		"Name" : "Bots Sell 20% More Wood",
+		"Description" : "Allows building woodcamps, unlocks woodcamp upgrades",
+		"Cost" : 22000000,
+	},
+	"54" : {
+		"Name" : "Fish Price 2x",
+		"Description" : "Allows building woodcamps, unlocks woodcamp upgrades",
+		"Cost" : 30000000,
+	},
+	"55" : {
+		"Name" : "Keep Mythic Wood Upgrades",
+		"Description" : "Allows building woodcamps, unlocks woodcamp upgrades",
+		"Cost" : 45000000,
+	},
+	"56" : {
+		"Name" : "Dams 30% Cheaper",
+		"Description" : "Allows building woodcamps, unlocks woodcamp upgrades",
+		"Cost" : 55000000,
+	},
+	"57" : {
 		"Name" : "Keep Gold Upgrades",
 		"Description" : "Allows building woodcamps, unlocks woodcamp upgrades",
 		"Cost" : 60000000,
 	},
-	"26" : {
-		"Name" : "Unlock Rose Wood",
+	"58" : {
+		"Name" : "Improve Magic Effects 2x",
 		"Description" : "Allows building woodcamps, unlocks woodcamp upgrades",
-		"Cost" : 120000000,
+		"Cost" : 70000000,
 	},
-	"27" : {
-		"Name" : "Magic effects 10x",
+	"59" : {
+		"Name" : "All Upgrades 50% Cheaper",
 		"Description" : "Allows building woodcamps, unlocks woodcamp upgrades",
-		"Cost" : 240000000,
+		"Cost" : 80000000,
 	},
-	"28" : {
-		"Name" : "Oak wood price +1000",
+	"60" : {
+		"Name" : "Keep Rare Wood Upgrades",
 		"Description" : "Allows building woodcamps, unlocks woodcamp upgrades",
-		"Cost" : 440000000,
+		"Cost" : 95000000,
 	},
-	"29" : {
-		"Name" : "Fish rarer fish",
-		"Description" : "Allows building woodcamps, unlocks woodcamp upgrades",
-		"Cost" : 650000000,
-	},
-	"30" : {
+	"61" : {
 		"Name" : "Unlock Final Dam",
 		"Description" : "Allows building woodcamps, unlocks woodcamp upgrades",
 		"Cost" : 1000000000,

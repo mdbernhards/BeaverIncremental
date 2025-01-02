@@ -35,4 +35,3 @@ func goToSettings(backToMainMenu):
 func _on_back_button_button_down() -> void:
 	visible = false
 	get_tree().get_first_node_in_group("Game").goToMainMenuFromSettings()
-		

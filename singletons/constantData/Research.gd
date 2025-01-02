@@ -122,26 +122,34 @@ var Research = {
 		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 0,
 	},
 	"12b" :  {
-		"Name" : "+3 Oak Woodcamps",
-		"Description" : "Adds 3 Extra Oak Woodcamps",
+		"Name" : "+5 Oak Woodcamps",
+		"Description" : "Adds 5 Extra Oak Woodcamps",
 		"Time" : 370, # Seconds
 		"OakCost" : 0, "AppleCost" : 46000, "MapleCost" : 7500, "BirchCost" : 0, "SpruceCost" : 0,
 		"ChestnutCost" : 0, "CherryCost" : 0, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 0,
 		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 0,
 	},
-	"13" :  { # Rethink
-		"Name" : "wpc per wc +10",
+	"13" :  {
+		"Name" : "Apple Storage 15%",
 		"Description" : "Doubles Storage for all Classic Wood",
 		"Time" : 400, # Seconds
-		"OakCost" : 0, "AppleCost" : 125000, "MapleCost" : 35000, "BirchCost" : 0, "SpruceCost" : 0,
+		"OakCost" : 150000, "AppleCost" : 0, "MapleCost" : 45000, "BirchCost" : 0, "SpruceCost" : 0,
 		"ChestnutCost" : 0, "CherryCost" : 0, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 0,
 		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 0,
 	},
-	"14" :  { # prob something more before
+	"13b" :  {
+		"Name" : "Beaver Base Storage +100",
+		"Description" : "Doubles Storage for all Classic Wood",
+		"Time" : 400, # Seconds
+		"OakCost" : 135000, "AppleCost" : 75000, "MapleCost" : 42500, "BirchCost" : 0, "SpruceCost" : 0,
+		"ChestnutCost" : 0, "CherryCost" : 0, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 0,
+		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 0,
+	},
+	"14" :  {
 		"Name" : "Unlock Birch Wood",
 		"Description" : "Doubles Storage for all Classic Wood",
 		"Time" : 430, # Seconds
-		"OakCost" : 110000, "AppleCost" : 150000, "MapleCost" : 45000, "BirchCost" : 0, "SpruceCost" : 0,
+		"OakCost" : 175000, "AppleCost" : 100000, "MapleCost" : 75000, "BirchCost" : 0, "SpruceCost" : 0,
 		"ChestnutCost" : 0, "CherryCost" : 0, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 0,
 		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 0,
 	},
