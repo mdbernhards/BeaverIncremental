@@ -1,5 +1,6 @@
 To do all things I can think of:
 First:
+Need to rewrite the ticks system again, with dams in mind. also feels like something didn't work already but it should I think?? maybe just need to update some code (but would be good to rewrite to make it more readable, jesus please help)
 Big numbers even for scientific use m,b,t, but not for bigger numbers, have less numbers after comma
 All Dam Logic
 bait shop logic

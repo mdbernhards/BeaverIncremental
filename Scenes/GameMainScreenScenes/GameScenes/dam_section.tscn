@@ -68,6 +68,7 @@ layout_mode = 2
 DamType = 4
 
 [node name="SmallDamConstruction" parent="VBox/DamsHBox" instance=ExtResource("2_o4jpu")]
+visible = false
 layout_mode = 2
 
 [node name="MediumDamConstruction" parent="VBox/DamsHBox" instance=ExtResource("2_o4jpu")]

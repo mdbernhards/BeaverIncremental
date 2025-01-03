@@ -30,7 +30,6 @@ func getOriginalValues():
 	OriginalMagic = Magic.duplicate(true)
 	OriginalUnlockedMagicUpgrades = UnlockedMagicUpgrades.duplicate(true)
 	OriginalUnlockedAchievements = UnlockedAchievements.duplicate(true)
-	OriginalUnlockedFeatsOfStrength = UnlockedFeatsOfStrength.duplicate(true)
 	OriginalGeneralInfo = GeneralInfo.duplicate(true)
 
 func resetValues():
@@ -1178,27 +1177,32 @@ var DamData = {
 	Dams.DamEnum.SmallDam : {
 		"AvailableBuilds" : 1,
 		"Count" : 0,
-		"CurrentlyInProgress" : [4],
+		"CurrentlyInProgress" : [], # [4]
+		"ConstructionSpeedPrecentige" : [100,100,100],
 	},
 	Dams.DamEnum.MediumDam : {
 		"AvailableBuilds" : 1,
 		"Count" : 0,
 		"CurrentlyInProgress" : [],
+		"ConstructionSpeedPrecentige" : [100,100,100],
 	},
 	Dams.DamEnum.BigDam : {
 		"AvailableBuilds" : 1,
 		"Count" : 0,
 		"CurrentlyInProgress" : [],
+		"ConstructionSpeedPrecentige" : [100,100,100],
 	},
 	Dams.DamEnum.GiantDam : {
 		"AvailableBuilds" : 1,
 		"Count" : 0,
 		"CurrentlyInProgress" : [],
+		"ConstructionSpeedPrecentige" : [100,100,100],
 	},
 	Dams.DamEnum.MegaDam : {
 		"AvailableBuilds" : 1,
 		"Count" : 0,
 		"CurrentlyInProgress" : [],
+		"ConstructionSpeedPrecentige" : [100,100,100],
 	},
 }
 
@@ -1491,16 +1495,6 @@ var UnlockedMagicUpgrades = {
 
 var UnlockedAchievements = {
 	"1" : true,
-	"2" : false,
-	"3" : false,
-	"4" : false,
-	"5" : false,
-	"6" : false,
-	"7" : false,
-}
-
-var UnlockedFeatsOfStrength = {
-	"1" : false,
 	"2" : false,
 	"3" : false,
 	"4" : false,

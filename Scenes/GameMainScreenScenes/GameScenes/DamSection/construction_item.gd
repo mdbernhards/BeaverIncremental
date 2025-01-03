@@ -46,6 +46,7 @@ var DamsConstData = Dams.Dams
 func _ready() -> void:
 	setupNodePaths()
 	setItemStage()
+	deleteAllConstructionResourceItems()
 
 func _process(delta: float) -> void:
 	setCantAffordRect()
@@ -89,6 +90,8 @@ func _on_start_building_button_button_down() -> void:
 		startConstruction()
 
 func startConstruction():
+	deleteAllConstructionResourceItems()
+	
 	DamStage = DamStageEnum.Construction
 	
 	var damData = Dams.Dams[DamType][BuildingStage]
@@ -96,43 +99,29 @@ func startConstruction():
 	
 	var ConstructionResourceSceen = load("res://Scenes/GameMainScreenScenes/GameScenes/DamSection/constructionItem/construction_resource.tscn")
 	
-	for cost in damData["StartingPrice"]:
-		var resourceItem = ConstructionResourceSceen.instanciate()
+	for costName in damData["Price"]:
+		var resourceType = null
 		
-		if cost == "OakCost":
-			resourceItem.ResourceType = "Oak"
-		elif cost == "AppleCost":
-			resourceItem.ResourceType = "Apple"
-		elif cost == "MapleCost":
-			resourceItem.ResourceType = "Maple"
-		elif cost == "BirchCost":
-			resourceItem.ResourceType = "Birch"
-		elif cost == "SpruceCost":
-			resourceItem.ResourceType = "Spruce"
-		elif cost == "ChestnutCost":
-			resourceItem.ResourceType = "Chestnut"
-		elif cost == "CherryCost":
-			resourceItem.ResourceType = "Cherry"
-		elif cost == "AshCost":
-			resourceItem.ResourceType = "Ash"
-		elif cost == "CedarCost":
-			resourceItem.ResourceType = "Cedar"
-		elif cost == "MahoganyCost":
-			resourceItem.ResourceType = "Mahogany"
-		elif cost == "EbonyCost":
-			resourceItem.ResourceType = "Ebony"
-		elif cost == "DogwoodCost":
-			resourceItem.ResourceType = "Dogwood"
-		elif cost == "RosewoodCost":
-			resourceItem.ResourceType = "Rosewood"
-		elif cost == "Ghost GumCost":
-			resourceItem.ResourceType = "Ghost Gum"
-		elif cost == "DragonwoodCost":
-			resourceItem.ResourceType = "Dragonwood"
-		elif cost == "GoldCost":
-			resourceItem.ResourceType = "Gold"
+		if damData["Price"][costName] > 0:
+			resourceType = costName.replace("Cost", "")
+		
+		if resourceType:
+			var resourceItem = ConstructionResourceSceen.instantiate()
 			
-		ResourceList.add_child(resourceItem)
+			resourceItem.Needed = damData["Price"][costName]
+			resourceItem.ResourceType = resourceType
+			resourceItem.ItemNum = ItemNum
+			resourceItem.DamType = DamType
+			
+			ResourceList.add_child(resourceItem)
+
+func deleteAllConstructionResourceItems():
+	if !ResourceList:
+		return
+	
+	for resourceItem in ResourceList.get_children():
+		ResourceList.remove_child(resourceItem)
+		resourceItem.queue_free()
 
 func getPriceText():
 	var PriceText = ""
@@ -204,4 +193,5 @@ func setupNodePaths():
 	CantAffordRect = $UnlockedVBox/ColorRect/StartBuildingButton/CantAffordRect
 
 func _on_construction_speed_slider_value_changed(value: float) -> void:
+	SaveData.DamData[DamType]["ConstructionSpeedPrecentige"][ItemNum - 1] = value
 	ConstructionPrecentigeLabel.text = str(value) + "%"

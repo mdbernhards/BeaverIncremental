@@ -72,10 +72,10 @@ func CalculateRealValues():
 	ResourceValues["Dam"]["EffectMultip"] = TempValues["Dam"]["EffectMultip"]
 	ResourceValues["Dam"]["PriceMultip"] = TempValues["Dam"]["PriceMultip"]
 	ResourceValues["Dam"]["MaterialsNeededMultip"] = TempValues["Dam"]["MaterialsNeededMultip"]
-	ResourceValues["Dam"]["ConstructionSpeedMultip"] = TempValues["Dam"]["ConstructionSpeedMultip"]
 	ResourceValues["Dam"]["GoldGainMultip"] = TempValues["Dam"]["GoldGainMultip"]
 	ResourceValues["Dam"]["WoodGainMultip"] = TempValues["Dam"]["WoodGainMultip"]
-	
+	ResourceValues["Dam"]["ResourcesPerSecond"] = TempValues["Dam"]["ConstructionSpeedMultip"] * TempValues["Dam"]["BaseResourcesPerSecond"]
+
 func CalculateRealAfterValues():
 	var lastWoodType
 	
@@ -796,6 +796,7 @@ var OriginalTempValues = {
 		"PriceMultip" : 1,
 		"MaterialsNeededMultip" : 1,
 		"ConstructionSpeedMultip" : 1,
+		"BaseResourcesPerSecond" : 100,
 		"GoldGainMultip": 1,
 		"WoodGainMultip": 1,
 	},

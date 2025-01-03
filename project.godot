@@ -55,6 +55,7 @@ Settings=""
 Gameplay=""
 BackgroundButtons=""
 MagicSection=""
+ConstructionResource=""
 
 [gui]
 

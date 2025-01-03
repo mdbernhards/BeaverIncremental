@@ -12,8 +12,12 @@ var ResourceType = "Oak":
 		setupNodePaths()
 		setResource()
 
+var DamType = Dams.DamEnum.SmallDam
+var ItemNum = 1
+
 var Needed = 1000
-var Colected = 0
+var Collected = 0
+var PerSecond = 0
 
 func _ready() -> void:
 	setupNodePaths()
@@ -22,12 +26,12 @@ func _process(delta: float) -> void:
 	updateProgress()
 
 func updateProgress():
-	if ResourceProgressBar == null:
+	if ResourceProgressBar:
 		setupNodePaths()
 		
-		ResourceNeededLabel.text = str(Colected) + "/" + str(Needed)
-		ResourceProgressBar.value = remap(Colected, 0, Needed, 0, 100)
-		ResourcePerSecondLabel.text = "4" # Need to setup first before I can display
+		ResourceNeededLabel.text = str(roundi(Collected)) + "/" + str(roundi(Needed))
+		ResourceProgressBar.value = remap(Collected, 0, Needed, 0, 100)
+		ResourcePerSecondLabel.text = str(roundi(PerSecond)) + " per sec."
 
 func setResource():
 	color = Values.ResourceValues[ResourceType]["Color"]

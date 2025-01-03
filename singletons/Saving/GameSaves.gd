@@ -87,9 +87,6 @@ func saveGame(saveName):
 	var jsonUnlockedAchievements = JSON.stringify(var_to_str(SaveData.UnlockedAchievements))
 	saveFile.store_line(jsonUnlockedAchievements)
 	
-	var jsonUnlockedFeatsOfStrength = JSON.stringify(var_to_str(SaveData.UnlockedFeatsOfStrength))
-	saveFile.store_line(jsonUnlockedFeatsOfStrength)
-	
 	var jsonGeneralInfo = JSON.stringify(var_to_str(SaveData.GeneralInfo))
 	saveFile.store_line(jsonGeneralInfo)
 
@@ -134,9 +131,6 @@ func saveNewGame(saveName):
 	var jsonUnlockedAchievements = JSON.stringify(var_to_str(SaveData.OriginalUnlockedAchievements))
 	saveFile.store_line(jsonUnlockedAchievements)
 	
-	var jsonUnlockedFeatsOfStrength = JSON.stringify(var_to_str(SaveData.OriginalUnlockedFeatsOfStrength))
-	saveFile.store_line(jsonUnlockedFeatsOfStrength)
-	
 	var jsonGeneralInfo = JSON.stringify(var_to_str(SaveData.OriginalGeneralInfo))
 	saveFile.store_line(jsonGeneralInfo)
 	
@@ -178,9 +172,6 @@ func loadGame(saveName):
 	
 	var jsonUnlockedAchievements = saveFile.get_line()
 	SaveData.UnlockedAchievements = parseJson(jsonUnlockedAchievements)
-	
-	var jsonUnlockedFeatsOfStrength = saveFile.get_line()
-	SaveData.UnlockedFeatsOfStrength = parseJson(jsonUnlockedFeatsOfStrength)
 	
 	var jsonGeneralInfo = saveFile.get_line()
 	SaveData.GeneralInfo = parseJson(jsonGeneralInfo)

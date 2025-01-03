@@ -10,6 +10,7 @@ func _process(_delta):
 
 func _on_resource_gain_tick_timeout():
 	ApplyBotsSellingWood()
+	ApplyDamBuildingLoss()
 	ApplyWoodGainAndLoss()
 
 func ApplyBotsSellingWood():
@@ -63,9 +64,9 @@ func ApplyWoodGainAndLoss():
 
 			if woodCount < storage:
 				SaveData.Resources[lastWoodType]["Count"] -= actualLoss
-				Values.ResourceValues[lastWoodType]["RealPerSecondLoss"] = actualLoss
+				Values.ResourceValues[lastWoodType]["RealPerSecondLoss"] += actualLoss
 			else:
-				Values.ResourceValues[lastWoodType]["RealPerSecondLoss"] = 0
+				pass #Values.ResourceValues[lastWoodType]["RealPerSecondLoss"] = 0
 				
 		lastWoodType = woodType
 
@@ -75,6 +76,36 @@ func ApplyWoodGainAndLoss():
 			Values.ResourceValues[woodType]["RealPerSecondIncrease"] = 0
 		
 		SaveData.Resources[woodType]["Count"] = clampf(SaveData.Resources[woodType]["Count"], 0, Values.ResourceValues[woodType]["Storage"])
+
+func ApplyDamBuildingLoss():
+	var resourceItems = get_tree().get_nodes_in_group("ConstructionResource")
+	
+	var generalResourcesPerSecond = Values.ResourceValues["Dam"]["ResourcesPerSecond"]
+	
+	for resourceItem in resourceItems:
+		var resourcesPerSecond = generalResourcesPerSecond * (SaveData.DamData[resourceItem.DamType]["ConstructionSpeedPrecentige"][resourceItem.ItemNum - 1] / 100)
+		var resourcesLeft = resourceItem.Needed - resourceItem.Collected
+		var resourceType = resourceItem.ResourceType
+		
+		if resourcesLeft < resourcesPerSecond and resourcesLeft > 0:
+			resourcesPerSecond = resourcesLeft
+		
+		if resourceType == "Gold":
+			if SaveData.Gold["Count"] < resourcesPerSecond:
+				resourcesPerSecond = SaveData.Gold["Count"]
+			
+			SaveData.Gold["Count"] -= resourcesPerSecond
+		else:
+			if SaveData.Resources[resourceType]["Count"] < resourcesPerSecond:
+				resourcesPerSecond = SaveData.Resources[resourceType]["Count"]
+			
+			resourcesPerSecond = maxf(resourcesPerSecond, 0)
+			
+			SaveData.Resources[resourceType]["Count"] -= resourcesPerSecond
+			Values.ResourceValues[resourceType]["RealPerSecondLoss"] += resourcesPerSecond
+		
+		resourceItem.PerSecond = resourcesPerSecond
+		resourceItem.Collected += resourcesPerSecond
 
 func UpdateAllBarValues():
 	var BarItems = get_tree().get_nodes_in_group("BarItem")

@@ -41,7 +41,7 @@ var ResourceValues = {
 		"EffectMultip": 1,
 		"PriceMultip" : 1,
 		"MaterialsNeededMultip" : 1,
-		"ConstructionSpeedMultip" : 1,
+		"ResourcesPerSecond" : 100,
 		"GoldGainMultip" : 1,
 		"WoodGainMultip" : 1,
 	},
