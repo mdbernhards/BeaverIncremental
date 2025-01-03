@@ -105,35 +105,35 @@ func getPriceText():
 	var PriceText = "Price: "
 
 	if ResearchData["OakCost"] > 0:
-		PriceText += (str(ResearchData["OakCost"]) + " Oak, ")
+		PriceText += (str(NumberFormatting.formatNumber(ResearchData["OakCost"])) + " Oak, ")
 	if ResearchData["AppleCost"] > 0:
-		PriceText += (str(ResearchData["AppleCost"]) + " Apple, ")
+		PriceText += (str(NumberFormatting.formatNumber(ResearchData["AppleCost"])) + " Apple, ")
 	if ResearchData["MapleCost"] > 0:
-		PriceText += (str(ResearchData["MapleCost"]) + " Maple, ")
+		PriceText += (str(NumberFormatting.formatNumber(ResearchData["MapleCost"])) + " Maple, ")
 	if ResearchData["BirchCost"] > 0:
-		PriceText += (str(ResearchData["BirchCost"]) + " Birch, ")
+		PriceText += (str(NumberFormatting.formatNumber(ResearchData["BirchCost"])) + " Birch, ")
 	if ResearchData["SpruceCost"] > 0:
-		PriceText += (str(ResearchData["SpruceCost"]) + " Spruce, ")
+		PriceText += (str(NumberFormatting.formatNumber(ResearchData["SpruceCost"])) + " Spruce, ")
 	if ResearchData["ChestnutCost"] > 0:
-		PriceText += (str(ResearchData["ChestnutCost"]) + " Chestnut, ")
+		PriceText += (str(NumberFormatting.formatNumber(ResearchData["ChestnutCost"])) + " Chestnut, ")
 	if ResearchData["CherryCost"] > 0:
-		PriceText += (str(ResearchData["CherryCost"]) + " Cherry, ")
+		PriceText += (str(NumberFormatting.formatNumber(ResearchData["CherryCost"])) + " Cherry, ")
 	if ResearchData["AshCost"] > 0:
-		PriceText += (str(ResearchData["AshCost"]) + " Ash, ")
+		PriceText += (str(NumberFormatting.formatNumber(ResearchData["AshCost"])) + " Ash, ")
 	if ResearchData["CedarCost"] > 0:
-		PriceText += (str(ResearchData["CedarCost"]) + " Cedar, ")
+		PriceText += (str(NumberFormatting.formatNumber(ResearchData["CedarCost"])) + " Cedar, ")
 	if ResearchData["MahoganyCost"] > 0:
-		PriceText += (str(ResearchData["MahoganyCost"]) + " Mahogany, ")
+		PriceText += (str(NumberFormatting.formatNumber(ResearchData["MahoganyCost"])) + " Mahogany, ")
 	if ResearchData["EbonyCost"] > 0:
-		PriceText += (str(ResearchData["EbonyCost"]) + " Ebony, ")
+		PriceText += (str(NumberFormatting.formatNumber(ResearchData["EbonyCost"])) + " Ebony, ")
 	if ResearchData["DogwoodCost"] > 0:
-		PriceText += (str(ResearchData["DogwoodCost"]) + " Dogwood, ")
+		PriceText += (str(NumberFormatting.formatNumber(ResearchData["DogwoodCost"])) + " Dogwood, ")
 	if ResearchData["RosewoodCost"] > 0:
-		PriceText += (str(ResearchData["RosewoodCost"]) + " Rosewood, ")
+		PriceText += (str(NumberFormatting.formatNumber(ResearchData["RosewoodCost"])) + " Rosewood, ")
 	if ResearchData["Ghost GumCost"] > 0:
-		PriceText += (str(ResearchData["Ghost GumCost"]) + " Ghost Gum, ")
+		PriceText += (str(NumberFormatting.formatNumber(ResearchData["Ghost GumCost"])) + " Ghost Gum, ")
 	if ResearchData["DragonwoodCost"] > 0:
-		PriceText += (str(ResearchData["DragonwoodCost"]) + " Dragonwood, ")
+		PriceText += (str(NumberFormatting.formatNumber(ResearchData["DragonwoodCost"])) + " Dragonwood, ")
 		
 	return PriceText.left(PriceText.length() - 2)
 

@@ -9,7 +9,6 @@ var Upgrade
 @export var Nr = 1
 
 func _ready():
-	setNodePaths()
 	setMagicUpgrade()
 
 func _process(delta):
@@ -18,11 +17,14 @@ func _process(delta):
 	else:
 		CantAffordRect.visible = true
 
-func setMagicUpgrade():
+func setMagicUpgrade(nr = Nr):
+	setNodePaths()
+	
+	Nr = nr
 	Upgrade = Magic.Magic[str(Nr)]
 	
 	NameLabel.text = Upgrade["Name"]
-	CostLabel.text = str(Upgrade["Cost"]) + " Magic"
+	CostLabel.text = str(NumberFormatting.formatNumber(Upgrade["Cost"])) + " Magic"
 
 func setNodePaths():
 	NameLabel = $MagicButton/MC/VBox/NameLabel

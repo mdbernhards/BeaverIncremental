@@ -40,13 +40,14 @@ func loadSaves():
 	
 	var SaveScene = load("res://Scenes/LoadGameScenes/save_item.tscn")
 	
-	for saveName in saves:
-		var saveItem = SaveScene.instantiate()
-		saveItem.getSaveData(saveName)
+	if saves:
+		for saveName in saves:
+			var saveItem = SaveScene.instantiate()
+			saveItem.getSaveData(saveName)
+			
+			SaveGames.add_child(saveItem)
+			saveItem.SaveState = SaveSlotEnum.Existing
 		
-		SaveGames.add_child(saveItem)
-		saveItem.SaveState = SaveSlotEnum.Existing
-	
 	var newSaveItem = SaveScene.instantiate()
 	SaveGames.add_child(newSaveItem)
 

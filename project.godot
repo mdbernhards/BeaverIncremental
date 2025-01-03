@@ -54,6 +54,7 @@ ResourcePage=""
 Settings=""
 Gameplay=""
 BackgroundButtons=""
+MagicSection=""
 
 [gui]
 

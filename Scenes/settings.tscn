@@ -129,6 +129,33 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 30
 text = "Numbers"
 
+[node name="Grid" type="GridContainer" parent="MC/VBox/SettingsMC/Grid/NumberSettings/MC/VBox"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/h_separation = 45
+theme_override_constants/v_separation = 20
+columns = 2
+
+[node name="VBox" type="VBoxContainer" parent="MC/VBox/SettingsMC/Grid/NumberSettings/MC/VBox/Grid"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="MC/VBox/SettingsMC/Grid/NumberSettings/MC/VBox/Grid/VBox"]
+layout_mode = 2
+text = "Notation"
+
+[node name="NotationDropDown" type="OptionButton" parent="MC/VBox/SettingsMC/Grid/NumberSettings/MC/VBox/Grid/VBox"]
+layout_mode = 2
+selected = 0
+item_count = 4
+popup/item_0/text = "Default"
+popup/item_1/text = "Alternative"
+popup/item_1/id = 1
+popup/item_2/text = "Scientific"
+popup/item_2/id = 2
+popup/item_3/text = "Engineering"
+popup/item_3/id = 3
+
 [node name="SaveSettings" type="ColorRect" parent="MC/VBox/SettingsMC/Grid"]
 custom_minimum_size = Vector2(575, 275)
 layout_mode = 2
@@ -168,7 +195,10 @@ size_flags_horizontal = 4
 theme_override_font_sizes/font_size = 30
 text = "Load"
 
-[node name="SaveButton" type="Button" parent="MC/VBox/SettingsMC/Grid/SaveSettings/MC/VBox/Grid"]
+[node name="MC" type="MarginContainer" parent="MC/VBox/SettingsMC/Grid/SaveSettings/MC/VBox/Grid"]
+layout_mode = 2
+
+[node name="SaveButton" type="Button" parent="MC/VBox/SettingsMC/Grid/SaveSettings/MC/VBox/Grid/MC"]
 custom_minimum_size = Vector2(250, 70)
 layout_mode = 2
 size_flags_horizontal = 4
@@ -182,9 +212,8 @@ layout_mode = 2
 layout_mode = 2
 text = "Auto save"
 
-[node name="MenuButton" type="MenuButton" parent="MC/VBox/SettingsMC/Grid/SaveSettings/MC/VBox/Grid/VBox"]
+[node name="AutoSaveDropDown" type="OptionButton" parent="MC/VBox/SettingsMC/Grid/SaveSettings/MC/VBox/Grid/VBox"]
 layout_mode = 2
-text = "5 min"
 item_count = 4
 popup/item_0/text = "Never"
 popup/item_1/text = "1 min"
@@ -252,5 +281,6 @@ theme_override_font_sizes/font_size = 30
 text = "Gameplay"
 
 [connection signal="button_down" from="BackButton" to="." method="_on_back_button_button_down"]
+[connection signal="item_selected" from="MC/VBox/SettingsMC/Grid/NumberSettings/MC/VBox/Grid/VBox/NotationDropDown" to="." method="_on_notation_drop_down_item_selected"]
 [connection signal="button_down" from="MC/VBox/SettingsMC/Grid/SaveSettings/MC/VBox/Grid/LoadButton" to="." method="_on_load_button_button_down"]
-[connection signal="button_down" from="MC/VBox/SettingsMC/Grid/SaveSettings/MC/VBox/Grid/SaveButton" to="." method="_on_save_button_button_down"]
+[connection signal="button_down" from="MC/VBox/SettingsMC/Grid/SaveSettings/MC/VBox/Grid/MC/SaveButton" to="." method="_on_save_button_button_down"]

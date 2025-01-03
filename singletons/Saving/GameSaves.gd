@@ -26,6 +26,7 @@ func addSaveFileToInfo(saveName):
 		"TimePlayed" = 0,
 		"CurrentMagic" = 0,
 		"CurrentGold" = 0,
+		"NumberNotation" = NumberFormatting.NotationTypesEnum.Scientific,
 	}
 	
 	var jsonSaveInfo = JSON.stringify(var_to_str(SaveData.SavesInfo))
@@ -40,6 +41,7 @@ func updateSaveFileInfo(saveName):
 	SaveData.SavesInfo[saveName].TimePlayed += 1
 	SaveData.SavesInfo[saveName].CurrentMagic += SaveData.Magic["Count"]
 	SaveData.SavesInfo[saveName].CurrentGold += SaveData.Gold["Count"]
+	SaveData.SavesInfo[saveName].NumberNotation += SaveData.GeneralInfo["NumberNotation"]
 	
 	var jsonSaveInfo = JSON.stringify(var_to_str(SaveData.SavesInfo))
 	infoFile.store_line(jsonSaveInfo)

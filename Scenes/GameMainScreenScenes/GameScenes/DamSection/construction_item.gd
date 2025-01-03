@@ -143,7 +143,7 @@ func getPriceText():
 		var cost = startingPriceData[costType]
 		
 		if cost > 0:
-			PriceText += str(cost) + " " + costType.replace("Cost", "") + "\n"
+			PriceText += str(NumberFormatting.formatNumber(cost)) + " " + costType.replace("Cost", "") + "\n"
 	
 	return PriceText.strip_edges()
 

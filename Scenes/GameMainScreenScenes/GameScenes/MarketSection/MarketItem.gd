@@ -76,13 +76,13 @@ func updateValues():
 	WoodLossIfSold = SaveData.Resources[WoodType]["Count"] * SellAmountSlider.value / 100
 	GoldGainedIfSold = WoodLossIfSold * Values.ResourceValues[WoodType]["SoldFor"]
 	
-	CurrentWoodCountLabel.text = str(roundi(SaveData.Resources[WoodType]["Count"])) + " " + WoodType
-	SellAmountLabel.text = str(roundi(WoodLossIfSold)) + " " + WoodType
-	SellGoldGainLabel.text = str(roundi(GoldGainedIfSold)) + " Gold"
-	BotPriceLabel.text = "Price: " + str(roundi(CalculatePrice.getBotCost(SaveData.Resources[WoodType]["Bots"], WoodType))) + " gold"
+	CurrentWoodCountLabel.text = str(NumberFormatting.formatNumber(roundi(SaveData.Resources[WoodType]["Count"]))) + " " + WoodType
+	SellAmountLabel.text = str(NumberFormatting.formatNumber(roundi(WoodLossIfSold))) + " " + WoodType
+	SellGoldGainLabel.text = str(NumberFormatting.formatNumber(roundi(GoldGainedIfSold))) + " Gold"
+	BotPriceLabel.text = "Price: " + str(NumberFormatting.formatNumber(roundi(CalculatePrice.getBotCost(SaveData.Resources[WoodType]["Bots"], WoodType)))) + " gold"
 	
-	PerSecondWoodSoldLabel.text = str(roundi(Values.ResourceValues[WoodType]["WoodSoldPerSecond"]))
-	PerSecondGoldGainLabel.text = str(roundi(Values.ResourceValues[WoodType]["GoldGainPerSecond"]))
+	PerSecondWoodSoldLabel.text = str(NumberFormatting.formatNumber(roundi(Values.ResourceValues[WoodType]["WoodSoldPerSecond"])))
+	PerSecondGoldGainLabel.text = str(NumberFormatting.formatNumber(roundi(Values.ResourceValues[WoodType]["GoldGainPerSecond"])))
 
 func setNodePaths():
 	# Nodes for selling

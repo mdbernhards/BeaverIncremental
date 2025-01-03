@@ -49,6 +49,8 @@ func recalculateValues():
 	CalculateValues.calculateAllValues()
 	get_tree().get_first_node_in_group("ResearchSection").resetResearch()
 	get_tree().get_first_node_in_group("ResourcePage").updateBars()
+	get_tree().get_first_node_in_group("Settings").updateSettings()
+	get_tree().get_first_node_in_group("MagicSection").setMagicItems()
 
 var Gold = {
 	"Count" : 0,
@@ -1516,6 +1518,7 @@ var GeneralInfo = {
 	"MasterVolume" : false,
 	"MusicVolume" : false,
 	"AchievementCount" : countAchivements(),
+	"NumberNotation" : NumberFormatting.NotationTypesEnum.Default
 }
 
 var SavesInfo = {

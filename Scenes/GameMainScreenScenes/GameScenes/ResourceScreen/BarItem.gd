@@ -54,9 +54,9 @@ func changeBarValues(woodType = WoodType):
 
 func updateBarValues(woodType = WoodType):
 	WoodType = woodType
-	PerClickLabel.text = str(roundi(Values.ResourceValues[WoodType]["PerClick"])) + " per click"
-	PerSecondLabel.text = str(roundi(Values.ResourceValues[WoodType]["RealPerSecondIncrease"] - Values.ResourceValues[WoodType]["RealPerSecondLoss"])) + " per second"
-	StorageLabel.text = str(floor(SaveData.Resources[WoodType]["Count"])) + " / " + str(floor(Values.ResourceValues[WoodType]["Storage"]))
+	PerClickLabel.text = str(NumberFormatting.formatNumber(roundi(Values.ResourceValues[WoodType]["PerClick"]))) + " per click"
+	PerSecondLabel.text = str(NumberFormatting.formatNumber(roundi(Values.ResourceValues[WoodType]["RealPerSecondIncrease"] - Values.ResourceValues[WoodType]["RealPerSecondLoss"]))) + " per second"
+	StorageLabel.text = str(NumberFormatting.formatNumber(floor(SaveData.Resources[WoodType]["Count"]))) + " / " + str(NumberFormatting.formatNumber(floor(Values.ResourceValues[WoodType]["Storage"])))
 	WoodProgressBar.value = remap(SaveData.Resources[WoodType]["Count"], 0, Values.ResourceValues[WoodType]["Storage"], 0, 100)
 	
 	# Slider
@@ -66,7 +66,7 @@ func updateBarValues(woodType = WoodType):
 	WCCurrentPrice = round(CalculatePrice.getWoodcampCost(SaveData.Resources[WoodType]["Woodcamps"], WoodType) * Values.ResourceValues[WoodType]["WcPriceMultip"])
 	
 	WCCountLabel.text = str(SaveData.Resources[WoodType]["Woodcamps"])
-	WCPriceLabel.text = str(WCCurrentPrice)
+	WCPriceLabel.text = str(NumberFormatting.formatNumber(WCCurrentPrice))
 	
 	if WCCurrentPrice <= SaveData.Gold["Count"]:
 		WCCantAffordRect.visible = false
@@ -79,7 +79,7 @@ func updateBarValues(woodType = WoodType):
 	BeaverCurrentPrice = round(CalculatePrice.getBeaverCost(SaveData.Resources[WoodType]["Beavers"], WoodType) * Values.ResourceValues[WoodType]["BeaverPriceMultip"])
 	
 	BeaverCountLabel.text = str(SaveData.Resources[WoodType]["Beavers"])
-	BeaverPriceLabel.text = str(BeaverCurrentPrice)
+	BeaverPriceLabel.text = str(NumberFormatting.formatNumber(BeaverCurrentPrice))
 	
 	if BeaverCurrentPrice <= SaveData.Resources[WoodType]["Count"]:
 		BeaverCantAffordRect.visible = false
