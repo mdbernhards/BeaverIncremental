@@ -1,0 +1,197 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36" version="26.0.3">
+  <diagram id="C5RBs43oDa-KdzZeNtuy" name="Page-1">
+    <mxGraphModel dx="2868" dy="1716" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="WIyWlLk6GJQsqaUBKTNV-0" />
+        <mxCell id="WIyWlLk6GJQsqaUBKTNV-1" parent="WIyWlLk6GJQsqaUBKTNV-0" />
+        <mxCell id="X2Ly2FTXXGf8fbf_jFUx-12" value="" style="rounded=0;whiteSpace=wrap;html=1;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
+          <mxGeometry x="252.5" y="33" width="160" height="290" as="geometry" />
+        </mxCell>
+        <mxCell id="X2Ly2FTXXGf8fbf_jFUx-3" value="Calculate theoretical&amp;nbsp;&lt;div&gt;Max Wood Gain&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=12;glass=0;strokeWidth=1;shadow=0;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
+          <mxGeometry x="272.5" y="73" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="X2Ly2FTXXGf8fbf_jFUx-5" value="&lt;div&gt;Wood Loss already from previous tier&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=12;glass=0;strokeWidth=1;shadow=0;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
+          <mxGeometry x="272.5" y="123" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="X2Ly2FTXXGf8fbf_jFUx-6" value="Calculate theoretical&lt;div&gt;Max Wood Sold by bots&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=12;glass=0;strokeWidth=1;shadow=0;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
+          <mxGeometry x="272.5" y="173" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="X2Ly2FTXXGf8fbf_jFUx-8" value="Calculate theoretical&lt;div&gt;Max Gold gain / bots&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=12;glass=0;strokeWidth=1;shadow=0;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
+          <mxGeometry x="272.5" y="223" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="X2Ly2FTXXGf8fbf_jFUx-10" value="Calculate theoretical&lt;div&gt;Max Wood and Gold Loss from Dams&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fontSize=12;glass=0;strokeWidth=1;shadow=0;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
+          <mxGeometry x="272.5" y="273" width="120" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="X2Ly2FTXXGf8fbf_jFUx-13" value="gain loss calculation" style="rounded=0;whiteSpace=wrap;html=1;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
+          <mxGeometry x="272.5" y="43" width="120" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="X2Ly2FTXXGf8fbf_jFUx-45" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="WIyWlLk6GJQsqaUBKTNV-1" source="X2Ly2FTXXGf8fbf_jFUx-15" target="X2Ly2FTXXGf8fbf_jFUx-46" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="528.0882352941176" y="269" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="X2Ly2FTXXGf8fbf_jFUx-15" value="Start from the highest tier" style="rounded=1;whiteSpace=wrap;html=1;fontSize=12;glass=0;strokeWidth=1;shadow=0;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
+          <mxGeometry x="453.5" y="159" width="150" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="X2Ly2FTXXGf8fbf_jFUx-42" value="The problem:&lt;div&gt;1. If storage is full / almost full then you need to produce less of that wood, that lowers the lower tier wood spent&lt;/div&gt;&lt;div&gt;2. If a tick uses more wood then there is in storage, you can&#39;t produce as mutch wood for the higher tier&amp;nbsp;&lt;/div&gt;" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
+          <mxGeometry x="72.5" y="999" width="730" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="X2Ly2FTXXGf8fbf_jFUx-43" value="&lt;li&gt;&lt;strong&gt;Calculate demand:&lt;/strong&gt; Start at the highest tier and calculate how much of each lower-tier resource is needed to satisfy the higher tier&#39;s production. Stop if a tier doesn&#39;t have enough resources.&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Adjust for storage:&lt;/strong&gt; Cap production at each tier based on storage limits, propagating this reduction to higher tiers.&lt;/li&gt;&lt;li&gt;&lt;strong&gt;Repeat:&lt;/strong&gt; Iteratively adjust production across tiers until constraints are satisfied.&lt;/li&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
+          <mxGeometry x="20" y="1109" width="1040" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="X2Ly2FTXXGf8fbf_jFUx-44" value="Adjust WoodProductionGain and lower tier WoodProductionLoss" style="rounded=1;whiteSpace=wrap;html=1;fontSize=12;glass=0;strokeWidth=1;shadow=0;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
+          <mxGeometry x="672.5" y="329" width="150" height="64" as="geometry" />
+        </mxCell>
+        <mxCell id="X2Ly2FTXXGf8fbf_jFUx-51" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="WIyWlLk6GJQsqaUBKTNV-1" source="X2Ly2FTXXGf8fbf_jFUx-46" target="X2Ly2FTXXGf8fbf_jFUx-50" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="X2Ly2FTXXGf8fbf_jFUx-46" value="Calculate Lower tier resources needed" style="rounded=1;whiteSpace=wrap;html=1;fontSize=12;glass=0;strokeWidth=1;shadow=0;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
+          <mxGeometry x="452.5" y="253" width="150" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="X2Ly2FTXXGf8fbf_jFUx-47" value="Adjust lower tier wood loss proportionaly, so there is enough wood" style="rounded=0;whiteSpace=wrap;html=1;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
+          <mxGeometry x="772.5" y="519" width="130" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="X2Ly2FTXXGf8fbf_jFUx-52" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" parent="WIyWlLk6GJQsqaUBKTNV-1" source="X2Ly2FTXXGf8fbf_jFUx-50" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="672.5" y="362.52941176470586" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="X2Ly2FTXXGf8fbf_jFUx-55" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" parent="WIyWlLk6GJQsqaUBKTNV-1" source="X2Ly2FTXXGf8fbf_jFUx-50" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="530.4411764705883" y="443" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="X2Ly2FTXXGf8fbf_jFUx-50" value="Is resource&lt;div&gt;(count + gain) &amp;lt; storage&amp;nbsp;&lt;/div&gt;&lt;div&gt;capacity&lt;/div&gt;" style="rhombus;whiteSpace=wrap;html=1;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
+          <mxGeometry x="425" y="323" width="210" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="X2Ly2FTXXGf8fbf_jFUx-53" value="No" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
+          <mxGeometry x="612.5" y="331" width="40" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="X2Ly2FTXXGf8fbf_jFUx-56" value="Yes" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
+          <mxGeometry x="532.5" y="393" width="40" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="X2Ly2FTXXGf8fbf_jFUx-58" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="WIyWlLk6GJQsqaUBKTNV-1" source="X2Ly2FTXXGf8fbf_jFUx-57" target="X2Ly2FTXXGf8fbf_jFUx-82" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="682.5" y="483" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="682.5" y="483" />
+              <mxPoint x="682.5" y="483" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="X2Ly2FTXXGf8fbf_jFUx-57" value="lower tier&amp;nbsp;&lt;div&gt;resources&amp;nbsp;&lt;span style=&quot;background-color: initial;&quot;&gt;needed &amp;lt;&amp;nbsp;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;(count + produced)&lt;/span&gt;&lt;/div&gt;" style="rhombus;whiteSpace=wrap;html=1;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
+          <mxGeometry x="432.5" y="443" width="195" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="X2Ly2FTXXGf8fbf_jFUx-59" value="No" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
+          <mxGeometry x="622.5" y="443" width="40" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="X2Ly2FTXXGf8fbf_jFUx-61" value="Set lower tier resource loss from woodcamps" style="rounded=0;whiteSpace=wrap;html=1;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
+          <mxGeometry x="612.5" y="259" width="130" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="X2Ly2FTXXGf8fbf_jFUx-62" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" parent="WIyWlLk6GJQsqaUBKTNV-1" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="530.5" y="559" as="targetPoint" />
+            <mxPoint x="530.5" y="523" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="X2Ly2FTXXGf8fbf_jFUx-63" value="Yes" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
+          <mxGeometry x="532.5" y="513" width="40" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="X2Ly2FTXXGf8fbf_jFUx-72" value="Take in to account production sliders" style="rounded=0;whiteSpace=wrap;html=1;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
+          <mxGeometry x="652.5" y="39" width="110" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="X2Ly2FTXXGf8fbf_jFUx-75" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" parent="WIyWlLk6GJQsqaUBKTNV-1" source="X2Ly2FTXXGf8fbf_jFUx-87" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="528.5" y="229" as="targetPoint" />
+            <mxPoint x="662.5" y="804" as="sourcePoint" />
+            <Array as="points">
+              <mxPoint x="912.5" y="656" />
+              <mxPoint x="912.5" y="229" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="X2Ly2FTXXGf8fbf_jFUx-80" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" parent="WIyWlLk6GJQsqaUBKTNV-1" source="X2Ly2FTXXGf8fbf_jFUx-78" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="529.605263157895" y="159" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="X2Ly2FTXXGf8fbf_jFUx-78" value="For each tier get:&lt;div&gt;current resource count&lt;/div&gt;&lt;div&gt;Possible Max resource Production&lt;/div&gt;&lt;div&gt;Possible Max Loss&lt;/div&gt;&lt;div&gt;Remaining capacity in storage&amp;nbsp;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
+          <mxGeometry x="422.5" y="29" width="215" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="X2Ly2FTXXGf8fbf_jFUx-79" value="Gain Loss Calculation" style="rounded=0;whiteSpace=wrap;html=1;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
+          <mxGeometry x="652.5" y="89" width="130" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="X2Ly2FTXXGf8fbf_jFUx-84" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" parent="WIyWlLk6GJQsqaUBKTNV-1" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="531.5" y="543" as="targetPoint" />
+            <mxPoint x="756.5" y="508" as="sourcePoint" />
+            <Array as="points">
+              <mxPoint x="756.5" y="543" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="X2Ly2FTXXGf8fbf_jFUx-82" value="Adjust WoodProductionGain and lower tier loses" style="rounded=1;whiteSpace=wrap;html=1;fontSize=12;glass=0;strokeWidth=1;shadow=0;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
+          <mxGeometry x="682.5" y="458" width="150" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="X2Ly2FTXXGf8fbf_jFUx-83" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=-0.076;entryY=1.07;entryDx=0;entryDy=0;entryPerimeter=0;" parent="WIyWlLk6GJQsqaUBKTNV-1" source="X2Ly2FTXXGf8fbf_jFUx-44" target="X2Ly2FTXXGf8fbf_jFUx-56" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="AcGOLKW8wE9_hM1YR_QV-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="WIyWlLk6GJQsqaUBKTNV-1" source="X2Ly2FTXXGf8fbf_jFUx-85" target="AcGOLKW8wE9_hM1YR_QV-1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="X2Ly2FTXXGf8fbf_jFUx-85" value="Calculate and adjust on availability Dragonwood Loses" style="rounded=1;whiteSpace=wrap;html=1;fontSize=12;glass=0;strokeWidth=1;shadow=0;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
+          <mxGeometry x="452.5" y="809" width="165" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="X2Ly2FTXXGf8fbf_jFUx-89" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="WIyWlLk6GJQsqaUBKTNV-1" source="X2Ly2FTXXGf8fbf_jFUx-86" target="X2Ly2FTXXGf8fbf_jFUx-87" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="X2Ly2FTXXGf8fbf_jFUx-91" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="WIyWlLk6GJQsqaUBKTNV-1" source="X2Ly2FTXXGf8fbf_jFUx-86" target="X2Ly2FTXXGf8fbf_jFUx-90" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="X2Ly2FTXXGf8fbf_jFUx-86" value="&lt;div&gt;&lt;span style=&quot;font-size: 11px;&quot;&gt;Is lowest wood tier?&lt;/span&gt;&lt;/div&gt;" style="rhombus;whiteSpace=wrap;html=1;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
+          <mxGeometry x="442.5" y="556" width="175" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="X2Ly2FTXXGf8fbf_jFUx-87" value="Repeat with one tier lower" style="rounded=1;whiteSpace=wrap;html=1;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
+          <mxGeometry x="682.5" y="626" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="X2Ly2FTXXGf8fbf_jFUx-88" value="No" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
+          <mxGeometry x="532.5" y="624" width="40" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="X2Ly2FTXXGf8fbf_jFUx-97" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="WIyWlLk6GJQsqaUBKTNV-1" source="X2Ly2FTXXGf8fbf_jFUx-90" target="X2Ly2FTXXGf8fbf_jFUx-96" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="X2Ly2FTXXGf8fbf_jFUx-90" value="&lt;div&gt;&lt;span style=&quot;font-size: 11px;&quot;&gt;Any adjustments?&lt;/span&gt;&lt;/div&gt;" style="rhombus;whiteSpace=wrap;html=1;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
+          <mxGeometry x="447.5" y="694" width="175" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="X2Ly2FTXXGf8fbf_jFUx-92" value="Yes" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
+          <mxGeometry x="412.5" y="556" width="40" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="X2Ly2FTXXGf8fbf_jFUx-93" value="Yes" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
+          <mxGeometry x="617.5" y="699" width="40" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="X2Ly2FTXXGf8fbf_jFUx-94" value="No" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
+          <mxGeometry x="493.53" y="759" width="40" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="X2Ly2FTXXGf8fbf_jFUx-95" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="WIyWlLk6GJQsqaUBKTNV-1" source="X2Ly2FTXXGf8fbf_jFUx-90" target="X2Ly2FTXXGf8fbf_jFUx-85" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="X2Ly2FTXXGf8fbf_jFUx-98" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" parent="WIyWlLk6GJQsqaUBKTNV-1" edge="1" source="X2Ly2FTXXGf8fbf_jFUx-96">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="530.5" y="139" as="targetPoint" />
+            <mxPoint x="800.5" y="829" as="sourcePoint" />
+            <Array as="points">
+              <mxPoint x="940.5" y="729" />
+              <mxPoint x="940.5" y="139" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="X2Ly2FTXXGf8fbf_jFUx-96" value="Repeate starting&amp;nbsp;&lt;div&gt;f&lt;span style=&quot;background-color: initial;&quot;&gt;rom highest tier&lt;/span&gt;&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
+          <mxGeometry x="682.5" y="699" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="AcGOLKW8wE9_hM1YR_QV-1" value="Remove / Add wood and set the per sec based on difference from last tick for all resources" style="rounded=1;whiteSpace=wrap;html=1;fontSize=12;glass=0;strokeWidth=1;shadow=0;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
+          <mxGeometry x="452.5" y="879" width="165" height="70" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
