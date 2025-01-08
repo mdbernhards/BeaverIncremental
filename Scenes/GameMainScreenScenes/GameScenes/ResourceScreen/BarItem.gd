@@ -28,6 +28,9 @@ var BeaverPriceLabel
 var BeaverCantAffordRect
 var BeaverMaxCantAffordRect
 
+var mouseOverBeaver = false
+var mouseOverWoodcamp = false
+
 func _ready():
 	WCCurrentPrice = 0
 	BeaverCurrentPrice = 0
@@ -65,7 +68,11 @@ func updateBarValues(woodType = WoodType):
 	# Woodcamp
 	WCCurrentPrice = round(CalculatePrice.getWoodcampCost(SaveData.Resources[WoodType]["Woodcamps"], WoodType) * Values.ResourceValues[WoodType]["WcPriceMultip"])
 	
-	WCCountLabel.text = str(SaveData.Resources[WoodType]["Woodcamps"])
+	if mouseOverWoodcamp and Values.ResourceValues[WoodType]["ExtraWoodcamps"] > 0:
+		WCCountLabel.text = str(SaveData.Resources[WoodType]["Woodcamps"]) + " + " + str(Values.ResourceValues[WoodType]["ExtraWoodcamps"])
+	else:
+		WCCountLabel.text = str(SaveData.Resources[WoodType]["Woodcamps"] + Values.ResourceValues[WoodType]["ExtraWoodcamps"])
+	
 	WCPriceLabel.text = str(NumberFormatting.formatNumber(WCCurrentPrice))
 	
 	if WCCurrentPrice <= SaveData.Gold["Count"]:
@@ -78,7 +85,11 @@ func updateBarValues(woodType = WoodType):
 	# Levels
 	BeaverCurrentPrice = round(CalculatePrice.getBeaverCost(SaveData.Resources[WoodType]["Beavers"], WoodType) * Values.ResourceValues[WoodType]["BeaverPriceMultip"])
 	
-	BeaverCountLabel.text = str(SaveData.Resources[WoodType]["Beavers"])
+	if mouseOverBeaver and Values.ResourceValues[WoodType]["ExtraBeavers"] > 0:
+		BeaverCountLabel.text = str(SaveData.Resources[WoodType]["Beavers"]) + " + " + str(Values.ResourceValues[WoodType]["ExtraBeavers"])
+	else:
+		BeaverCountLabel.text = str(SaveData.Resources[WoodType]["Beavers"] + Values.ResourceValues[WoodType]["ExtraBeavers"])
+	
 	BeaverPriceLabel.text = str(NumberFormatting.formatNumber(BeaverCurrentPrice))
 	
 	if BeaverCurrentPrice <= SaveData.Resources[WoodType]["Count"]:
@@ -87,6 +98,9 @@ func updateBarValues(woodType = WoodType):
 	else:
 		BeaverCantAffordRect.visible = true
 		BeaverMaxCantAffordRect.visible = true
+
+func getExtraBeaverCount():
+	return Values.ResourceValues
 
 func setNodePaths():
 	NameLabel = $HBox/BarVBox/BarLabels/MC/TitleLabel
@@ -150,3 +164,15 @@ func _on_beaver_buy_max_button_button_down() -> void:
 func _on_resource_production_slider_value_changed(value):
 	SaveData.Resources[WoodType]["Production"] = value
 	CalculateValues.calculateAllValues()
+
+func _on_beaver_count_label_mouse_entered() -> void:
+	mouseOverBeaver = true
+
+func _on_beaver_count_label_mouse_exited() -> void:
+	mouseOverBeaver = false
+
+func _on_wc_count_label_mouse_entered() -> void:
+	mouseOverWoodcamp = true
+
+func _on_wc_count_label_mouse_exited() -> void:
+	mouseOverWoodcamp = false

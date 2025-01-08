@@ -5,6 +5,7 @@ enum NotationTypesEnum {
 	Alternative,
 	Scientific,
 	Engineering,
+	Mixed,
 }
 
 const Prefixes = {
@@ -43,16 +44,20 @@ func formatNumber(number: float) -> String:
 			return "%.3f" % mantissa + "e" + str(exponent)
 		NotationTypesEnum.Engineering:
 			return "%.3f" % formattedNumber + "e" + str(usedMagnitude)
-		NotationTypesEnum.Default, NotationTypesEnum.Alternative:
+		NotationTypesEnum.Default, NotationTypesEnum.Alternative, NotationTypesEnum.Mixed:
 			var prefixType
 			
-			if formattingType == NotationTypesEnum.Default:
+			if formattingType == NotationTypesEnum.Default or formattingType == NotationTypesEnum.Mixed:
 				prefixType = "Default" 
 			else:
 				prefixType = "Alternative"
 			
-			var prefix = Prefixes.get(usedMagnitude, {}).get(prefixType, "")
-			
-			return "%.3f%s" % [formattedNumber, prefix]
+			if formattingType == NotationTypesEnum.Mixed and usedMagnitude > 15:
+				var exponent = int(floor(log(abs(number)) / log(10)))
+				var mantissa = number / pow(10, exponent)
+				return "%.3f" % mantissa + "e" + str(exponent)
+			else:
+				var prefix = Prefixes.get(usedMagnitude, {}).get(prefixType, "")
+				return "%.3f%s" % [formattedNumber, prefix]
 		_:
 			return str(number)

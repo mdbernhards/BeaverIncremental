@@ -1,25 +1,26 @@
 To do all things I can think of:
 First:
-Dam completion and effect application
-tooltip on resource bar for wood income brakedown
-
-Big numbers even for scientific use m,b,t, but not for bigger numbers, have less numbers after comma
-bait shop logic
-TempValues["Global"]["WcBaseStorage"] specificaly research 12 doesn't seem to get applied and idk why??
-For Last 3 upgrades for each wood add a lock that can be unlocked with magic, it gives global upgrade
-Display the extra woodcamps and the extra beavers
-Move some/most calculations from process to timers (2 sec?) so that 30% of cpu isn't eaten
+Save MaxResourceCount for Ascentions, so it doesn't reseat after load / Also after ascending reset MaxResourceCount 
+Check if Magic upgrades get saved after load
+Dam completion and Effect application
+Tooltip on resource bar for incoming / outgoing wood brakedown
+Game feature unlock system / have debug mode where everything is unlocked
+Magic Upgrades add more / fix current ones
+Fish swim, spawn, despawn logic
 
 Later:
+Research history broken
+On magic mouse over see how mutch magic each resource gives
+Display Magic effects in ascension screen
+Move some/most calculations from process to timers (2 sec?) so that 30% of cpu isn't eaten
+For Last 3 upgrades for each wood add a lock that can be unlocked with magic, it gives global upgrade
+bait shop logic
 Add auto saves with changable intervals
 Fix/Change/Remove Gold Upgrade multip (for lower price upgrades, really broken)
 Buy max buttons logic for fishing (or myb ctrl click to max buy or a toggle like in other games i think?)
-Think if more magic upgrades need to be added
 balancing all of the game
 Start adding achievemnent triggers
 Tooltips for everything
-Think what will magic buff, display the effects in ascension screen
-Fish swim, spawn, despawn logic
 Bait logic
 Add fishing spot logic, different fish in different spots
 Settings screen
@@ -29,12 +30,9 @@ Change achievements to be icons from icon packs
 scroll log, story
 tooltips for different things in scroll log (now I know it's doable in google doc)
 All upgrade, research, magic, dam, achievement names and descriptions (maybe upgrade descriptive names, cute descriptions and for research other way around but rename description to effect:)
-All unlock locations and triggers added,
 Storage overloading
 Upgrade level cap at 100
-Add upgrade beavers to the beaver count as a seperate value like (+ 5)
 Rename ascension to prestege
-show in save info gold or magic only when u get some
 
 Done:
 Add save delete button DONE
@@ -66,3 +64,8 @@ Fix each construction Resource Not having a seperate Count DONE
 Continuing of Dam stages DONE
 Fix values not reseting on next stage DONE
 Add real play time counter DONE
+show in save info gold or magic only when u get some DONE
+Added Mixed formatting DONE
+Fix upgrades being a little to wide DONE
+Display the extra woodcamps and the extra beavers DONE
+in ascension have precentige to next magic DONE

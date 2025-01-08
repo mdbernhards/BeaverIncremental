@@ -1,6 +1,5 @@
 extends Control
 
-
 var WoodTypes = ["Oak", "Apple", "Maple", "Birch", "Spruce",
 				 "Chestnut", "Cherry", "Ash", "Cedar", "Mahogany",
 				 "Ebony", "Dogwood", "Rosewood", "Ghost Gum", "Dragonwood",]
@@ -25,26 +24,27 @@ var MaxResourceCount = {
 }
 
 var BaseRequirements = {
-		"Oak": 150000,
-		"Apple": 140000,
-		"Maple": 130000,
-		"Birch": 120000,
-		"Spruce": 110000,
-		"Chestnut": 100000,
-		"Cherry": 90000,
-		"Ash": 80000,
-		"Cedar": 70000,
-		"Mahogany": 60000,
-		"Ebony": 50000,
-		"Dogwood": 40000,
-		"Rosewood": 30000,
-		"Ghost Gum": 20000,
-		"Dragonwood": 10000,
-		"Gold": 15000
+		"Oak": 70000,
+		"Apple": 67500,
+		"Maple": 65000,
+		"Birch": 62500,
+		"Spruce": 55000,
+		"Chestnut": 47500,
+		"Cherry": 45000,
+		"Ash": 40000,
+		"Cedar": 35000,
+		"Mahogany": 30000,
+		"Ebony": 25000,
+		"Dogwood": 20000,
+		"Rosewood": 15000,
+		"Ghost Gum": 10000,
+		"Dragonwood": 5000,
+		"Gold": 250000
 	}
 
 # Nodes
 var MagicGainLabel
+var NextMagicLabel
 
 func _ready() -> void:
 	setupNodePaths()
@@ -74,19 +74,21 @@ func calculatePotentialMagicGain():
 		while resourceCount >= baseCost:
 			magic += 1
 			resourceCount -= baseCost
-			baseCost *= 1.1
+			baseCost *= 1.25
 		
 		if resourceCount > 0:
 			magic += resourceCount / baseCost
 	
-	Values.ResourceValues["Magic"]["PotentialMagic"] = round(magic)
+	Values.ResourceValues["Magic"]["PotentialMagic"] = magic
 
 func updateMagic():
-	MagicGainLabel.text = "You will gain " + str(Values.ResourceValues["Magic"]["PotentialMagic"]) + " Magic"
+	MagicGainLabel.text = "You will gain " + str(floor(Values.ResourceValues["Magic"]["PotentialMagic"])) + " Magic"
+	NextMagicLabel.text = str(round((Values.ResourceValues["Magic"]["PotentialMagic"] - floor(Values.ResourceValues["Magic"]["PotentialMagic"])) * 100)) + "% To Next Magic"
 
 func setupNodePaths():
-	MagicGainLabel = $MC/AscensionVBox/MC2/MagicGainLabel
+	MagicGainLabel = $MC/AscensionVBox/MC2/VBox/MagicGainLabel
+	NextMagicLabel = $MC/AscensionVBox/MC2/VBox/NextMagicLabel
 
 func _on_ascend_button_button_down() -> void:
-	SaveData.Magic["Count"] += Values.ResourceValues["Magic"]["PotentialMagic"]
+	SaveData.Magic["Count"] += floor(Values.ResourceValues["Magic"]["PotentialMagic"])
 	SaveData.resetValues()

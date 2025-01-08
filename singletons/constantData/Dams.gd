@@ -44,7 +44,7 @@ var Dams = {
 		DamParts.Second : {
 			"Name" : "Building Foundations",
 			"Price" : {
-				"OakCost" : 10000, "AppleCost" : 10000, "MapleCost" : 0, "BirchCost" : 0, "SpruceCost" : 0,
+				"OakCost" : 1000, "AppleCost" : 1000, "MapleCost" : 0, "BirchCost" : 0, "SpruceCost" : 0,
 				"ChestnutCost" : 0, "CherryCost" : 0, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 0,
 				"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 0,
 				"GoldCost" : 0,
@@ -54,7 +54,7 @@ var Dams = {
 		DamParts.Third : {
 			"Name" : "Careful Wood Stacking",
 			"Price" : {
-				"OakCost" : 10000, "AppleCost" : 10000, "MapleCost" : 0, "BirchCost" : 0, "SpruceCost" : 0,
+				"OakCost" : 1000, "AppleCost" : 1000, "MapleCost" : 0, "BirchCost" : 0, "SpruceCost" : 0,
 				"ChestnutCost" : 0, "CherryCost" : 0, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 0,
 				"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 0,
 				"GoldCost" : 0,
@@ -64,7 +64,7 @@ var Dams = {
 		DamParts.Fourth : {
 			"Name" : "Patching leaks",
 			"Price" : {
-				"OakCost" : 10000, "AppleCost" : 10000, "MapleCost" : 0, "BirchCost" : 0, "SpruceCost" : 0,
+				"OakCost" : 1000, "AppleCost" : 1000, "MapleCost" : 0, "BirchCost" : 0, "SpruceCost" : 0,
 				"ChestnutCost" : 0, "CherryCost" : 0, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 0,
 				"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 0,
 				"GoldCost" : 0,

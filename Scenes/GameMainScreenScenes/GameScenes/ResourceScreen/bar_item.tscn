@@ -5,6 +5,7 @@
 
 [node name="BarItem" type="MarginContainer" groups=["BarItem"]]
 custom_minimum_size = Vector2(953, 0)
+mouse_filter = 2
 theme_override_constants/margin_left = 0
 script = ExtResource("1_74j78")
 
@@ -142,6 +143,7 @@ layout_mode = 2
 [node name="BeaverCountLabel" type="Label" parent="HBox/BeaverMC/BeaverHBox/MC/VBox"]
 custom_minimum_size = Vector2(0, 45)
 layout_mode = 2
+mouse_filter = 1
 theme_override_font_sizes/font_size = 19
 text = "0"
 horizontal_alignment = 1
@@ -199,6 +201,7 @@ color = Color(0.513726, 0.0941176, 0, 0.301961)
 [node name="WoodCampMC" type="MarginContainer" parent="HBox"]
 custom_minimum_size = Vector2(210, 0)
 layout_mode = 2
+mouse_filter = 2
 theme_override_constants/margin_left = 10
 theme_override_constants/margin_right = 10
 
@@ -212,6 +215,7 @@ layout_mode = 2
 [node name="MC" type="MarginContainer" parent="HBox/WoodCampMC/WoodCampHBox"]
 layout_mode = 2
 size_flags_horizontal = 3
+mouse_filter = 2
 theme_override_constants/margin_top = 8
 
 [node name="VBox" type="VBoxContainer" parent="HBox/WoodCampMC/WoodCampHBox/MC"]
@@ -220,6 +224,7 @@ layout_mode = 2
 [node name="wcCountLabel" type="Label" parent="HBox/WoodCampMC/WoodCampHBox/MC/VBox"]
 custom_minimum_size = Vector2(0, 45)
 layout_mode = 2
+mouse_filter = 1
 theme_override_font_sizes/font_size = 19
 text = "0"
 horizontal_alignment = 1
@@ -276,7 +281,11 @@ color = Color(0.513726, 0.0941176, 0, 0.301961)
 
 [connection signal="button_down" from="HBox/BarVBox/BarRect/HBox/MC2/ClickButton" to="." method="_on_click_button_button_down"]
 [connection signal="value_changed" from="HBox/BarVBox/BarRect/ResourceProductionSlider" to="." method="_on_resource_production_slider_value_changed"]
+[connection signal="mouse_entered" from="HBox/BeaverMC/BeaverHBox/MC/VBox/BeaverCountLabel" to="." method="_on_beaver_count_label_mouse_entered"]
+[connection signal="mouse_exited" from="HBox/BeaverMC/BeaverHBox/MC/VBox/BeaverCountLabel" to="." method="_on_beaver_count_label_mouse_exited"]
 [connection signal="button_down" from="HBox/BeaverMC/BeaverHBox/MC2/VBox/BeaverBuyButton" to="." method="_on_beaver_buy_button_button_down"]
 [connection signal="button_down" from="HBox/BeaverMC/BeaverHBox/MC2/VBox/BeaverBuyMaxButton" to="." method="_on_beaver_buy_max_button_button_down"]
+[connection signal="mouse_entered" from="HBox/WoodCampMC/WoodCampHBox/MC/VBox/wcCountLabel" to="." method="_on_wc_count_label_mouse_entered"]
+[connection signal="mouse_exited" from="HBox/WoodCampMC/WoodCampHBox/MC/VBox/wcCountLabel" to="." method="_on_wc_count_label_mouse_exited"]
 [connection signal="button_down" from="HBox/WoodCampMC/WoodCampHBox/MC2/VBox/WoodCampBuyButton" to="." method="_on_wood_camp_buy_button_button_down"]
 [connection signal="button_down" from="HBox/WoodCampMC/WoodCampHBox/MC2/VBox/WoodCampBuyMaxButton" to="." method="_on_wood_camp_buy_max_button_button_down"]

@@ -2,9 +2,24 @@ extends Node
 
 var Magic = {
 	"1" : {
-		"Name" : "Unlock Achievements and FoS",
-		"Description" : "Unlock The Achievements and Feats of Strength section",
+		"Name" : "Unlock Achievements",
+		"Description" : "Unlock The Achievements section",
 		"Cost" : 1,
+	},
+	"1b" : {
+		"Name" : "-25% Woodcamp Price",
+		"Description" : "-25% Woodcamp Price",
+		"Cost" : 1,
+	},
+	"1bb" : {
+		"Name" : "+30% Storage",
+		"Description" : "-25% Woodcamp Price",
+		"Cost" : 1,
+	},
+	"1c" : {
+		"Name" : "Woodcamps use 10% less",
+		"Description" : "Woodcamps use 10% less wood",
+		"Cost" : 2,
 	},
 	"2" : {
 		"Name" : "20% WPS",
@@ -17,7 +32,7 @@ var Magic = {
 		"Cost" : 5,
 	},
 	"4" : {
-		"Name" : "Starting Beavers +2",
+		"Name" : "Starting Beavers +5",
 		"Description" : "All wood types start with 2 more beavers",
 		"Cost" : 8,
 	},

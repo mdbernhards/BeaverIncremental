@@ -54,8 +54,16 @@ func getSaveData(saveName):
 	SaveNameLabel.text = SaveInfo.SaveName
 	SaveTimeStampLabel.text = "Last Saved: " + timeStamp
 	TimePlayedLabel.text = "Time Played: " + str(roundf(SaveInfo.TimePlayed / 360) / 10) + "h"
-	CurrentMagicLabel.text = "Magic: " + str(floor(SaveInfo.CurrentMagic))
-	CurrentGoldLabel.text = "Gold: " + str(floor(SaveInfo.CurrentGold))
+	
+	if SaveInfo.CurrentMagic > 0:
+		CurrentMagicLabel.text = "Magic: " + str(floor(SaveInfo.CurrentMagic))
+	else:
+		CurrentMagicLabel.text = ""
+	
+	if SaveInfo.CurrentGold > 0:
+		CurrentGoldLabel.text = "Gold: " + str(floor(SaveInfo.CurrentGold))
+	else:
+		CurrentGoldLabel.text = ""
 	
 	SaveState = SaveSlotEnum.Existing
 

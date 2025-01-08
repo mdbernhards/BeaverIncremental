@@ -62,6 +62,8 @@ var ResourceValues = {
 		"BotBaseSell": 1,
 		"WoodSoldPerSecond": 10,
 		"GoldGainPerSecond": 10, # from bots selling
+		"ExtraBeavers": 0,
+		"ExtraWoodcamps": 0,
 	},
 	"Apple" : {
 		"PerClick" : 100,
@@ -80,6 +82,8 @@ var ResourceValues = {
 		"BotBaseSell": 1,
 		"WoodSoldPerSecond": 10,
 		"GoldGainPerSecond": 10, # from bots selling
+		"ExtraBeavers": 0,
+		"ExtraWoodcamps": 0,
 	},
 	"Maple" : {
 		"PerClick" : 100,
@@ -98,6 +102,8 @@ var ResourceValues = {
 		"BotBaseSell": 1,
 		"WoodSoldPerSecond": 10,
 		"GoldGainPerSecond": 10, # from bots selling
+		"ExtraBeavers": 0,
+		"ExtraWoodcamps": 0,
 	},
 	"Birch" : {
 		"PerClick" : 100,
@@ -116,6 +122,8 @@ var ResourceValues = {
 		"BotBaseSell": 1,
 		"WoodSoldPerSecond": 10,
 		"GoldGainPerSecond": 10, # from bots selling
+		"ExtraBeavers": 0,
+		"ExtraWoodcamps": 0,
 	},
 	"Spruce" : {
 		"PerClick" : 100,
@@ -134,6 +142,8 @@ var ResourceValues = {
 		"BotBaseSell": 1,
 		"WoodSoldPerSecond": 10,
 		"GoldGainPerSecond": 10, # from bots selling
+		"ExtraBeavers": 0,
+		"ExtraWoodcamps": 0,
 	},
 	"Chestnut" : {
 		"PerClick" : 100,
@@ -152,6 +162,8 @@ var ResourceValues = {
 		"BotBaseSell": 1,
 		"WoodSoldPerSecond": 10,
 		"GoldGainPerSecond": 10, # from bots selling
+		"ExtraBeavers": 0,
+		"ExtraWoodcamps": 0,
 	},
 	"Cherry" : {
 		"PerClick" : 100,
@@ -170,6 +182,8 @@ var ResourceValues = {
 		"BotBaseSell": 1,
 		"WoodSoldPerSecond": 10,
 		"GoldGainPerSecond": 10, # from bots selling
+		"ExtraBeavers": 0,
+		"ExtraWoodcamps": 0,
 	},
 	"Ash" : {
 		"PerClick" : 100,
@@ -188,6 +202,8 @@ var ResourceValues = {
 		"BotBaseSell": 1,
 		"WoodSoldPerSecond": 10,
 		"GoldGainPerSecond": 10, # from bots selling
+		"ExtraBeavers": 0,
+		"ExtraWoodcamps": 0,
 	},
 	"Cedar" : {
 		"PerClick" : 100000000,
@@ -206,6 +222,8 @@ var ResourceValues = {
 		"BotBaseSell": 1,
 		"WoodSoldPerSecond": 10,
 		"GoldGainPerSecond": 10, # from bots selling
+		"ExtraBeavers": 0,
+		"ExtraWoodcamps": 0,
 	},
 	"Mahogany" : {
 		"PerClick" : 100,
@@ -224,6 +242,8 @@ var ResourceValues = {
 		"BotBaseSell": 1,
 		"WoodSoldPerSecond": 10,
 		"GoldGainPerSecond": 10, # from bots selling
+		"ExtraBeavers": 0,
+		"ExtraWoodcamps": 0,
 	},
 	"Ebony" : {
 		"PerClick" : 100,
@@ -242,6 +262,8 @@ var ResourceValues = {
 		"BotBaseSell": 1,
 		"WoodSoldPerSecond": 10,
 		"GoldGainPerSecond": 10, # from bots selling
+		"ExtraBeavers": 0,
+		"ExtraWoodcamps": 0,
 	},
 	"Dogwood" : {
 		"PerClick" : 100,
@@ -260,6 +282,8 @@ var ResourceValues = {
 		"BotBaseSell": 1,
 		"WoodSoldPerSecond": 10,
 		"GoldGainPerSecond": 10, # from bots selling
+		"ExtraBeavers": 0,
+		"ExtraWoodcamps": 0,
 	},
 	"Rosewood" : {
 		"PerClick" : 100,
@@ -278,6 +302,8 @@ var ResourceValues = {
 		"BotBaseSell": 1,
 		"WoodSoldPerSecond": 10,
 		"GoldGainPerSecond": 10, # from bots selling
+		"ExtraBeavers": 0,
+		"ExtraWoodcamps": 0,
 	},
 	"Ghost Gum" : {
 		"PerClick" : 100,
@@ -296,6 +322,8 @@ var ResourceValues = {
 		"BotBaseSell": 1,
 		"WoodSoldPerSecond": 10,
 		"GoldGainPerSecond": 10, # from bots selling
+		"ExtraBeavers": 0,
+		"ExtraWoodcamps": 0,
 	},
 	"Dragonwood" : {
 		"PerClick" : 100,
@@ -314,5 +342,7 @@ var ResourceValues = {
 		"BotBaseSell": 1,
 		"WoodSoldPerSecond": 10,
 		"GoldGainPerSecond": 10, # from bots selling
+		"ExtraBeavers": 0,
+		"ExtraWoodcamps": 0,
 	},
 }

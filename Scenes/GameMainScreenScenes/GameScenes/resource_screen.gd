@@ -14,7 +14,10 @@ func _process(_delta):
 		GoldLabel.text = "Gold: " + str(floor(SaveData.Gold["Count"]))
 		
 	if MagicLabel:
-		MagicLabel.text = "Magic: " + str(floor(SaveData.Magic["Count"]))
+		if floor(Values.ResourceValues["Magic"]["PotentialMagic"]) > 0:
+			MagicLabel.text = "Magic: " + str(floor(SaveData.Magic["Count"])) + " (" + str(floor(Values.ResourceValues["Magic"]["PotentialMagic"])) + ")"
+		else:
+			MagicLabel.text = "Magic: " + str(floor(SaveData.Magic["Count"]))
 
 func _on_page_1_button_button_down():
 	ResourcePage.changePage(1)

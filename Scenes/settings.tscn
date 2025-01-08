@@ -146,15 +146,17 @@ text = "Notation"
 
 [node name="NotationDropDown" type="OptionButton" parent="MC/VBox/SettingsMC/Grid/NumberSettings/MC/VBox/Grid/VBox"]
 layout_mode = 2
-selected = 0
-item_count = 4
-popup/item_0/text = "Default"
+selected = 4
+item_count = 5
+popup/item_0/text = "Letters"
 popup/item_1/text = "Alternative"
 popup/item_1/id = 1
 popup/item_2/text = "Scientific"
 popup/item_2/id = 2
 popup/item_3/text = "Engineering"
 popup/item_3/id = 3
+popup/item_4/text = "Mixed"
+popup/item_4/id = 4
 
 [node name="SaveSettings" type="ColorRect" parent="MC/VBox/SettingsMC/Grid"]
 custom_minimum_size = Vector2(575, 275)
@@ -214,6 +216,7 @@ text = "Auto save"
 
 [node name="AutoSaveDropDown" type="OptionButton" parent="MC/VBox/SettingsMC/Grid/SaveSettings/MC/VBox/Grid/VBox"]
 layout_mode = 2
+selected = 0
 item_count = 4
 popup/item_0/text = "Never"
 popup/item_1/text = "1 min"

@@ -99,11 +99,24 @@ size_flags_vertical = 3
 theme_override_constants/margin_left = 15
 theme_override_constants/margin_bottom = 20
 
-[node name="MagicGainLabel" type="Label" parent="MC/AscensionVBox/MC2"]
+[node name="VBox" type="VBoxContainer" parent="MC/AscensionVBox/MC2"]
+layout_mode = 2
+theme_override_constants/separation = 8
+alignment = 2
+
+[node name="MagicGainLabel" type="Label" parent="MC/AscensionVBox/MC2/VBox"]
 layout_mode = 2
 size_flags_vertical = 1
 theme_override_font_sizes/font_size = 55
 text = "You will receive 33 Magic"
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="NextMagicLabel" type="Label" parent="MC/AscensionVBox/MC2/VBox"]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 43
+text = "30% To Next Magic"
 horizontal_alignment = 1
 vertical_alignment = 2
 
