@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://Scenes/GameMainScreenScenes/GameScenes/DamSection/construction_item.gd" id="1_g58jm"]
 [ext_resource type="PackedScene" uid="uid://bv0jyp7y3jsvw" path="res://Scenes/GameMainScreenScenes/GameScenes/DamSection/constructionItem/construction_resource.tscn" id="2_2acj3"]
 
-[node name="ConstructionItem" type="MarginContainer"]
+[node name="ConstructionItem" type="MarginContainer" groups=["ConstructionItem"]]
 custom_minimum_size = Vector2(240, 409)
 theme_override_constants/margin_left = 5
 theme_override_constants/margin_top = 5
@@ -59,7 +59,7 @@ custom_minimum_size = Vector2(0, 35)
 layout_mode = 2
 color = Color(0.427451, 0.47451, 0.337255, 1)
 
-[node name="CurrentStageLabel" type="Label" parent="CurrentConstructionVBox/MC2/VBox/ColorRect"]
+[node name="StageNrLabel" type="Label" parent="CurrentConstructionVBox/MC2/VBox/ColorRect"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -67,7 +67,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 21
-text = "Current Stage"
+text = "Stage 1"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -262,5 +262,8 @@ horizontal_alignment = 1
 [node name="EmptySpace" type="MarginContainer" parent="UnlockedVBox/MC/VBox"]
 layout_mode = 2
 
+[node name="ConstructionCheckTimer" type="Timer" parent="."]
+
 [connection signal="value_changed" from="CurrentConstructionVBox/VBox/MC/ColorRect/VBox/MC3/ConstructionSpeedSlider" to="." method="_on_construction_speed_slider_value_changed"]
 [connection signal="button_down" from="UnlockedVBox/ColorRect/StartBuildingButton" to="." method="_on_start_building_button_button_down"]
+[connection signal="timeout" from="ConstructionCheckTimer" to="." method="_on_construction_check_timer_timeout"]

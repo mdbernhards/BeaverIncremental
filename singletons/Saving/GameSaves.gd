@@ -1,5 +1,7 @@
 extends Node
 
+var TimeStart
+
 func _ready() -> void:
 	checkInfoFileForSaves()
 
@@ -38,15 +40,18 @@ func updateSaveFileInfo(saveName):
 	var infoFile = FileAccess.open("user://info.save", FileAccess.WRITE)
 	
 	SaveData.SavesInfo[saveName].LastSavedTimeStamp = Time.get_datetime_dict_from_system()
-	SaveData.SavesInfo[saveName].TimePlayed += 1
-	SaveData.SavesInfo[saveName].CurrentMagic += SaveData.Magic["Count"]
-	SaveData.SavesInfo[saveName].CurrentGold += SaveData.Gold["Count"]
-	SaveData.SavesInfo[saveName].NumberNotation += SaveData.GeneralInfo["NumberNotation"]
+	SaveData.SavesInfo[saveName].TimePlayed = SaveData.GeneralInfo["TimePlayed"]
+	SaveData.SavesInfo[saveName].CurrentMagic = SaveData.Magic["Count"]
+	SaveData.SavesInfo[saveName].CurrentGold = SaveData.Gold["Count"]
+	SaveData.SavesInfo[saveName].NumberNotation = SaveData.GeneralInfo["NumberNotation"]
 	
 	var jsonSaveInfo = JSON.stringify(var_to_str(SaveData.SavesInfo))
 	infoFile.store_line(jsonSaveInfo)
 
 func saveGame(saveName):
+	SaveData.GeneralInfo["TimePlayed"] += Time.get_unix_time_from_system() - TimeStart
+	
+	
 	if not FileAccess.file_exists("user://" + saveName + ".save"):
 		addSaveFileToInfo(saveName)
 	else:
@@ -179,6 +184,8 @@ func loadGame(saveName):
 	SaveData.recalculateValues()
 	
 	Values.CurrentSaveName = saveName
+	
+	TimeStart = Time.get_unix_time_from_system()
 	
 func deleteGame(saveName):
 	if not FileAccess.file_exists("user://" + saveName + ".save"):

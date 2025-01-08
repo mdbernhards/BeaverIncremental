@@ -213,22 +213,18 @@ func setTickChanges():
 		Values.ResourceValues[woodType]["WoodSoldPerSecond"] = WoodCalculations[woodType]["WoodMarkedLoss"]
 		Values.ResourceValues[woodType]["GoldGainPerSecond"] = goldGain
 		
-		# Wood Dam Construction
-		var resourceItems = get_tree().get_nodes_in_group("ConstructionResource")
-		var generalResourcesPerSecond = Values.ResourceValues["Dam"]["ResourcesPerSecond"]
 		var perSecondPercentage = 1
 		
 		if WoodCalculations[woodType]["WoodDamLoss"] > 0 and WoodCalculations[woodType]["MaxWoodDamLoss"] > 0:
-			WoodCalculations[woodType]["WoodDamLoss"] / WoodCalculations[woodType]["MaxWoodDamLoss"]
+			perSecondPercentage = WoodCalculations[woodType]["WoodDamLoss"] / WoodCalculations[woodType]["MaxWoodDamLoss"]
+		else:
+			perSecondPercentage = 0
 		
 		applyDamConstructionResourceUse(woodType, perSecondPercentage)
 	
 	setDamGoldConstructionResourceChanges()
 
 func setDamGoldConstructionResourceChanges():
-	var resourceItems = get_tree().get_nodes_in_group("ConstructionResource")
-	var generalResourcesPerSecond = Values.ResourceValues["Dam"]["ResourcesPerSecond"]
-	
 	var goldNeededForDams = getMaxDamResourceCost("Gold")
 	var goldNeededPercentage = 1
 	
@@ -243,7 +239,7 @@ func applyDamConstructionResourceUse(resourceType, perSecondPercentage):
 	
 	for resourceItem in resourceItems:
 		if resourceItem.ResourceType == resourceType:
-			var resourcesPerSecond = generalResourcesPerSecond * (SaveData.DamData[resourceItem.DamType]["ConstructionSpeedPrecentige"][resourceItem.ItemNum - 1] / 100)
+			var resourcesPerSecond = generalResourcesPerSecond * (SaveData.DamData[resourceItem.DamType]["ConstructionSpeedPrecentige"][resourceItem.ItemNum] / 100)
 			var resourcesLeft = resourceItem.Needed - resourceItem.Collected
 			
 			if resourcesLeft < resourcesPerSecond and resourcesLeft > 0:
@@ -251,11 +247,9 @@ func applyDamConstructionResourceUse(resourceType, perSecondPercentage):
 			
 			resourcesPerSecond *= perSecondPercentage
 			
-			resourceItem.PerSecond = resourcesPerSecond
-			resourceItem.Collected += resourcesPerSecond
+			resourceItem.useResources(resourcesPerSecond)
 
 func preCalculations():
-	
 	for woodType in ReversedWoodTypes:
 		WoodCalculations[woodType]["WoodProductionGain"] = Values.ResourceValues[woodType]["PerSecondIncrease"]
 		WoodCalculations[woodType]["WoodProductionLoss"] = Values.ResourceValues[woodType]["PerSecondLoss"]
@@ -344,11 +338,14 @@ func getMaxDamResourceCost(resourceType):
 	
 	for resourceItem in resourceItems:
 		if resourceItem.ResourceType == resourceType:
-			var resourcesPerSecond = generalResourcesPerSecond * (SaveData.DamData[resourceItem.DamType]["ConstructionSpeedPrecentige"][resourceItem.ItemNum - 1] / 100)
+			var resourcesPerSecond = generalResourcesPerSecond * (SaveData.DamData[resourceItem.DamType]["ConstructionSpeedPrecentige"][resourceItem.ItemNum] / 100)
 			var resourcesLeft = resourceItem.Needed - resourceItem.Collected
 			
-			if resourcesLeft < resourcesPerSecond and resourcesLeft > 0:
-				resourcesPerSecond = resourcesLeft
+			if resourcesLeft < resourcesPerSecond:
+				if resourcesLeft > 0:
+					resourcesPerSecond = resourcesLeft
+				else:
+					resourcesPerSecond = 0
 			
 			totalResourcesNeeded += resourcesPerSecond
 	

@@ -36,6 +36,12 @@ func hideAllConstruction():
 	GiantDamConstruction.visible = false
 	MegaDamConstruction.visible = false
 
+func setDamConstruction():
+	var constructionItems = get_tree().get_nodes_in_group("ConstructionItem")
+	
+	for constructionItem in constructionItems:
+		constructionItem.checkIfConstructionResumes()
+
 func setupNodePaths():
 	SmallDamConstruction = $VBox/DamsHBox/SmallDamConstruction
 	MediumDamConstruction = $VBox/DamsHBox/MediumDamConstruction

@@ -3,22 +3,15 @@ extends MarginContainer
 @export var DamType : Dams.DamEnum:
 	set(value):
 		DamType = value
-		
-		setupNodePaths()
-		setItemStage()
 
-@export var ItemNum : Dams.ItemNumberEnum:
-	set(value):
-		ItemNum = value
+@export var ItemNum : Dams.ItemNumberEnum
 
 var DamStage : DamStageEnum:
 	set(value):
 		DamStage = value
 		setItemVisability(value)
 
-var BuildingStage := Dams.DamParts.First:
-	set(value):
-		BuildingStage = value
+var BuildingStage := Dams.DamParts.First
 
 enum DamStageEnum {
 	Construction,
@@ -37,10 +30,11 @@ var CurrentConstructionVBox
 var ConstructionNameLabel
 var TimeLeftLabel
 var StageNameLabel
+var StageNrLabel
 var ResourceList
 var ConstructionPrecentigeLabel
+var ConstructionCheckTimer
 
-var DamData = SaveData.DamData[DamType]
 var DamsConstData = Dams.Dams
 
 func _ready() -> void:
@@ -68,21 +62,21 @@ func setItemVisability(stage):
 	elif stage == DamStageEnum.Locked:
 		LockedVBox.visible = true
 
+func hideAllConstructionStages():
+	CurrentConstructionVBox.visible = false
+	LockedVBox.visible = false
+	UnlockedVBox.visible = false
+
 func setItemStage():
-	DamData = SaveData.DamData[DamType]
+	var damData = SaveData.DamData[DamType]
 	
-	if DamData["AvailableBuilds"] >= ItemNum:
-		if DamData["CurrentlyInProgress"].size() > 0:
+	if damData["AvailableBuilds"] >= ItemNum + 1:
+		if damData["BuildingSlots"][ItemNum]["Constructing"]:
 			DamStage = DamStageEnum.Construction
 		else:
 			DamStage = DamStageEnum.Ready
 	else:
 		DamStage = DamStageEnum.Locked
-
-func hideAllConstructionStages():
-	CurrentConstructionVBox.visible = false
-	LockedVBox.visible = false
-	UnlockedVBox.visible = false
 
 func _on_start_building_button_button_down() -> void:
 	if checkIfCanAfford():
@@ -90,14 +84,43 @@ func _on_start_building_button_button_down() -> void:
 		startConstruction()
 
 func startConstruction():
+	DamStage = DamStageEnum.Construction
+	BuildingStage = 0
+	setupConstruction()
+
+func switchStage():
 	deleteAllConstructionResourceItems()
 	
-	DamStage = DamStageEnum.Construction
+	if BuildingStage < Dams.DamParts.Fourth:
+		BuildingStage += 1
+		setupConstruction()
+	else:
+		DamStage = DamStageEnum.Ready
+		BuildingStage = 0
+		ConstructionCheckTimer.stop()
+		SaveData.DamData[DamType]["Count"] += 1
+		SaveData.DamData[DamType]["BuildingSlots"][ItemNum]["Constructing"] = false
+		SaveData.DamData[DamType]["BuildingSlots"][ItemNum]["Stage"] = 0
+
+func checkIfConstructionResumes():
+	deleteAllConstructionResourceItems(false)
+	setItemStage()
+	
+	if SaveData.DamData[DamType]["BuildingSlots"][ItemNum]["Constructing"]:
+		BuildingStage = SaveData.DamData[DamType]["BuildingSlots"][ItemNum]["Stage"]
+		setupConstruction()
+
+func setupConstruction():
+	ConstructionCheckTimer.start()
 	
 	var damData = Dams.Dams[DamType][BuildingStage]
 	StageNameLabel.text = damData.Name
+	StageNrLabel.text = "Stage " + str(BuildingStage + 1)
 	
 	var ConstructionResourceSceen = load("res://Scenes/GameMainScreenScenes/GameScenes/DamSection/constructionItem/construction_resource.tscn")
+	
+	SaveData.DamData[DamType]["BuildingSlots"][ItemNum]["Stage"] = BuildingStage
+	SaveData.DamData[DamType]["BuildingSlots"][ItemNum]["Constructing"] = true
 	
 	for costName in damData["Price"]:
 		var resourceType = null
@@ -107,17 +130,32 @@ func startConstruction():
 		
 		if resourceType:
 			var resourceItem = ConstructionResourceSceen.instantiate()
+			var resourceData = SaveData.DamData[DamType]["BuildingSlots"][ItemNum]["ResourcesCollected"]
 			
 			resourceItem.Needed = damData["Price"][costName]
+			
+			if resourceData.has(resourceType):
+				resourceItem.Collected = resourceData[resourceType]
+			
 			resourceItem.ResourceType = resourceType
 			resourceItem.ItemNum = ItemNum
 			resourceItem.DamType = DamType
 			
 			ResourceList.add_child(resourceItem)
 
-func deleteAllConstructionResourceItems():
+func deleteAllConstructionResourceItems(cleanSaveData = true):
 	if !ResourceList:
 		return
+	
+	if cleanSaveData:
+		var resourceTypes = ["Oak", "Apple", "Maple", "Birch", "Spruce",
+					 "Chestnut", "Cherry", "Ash", "Cedar", "Mahogany",
+					 "Ebony", "Dogwood", "Rosewood", "Ghost Gum", "Dragonwood", "Gold"]
+		
+		var slotData = SaveData.DamData[DamType]["BuildingSlots"][ItemNum]["ResourcesCollected"]
+		for key in resourceTypes:
+				if slotData and slotData.has(key):
+					slotData.erase(key)
 	
 	for resourceItem in ResourceList.get_children():
 		ResourceList.remove_child(resourceItem)
@@ -187,11 +225,20 @@ func setupNodePaths():
 	ConstructionNameLabel = $CurrentConstructionVBox/MC/VBox/ConstructionNameLabel
 	TimeLeftLabel = $CurrentConstructionVBox/MC/VBox/TimeLeftLabel
 	StageNameLabel = $CurrentConstructionVBox/MC2/VBox/ColorRect2/StageNameLabel
+	StageNrLabel = $CurrentConstructionVBox/MC2/VBox/ColorRect/StageNrLabel
 	ResourceList = $CurrentConstructionVBox/MC3/MC/ResourceList
 	ConstructionPrecentigeLabel = $CurrentConstructionVBox/VBox/MC/ColorRect/VBox/MC2/ContructionPrecentigeLabel
 	PriceLabel = $UnlockedVBox/MC/VBox/PriceLabel
 	CantAffordRect = $UnlockedVBox/ColorRect/StartBuildingButton/CantAffordRect
+	ConstructionCheckTimer = $ConstructionCheckTimer
 
 func _on_construction_speed_slider_value_changed(value: float) -> void:
-	SaveData.DamData[DamType]["ConstructionSpeedPrecentige"][ItemNum - 1] = value
+	SaveData.DamData[DamType]["ConstructionSpeedPrecentige"][ItemNum] = value
 	ConstructionPrecentigeLabel.text = str(value) + "%"
+
+func _on_construction_check_timer_timeout() -> void:
+	for resourceItem in ResourceList.get_children():
+		if resourceItem.Constructing:
+			return
+	
+	switchStage()

@@ -53,7 +53,7 @@ func getSaveData(saveName):
 	
 	SaveNameLabel.text = SaveInfo.SaveName
 	SaveTimeStampLabel.text = "Last Saved: " + timeStamp
-	TimePlayedLabel.text = "Time Played: " + str(SaveInfo.TimePlayed)
+	TimePlayedLabel.text = "Time Played: " + str(roundf(SaveInfo.TimePlayed / 360) / 10) + "h"
 	CurrentMagicLabel.text = "Magic: " + str(floor(SaveInfo.CurrentMagic))
 	CurrentGoldLabel.text = "Gold: " + str(floor(SaveInfo.CurrentGold))
 	
@@ -81,10 +81,7 @@ func _on_new_game_button_button_down() -> void:
 		ErrorLabel.visible = true
 
 func checkIfSaveNameIsValid(saveName):
-	if saveName == null or saveName == "":
-		return false
-	
-	if SaveData.SavesInfo.has(saveName):
+	if saveName == null or saveName == "" or SaveData.SavesInfo.has(saveName):
 		return false
 	
 	return true

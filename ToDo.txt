@@ -1,8 +1,9 @@
 To do all things I can think of:
 First:
-Need to rewrite the ticks system again, with dams in mind. also feels like something didn't work already but it should I think?? maybe just need to update some code (but would be good to rewrite to make it more readable, jesus please help)
+Dam completion and effect application
+tooltip on resource bar for wood income brakedown
+
 Big numbers even for scientific use m,b,t, but not for bigger numbers, have less numbers after comma
-All Dam Logic
 bait shop logic
 TempValues["Global"]["WcBaseStorage"] specificaly research 12 doesn't seem to get applied and idk why??
 For Last 3 upgrades for each wood add a lock that can be unlocked with magic, it gives global upgrade
@@ -10,13 +11,12 @@ Display the extra woodcamps and the extra beavers
 Move some/most calculations from process to timers (2 sec?) so that 30% of cpu isn't eaten
 
 Later:
-Add real play time counter
 Add auto saves with changable intervals
 Fix/Change/Remove Gold Upgrade multip (for lower price upgrades, really broken)
 Buy max buttons logic for fishing (or myb ctrl click to max buy or a toggle like in other games i think?)
 Think if more magic upgrades need to be added
 balancing all of the game
-Start adding achievemnent and FoS triggers
+Start adding achievemnent triggers
 Tooltips for everything
 Think what will magic buff, display the effects in ascension screen
 Fish swim, spawn, despawn logic
@@ -35,7 +35,6 @@ Upgrade level cap at 100
 Add upgrade beavers to the beaver count as a seperate value like (+ 5)
 Rename ascension to prestege
 show in save info gold or magic only when u get some
-
 
 Done:
 Add save delete button DONE
@@ -58,3 +57,12 @@ Research history DONE
 And maybe achievements could be a magic upgrade DONE
 Use big numbers DONE
 Make Magic upgrade items dynamic DONE
+Need to rewrite the ticks system again DONE
+Dam construction resource cap DONE
+fix bug with distrubution of resources to construction items if not enough resources DONE
+display dam construction stage nr DONE
+Save and Load Dam constructions DONE
+Fix each construction Resource Not having a seperate Count DONE
+Continuing of Dam stages DONE
+Fix values not reseting on next stage DONE
+Add real play time counter DONE

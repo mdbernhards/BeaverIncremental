@@ -16,9 +16,9 @@ enum DamParts {
 }
 
 enum ItemNumberEnum {
-	one = 1,
-	two = 2,
-	three = 3,
+	one,
+	two,
+	three,
 }
 
 var Dams = {
@@ -34,7 +34,7 @@ var Dams = {
 		DamParts.First : {
 			"Name" : "Gathering a team of Beavers",
 			"Price" : {
-				"OakCost" : 10000, "AppleCost" : 10000, "MapleCost" : 0, "BirchCost" : 0, "SpruceCost" : 0,
+				"OakCost" : 3000, "AppleCost" : 3400, "MapleCost" : 0, "BirchCost" : 0, "SpruceCost" : 0,
 				"ChestnutCost" : 0, "CherryCost" : 0, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 0,
 				"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 0,
 				"GoldCost" : 0,

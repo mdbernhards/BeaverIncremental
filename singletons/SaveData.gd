@@ -50,6 +50,7 @@ func recalculateValues():
 	get_tree().get_first_node_in_group("ResourcePage").updateBars()
 	get_tree().get_first_node_in_group("Settings").updateSettings()
 	get_tree().get_first_node_in_group("MagicSection").setMagicItems()
+	get_tree().get_first_node_in_group("DamSection").setDamConstruction()
 
 var Gold = {
 	"Count" : 0,
@@ -1177,32 +1178,112 @@ var DamData = {
 	Dams.DamEnum.SmallDam : {
 		"AvailableBuilds" : 1,
 		"Count" : 0,
-		"CurrentlyInProgress" : [], # [4]
 		"ConstructionSpeedPrecentige" : [100,100,100],
+		"BuildingSlots" : {
+			Dams.ItemNumberEnum.one : {
+				"Stage" : 0,
+				"Constructing" : false,
+				"ResourcesCollected" : {},
+			},
+			Dams.ItemNumberEnum.two : {
+				"Stage" : 0,
+				"Constructing" : false,
+				"ResourcesCollected" : {},
+			},
+			Dams.ItemNumberEnum.three : {
+				"Stage" : 0,
+				"Constructing" : false,
+				"ResourcesCollected" : {},
+			},
+		},
 	},
 	Dams.DamEnum.MediumDam : {
 		"AvailableBuilds" : 1,
 		"Count" : 0,
-		"CurrentlyInProgress" : [],
 		"ConstructionSpeedPrecentige" : [100,100,100],
+		"BuildingSlots" : {
+			Dams.ItemNumberEnum.one : {
+				"Stage" : 0,
+				"Constructing" : false,
+				"ResourcesCollected" : {},
+			},
+			Dams.ItemNumberEnum.two : {
+				"Stage" : 0,
+				"Constructing" : false,
+				"ResourcesCollected" : {},
+			},
+			Dams.ItemNumberEnum.three : {
+				"Stage" : 0,
+				"Constructing" : false,
+				"ResourcesCollected" : {},
+			},
+		},
 	},
 	Dams.DamEnum.BigDam : {
 		"AvailableBuilds" : 1,
 		"Count" : 0,
-		"CurrentlyInProgress" : [],
 		"ConstructionSpeedPrecentige" : [100,100,100],
+		"BuildingSlots" : {
+			Dams.ItemNumberEnum.one : {
+				"Stage" : 0,
+				"Constructing" : false,
+				"ResourcesCollected" : {},
+			},
+			Dams.ItemNumberEnum.two : {
+				"Stage" : 0,
+				"Constructing" : false,
+				"ResourcesCollected" : {},
+			},
+			Dams.ItemNumberEnum.three : {
+				"Stage" : 0,
+				"Constructing" : false,
+				"ResourcesCollected" : {},
+			},
+		},
 	},
 	Dams.DamEnum.GiantDam : {
 		"AvailableBuilds" : 1,
 		"Count" : 0,
-		"CurrentlyInProgress" : [],
 		"ConstructionSpeedPrecentige" : [100,100,100],
+		"BuildingSlots" : {
+			Dams.ItemNumberEnum.one : {
+				"Stage" : 0,
+				"Constructing" : false,
+				"ResourcesCollected" : {},
+			},
+			Dams.ItemNumberEnum.two : {
+				"Stage" : 0,
+				"Constructing" : false,
+				"ResourcesCollected" : {},
+			},
+			Dams.ItemNumberEnum.three : {
+				"Stage" : 0,
+				"Constructing" : false,
+				"ResourcesCollected" : {},
+			},
+		},
 	},
 	Dams.DamEnum.MegaDam : {
 		"AvailableBuilds" : 1,
 		"Count" : 0,
-		"CurrentlyInProgress" : [],
 		"ConstructionSpeedPrecentige" : [100,100,100],
+		"BuildingSlots" : {
+			Dams.ItemNumberEnum.one : {
+				"Stage" : 0,
+				"Constructing" : false,
+				"ResourcesCollected" : {},
+			},
+			Dams.ItemNumberEnum.two : {
+				"Stage" : 0,
+				"Constructing" : false,
+				"ResourcesCollected" : {},
+			},
+			Dams.ItemNumberEnum.three : {
+				"Stage" : 0,
+				"Constructing" : false,
+				"ResourcesCollected" : {},
+			},
+		},
 	},
 }
 
@@ -1505,7 +1586,7 @@ var UnlockedAchievements = {
 
 var GeneralInfo = {
 	"SaveName" : false,
-	"TimePlayed" : false,
+	"TimePlayed" : 0,
 	"SaveStartedDate" : false,
 	"LastTimePlayedDate" : false,
 	"LastTimeSaved" : true,
