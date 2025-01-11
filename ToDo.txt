@@ -1,17 +1,21 @@
 To do all things I can think of:
 First:
-Save MaxResourceCount for Ascentions, so it doesn't reseat after load / Also after ascending reset MaxResourceCount 
-Check if Magic upgrades get saved after load
+Check if all value multip get used, apply or remove some.
+Implement keep first 10 research
 Dam completion and Effect application
 Tooltip on resource bar for incoming / outgoing wood brakedown
 Game feature unlock system / have debug mode where everything is unlocked
-Magic Upgrades add more / fix current ones
 Fish swim, spawn, despawn logic
 
 Later:
+implement auto research
+implement keep classic, rare, mythic wood upgrades
+implement magic gain without ascending
+info screen with all values 5h
+achievement tooltips
+Tick logic not perfect when a lot of dam construction it goes in to -, sometimes wierd stuff happens
 Research history broken
 On magic mouse over see how mutch magic each resource gives
-Display Magic effects in ascension screen
 Move some/most calculations from process to timers (2 sec?) so that 30% of cpu isn't eaten
 For Last 3 upgrades for each wood add a lock that can be unlocked with magic, it gives global upgrade
 bait shop logic
@@ -69,3 +73,8 @@ Added Mixed formatting DONE
 Fix upgrades being a little to wide DONE
 Display the extra woodcamps and the extra beavers DONE
 in ascension have precentige to next magic DONE
+Save MaxResourceCount for Ascentions, so it doesn't reseat after load / Also after ascending reset MaxResourceCount DONE
+Dams from old save still building after load / dam resources acting wierd when close to cap DONE
+Add Magic count effect and display it in ascension screen DONE
+Redo Magic Upgrade effect logic DONE
+Change Magic upgrades to no hole DONE

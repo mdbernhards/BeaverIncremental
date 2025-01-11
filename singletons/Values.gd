@@ -1,6 +1,7 @@
 extends Node
 
 var CurrentSaveName
+var DebugMode = false
 
 var WoodTypes = ["Oak", "Apple", "Maple", "Birch", "Spruce",
 				 "Chestnut", "Cherry", "Ash", "Cedar", "Mahogany",
@@ -36,6 +37,7 @@ var ResourceValues = {
 		"PerSecondMultip" : 1,
 		"UpgradePriceMultip" : 1,
 		"PotentialMagic" : 0,
+		"MagicMultip" : 0,
 	},
 	"Dam" : {
 		"EffectMultip": 1,

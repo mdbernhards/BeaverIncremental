@@ -62,26 +62,6 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 15
 text = "22% more production"
 
-[node name="EffectLabel2" type="Label" parent="MC/AscensionVBox/TopHBox/MC/VBox"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 15
-text = "24% more storage?? prob not"
-
-[node name="EffectLabel3" type="Label" parent="MC/AscensionVBox/TopHBox/MC/VBox"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 15
-text = "6% more classic wood production"
-
-[node name="EffectLabel4" type="Label" parent="MC/AscensionVBox/TopHBox/MC/VBox"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 15
-text = "45% more gold generated from wood"
-
-[node name="EffectLabel5" type="Label" parent="MC/AscensionVBox/TopHBox/MC/VBox"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 15
-text = "45% more gold generated from wood"
-
 [node name="MC2" type="MarginContainer" parent="MC/AscensionVBox/TopHBox"]
 layout_mode = 2
 size_flags_horizontal = 3
@@ -135,4 +115,9 @@ text = "Ascend"
 custom_minimum_size = Vector2(0, 265)
 layout_mode = 2
 
+[node name="RefreshTimer" type="Timer" parent="."]
+wait_time = 2.0
+autostart = true
+
 [connection signal="button_down" from="MC/AscensionVBox/MC/AscendButton" to="." method="_on_ascend_button_button_down"]
+[connection signal="timeout" from="RefreshTimer" to="." method="_on_timer_timeout"]

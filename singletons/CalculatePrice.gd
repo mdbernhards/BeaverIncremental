@@ -9,7 +9,7 @@ func getBeaverCost(beaverCount, woodType):
 		"Maple" :
 			return round(pow(1.474, beaverCount) + 1.44 * pow(beaverCount, 3.72)) + beaverCount * 21 + 16
 		"Birch" :
-			return round(pow(1.30, beaverCount) + 1.21 * pow(beaverCount, 3.75)) + beaverCount * 15 + 32
+			return round(pow(1.485, beaverCount) + 2.21 * pow(beaverCount, 3.85)) + beaverCount * 24 + 35
 		"Spruce" :
 			return round(pow(1.30, beaverCount) + 1.29 * pow(beaverCount, 3.79)) + beaverCount * 20 + 37
 		"Chestnut" :
@@ -42,7 +42,7 @@ func getWoodcampCost(woodcampCount, woodType):
 		"Maple" :
 			return round(pow(1.699, woodcampCount) + 1.19 * pow(woodcampCount, 3.59)) + woodcampCount * 195 + 299
 		"Birch" :
-			return round(pow(1.61, woodcampCount) + 1.53 * pow(woodcampCount, 3.26)) + woodcampCount * 375 + 1999
+			return round(pow(1.71, woodcampCount) + 1.77 * pow(woodcampCount, 3.66)) + woodcampCount * 575 + 1999
 		"Spruce" :
 			return round(pow(1.21, woodcampCount) + 1.19 * pow(woodcampCount, 2.37)) + woodcampCount * 975 + 6188
 		"Chestnut" :
@@ -162,23 +162,23 @@ func getUpgradeCost(level, woodType, upgradeNr): # first number more later, seco
 				"1" :
 					return round(pow(1.401, level) + 1.078 * pow(level, 4.33)) + level * 32 + 9
 				"2" :
-					return round(pow(1.396, level) + 1.235 * pow(level, 2.5)) + level * 33 + 19
+					return round(pow(1.596, level) + 2.235 * pow(level, 3.5)) + level * 3733 + 2319
 				"3" :
-					return round(pow(1.212, level) + 1.399 * pow(level, 3.28)) + level * 265 + 899
+					return round(pow(1.477, level) + 3.399 * pow(level, 3.83)) + level * 2165 + 2599
 				"4" :
-					return round(pow(1.397, level) + 1.213 * pow(level, 3.05)) + level * 1000 + 1499
+					return round(pow(1.697, level) + 3.213 * pow(level, 3.75)) + level * 6000 + 3499
 				"5" :
-					return round(pow(1.323, level) + 1.323 * pow(level, 1.83)) + level * 1250 + 4499
+					return round(pow(1.463, level) + 2.753 * pow(level, 2.25)) + level * 11250 + 24499
 				"6" :
-					return round(pow(1.192, level) + 1.371 * pow(level, 4.82)) + level * 2250 + 7999
+					return round(pow(2.192, level) + 4.371 * pow(level, 5.82)) + level * 22250 + 47999
 				"7" :
-					return round(pow(1.357, level) + 1.312 * pow(level, 1.9)) + level * 6250 + 14499
+					return round(pow(1.757, level) + 5.312 * pow(level, 2.9)) + level * 86250 + 614499
 				"8" :
-					return round(pow(1.480, level) + 1.235 * pow(level, 2.12)) + level * 18128 + 99999
+					return round(pow(1.581, level) + 2.235 * pow(level, 2.42)) + level * 158128 + 1499999
 				"9" :
-					return round(pow(1.246, level) + 1.399 * pow(level, 2.04)) + level * 55128 + 299999
+					return round(pow(1.746, level) + 4.399 * pow(level, 2.54)) + level * 428128 + 2699999
 				"10" :
-					return round(pow(1.129, level) + 1.158 * pow(level, 4.44)) + level * 99922  + 921000
+					return round(pow(1.559, level) + 1.668 * pow(level, 4.44)) + level * 899922  + 6921000
 		"Spruce" :
 			match upgradeNr :
 				"1" :

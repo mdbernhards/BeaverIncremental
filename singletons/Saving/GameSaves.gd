@@ -51,7 +51,6 @@ func updateSaveFileInfo(saveName):
 func saveGame(saveName):
 	SaveData.GeneralInfo["TimePlayed"] += Time.get_unix_time_from_system() - TimeStart
 	
-	
 	if not FileAccess.file_exists("user://" + saveName + ".save"):
 		addSaveFileToInfo(saveName)
 	else:
@@ -94,6 +93,12 @@ func saveGame(saveName):
 	
 	var jsonGeneralInfo = JSON.stringify(var_to_str(SaveData.GeneralInfo))
 	saveFile.store_line(jsonGeneralInfo)
+	
+	var jsonMaxResourceCount = JSON.stringify(var_to_str(SaveData.MaxResourceCount))
+	saveFile.store_line(jsonMaxResourceCount)
+	
+	var jsonUnlocks = JSON.stringify(var_to_str(Unlocks.Unlocks))
+	saveFile.store_line(jsonUnlocks)
 
 func saveNewGame(saveName):
 	if not FileAccess.file_exists("user://" + saveName + ".save"):
@@ -139,6 +144,12 @@ func saveNewGame(saveName):
 	var jsonGeneralInfo = JSON.stringify(var_to_str(SaveData.OriginalGeneralInfo))
 	saveFile.store_line(jsonGeneralInfo)
 	
+	var jsonMaxResourceCount = JSON.stringify(var_to_str(SaveData.OriginalMaxResourceCount))
+	saveFile.store_line(jsonMaxResourceCount)
+	
+	var jsonUnlocks = JSON.stringify(var_to_str(Unlocks.Unlocks))
+	saveFile.store_line(jsonUnlocks)
+	
 func loadGame(saveName):
 	if not FileAccess.file_exists("user://" + saveName + ".save"):
 		return
@@ -180,6 +191,12 @@ func loadGame(saveName):
 	
 	var jsonGeneralInfo = saveFile.get_line()
 	SaveData.GeneralInfo = parseJson(jsonGeneralInfo)
+	
+	var jsonMaxResourceCount = saveFile.get_line()
+	SaveData.MaxResourceCount = parseJson(jsonMaxResourceCount)
+	
+	var jsonUnlocks = saveFile.get_line()
+	Unlocks.Unlocks = parseJson(jsonUnlocks)
 	
 	SaveData.recalculateValues()
 	

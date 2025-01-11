@@ -14,6 +14,7 @@ var OriginalUnlockedMagicUpgrades
 var OriginalUnlockedAchievements
 var OriginalUnlockedFeatsOfStrength
 var OriginalGeneralInfo
+var OriginalMaxResourceCount
 
 func _ready():
 	getOriginalValues()
@@ -31,6 +32,8 @@ func getOriginalValues():
 	OriginalUnlockedMagicUpgrades = UnlockedMagicUpgrades.duplicate(true)
 	OriginalUnlockedAchievements = UnlockedAchievements.duplicate(true)
 	OriginalGeneralInfo = GeneralInfo.duplicate(true)
+	OriginalMaxResourceCount = MaxResourceCount.duplicate(true)
+	Unlocks.OriginalUnlocks = Unlocks.Unlocks.duplicate(true)
 
 func resetValues():
 	Gold = OriginalGold.duplicate(true)
@@ -41,6 +44,8 @@ func resetValues():
 	CaughtFish = OriginalCaughtFish.duplicate(true)
 	Bait = OriginalBait.duplicate(true)
 	ResearchInfo = OriginalResearchInfo.duplicate(true)
+	MaxResourceCount = OriginalMaxResourceCount.duplicate(true)
+	Unlocks.Unlocks = Unlocks.OriginalUnlocks.duplicate(true)
 	
 	recalculateValues()
 
@@ -1093,6 +1098,25 @@ var Upgrades = {
 	},
 }
 
+var MaxResourceCount = {
+	"Oak" : 0,
+	"Apple" : 0,
+	"Maple" : 0,
+	"Birch" : 0,
+	"Spruce" : 0,
+	"Chestnut" : 0,
+	"Cherry" : 0,
+	"Ash" : 0,
+	"Cedar" : 0,
+	"Mahogany" : 0,
+	"Ebony" : 0,
+	"Dogwood" : 0,
+	"Rosewood" : 0,
+	"Ghost Gum" : 0,
+	"Dragonwood" : 0,
+	"Gold" : 0,
+}
+
 var UnlockedResearch = {
 	"1" : false,
 	"2" : false,
@@ -1172,6 +1196,7 @@ var ResearchInfo = {
 	"CurrentResearch" : {},
 	"Queue" : [],
 	"ResearchAtATime" : 1,
+	"PreUnlockedResearch" : 0,
 }
 
 var DamData = {

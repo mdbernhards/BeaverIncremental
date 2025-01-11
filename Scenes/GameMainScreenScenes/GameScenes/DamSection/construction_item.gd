@@ -103,6 +103,7 @@ func switchStage():
 		SaveData.DamData[DamType]["BuildingSlots"][ItemNum]["Stage"] = 0
 
 func checkIfConstructionResumes():
+	ConstructionCheckTimer.stop()
 	deleteAllConstructionResourceItems(false)
 	setItemStage()
 	

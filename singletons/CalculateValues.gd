@@ -26,8 +26,10 @@ func calculateAllValues():
 	CalculateRealAfterValues()
 
 func CalculateRealValues():
-	# Think about FishStorageMultip
-
+	var magicCount = SaveData.Magic["Count"]
+	var magicMultip = magicCount / 100.0 + 1
+	
+	var lastWoodType
 	for woodType in WoodTypes:
 		var extraWoodcamps = TempValues[woodType]["ExtraWoodcamps"] + TempValues["Global"]["ExtraWoodcamps"]
 		var woodcamps = SaveData.Resources[woodType]["Woodcamps"] + extraWoodcamps
@@ -35,9 +37,13 @@ func CalculateRealValues():
 		var extraBeavers = TempValues[woodType]["ExtraBeavers"] + TempValues["Global"]["ExtraBeavers"]
 		var beavers = SaveData.Resources[woodType]["Beavers"] +  extraBeavers
 		
-		ResourceValues[woodType]["PerClick"] =((woodcamps * TempValues["Global"]["WcToBeaverMultip"]) + beavers) * TempValues[woodType]["BeaverUpgrades"] * TempValues[woodType]["BeaverMultip"] * TempValues["Global"]["BeaverMultip"]
-		ResourceValues[woodType]["PerSecondIncrease"] = pow(woodcamps * TempValues[woodType]["WpsPerWc"] * TempValues[woodType]["WpsMultip"] * TempValues["Global"]["WpsMultip"] * TempValues[woodType]["WcEffectMultip"], TempValues["Global"]["WpsPow"]) * TempValues["Global"]["ProductionUpgradeMultip"] * SaveData.Resources[woodType]["Production"] / 100
-		ResourceValues[woodType]["Storage"] = (TempValues[woodType]["BaseStorage"] + beavers * (TempValues["Global"]["BeaverBaseStorage"] + 15) + woodcamps * (TempValues[woodType]["WcBaseStorage"] + TempValues["Global"]["WcBaseStorage"]) * TempValues[woodType]["WcStorageMultip"] * TempValues["Global"]["WcStorageMultip"] * TempValues[woodType]["WcEffectMultip"]) * TempValues[woodType]["StorageMultip"] * TempValues["Global"]["StorageMultip"]
+		var storageFromLowerTier = 0
+		if lastWoodType and TempValues["Global"]["LowerStorageMultip"] > 1:
+			storageFromLowerTier = (ResourceValues["Global"]["LowerStorageMultip"] - 1) * ResourceValues[lastWoodType]["Storage"]
+		
+		ResourceValues[woodType]["PerClick"] =((woodcamps * TempValues["Global"]["WcToBeaverMultip"]) + beavers) * TempValues[woodType]["BeaverUpgrades"] * TempValues[woodType]["BeaverMultip"] * TempValues["Global"]["BeaverMultip"] * magicMultip
+		ResourceValues[woodType]["PerSecondIncrease"] = pow(woodcamps * TempValues[woodType]["WpsPerWc"] * TempValues[woodType]["WpsMultip"] * TempValues["Global"]["WpsMultip"] * TempValues[woodType]["WcEffectMultip"], TempValues["Global"]["WpsPow"]) * TempValues["Global"]["ProductionUpgradeMultip"] * SaveData.Resources[woodType]["Production"] * magicMultip / 100
+		ResourceValues[woodType]["Storage"] = (TempValues[woodType]["BaseStorage"] + beavers * (TempValues["Global"]["BeaverBaseStorage"] + 15) + woodcamps * (TempValues[woodType]["WcBaseStorage"] + TempValues["Global"]["WcBaseStorage"]) * TempValues[woodType]["WcStorageMultip"] * TempValues["Global"]["WcStorageMultip"] * TempValues[woodType]["WcEffectMultip"]) * TempValues[woodType]["StorageMultip"] * TempValues["Global"]["StorageMultip"] * magicMultip + storageFromLowerTier
 		ResourceValues[woodType]["SoldFor"] = TempValues[woodType]["BaseWoodPrice"] * TempValues[woodType]["WoodPriceMultip"] * TempValues["Global"]["WoodPriceMultip"]
 		ResourceValues[woodType]["UpgradePriceMultip"] = TempValues["Global"]["UpgradePriceMultip"] * TempValues[woodType]["UpgradePriceMultip"]
 		ResourceValues[woodType]["WcPriceMultip"] = TempValues["Global"]["WcPriceMultip"] * TempValues[woodType]["WcPriceMultip"]
@@ -46,6 +52,7 @@ func CalculateRealValues():
 		ResourceValues[woodType]["BotBaseSell"] = TempValues["Global"]["BotBaseSell"] * TempValues["Global"]["BotEffectMultip"]
 		ResourceValues[woodType]["ExtraWoodcamps"] = extraWoodcamps
 		ResourceValues[woodType]["ExtraBeavers"] = extraBeavers
+		lastWoodType = woodType
 	
 	# Fishing
 	ResourceValues["Fish"]["PriceMultip"] = TempValues["Fish"]["PriceMultip"]
@@ -60,6 +67,7 @@ func CalculateRealValues():
 	# Research
 	ResourceValues["Research"]["TimeMultip"] = TempValues["Research"]["Time"]
 	ResourceValues["Research"]["CostMultip"] = TempValues["Research"]["Cost"]
+	ResourceValues["Research"]["ResearchAtATime"] = TempValues["Research"]["ResearchAtATime"]
 	
 	# Gold
 	ResourceValues["Gold"]["GainMultip"] = TempValues["Gold"]["GainMultip"]
@@ -72,7 +80,8 @@ func CalculateRealValues():
 	ResourceValues["Magic"]["PriceMultip"] = TempValues["Magic"]["PriceMultip"]
 	ResourceValues["Magic"]["PerSecondMultip"] = TempValues["Magic"]["PerSecondMultip"]
 	ResourceValues["Magic"]["UpgradePriceMultip"] = TempValues["Magic"]["UpgradePriceMultip"]
-	
+	ResourceValues["Magic"]["MagicMultip"] = magicMultip
+
 	# Dam
 	ResourceValues["Dam"]["EffectMultip"] = TempValues["Dam"]["EffectMultip"]
 	ResourceValues["Dam"]["PriceMultip"] = TempValues["Dam"]["PriceMultip"]
@@ -88,10 +97,10 @@ func CalculateRealAfterValues():
 		var woodCamps = SaveData.Resources[woodType]["Woodcamps"]
 		
 		if woodCamps > 0:
-			ResourceValues[woodType]["PerSecondIncrease"] += (TempValues[woodType]["WpcToWpsMultip"] * ResourceValues[woodType]["PerClick"]) - ResourceValues[woodType]["PerClick"]
+			ResourceValues[woodType]["PerSecondIncrease"] += (TempValues["Global"]["WpcToWpsMultip"] * TempValues[woodType]["WpcToWpsMultip"] * ResourceValues[woodType]["PerClick"]) - ResourceValues[woodType]["PerClick"]
 			
 		if woodType != "Oak":
-			ResourceValues[woodType]["PerSecondIncrease"] += (1 - TempValues[woodType]["LowerWpsAddMultip"]) * ResourceValues[lastWoodType]["PerSecondIncrease"]
+			ResourceValues[woodType]["PerSecondIncrease"] += (TempValues[woodType]["LowerWpsAddMultip"] * TempValues["Global"]["LowerWpsAddMultip"] - 1) * ResourceValues[lastWoodType]["PerSecondIncrease"]
 		
 		lastWoodType = woodType
 	
@@ -129,9 +138,12 @@ func ApplyMagicUpgrades():
 			SetMagicValue(magicNr)
 
 func SetMagicValue(magicNr):
+	var achievementCount = SaveData.GeneralInfo["AchievementCount"]
+	var dams = SaveData.DamData[Dams.DamEnum.SmallDam]["Count"] + SaveData.DamData[Dams.DamEnum.MediumDam]["Count"] + SaveData.DamData[Dams.DamEnum.BigDam]["Count"] + SaveData.DamData[Dams.DamEnum.GiantDam]["Count"] + SaveData.DamData[Dams.DamEnum.MegaDam]["Count"]
+	
 	match magicNr:
 		"1" :
-			Unlocks.Unlocks["Gold"]["Unlocked"] = true
+			Unlocks.Unlocks["Achievements"]["Unlocked"] = true
 		"1b" :
 			TempValues["Global"]["WcPriceMultip"] *= 0.75
 		"1bb" :
@@ -139,63 +151,138 @@ func SetMagicValue(magicNr):
 		"1c" :
 			TempValues["Global"]["WcCostsMultip"] *= 0.9
 		"2" :
-			TempValues["Global"]["WpsMultip"] *= 5
+			TempValues["Global"]["WpsMultip"] *= 1.2
 		"3" :
-			TempValues["Global"]["WcStorageMultip"] *= 15
+			TempValues["Global"]["WcStorageMultip"] *= 2
 		"4" :
-			TempValues["Research"]["Time"] *= 0.5
+			TempValues["Global"]["ExtraBeavers"] += 2
 		"5" :
-			TempValues["Global"]["BeaverMultip"] *= 7.5
+			TempValues["Global"]["WpsMultip"] *= 0.001 * achievementCount + 1
+		"5b" :
+			TempValues["Oak"]["UpgradePriceMultip"] *= 0.9
+			TempValues["Apple"]["UpgradePriceMultip"] *= 0.9
+			TempValues["Maple"]["UpgradePriceMultip"] *= 0.9
+			TempValues["Birch"]["UpgradePriceMultip"] *= 0.9
+			TempValues["Spruce"]["UpgradePriceMultip"] *= 0.9
 		"6" :
-			pass # idk
+			Unlocks.Unlocks["Storage"]["Overloading"] = true
 		"7" :
-			TempValues["Magic"]["Multip"] *= 3
+			TempValues["Research"]["Time"] *= 0.5
 		"8" :
-			TempValues["Global"]["WcCostsMultip"] *= 0.5
+			TempValues["Global"]["WpcMultip"] *= 0.0005 * achievementCount + 1
 		"9" :
-			Unlocks.Unlocks["Spruce"]["Unlocked"] = true
+			TempValues["Global"]["WpcToWpsMultip"] *= 1.05
 		"10" :
-			TempValues["Global"]["StorageMultip"] *= 10
-		"11" :
-			pass # idk
-		"12" :
-			pass # idk
-		"13" :
-			pass # idk
-		"14" :
+			Unlocks.Unlocks["Fishing"]["Unlocked"] = true
 			Unlocks.Unlocks["Fishing"]["Spot"]["1"] = true
+		"11" :
+			TempValues["Magic"]["GainMultip"] *= 1.3
+		"12" :
+			TempValues["Global"]["WcCostsMultip"] *= 0.5
+		"13" :
+			TempValues["Research"]["ResearchAtATime"] += 1
+		"14" :
+			TempValues["Global"]["StorageMultip"] *= 2
 		"15" :
-			pass # idk
+			TempValues["Fish"]["FishPriceMultip"] *= 1.225
 		"16" :
-			Unlocks.Unlocks["Cedar"]["Unlocked"] = true
+			Unlocks.Unlocks["Market"]["Bots"]["Unlocked"] = true
 		"17" :
-			pass # idk
+			TempValues["Global"]["WpcMultip"] *= 1.15
 		"18" :
-			TempValues["Fish"]["PriceMultip"] *= 5
+			Unlocks.Unlocks["Fishing"]["Spot"]["2"] = true
 		"19" :
-			TempValues["Global"]["WoodPriceMultip"] *= 2.5
+			SaveData.ResearchInfo["PreUnlockedResearch"] += 10
 		"20" :
-			TempValues["Dam"]["PriceMultip"] *= 0.7
+			TempValues["Global"]["WcStorageMultip"] *= 1.15
+			TempValues["Global"]["WcPriceMultip"] *= 1.15
+			TempValues["Global"]["WpsMultip"] *= 1.15
+			TempValues["Global"]["WcCostsMultip"] *= 0.85
 		"21" :
-			pass # idk
+			TempValues["Research"]["Time"] *= 0.825
 		"22" :
-			TempValues["Fish"]["BaitMultip"] *= 1.15
+			TempValues["Global"]["LowerStorageMultip"] *= 1.035
 		"23" :
-			TempValues["Oak"]["WpsMultip"] *= 100
+			Unlocks.Unlocks["Gold"]["Unlocked"] = true
 		"24" :
-			Unlocks.Unlocks["Fishing"]["Spot"]["3"] = true
+			TempValues["Global"]["WoodPriceMultip"] *= 1.5
 		"25" :
-			pass # idk
+			Unlocks.Unlocks["Fishing"]["Bait"]["Unlocked"] = true
+			Unlocks.Unlocks["Fishing"]["Bait"]["1"] = true
 		"26" :
-			Unlocks.Unlocks["Rosewood"]["Unlocked"] = true
+			TempValues["Global"]["WcCostsMultip"] *= 0.85
 		"27" :
-			TempValues["Magic"]["EffectMultip"] *= 10
+			TempValues["Global"]["WcStorageMultip"] *= 1.35
 		"28" :
-			TempValues["Oak"]["BotBaseSell"] += 1000
+			Unlocks.Unlocks["Fishing"]["Spot"]["3"] = true
 		"29" :
-			TempValues["Fish"]["BetterFishMultip"] *= 2
+			TempValues["Fish"]["BaitEffectMultip"] *= 1.15
 		"30" :
-			Unlocks.Unlocks["Dams"]["Giant Dam"] = true
+			Unlocks.Unlocks["Oak"]["WpsMultip"] *= 2
+		"31" :
+			TempValues["Fish"]["MoreFishMultip"] *= 1.25
+		"32" :
+			TempValues["Global"]["WcCostsMultip"] *= pow(1 - 0.001, achievementCount)
+		"33" :
+			TempValues["Research"]["ResearchAtATime"] += 1
+		"34" :
+			TempValues["Magic"]["EffectMultip"] *= 2
+		"35" :
+			TempValues["Global"]["LowerWpsAddMultip"] *= 1.05
+		"36" :
+			TempValues["Global"]["WoodPriceMultip"] *= 1.5
+		"37" :
+			Unlocks.Unlocks["Fishing"]["Spot"]["4"] = true
+		"38" :
+			TempValues["Global"]["StorageMultip"] *= 0.002 * achievementCount + 1
+		"39" :
+			TempValues["Fish"]["BetterFishMultip"] *= 1.275
+		"40" :
+			Unlocks.Unlocks["Dams"]["Unlocked"] = true
+			Unlocks.Unlocks["Dams"]["Small Dam"]["Unlocked"] = true
+			Unlocks.Unlocks["Dams"]["Small Dam"]["Slot1"] = true
+		"41" :
+			TempValues["Global"]["BotPriceMultip"] *= 0.6
+		"42" :
+			TempValues["Global"]["ExtraWoodcamps"] += 10
+		"43" :
+			TempValues["Research"]["AutoResearch"] = true
+		"44" :
+			TempValues["Global"]["WpsMultip"] *= dams * 0.01 + 1
+		"45" :
+			TempValues["Global"]["ExtraBeavers"] += 10
+		"46" :
+			TempValues["Fish"]["LongerFishMultip"] *= 1.25
+		"47" :
+			SaveData.ResearchInfo["PreUnlockedResearch"] += 20
+		"48" :
+			TempValues["Global"]["GoldUpgradePriceMultip"] *= 0.65
+		"49" :
+			Unlocks.Unlocks["Upgrades"]["KeepClassicUpgrades"] = true
+		"50" :
+			TempValues["Dam"]["EffectMultip"] *= 1.15
+		"51" :
+			Unlocks.Unlocks["Fishing"]["Spot"]["5"] = true
+		"52" :
+			TempValues["Gold"]["GainMultip"] *= 0.01 * dams + 1
+		"53" :
+			TempValues["Global"]["BotSellMoreMultip"] *= 1.2
+		"54" :
+			TempValues["Fish"]["PriceMultip"] *= 2
+		"55" :
+			Unlocks.Unlocks["Upgrades"]["KeepRareUpgrades"] = true
+		"56" :
+			TempValues["Dam"]["PriceMultip"] *= 0.7
+		"57" :
+			Unlocks.Unlocks["Upgrades"]["KeepGoldUpgrades"] = true
+		"58" :
+			TempValues["Magic"]["EffectMultip"] *= 2
+		"59" :
+			TempValues["Global"]["UpgradePriceMultip"] *= 0.5
+		"60" :
+			Unlocks.Unlocks["Magic"]["PasiveGain"] = true
+		"61" :
+			Unlocks.Unlocks["Dams"]["Mega Dam"]["Unlocked"] = true
 
 func SetResearchValue(researchNr):
 	match researchNr:
@@ -248,9 +335,9 @@ func SetResearchValue(researchNr):
 		"15" :
 			TempValues["Global"]["WcStorageMultip"] *= 3
 		"16" :
-			pass # idk
+			TempValues["Oak"]["WcPriceMultip"] *= 0.4
 		"17" :
-			Unlocks.Unlocks["Achievements"] = true
+			pass
 		"18" :
 			TempValues["Global"]["WpsPow"] += 1
 		"19" :
@@ -258,7 +345,7 @@ func SetResearchValue(researchNr):
 		"20" :
 			pass # idk
 		"21" :
-			Unlocks.Unlocks["Magic"]["Ascention"] = true
+			pass
 		"22" :
 			TempValues["Global"]["BeaverEffectMultip"] *= 1.3 #change
 		"23" :
@@ -405,7 +492,7 @@ func SetUpgradeValue(woodType, upgradeId):
 	var woodcamps = SaveData.Resources[woodType]["Woodcamps"] + TempValues[woodType]["ExtraWoodcamps"] + TempValues["Global"]["ExtraWoodcamps"]
 	var beavers = SaveData.Resources[woodType]["Beavers"] + TempValues[woodType]["ExtraBeavers"] + TempValues["Global"]["ExtraBeavers"]
 	var achievementCount = SaveData.GeneralInfo["AchievementCount"]
-	var dams = 1 # Implement Later
+	var dams = SaveData.DamData[Dams.DamEnum.SmallDam]["Count"] + SaveData.DamData[Dams.DamEnum.MediumDam]["Count"] + SaveData.DamData[Dams.DamEnum.BigDam]["Count"] + SaveData.DamData[Dams.DamEnum.GiantDam]["Count"] + SaveData.DamData[Dams.DamEnum.MegaDam]["Count"]
 	
 	if upgradeLevel == 0:
 		return
@@ -775,6 +862,9 @@ var OriginalTempValues = {
 		"ProductionUpgradeMultip" : 1, # 100%
 		"GoldUpgradePriceMultip" : 1, # 100%
 		"GoldUpgradeEffectMultip" : 1, # 100%
+		"WpcToWpsMultip" : 1,
+		"LowerStorageMultip" : 1,
+		"LowerWpsAddMultip" : 1,
 	},
 	"Fish" : {
 		"PriceMultip" : 1, # 100%
@@ -791,6 +881,7 @@ var OriginalTempValues = {
 	"Research" : {
 		"Time" : 1, # 100%
 		"Cost" : 1, # 100%
+		"ResearchAtATime" : 1,
 	},
 	"Gold" : {
 		"GainMultip" : 1,

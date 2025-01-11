@@ -242,10 +242,10 @@ func applyDamConstructionResourceUse(resourceType, perSecondPercentage):
 			var resourcesPerSecond = generalResourcesPerSecond * (SaveData.DamData[resourceItem.DamType]["ConstructionSpeedPrecentige"][resourceItem.ItemNum] / 100)
 			var resourcesLeft = resourceItem.Needed - resourceItem.Collected
 			
+			resourcesPerSecond *= perSecondPercentage
+			
 			if resourcesLeft < resourcesPerSecond and resourcesLeft > 0:
 				resourcesPerSecond = resourcesLeft
-			
-			resourcesPerSecond *= perSecondPercentage
 			
 			resourceItem.useResources(resourcesPerSecond)
 

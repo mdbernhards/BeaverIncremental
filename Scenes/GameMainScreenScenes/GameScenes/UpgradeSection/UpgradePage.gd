@@ -92,3 +92,12 @@ func _on_all_tabs_buy_max_button_button_down() -> void:
 		UpgradesNode._on_tab_buy_max_button_button_down()
 		
 	UpgradesNode.setupUpgradeTabForWoodType(CurrentResourceType)
+
+func _on_upgrade_tab_timer_timeout() -> void:
+	for i in ResourceTypes.size():
+		if Unlocks.Unlocks[ResourceTypes[i]]["Unlocked"] or Values.DebugMode:
+			TabButtons[i].visible = true
+		else:
+			TabButtons[i].visible = false
+			
+		

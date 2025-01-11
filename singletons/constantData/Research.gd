@@ -124,7 +124,7 @@ var Research = {
 	"12b" :  {
 		"Name" : "+5 Oak Woodcamps",
 		"Description" : "Adds 5 Extra Oak Woodcamps",
-		"Time" : 370, # Seconds
+		"Time" : 380, # Seconds
 		"OakCost" : 0, "AppleCost" : 46000, "MapleCost" : 7500, "BirchCost" : 0, "SpruceCost" : 0,
 		"ChestnutCost" : 0, "CherryCost" : 0, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 0,
 		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 0,
@@ -140,7 +140,7 @@ var Research = {
 	"13b" :  {
 		"Name" : "Beaver Base Storage +100",
 		"Description" : "Doubles Storage for all Classic Wood",
-		"Time" : 400, # Seconds
+		"Time" : 420, # Seconds
 		"OakCost" : 125000, "AppleCost" : 75000, "MapleCost" : 7500, "BirchCost" : 0, "SpruceCost" : 0,
 		"ChestnutCost" : 0, "CherryCost" : 0, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 0,
 		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 0,
@@ -149,15 +149,15 @@ var Research = {
 		"Name" : "Unlock Birch Wood",
 		"Description" : "Doubles Storage for all Classic Wood",
 		"Time" : 430, # Seconds
-		"OakCost" : 170000, "AppleCost" : 100000, "MapleCost" : 15000, "BirchCost" : 0, "SpruceCost" : 0,
+		"OakCost" : 200000, "AppleCost" : 125000, "MapleCost" : 15000, "BirchCost" : 0, "SpruceCost" : 0,
 		"ChestnutCost" : 0, "CherryCost" : 0, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 0,
 		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 0,
 	},
 	"14b" :  {
 		"Name" : "All wood types +2 beavers",
 		"Description" : "Maple Yum!",
-		"Time" : 460, # Seconds
-		"OakCost" : 0, "AppleCost" : 0, "MapleCost" : 15000, "BirchCost" : 0, "SpruceCost" : 0,
+		"Time" : 450, # Seconds
+		"OakCost" : 0, "AppleCost" : 0, "MapleCost" : 25500, "BirchCost" : 3500, "SpruceCost" : 0,
 		"ChestnutCost" : 0, "CherryCost" : 0, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 0,
 		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 0,
 	},
@@ -165,23 +165,23 @@ var Research = {
 		"Name" : "2x Maple Storage",
 		"Description" : "Maple Yum!",
 		"Time" : 460, # Seconds
-		"OakCost" : 175000, "AppleCost" : 115000, "MapleCost" : 0, "BirchCost" : 1000, "SpruceCost" : 0,
+		"OakCost" : 335000, "AppleCost" : 185000, "MapleCost" : 0, "BirchCost" : 8000, "SpruceCost" : 0,
 		"ChestnutCost" : 0, "CherryCost" : 0, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 0,
 		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 0,
 	},
-	"15" :  { # Rethink
+	"15" :  {
 		"Name" : "woodcamps give storage 3x",
 		"Description" : "Doubles Storage for all Classic Wood",
-		"Time" : 500, # Seconds
-		"OakCost" : 0, "AppleCost" : 0, "MapleCost" : 0, "BirchCost" : 3000, "SpruceCost" : 0,
+		"Time" : 480, # Seconds
+		"OakCost" : 0, "AppleCost" : 0, "MapleCost" : 0, "BirchCost" : 15000, "SpruceCost" : 0,
 		"ChestnutCost" : 0, "CherryCost" : 0, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 0,
 		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 0,
 	},
-	"16" :  { # Rethink
-		"Name" : "levels give a little storage",
+	"16" :  {
+		"Name" : "Oak Woodcamps 60% Cheaper",
 		"Description" : "Doubles Storage for all Classic Wood",
-		"Time" : 550, # Seconds
-		"OakCost" : 400000, "AppleCost" : 250000, "MapleCost" : 80000, "BirchCost" : 10000, "SpruceCost" : 0,
+		"Time" : 510, # Seconds
+		"OakCost" : 1, "AppleCost" : 275000, "MapleCost" : 55000, "BirchCost" : 35500, "SpruceCost" : 0,
 		"ChestnutCost" : 0, "CherryCost" : 0, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 0,
 		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 0,
 	},

@@ -3,7 +3,7 @@ extends Node
 var Magic = {
 	"1" : {
 		"Name" : "Unlock Achievements",
-		"Description" : "Unlock The Achievements section",
+		"Description" : "Unlock The Achievements section, gain bonuses by collecting achievements",
 		"Cost" : 1,
 	},
 	"1b" : {
@@ -14,32 +14,37 @@ var Magic = {
 	"1bb" : {
 		"Name" : "+30% Storage",
 		"Description" : "-25% Woodcamp Price",
-		"Cost" : 1,
+		"Cost" : 2,
 	},
 	"1c" : {
 		"Name" : "Woodcamps use 10% less",
 		"Description" : "Woodcamps use 10% less wood",
-		"Cost" : 2,
+		"Cost" : 3,
 	},
 	"2" : {
 		"Name" : "20% WPS",
 		"Description" : "Improve Wood per Second gain by 20%",
-		"Cost" : 3,
+		"Cost" : 5,
 	},
 	"3" : {
 		"Name" : "2x Storage From WC",
 		"Description" : "2x The Storage gained from Woodcamps",
-		"Cost" : 5,
+		"Cost" : 8,
 	},
 	"4" : {
 		"Name" : "Starting Beavers +5",
 		"Description" : "All wood types start with 2 more beavers",
-		"Cost" : 8,
+		"Cost" : 10,
 	},
 	"5" : {
 		"Name" : "Per Achievement 0.1% WPS",
 		"Description" : "",
-		"Cost" : 12,
+		"Cost" : 14,
+	},
+	"5b" : {
+		"Name" : "Upgrades 10% cheaper",
+		"Description" : "",
+		"Cost" : 20,
 	},
 	"6" : {
 		"Name" : "Unlock Storage Overloading",
@@ -97,7 +102,7 @@ var Magic = {
 		"Cost" : 1300,
 	},
 	"17" : {
-		"Name" : "5% WPC",
+		"Name" : "15% WPC",
 		"Description" : "Allows building woodcamps, unlocks woodcamp upgrades",
 		"Cost" : 1750,
 	},
@@ -117,7 +122,7 @@ var Magic = {
 		"Cost" : 3500,
 	},
 	"21" : {
-		"Name" : "Fish Price 5x",
+		"Name" : "Research 17.5% faster",
 		"Description" : "Allows building woodcamps, unlocks woodcamp upgrades",
 		"Cost" : 4200,
 	},
@@ -237,7 +242,7 @@ var Magic = {
 		"Cost" : 400000,
 	},
 	"45" : {
-		"Name" : "Per WC +1 Beaver",
+		"Name" : "+10 Beavers",
 		"Description" : "Allows building woodcamps, unlocks woodcamp upgrades",
 		"Cost" : 500000,
 	},
@@ -247,7 +252,7 @@ var Magic = {
 		"Cost" : 800000,
 	},
 	"47" : {
-		"Name" : "Gain Magic Without Ascention",
+		"Name" : "Keep 20 more research",
 		"Description" : "Allows building woodcamps, unlocks woodcamp upgrades",
 		"Cost" : 1000000,
 	},
@@ -287,7 +292,7 @@ var Magic = {
 		"Cost" : 30000000,
 	},
 	"55" : {
-		"Name" : "Keep Mythic Wood Upgrades",
+		"Name" : "Keep Rare Wood Upgrades",
 		"Description" : "Allows building woodcamps, unlocks woodcamp upgrades",
 		"Cost" : 45000000,
 	},
@@ -312,12 +317,12 @@ var Magic = {
 		"Cost" : 80000000,
 	},
 	"60" : {
-		"Name" : "Keep Rare Wood Upgrades",
+		"Name" : "Gain Magic Without Ascention",
 		"Description" : "Allows building woodcamps, unlocks woodcamp upgrades",
 		"Cost" : 95000000,
 	},
 	"61" : {
-		"Name" : "Unlock Final Dam",
+		"Name" : "Unlock Mega Dam",
 		"Description" : "Allows building woodcamps, unlocks woodcamp upgrades",
 		"Cost" : 1000000000,
 	},

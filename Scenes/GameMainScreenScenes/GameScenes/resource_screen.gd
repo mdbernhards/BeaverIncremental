@@ -32,3 +32,7 @@ func setNodePaths():
 	ResourcePage = $BarsMC/MC/TitleVBox/ResourcePage
 	GoldLabel = $BarsMC/MC/TitleVBox/MC/LabelHBox/GoldMC/ColorRect/MC/GoldLabel
 	MagicLabel = $BarsMC/MC/TitleVBox/MC/LabelHBox/MagicMC/ColorRect/MC/MagicLabel
+
+
+func _on_resource_screen_timer_timeout() -> void:
+	pass # Replace with function body.

@@ -176,3 +176,9 @@ func _on_wc_count_label_mouse_entered() -> void:
 
 func _on_wc_count_label_mouse_exited() -> void:
 	mouseOverWoodcamp = false
+
+func _on_bar_item_timer_timeout() -> void:
+	if Unlocks.Unlocks[WoodType]["Unlocked"] or Values.DebugMode:
+		visible = true
+	else:
+		visible = false

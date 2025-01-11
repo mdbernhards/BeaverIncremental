@@ -22,6 +22,10 @@ layout_mode = 2
 theme_override_constants/margin_left = 5
 theme_override_constants/margin_right = 5
 
+[node name="UpgradeTabTimer" type="Timer" parent="UpgradePage/UpgradeTabs"]
+wait_time = 2.0
+autostart = true
+
 [node name="Background" type="ColorRect" parent="UpgradePage/UpgradeTabs"]
 layout_mode = 2
 color = Color(0.352941, 0.262745, 0.262745, 1)
@@ -256,6 +260,11 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 14
 text = "Gold"
 
+[node name="PageButtonsTimer" type="Timer" parent="PageButtons"]
+wait_time = 2.0
+autostart = true
+
+[connection signal="timeout" from="UpgradePage/UpgradeTabs/UpgradeTabTimer" to="UpgradePage" method="_on_upgrade_tab_timer_timeout"]
 [connection signal="button_down" from="UpgradePage/UpgradeTabs/HBox/TabButtonsMC/HBox/UpgradeTabButton1" to="UpgradePage" method="_on_upgrade_tab_button_1_button_down"]
 [connection signal="button_down" from="UpgradePage/UpgradeTabs/HBox/TabButtonsMC/HBox/UpgradeTabButton2" to="UpgradePage" method="_on_upgrade_tab_button_2_button_down"]
 [connection signal="button_down" from="UpgradePage/UpgradeTabs/HBox/TabButtonsMC/HBox/UpgradeTabButton3" to="UpgradePage" method="_on_upgrade_tab_button_3_button_down"]
@@ -267,3 +276,4 @@ text = "Gold"
 [connection signal="button_down" from="PageButtons/HBox/PageButtonMC/HBox/Page2Button" to="." method="_on_page_2_button_button_down"]
 [connection signal="button_down" from="PageButtons/HBox/PageButtonMC/HBox/Page3Button" to="." method="_on_page_3_button_button_down"]
 [connection signal="button_down" from="PageButtons/HBox/PageButtonMC/HBox/Page4Button" to="." method="_on_page_4_button_button_down"]
+[connection signal="timeout" from="PageButtons/PageButtonsTimer" to="." method="_on_page_buttons_timer_timeout"]

@@ -4,25 +4,6 @@ var WoodTypes = ["Oak", "Apple", "Maple", "Birch", "Spruce",
 				 "Chestnut", "Cherry", "Ash", "Cedar", "Mahogany",
 				 "Ebony", "Dogwood", "Rosewood", "Ghost Gum", "Dragonwood",]
 
-var MaxResourceCount = {
-	"Oak" : 0,
-	"Apple" : 0,
-	"Maple" : 0,
-	"Birch" : 0,
-	"Spruce" : 0,
-	"Chestnut" : 0,
-	"Cherry" : 0,
-	"Ash" : 0,
-	"Cedar" : 0,
-	"Mahogany" : 0,
-	"Ebony" : 0,
-	"Dogwood" : 0,
-	"Rosewood" : 0,
-	"Ghost Gum" : 0,
-	"Dragonwood" : 0,
-	"Gold" : 0,
-}
-
 var BaseRequirements = {
 		"Oak": 70000,
 		"Apple": 67500,
@@ -43,6 +24,8 @@ var BaseRequirements = {
 	}
 
 # Nodes
+var MagicLabel
+var EffectLabel
 var MagicGainLabel
 var NextMagicLabel
 
@@ -51,24 +34,22 @@ func _ready() -> void:
 	calculatePotentialMagicGain()
 
 func _process(delta: float) -> void:
-	checkMaxWoodCounts()
-	calculatePotentialMagicGain()
-	updateMagic()
+	pass
 
 func checkMaxWoodCounts():
-	for resourceType in MaxResourceCount:
+	for resourceType in SaveData.MaxResourceCount:
 		if resourceType == "Gold":
-			if MaxResourceCount[resourceType] < SaveData.Gold["Count"]:
-				MaxResourceCount[resourceType] = SaveData.Gold["Count"]
+			if SaveData.MaxResourceCount[resourceType] < SaveData.Gold["Count"]:
+				SaveData.MaxResourceCount[resourceType] = SaveData.Gold["Count"]
 		else:
-			if MaxResourceCount[resourceType] < SaveData.Resources[resourceType]["Count"]:
-				MaxResourceCount[resourceType] = SaveData.Resources[resourceType]["Count"]
+			if SaveData.MaxResourceCount[resourceType] < SaveData.Resources[resourceType]["Count"]:
+				SaveData.MaxResourceCount[resourceType] = SaveData.Resources[resourceType]["Count"]
 
 func calculatePotentialMagicGain():
 	var magic = 0
 	
 	for resourceType in BaseRequirements:
-		var resourceCount = MaxResourceCount[resourceType]
+		var resourceCount = SaveData.MaxResourceCount[resourceType]
 		var baseCost = BaseRequirements[resourceType]
 		
 		while resourceCount >= baseCost:
@@ -86,9 +67,21 @@ func updateMagic():
 	NextMagicLabel.text = str(round((Values.ResourceValues["Magic"]["PotentialMagic"] - floor(Values.ResourceValues["Magic"]["PotentialMagic"])) * 100)) + "% To Next Magic"
 
 func setupNodePaths():
+	MagicLabel = $MC/AscensionVBox/TopHBox/MC/VBox/MagicLabel
+	EffectLabel = $MC/AscensionVBox/TopHBox/MC/VBox/EffectLabel
 	MagicGainLabel = $MC/AscensionVBox/MC2/VBox/MagicGainLabel
 	NextMagicLabel = $MC/AscensionVBox/MC2/VBox/NextMagicLabel
 
 func _on_ascend_button_button_down() -> void:
 	SaveData.Magic["Count"] += floor(Values.ResourceValues["Magic"]["PotentialMagic"])
 	SaveData.resetValues()
+
+func _on_timer_timeout() -> void:
+	checkMaxWoodCounts()
+	calculatePotentialMagicGain()
+	updateMagic()
+	
+	MagicLabel.text = "You have " + str(SaveData.Magic["Count"]) + " Magic"
+	
+	var magicMultip = str(Values.ResourceValues["Magic"]["MagicMultip"])
+	EffectLabel.text = magicMultip + "% Wood Per Click\n" + magicMultip + "% Wood Per Second \n" + magicMultip + "% Storage \n"

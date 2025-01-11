@@ -1,5 +1,7 @@
 extends Node
 
+var OriginalUnlocks
+
 func _process(delta: float) -> void:
 	pass
 	#checkForUnlocks()
@@ -255,6 +257,10 @@ var Unlocks = {
 		"ClassicBuyMax" : false,
 		"RareBuyMax" : false,
 		"MythicBuyMax" : false,
+		"KeepClassicUpgrades" : false,
+		"KeepRareUpgrades" : false,
+		"KeepMythicUpgrades" : false,
+		"KeepGoldUpgrades" : false,
 	},
 	"Woodcamps" : {
 		"Unlocked" : false,
@@ -267,6 +273,7 @@ var Unlocks = {
 	"Research" : {
 		"Unlocked" : false,
 		"History" : false,
+		"AutoResearch" : false,
 		"ResearchItems" : {},
 	},
 	"Market" : {
@@ -281,6 +288,7 @@ var Unlocks = {
 	"Magic" : {
 		"Ascention" : false,
 		"Upgrades" : false,
+		"PasiveGain" : false,
 		"MagicItems" : {},
 	},
 	"Dams" : {
@@ -324,6 +332,7 @@ var Unlocks = {
 	"Fishing" : {
 		"Unlocked" : false,
 		"Bait" : {
+			"Unlocked" : false,
 			"1" : false,
 			"2" : false,
 			"3" : false,
@@ -340,7 +349,11 @@ var Unlocks = {
 			"2" : false,
 			"3" : false,
 			"4" : false,
-			"WoodyLake" : false,
+			"5" : false,
 		},
+	},
+	"Storage" : {
+		"Overloading" : false,
+		"Unlimited" : false,
 	},
 }
