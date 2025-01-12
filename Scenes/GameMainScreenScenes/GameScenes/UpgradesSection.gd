@@ -34,8 +34,10 @@ func setNodePaths():
 
 func _on_page_buttons_timer_timeout() -> void:
 	if Unlocks.Unlocks["Chestnut"]["Unlocked"] or Values.DebugMode:
+		Page1Button.visible = true
 		Page2Button.visible = true
 	else:
+		Page1Button.visible = false
 		Page2Button.visible = false
 	
 	if Unlocks.Unlocks["Ebony"]["Unlocked"] or Values.DebugMode:

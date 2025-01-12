@@ -4,35 +4,23 @@ extends MarginContainer
 var DamNameLabel
 var DamCountLabel
 
-@export var DamType : DamEnum:
+@export var DamType : Dams.DamEnum:
 	set(value):
 		setupNodePaths()
 		DamType = value
+		DamCountLabel.text = str(SaveData.DamData[DamType]["Count"])
 		
 		match value:
-			DamEnum.SmallDam:
+			Dams.DamEnum.SmallDam:
 				DamNameLabel.text = "Small Dam"
-				DamCountLabel.text = str(0)
-			DamEnum.MediumDam:
+			Dams.DamEnum.MediumDam:
 				DamNameLabel.text = "Medium Dam"
-				DamCountLabel.text = str(0)
-			DamEnum.BigDam:
+			Dams.DamEnum.BigDam:
 				DamNameLabel.text = "Big Dam"
-				DamCountLabel.text = str(0)
-			DamEnum.GiantDam:
+			Dams.DamEnum.GiantDam:
 				DamNameLabel.text = "Giant Dam"
-				DamCountLabel.text = str(0)
-			DamEnum.MegaDam:
+			Dams.DamEnum.MegaDam:
 				DamNameLabel.text = "Mega Dam"
-				DamCountLabel.text = str(0)
-
-enum DamEnum {
-	SmallDam,
-	MediumDam,
-	BigDam,
-	GiantDam,
-	MegaDam,
-}
 
 func _ready() -> void:
 	setupNodePaths()
@@ -46,3 +34,9 @@ func setupNodePaths():
 
 func _on_build_button_button_down() -> void:
 	get_tree().get_first_node_in_group("DamSection").showConstructionPage(DamType)
+
+func _on_dam_item_timer_timeout() -> void:
+	if Unlocks.Unlocks["Dams"][DamNameLabel.text]["Unlocked"] or Values.DebugMode:
+		visible = true
+	else:
+		visible = false

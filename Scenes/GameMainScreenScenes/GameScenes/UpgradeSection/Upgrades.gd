@@ -6,16 +6,14 @@ var ResourceType = "Oak"
 var UpgradeTabTitle
 var ItemGrid
 var TabsCantAffordRect
+var TabBuyMaxButton
 
 func _ready():
 	setNodePaths()
 	setupUpgrades()
 
 func _process(_delta):
-	if checkIfCanAfford():
-		TabsCantAffordRect.visible = false
-	else:
-		TabsCantAffordRect.visible = true
+	pass
 
 func checkIfCanAfford():
 	var canAfford = false
@@ -39,11 +37,13 @@ func setupUpgrades():
 	
 	for item in upgradeItems:
 		item.changeUpgrade(ResourceType)
+		item._on_upgrade_item_timer_timeout()
 
 func setNodePaths():
 	UpgradeTabTitle = $VBox/TopHBox/TitleMC/TitleLabel
 	ItemGrid = $VBox/ScrollBar/MC/ItemGrid
 	TabsCantAffordRect = $VBox/TopHBox/BuyMaxMC/TabBuyMaxButton/TabsCantAffordRect
+	TabBuyMaxButton = $VBox/TopHBox/BuyMaxMC/TabBuyMaxButton
 
 func _on_tab_buy_max_button_button_down() -> void:
 	while true:
@@ -55,3 +55,14 @@ func _on_tab_buy_max_button_button_down() -> void:
 				
 		if !cheapestItem._on_buy_button_button_down():
 			return
+
+func _on_upgrades_refresh_timer_timeout() -> void:
+	if Unlocks.Unlocks[ResourceType]["PageBuyMax"] or Values.DebugMode:
+		TabBuyMaxButton.visible = true
+	else:
+		TabBuyMaxButton.visible = false
+	
+	if checkIfCanAfford():
+		TabsCantAffordRect.visible = false
+	else:
+		TabsCantAffordRect.visible = true

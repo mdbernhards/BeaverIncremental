@@ -1,6 +1,6 @@
 extends VBoxContainer
 
-# ResearchItem Scene
+# Scene
 var ResearchItemScene
 
 # Nodes
@@ -26,8 +26,7 @@ func _ready():
 	setupHistoryItems()
 
 func _process(_delta):
-	setResearchStates()
-	checkQueue()
+	pass
 
 func setupResearchItems():
 	ResearchItemScene = load("res://Scenes/GameMainScreenScenes/GameScenes/ResearchSection/research_item.tscn")
@@ -50,6 +49,7 @@ func setupResearchItems():
 				researchItem.InQueue = true
 
 func setupHistoryItems():
+	deleteAllHistoryItems()
 	var historyItemScene = load("res://Scenes/GameMainScreenScenes/GameScenes/ResearchSection/history_item.tscn")
 	
 	for researchId in SaveData.UnlockedResearch:
@@ -66,6 +66,14 @@ func deleteAllResearchItems():
 	for researchItem in ResearchList.get_children():
 		ResearchList.remove_child(researchItem)
 		researchItem.queue_free()
+
+func deleteAllHistoryItems():
+	if !HistoryList:
+		return
+	
+	for historyItem in HistoryList.get_children():
+		HistoryList.remove_child(historyItem)
+		historyItem.queue_free()
 
 func checkQueue():
 	var queue = SaveData.ResearchInfo["Queue"]
@@ -129,3 +137,13 @@ func _on_history_button_button_down() -> void:
 		HistoryTab.visible = false
 		SectionTitleLabel.text = "Research"
 		HistoryButton.text = "History"
+
+func _on_research_section_timer_timeout() -> void:
+	setupHistoryItems()
+	setResearchStates()
+	checkQueue()
+	
+	if Unlocks.Unlocks["Research"]["History"] or Values.DebugMode:
+		HistoryButton.visible = true
+	else:
+		HistoryButton.visible = false

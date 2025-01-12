@@ -4,13 +4,83 @@ var OriginalUnlocks
 
 func _process(delta: float) -> void:
 	pass
-	#checkForUnlocks()
 
 func checkForUnlocks():
-	if SaveData.Resources["Oak"]["Count"] > 5:
-		Unlocks["Oak"]["1"]["Unlocked"] = true
-	if SaveData.Resources["Oak"]["Count"] > 15:
-		Unlocks["Oak"]["2"]["Unlocked"] = true
+	if SaveData.GeneralInfo["AchievementCount"] >= 10:
+		Unlocks["Oak"]["ButtonBuyMax"] = true
+		Unlocks["Research"]["History"] = true
+	if SaveData.GeneralInfo["AchievementCount"] >= 20:
+		Unlocks["Apple"]["ButtonBuyMax"] = true
+	if SaveData.GeneralInfo["AchievementCount"] >= 30:
+		Unlocks["Maple"]["ButtonBuyMax"] = true
+	if SaveData.GeneralInfo["AchievementCount"] >= 40:
+		Unlocks["Birch"]["ButtonBuyMax"] = true
+		Unlocks["Oak"]["PageBuyMax"] = true
+	if SaveData.GeneralInfo["AchievementCount"] >= 50:
+		Unlocks["Beavers"]["BuyMax"] = true
+		Unlocks["Spruce"]["ButtonBuyMax"] = true
+		Unlocks["Apple"]["PageBuyMax"] = true
+	if SaveData.GeneralInfo["AchievementCount"] >= 60:
+		Unlocks["Chestnut"]["ButtonBuyMax"] = true
+		Unlocks["Maple"]["PageBuyMax"] = true
+	if SaveData.GeneralInfo["AchievementCount"] >= 70:
+		Unlocks["Cherry"]["ButtonBuyMax"] = true
+		Unlocks["Birch"]["PageBuyMax"] = true
+	if SaveData.GeneralInfo["AchievementCount"] >= 80:
+		Unlocks["Ash"]["ButtonBuyMax"] = true
+		Unlocks["Spruce"]["PageBuyMax"] = true
+	if SaveData.GeneralInfo["AchievementCount"] >= 90:
+		Unlocks["Woodcamps"]["BuyMax"] = true
+		Unlocks["Cedar"]["ButtonBuyMax"] = true
+		Unlocks["Upgrades"]["ClassicBuyMax"] = true
+	if SaveData.GeneralInfo["AchievementCount"] >= 110:
+		Unlocks["Mahogany"]["ButtonBuyMax"] = true
+		Unlocks["Chestnut"]["PageBuyMax"] = true
+	if SaveData.GeneralInfo["AchievementCount"] >= 120:
+		Unlocks["Ebony"]["ButtonBuyMax"] = true
+		Unlocks["Cherry"]["PageBuyMax"] = true
+	if SaveData.GeneralInfo["AchievementCount"] >= 130:
+		Unlocks["Dogwood"]["ButtonBuyMax"] = true
+		Unlocks["Gold"]["ButtonBuyMax"] = true
+		Unlocks["Ash"]["PageBuyMax"] = true
+	if SaveData.GeneralInfo["AchievementCount"] >= 140:
+		Unlocks["Rosewood"]["ButtonBuyMax"] = true
+		Unlocks["Cedar"]["PageBuyMax"] = true
+	if SaveData.GeneralInfo["AchievementCount"] >= 150:
+		Unlocks["Ghost Gum"]["ButtonBuyMax"] = true
+		Unlocks["Mahogany"]["PageBuyMax"] = true
+	if SaveData.GeneralInfo["AchievementCount"] >= 160:
+		Unlocks["Dragonwood"]["ButtonBuyMax"] = true
+		Unlocks["Upgrades"]["RareBuyMax"] = true
+	if SaveData.GeneralInfo["AchievementCount"] >= 170:
+		Unlocks["Ebony"]["ButtonBuyMax"] = true
+	if SaveData.GeneralInfo["AchievementCount"] >= 180:
+		Unlocks["Dogwood"]["ButtonBuyMax"] = true
+		Unlocks["Gold"]["PageBuyMax"] = true
+	if SaveData.GeneralInfo["AchievementCount"] >= 190:
+		Unlocks["Rosewood"]["ButtonBuyMax"] = true
+	if SaveData.GeneralInfo["AchievementCount"] >= 200:
+		Unlocks["Ghost Gum"]["ButtonBuyMax"] = true
+	if SaveData.GeneralInfo["AchievementCount"] >= 210:
+		Unlocks["Dragonwood"]["ButtonBuyMax"] = true
+	if SaveData.GeneralInfo["AchievementCount"] >= 220:
+		Unlocks["Upgrades"]["MythicBuyMax"] = true
+	if SaveData.GeneralInfo["AchievementCount"] >= 230:
+		pass
+	if SaveData.GeneralInfo["AchievementCount"] >= 240:
+		Unlocks["Upgrades"]["KeepGoldUpgrades"] = true
+	if SaveData.GeneralInfo["AchievementCount"] >= 250:
+		pass
+	if SaveData.GeneralInfo["AchievementCount"] >= 260:
+		pass
+	if SaveData.GeneralInfo["AchievementCount"] >= 270:
+		pass
+	if SaveData.GeneralInfo["AchievementCount"] >= 280:
+		pass
+	if SaveData.GeneralInfo["AchievementCount"] >= 290:
+		pass
+	if SaveData.GeneralInfo["AchievementCount"] >= 300:
+		pass
 
 var Unlocks = {
 	"Oak" : {
@@ -29,7 +99,7 @@ var Unlocks = {
 		"10" : false,
 	},
 	"Apple" : {
-		"Unlocked" : true,
+		"Unlocked" : false,
 		"ButtonBuyMax" : false,
 		"PageBuyMax" : false,
 		"1" : false,
@@ -44,7 +114,7 @@ var Unlocks = {
 		"10" : false,
 	},
 	"Maple" : {
-		"Unlocked" : true,
+		"Unlocked" : false,
 		"ButtonBuyMax" : false,
 		"PageBuyMax" : false,
 		"1" : false,
@@ -59,7 +129,7 @@ var Unlocks = {
 		"10" : false,
 	},
 	"Birch" : {
-		"Unlocked" : true,
+		"Unlocked" : false,
 		"ButtonBuyMax" : false,
 		"PageBuyMax" : false,
 		"1" : false,
@@ -74,7 +144,7 @@ var Unlocks = {
 		"10" : false,
 	},
 	"Spruce" : {
-		"Unlocked" : true,
+		"Unlocked" : false,
 		"ButtonBuyMax" : false,
 		"PageBuyMax" : false,
 		"1" : false,
@@ -89,7 +159,7 @@ var Unlocks = {
 		"10" : false,
 	},
 	"Chestnut" : {
-		"Unlocked" : true,
+		"Unlocked" : false,
 		"ButtonBuyMax" : false,
 		"PageBuyMax" : false,
 		"1" : false,
@@ -104,7 +174,7 @@ var Unlocks = {
 		"10" : false,
 	},
 	"Cherry" : {
-		"Unlocked" : true,
+		"Unlocked" : false,
 		"ButtonBuyMax" : false,
 		"PageBuyMax" : false,
 		"1" : false,
@@ -119,7 +189,7 @@ var Unlocks = {
 		"10" : false,
 	},
 	"Ash" : {
-		"Unlocked" : true,
+		"Unlocked" : false,
 		"ButtonBuyMax" : false,
 		"PageBuyMax" : false,
 		"1" : false,
@@ -134,7 +204,7 @@ var Unlocks = {
 		"10" : false,
 	},
 	"Cedar" : {
-		"Unlocked" : true,
+		"Unlocked" : false,
 		"ButtonBuyMax" : false,
 		"PageBuyMax" : false,
 		"1" : false,
@@ -149,7 +219,7 @@ var Unlocks = {
 		"10" : false,
 	},
 	"Mahogany" : {
-		"Unlocked" : true,
+		"Unlocked" : false,
 		"ButtonBuyMax" : false,
 		"PageBuyMax" : false,
 		"1" : false,
@@ -164,7 +234,7 @@ var Unlocks = {
 		"10" : false,
 	},
 	"Ebony" : {
-		"Unlocked" : true,
+		"Unlocked" : false,
 		"ButtonBuyMax" : false,
 		"PageBuyMax" : false,
 		"1" : false,
@@ -179,7 +249,7 @@ var Unlocks = {
 		"10" : false,
 	},
 	"Dogwood" : {
-		"Unlocked" : true,
+		"Unlocked" : false,
 		"ButtonBuyMax" : false,
 		"PageBuyMax" : false,
 		"1" : false,
@@ -194,7 +264,7 @@ var Unlocks = {
 		"10" : false,
 	},
 	"Rosewood" : {
-		"Unlocked" : true,
+		"Unlocked" : false,
 		"ButtonBuyMax" : false,
 		"PageBuyMax" : false,
 		"1" : false,
@@ -209,7 +279,7 @@ var Unlocks = {
 		"10" : false,
 	},
 	"Ghost Gum" : {
-		"Unlocked" : true,
+		"Unlocked" : false,
 		"ButtonBuyMax" : false,
 		"PageBuyMax" : false,
 		"1" : false,
@@ -224,7 +294,7 @@ var Unlocks = {
 		"10" : false,
 	},
 	"Dragonwood" : {
-		"Unlocked" : true,
+		"Unlocked" : false,
 		"ButtonBuyMax" : false,
 		"PageBuyMax" : false,
 		"1" : false,
@@ -239,7 +309,7 @@ var Unlocks = {
 		"10" : false,
 	},
 	"Gold" : {
-		"Unlocked" : true,
+		"Unlocked" : false,
 		"ButtonBuyMax" : false,
 		"PageBuyMax" : false,
 		"1" : false,
@@ -295,39 +365,23 @@ var Unlocks = {
 		"Unlocked" : false,
 		"Small Dam" : {
 			"Unlocked" : false,
-			"Slot1" : false,
-			"Slot2" : false,
-			"Slot3" : false,
 		},
 		"Medium Dam" : {
 			"Unlocked" : false,
-			"Slot1" : false,
-			"Slot2" : false,
-			"Slot3" : false,
 		},
 		"Big Dam" : {
 			"Unlocked" : false,
-			"Slot1" : false,
-			"Slot2" : false,
-			"Slot3" : false,
 		},
 		"Giant Dam" : {
 			"Unlocked" : false,
-			"Slot1" : false,
-			"Slot2" : false,
-			"Slot3" : false,
 		},
 		"Mega Dam" : {
 			"Unlocked" : false,
-			"Slot1" : false,
-			"Slot2" : false,
-			"Slot3" : false,
 		},
 	},
 	"Achievements" : {
 		"Unlocked" : false,
 		"AllAchievementsVisible" : false,
-		"UnlockedAchievements" : {},
 	},
 	"Fishing" : {
 		"Unlocked" : false,

@@ -36,9 +36,36 @@ func getOriginalValues():
 	Unlocks.OriginalUnlocks = Unlocks.Unlocks.duplicate(true)
 
 func resetValues():
+	
+	var tempUpgrades = Upgrades.duplicate(true)
+	Upgrades = OriginalUpgrades.duplicate(true)
+	
+	if Unlocks.Unlocks["Upgrades"]["KeepClassicUpgrades"]:
+		Upgrades["Oak"] = tempUpgrades["Oak"].duplicate(true)
+		Upgrades["Apple"] = tempUpgrades["Apple"].duplicate(true)
+		Upgrades["Maple"] = tempUpgrades["Maple"].duplicate(true)
+		Upgrades["Birch"] = tempUpgrades["Birch"].duplicate(true)
+		Upgrades["Spruce"] = tempUpgrades["Spruce"].duplicate(true)
+	
+	if Unlocks.Unlocks["Upgrades"]["KeepRareUpgrades"]:
+		Upgrades["Chestnut"] = tempUpgrades["Chestnut"].duplicate(true)
+		Upgrades["Cherry"] = tempUpgrades["Cherry"].duplicate(true)
+		Upgrades["Ash"] = tempUpgrades["Ash"].duplicate(true)
+		Upgrades["Cedar"] = tempUpgrades["Cedar"].duplicate(true)
+		Upgrades["Mahogany"] = tempUpgrades["Mahogany"].duplicate(true)
+	
+	if Unlocks.Unlocks["Upgrades"]["KeepMythicUpgrades"]:
+		Upgrades["Ebony"] = tempUpgrades["Ebony"].duplicate(true)
+		Upgrades["Dogwood"] = tempUpgrades["Dogwood"].duplicate(true)
+		Upgrades["Rosewood"] = tempUpgrades["Rosewood"].duplicate(true)
+		Upgrades["Ghost Gum"] = tempUpgrades["Ghost Gum"].duplicate(true)
+		Upgrades["Dragonwood"] = tempUpgrades["Dragonwood"].duplicate(true)
+	
+	if Unlocks.Unlocks["Upgrades"]["KeepGoldUpgrades"]:
+		Upgrades["Gold"] = tempUpgrades["Gold"].duplicate(true)
+	
 	Gold = OriginalGold.duplicate(true)
 	Resources = OriginalResources.duplicate(true)
-	Upgrades = OriginalUpgrades.duplicate(true)
 	UnlockedResearch = OriginalUnlockedResearch.duplicate(true)
 	DamData = OriginalDamData.duplicate(true)
 	CaughtFish = OriginalCaughtFish.duplicate(true)
@@ -1121,75 +1148,6 @@ var UnlockedResearch = {
 	"1" : false,
 	"2" : false,
 	"3" : false,
-	"4" : false,
-	"5" : false,
-	"6" : false,
-	"7" : false,
-	"8" : false,
-	"9" : false,
-	"10" : false,
-	"11" : false,
-	"12" : false,
-	"13" : false,
-	"14" : false,
-	"15" : false,
-	"16" : false,
-	"17" : false,
-	"18" : false,
-	"19" : false,
-	"20" : false,
-	"21" : false,
-	"22" : false,
-	"23" : false,
-	"24" : false,
-	"25" : false,
-	"26" : false,
-	"27" : false,
-	"28" : false,
-	"29" : false,
-	"30" : false,
-	"31" : false,
-	"32" : false,
-	"33" : false,
-	"34" : false,
-	"35" : false,
-	"36" : false,
-	"37" : false,
-	"38" : false,
-	"39" : false,
-	"40" : false,
-	"41" : false,
-	"42" : false,
-	"43" : false,
-	"44" : false,
-	"45" : false,
-	"46" : false,
-	"47" : false,
-	"48" : false,
-	"49" : false,
-	"50" : false,
-	"51" : false,
-	"52" : false,
-	"53" : false,
-	"54" : false,
-	"55" : false,
-	"56" : false,
-	"57" : false,
-	"58" : false,
-	"59" : false,
-	"60" : false,
-	"61" : false,
-	"62" : false,
-	"63" : false,
-	"64" : false,
-	"65" : false,
-	"65b" : false,
-	"66" : false,
-	"67" : false,
-	"68" : false,
-	"69" : false,
-	"70" : false,
-	"71" : false,
 }
 
 var ResearchInfo = {

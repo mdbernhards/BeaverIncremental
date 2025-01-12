@@ -125,7 +125,7 @@ layout_mode = 2
 theme_override_constants/margin_left = 10
 theme_override_constants/margin_right = 10
 
-[node name="ColorRect" type="ColorRect" parent="HBox/BeaverMC"]
+[node name="BeaverRect" type="ColorRect" parent="HBox/BeaverMC"]
 layout_mode = 2
 color = Color(0.396078, 0.576471, 0.643137, 1)
 
@@ -198,30 +198,35 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.513726, 0.0941176, 0, 0.301961)
 
-[node name="WoodCampMC" type="MarginContainer" parent="HBox"]
+[node name="LockedBeaverRect" type="ColorRect" parent="HBox/BeaverMC"]
+visible = false
+layout_mode = 2
+color = Color(0.385493, 0.385492, 0.385492, 1)
+
+[node name="WCMC" type="MarginContainer" parent="HBox"]
 custom_minimum_size = Vector2(210, 0)
 layout_mode = 2
 mouse_filter = 2
 theme_override_constants/margin_left = 10
 theme_override_constants/margin_right = 10
 
-[node name="ColorRect" type="ColorRect" parent="HBox/WoodCampMC"]
+[node name="WCRect" type="ColorRect" parent="HBox/WCMC"]
 layout_mode = 2
 color = Color(0.172549, 0.443137, 0.317647, 1)
 
-[node name="WoodCampHBox" type="HBoxContainer" parent="HBox/WoodCampMC"]
+[node name="WCHBox" type="HBoxContainer" parent="HBox/WCMC"]
 layout_mode = 2
 
-[node name="MC" type="MarginContainer" parent="HBox/WoodCampMC/WoodCampHBox"]
+[node name="MC" type="MarginContainer" parent="HBox/WCMC/WCHBox"]
 layout_mode = 2
 size_flags_horizontal = 3
 mouse_filter = 2
 theme_override_constants/margin_top = 8
 
-[node name="VBox" type="VBoxContainer" parent="HBox/WoodCampMC/WoodCampHBox/MC"]
+[node name="VBox" type="VBoxContainer" parent="HBox/WCMC/WCHBox/MC"]
 layout_mode = 2
 
-[node name="wcCountLabel" type="Label" parent="HBox/WoodCampMC/WoodCampHBox/MC/VBox"]
+[node name="wcCountLabel" type="Label" parent="HBox/WCMC/WCHBox/MC/VBox"]
 custom_minimum_size = Vector2(0, 45)
 layout_mode = 2
 mouse_filter = 1
@@ -230,34 +235,34 @@ text = "0"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="PriceTitleLabel" type="Label" parent="HBox/WoodCampMC/WoodCampHBox/MC/VBox"]
+[node name="PriceTitleLabel" type="Label" parent="HBox/WCMC/WCHBox/MC/VBox"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 13
 text = "Price"
 horizontal_alignment = 1
 
-[node name="wcPriceLabel" type="Label" parent="HBox/WoodCampMC/WoodCampHBox/MC/VBox"]
+[node name="wcPriceLabel" type="Label" parent="HBox/WCMC/WCHBox/MC/VBox"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 14
 text = "0"
 horizontal_alignment = 1
 
-[node name="MC2" type="MarginContainer" parent="HBox/WoodCampMC/WoodCampHBox"]
+[node name="MC2" type="MarginContainer" parent="HBox/WCMC/WCHBox"]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/margin_left = 10
 theme_override_constants/margin_right = 10
 
-[node name="VBox" type="VBoxContainer" parent="HBox/WoodCampMC/WoodCampHBox/MC2"]
+[node name="VBox" type="VBoxContainer" parent="HBox/WCMC/WCHBox/MC2"]
 layout_mode = 2
 theme_override_constants/separation = 10
 alignment = 1
 
-[node name="WoodCampBuyButton" type="Button" parent="HBox/WoodCampMC/WoodCampHBox/MC2/VBox"]
+[node name="WoodCampBuyButton" type="Button" parent="HBox/WCMC/WCHBox/MC2/VBox"]
 layout_mode = 2
 text = "Buy"
 
-[node name="WCCantAffordRect" type="ColorRect" parent="HBox/WoodCampMC/WoodCampHBox/MC2/VBox/WoodCampBuyButton"]
+[node name="WCCantAffordRect" type="ColorRect" parent="HBox/WCMC/WCHBox/MC2/VBox/WoodCampBuyButton"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -266,11 +271,11 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.513726, 0.0941176, 0, 0.301961)
 
-[node name="WoodCampBuyMaxButton" type="Button" parent="HBox/WoodCampMC/WoodCampHBox/MC2/VBox"]
+[node name="WoodCampBuyMaxButton" type="Button" parent="HBox/WCMC/WCHBox/MC2/VBox"]
 layout_mode = 2
 text = "Buy Max"
 
-[node name="WCMaxCantAffordRect" type="ColorRect" parent="HBox/WoodCampMC/WoodCampHBox/MC2/VBox/WoodCampBuyMaxButton"]
+[node name="WCMaxCantAffordRect" type="ColorRect" parent="HBox/WCMC/WCHBox/MC2/VBox/WoodCampBuyMaxButton"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -278,6 +283,11 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.513726, 0.0941176, 0, 0.301961)
+
+[node name="LockedWCRect" type="ColorRect" parent="HBox/WCMC"]
+visible = false
+layout_mode = 2
+color = Color(0.385493, 0.385492, 0.385492, 1)
 
 [node name="BarItemTimer" type="Timer" parent="."]
 wait_time = 2.0
@@ -289,8 +299,8 @@ autostart = true
 [connection signal="mouse_exited" from="HBox/BeaverMC/BeaverHBox/MC/VBox/BeaverCountLabel" to="." method="_on_beaver_count_label_mouse_exited"]
 [connection signal="button_down" from="HBox/BeaverMC/BeaverHBox/MC2/VBox/BeaverBuyButton" to="." method="_on_beaver_buy_button_button_down"]
 [connection signal="button_down" from="HBox/BeaverMC/BeaverHBox/MC2/VBox/BeaverBuyMaxButton" to="." method="_on_beaver_buy_max_button_button_down"]
-[connection signal="mouse_entered" from="HBox/WoodCampMC/WoodCampHBox/MC/VBox/wcCountLabel" to="." method="_on_wc_count_label_mouse_entered"]
-[connection signal="mouse_exited" from="HBox/WoodCampMC/WoodCampHBox/MC/VBox/wcCountLabel" to="." method="_on_wc_count_label_mouse_exited"]
-[connection signal="button_down" from="HBox/WoodCampMC/WoodCampHBox/MC2/VBox/WoodCampBuyButton" to="." method="_on_wood_camp_buy_button_button_down"]
-[connection signal="button_down" from="HBox/WoodCampMC/WoodCampHBox/MC2/VBox/WoodCampBuyMaxButton" to="." method="_on_wood_camp_buy_max_button_button_down"]
+[connection signal="mouse_entered" from="HBox/WCMC/WCHBox/MC/VBox/wcCountLabel" to="." method="_on_wc_count_label_mouse_entered"]
+[connection signal="mouse_exited" from="HBox/WCMC/WCHBox/MC/VBox/wcCountLabel" to="." method="_on_wc_count_label_mouse_exited"]
+[connection signal="button_down" from="HBox/WCMC/WCHBox/MC2/VBox/WoodCampBuyButton" to="." method="_on_wood_camp_buy_button_button_down"]
+[connection signal="button_down" from="HBox/WCMC/WCHBox/MC2/VBox/WoodCampBuyMaxButton" to="." method="_on_wood_camp_buy_max_button_button_down"]
 [connection signal="timeout" from="BarItemTimer" to="." method="_on_bar_item_timer_timeout"]

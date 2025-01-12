@@ -23,7 +23,7 @@ theme_override_constants/margin_left = 5
 theme_override_constants/margin_right = 5
 
 [node name="UpgradeTabTimer" type="Timer" parent="UpgradePage/UpgradeTabs"]
-wait_time = 2.0
+wait_time = 0.2
 autostart = true
 
 [node name="Background" type="ColorRect" parent="UpgradePage/UpgradeTabs"]
@@ -209,6 +209,10 @@ UpgradeNumber = 9
 layout_mode = 2
 UpgradeNumber = 10
 
+[node name="UpgradesRefreshTimer" type="Timer" parent="UpgradePage/Upgrades"]
+wait_time = 0.2
+autostart = true
+
 [node name="PageButtons" type="MarginContainer" parent="."]
 custom_minimum_size = Vector2(0, 45)
 layout_mode = 2
@@ -272,6 +276,7 @@ autostart = true
 [connection signal="button_down" from="UpgradePage/UpgradeTabs/HBox/TabButtonsMC/HBox/UpgradeTabButton5" to="UpgradePage" method="_on_upgrade_tab_button_5_button_down"]
 [connection signal="button_down" from="UpgradePage/UpgradeTabs/HBox/BuyMaxMC/AllTabsBuyMaxButton" to="UpgradePage" method="_on_all_tabs_buy_max_button_button_down"]
 [connection signal="button_down" from="UpgradePage/Upgrades/VBox/TopHBox/BuyMaxMC/TabBuyMaxButton" to="UpgradePage/Upgrades" method="_on_tab_buy_max_button_button_down"]
+[connection signal="timeout" from="UpgradePage/Upgrades/UpgradesRefreshTimer" to="UpgradePage/Upgrades" method="_on_upgrades_refresh_timer_timeout"]
 [connection signal="button_down" from="PageButtons/HBox/PageButtonMC/HBox/Page1Button" to="." method="_on_page_1_button_button_down"]
 [connection signal="button_down" from="PageButtons/HBox/PageButtonMC/HBox/Page2Button" to="." method="_on_page_2_button_button_down"]
 [connection signal="button_down" from="PageButtons/HBox/PageButtonMC/HBox/Page3Button" to="." method="_on_page_3_button_button_down"]

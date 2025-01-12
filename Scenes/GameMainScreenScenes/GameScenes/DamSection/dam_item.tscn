@@ -61,4 +61,9 @@ grow_horizontal = 2
 grow_vertical = 2
 text = "Build"
 
+[node name="DamItemTimer" type="Timer" parent="."]
+wait_time = 2.0
+autostart = true
+
 [connection signal="button_down" from="ColorRect/VBox/ColorRect2/BuildButton" to="." method="_on_build_button_button_down"]
+[connection signal="timeout" from="DamItemTimer" to="." method="_on_dam_item_timer_timeout"]

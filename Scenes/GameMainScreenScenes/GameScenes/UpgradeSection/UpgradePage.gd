@@ -9,12 +9,13 @@ var CurrentResourceType = "Oak"
 var TabButtons = []
 var UpgradesNode
 var AllTabsCantAffordRect
+var AllTabsBuyMaxButton
 
 func _ready():
 	setNodePaths()
 
 func _process(_delta):
-	checkIfCanAfford()
+	pass
 
 func checkIfCanAfford():
 	var canAfford = false
@@ -65,6 +66,7 @@ func setNodePaths():
 	
 	UpgradesNode = $Upgrades
 	AllTabsCantAffordRect = $UpgradeTabs/HBox/BuyMaxMC/AllTabsBuyMaxButton/AllTabsCantAffordRect
+	AllTabsBuyMaxButton = $UpgradeTabs/HBox/BuyMaxMC/AllTabsBuyMaxButton
 
 func _on_upgrade_tab_button_1_button_down():
 	CurrentResourceType = ResourceTypes[0]
@@ -94,10 +96,19 @@ func _on_all_tabs_buy_max_button_button_down() -> void:
 	UpgradesNode.setupUpgradeTabForWoodType(CurrentResourceType)
 
 func _on_upgrade_tab_timer_timeout() -> void:
+	checkIfCanAfford()
+	
 	for i in ResourceTypes.size():
-		if Unlocks.Unlocks[ResourceTypes[i]]["Unlocked"] or Values.DebugMode:
+		if (Unlocks.Unlocks[ResourceTypes[i]]["Unlocked"] and Unlocks.Unlocks["Apple"]["Unlocked"]) or Values.DebugMode:
 			TabButtons[i].visible = true
 		else:
 			TabButtons[i].visible = false
-			
-		
+	
+	var resource = ResourceTypes[0]
+	if (resource == "Oak" and Unlocks.Unlocks["Upgrades"]["ClassicBuyMax"]) or \
+		(resource == "Chestnut" and Unlocks.Unlocks["Upgrades"]["RareBuyMax"]) or \
+		(resource == "Ebony" and Unlocks.Unlocks["Upgrades"]["MyticBuyMax"]) or \
+		Values.DebugMode:
+		AllTabsBuyMaxButton.visible = true
+	else:
+		AllTabsBuyMaxButton.visible = false

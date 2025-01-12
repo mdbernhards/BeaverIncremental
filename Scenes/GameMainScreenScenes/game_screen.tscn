@@ -123,6 +123,9 @@ layout_mode = 2
 visible = false
 layout_mode = 2
 
+[node name="ImprovementScreenTimer" type="Timer" parent="GameScreenHBox/ImprovementsScreen"]
+autostart = true
+
 [node name="ResourceTicks" type="Node" parent="."]
 script = ExtResource("4_ojdqe")
 
@@ -134,4 +137,5 @@ autostart = true
 [connection signal="button_down" from="GameScreenHBox/ImprovementsScreen/RightVBox/TopMenuMC/ButtonMC/VBox/MarketButton" to="GameScreenHBox/ImprovementsScreen" method="_on_market_button_button_down"]
 [connection signal="button_down" from="GameScreenHBox/ImprovementsScreen/RightVBox/TopMenuMC/ButtonMC/VBox/MagicButton" to="GameScreenHBox/ImprovementsScreen" method="_on_magic_button_button_down"]
 [connection signal="button_down" from="GameScreenHBox/ImprovementsScreen/RightVBox/TopMenuMC/ButtonMC/VBox/DamButton" to="GameScreenHBox/ImprovementsScreen" method="_on_dam_button_button_down"]
+[connection signal="timeout" from="GameScreenHBox/ImprovementsScreen/ImprovementScreenTimer" to="GameScreenHBox/ImprovementsScreen" method="_on_improvement_screen_timer_timeout"]
 [connection signal="timeout" from="ResourceTicks/ResourceGainTick" to="ResourceTicks" method="_on_resource_gain_tick_timeout"]

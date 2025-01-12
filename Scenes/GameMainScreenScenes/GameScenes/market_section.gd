@@ -5,6 +5,9 @@ var woodTypes = ["Oak", "Apple", "Maple", "Birch", "Spruce"]
 
 # Nodes
 var MarketVBox
+var PageButton1
+var PageButton2
+var PageButton3
 
 func _ready():
 	setNodePaths()
@@ -40,3 +43,25 @@ func _on_page_button_3_button_down():
 
 func setNodePaths():
 	MarketVBox = $SellPageMC/MarketVBox
+	PageButton1 = $SellPageMC/MarketVBox/PageButtonsMC/HBox/PageButtonMC/HBox/PageButton1
+	PageButton2 = $SellPageMC/MarketVBox/PageButtonsMC/HBox/PageButtonMC/HBox/PageButton2
+	PageButton3 = $SellPageMC/MarketVBox/PageButtonsMC/HBox/PageButtonMC/HBox/PageButton3
+
+func _on_market_section_timer_timeout() -> void:
+	for i in 5:
+		if Unlocks.Unlocks[woodTypes[i]]["Unlocked"] or Values.DebugMode:
+			MarketVBox.get_node("MarketItem" + str(i + 1)).visible = true
+		else:
+			MarketVBox.get_node("MarketItem" + str(i + 1)).visible = false
+	
+	if Unlocks.Unlocks["Chestnut"]["Unlocked"] or Values.DebugMode:
+		PageButton1.visible = true
+		PageButton2.visible = true
+	else:
+		PageButton1.visible = false
+		PageButton2.visible = false
+	
+	if Unlocks.Unlocks["Ebony"]["Unlocked"] or Values.DebugMode:
+		PageButton3.visible = true
+	else:
+		PageButton3.visible = false

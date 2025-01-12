@@ -145,8 +145,13 @@ text = "Home"
 layout_mode = 2
 text = "Settings"
 
+[node name="GameMainScreenTimer" type="Timer" parent="."]
+wait_time = 2.0
+autostart = true
+
 [connection signal="button_down" from="BackgroundButtons/MenuButtonsVBox/AchievementsButton" to="." method="_on_achievements_button_button_down"]
 [connection signal="button_down" from="BackgroundButtons/MenuButtonsVBox/AscensionButton" to="." method="_on_ascension_button_button_down"]
 [connection signal="button_down" from="BackgroundButtons/MenuButtonsVBox/FishingButton" to="." method="_on_fishing_button_button_down"]
 [connection signal="button_down" from="BackgroundButtons/MenuButtonsVBox/HomeButton" to="." method="_on_home_button_button_down"]
 [connection signal="button_down" from="BackgroundButtons/MenuButtonsVBox/SettingsButton" to="." method="_on_settings_button_button_down"]
+[connection signal="timeout" from="GameMainScreenTimer" to="." method="_on_game_main_screen_timer_timeout"]

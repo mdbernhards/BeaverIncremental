@@ -79,4 +79,9 @@ theme_override_constants/separation = 15
 [node name="HistoryItem" parent="History/Scroll/MC/HistoryList" instance=ExtResource("2_i8o5j")]
 layout_mode = 2
 
+[node name="ResearchSectionTimer" type="Timer" parent="."]
+wait_time = 0.2
+autostart = true
+
 [connection signal="button_down" from="TopHBox/TitleMC/HistoryButton" to="." method="_on_history_button_button_down"]
+[connection signal="timeout" from="ResearchSectionTimer" to="." method="_on_research_section_timer_timeout"]

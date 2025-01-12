@@ -182,9 +182,13 @@ vertical_alignment = 1
 wait_time = 60.0
 one_shot = true
 
+[node name="ResearchItemRefreshTimer" type="Timer" parent="."]
+autostart = true
+
 [connection signal="button_down" from="BG/HBox/MC2/VBox/MC2/StartResearchButton" to="." method="_on_start_research_button_button_down"]
 [connection signal="button_down" from="BG/HBox/MC2/VBox/MC2/QueueButton" to="." method="_on_queue_button_button_down"]
 [connection signal="button_down" from="BG/HBox/MC2/VBox/MC2/CancelButton" to="." method="_on_cancel_button_button_down"]
 [connection signal="mouse_entered" from="BG/HBox/MC2/VBox/MC2/CancelButton" to="." method="_on_cancel_button_mouse_entered"]
 [connection signal="mouse_exited" from="BG/HBox/MC2/VBox/MC2/CancelButton" to="." method="_on_cancel_button_mouse_exited"]
 [connection signal="timeout" from="ResearchTimer" to="." method="_on_research_timer_timeout"]
+[connection signal="timeout" from="ResearchItemRefreshTimer" to="." method="_on_research_item_refresh_timer_timeout"]

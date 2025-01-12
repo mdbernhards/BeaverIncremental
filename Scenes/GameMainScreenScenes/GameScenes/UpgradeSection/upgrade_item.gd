@@ -18,6 +18,7 @@ var PriceLabel
 var LevelLabel
 var CantAffordColorRect
 var NrLabel
+var BuyMaxButton
 
 func _ready():
 	CurrentPrice = 100
@@ -25,8 +26,7 @@ func _ready():
 	changeUpgrade(ResourceType)
 
 func _process(_delta):
-	updateAffordabilityIndicator()
-	updateUpgradeValues()
+	pass
 
 func updateAffordabilityIndicator():
 	if ResourceType == "Gold":
@@ -88,6 +88,7 @@ func setNodePaths():
 	LevelLabel = $Color/VBox/MC3/HBox/MC3/LevelLabel
 	CantAffordColorRect = $CantAffordColorRect
 	NrLabel = $Color/VBox/MC/NrLabel
+	BuyMaxButton = $Color/VBox/MC3/HBox/MC2/BuyMaxButton
 
 func _on_buy_button_button_down():
 	var upgradeBought = false
@@ -117,3 +118,19 @@ func _on_buy_max_button_button_down() -> void:
 	
 	while keepBuying:
 		keepBuying = _on_buy_button_button_down()
+
+func _on_upgrade_item_timer_timeout() -> void:
+	updateAffordabilityIndicator()
+	updateUpgradeValues()
+	
+	if (Unlocks.Unlocks[ResourceType][str(UpgradeNumber)] and Upgrades.Upgrades[ResourceType][str(UpgradeNumber)]["Unlocked"]) or Values.DebugMode:
+		visible = true
+	else:
+		visible = false
+		if CurrentPrice * 0.4 < SaveData.Resources[ResourceType]["Count"]:
+			Unlocks.Unlocks[ResourceType][str(UpgradeNumber)] = true
+	
+	if Unlocks.Unlocks[ResourceType]["ButtonBuyMax"] or Values.DebugMode:
+		BuyMaxButton.visible = true
+	else:
+		BuyMaxButton.visible = false

@@ -35,7 +35,9 @@ func _ready():
 	setNodePaths()
 
 func _process(_delta):
-	updateResearch()
+	pass
+
+func updateResearchVisability():
 	if IsResearchStarted:
 		updateProgressBar()
 		
@@ -48,8 +50,6 @@ func _process(_delta):
 		else:
 			ResearchCantAffordColorRect.visible = true
 			QueueCantAffordColorRect.visible = true	
-			
-	setCancelButtonText()
 
 func setCancelButtonText():
 	if IsMouseOnCancel:
@@ -214,6 +214,29 @@ func checkIfCanAfford():
 	
 	return false
 
+func checkIfVisible():
+	if ResearchData == null:
+		return false
+	
+	if (ResearchData["OakCost"] * 0.4 <= SaveData.Resources["Oak"]["Count"] and ResearchData["OakCost"] > 0
+	or ResearchData["AppleCost"] * 0.4 <= SaveData.Resources["Apple"]["Count"] and ResearchData["AppleCost"] > 0
+	or ResearchData["MapleCost"] * 0.4 <= SaveData.Resources["Maple"]["Count"] and ResearchData["MapleCost"] > 0
+	or ResearchData["BirchCost"] * 0.4 <= SaveData.Resources["Birch"]["Count"] and ResearchData["BirchCost"] > 0
+	or ResearchData["SpruceCost"] * 0.4 <= SaveData.Resources["Spruce"]["Count"] and ResearchData["SpruceCost"] > 0
+	or ResearchData["ChestnutCost"] * 0.4 <= SaveData.Resources["Chestnut"]["Count"] and ResearchData["ChestnutCost"] > 0
+	or ResearchData["CherryCost"] * 0.4 <= SaveData.Resources["Cherry"]["Count"] and ResearchData["CherryCost"] > 0
+	or ResearchData["AshCost"] * 0.4 <= SaveData.Resources["Ash"]["Count"] and ResearchData["AshCost"] > 0
+	or ResearchData["CedarCost"] * 0.4 <= SaveData.Resources["Cedar"]["Count"] and ResearchData["CedarCost"] > 0
+	or ResearchData["MahoganyCost"] * 0.4 <= SaveData.Resources["Mahogany"]["Count"] and ResearchData["MahoganyCost"] > 0
+	or ResearchData["EbonyCost"] * 0.4 <= SaveData.Resources["Ebony"]["Count"] and ResearchData["EbonyCost"] > 0
+	or ResearchData["DogwoodCost"] * 0.4 <= SaveData.Resources["Dogwood"]["Count"] and ResearchData["DogwoodCost"] > 0
+	or ResearchData["RosewoodCost"] * 0.4 <= SaveData.Resources["Rosewood"]["Count"] and ResearchData["RosewoodCost"] > 0
+	or ResearchData["Ghost GumCost"] * 0.4 <= SaveData.Resources["Ghost Gum"]["Count"] and ResearchData["Ghost GumCost"] > 0
+	or ResearchData["DragonwoodCost"] * 0.4 <= SaveData.Resources["Dragonwood"]["Count"] and ResearchData["DragonwoodCost"] > 0):
+		return true
+	
+	return false
+
 func updateProgressBar():
 	ResearchProgressBar.value = remap(ResearchTimer.wait_time - ResearchTimer.time_left, 0, ResearchTimer.wait_time, 0, 100)
 	TimeLeftLabel.text = timeConvert(ResearchTimer.time_left)
@@ -270,3 +293,14 @@ func _on_cancel_button_mouse_entered() -> void:
 
 func _on_cancel_button_mouse_exited() -> void:
 	IsMouseOnCancel = false
+
+func _on_research_item_refresh_timer_timeout() -> void:
+	updateResearch()
+	setCancelButtonText()
+	
+	if (Unlocks.Unlocks["Research"]["ResearchItems"].has(ItemId) and Research.Research[str(ItemId)]["Unlocked"]) or Values.DebugMode:
+		visible = true
+	else:
+		visible = false
+		if checkIfVisible():
+			Unlocks.Unlocks["Research"]["ResearchItems"][ItemId] = true

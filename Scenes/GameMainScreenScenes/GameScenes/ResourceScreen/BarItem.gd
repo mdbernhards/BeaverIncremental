@@ -21,12 +21,20 @@ var WCCountLabel
 var WCPriceLabel
 var WCCantAffordRect
 var WCMaxCantAffordRect
+var WCRect
+var WCHBox
+var LockedWCRect
+var WoodCampBuyMaxButton
 
 # Beaver Nodes
 var BeaverCountLabel
 var BeaverPriceLabel
 var BeaverCantAffordRect
 var BeaverMaxCantAffordRect
+var BeaverRect
+var BeaverHBox
+var LockedBeaverRect
+var BeaverBuyMaxButton
 
 var mouseOverBeaver = false
 var mouseOverWoodcamp = false
@@ -38,7 +46,7 @@ func _ready():
 	changeBarValues()
 
 func _process(_delta):
-	updateBarValues()
+	pass
 
 func changeBarValues(woodType = WoodType):
 	WoodType = woodType
@@ -113,15 +121,23 @@ func setNodePaths():
 	ResourceProductionSlider = $HBox/BarVBox/BarRect/ResourceProductionSlider
 	ProductionLabel = $HBox/BarVBox/BarRect/ResourceProductionSlider/ProductionLabel
 	
-	WCCountLabel = $HBox/WoodCampMC/WoodCampHBox/MC/VBox/wcCountLabel
-	WCPriceLabel = $HBox/WoodCampMC/WoodCampHBox/MC/VBox/wcPriceLabel
-	WCCantAffordRect = $HBox/WoodCampMC/WoodCampHBox/MC2/VBox/WoodCampBuyButton/WCCantAffordRect
-	WCMaxCantAffordRect = $HBox/WoodCampMC/WoodCampHBox/MC2/VBox/WoodCampBuyMaxButton/WCMaxCantAffordRect
+	WCCountLabel = $HBox/WCMC/WCHBox/MC/VBox/wcCountLabel
+	WCPriceLabel = $HBox/WCMC/WCHBox/MC/VBox/wcPriceLabel
+	WCCantAffordRect = $HBox/WCMC/WCHBox/MC2/VBox/WoodCampBuyButton/WCCantAffordRect
+	WCMaxCantAffordRect = $HBox/WCMC/WCHBox/MC2/VBox/WoodCampBuyMaxButton/WCMaxCantAffordRect
+	WCRect = $HBox/WCMC/WCRect
+	WCHBox = $HBox/WCMC/WCHBox
+	LockedWCRect = $HBox/WCMC/LockedWCRect
+	WoodCampBuyMaxButton = $HBox/WCMC/WCHBox/MC2/VBox/WoodCampBuyMaxButton
 	
 	BeaverCountLabel = $HBox/BeaverMC/BeaverHBox/MC/VBox/BeaverCountLabel
 	BeaverPriceLabel = $HBox/BeaverMC/BeaverHBox/MC/VBox/BeaverPriceLabel
 	BeaverCantAffordRect = $HBox/BeaverMC/BeaverHBox/MC2/VBox/BeaverBuyButton/BeaverCantAffordRect
 	BeaverMaxCantAffordRect = $HBox/BeaverMC/BeaverHBox/MC2/VBox/BeaverBuyMaxButton/BeaverMaxCantAffordRect
+	BeaverRect = $HBox/BeaverMC/BeaverRect
+	BeaverHBox = $HBox/BeaverMC/BeaverHBox
+	LockedBeaverRect = $HBox/BeaverMC/LockedBeaverRect
+	BeaverBuyMaxButton = $HBox/BeaverMC/BeaverHBox/MC2/VBox/BeaverBuyMaxButton 
 
 func _on_click_button_button_down():
 	if Values.ResourceValues[WoodType]["Storage"] > (SaveData.Resources[WoodType]["Count"] + Values.ResourceValues[WoodType]["PerClick"]):
@@ -178,7 +194,48 @@ func _on_wc_count_label_mouse_exited() -> void:
 	mouseOverWoodcamp = false
 
 func _on_bar_item_timer_timeout() -> void:
+	updateBarValues()
+	Unlocks.checkForUnlocks()
+	
 	if Unlocks.Unlocks[WoodType]["Unlocked"] or Values.DebugMode:
 		visible = true
 	else:
 		visible = false
+	
+	if Unlocks.Unlocks["Beavers"]["Unlocked"] or Values.DebugMode:
+		BeaverRect.visible = true
+		BeaverHBox.visible = true
+		LockedBeaverRect.visible = false
+		
+		if Unlocks.Unlocks["Beavers"]["BuyMax"] or Values.DebugMode:
+			BeaverBuyMaxButton.visible = true
+		else:
+			BeaverBuyMaxButton.visible = false
+	else:
+		BeaverRect.visible = false
+		BeaverHBox.visible = false
+		LockedBeaverRect.visible = true
+		if SaveData.Resources["Oak"]["Count"] > BeaverCurrentPrice * 2:
+			Unlocks.Unlocks["Beavers"]["Unlocked"] = true
+	
+	if Unlocks.Unlocks["Woodcamps"]["Unlocked"] or Values.DebugMode:
+		WCRect.visible = true
+		WCHBox.visible = true
+		PerSecondLabel.visible = true
+		LockedWCRect.visible = false
+		
+		if WoodType != "Oak":
+			ResourceProductionSlider.visible = true
+		else:
+			ResourceProductionSlider.visible = false
+		
+		if Unlocks.Unlocks["Woodcamps"]["BuyMax"] or Values.DebugMode:
+			WoodCampBuyMaxButton.visible = true
+		else:
+			WoodCampBuyMaxButton.visible = false
+	else:
+		WCRect.visible = false
+		WCHBox.visible = false
+		PerSecondLabel.visible = false
+		ResourceProductionSlider.visible = false
+		LockedWCRect.visible = true
