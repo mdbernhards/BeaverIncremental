@@ -1153,7 +1153,6 @@ var UnlockedResearch = {
 var ResearchInfo = {
 	"CurrentResearch" : {},
 	"Queue" : [],
-	"ResearchAtATime" : 1,
 	"PreUnlockedResearch" : 0,
 }
 
@@ -1559,12 +1558,12 @@ var UnlockedMagicUpgrades = {
 
 var UnlockedAchievements = {
 	"1" : true,
-	"2" : false,
-	"3" : false,
+	"2" : true,
+	"3" : true,
 	"4" : false,
-	"5" : false,
+	"5" : true,
 	"6" : false,
-	"7" : false,
+	"7" : true,
 }
 
 var GeneralInfo = {

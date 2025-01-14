@@ -1,11 +1,10 @@
 To do all things I can think of:
 First:
-Add achievement tooltips
 Fish swim, spawn, despawn logic
 Dam completion and Effect application
 
 Later:
-Check if all value multip get used, apply or remove some.
+Check that all ResourceValues in Values get used
 Tooltip on resource bar for incoming / outgoing wood breakdown
 Implement keep first 10 research
 implement auto research
@@ -77,3 +76,5 @@ Change Magic upgrades to no hole DONE
 Fixed Research history DONE
 Move some of the calculations from process to timers DONE
 Game feature unlock system / have debug mode where everything is unlocked DONE
+Add achievement tooltips DONE
+Check that all tempValues in CalculateValues get used DONE

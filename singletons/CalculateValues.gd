@@ -34,39 +34,39 @@ func CalculateRealValues():
 		var extraWoodcamps = TempValues[woodType]["ExtraWoodcamps"] + TempValues["Global"]["ExtraWoodcamps"]
 		var woodcamps = SaveData.Resources[woodType]["Woodcamps"] + extraWoodcamps
 		
-		var extraBeavers = TempValues[woodType]["ExtraBeavers"] + TempValues["Global"]["ExtraBeavers"]
+		var extraBeavers = TempValues[woodType]["ExtraBeavers"] + TempValues["Global"]["ExtraBeavers"] + (woodcamps * TempValues["Global"]["WcToBeaverMultip"]) 
 		var beavers = SaveData.Resources[woodType]["Beavers"] +  extraBeavers
 		
 		var storageFromLowerTier = 0
 		if lastWoodType and TempValues["Global"]["LowerStorageMultip"] > 1:
 			storageFromLowerTier = (ResourceValues["Global"]["LowerStorageMultip"] - 1) * ResourceValues[lastWoodType]["Storage"]
 		
-		ResourceValues[woodType]["PerClick"] =((woodcamps * TempValues["Global"]["WcToBeaverMultip"]) + beavers) * TempValues[woodType]["BeaverUpgrades"] * TempValues[woodType]["BeaverMultip"] * TempValues["Global"]["BeaverMultip"] * magicMultip
-		ResourceValues[woodType]["PerSecondIncrease"] = pow(woodcamps * TempValues[woodType]["WpsPerWc"] * TempValues[woodType]["WpsMultip"] * TempValues["Global"]["WpsMultip"] * TempValues[woodType]["WcEffectMultip"], TempValues["Global"]["WpsPow"]) * TempValues["Global"]["ProductionUpgradeMultip"] * SaveData.Resources[woodType]["Production"] * magicMultip / 100
-		ResourceValues[woodType]["Storage"] = (TempValues[woodType]["BaseStorage"] + beavers * (TempValues["Global"]["BeaverBaseStorage"] + 15) + woodcamps * (TempValues[woodType]["WcBaseStorage"] + TempValues["Global"]["WcBaseStorage"]) * TempValues[woodType]["WcStorageMultip"] * TempValues["Global"]["WcStorageMultip"] * TempValues[woodType]["WcEffectMultip"]) * TempValues[woodType]["StorageMultip"] * TempValues["Global"]["StorageMultip"] * magicMultip + storageFromLowerTier
+		ResourceValues[woodType]["PerClick"] = beavers * TempValues[woodType]["BeaverUpgrades"] * TempValues[woodType]["BeaverMultip"] * TempValues["Global"]["BeaverMultip"] * magicMultip
+		ResourceValues[woodType]["PerSecondIncrease"] = woodcamps * TempValues[woodType]["WpsPerWc"] * TempValues[woodType]["WpsMultip"] * TempValues["Global"]["WpsMultip"] * TempValues[woodType]["WcEffectMultip"] * SaveData.Resources[woodType]["Production"] * magicMultip / 100
+		ResourceValues[woodType]["Storage"] = (TempValues[woodType]["BaseStorage"] + beavers * (TempValues["Global"]["BeaverBaseStorage"] + TempValues[woodType]["BeaverBaseStorage"]) + woodcamps * (TempValues[woodType]["WcBaseStorage"] + TempValues["Global"]["WcBaseStorage"]) * TempValues[woodType]["WcStorageMultip"] * TempValues["Global"]["WcStorageMultip"] * TempValues[woodType]["WcEffectMultip"]) * TempValues[woodType]["StorageMultip"] * TempValues["Global"]["StorageMultip"] * magicMultip + storageFromLowerTier
 		ResourceValues[woodType]["SoldFor"] = TempValues[woodType]["BaseWoodPrice"] * TempValues[woodType]["WoodPriceMultip"] * TempValues["Global"]["WoodPriceMultip"]
 		ResourceValues[woodType]["UpgradePriceMultip"] = TempValues["Global"]["UpgradePriceMultip"] * TempValues[woodType]["UpgradePriceMultip"]
 		ResourceValues[woodType]["WcPriceMultip"] = TempValues["Global"]["WcPriceMultip"] * TempValues[woodType]["WcPriceMultip"]
 		ResourceValues[woodType]["BeaverPriceMultip"] = TempValues["Global"]["BeaverPriceMultip"] * TempValues[woodType]["BeaverPriceMultip"]
 		ResourceValues[woodType]["BotPriceMultip"] = TempValues["Global"]["BotPriceMultip"]
-		ResourceValues[woodType]["BotBaseSell"] = TempValues["Global"]["BotBaseSell"] * TempValues["Global"]["BotEffectMultip"]
+		ResourceValues[woodType]["BotBaseSell"] = TempValues["Global"]["BotBaseSell"] * TempValues["Global"]["BotSellMoreMultip"]
 		ResourceValues[woodType]["ExtraWoodcamps"] = extraWoodcamps
 		ResourceValues[woodType]["ExtraBeavers"] = extraBeavers
 		lastWoodType = woodType
 	
 	# Fishing
-	ResourceValues["Fish"]["PriceMultip"] = TempValues["Fish"]["PriceMultip"]
 	ResourceValues["Fish"]["FishingWoodMultip"] = TempValues["Fish"]["FishingWoodMultip"]
 	ResourceValues["Fish"]["MoreFishMultip"] = TempValues["Fish"]["MoreFishMultip"]
 	ResourceValues["Fish"]["BetterFishMultip"] = TempValues["Fish"]["BetterFishMultip"]
 	ResourceValues["Fish"]["LongerFishMultip"] = TempValues["Fish"]["LongerFishMultip"]
 	ResourceValues["Fish"]["FishEffectMultip"] = TempValues["Fish"]["FishEffectMultip"]
-	ResourceValues["Fish"]["BaitMultip"] = TempValues["Fish"]["BaitEffectMultip"]
+	ResourceValues["Fish"]["FishSpeedMultip"] = TempValues["Fish"]["FishSpeedMultip"]
+	ResourceValues["Fish"]["FishPriceMultip"] = TempValues["Fish"]["FishPriceMultip"]
+	ResourceValues["Fish"]["BaitEffectMultip"] = TempValues["Fish"]["BaitEffectMultip"]
 	ResourceValues["Fish"]["BaitPriceMultip"] = TempValues["Fish"]["BaitPriceMultip"]
 	
 	# Research
 	ResourceValues["Research"]["TimeMultip"] = TempValues["Research"]["Time"]
-	ResourceValues["Research"]["CostMultip"] = TempValues["Research"]["Cost"]
 	ResourceValues["Research"]["ResearchAtATime"] = TempValues["Research"]["ResearchAtATime"]
 	
 	# Gold
@@ -79,9 +79,8 @@ func CalculateRealValues():
 	ResourceValues["Magic"]["EffectMultip"] = TempValues["Magic"]["EffectMultip"]
 	ResourceValues["Magic"]["PriceMultip"] = TempValues["Magic"]["PriceMultip"]
 	ResourceValues["Magic"]["PerSecondMultip"] = TempValues["Magic"]["PerSecondMultip"]
-	ResourceValues["Magic"]["UpgradePriceMultip"] = TempValues["Magic"]["UpgradePriceMultip"]
 	ResourceValues["Magic"]["MagicMultip"] = magicMultip
-
+	
 	# Dam
 	ResourceValues["Dam"]["EffectMultip"] = TempValues["Dam"]["EffectMultip"]
 	ResourceValues["Dam"]["PriceMultip"] = TempValues["Dam"]["PriceMultip"]
@@ -109,7 +108,7 @@ func CalculateRealAfterValues():
 			var nextWoodType = WoodTypes[WoodTypes.find(woodType) + 1]
 			var nextWoodProduction = Values.ResourceValues[nextWoodType]["PerSecondIncrease"]
 			
-			ResourceValues[woodType]["PerSecondLoss"] = nextWoodProduction * 2 * TempValues["Global"]["WcCostsMultip"] * TempValues[woodType]["WpsCostMultip"]
+			ResourceValues[woodType]["PerSecondLoss"] = nextWoodProduction * 2 * TempValues["Global"]["WcCostsMultip"] * TempValues[woodType]["WcCostsMultip"]
 			
 			lastWoodType = woodType
 
@@ -169,7 +168,7 @@ func SetMagicValue(magicNr):
 		"7" :
 			TempValues["Research"]["Time"] *= 0.5
 		"8" :
-			TempValues["Global"]["WpcMultip"] *= 0.0005 * achievementCount + 1
+			TempValues["Global"]["BeaverMultip"] *= 0.0005 * achievementCount + 1
 		"9" :
 			TempValues["Global"]["WpcToWpsMultip"] *= 1.05
 		"10" :
@@ -188,7 +187,7 @@ func SetMagicValue(magicNr):
 		"16" :
 			Unlocks.Unlocks["Market"]["Bots"]["Unlocked"] = true
 		"17" :
-			TempValues["Global"]["WpcMultip"] *= 1.15
+			TempValues["Global"]["BeaverMultip"] *= 1.15
 		"18" :
 			Unlocks.Unlocks["Fishing"]["Spot"]["2"] = true
 		"19" :
@@ -256,7 +255,7 @@ func SetMagicValue(magicNr):
 		"47" :
 			SaveData.ResearchInfo["PreUnlockedResearch"] += 20
 		"48" :
-			TempValues["Global"]["GoldUpgradePriceMultip"] *= 0.65
+			TempValues["Gold"]["UpgradePrice"] *= 0.65
 		"49" :
 			Unlocks.Unlocks["Upgrades"]["KeepClassicUpgrades"] = true
 		"50" :
@@ -268,7 +267,7 @@ func SetMagicValue(magicNr):
 		"53" :
 			TempValues["Global"]["BotSellMoreMultip"] *= 1.2
 		"54" :
-			TempValues["Fish"]["PriceMultip"] *= 2
+			TempValues["Fish"]["FishPriceMultip"] *= 2
 		"55" :
 			Unlocks.Unlocks["Upgrades"]["KeepRareUpgrades"] = true
 		"56" :
@@ -339,7 +338,7 @@ func SetResearchValue(researchNr):
 		"17" :
 			pass
 		"18" :
-			TempValues["Global"]["WpsPow"] += 1
+			pass
 		"19" :
 			TempValues["Birch"]["UpgradePriceMultip"] *= 0.65
 		"20" :
@@ -347,7 +346,7 @@ func SetResearchValue(researchNr):
 		"21" :
 			pass
 		"22" :
-			TempValues["Global"]["BeaverEffectMultip"] *= 1.3 #change
+			TempValues["Global"]["BeaverMultip"] *= 1.3 #change
 		"23" :
 			Unlocks.Unlocks["Market"]["Bots"]["Unlocked"] = true
 		"23b" :
@@ -357,7 +356,7 @@ func SetResearchValue(researchNr):
 		"25" :
 			TempValues["Global"]["BeaverMultip"] *= 5
 		"26" :
-			TempValues["Global"]["AddLevelToBaseWoodClick"] += 1
+			pass
 		"27" :
 			Unlocks.Unlocks["Magic"]["Upgrades"] = true
 		"28" :
@@ -393,7 +392,7 @@ func SetResearchValue(researchNr):
 		"43" :
 			pass # idk
 		"44" :
-			TempValues["Fish"]["BaitMultip"] *= 1.08
+			TempValues["Fish"]["BaitEffectMultip"] *= 1.08
 		"45" :
 			pass # idk
 		"46" :
@@ -443,13 +442,13 @@ func SetResearchValue(researchNr):
 		"67" :
 			TempValues["Fish"]["MoreFishMultip"] *= 1.15
 		"68" :
-			TempValues["Global"]["BotEffectMultip"] *= 1.1
+			TempValues["Global"]["BotSellMoreMultip"] *= 1.1
 		"69" :
 			TempValues["Fish"]["BaitPriceMultip"] *= 0.7
 		"70" :
 			TempValues["Dam"]["Multip"] *= 4
 		"71" :
-			TempValues["Magic"]["UpgradePriceMultip"] *= 0.8
+			pass
 
 func SetPreGoldUpgrades():
 	var upgradeLevel = SaveData.Upgrades["Gold"]["6"]["Level"]
@@ -457,35 +456,36 @@ func SetPreGoldUpgrades():
 	if upgradeLevel == 0:
 		return
 		
-	TempValues["Global"]["GoldUpgradeEffectMultip"] *= pow(1.003, upgradeLevel)
+	TempValues["Gold"]["UpgradeEffect"] *= pow(1.003, upgradeLevel)
 
 func SetGoldUpgradeValue(upgradeId):
 	var upgradeLevel = SaveData.Upgrades["Gold"][upgradeId]["Level"]
+	var goldEffectMultip = TempValues["Gold"]["UpgradeEffect"]
 	
 	if upgradeLevel == 0:
 		return
 	
 	match upgradeId:
 		"1":
-			TempValues["Global"]["BeaverMultip"] *= pow(1.05, upgradeLevel) * TempValues["Global"]["GoldUpgradeEffectMultip"]
+			TempValues["Global"]["BeaverMultip"] *= pow(1.05, upgradeLevel) * goldEffectMultip
 		"2":
-			TempValues["Global"]["WpsMultip"] *= pow(1.085, upgradeLevel) * TempValues["Global"]["GoldUpgradeEffectMultip"]
+			TempValues["Global"]["WpsMultip"] *= pow(1.085, upgradeLevel) * goldEffectMultip
 		"3":
-			TempValues["Global"]["StorageMultip"] *= pow(1.075, upgradeLevel) * TempValues["Global"]["GoldUpgradeEffectMultip"]
+			TempValues["Global"]["StorageMultip"] *= pow(1.075, upgradeLevel) * goldEffectMultip
 		"4":
-			TempValues["Research"]["Time"] *= pow(1 - 0.005, upgradeLevel) * TempValues["Global"]["GoldUpgradeEffectMultip"]
+			TempValues["Research"]["Time"] *= pow(1 - 0.005, upgradeLevel) * goldEffectMultip
 		"5":
-			TempValues["Global"]["WoodPriceMultip"] *= pow(1.03, upgradeLevel) * TempValues["Global"]["GoldUpgradeEffectMultip"]
+			TempValues["Global"]["WoodPriceMultip"] *= pow(1.03, upgradeLevel) * goldEffectMultip
 		"6":
-			TempValues["Global"]["BeaverPriceMultip"] *= pow(1 - 0.035, upgradeLevel) * TempValues["Global"]["GoldUpgradeEffectMultip"]
+			TempValues["Global"]["BeaverPriceMultip"] *= pow(1 - 0.035, upgradeLevel) * goldEffectMultip
 		"7":
-			TempValues["Global"]["WcPriceMultip"] *= pow(1 - 0.015, upgradeLevel) * TempValues["Global"]["GoldUpgradeEffectMultip"]
+			TempValues["Global"]["WcPriceMultip"] *= pow(1 - 0.015, upgradeLevel) * goldEffectMultip
 		"8":
-			TempValues["Magic"]["Multip"] *= pow(1.04, upgradeLevel) * TempValues["Global"]["GoldUpgradeEffectMultip"]
+			TempValues["Magic"]["Multip"] *= pow(1.04, upgradeLevel) * goldEffectMultip
 		"9":
-			TempValues["Global"]["BotPriceMultip"] *= pow(1 - 0.025, upgradeLevel) * TempValues["Global"]["GoldUpgradeEffectMultip"]
+			TempValues["Global"]["BotPriceMultip"] *= pow(1 - 0.025, upgradeLevel) * goldEffectMultip
 		"10":
-			TempValues["Dam"]["PriceMultip"] *= pow(1 - 0.025, upgradeLevel) * TempValues["Global"]["GoldUpgradeEffectMultip"]
+			TempValues["Dam"]["PriceMultip"] *= pow(1 - 0.025, upgradeLevel) * goldEffectMultip
 
 func SetUpgradeValue(woodType, upgradeId):
 	var upgradeLevel = SaveData.Upgrades[woodType][upgradeId]["Level"]
@@ -541,13 +541,13 @@ func SetUpgradeValue(woodType, upgradeId):
 				"6":
 					TempValues[woodType]["WpsMultip"] *= pow(1.045, upgradeLevel)
 				"7":
-					TempValues["Oak"]["WpsCostMultip"] *= pow(1 - 0.025, upgradeLevel)
+					TempValues["Oak"]["WcCostsMultip"] *= pow(1 - 0.025, upgradeLevel)
 				"8":
 					TempValues["Research"]["Time"] *= pow(1 - 0.02, upgradeLevel)
 				"9":
 					TempValues["Dam"]["EffectMultip"] *= pow(1.015, upgradeLevel)
 				"10":
-					TempValues["Fish"]["PriceMultip"] *= pow(1.05, upgradeLevel)
+					TempValues["Fish"]["FishPriceMultip"] *= pow(1.05, upgradeLevel)
 		"Maple":
 			match upgradeId:
 				"1":
@@ -605,7 +605,7 @@ func SetUpgradeValue(woodType, upgradeId):
 				"5":
 					TempValues[woodType]["WpsMultip"] *= pow(1.025, upgradeLevel)
 				"6":
-					TempValues[woodType]["WpcMultip"] *= pow(1.03, upgradeLevel) * woodcamps
+					TempValues[woodType]["BeaverMultip"] *= pow(1.03, upgradeLevel) * woodcamps
 				"7":
 					TempValues[woodType]["WcCostMultip"] *= pow(1 - 0.005, upgradeLevel)
 				"8":
@@ -631,9 +631,9 @@ func SetUpgradeValue(woodType, upgradeId):
 				"7":
 					TempValues[woodType]["BaseWoodPrice"] += upgradeLevel * 100
 				"8":
-					TempValues[woodType]["WpcMultip"] *= pow(1.0075, upgradeLevel) * woodcamps
+					TempValues[woodType]["BeaverMultip"] *= pow(1.0075, upgradeLevel) * woodcamps
 				"9":
-					TempValues["Global"]["GoldUpgradePriceMultip"] *= pow(1 - 0.0045, upgradeLevel)
+					TempValues["Gold"]["UpgradePrice"] *= pow(1 - 0.0045, upgradeLevel)
 				"10":
 					TempValues["Magic"]["GainMultip"] *= pow(1.05, upgradeLevel)
 		"Cherry":
@@ -719,7 +719,7 @@ func SetUpgradeValue(woodType, upgradeId):
 				"7":
 					TempValues["Global"]["WpsMultip"] *= pow(1.0009, upgradeLevel) * achievementCount
 				"8":
-					TempValues["Global"]["WpcMultip"] *= pow(1.005, upgradeLevel)
+					TempValues["Global"]["BeaverMultip"] *= pow(1.005, upgradeLevel)
 				"9":
 					TempValues["Dam"]["ConstructionSpeedMultip"] *= pow(1.0009, upgradeLevel)
 				"10":
@@ -761,9 +761,9 @@ func SetUpgradeValue(woodType, upgradeId):
 				"6":
 					TempValues[woodType]["StorageMultip"] *= pow(1.02, upgradeLevel) * beavers
 				"7":
-					TempValues[woodType]["WpcMultip"] *= pow(1.06, upgradeLevel)
+					TempValues[woodType]["BeaverMultip"] *= pow(1.06, upgradeLevel)
 				"8":
-					TempValues["Global"]["BotEffectMultip"] *= pow(1.05, upgradeLevel)
+					TempValues["Global"]["BotSellMoreMultip"] *= pow(1.05, upgradeLevel)
 				"9":
 					TempValues["Fish"]["FishPriceMultip"] *= pow(1.075, upgradeLevel)
 				"10":
@@ -839,35 +839,26 @@ var OriginalTempValues = {
 	"Global" : {
 		"ExtraBeavers" : 0,
 		"ExtraWoodcamps" : 0,
-		"BeaverMultip" : 1, # 100%
-		"BeaverEffectMultip" : 1, # 100%
-		"BeaverPriceMultip" : 1, # 100%
-		"WpcMultip" : 1, # 100%
-		"WpsMultip" : 1, # 100%
-		"WpsPow" : 1, # 100%
-		"UpgradePriceMultip" : 1, # 100%
-		"StorageMultip" : 1, # 100%
-		"WcStorageMultip" : 1, # 100%
-		"WcToBeaverMultip" : 0, # 100%
-		"WcCostsMultip" : 1, # 100%
-		"WcPriceMultip" : 1, # 100%
+		"BeaverMultip" : 1,
+		"BeaverPriceMultip" : 1,
+		"WpsMultip" : 1,
+		"UpgradePriceMultip" : 1,
+		"StorageMultip" : 1,
+		"WcStorageMultip" : 1,
+		"WcToBeaverMultip" : 0,
+		"WcCostsMultip" : 1,
+		"WcPriceMultip" : 1,
 		"WcBaseStorage" : 0,
 		"BeaverBaseStorage" : 0,
-		"WoodPriceMultip" : 1, # 100%
-		"AddLevelToBaseWoodClick" : 0, # remove
-		"BotPriceMultip" : 1, # 100%
-		"BotEffectMultip" : 1, # 100%
+		"WoodPriceMultip" : 1,
+		"BotPriceMultip" : 1,
 		"BotSellMoreMultip" : 1,
 		"BotBaseSell" : 10,
-		"ProductionUpgradeMultip" : 1, # 100%
-		"GoldUpgradePriceMultip" : 1, # 100%
-		"GoldUpgradeEffectMultip" : 1, # 100%
 		"WpcToWpsMultip" : 1,
 		"LowerStorageMultip" : 1,
 		"LowerWpsAddMultip" : 1,
 	},
 	"Fish" : {
-		"PriceMultip" : 1, # 100%
 		"FishingWoodMultip" : 1,
 		"MoreFishMultip" : 1,
 		"BetterFishMultip" : 1,
@@ -879,8 +870,7 @@ var OriginalTempValues = {
 		"BaitPriceMultip" : 1,
 	},
 	"Research" : {
-		"Time" : 1, # 100%
-		"Cost" : 1, # 100%
+		"Time" : 1,
 		"ResearchAtATime" : 1,
 	},
 	"Gold" : {
@@ -893,7 +883,6 @@ var OriginalTempValues = {
 		"EffectMultip" : 1,
 		"PriceMultip" : 1,
 		"PerSecondMultip" : 1,
-		"UpgradePriceMultip" : 1,
 	},
 	"Dam" : {
 		"EffectMultip" : 1,
@@ -905,348 +894,333 @@ var OriginalTempValues = {
 		"WoodGainMultip": 1,
 	},
 	"Oak" : {
-		"ExtraBeavers" : 0, # Additional beavers
+		"ExtraBeavers" : 0,
 		"ExtraWoodcamps" : 0,
 		"BeaverUpgrades" : 1,
 		"BeaverMultip" : 1,
-		"BaseStorage" : 25, # storage
+		"BaseStorage" : 25,
 		"StorageMultip" : 1,
 		"WcBaseStorage" : 99,
+		"BeaverBaseStorage" : 15,
 		"WcStorageMultip" : 1,
 		"WcEffectMultip" : 1,
-		"WcPriceMultip" : 1, # wps
-		"FishStorageMultip" : 1,
+		"WcCostsMultip" : 1,
+		"WcPriceMultip" : 1,
 		"WpsPerWc": 1,
 		"WpsMultip" : 1,
-		"WpsCostMultip" : 1, # Not used for oak?
-		"BeaverEffectMultip" : 1, # 100%
-		"BeaverPriceMultip" : 1, # 100%
-		"UpgradePriceMultip" : 1, # upgrades
+		"BeaverPriceMultip" : 1,
+		"UpgradePriceMultip" : 1,
 		"BaseWoodPrice" : 0.01,
 		"WoodPriceMultip" : 1,
 		"WpcToWpsMultip" : 1,
-		"LowerWpsAddMultip" : 1, # 100%
+		"LowerWpsAddMultip" : 1,
 	},
 	"Apple" : {
-		"ExtraBeavers" : 0, # Additional beavers
+		"ExtraBeavers" : 0,
 		"ExtraWoodcamps" : 0,
 		"BeaverUpgrades" : 1,
 		"BeaverMultip" : 1,
-		"BaseStorage" : 25, # storage
+		"BaseStorage" : 25,
 		"StorageMultip" : 1,
 		"WcBaseStorage" : 99,
+		"BeaverBaseStorage" : 15,
 		"WcStorageMultip" : 1,
 		"WcEffectMultip" : 1,
-		"WcPriceMultip" : 1, # wps
-		"FishStorageMultip" : 1,
+		"WcCostsMultip" : 1,
+		"WcPriceMultip" : 1,
 		"WpsPerWc": 1,
 		"WpsMultip" : 1,
-		"WpsCostMultip" : 1, # Not used for oak?
-		"BeaverEffectMultip" : 1, # 100%
-		"BeaverPriceMultip" : 1, # 100%
-		"UpgradePriceMultip" : 1, # upgrades
+		"BeaverPriceMultip" : 1,
+		"UpgradePriceMultip" : 1,
 		"BaseWoodPrice" : 0.05,
 		"WoodPriceMultip" : 1,
 		"WpcToWpsMultip" : 1,
-		"LowerWpsAddMultip" : 1, # 100%
+		"LowerWpsAddMultip" : 1,
 	},
 	"Maple" : {
-		"ExtraBeavers" : 0, # Additional beavers
+		"ExtraBeavers" : 0,
 		"ExtraWoodcamps" : 0,
 		"BeaverUpgrades" : 1,
 		"BeaverMultip" : 1,
-		"BaseStorage" : 25, # storage
+		"BaseStorage" : 25,
 		"StorageMultip" : 1,
 		"WcBaseStorage" : 99,
+		"BeaverBaseStorage" : 15,
 		"WcStorageMultip" : 1,
 		"WcEffectMultip" : 1,
-		"WcPriceMultip" : 1, # wps
-		"FishStorageMultip" : 1,
+		"WcCostsMultip" : 1,
+		"WcPriceMultip" : 1,
 		"WpsPerWc": 1,
 		"WpsMultip" : 1,
-		"WpsCostMultip" : 1, # Not used for oak?
-		"BeaverEffectMultip" : 1, # 100%
-		"BeaverPriceMultip" : 1, # 100%
-		"UpgradePriceMultip" : 1, # upgrades
+		"BeaverPriceMultip" : 1,
+		"UpgradePriceMultip" : 1,
 		"BaseWoodPrice" : 0.25,
 		"WoodPriceMultip" : 1,
 		"WpcToWpsMultip" : 1,
-		"LowerWpsAddMultip" : 1, # 100%
+		"LowerWpsAddMultip" : 1,
 	},
 	"Birch" : {
-		"ExtraBeavers" : 0, # Additional beavers
+		"ExtraBeavers" : 0,
 		"ExtraWoodcamps" : 0,
 		"BeaverUpgrades" : 1,
 		"BeaverMultip" : 1,
-		"BaseStorage" : 25, # storage
+		"BaseStorage" : 25,
 		"StorageMultip" : 1,
 		"WcBaseStorage" : 99,
+		"BeaverBaseStorage" : 15,
 		"WcStorageMultip" : 1,
 		"WcEffectMultip" : 1,
-		"WcPriceMultip" : 1, # wps
-		"FishStorageMultip" : 1,
+		"WcCostsMultip" : 1,
+		"WcPriceMultip" : 1,
 		"WpsPerWc": 1,
 		"WpsMultip" : 1,
-		"WpsCostMultip" : 1, # Not used for oak?
-		"BeaverEffectMultip" : 1, # 100%
-		"BeaverPriceMultip" : 1, # 100%
-		"UpgradePriceMultip" : 1, # upgrades
+		"BeaverPriceMultip" : 1,
+		"UpgradePriceMultip" : 1,
 		"BaseWoodPrice" : 0.70,
 		"WoodPriceMultip" : 1,
 		"WpcToWpsMultip" : 1,
-		"LowerWpsAddMultip" : 1, # 100%
+		"LowerWpsAddMultip" : 1,
 	},
 	"Spruce" : {
-		"ExtraBeavers" : 0, # Additional beavers
+		"ExtraBeavers" : 0,
 		"ExtraWoodcamps" : 0,
 		"BeaverUpgrades" : 1,
 		"BeaverMultip" : 1,
-		"BaseStorage" : 25, # storage
+		"BaseStorage" : 25,
 		"StorageMultip" : 1,
 		"WcBaseStorage" : 99,
+		"BeaverBaseStorage" : 15,
 		"WcStorageMultip" : 1,
 		"WcEffectMultip" : 1,
-		"WcPriceMultip" : 1, # wps
-		"FishStorageMultip" : 1,
+		"WcCostsMultip" : 1,
+		"WcPriceMultip" : 1,
 		"WpsPerWc": 1,
 		"WpsMultip" : 1,
-		"WpsCostMultip" : 1, # Not used for oak?
-		"BeaverEffectMultip" : 1, # 100%
-		"BeaverPriceMultip" : 1, # 100%
-		"UpgradePriceMultip" : 1, # upgrades
+		"BeaverPriceMultip" : 1,
+		"UpgradePriceMultip" : 1,
 		"BaseWoodPrice" : 2.55,
 		"WoodPriceMultip" : 1,
 		"WpcToWpsMultip" : 1,
-		"LowerWpsAddMultip" : 1, # 100%
+		"LowerWpsAddMultip" : 1,
 	},
 	"Chestnut" : {
-		"ExtraBeavers" : 0, # Additional beavers
+		"ExtraBeavers" : 0,
 		"ExtraWoodcamps" : 0,
 		"BeaverUpgrades" : 1,
 		"BeaverMultip" : 1,
-		"BaseStorage" : 25, # storage
+		"BaseStorage" : 25,
 		"StorageMultip" : 1,
 		"WcBaseStorage" : 99,
+		"BeaverBaseStorage" : 15,
 		"WcStorageMultip" : 1,
 		"WcEffectMultip" : 1,
-		"WcPriceMultip" : 1, # wps
-		"FishStorageMultip" : 1,
+		"WcCostsMultip" : 1,
+		"WcPriceMultip" : 1,
 		"WpsPerWc": 1,
 		"WpsMultip" : 1,
-		"WpsCostMultip" : 1, # Not used for oak?
-		"BeaverEffectMultip" : 1, # 100%
-		"BeaverPriceMultip" : 1, # 100%
-		"UpgradePriceMultip" : 1, # upgrades
+		"BeaverPriceMultip" : 1,
+		"UpgradePriceMultip" : 1,
 		"BaseWoodPrice" : 7,
 		"WoodPriceMultip" : 1,
 		"WpcToWpsMultip" : 1,
-		"LowerWpsAddMultip" : 1, # 100%
+		"LowerWpsAddMultip" : 1,
 	},
 	"Cherry" : {
-		"ExtraBeavers" : 0, # Additional beavers
+		"ExtraBeavers" : 0,
 		"ExtraWoodcamps" : 0,
 		"BeaverUpgrades" : 1,
 		"BeaverMultip" : 1,
-		"BaseStorage" : 25, # storage
+		"BaseStorage" : 25,
 		"StorageMultip" : 1,
 		"WcBaseStorage" : 99,
+		"BeaverBaseStorage" : 15,
 		"WcStorageMultip" : 1,
 		"WcEffectMultip" : 1,
-		"WcPriceMultip" : 1, # wps
-		"FishStorageMultip" : 1,
+		"WcCostsMultip" : 1,
+		"WcPriceMultip" : 1,
 		"WpsPerWc": 1,
 		"WpsMultip" : 1,
-		"WpsCostMultip" : 1, # Not used for oak?
-		"BeaverEffectMultip" : 1, # 100%
-		"BeaverPriceMultip" : 1, # 100%
-		"UpgradePriceMultip" : 1, # upgrades
+		"BeaverPriceMultip" : 1,
+		"UpgradePriceMultip" : 1,
 		"BaseWoodPrice" : 13,
 		"WoodPriceMultip" : 1,
 		"WpcToWpsMultip" : 1,
-		"LowerWpsAddMultip" : 1, # 100%
+		"LowerWpsAddMultip" : 1,
 	},
 	"Ash" : {
-		"ExtraBeavers" : 0, # Additional beavers
+		"ExtraBeavers" : 0,
 		"ExtraWoodcamps" : 0,
 		"BeaverUpgrades" : 1,
 		"BeaverMultip" : 1,
-		"BaseStorage" : 25, # storage
+		"BaseStorage" : 25,
 		"StorageMultip" : 1,
 		"WcBaseStorage" : 99,
+		"BeaverBaseStorage" : 15,
 		"WcStorageMultip" : 1,
 		"WcEffectMultip" : 1,
-		"WcPriceMultip" : 1, # wps
-		"FishStorageMultip" : 1,
+		"WcCostsMultip" : 1,
+		"WcPriceMultip" : 1,
 		"WpsPerWc": 1,
 		"WpsMultip" : 1,
-		"WpsCostMultip" : 1, # Not used for oak?
-		"BeaverEffectMultip" : 1, # 100%
-		"BeaverPriceMultip" : 1, # 100%
-		"UpgradePriceMultip" : 1, # upgrades
+		"BeaverPriceMultip" : 1,
+		"UpgradePriceMultip" : 1,
 		"BaseWoodPrice" : 33,
 		"WoodPriceMultip" : 1,
 		"WpcToWpsMultip" : 1,
-		"LowerWpsAddMultip" : 1, # 100%
+		"LowerWpsAddMultip" : 1,
 	},
 	"Cedar" : {
-		"ExtraBeavers" : 0, # Additional beavers
+		"ExtraBeavers" : 0,
 		"ExtraWoodcamps" : 0,
 		"BeaverUpgrades" : 1,
 		"BeaverMultip" : 1,
-		"BaseStorage" : 25, # storage
+		"BaseStorage" : 25,
 		"StorageMultip" : 1,
 		"WcBaseStorage" : 99,
+		"BeaverBaseStorage" : 15,
 		"WcStorageMultip" : 1,
 		"WcEffectMultip" : 1,
-		"WcPriceMultip" : 1, # wps
-		"FishStorageMultip" : 1,
+		"WcCostsMultip" : 1,
+		"WcPriceMultip" : 1,
 		"WpsPerWc": 1,
 		"WpsMultip" : 1,
-		"WpsCostMultip" : 1, # Not used for oak?
-		"BeaverEffectMultip" : 1, # 100%
-		"BeaverPriceMultip" : 1, # 100%
-		"UpgradePriceMultip" : 1, # upgrades
+		"BeaverPriceMultip" : 1,
+		"UpgradePriceMultip" : 1,
 		"BaseWoodPrice" : 80,
 		"WoodPriceMultip" : 1,
 		"WpcToWpsMultip" : 1,
-		"LowerWpsAddMultip" : 1, # 100%
+		"LowerWpsAddMultip" : 1,
 	},
 	"Mahogany" : {
-		"ExtraBeavers" : 0, # Additional beavers
+		"ExtraBeavers" : 0,
 		"ExtraWoodcamps" : 0,
 		"BeaverUpgrades" : 1,
 		"BeaverMultip" : 1,
-		"BaseStorage" : 25, # storage
+		"BaseStorage" : 25,
 		"StorageMultip" : 1,
 		"WcBaseStorage" : 99,
+		"BeaverBaseStorage" : 15,
 		"WcStorageMultip" : 1,
 		"WcEffectMultip" : 1,
-		"WcPriceMultip" : 1, # wps
-		"FishStorageMultip" : 1,
+		"WcCostsMultip" : 1,
+		"WcPriceMultip" : 1,
 		"WpsPerWc": 1,
 		"WpsMultip" : 1,
-		"WpsCostMultip" : 1, # Not used for oak?
-		"BeaverEffectMultip" : 1, # 100%
-		"BeaverPriceMultip" : 1, # 100%
-		"UpgradePriceMultip" : 1, # upgrades
+		"BeaverPriceMultip" : 1,
+		"UpgradePriceMultip" : 1,
 		"BaseWoodPrice" : 140,
 		"WoodPriceMultip" : 1,
 		"WpcToWpsMultip" : 1,
-		"LowerWpsAddMultip" : 1, # 100%
+		"LowerWpsAddMultip" : 1,
 	},
 	"Ebony" : {
-		"ExtraBeavers" : 0, # Additional beavers
+		"ExtraBeavers" : 0,
 		"ExtraWoodcamps" : 0,
 		"BeaverUpgrades" : 1,
 		"BeaverMultip" : 1,
-		"BaseStorage" : 25, # storage
+		"BaseStorage" : 25,
 		"StorageMultip" : 1,
 		"WcBaseStorage" : 99,
+		"BeaverBaseStorage" : 15,
 		"WcStorageMultip" : 1,
 		"WcEffectMultip" : 1,
-		"WcPriceMultip" : 1, # wps
-		"FishStorageMultip" : 1,
+		"WcCostsMultip" : 1,
+		"WcPriceMultip" : 1,
 		"WpsPerWc": 1,
 		"WpsMultip" : 1,
-		"WpsCostMultip" : 1, # Not used for oak?
-		"BeaverEffectMultip" : 1, # 100%
-		"BeaverPriceMultip" : 1, # 100%
-		"UpgradePriceMultip" : 1, # upgrades
+		"BeaverPriceMultip" : 1,
+		"UpgradePriceMultip" : 1,
 		"BaseWoodPrice" : 500,
 		"WoodPriceMultip" : 1,
 		"WpcToWpsMultip" : 1,
-		"LowerWpsAddMultip" : 1, # 100%
+		"LowerWpsAddMultip" : 1,
 	},
 	"Dogwood" : {
-		"ExtraBeavers" : 0, # Additional beavers
+		"ExtraBeavers" : 0,
 		"ExtraWoodcamps" : 0,
 		"BeaverUpgrades" : 1,
 		"BeaverMultip" : 1,
-		"BaseStorage" : 25, # storage
+		"BaseStorage" : 25,
 		"StorageMultip" : 1,
 		"WcBaseStorage" : 99,
+		"BeaverBaseStorage" : 15,
 		"WcStorageMultip" : 1,
 		"WcEffectMultip" : 1,
-		"WcPriceMultip" : 1, # wps
-		"FishStorageMultip" : 1,
+		"WcCostsMultip" : 1,
+		"WcPriceMultip" : 1,
 		"WpsPerWc": 1,
 		"WpsMultip" : 1,
-		"WpsCostMultip" : 1, # Not used for oak?
-		"BeaverEffectMultip" : 1, # 100%
-		"BeaverPriceMultip" : 1, # 100%
-		"UpgradePriceMultip" : 1, # upgrades
+		"BeaverPriceMultip" : 1,
+		"UpgradePriceMultip" : 1,
 		"BaseWoodPrice" : 1400,
 		"WoodPriceMultip" : 1,
 		"WpcToWpsMultip" : 1,
-		"LowerWpsAddMultip" : 1, # 100%
+		"LowerWpsAddMultip" : 1,
 	},
 	"Rosewood" : {
-		"ExtraBeavers" : 0, # Additional beavers
+		"ExtraBeavers" : 0,
 		"ExtraWoodcamps" : 0,
 		"BeaverUpgrades" : 1,
 		"BeaverMultip" : 1,
-		"BaseStorage" : 25, # storage
+		"BaseStorage" : 25,
 		"StorageMultip" : 1,
 		"WcBaseStorage" : 99,
+		"BeaverBaseStorage" : 15,
 		"WcStorageMultip" : 1,
 		"WcEffectMultip" : 1,
-		"WcPriceMultip" : 1, # wps
-		"FishStorageMultip" : 1,
+		"WcCostsMultip" : 1,
+		"WcPriceMultip" : 1,
 		"WpsPerWc": 1,
 		"WpsMultip" : 1,
-		"WpsCostMultip" : 1, # Not used for oak?
-		"BeaverEffectMultip" : 1, # 100%
-		"BeaverPriceMultip" : 1, # 100%
-		"UpgradePriceMultip" : 1, # upgrades
+		"BeaverPriceMultip" : 1,
+		"UpgradePriceMultip" : 1,
 		"BaseWoodPrice" : 3600,
 		"WoodPriceMultip" : 1,
 		"WpcToWpsMultip" : 1,
-		"LowerWpsAddMultip" : 1, # 100%
+		"LowerWpsAddMultip" : 1,
 	},
 	"Ghost Gum" : {
-		"ExtraBeavers" : 0, # Additional beavers
+		"ExtraBeavers" : 0,
 		"ExtraWoodcamps" : 0,
 		"BeaverUpgrades" : 1,
 		"BeaverMultip" : 1,
-		"BaseStorage" : 25, # storage
+		"BaseStorage" : 25,
 		"StorageMultip" : 1,
 		"WcBaseStorage" : 99,
+		"BeaverBaseStorage" : 15,
 		"WcStorageMultip" : 1,
 		"WcEffectMultip" : 1,
-		"WcPriceMultip" : 1, # wps
-		"FishStorageMultip" : 1,
+		"WcCostsMultip" : 1,
+		"WcPriceMultip" : 1,
 		"WpsPerWc": 1,
 		"WpsMultip" : 1,
-		"WpsCostMultip" : 1, # Not used for oak?
-		"BeaverEffectMultip" : 1, # 100%
-		"BeaverPriceMultip" : 1, # 100%
-		"UpgradePriceMultip" : 1, # upgrades
+		"BeaverPriceMultip" : 1,
+		"UpgradePriceMultip" : 1,
 		"BaseWoodPrice" : 9999,
 		"WoodPriceMultip" : 1,
 		"WpcToWpsMultip" : 1,
-		"LowerWpsAddMultip" : 1, # 100%
+		"LowerWpsAddMultip" : 1,
 	},
 	"Dragonwood" : {
-		"ExtraBeavers" : 0, # Additional beavers
+		"ExtraBeavers" : 0,
 		"ExtraWoodcamps" : 0,
 		"BeaverUpgrades" : 1,
 		"BeaverMultip" : 1,
-		"BaseStorage" : 25, # storage
+		"BaseStorage" : 25,
 		"StorageMultip" : 1,
 		"WcBaseStorage" : 99,
+		"BeaverBaseStorage" : 15,
 		"WcStorageMultip" : 1,
 		"WcEffectMultip" : 1,
-		"WcPriceMultip" : 1, # wps
-		"FishStorageMultip" : 1,
+		"WcCostsMultip" : 1,
+		"WcPriceMultip" : 1,
 		"WpsPerWc": 1,
 		"WpsMultip" : 1,
-		"WpsCostMultip" : 1, # Not used for oak?
-		"BeaverEffectMultip" : 1, # 100%
-		"BeaverPriceMultip" : 1, # 100%
-		"UpgradePriceMultip" : 1, # upgrades
+		"BeaverPriceMultip" : 1,
+		"UpgradePriceMultip" : 1,
 		"BaseWoodPrice" : 22222,
 		"WoodPriceMultip" : 1,
 		"WpcToWpsMultip" : 1,
-		"LowerWpsAddMultip" : 1, # 100%
+		"LowerWpsAddMultip" : 1,
 	},
 }

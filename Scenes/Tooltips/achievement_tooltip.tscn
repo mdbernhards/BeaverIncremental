@@ -1,0 +1,63 @@
+[gd_scene load_steps=2 format=3 uid="uid://d3p64oahivo0r"]
+
+[ext_resource type="Script" path="res://Scenes/Tooltips/achievement_tooltip.gd" id="1_p7sb7"]
+
+[node name="AchievementTooltip" type="Control"]
+custom_minimum_size = Vector2(350, 200)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 100.0
+offset_bottom = 100.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+script = ExtResource("1_p7sb7")
+
+[node name="MC" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="ColorRect" type="ColorRect" parent="MC"]
+layout_mode = 2
+color = Color(0.356863, 0.356863, 0.356863, 0.45098)
+
+[node name="VBox" type="VBoxContainer" parent="MC"]
+layout_mode = 2
+
+[node name="HBox" type="HBoxContainer" parent="MC/VBox"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="IconMC" type="MarginContainer" parent="MC/VBox/HBox"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="ColorRect" type="ColorRect" parent="MC/VBox/HBox/IconMC"]
+layout_mode = 2
+color = Color(0.12549, 0.12549, 0.12549, 0.607843)
+
+[node name="TitleLabel" type="Label" parent="MC/VBox/HBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 22
+text = "Big Egg Achievement"
+vertical_alignment = 1
+
+[node name="DescriptionLabel" type="Label" parent="MC/VBox"]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Increases storage 20%"
+horizontal_alignment = 1
+vertical_alignment = 1

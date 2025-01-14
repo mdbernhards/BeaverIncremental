@@ -183,6 +183,7 @@ wait_time = 60.0
 one_shot = true
 
 [node name="ResearchItemRefreshTimer" type="Timer" parent="."]
+wait_time = 0.1
 autostart = true
 
 [connection signal="button_down" from="BG/HBox/MC2/VBox/MC2/StartResearchButton" to="." method="_on_start_research_button_button_down"]

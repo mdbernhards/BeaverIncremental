@@ -4,11 +4,15 @@
 
 [node name="AchievementItem" type="MarginContainer"]
 custom_minimum_size = Vector2(100, 100)
+tooltip_text = "123"
+mouse_filter = 0
+mouse_default_cursor_shape = 1
 script = ExtResource("1_s0ptn")
 
 [node name="UnlockedRect" type="ColorRect" parent="."]
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
+mouse_filter = 1
 color = Color(0.150209, 0.32538, 0.248933, 1)
 
 [node name="LockedRect" type="ColorRect" parent="."]
@@ -16,6 +20,7 @@ custom_minimum_size = Vector2(76, 76)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+mouse_filter = 1
 color = Color(0.403524, 0.225799, 0.244768, 1)
 
 [node name="Label" type="Label" parent="LockedRect"]
@@ -25,7 +30,14 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 1
 theme_override_font_sizes/font_size = 49
 text = "?"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="AchievementTimer" type="Timer" parent="."]
+wait_time = 2.0
+autostart = true
+
+[connection signal="timeout" from="AchievementTimer" to="." method="_on_achievement_timer_timeout"]

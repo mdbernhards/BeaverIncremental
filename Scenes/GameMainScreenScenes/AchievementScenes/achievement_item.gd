@@ -4,33 +4,38 @@ var AchievementId :
 	set(value):
 		AchievementId = value
 
-var AchievementValues
-var Unlocked = false
-
 # Nodes
 var UnlockedRect
 var LockedRect
 
 func _ready() -> void:
 	setupNodePaths()
-	
-	LockedRect.visible = true
-	UnlockedRect.visible = false
-	
+
 func _process(delta: float) -> void:
-	if AchievementId and !Unlocked:
-		checkIfUnlocked()
-
-func checkIfUnlocked():
-	if SaveData.UnlockedAchievements.has(AchievementId) and SaveData.UnlockedAchievements[AchievementId] == true:
-		Unlocked = true
-	
-		LockedRect.visible = false
-		UnlockedRect.visible = true
-
-func setAchievement(achievementId):
-	AchievementValues = Achievements.Achievements[achievementId]
+	pass
 
 func setupNodePaths():
 	UnlockedRect = $UnlockedRect
 	LockedRect = $LockedRect
+
+func _make_custom_tooltip(_for_text):
+	var tooltip = load("res://Scenes/Tooltips/achievement_tooltip.tscn").instantiate()
+	
+	var unlockedAchieves = SaveData.UnlockedAchievements
+	
+	if AchievementId and unlockedAchieves.has(str(AchievementId)) and unlockedAchieves[str(AchievementId)]:
+		tooltip.setAchievementTooltip(Achievements.Achievements[AchievementId].Name, Achievements.Achievements[AchievementId].Description)
+	else:
+		tooltip.setAchievementTooltip("????", "????")
+	
+	return tooltip
+
+func _on_achievement_timer_timeout() -> void:
+	var unlockedAchieves = SaveData.UnlockedAchievements
+	
+	if AchievementId and unlockedAchieves.has(AchievementId) and unlockedAchieves[AchievementId]:
+		LockedRect.visible = false
+		UnlockedRect.visible = true
+	else:
+		LockedRect.visible = true
+		UnlockedRect.visible = false

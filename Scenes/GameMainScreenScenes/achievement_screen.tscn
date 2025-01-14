@@ -1,7 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://msehiccnr5t8"]
+[gd_scene load_steps=2 format=3 uid="uid://msehiccnr5t8"]
 
 [ext_resource type="Script" path="res://Scenes/GameMainScreenScenes/achievement_screen.gd" id="1_y4nkc"]
-[ext_resource type="PackedScene" uid="uid://brl2vwyp21sf2" path="res://Scenes/GameMainScreenScenes/AchievementScenes/achievement_item.tscn" id="2_i6vah"]
 
 [node name="AchievementScreen" type="Control"]
 layout_mode = 3
@@ -70,6 +69,3 @@ size_flags_vertical = 3
 theme_override_constants/h_separation = 18
 theme_override_constants/v_separation = 18
 columns = 16
-
-[node name="AchievementItem" parent="AchievementScreenHBox/AchievementsVBox/MC/Scroll/AchievementGrid" instance=ExtResource("2_i6vah")]
-layout_mode = 2

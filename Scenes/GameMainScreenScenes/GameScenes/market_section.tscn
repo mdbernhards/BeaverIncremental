@@ -96,7 +96,6 @@ theme_override_font_sizes/font_size = 14
 text = "Mythic"
 
 [node name="MarketSectionTimer" type="Timer" parent="."]
-wait_time = 2.0
 autostart = true
 
 [connection signal="button_down" from="SellPageMC/MarketVBox/PageButtonsMC/HBox/PageButtonMC/HBox/PageButton1" to="." method="_on_page_button_1_button_down"]

@@ -79,7 +79,7 @@ func checkQueue():
 	var queue = SaveData.ResearchInfo["Queue"]
 	for QueueResearchId in queue:
 		for researchItem in ResearchList.get_children():
-			if researchItem.ItemId == QueueResearchId and SaveData.ResearchInfo["ResearchAtATime"] > getActiveResearch().size():
+			if researchItem.ItemId == QueueResearchId and Values.ResourceValues["Research"]["ResearchAtATime"] > getActiveResearch().size():
 				researchItem.startResearch()
 
 func setResearchStates():
@@ -90,7 +90,7 @@ func setResearchStates():
 			researchState = ResearchStatesEnum.Queued
 		elif researchItem.IsResearchStarted == true:
 			researchState = ResearchStatesEnum.CurrentlyResearching
-		elif SaveData.ResearchInfo["ResearchAtATime"] > getActiveResearch().size():
+		elif Values.ResourceValues["Research"]["ResearchAtATime"] > getActiveResearch().size():
 			researchState = ResearchStatesEnum.CanResearch
 		else:
 			researchState = ResearchStatesEnum.CanQueue
