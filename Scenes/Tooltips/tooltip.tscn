@@ -1,0 +1,110 @@
+[gd_scene load_steps=3 format=3 uid="uid://dj6ebidia0maq"]
+
+[ext_resource type="Script" path="res://Scenes/Tooltips/tooltip.gd" id="1_rfsal"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_7mc6m"]
+specular_color = Color(0.165198, 0.542669, 0.441428, 1)
+
+[node name="Tooltip" type="MarginContainer"]
+custom_minimum_size = Vector2(400, 100)
+offset_right = 400.0
+offset_bottom = 155.0
+size_flags_horizontal = 3
+size_flags_vertical = 0
+script = ExtResource("1_rfsal")
+
+[node name="Background1" type="ColorRect" parent="."]
+layout_mode = 2
+color = Color(0.054902, 0.0784314, 0.105882, 1)
+
+[node name="MC" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_left = 7
+theme_override_constants/margin_top = 7
+theme_override_constants/margin_right = 7
+theme_override_constants/margin_bottom = 7
+
+[node name="Background2" type="ColorRect" parent="MC"]
+layout_mode = 2
+color = Color(0.137255, 0.14902, 0.180392, 1)
+
+[node name="MC" type="MarginContainer" parent="MC"]
+layout_mode = 2
+theme_override_constants/margin_bottom = 5
+
+[node name="VBox" type="VBoxContainer" parent="MC/MC"]
+layout_mode = 2
+
+[node name="HBox" type="HBoxContainer" parent="MC/MC/VBox"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+
+[node name="MC" type="MarginContainer" parent="MC/MC/VBox/HBox"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="IconRect" type="TextureRect" parent="MC/MC/VBox/HBox/MC"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+size_flags_vertical = 0
+texture = SubResource("CanvasTexture_7mc6m")
+
+[node name="VBox" type="VBoxContainer" parent="MC/MC/VBox/HBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="MC" type="MarginContainer" parent="MC/MC/VBox/HBox/VBox"]
+layout_mode = 2
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_bottom = 0
+
+[node name="TitleLabel" type="Label" parent="MC/MC/VBox/HBox/VBox/MC"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+text = "Tooltip Name"
+
+[node name="MC2" type="MarginContainer" parent="MC/MC/VBox/HBox/VBox"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_top = -4
+
+[node name="DescriptionLabel" type="Label" parent="MC/MC/VBox/HBox/VBox/MC2"]
+custom_minimum_size = Vector2(260, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.881937, 0.881937, 0.881937, 1)
+theme_override_constants/line_spacing = -2
+theme_override_font_sizes/font_size = 9
+text = "Tooltip Description  Tooltip Description Tooltip Description  Tooltip Description Tooltip Description Tooltip Description Tooltip Description Tooltip Description  Tooltip Description Tooltip Description Tooltip Description Tooltip Description Tooltip Description Tooltip Description Tooltip Description Tooltip Description  Tooltip Description Tooltip Description  Tooltip Description Tooltip Description Tooltip Description Tooltip Description Tooltip Description  Tooltip Description Tooltip Description Tooltip Description Tooltip Description Tooltip Description Tooltip Description Tooltip Description "
+autowrap_mode = 3
+
+[node name="MC2" type="MarginContainer" parent="MC/MC/VBox/HBox"]
+layout_mode = 2
+theme_override_constants/margin_right = 5
+
+[node name="UnlockLabel" type="Label" parent="MC/MC/VBox/HBox/MC2"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.695503, 0.695503, 0.695503, 1)
+theme_override_constants/line_spacing = -2
+theme_override_font_sizes/font_size = 8
+text = "Unlocked At
+17.1.2024 18:05"
+vertical_alignment = 1
+
+[node name="SecondaryMC" type="MarginContainer" parent="MC/MC/VBox"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 5
+
+[node name="SecondaryDescriptionLabel" type="RichTextLabel" parent="MC/MC/VBox/SecondaryMC"]
+layout_mode = 2
+theme_override_font_sizes/bold_italics_font_size = 9
+theme_override_font_sizes/italics_font_size = 9
+theme_override_font_sizes/mono_font_size = 9
+theme_override_font_sizes/normal_font_size = 9
+theme_override_font_sizes/bold_font_size = 9
+text = "Secondary Tooltip Description"
+fit_content = true

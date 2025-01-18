@@ -1,37 +1,39 @@
 To do all things I can think of:
 First:
-Fish swim, spawn, despawn logic
-Dam completion and Effect application
+Add unlocked achievement count, bonus from it and balance some achievements
+Make Magic count bonus logaritmic
+Check that all ResourceValues in Values get used
+For Last 3 upgrades for each wood add a lock that can be unlocked with magic, it gives global upgrade
 
 Later:
-Check that all ResourceValues in Values get used
+Fish swim, spawn, despawn logic
+Dam completion and Effect application
+Storage overloading
+Upgrade level cap at 100
 Tooltip on resource bar for incoming / outgoing wood breakdown
+Tooltip on mouse over magic label to see how much magic each resource gives
 Implement keep first 10 research
 implement auto research
 implement keep classic, rare, mythic wood upgrades
 implement magic gain without ascending
 info screen with all values
-On magic mouse over see how mutch magic each resource gives
-For Last 3 upgrades for each wood add a lock that can be unlocked with magic, it gives global upgrade
 bait shop logic
 Add auto saves with changable intervals
 Fix/Change/Remove Gold Upgrade multip (for lower price upgrades, really broken)
 Buy max buttons logic for fishing (or myb ctrl click to max buy or a toggle like in other games i think?)
 balancing all of the game
-Start adding achievemnent triggers
-Tooltips for everything
 Bait logic
 Add fishing spot logic, different fish in different spots
 Settings screen
+Change achievements to be icons from icon packs
+Add to Scrolling log fishing, dams built and others
+
+A lot Later:
 Music, music player
 Sound effects?
-Change achievements to be icons from icon packs
-scroll log, story
-tooltips for different things in scroll log (now I know it's doable in google doc)
+Add a lil story
+Tooltips for everything else
 All upgrade, research, magic, dam, achievement names and descriptions (maybe upgrade descriptive names, cute descriptions and for research other way around but rename description to effect:)
-Storage overloading
-Upgrade level cap at 100
-Rename ascension to prestege
 
 Done:
 Add save delete button DONE
@@ -78,3 +80,5 @@ Move some of the calculations from process to timers DONE
 Game feature unlock system / have debug mode where everything is unlocked DONE
 Add achievement tooltips DONE
 Check that all tempValues in CalculateValues get used DONE
+Scrolling log with unlocked Achievements, Research and Magic Upgrades DONE
+Tooltips in scrolling log DONE

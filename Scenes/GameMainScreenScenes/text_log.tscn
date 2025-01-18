@@ -1,0 +1,57 @@
+[gd_scene load_steps=2 format=3 uid="uid://b5dmw3pfjdkmr"]
+
+[ext_resource type="Script" path="res://Scenes/GameMainScreenScenes/text_log.gd" id="1_sycmc"]
+
+[node name="TextLogSection" type="HBoxContainer" groups=["TextLogSection"]]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1015.0
+offset_bottom = -835.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
+script = ExtResource("1_sycmc")
+
+[node name="MC" type="MarginContainer" parent="."]
+custom_minimum_size = Vector2(905, 0)
+layout_mode = 2
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_bottom = 25
+
+[node name="VBox" type="VBoxContainer" parent="MC"]
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 2
+
+[node name="MC" type="MarginContainer" parent="MC/VBox"]
+layout_mode = 2
+
+[node name="TextLogBackground" type="ColorRect" parent="MC/VBox/MC"]
+custom_minimum_size = Vector2(0, 220)
+layout_mode = 2
+color = Color(0.262745, 0.262745, 0.262745, 1)
+
+[node name="MC" type="MarginContainer" parent="MC/VBox/MC"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="TextLog" type="RichTextLabel" parent="MC/VBox/MC/MC"]
+layout_mode = 2
+theme_override_constants/outline_size = 3
+theme_override_constants/line_separation = 4
+bbcode_enabled = true
+tab_size = 5
+meta_underlined = false
+hint_underlined = false
+
+[node name="TooltipNode" type="Node" parent="."]
+
+[connection signal="meta_hover_ended" from="MC/VBox/MC/MC/TextLog" to="." method="_on_text_log_meta_hover_ended"]
+[connection signal="meta_hover_started" from="MC/VBox/MC/MC/TextLog" to="." method="_on_text_log_meta_hover_started"]
+[connection signal="mouse_entered" from="MC/VBox/MC/MC/TextLog" to="." method="_on_text_log_mouse_entered"]
+[connection signal="mouse_exited" from="MC/VBox/MC/MC/TextLog" to="." method="_on_text_log_mouse_exited"]

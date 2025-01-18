@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://dopio2pmdmjpx"]
+[gd_scene load_steps=8 format=3 uid="uid://dopio2pmdmjpx"]
 
 [ext_resource type="Script" path="res://Scenes/game_main_screen.gd" id="1_3ecd0"]
 [ext_resource type="PackedScene" uid="uid://bor0f34yh2ofm" path="res://Scenes/GameMainScreenScenes/game_screen.tscn" id="1_8477q"]
 [ext_resource type="PackedScene" uid="uid://dy25pvs37m84w" path="res://Scenes/GameMainScreenScenes/fishing_screen.tscn" id="2_17x50"]
+[ext_resource type="PackedScene" uid="uid://b5dmw3pfjdkmr" path="res://Scenes/GameMainScreenScenes/text_log.tscn" id="2_ct3t5"]
 [ext_resource type="PackedScene" uid="uid://msehiccnr5t8" path="res://Scenes/GameMainScreenScenes/achievement_screen.tscn" id="2_kma5e"]
 [ext_resource type="PackedScene" uid="uid://dtv4rjhuhfki5" path="res://Scenes/GameMainScreenScenes/ascension_screen.tscn" id="3_cexxl"]
 [ext_resource type="PackedScene" uid="uid://dnnaegnbqppxc" path="res://Scenes/settings.tscn" id="5_tqmh8"]
@@ -14,7 +15,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-mouse_filter = 2
+mouse_filter = 1
 script = ExtResource("1_3ecd0")
 
 [node name="BackgroundColor" type="ColorRect" parent="."]
@@ -36,57 +37,23 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
-[node name="TextLog" type="HBoxContainer" parent="Gameplay"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-
-[node name="MC" type="MarginContainer" parent="Gameplay/TextLog"]
-custom_minimum_size = Vector2(905, 0)
-layout_mode = 2
-theme_override_constants/margin_left = 25
-theme_override_constants/margin_bottom = 25
-
-[node name="VBox" type="VBoxContainer" parent="Gameplay/TextLog/MC"]
-layout_mode = 2
-size_flags_horizontal = 3
-alignment = 2
-
-[node name="MC" type="MarginContainer" parent="Gameplay/TextLog/MC/VBox"]
-layout_mode = 2
-
-[node name="TextLogBackground" type="ColorRect" parent="Gameplay/TextLog/MC/VBox/MC"]
-custom_minimum_size = Vector2(0, 220)
-layout_mode = 2
-color = Color(0.262745, 0.262745, 0.262745, 1)
-
-[node name="TexLog" type="RichTextLabel" parent="Gameplay/TextLog/MC/VBox/MC"]
-layout_mode = 2
-
-[node name="MC2" type="MarginContainer" parent="Gameplay/TextLog"]
-layout_mode = 2
-size_flags_horizontal = 3
-mouse_filter = 2
-theme_override_constants/margin_left = 10
-theme_override_constants/margin_right = 10
-theme_override_constants/margin_bottom = 29
-
-[node name="MC3" type="Control" parent="Gameplay/TextLog"]
-custom_minimum_size = Vector2(850, 0)
-layout_mode = 2
-mouse_filter = 1
-
 [node name="GameScreen" parent="Gameplay" instance=ExtResource("1_8477q")]
 layout_mode = 1
-mouse_filter = 1
 
 [node name="FishingScreen" parent="Gameplay" instance=ExtResource("2_17x50")]
 visible = false
 layout_mode = 1
+
+[node name="TextLog" parent="Gameplay" instance=ExtResource("2_ct3t5")]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_right = 0.0
+offset_top = -245.0
+offset_right = 905.0
+offset_bottom = 0.0
+grow_horizontal = 1
+grow_vertical = 0
 
 [node name="AchievementScreen" parent="." instance=ExtResource("2_kma5e")]
 visible = false

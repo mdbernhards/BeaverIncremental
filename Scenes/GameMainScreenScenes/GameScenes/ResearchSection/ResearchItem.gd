@@ -244,6 +244,7 @@ func updateProgressBar():
 func _on_research_timer_timeout():
 	SaveData.UnlockedResearch[str(ItemId)] = true
 	CalculateValues.calculateAllValues()
+	get_tree().get_first_node_in_group("TextLogSection").writeResearchUnlockToLog(ItemId)
 	queue_free()
 
 func setResearchState(state):
@@ -297,6 +298,7 @@ func _on_cancel_button_mouse_exited() -> void:
 func _on_research_item_refresh_timer_timeout() -> void:
 	updateResearch()
 	setCancelButtonText()
+	updateResearchVisability()
 	
 	if (Unlocks.Unlocks["Research"]["ResearchItems"].has(ItemId) and Research.Research[str(ItemId)]["Unlocked"]) or Values.DebugMode:
 		visible = true

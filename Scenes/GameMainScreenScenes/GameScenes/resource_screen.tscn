@@ -6,6 +6,8 @@
 
 [node name="ResourceScreen" type="VBoxContainer"]
 custom_minimum_size = Vector2(1055, 0)
+size_flags_horizontal = 4
+size_flags_vertical = 0
 script = ExtResource("1_akkno")
 
 [node name="BarsMC" type="MarginContainer" parent="."]

@@ -40,6 +40,7 @@ func _on_magic_button_button_down():
 	if SaveData.Magic["Count"] >= Upgrade["Cost"]:
 		SaveData.Magic["Count"] -= Upgrade["Cost"]
 		SaveData.UnlockedMagicUpgrades[Nr] = true
+		get_tree().get_first_node_in_group("TextLogSection").writeMagicUpgradeUnlockToLog(Nr)
 		queue_free()
 
 func checkIfVisible():

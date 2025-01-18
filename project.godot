@@ -57,6 +57,7 @@ BackgroundButtons=""
 MagicSection=""
 ConstructionResource=""
 ConstructionItem=""
+TextLogSection=""
 
 [gui]
 
