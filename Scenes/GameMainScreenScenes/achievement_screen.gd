@@ -2,6 +2,10 @@ extends Control
 
 # Nodes
 var AchievementGrid
+var AchievementEffectLabel
+var AchievementCountLabel
+
+var AchievementCount = 0
 
 func _ready() -> void:
 	setupNodePaths()
@@ -20,5 +24,34 @@ func setupAchievements():
 		
 		AchievementGrid.add_child(achievementItem)
 
+func deleteAllAchievements():
+	if !AchievementGrid:
+		return
+	
+	for achievement in AchievementGrid.get_children():
+		AchievementGrid.remove_child(achievement)
+		achievement.queue_free()
+
+func resetAchievements():
+	deleteAllAchievements()
+	setupAchievements()
+
 func setupNodePaths():
 	AchievementGrid = $AchievementScreenHBox/AchievementsVBox/MC/Scroll/AchievementGrid
+	AchievementEffectLabel = $AchievementScreenHBox/AchievementsVBox/TopMC/MC/HBox/AchievementEffectLabel
+	AchievementCountLabel = $AchievementScreenHBox/AchievementsVBox/TopMC/MC/HBox/AchievementCountLabel
+
+func _on_achievement_screen_timer_timeout() -> void:
+	var achievementCount = SaveData.countAchievements()
+	
+	if achievementCount != AchievementCount:
+		AchievementCount = achievementCount
+		CalculateValues.calculateAllValues()
+		
+		AchievementCountLabel.text = str(AchievementCount) + "/300"
+	
+		var wpcMultip = str((Values.ResourceValues["Achievements"]["WpcMultip"] - 1) * 100)
+		var wpsMultip = str((Values.ResourceValues["Achievements"]["WpsMultip"] - 1) * 100)
+		var storageMultip = str((Values.ResourceValues["Achievements"]["StorageMultip"] - 1) * 100)
+		
+		AchievementEffectLabel.text = wpcMultip + "% Wood Per Click\n" + wpsMultip + "% Wood Per Second \n" + storageMultip + "% Storage \n"

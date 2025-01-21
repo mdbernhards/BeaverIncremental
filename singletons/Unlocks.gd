@@ -6,80 +6,80 @@ func _process(delta: float) -> void:
 	pass
 
 func checkForUnlocks():
-	if SaveData.GeneralInfo["AchievementCount"] >= 10:
+	if SaveData.countAchievements() >= 10:
 		Unlocks["Oak"]["ButtonBuyMax"] = true
 		Unlocks["Research"]["History"] = true
-	if SaveData.GeneralInfo["AchievementCount"] >= 20:
+	if SaveData.countAchievements() >= 20:
 		Unlocks["Apple"]["ButtonBuyMax"] = true
-	if SaveData.GeneralInfo["AchievementCount"] >= 30:
+	if SaveData.countAchievements() >= 30:
 		Unlocks["Maple"]["ButtonBuyMax"] = true
-	if SaveData.GeneralInfo["AchievementCount"] >= 40:
+	if SaveData.countAchievements() >= 40:
 		Unlocks["Birch"]["ButtonBuyMax"] = true
 		Unlocks["Oak"]["PageBuyMax"] = true
-	if SaveData.GeneralInfo["AchievementCount"] >= 50:
+	if SaveData.countAchievements() >= 50:
 		Unlocks["Beavers"]["BuyMax"] = true
 		Unlocks["Spruce"]["ButtonBuyMax"] = true
 		Unlocks["Apple"]["PageBuyMax"] = true
-	if SaveData.GeneralInfo["AchievementCount"] >= 60:
+	if SaveData.countAchievements() >= 60:
 		Unlocks["Chestnut"]["ButtonBuyMax"] = true
 		Unlocks["Maple"]["PageBuyMax"] = true
-	if SaveData.GeneralInfo["AchievementCount"] >= 70:
+	if SaveData.countAchievements() >= 70:
 		Unlocks["Cherry"]["ButtonBuyMax"] = true
 		Unlocks["Birch"]["PageBuyMax"] = true
-	if SaveData.GeneralInfo["AchievementCount"] >= 80:
+	if SaveData.countAchievements() >= 80:
 		Unlocks["Ash"]["ButtonBuyMax"] = true
 		Unlocks["Spruce"]["PageBuyMax"] = true
-	if SaveData.GeneralInfo["AchievementCount"] >= 90:
+	if SaveData.countAchievements() >= 90:
 		Unlocks["Woodcamps"]["BuyMax"] = true
 		Unlocks["Cedar"]["ButtonBuyMax"] = true
 		Unlocks["Upgrades"]["ClassicBuyMax"] = true
-	if SaveData.GeneralInfo["AchievementCount"] >= 110:
+	if SaveData.countAchievements() >= 110:
 		Unlocks["Mahogany"]["ButtonBuyMax"] = true
 		Unlocks["Chestnut"]["PageBuyMax"] = true
-	if SaveData.GeneralInfo["AchievementCount"] >= 120:
+	if SaveData.countAchievements() >= 120:
 		Unlocks["Ebony"]["ButtonBuyMax"] = true
 		Unlocks["Cherry"]["PageBuyMax"] = true
-	if SaveData.GeneralInfo["AchievementCount"] >= 130:
+	if SaveData.countAchievements() >= 130:
 		Unlocks["Dogwood"]["ButtonBuyMax"] = true
 		Unlocks["Gold"]["ButtonBuyMax"] = true
 		Unlocks["Ash"]["PageBuyMax"] = true
-	if SaveData.GeneralInfo["AchievementCount"] >= 140:
+	if SaveData.countAchievements() >= 140:
 		Unlocks["Rosewood"]["ButtonBuyMax"] = true
 		Unlocks["Cedar"]["PageBuyMax"] = true
-	if SaveData.GeneralInfo["AchievementCount"] >= 150:
+	if SaveData.countAchievements() >= 150:
 		Unlocks["Ghost Gum"]["ButtonBuyMax"] = true
 		Unlocks["Mahogany"]["PageBuyMax"] = true
-	if SaveData.GeneralInfo["AchievementCount"] >= 160:
+	if SaveData.countAchievements() >= 160:
 		Unlocks["Dragonwood"]["ButtonBuyMax"] = true
 		Unlocks["Upgrades"]["RareBuyMax"] = true
-	if SaveData.GeneralInfo["AchievementCount"] >= 170:
+	if SaveData.countAchievements() >= 170:
 		Unlocks["Ebony"]["ButtonBuyMax"] = true
-	if SaveData.GeneralInfo["AchievementCount"] >= 180:
+	if SaveData.countAchievements() >= 180:
 		Unlocks["Dogwood"]["ButtonBuyMax"] = true
 		Unlocks["Gold"]["PageBuyMax"] = true
-	if SaveData.GeneralInfo["AchievementCount"] >= 190:
+	if SaveData.countAchievements() >= 190:
 		Unlocks["Rosewood"]["ButtonBuyMax"] = true
-	if SaveData.GeneralInfo["AchievementCount"] >= 200:
+	if SaveData.countAchievements() >= 200:
 		Unlocks["Ghost Gum"]["ButtonBuyMax"] = true
-	if SaveData.GeneralInfo["AchievementCount"] >= 210:
+	if SaveData.countAchievements() >= 210:
 		Unlocks["Dragonwood"]["ButtonBuyMax"] = true
-	if SaveData.GeneralInfo["AchievementCount"] >= 220:
+	if SaveData.countAchievements() >= 220:
 		Unlocks["Upgrades"]["MythicBuyMax"] = true
-	if SaveData.GeneralInfo["AchievementCount"] >= 230:
+	if SaveData.countAchievements() >= 230:
 		pass
-	if SaveData.GeneralInfo["AchievementCount"] >= 240:
+	if SaveData.countAchievements() >= 240:
 		Unlocks["Upgrades"]["KeepGoldUpgrades"] = true
-	if SaveData.GeneralInfo["AchievementCount"] >= 250:
+	if SaveData.countAchievements() >= 250:
 		pass
-	if SaveData.GeneralInfo["AchievementCount"] >= 260:
+	if SaveData.countAchievements() >= 260:
 		pass
-	if SaveData.GeneralInfo["AchievementCount"] >= 270:
+	if SaveData.countAchievements() >= 270:
 		pass
-	if SaveData.GeneralInfo["AchievementCount"] >= 280:
+	if SaveData.countAchievements() >= 280:
 		pass
-	if SaveData.GeneralInfo["AchievementCount"] >= 290:
+	if SaveData.countAchievements() >= 290:
 		pass
-	if SaveData.GeneralInfo["AchievementCount"] >= 300:
+	if SaveData.countAchievements() >= 300:
 		pass
 
 var Unlocks = {
@@ -309,6 +309,7 @@ var Unlocks = {
 		"10" : false,
 	},
 	"Gold" : {
+		"Label" : false,
 		"Unlocked" : false,
 		"ButtonBuyMax" : false,
 		"PageBuyMax" : false,

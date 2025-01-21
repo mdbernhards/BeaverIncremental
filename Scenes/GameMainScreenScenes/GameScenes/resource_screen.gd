@@ -95,7 +95,13 @@ func _on_resource_screen_timer_timeout() -> void:
 		BeaverRect.visible = false
 		LockedBeaverRect.visible = true
 	
-	if Unlocks.Unlocks["Gold"]["Unlocked"] or Values.DebugMode:
+	if !Unlocks.Unlocks["Gold"].has("Label"):
+		Unlocks.Unlocks["Gold"]["Label"] = false
+	
+	if !Unlocks.Unlocks["Gold"]["Label"] and SaveData.Gold["Count"] > 0:
+		Unlocks.Unlocks["Gold"]["Label"] = true
+	
+	if Unlocks.Unlocks["Gold"]["Label"] or Values.DebugMode:
 		GoldRect.visible = true
 		LockedGoldRect.visible = false
 	else:

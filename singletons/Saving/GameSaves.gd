@@ -48,6 +48,9 @@ func updateSaveFileInfo(saveName):
 	var jsonSaveInfo = JSON.stringify(var_to_str(SaveData.SavesInfo))
 	infoFile.store_line(jsonSaveInfo)
 
+func getCurrentPlayTime():
+	return SaveData.GeneralInfo["TimePlayed"] + Time.get_unix_time_from_system() - TimeStart
+
 func saveGame(saveName):
 	SaveData.GeneralInfo["TimePlayed"] += Time.get_unix_time_from_system() - TimeStart
 	
@@ -199,6 +202,7 @@ func loadGame(saveName):
 	Unlocks.Unlocks = parseJson(jsonUnlocks)
 	
 	SaveData.recalculateValues()
+	get_tree().get_first_node_in_group("TextLogSection").clearLog()
 	
 	Values.CurrentSaveName = saveName
 	

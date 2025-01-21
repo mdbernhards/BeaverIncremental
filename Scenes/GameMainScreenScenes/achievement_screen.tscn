@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Scenes/GameMainScreenScenes/achievement_screen.gd" id="1_y4nkc"]
 
-[node name="AchievementScreen" type="Control"]
+[node name="AchievementScreen" type="Control" groups=["AchievementScreen"]]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -23,7 +23,10 @@ grow_vertical = 2
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="FoSTitleMC" type="MarginContainer" parent="AchievementScreenHBox/AchievementsVBox"]
+[node name="TopMC" type="MarginContainer" parent="AchievementScreenHBox/AchievementsVBox"]
+layout_mode = 2
+
+[node name="FoSTitleMC" type="MarginContainer" parent="AchievementScreenHBox/AchievementsVBox/TopMC"]
 custom_minimum_size = Vector2(0, 90)
 layout_mode = 2
 theme_override_constants/margin_left = 630
@@ -31,11 +34,11 @@ theme_override_constants/margin_top = 12
 theme_override_constants/margin_right = 630
 theme_override_constants/margin_bottom = 0
 
-[node name="ColorRect" type="ColorRect" parent="AchievementScreenHBox/AchievementsVBox/FoSTitleMC"]
+[node name="ColorRect" type="ColorRect" parent="AchievementScreenHBox/AchievementsVBox/TopMC/FoSTitleMC"]
 layout_mode = 2
 color = Color(0.443137, 0.435294, 0.294118, 1)
 
-[node name="TitleLabel" type="Label" parent="AchievementScreenHBox/AchievementsVBox/FoSTitleMC/ColorRect"]
+[node name="TitleLabel" type="Label" parent="AchievementScreenHBox/AchievementsVBox/TopMC/FoSTitleMC/ColorRect"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -46,6 +49,29 @@ theme_override_font_sizes/font_size = 45
 text = "Achievements"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="MC" type="MarginContainer" parent="AchievementScreenHBox/AchievementsVBox/TopMC"]
+layout_mode = 2
+theme_override_constants/margin_left = 0
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 45
+theme_override_constants/margin_bottom = 0
+
+[node name="HBox" type="HBoxContainer" parent="AchievementScreenHBox/AchievementsVBox/TopMC/MC"]
+layout_mode = 2
+theme_override_constants/separation = 35
+alignment = 2
+
+[node name="AchievementEffectLabel" type="Label" parent="AchievementScreenHBox/AchievementsVBox/TopMC/MC/HBox"]
+layout_mode = 2
+text = "1% Storage
+1% WPS
+1% WPC"
+
+[node name="AchievementCountLabel" type="Label" parent="AchievementScreenHBox/AchievementsVBox/TopMC/MC/HBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 54
+text = "0/300"
 
 [node name="MC" type="MarginContainer" parent="AchievementScreenHBox/AchievementsVBox"]
 layout_mode = 2
@@ -69,3 +95,9 @@ size_flags_vertical = 3
 theme_override_constants/h_separation = 18
 theme_override_constants/v_separation = 18
 columns = 16
+
+[node name="AchievementScreenTimer" type="Timer" parent="."]
+wait_time = 2.0
+autostart = true
+
+[connection signal="timeout" from="AchievementScreenTimer" to="." method="_on_achievement_screen_timer_timeout"]

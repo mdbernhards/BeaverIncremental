@@ -10,7 +10,8 @@ custom_minimum_size = Vector2(365, 125)
 layout_mode = 2
 color = Color(0.247059, 0.32549, 0.32549, 1)
 
-[node name="VBox" type="VBoxContainer" parent="Color"]
+[node name="UpgradeVBox" type="VBoxContainer" parent="Color"]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -18,44 +19,44 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="MC" type="MarginContainer" parent="Color/VBox"]
+[node name="MC" type="MarginContainer" parent="Color/UpgradeVBox"]
 layout_mode = 2
 theme_override_constants/margin_left = 6
 theme_override_constants/margin_top = 4
 theme_override_constants/margin_right = 6
 
-[node name="NameLabel" type="Label" parent="Color/VBox/MC"]
+[node name="NameLabel" type="Label" parent="Color/UpgradeVBox/MC"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 20
 text = "Wood 1"
 
-[node name="NrLabel" type="Label" parent="Color/VBox/MC"]
+[node name="NrLabel" type="Label" parent="Color/UpgradeVBox/MC"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 16
 text = "10"
 horizontal_alignment = 2
 
-[node name="MC2" type="MarginContainer" parent="Color/VBox"]
+[node name="MC2" type="MarginContainer" parent="Color/UpgradeVBox"]
 layout_mode = 2
 theme_override_constants/margin_right = 9
 
-[node name="PriceLabel" type="Label" parent="Color/VBox/MC2"]
+[node name="PriceLabel" type="Label" parent="Color/UpgradeVBox/MC2"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 16
 text = "10 wood"
 horizontal_alignment = 2
 
-[node name="MC4" type="MarginContainer" parent="Color/VBox"]
+[node name="MC4" type="MarginContainer" parent="Color/UpgradeVBox"]
 layout_mode = 2
 theme_override_constants/margin_left = 10
 theme_override_constants/margin_right = 9
 
-[node name="DescriptionLabel" type="Label" parent="Color/VBox/MC4"]
+[node name="DescriptionLabel" type="Label" parent="Color/UpgradeVBox/MC4"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 14
 
-[node name="MC3" type="MarginContainer" parent="Color/VBox"]
+[node name="MC3" type="MarginContainer" parent="Color/UpgradeVBox"]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_constants/margin_left = 8
@@ -63,43 +64,68 @@ theme_override_constants/margin_top = 0
 theme_override_constants/margin_right = 8
 theme_override_constants/margin_bottom = 0
 
-[node name="HBox" type="HBoxContainer" parent="Color/VBox/MC3"]
+[node name="HBox" type="HBoxContainer" parent="Color/UpgradeVBox/MC3"]
 layout_mode = 2
 theme_override_constants/separation = 13
 alignment = 1
 
-[node name="MC" type="MarginContainer" parent="Color/VBox/MC3/HBox"]
+[node name="MC" type="MarginContainer" parent="Color/UpgradeVBox/MC3/HBox"]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/margin_bottom = 0
 
-[node name="BuyButton" type="Button" parent="Color/VBox/MC3/HBox/MC"]
+[node name="BuyButton" type="Button" parent="Color/UpgradeVBox/MC3/HBox/MC"]
 layout_mode = 2
 size_flags_vertical = 4
 theme_override_font_sizes/font_size = 15
 text = "Buy"
 
-[node name="MC2" type="MarginContainer" parent="Color/VBox/MC3/HBox"]
+[node name="MC2" type="MarginContainer" parent="Color/UpgradeVBox/MC3/HBox"]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="BuyMaxButton" type="Button" parent="Color/VBox/MC3/HBox/MC2"]
+[node name="BuyMaxButton" type="Button" parent="Color/UpgradeVBox/MC3/HBox/MC2"]
 layout_mode = 2
 size_flags_vertical = 4
 theme_override_font_sizes/font_size = 15
 text = "Buy Max"
 
-[node name="MC3" type="MarginContainer" parent="Color/VBox/MC3/HBox"]
+[node name="MC3" type="MarginContainer" parent="Color/UpgradeVBox/MC3/HBox"]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/margin_bottom = -11
 
-[node name="LevelLabel" type="Label" parent="Color/VBox/MC3/HBox/MC3"]
+[node name="LevelLabel" type="Label" parent="Color/UpgradeVBox/MC3/HBox/MC3"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 18
 text = "5 / 15"
 horizontal_alignment = 2
 vertical_alignment = 2
+
+[node name="MagicLockVBox" type="VBoxContainer" parent="Color"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 12
+
+[node name="MagicLockLabel" type="Label" parent="Color/MagicLockVBox"]
+custom_minimum_size = Vector2(0, 45)
+layout_mode = 2
+theme_override_font_sizes/font_size = 27
+text = "Magic Lock"
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="MagicLockButton" type="Button" parent="Color/MagicLockVBox"]
+custom_minimum_size = Vector2(150, 45)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 23
+text = "1 Magic"
 
 [node name="CantAffordColorRect" type="ColorRect" parent="."]
 layout_mode = 2
@@ -108,6 +134,7 @@ color = Color(0.513726, 0.0941176, 0, 0.301961)
 [node name="UpgradeItemTimer" type="Timer" parent="."]
 autostart = true
 
-[connection signal="button_down" from="Color/VBox/MC3/HBox/MC/BuyButton" to="." method="_on_buy_button_button_down"]
-[connection signal="button_down" from="Color/VBox/MC3/HBox/MC2/BuyMaxButton" to="." method="_on_buy_max_button_button_down"]
+[connection signal="button_down" from="Color/UpgradeVBox/MC3/HBox/MC/BuyButton" to="." method="_on_buy_button_button_down"]
+[connection signal="button_down" from="Color/UpgradeVBox/MC3/HBox/MC2/BuyMaxButton" to="." method="_on_buy_max_button_button_down"]
+[connection signal="button_down" from="Color/MagicLockVBox/MagicLockButton" to="." method="_on_magic_lock_button_button_down"]
 [connection signal="timeout" from="UpgradeItemTimer" to="." method="_on_upgrade_item_timer_timeout"]

@@ -200,14 +200,14 @@ theme_override_constants/margin_bottom = 8
 layout_mode = 2
 color = Color(0.4, 0.305882, 0.137255, 1)
 
-[node name="VBox" type="VBoxContainer" parent="HBox/MC2"]
+[node name="BotVBox" type="VBoxContainer" parent="HBox/MC2"]
 layout_mode = 2
 
-[node name="HBox2" type="HBoxContainer" parent="HBox/MC2/VBox"]
+[node name="HBox2" type="HBoxContainer" parent="HBox/MC2/BotVBox"]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="MC3" type="MarginContainer" parent="HBox/MC2/VBox/HBox2"]
+[node name="MC3" type="MarginContainer" parent="HBox/MC2/BotVBox/HBox2"]
 custom_minimum_size = Vector2(165, 0)
 layout_mode = 2
 theme_override_constants/margin_left = 7
@@ -215,25 +215,25 @@ theme_override_constants/margin_top = 7
 theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 0
 
-[node name="ColorRect" type="ColorRect" parent="HBox/MC2/VBox/HBox2/MC3"]
+[node name="ColorRect" type="ColorRect" parent="HBox/MC2/BotVBox/HBox2/MC3"]
 layout_mode = 2
 color = Color(0.439216, 0.313726, 0.0901961, 1)
 
-[node name="VBox" type="VBoxContainer" parent="HBox/MC2/VBox/HBox2/MC3"]
+[node name="VBox" type="VBoxContainer" parent="HBox/MC2/BotVBox/HBox2/MC3"]
 layout_mode = 2
 
-[node name="MC" type="MarginContainer" parent="HBox/MC2/VBox/HBox2/MC3/VBox"]
+[node name="MC" type="MarginContainer" parent="HBox/MC2/BotVBox/HBox2/MC3/VBox"]
 layout_mode = 2
 theme_override_constants/margin_top = -2
 theme_override_constants/margin_bottom = -1
 
-[node name="Label" type="Label" parent="HBox/MC2/VBox/HBox2/MC3/VBox/MC"]
+[node name="Label" type="Label" parent="HBox/MC2/BotVBox/HBox2/MC3/VBox/MC"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 18
 text = "Bots"
 horizontal_alignment = 1
 
-[node name="MC2" type="MarginContainer" parent="HBox/MC2/VBox/HBox2/MC3/VBox"]
+[node name="MC2" type="MarginContainer" parent="HBox/MC2/BotVBox/HBox2/MC3/VBox"]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_constants/margin_left = 10
@@ -241,11 +241,11 @@ theme_override_constants/margin_top = 0
 theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 0
 
-[node name="BotCountRect" type="ColorRect" parent="HBox/MC2/VBox/HBox2/MC3/VBox/MC2"]
+[node name="BotCountRect" type="ColorRect" parent="HBox/MC2/BotVBox/HBox2/MC3/VBox/MC2"]
 layout_mode = 2
 color = Color(0.486275, 0.352941, 0.105882, 1)
 
-[node name="BotCountLabel" type="Label" parent="HBox/MC2/VBox/HBox2/MC3/VBox/MC2/BotCountRect"]
+[node name="BotCountLabel" type="Label" parent="HBox/MC2/BotVBox/HBox2/MC3/VBox/MC2/BotCountRect"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -256,7 +256,7 @@ theme_override_font_sizes/font_size = 16
 text = "20"
 horizontal_alignment = 1
 
-[node name="MC2" type="MarginContainer" parent="HBox/MC2/VBox/HBox2"]
+[node name="MC2" type="MarginContainer" parent="HBox/MC2/BotVBox/HBox2"]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/margin_left = 5
@@ -264,20 +264,20 @@ theme_override_constants/margin_top = 7
 theme_override_constants/margin_right = 7
 theme_override_constants/margin_bottom = 0
 
-[node name="VBox" type="VBoxContainer" parent="HBox/MC2/VBox/HBox2/MC2"]
+[node name="VBox" type="VBoxContainer" parent="HBox/MC2/BotVBox/HBox2/MC2"]
 layout_mode = 2
 
-[node name="HBox" type="HBoxContainer" parent="HBox/MC2/VBox/HBox2/MC2/VBox"]
+[node name="HBox" type="HBoxContainer" parent="HBox/MC2/BotVBox/HBox2/MC2/VBox"]
 layout_mode = 2
 theme_override_constants/separation = 6
 
-[node name="BuyButton" type="Button" parent="HBox/MC2/VBox/HBox2/MC2/VBox/HBox"]
+[node name="BuyButton" type="Button" parent="HBox/MC2/BotVBox/HBox2/MC2/VBox/HBox"]
 custom_minimum_size = Vector2(42, 0)
 layout_mode = 2
 theme_override_font_sizes/font_size = 12
 text = "Buy"
 
-[node name="CantAffordRect" type="ColorRect" parent="HBox/MC2/VBox/HBox2/MC2/VBox/HBox/BuyButton"]
+[node name="CantAffordRect" type="ColorRect" parent="HBox/MC2/BotVBox/HBox2/MC2/VBox/HBox/BuyButton"]
 visible = false
 layout_mode = 1
 anchors_preset = 15
@@ -287,13 +287,13 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.513726, 0.0941176, 0, 0.301961)
 
-[node name="Buy10xButton" type="Button" parent="HBox/MC2/VBox/HBox2/MC2/VBox/HBox"]
+[node name="Buy10xButton" type="Button" parent="HBox/MC2/BotVBox/HBox2/MC2/VBox/HBox"]
 custom_minimum_size = Vector2(42, 0)
 layout_mode = 2
 theme_override_font_sizes/font_size = 12
 text = "10x"
 
-[node name="10CantAffordRect" type="ColorRect" parent="HBox/MC2/VBox/HBox2/MC2/VBox/HBox/Buy10xButton"]
+[node name="10CantAffordRect" type="ColorRect" parent="HBox/MC2/BotVBox/HBox2/MC2/VBox/HBox/Buy10xButton"]
 visible = false
 layout_mode = 1
 anchors_preset = 15
@@ -303,13 +303,13 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.513726, 0.0941176, 0, 0.301961)
 
-[node name="Buy100xButton" type="Button" parent="HBox/MC2/VBox/HBox2/MC2/VBox/HBox"]
+[node name="Buy100xButton" type="Button" parent="HBox/MC2/BotVBox/HBox2/MC2/VBox/HBox"]
 custom_minimum_size = Vector2(42, 0)
 layout_mode = 2
 theme_override_font_sizes/font_size = 12
 text = "100x"
 
-[node name="100CantAffordRect" type="ColorRect" parent="HBox/MC2/VBox/HBox2/MC2/VBox/HBox/Buy100xButton"]
+[node name="100CantAffordRect" type="ColorRect" parent="HBox/MC2/BotVBox/HBox2/MC2/VBox/HBox/Buy100xButton"]
 visible = false
 layout_mode = 1
 anchors_preset = 15
@@ -319,13 +319,13 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.513726, 0.0941176, 0, 0.301961)
 
-[node name="Buy1000xButton" type="Button" parent="HBox/MC2/VBox/HBox2/MC2/VBox/HBox"]
+[node name="Buy1000xButton" type="Button" parent="HBox/MC2/BotVBox/HBox2/MC2/VBox/HBox"]
 custom_minimum_size = Vector2(42, 0)
 layout_mode = 2
 theme_override_font_sizes/font_size = 12
 text = "1000x"
 
-[node name="1000CantAffordRect" type="ColorRect" parent="HBox/MC2/VBox/HBox2/MC2/VBox/HBox/Buy1000xButton"]
+[node name="1000CantAffordRect" type="ColorRect" parent="HBox/MC2/BotVBox/HBox2/MC2/VBox/HBox/Buy1000xButton"]
 visible = false
 layout_mode = 1
 anchors_preset = 15
@@ -335,19 +335,19 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.513726, 0.0941176, 0, 0.301961)
 
-[node name="BotPriceLabel" type="Label" parent="HBox/MC2/VBox/HBox2/MC2/VBox"]
+[node name="BotPriceLabel" type="Label" parent="HBox/MC2/BotVBox/HBox2/MC2/VBox"]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_font_sizes/font_size = 13
 text = "Price: 1,000,000,000,000 gold"
 vertical_alignment = 1
 
-[node name="HBox" type="HBoxContainer" parent="HBox/MC2/VBox"]
+[node name="HBox" type="HBoxContainer" parent="HBox/MC2/BotVBox"]
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="MC" type="MarginContainer" parent="HBox/MC2/VBox/HBox"]
+[node name="MC" type="MarginContainer" parent="HBox/MC2/BotVBox/HBox"]
 custom_minimum_size = Vector2(165, 0)
 layout_mode = 2
 size_flags_horizontal = 3
@@ -357,24 +357,24 @@ theme_override_constants/margin_top = 11
 theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 10
 
-[node name="MC" type="MarginContainer" parent="HBox/MC2/VBox/HBox/MC"]
+[node name="MC" type="MarginContainer" parent="HBox/MC2/BotVBox/HBox/MC"]
 layout_mode = 2
 size_flags_vertical = 0
 theme_override_constants/margin_top = -3
 theme_override_constants/margin_bottom = -6
 
-[node name="BotEffectivnesLabel" type="Label" parent="HBox/MC2/VBox/HBox/MC/MC"]
+[node name="BotEffectivnesLabel" type="Label" parent="HBox/MC2/BotVBox/HBox/MC/MC"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 15
 text = "Effect: 15%"
 horizontal_alignment = 1
 
-[node name="BotEffectivnesSlider" type="HSlider" parent="HBox/MC2/VBox/HBox/MC"]
+[node name="BotEffectivnesSlider" type="HSlider" parent="HBox/MC2/BotVBox/HBox/MC"]
 layout_mode = 2
 size_flags_vertical = 8
 value = 15.0
 
-[node name="MC2" type="MarginContainer" parent="HBox/MC2/VBox/HBox"]
+[node name="MC2" type="MarginContainer" parent="HBox/MC2/BotVBox/HBox"]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/margin_left = 6
@@ -382,14 +382,14 @@ theme_override_constants/margin_top = 1
 theme_override_constants/margin_right = 1
 theme_override_constants/margin_bottom = 12
 
-[node name="ColorRect" type="ColorRect" parent="HBox/MC2/VBox/HBox/MC2"]
+[node name="ColorRect" type="ColorRect" parent="HBox/MC2/BotVBox/HBox/MC2"]
 layout_mode = 2
 color = Color(0.729412, 0.619608, 0.419608, 1)
 
-[node name="VBox" type="VBoxContainer" parent="HBox/MC2/VBox/HBox/MC2"]
+[node name="VBox" type="VBoxContainer" parent="HBox/MC2/BotVBox/HBox/MC2"]
 layout_mode = 2
 
-[node name="MC" type="MarginContainer" parent="HBox/MC2/VBox/HBox/MC2/VBox"]
+[node name="MC" type="MarginContainer" parent="HBox/MC2/BotVBox/HBox/MC2/VBox"]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_constants/margin_left = 1
@@ -397,26 +397,26 @@ theme_override_constants/margin_top = 2
 theme_override_constants/margin_right = 1
 theme_override_constants/margin_bottom = -2
 
-[node name="SellLabel" type="Label" parent="HBox/MC2/VBox/HBox/MC2/VBox/MC"]
+[node name="SellLabel" type="Label" parent="HBox/MC2/BotVBox/HBox/MC2/VBox/MC"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 16
 text = "SELL"
 horizontal_alignment = 1
 
-[node name="MC2" type="MarginContainer" parent="HBox/MC2/VBox/HBox/MC2/VBox"]
+[node name="MC2" type="MarginContainer" parent="HBox/MC2/BotVBox/HBox/MC2/VBox"]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_constants/margin_top = -4
 theme_override_constants/margin_bottom = -1
 
-[node name="PerSecondSoldLabel" type="Label" parent="HBox/MC2/VBox/HBox/MC2/VBox/MC2"]
+[node name="PerSecondSoldLabel" type="Label" parent="HBox/MC2/BotVBox/HBox/MC2/VBox/MC2"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.286275, 0.211765, 0.0784314, 1)
 theme_override_font_sizes/font_size = 13
 text = "10k Oak"
 horizontal_alignment = 1
 
-[node name="MC3" type="MarginContainer" parent="HBox/MC2/VBox/HBox"]
+[node name="MC3" type="MarginContainer" parent="HBox/MC2/BotVBox/HBox"]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/margin_left = 1
@@ -424,14 +424,14 @@ theme_override_constants/margin_top = 1
 theme_override_constants/margin_right = 6
 theme_override_constants/margin_bottom = 12
 
-[node name="ColorRect" type="ColorRect" parent="HBox/MC2/VBox/HBox/MC3"]
+[node name="ColorRect" type="ColorRect" parent="HBox/MC2/BotVBox/HBox/MC3"]
 layout_mode = 2
 color = Color(0.286275, 0.211765, 0.0784314, 1)
 
-[node name="VBox" type="VBoxContainer" parent="HBox/MC2/VBox/HBox/MC3"]
+[node name="VBox" type="VBoxContainer" parent="HBox/MC2/BotVBox/HBox/MC3"]
 layout_mode = 2
 
-[node name="MC" type="MarginContainer" parent="HBox/MC2/VBox/HBox/MC3/VBox"]
+[node name="MC" type="MarginContainer" parent="HBox/MC2/BotVBox/HBox/MC3/VBox"]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_constants/margin_left = 1
@@ -439,19 +439,19 @@ theme_override_constants/margin_top = 2
 theme_override_constants/margin_right = 1
 theme_override_constants/margin_bottom = -2
 
-[node name="GetLabel" type="Label" parent="HBox/MC2/VBox/HBox/MC3/VBox/MC"]
+[node name="GetLabel" type="Label" parent="HBox/MC2/BotVBox/HBox/MC3/VBox/MC"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 16
 text = "GET"
 horizontal_alignment = 1
 
-[node name="MC2" type="MarginContainer" parent="HBox/MC2/VBox/HBox/MC3/VBox"]
+[node name="MC2" type="MarginContainer" parent="HBox/MC2/BotVBox/HBox/MC3/VBox"]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_constants/margin_top = -4
 theme_override_constants/margin_bottom = -1
 
-[node name="PerSecondGainLabel" type="Label" parent="HBox/MC2/VBox/HBox/MC3/VBox/MC2"]
+[node name="PerSecondGainLabel" type="Label" parent="HBox/MC2/BotVBox/HBox/MC3/VBox/MC2"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.980392, 0.74902, 0, 1)
 theme_override_font_sizes/font_size = 13
@@ -464,9 +464,9 @@ autostart = true
 
 [connection signal="value_changed" from="HBox/VBox/MC/VBox/MC2/SellAmountSlider" to="." method="_on_sell_amount_slider_value_changed"]
 [connection signal="button_down" from="HBox/VBox/MC/VBox/HBox/MC3/SellButton" to="." method="_on_sell_button_button_down"]
-[connection signal="button_down" from="HBox/MC2/VBox/HBox2/MC2/VBox/HBox/BuyButton" to="." method="_on_buy_button_button_down"]
-[connection signal="button_down" from="HBox/MC2/VBox/HBox2/MC2/VBox/HBox/Buy10xButton" to="." method="_on_buy_10x_button_button_down"]
-[connection signal="button_down" from="HBox/MC2/VBox/HBox2/MC2/VBox/HBox/Buy100xButton" to="." method="_on_buy_100x_button_button_down"]
-[connection signal="button_down" from="HBox/MC2/VBox/HBox2/MC2/VBox/HBox/Buy1000xButton" to="." method="_on_buy_1000x_button_button_down"]
-[connection signal="value_changed" from="HBox/MC2/VBox/HBox/MC/BotEffectivnesSlider" to="." method="_on_bot_effectivnes_slider_value_changed"]
+[connection signal="button_down" from="HBox/MC2/BotVBox/HBox2/MC2/VBox/HBox/BuyButton" to="." method="_on_buy_button_button_down"]
+[connection signal="button_down" from="HBox/MC2/BotVBox/HBox2/MC2/VBox/HBox/Buy10xButton" to="." method="_on_buy_10x_button_button_down"]
+[connection signal="button_down" from="HBox/MC2/BotVBox/HBox2/MC2/VBox/HBox/Buy100xButton" to="." method="_on_buy_100x_button_button_down"]
+[connection signal="button_down" from="HBox/MC2/BotVBox/HBox2/MC2/VBox/HBox/Buy1000xButton" to="." method="_on_buy_1000x_button_button_down"]
+[connection signal="value_changed" from="HBox/MC2/BotVBox/HBox/MC/BotEffectivnesSlider" to="." method="_on_bot_effectivnes_slider_value_changed"]
 [connection signal="timeout" from="MarketItemTimer" to="." method="_on_market_item_timer_timeout"]

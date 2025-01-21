@@ -83,5 +83,8 @@ func _on_timer_timeout() -> void:
 	
 	MagicLabel.text = "You have " + str(SaveData.Magic["Count"]) + " Magic"
 	
-	var magicMultip = str(Values.ResourceValues["Magic"]["MagicMultip"])
-	EffectLabel.text = magicMultip + "% Wood Per Click\n" + magicMultip + "% Wood Per Second \n" + magicMultip + "% Storage \n"
+	var wpcMultip = str(roundf((Values.ResourceValues["Magic"]["WpcMultip"] - 1) * 100))
+	var wpsMultip = str(roundf((Values.ResourceValues["Magic"]["WpsMultip"] - 1) * 100))
+	var storageMultip = str(roundf((Values.ResourceValues["Magic"]["StorageMultip"] - 1) * 100))
+	
+	EffectLabel.text = wpcMultip + "% Wood Per Click\n" + wpsMultip + "% Wood Per Second \n" + storageMultip + "% Storage \n"

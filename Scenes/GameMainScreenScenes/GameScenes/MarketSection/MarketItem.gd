@@ -27,6 +27,7 @@ var CantAffordRect1000
 var Buy10xButton
 var Buy100xButton
 var Buy1000xButton
+var BotVBox
 
 var WoodLossIfSold
 var GoldGainedIfSold
@@ -95,21 +96,22 @@ func setNodePaths():
 	LeftColorRect = $HBox/VBox/MC/LeftColorRect
 
 	# Nodes for bots
-	BotCountLabel = $HBox/MC2/VBox/HBox2/MC3/VBox/MC2/BotCountRect/BotCountLabel
-	BotEffectivnesSlider = $HBox/MC2/VBox/HBox/MC/BotEffectivnesSlider
-	BotEffectivnesLabel = $HBox/MC2/VBox/HBox/MC/MC/BotEffectivnesLabel
-	PerSecondWoodSoldLabel = $HBox/MC2/VBox/HBox/MC2/VBox/MC2/PerSecondSoldLabel
-	PerSecondGoldGainLabel = $HBox/MC2/VBox/HBox/MC3/VBox/MC2/PerSecondGainLabel
-	BotPriceLabel = $HBox/MC2/VBox/HBox2/MC2/VBox/BotPriceLabel
+	BotCountLabel = $HBox/MC2/BotVBox/HBox2/MC3/VBox/MC2/BotCountRect/BotCountLabel
+	BotEffectivnesSlider = $HBox/MC2/BotVBox/HBox/MC/BotEffectivnesSlider
+	BotEffectivnesLabel = $HBox/MC2/BotVBox/HBox/MC/MC/BotEffectivnesLabel
+	PerSecondWoodSoldLabel = $HBox/MC2/BotVBox/HBox/MC2/VBox/MC2/PerSecondSoldLabel
+	PerSecondGoldGainLabel = $HBox/MC2/BotVBox/HBox/MC3/VBox/MC2/PerSecondGainLabel
+	BotPriceLabel = $HBox/MC2/BotVBox/HBox2/MC2/VBox/BotPriceLabel
 	RightColorRect = $HBox/MC2/RightColorRect
-	BotCountRect = $HBox/MC2/VBox/HBox2/MC3/VBox/MC2/BotCountRect
-	CantAffordRect = $HBox/MC2/VBox/HBox2/MC2/VBox/HBox/BuyButton/CantAffordRect
-	CantAffordRect10 = $"HBox/MC2/VBox/HBox2/MC2/VBox/HBox/Buy10xButton/10CantAffordRect"
-	CantAffordRect100 = $"HBox/MC2/VBox/HBox2/MC2/VBox/HBox/Buy100xButton/100CantAffordRect"
-	CantAffordRect1000 = $"HBox/MC2/VBox/HBox2/MC2/VBox/HBox/Buy1000xButton/1000CantAffordRect"
-	Buy10xButton = $HBox/MC2/VBox/HBox2/MC2/VBox/HBox/Buy10xButton
-	Buy100xButton = $HBox/MC2/VBox/HBox2/MC2/VBox/HBox/Buy100xButton
-	Buy1000xButton = $HBox/MC2/VBox/HBox2/MC2/VBox/HBox/Buy1000xButton
+	BotCountRect = $HBox/MC2/BotVBox/HBox2/MC3/VBox/MC2/BotCountRect
+	CantAffordRect = $HBox/MC2/BotVBox/HBox2/MC2/VBox/HBox/BuyButton/CantAffordRect
+	CantAffordRect10 = $"HBox/MC2/BotVBox/HBox2/MC2/VBox/HBox/Buy10xButton/10CantAffordRect"
+	CantAffordRect100 = $"HBox/MC2/BotVBox/HBox2/MC2/VBox/HBox/Buy100xButton/100CantAffordRect"
+	CantAffordRect1000 = $"HBox/MC2/BotVBox/HBox2/MC2/VBox/HBox/Buy1000xButton/1000CantAffordRect"
+	Buy10xButton = $HBox/MC2/BotVBox/HBox2/MC2/VBox/HBox/Buy10xButton
+	Buy100xButton = $HBox/MC2/BotVBox/HBox2/MC2/VBox/HBox/Buy100xButton
+	Buy1000xButton = $HBox/MC2/BotVBox/HBox2/MC2/VBox/HBox/Buy1000xButton
+	BotVBox = $HBox/MC2/BotVBox
 
 func _on_sell_amount_slider_value_changed(value):
 	SaveData.Resources[WoodType]["MarketSellPercentage"] = value
@@ -163,6 +165,11 @@ func _on_market_item_timer_timeout() -> void:
 	
 	if CantAffordRect:
 		setCantAffordRects()
+	
+	if Unlocks.Unlocks["Market"]["Bots"]["Unlocked"] or Values.DebugMode:
+		BotVBox.visible = true
+	else:
+		BotVBox.visible = false
 	
 	if Unlocks.Unlocks["Market"]["Bots"]["10x Buy"] or Values.DebugMode:
 		Buy10xButton.visible = true

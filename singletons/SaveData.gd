@@ -36,7 +36,6 @@ func getOriginalValues():
 	Unlocks.OriginalUnlocks = Unlocks.Unlocks.duplicate(true)
 
 func resetValues():
-	
 	var tempUpgrades = Upgrades.duplicate(true)
 	Upgrades = OriginalUpgrades.duplicate(true)
 	
@@ -83,6 +82,7 @@ func recalculateValues():
 	get_tree().get_first_node_in_group("Settings").updateSettings()
 	get_tree().get_first_node_in_group("MagicSection").setMagicItems()
 	get_tree().get_first_node_in_group("DamSection").setDamConstruction()
+	get_tree().get_first_node_in_group("AchievementScreen").resetAchievements()
 
 var Gold = {
 	"Count" : 0,
@@ -251,36 +251,15 @@ var Upgrades = {
 		},
 		"8" :  {
 			"Level" : 0,
+			"MagicLocked" : true,
 		},
 		"9" :  {
 			"Level" : 0,
+			"MagicLocked" : true,
 		},
 		"10" :  {
 			"Level" : 0,
-		},
-		"11" :  {
-			"Level" : 0,
-		},
-		"12" :  {
-			"Level" : 0,
-		},
-		"13" :  {
-			"Level" : 0,
-		},
-		"14" :  {
-			"Level" : 0,
-		},
-		"15" :  {
-			"Level" : 0,
-		},
-		"16" :  {
-			"Level" : 0,
-		},
-		"17" :  {
-			"Level" : 0,
-		},
-		"18" :  {
-			"Level" : 0,
+			"MagicLocked" : true,
 		},
 	},
 	"Apple" : {
@@ -307,36 +286,15 @@ var Upgrades = {
 		},
 		"8" :  {
 			"Level" : 0,
+			"MagicLocked" : true,
 		},
 		"9" :  {
 			"Level" : 0,
+			"MagicLocked" : true,
 		},
 		"10" :  {
 			"Level" : 0,
-		},
-		"11" :  {
-			"Level" : 0,
-		},
-		"12" :  {
-			"Level" : 0,
-		},
-		"13" :  {
-			"Level" : 0,
-		},
-		"14" :  {
-			"Level" : 0,
-		},
-		"15" :  {
-			"Level" : 0,
-		},
-		"16" :  {
-			"Level" : 0,
-		},
-		"17" :  {
-			"Level" : 0,
-		},
-		"18" :  {
-			"Level" : 0,
+			"MagicLocked" : true,
 		},
 	},
 	"Maple" : {
@@ -363,36 +321,15 @@ var Upgrades = {
 		},
 		"8" :  {
 			"Level" : 0,
+			"MagicLocked" : true,
 		},
 		"9" :  {
 			"Level" : 0,
+			"MagicLocked" : true,
 		},
 		"10" :  {
 			"Level" : 0,
-		},
-		"11" :  {
-			"Level" : 0,
-		},
-		"12" :  {
-			"Level" : 0,
-		},
-		"13" :  {
-			"Level" : 0,
-		},
-		"14" :  {
-			"Level" : 0,
-		},
-		"15" :  {
-			"Level" : 0,
-		},
-		"16" :  {
-			"Level" : 0,
-		},
-		"17" :  {
-			"Level" : 0,
-		},
-		"18" :  {
-			"Level" : 0,
+			"MagicLocked" : true,
 		},
 	},
 	"Birch" : {
@@ -419,36 +356,15 @@ var Upgrades = {
 		},
 		"8" :  {
 			"Level" : 0,
+			"MagicLocked" : true,
 		},
 		"9" :  {
 			"Level" : 0,
+			"MagicLocked" : true,
 		},
 		"10" :  {
 			"Level" : 0,
-		},
-		"11" :  {
-			"Level" : 0,
-		},
-		"12" :  {
-			"Level" : 0,
-		},
-		"13" :  {
-			"Level" : 0,
-		},
-		"14" :  {
-			"Level" : 0,
-		},
-		"15" :  {
-			"Level" : 0,
-		},
-		"16" :  {
-			"Level" : 0,
-		},
-		"17" :  {
-			"Level" : 0,
-		},
-		"18" :  {
-			"Level" : 0,
+			"MagicLocked" : true,
 		},
 	},
 	"Spruce" : {
@@ -475,36 +391,15 @@ var Upgrades = {
 		},
 		"8" :  {
 			"Level" : 0,
+			"MagicLocked" : true,
 		},
 		"9" :  {
 			"Level" : 0,
+			"MagicLocked" : true,
 		},
 		"10" :  {
 			"Level" : 0,
-		},
-		"11" :  {
-			"Level" : 0,
-		},
-		"12" :  {
-			"Level" : 0,
-		},
-		"13" :  {
-			"Level" : 0,
-		},
-		"14" :  {
-			"Level" : 0,
-		},
-		"15" :  {
-			"Level" : 0,
-		},
-		"16" :  {
-			"Level" : 0,
-		},
-		"17" :  {
-			"Level" : 0,
-		},
-		"18" :  {
-			"Level" : 0,
+			"MagicLocked" : true,
 		},
 	},
 	"Chestnut" : {
@@ -531,36 +426,15 @@ var Upgrades = {
 		},
 		"8" :  {
 			"Level" : 0,
+			"MagicLocked" : true,
 		},
 		"9" :  {
 			"Level" : 0,
+			"MagicLocked" : true,
 		},
 		"10" :  {
 			"Level" : 0,
-		},
-		"11" :  {
-			"Level" : 0,
-		},
-		"12" :  {
-			"Level" : 0,
-		},
-		"13" :  {
-			"Level" : 0,
-		},
-		"14" :  {
-			"Level" : 0,
-		},
-		"15" :  {
-			"Level" : 0,
-		},
-		"16" :  {
-			"Level" : 0,
-		},
-		"17" :  {
-			"Level" : 0,
-		},
-		"18" :  {
-			"Level" : 0,
+			"MagicLocked" : true,
 		},
 	},
 	"Cherry" : {
@@ -587,36 +461,15 @@ var Upgrades = {
 		},
 		"8" :  {
 			"Level" : 0,
+			"MagicLocked" : true,
 		},
 		"9" :  {
 			"Level" : 0,
+			"MagicLocked" : true,
 		},
 		"10" :  {
 			"Level" : 0,
-		},
-		"11" :  {
-			"Level" : 0,
-		},
-		"12" :  {
-			"Level" : 0,
-		},
-		"13" :  {
-			"Level" : 0,
-		},
-		"14" :  {
-			"Level" : 0,
-		},
-		"15" :  {
-			"Level" : 0,
-		},
-		"16" :  {
-			"Level" : 0,
-		},
-		"17" :  {
-			"Level" : 0,
-		},
-		"18" :  {
-			"Level" : 0,
+			"MagicLocked" : true,
 		},
 	},
 	"Ash" : {
@@ -643,36 +496,15 @@ var Upgrades = {
 		},
 		"8" :  {
 			"Level" : 0,
+			"MagicLocked" : true,
 		},
 		"9" :  {
 			"Level" : 0,
+			"MagicLocked" : true,
 		},
 		"10" :  {
 			"Level" : 0,
-		},
-		"11" :  {
-			"Level" : 0,
-		},
-		"12" :  {
-			"Level" : 0,
-		},
-		"13" :  {
-			"Level" : 0,
-		},
-		"14" :  {
-			"Level" : 0,
-		},
-		"15" :  {
-			"Level" : 0,
-		},
-		"16" :  {
-			"Level" : 0,
-		},
-		"17" :  {
-			"Level" : 0,
-		},
-		"18" :  {
-			"Level" : 0,
+			"MagicLocked" : true,
 		},
 	},
 	"Cedar" : {
@@ -699,36 +531,15 @@ var Upgrades = {
 		},
 		"8" :  {
 			"Level" : 0,
+			"MagicLocked" : true,
 		},
 		"9" :  {
 			"Level" : 0,
+			"MagicLocked" : true,
 		},
 		"10" :  {
 			"Level" : 0,
-		},
-		"11" :  {
-			"Level" : 0,
-		},
-		"12" :  {
-			"Level" : 0,
-		},
-		"13" :  {
-			"Level" : 0,
-		},
-		"14" :  {
-			"Level" : 0,
-		},
-		"15" :  {
-			"Level" : 0,
-		},
-		"16" :  {
-			"Level" : 0,
-		},
-		"17" :  {
-			"Level" : 0,
-		},
-		"18" :  {
-			"Level" : 0,
+			"MagicLocked" : true,
 		},
 	},
 	"Mahogany" : {
@@ -755,36 +566,15 @@ var Upgrades = {
 		},
 		"8" :  {
 			"Level" : 0,
+			"MagicLocked" : true,
 		},
 		"9" :  {
 			"Level" : 0,
+			"MagicLocked" : true,
 		},
 		"10" :  {
 			"Level" : 0,
-		},
-		"11" :  {
-			"Level" : 0,
-		},
-		"12" :  {
-			"Level" : 0,
-		},
-		"13" :  {
-			"Level" : 0,
-		},
-		"14" :  {
-			"Level" : 0,
-		},
-		"15" :  {
-			"Level" : 0,
-		},
-		"16" :  {
-			"Level" : 0,
-		},
-		"17" :  {
-			"Level" : 0,
-		},
-		"18" :  {
-			"Level" : 0,
+			"MagicLocked" : true,
 		},
 	},
 	"Ebony" : {
@@ -811,36 +601,15 @@ var Upgrades = {
 		},
 		"8" :  {
 			"Level" : 0,
+			"MagicLocked" : true,
 		},
 		"9" :  {
 			"Level" : 0,
+			"MagicLocked" : true,
 		},
 		"10" :  {
 			"Level" : 0,
-		},
-		"11" :  {
-			"Level" : 0,
-		},
-		"12" :  {
-			"Level" : 0,
-		},
-		"13" :  {
-			"Level" : 0,
-		},
-		"14" :  {
-			"Level" : 0,
-		},
-		"15" :  {
-			"Level" : 0,
-		},
-		"16" :  {
-			"Level" : 0,
-		},
-		"17" :  {
-			"Level" : 0,
-		},
-		"18" :  {
-			"Level" : 0,
+			"MagicLocked" : true,
 		},
 	},
 	"Dogwood" : {
@@ -867,36 +636,15 @@ var Upgrades = {
 		},
 		"8" :  {
 			"Level" : 0,
+			"MagicLocked" : true,
 		},
 		"9" :  {
 			"Level" : 0,
+			"MagicLocked" : true,
 		},
 		"10" :  {
 			"Level" : 0,
-		},
-		"11" :  {
-			"Level" : 0,
-		},
-		"12" :  {
-			"Level" : 0,
-		},
-		"13" :  {
-			"Level" : 0,
-		},
-		"14" :  {
-			"Level" : 0,
-		},
-		"15" :  {
-			"Level" : 0,
-		},
-		"16" :  {
-			"Level" : 0,
-		},
-		"17" :  {
-			"Level" : 0,
-		},
-		"18" :  {
-			"Level" : 0,
+			"MagicLocked" : true,
 		},
 	},
 	"Rosewood" : {
@@ -923,36 +671,15 @@ var Upgrades = {
 		},
 		"8" :  {
 			"Level" : 0,
+			"MagicLocked" : true,
 		},
 		"9" :  {
 			"Level" : 0,
+			"MagicLocked" : true,
 		},
 		"10" :  {
 			"Level" : 0,
-		},
-		"11" :  {
-			"Level" : 0,
-		},
-		"12" :  {
-			"Level" : 0,
-		},
-		"13" :  {
-			"Level" : 0,
-		},
-		"14" :  {
-			"Level" : 0,
-		},
-		"15" :  {
-			"Level" : 0,
-		},
-		"16" :  {
-			"Level" : 0,
-		},
-		"17" :  {
-			"Level" : 0,
-		},
-		"18" :  {
-			"Level" : 0,
+			"MagicLocked" : true,
 		},
 	},
 	"Ghost Gum" : {
@@ -979,36 +706,15 @@ var Upgrades = {
 		},
 		"8" :  {
 			"Level" : 0,
+			"MagicLocked" : true,
 		},
 		"9" :  {
 			"Level" : 0,
+			"MagicLocked" : true,
 		},
 		"10" :  {
 			"Level" : 0,
-		},
-		"11" :  {
-			"Level" : 0,
-		},
-		"12" :  {
-			"Level" : 0,
-		},
-		"13" :  {
-			"Level" : 0,
-		},
-		"14" :  {
-			"Level" : 0,
-		},
-		"15" :  {
-			"Level" : 0,
-		},
-		"16" :  {
-			"Level" : 0,
-		},
-		"17" :  {
-			"Level" : 0,
-		},
-		"18" :  {
-			"Level" : 0,
+			"MagicLocked" : true,
 		},
 	},
 	"Dragonwood" : {
@@ -1035,36 +741,15 @@ var Upgrades = {
 		},
 		"8" :  {
 			"Level" : 0,
+			"MagicLocked" : true,
 		},
 		"9" :  {
 			"Level" : 0,
+			"MagicLocked" : true,
 		},
 		"10" :  {
 			"Level" : 0,
-		},
-		"11" :  {
-			"Level" : 0,
-		},
-		"12" :  {
-			"Level" : 0,
-		},
-		"13" :  {
-			"Level" : 0,
-		},
-		"14" :  {
-			"Level" : 0,
-		},
-		"15" :  {
-			"Level" : 0,
-		},
-		"16" :  {
-			"Level" : 0,
-		},
-		"17" :  {
-			"Level" : 0,
-		},
-		"18" :  {
-			"Level" : 0,
+			"MagicLocked" : true,
 		},
 	},
 	"Gold" : {
@@ -1096,30 +781,6 @@ var Upgrades = {
 			"Level" : 0,
 		},
 		"10" :  {
-			"Level" : 0,
-		},
-		"11" :  {
-			"Level" : 0,
-		},
-		"12" :  {
-			"Level" : 0,
-		},
-		"13" :  {
-			"Level" : 0,
-		},
-		"14" :  {
-			"Level" : 0,
-		},
-		"15" :  {
-			"Level" : 0,
-		},
-		"16" :  {
-			"Level" : 0,
-		},
-		"17" :  {
-			"Level" : 0,
-		},
-		"18" :  {
 			"Level" : 0,
 		},
 	},
@@ -1570,14 +1231,13 @@ var GeneralInfo = {
 	"LastTimeSaved" : true,
 	"MasterVolume" : false,
 	"MusicVolume" : false,
-	"AchievementCount" : countAchivements(),
-	"NumberNotation" : NumberFormatting.NotationTypesEnum.Default
+	"NumberNotation" : NumberFormatting.NotationTypesEnum.Default,
 }
 
 var SavesInfo = {
 }
 
-func countAchivements():
+func countAchievements():
 	var achievementCount = 0
 	
 	for achievementId in UnlockedAchievements:

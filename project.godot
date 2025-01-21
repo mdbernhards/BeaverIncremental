@@ -58,6 +58,7 @@ MagicSection=""
 ConstructionResource=""
 ConstructionItem=""
 TextLogSection=""
+AchievementScreen=""
 
 [gui]
 

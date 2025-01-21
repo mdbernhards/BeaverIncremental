@@ -1,9 +1,7 @@
 To do all things I can think of:
 First:
-Add unlocked achievement count, bonus from it and balance some achievements
-Make Magic count bonus logaritmic
+balance some of the first achievements
 Check that all ResourceValues in Values get used
-For Last 3 upgrades for each wood add a lock that can be unlocked with magic, it gives global upgrade
 
 Later:
 Fish swim, spawn, despawn logic
@@ -16,17 +14,21 @@ Implement keep first 10 research
 implement auto research
 implement keep classic, rare, mythic wood upgrades
 implement magic gain without ascending
+implement rest of the achievement triggers
+indicate which resources missing for research (make that part of label red with BBCode)
 info screen with all values
 bait shop logic
 Add auto saves with changable intervals
 Fix/Change/Remove Gold Upgrade multip (for lower price upgrades, really broken)
 Buy max buttons logic for fishing (or myb ctrl click to max buy or a toggle like in other games i think?)
 balancing all of the game
+Add Upgrade LvL cap
 Bait logic
 Add fishing spot logic, different fish in different spots
 Settings screen
 Change achievements to be icons from icon packs
 Add to Scrolling log fishing, dams built and others
+Removing from research queue is bugged
 
 A lot Later:
 Music, music player
@@ -82,3 +84,7 @@ Add achievement tooltips DONE
 Check that all tempValues in CalculateValues get used DONE
 Scrolling log with unlocked Achievements, Research and Magic Upgrades DONE
 Tooltips in scrolling log DONE
+Reset Text Log and Achievements on load DONE
+Make Magic count bonus logarithmic DONE
+Add unlocked achievement count and bonus, labels for them DONE 
+For Last 3 upgrades for each wood add Magic Lock DONE

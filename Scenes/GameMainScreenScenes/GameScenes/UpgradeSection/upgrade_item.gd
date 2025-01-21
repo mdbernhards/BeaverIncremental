@@ -19,6 +19,9 @@ var LevelLabel
 var CantAffordColorRect
 var NrLabel
 var BuyMaxButton
+var UpgradeVBox
+var MagicLockVBox
+var MagicLockButton
 
 func _ready():
 	CurrentPrice = 100
@@ -36,6 +39,13 @@ func updateAffordabilityIndicator():
 		else:
 			CantAffordColorRect.visible = true
 			return false
+	elif checkIfMagicLocked():
+		if checkIfCanAffordMagic():
+			CantAffordColorRect.visible = false
+		else:
+			CantAffordColorRect.visible = true
+		
+		return false
 	else:
 		if CurrentPrice <= SaveData.Resources[ResourceType]["Count"]:
 			CantAffordColorRect.visible = false
@@ -43,6 +53,15 @@ func updateAffordabilityIndicator():
 		else:
 			CantAffordColorRect.visible = true
 			return false
+
+func checkIfMagicLocked():
+	return SaveDataValues.has("MagicLocked") and SaveDataValues["MagicLocked"]
+
+func checkIfCanAffordMagic():
+	if checkIfMagicLocked():
+		return SaveData.Magic["Count"] >= Upgrades.Upgrades[ResourceType][str(UpgradeNumber)]["MagicCost"]
+	else:
+		return true
 
 func changeUpgrade(woodType, upgradeNr = UpgradeNumber):
 	UpgradeNumber = upgradeNr
@@ -53,14 +72,11 @@ func changeUpgrade(woodType, upgradeNr = UpgradeNumber):
 	var upgrade = Upgrades.Upgrades[ResourceType][str(UpgradeNumber)]
 	SaveDataValues = SaveData.Upgrades[ResourceType][str(UpgradeNumber)]
 
-	if !upgrade or !SaveDataValues:
-		NameLabel.text = "????"
-		PriceLabel.text = "???"
-		LevelLabel.text = "?"
-		return
-	
 	NameLabel.text = upgrade.Name
 	SecondaryName = null
+	
+	if upgrade.has("MagicCost"):
+		MagicLockButton.text = str(upgrade.MagicCost) + " Magic"
 	
 	if upgrade.has("SecondaryName"):
 		SecondaryName = upgrade.SecondaryName
@@ -83,12 +99,15 @@ func updateUpgradeValues():
 		NameLabel.text = SecondaryName
 
 func setNodePaths():
-	NameLabel = $Color/VBox/MC/NameLabel
-	PriceLabel = $Color/VBox/MC2/PriceLabel
-	LevelLabel = $Color/VBox/MC3/HBox/MC3/LevelLabel
+	NameLabel = $Color/UpgradeVBox/MC/NameLabel
+	PriceLabel = $Color/UpgradeVBox/MC2/PriceLabel
+	LevelLabel = $Color/UpgradeVBox/MC3/HBox/MC3/LevelLabel
+	NrLabel = $Color/UpgradeVBox/MC/NrLabel
+	BuyMaxButton = $Color/UpgradeVBox/MC3/HBox/MC2/BuyMaxButton
+	UpgradeVBox = $Color/UpgradeVBox
+	MagicLockVBox = $Color/MagicLockVBox
+	MagicLockButton = $Color/MagicLockVBox/MagicLockButton
 	CantAffordColorRect = $CantAffordColorRect
-	NrLabel = $Color/VBox/MC/NrLabel
-	BuyMaxButton = $Color/VBox/MC3/HBox/MC2/BuyMaxButton
 
 func _on_buy_button_button_down():
 	var upgradeBought = false
@@ -130,7 +149,20 @@ func _on_upgrade_item_timer_timeout() -> void:
 		if CurrentPrice * 0.4 < SaveData.Resources[ResourceType]["Count"]:
 			Unlocks.Unlocks[ResourceType][str(UpgradeNumber)] = true
 	
+	if checkIfMagicLocked():
+		UpgradeVBox.visible = false
+		MagicLockVBox.visible = true
+	else:
+		UpgradeVBox.visible = true
+		MagicLockVBox.visible = false
+	
 	if Unlocks.Unlocks[ResourceType]["ButtonBuyMax"] or Values.DebugMode:
 		BuyMaxButton.visible = true
 	else:
 		BuyMaxButton.visible = false
+
+func _on_magic_lock_button_button_down() -> void:
+	if checkIfCanAffordMagic():
+		SaveData.Magic["Count"] -= Upgrades.Upgrades[ResourceType][str(UpgradeNumber)]["MagicCost"]
+		SaveDataValues["MagicLocked"] = false
+		_on_upgrade_item_timer_timeout()

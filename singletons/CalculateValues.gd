@@ -20,16 +20,25 @@ func calculateAllValues():
 	ApplyResearch()
 	ApplyMagicUpgrades()
 	#ApplyDamUpgrades()
-	#ApplyAchievementUpgrades()
 	
 	CalculateRealValues()
 	CalculateRealAfterValues()
 
 func CalculateRealValues():
-	var magicCount = SaveData.Magic["Count"]
-	var magicMultip = magicCount / 100.0 + 1
+	var magicMultip = log(SaveData.Magic["Count"] + 1) / log(35) + 1
+	
+	var magicWpcMultip = magicMultip
+	var magicWpsMultip = magicMultip
+	var magicStorageMultip = magicMultip
+	
+	var achievementMultip = SaveData.countAchievements() / 100.0 + 1
+	
+	var achievementWpcMultip = achievementMultip
+	var achievementWpsMultip = achievementMultip
+	var achievementStorageMultip = achievementMultip
 	
 	var lastWoodType
+	
 	for woodType in WoodTypes:
 		var extraWoodcamps = TempValues[woodType]["ExtraWoodcamps"] + TempValues["Global"]["ExtraWoodcamps"]
 		var woodcamps = SaveData.Resources[woodType]["Woodcamps"] + extraWoodcamps
@@ -41,9 +50,9 @@ func CalculateRealValues():
 		if lastWoodType and TempValues["Global"]["LowerStorageMultip"] > 1:
 			storageFromLowerTier = (ResourceValues["Global"]["LowerStorageMultip"] - 1) * ResourceValues[lastWoodType]["Storage"]
 		
-		ResourceValues[woodType]["PerClick"] = beavers * TempValues[woodType]["BeaverUpgrades"] * TempValues[woodType]["BeaverMultip"] * TempValues["Global"]["BeaverMultip"] * magicMultip
-		ResourceValues[woodType]["PerSecondIncrease"] = woodcamps * TempValues[woodType]["WpsPerWc"] * TempValues[woodType]["WpsMultip"] * TempValues["Global"]["WpsMultip"] * TempValues[woodType]["WcEffectMultip"] * SaveData.Resources[woodType]["Production"] * magicMultip / 100
-		ResourceValues[woodType]["Storage"] = (TempValues[woodType]["BaseStorage"] + beavers * (TempValues["Global"]["BeaverBaseStorage"] + TempValues[woodType]["BeaverBaseStorage"]) + woodcamps * (TempValues[woodType]["WcBaseStorage"] + TempValues["Global"]["WcBaseStorage"]) * TempValues[woodType]["WcStorageMultip"] * TempValues["Global"]["WcStorageMultip"] * TempValues[woodType]["WcEffectMultip"]) * TempValues[woodType]["StorageMultip"] * TempValues["Global"]["StorageMultip"] * magicMultip + storageFromLowerTier
+		ResourceValues[woodType]["PerClick"] = beavers * TempValues[woodType]["BeaverUpgrades"] * TempValues[woodType]["BeaverMultip"] * TempValues["Global"]["BeaverMultip"] * magicWpcMultip * achievementWpcMultip
+		ResourceValues[woodType]["PerSecondIncrease"] = woodcamps * TempValues[woodType]["WpsPerWc"] * TempValues[woodType]["WpsMultip"] * TempValues["Global"]["WpsMultip"] * TempValues[woodType]["WcEffectMultip"] * SaveData.Resources[woodType]["Production"] * magicWpsMultip * achievementWpsMultip / 100
+		ResourceValues[woodType]["Storage"] = (TempValues[woodType]["BaseStorage"] + beavers * (TempValues["Global"]["BeaverBaseStorage"] + TempValues[woodType]["BeaverBaseStorage"]) + woodcamps * (TempValues[woodType]["WcBaseStorage"] + TempValues["Global"]["WcBaseStorage"]) * TempValues[woodType]["WcStorageMultip"] * TempValues["Global"]["WcStorageMultip"] * TempValues[woodType]["WcEffectMultip"]) * TempValues[woodType]["StorageMultip"] * TempValues["Global"]["StorageMultip"] * magicStorageMultip * achievementStorageMultip + storageFromLowerTier
 		ResourceValues[woodType]["SoldFor"] = TempValues[woodType]["BaseWoodPrice"] * TempValues[woodType]["WoodPriceMultip"] * TempValues["Global"]["WoodPriceMultip"]
 		ResourceValues[woodType]["UpgradePriceMultip"] = TempValues["Global"]["UpgradePriceMultip"] * TempValues[woodType]["UpgradePriceMultip"]
 		ResourceValues[woodType]["WcPriceMultip"] = TempValues["Global"]["WcPriceMultip"] * TempValues[woodType]["WcPriceMultip"]
@@ -79,7 +88,14 @@ func CalculateRealValues():
 	ResourceValues["Magic"]["EffectMultip"] = TempValues["Magic"]["EffectMultip"]
 	ResourceValues["Magic"]["PriceMultip"] = TempValues["Magic"]["PriceMultip"]
 	ResourceValues["Magic"]["PerSecondMultip"] = TempValues["Magic"]["PerSecondMultip"]
-	ResourceValues["Magic"]["MagicMultip"] = magicMultip
+	ResourceValues["Magic"]["WpcMultip"] = magicWpcMultip
+	ResourceValues["Magic"]["WpsMultip"] = magicWpsMultip
+	ResourceValues["Magic"]["StorageMultip"] = magicStorageMultip
+	
+	# Achievement
+	ResourceValues["Achievements"]["WpcMultip"] = achievementWpcMultip
+	ResourceValues["Achievements"]["WpsMultip"] = achievementWpsMultip
+	ResourceValues["Achievements"]["StorageMultip"] = achievementStorageMultip
 	
 	# Dam
 	ResourceValues["Dam"]["EffectMultip"] = TempValues["Dam"]["EffectMultip"]
@@ -137,7 +153,7 @@ func ApplyMagicUpgrades():
 			SetMagicValue(magicNr)
 
 func SetMagicValue(magicNr):
-	var achievementCount = SaveData.GeneralInfo["AchievementCount"]
+	var achievementCount = SaveData.countAchievements()
 	var dams = SaveData.DamData[Dams.DamEnum.SmallDam]["Count"] + SaveData.DamData[Dams.DamEnum.MediumDam]["Count"] + SaveData.DamData[Dams.DamEnum.BigDam]["Count"] + SaveData.DamData[Dams.DamEnum.GiantDam]["Count"] + SaveData.DamData[Dams.DamEnum.MegaDam]["Count"]
 	
 	match magicNr:
@@ -491,7 +507,7 @@ func SetUpgradeValue(woodType, upgradeId):
 	var upgradeLevel = SaveData.Upgrades[woodType][upgradeId]["Level"]
 	var woodcamps = SaveData.Resources[woodType]["Woodcamps"] + TempValues[woodType]["ExtraWoodcamps"] + TempValues["Global"]["ExtraWoodcamps"]
 	var beavers = SaveData.Resources[woodType]["Beavers"] + TempValues[woodType]["ExtraBeavers"] + TempValues["Global"]["ExtraBeavers"]
-	var achievementCount = SaveData.GeneralInfo["AchievementCount"]
+	var achievementCount = SaveData.countAchievements()
 	var dams = SaveData.DamData[Dams.DamEnum.SmallDam]["Count"] + SaveData.DamData[Dams.DamEnum.MediumDam]["Count"] + SaveData.DamData[Dams.DamEnum.BigDam]["Count"] + SaveData.DamData[Dams.DamEnum.GiantDam]["Count"] + SaveData.DamData[Dams.DamEnum.MegaDam]["Count"]
 	
 	if upgradeLevel == 0:

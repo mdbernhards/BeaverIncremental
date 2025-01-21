@@ -8,7 +8,7 @@ var Research = {
 		"OakCost" : 500, "AppleCost" : 750, "MapleCost" : 0, "BirchCost" : 0, "SpruceCost" : 0,
 		"ChestnutCost" : 0, "CherryCost" : 0, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 0,
 		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 0,
-		"Unlocked" : true,
+		"Unlocked" : func(): return true,
 	},
 	"6b" :  {
 		"Name" : "1.5x Oak and Apple wpc",
@@ -17,7 +17,7 @@ var Research = {
 		"OakCost" : 1500, "AppleCost" : 1500, "MapleCost" : 0, "BirchCost" : 0, "SpruceCost" : 0,
 		"ChestnutCost" : 0, "CherryCost" : 0, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 0,
 		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 0,
-		"Unlocked" : true,
+		"Unlocked" : func(): return true,
 	},
 	"9" :  {
 		"Name" : "Unlock Markets",
@@ -26,7 +26,7 @@ var Research = {
 		"OakCost" : 2000, "AppleCost" : 0, "MapleCost" : 0, "BirchCost" : 0, "SpruceCost" : 0,
 		"ChestnutCost" : 0, "CherryCost" : 0, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 0,
 		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 0,
-		"Unlocked" : true,
+		"Unlocked" : func(): return true,
 	},
 	"1" : {
 		"Name" : "Unlock Woodcamps",
@@ -35,7 +35,7 @@ var Research = {
 		"OakCost" : 2450, "AppleCost" : 2450, "MapleCost" : 0, "BirchCost" : 0, "SpruceCost" : 0,
 		"ChestnutCost" : 0, "CherryCost" : 0, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 0,
 		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 0,
-		"Unlocked" : true,
+		"Unlocked" : func(): return true,
 	},
 	"5" :  {
 		"Name" : "Oak and Apple upgrades -25%",
@@ -44,70 +44,70 @@ var Research = {
 		"OakCost" : 3000, "AppleCost" : 2500, "MapleCost" : 0, "BirchCost" : 0, "SpruceCost" : 0,
 		"ChestnutCost" : 0, "CherryCost" : 0, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 0,
 		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 0,
-		"Unlocked" : true,
+		"Unlocked" : func(): return true,
 	},
 	"2" :  {
-		"Name" : "1.2x Oak WPS and WPC and 2x Storage",
+		"Name" : "1.2x Oak WPS, WPC and 2x Storage",
 		"Description" : "Multiplies Oaks Wood per second and Wood per click by 1.2 and storage by 2",
 		"Time" : 140, # Seconds
 		"OakCost" : 5000, "AppleCost" : 5000, "MapleCost" : 0, "BirchCost" : 0, "SpruceCost" : 0,
 		"ChestnutCost" : 0, "CherryCost" : 0, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 0,
 		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 0,
-		"Unlocked" : Unlocks && Unlocks.Unlocks["Woodcamps"]["Unlocked"],
+		"Unlocked" : func(): return Unlocks && Unlocks.Unlocks["Woodcamps"]["Unlocked"],
 	},
 	"2b" :  {
 		"Name" : "1.5x Apple WPS",
 		"Description" : "Increases Apple Wood Per Second by 1.5",
 		"Time" : 170, # Seconds
-		"OakCost" : 12500, "AppleCost" : 7300, "MapleCost" : 0, "BirchCost" : 0, "SpruceCost" : 0,
+		"OakCost" : 12500, "AppleCost" : 7250, "MapleCost" : 0, "BirchCost" : 0, "SpruceCost" : 0,
 		"ChestnutCost" : 0, "CherryCost" : 0, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 0,
 		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 0,
-		"Unlocked" : Unlocks && Unlocks.Unlocks["Woodcamps"]["Unlocked"],
+		"Unlocked" : func(): return Unlocks && Unlocks.Unlocks["Woodcamps"]["Unlocked"],
 	},
 	"4" :  {
 		"Name" : "Unlock Maple Wood",
 		"Description" : "Unlock Maple Wood",
 		"Time" : 200, # Seconds
-		"OakCost" : 14500, "AppleCost" : 10500, "MapleCost" : 0, "BirchCost" : 0, "SpruceCost" : 0,
+		"OakCost" : 14500, "AppleCost" : 9750, "MapleCost" : 0, "BirchCost" : 0, "SpruceCost" : 0,
 		"ChestnutCost" : 0, "CherryCost" : 0, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 0,
 		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 0,
-		"Unlocked" : true,
+		"Unlocked" : func(): return true,
 	},
 	"6" :  {
 		"Name" : "25% more WPS",
 		"Description" : "Increases per second gain for all wood types by 25%",
 		"Time" : 230, # Seconds
-		"OakCost" : 20000, "AppleCost" : 14000, "MapleCost" : 1000, "BirchCost" : 0, "SpruceCost" : 0,
+		"OakCost" : 20000, "AppleCost" : 11500, "MapleCost" : 1000, "BirchCost" : 0, "SpruceCost" : 0,
 		"ChestnutCost" : 0, "CherryCost" : 0, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 0,
 		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 0,
-		"Unlocked" : Unlocks && Unlocks.Unlocks["Woodcamps"]["Unlocked"],
+		"Unlocked" : func(): return Unlocks && Unlocks.Unlocks["Woodcamps"]["Unlocked"],
 	},
 	"6c" :  {
 		"Name" : "45% Storage",
 		"Description" : "Multiplies all wood type storage by 1.45",
 		"Time" : 270, # Seconds
-		"OakCost" : 24000, "AppleCost" : 20000, "MapleCost" : 2000, "BirchCost" : 0, "SpruceCost" : 0,
+		"OakCost" : 24000, "AppleCost" : 12000, "MapleCost" : 2500, "BirchCost" : 0, "SpruceCost" : 0,
 		"ChestnutCost" : 0, "CherryCost" : 0, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 0,
 		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 0,
-		"Unlocked" : true,
+		"Unlocked" : func(): return true,
 	},
 	"8" :  {
 		"Name" : "woodcamps 30% cheaper",
 		"Description" : "Lowers all wood type woodcamp cost by 30%",
 		"Time" : 290, # Seconds
-		"OakCost" : 40000, "AppleCost" : 33000, "MapleCost" : 5000, "BirchCost" : 0, "SpruceCost" : 0,
+		"OakCost" : 40000, "AppleCost" : 23000, "MapleCost" : 5000, "BirchCost" : 0, "SpruceCost" : 0,
 		"ChestnutCost" : 0, "CherryCost" : 0, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 0,
 		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 0,
-		"Unlocked" : Unlocks && Unlocks.Unlocks["Woodcamps"]["Unlocked"],
+		"Unlocked" : func(): return Unlocks && Unlocks.Unlocks["Woodcamps"]["Unlocked"],
 	},
 	"7" :  {
 		"Name" : "Maple WPS 1.75x",
 		"Description" : "1.75x Maple wood gain per second",
 		"Time" : 320, # Seconds
-		"OakCost" : 37500, "AppleCost" : 35000, "MapleCost" : 0, "BirchCost" : 0, "SpruceCost" : 0,
+		"OakCost" : 37500, "AppleCost" : 25000, "MapleCost" : 0, "BirchCost" : 0, "SpruceCost" : 0,
 		"ChestnutCost" : 0, "CherryCost" : 0, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 0,
 		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 0,
-		"Unlocked" : Unlocks && Unlocks.Unlocks["Woodcamps"]["Unlocked"],
+		"Unlocked" : func(): return Unlocks && Unlocks.Unlocks["Woodcamps"]["Unlocked"],
 	},
 	"10" :  {
 		"Name" : "Woodcamps use 5% less wood",
@@ -116,7 +116,7 @@ var Research = {
 		"OakCost" : 0, "AppleCost" : 0, "MapleCost" : 6850, "BirchCost" : 0, "SpruceCost" : 0,
 		"ChestnutCost" : 0, "CherryCost" : 0, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 0,
 		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 0,
-		"Unlocked" : Unlocks && Unlocks.Unlocks["Woodcamps"]["Unlocked"],
+		"Unlocked" : func(): return Unlocks && Unlocks.Unlocks["Woodcamps"]["Unlocked"],
 	},
 	"11" :  {
 		"Name" : "wood sells for 25% more gold",
@@ -125,7 +125,7 @@ var Research = {
 		"OakCost" : 43500, "AppleCost" : 33500, "MapleCost" : 7200, "BirchCost" : 0, "SpruceCost" : 0,
 		"ChestnutCost" : 0, "CherryCost" : 0, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 0,
 		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 0,
-		"Unlocked" : Unlocks && Unlocks.Unlocks["Market"]["Unlocked"],
+		"Unlocked" : func(): return Unlocks && Unlocks.Unlocks["Market"]["Unlocked"],
 	},
 	"12" :  {
 		"Name" : "Woodcamp base storage +150",
@@ -134,7 +134,7 @@ var Research = {
 		"OakCost" : 51000, "AppleCost" : 0, "MapleCost" : 0, "BirchCost" : 0, "SpruceCost" : 0,
 		"ChestnutCost" : 0, "CherryCost" : 0, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 0,
 		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 0,
-		"Unlocked" : true,
+		"Unlocked" : func(): return true,
 	},
 	"12b" :  {
 		"Name" : "+5 Oak Woodcamps",
@@ -143,7 +143,7 @@ var Research = {
 		"OakCost" : 0, "AppleCost" : 46000, "MapleCost" : 7500, "BirchCost" : 0, "SpruceCost" : 0,
 		"ChestnutCost" : 0, "CherryCost" : 0, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 0,
 		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 0,
-		"Unlocked" : true,
+		"Unlocked" : func(): return true,
 	},
 	"13" :  {
 		"Name" : "Apple Storage 15%",
@@ -152,7 +152,7 @@ var Research = {
 		"OakCost" : 100000, "AppleCost" : 0, "MapleCost" : 12000, "BirchCost" : 0, "SpruceCost" : 0,
 		"ChestnutCost" : 0, "CherryCost" : 0, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 0,
 		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 0,
-		"Unlocked" : true,
+		"Unlocked" : func(): return true,
 	},
 	"13b" :  {
 		"Name" : "Beaver Base Storage +100",
@@ -161,7 +161,7 @@ var Research = {
 		"OakCost" : 125000, "AppleCost" : 75000, "MapleCost" : 7500, "BirchCost" : 0, "SpruceCost" : 0,
 		"ChestnutCost" : 0, "CherryCost" : 0, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 0,
 		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 0,
-		"Unlocked" : true,
+		"Unlocked" : func(): return true,
 	},
 	"14" :  {
 		"Name" : "Unlock Birch Wood",
@@ -170,7 +170,7 @@ var Research = {
 		"OakCost" : 200000, "AppleCost" : 125000, "MapleCost" : 15000, "BirchCost" : 0, "SpruceCost" : 0,
 		"ChestnutCost" : 0, "CherryCost" : 0, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 0,
 		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 0,
-		"Unlocked" : true,
+		"Unlocked" : func(): return true,
 	},
 	"14b" :  {
 		"Name" : "All wood types +2 beavers",
@@ -179,7 +179,7 @@ var Research = {
 		"OakCost" : 0, "AppleCost" : 0, "MapleCost" : 25500, "BirchCost" : 3500, "SpruceCost" : 0,
 		"ChestnutCost" : 0, "CherryCost" : 0, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 0,
 		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 0,
-		"Unlocked" : true,
+		"Unlocked" : func(): return true,
 	},
 	"14c" :  {
 		"Name" : "2x Maple Storage",
@@ -188,7 +188,7 @@ var Research = {
 		"OakCost" : 335000, "AppleCost" : 185000, "MapleCost" : 0, "BirchCost" : 8000, "SpruceCost" : 0,
 		"ChestnutCost" : 0, "CherryCost" : 0, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 0,
 		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 0,
-		"Unlocked" : true,
+		"Unlocked" : func(): return true,
 	},
 	"15" :  {
 		"Name" : "woodcamps give storage 3x",
@@ -197,7 +197,7 @@ var Research = {
 		"OakCost" : 0, "AppleCost" : 0, "MapleCost" : 0, "BirchCost" : 15000, "SpruceCost" : 0,
 		"ChestnutCost" : 0, "CherryCost" : 0, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 0,
 		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 0,
-		"Unlocked" : true,
+		"Unlocked" : func(): return true,
 	},
 	"16" :  {
 		"Name" : "Oak Woodcamps 60% Cheaper",
@@ -206,7 +206,7 @@ var Research = {
 		"OakCost" : 0, "AppleCost" : 275000, "MapleCost" : 55000, "BirchCost" : 35500, "SpruceCost" : 0,
 		"ChestnutCost" : 0, "CherryCost" : 0, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 0,
 		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 0,
-		"Unlocked" : true,
+		"Unlocked" : func(): return true,
 	},
 	"21" :  { # Move
 		"Name" : "Unlock Ascention",
@@ -215,7 +215,7 @@ var Research = {
 		"OakCost" : 500000, "AppleCost" : 300000, "MapleCost" : 100000, "BirchCost" : 20000, "SpruceCost" : 0,
 		"ChestnutCost" : 0, "CherryCost" : 0, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 0,
 		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 0,
-		"Unlocked" : true,
+		"Unlocked" : func(): return true,
 	},
 	"17" :  { # Move
 		"Name" : "Unlock Achievements",
@@ -224,7 +224,7 @@ var Research = {
 		"OakCost" : 11000, "AppleCost" : 6000, "MapleCost" : 1000, "BirchCost" : 0, "SpruceCost" : 0,
 		"ChestnutCost" : 0, "CherryCost" : 0, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 0,
 		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 0,
-		"Unlocked" : true,
+		"Unlocked" : func(): return true,
 	},
 	"18" :  { # Rethink
 		"Name" : "wps ^2",
@@ -233,7 +233,7 @@ var Research = {
 		"OakCost" : 11000, "AppleCost" : 6000, "MapleCost" : 1000, "BirchCost" : 0, "SpruceCost" : 0,
 		"ChestnutCost" : 0, "CherryCost" : 0, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 0,
 		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 0,
-		"Unlocked" : true,
+		"Unlocked" : func(): return true,
 	},
 	"19" :  {
 		"Name" : "birch upgrades 35% cheaper",
@@ -242,7 +242,7 @@ var Research = {
 		"OakCost" : 11000, "AppleCost" : 6000, "MapleCost" : 1000, "BirchCost" : 0, "SpruceCost" : 0,
 		"ChestnutCost" : 0, "CherryCost" : 0, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 0,
 		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 0,
-		"Unlocked" : true,
+		"Unlocked" : func(): return true,
 	},
 	"22" :  { # Rethink
 		"Name" : "level effects 30%",
@@ -251,7 +251,7 @@ var Research = {
 		"OakCost" : 7000, "AppleCost" : 3000, "MapleCost" : 0, "BirchCost" : 0, "SpruceCost" : 0,
 		"ChestnutCost" : 0, "CherryCost" : 0, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 0,
 		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 0,
-		"Unlocked" : true,
+		"Unlocked" : func(): return true,
 	},
 	"20" :  {
 		"Name" : "Each achievement gives 0.25% wps and wpc",
@@ -260,7 +260,7 @@ var Research = {
 		"OakCost" : 11000, "AppleCost" : 6000, "MapleCost" : 1000, "BirchCost" : 0, "SpruceCost" : 0,
 		"ChestnutCost" : 0, "CherryCost" : 0, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 0,
 		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 0,
-		"Unlocked" : true,
+		"Unlocked" : func(): return true,
 	},
 	"23" :  { # Move
 		"Name" : "Unlock Bots",
@@ -269,7 +269,7 @@ var Research = {
 		"OakCost" : 11000, "AppleCost" : 6000, "MapleCost" : 1000, "BirchCost" : 0, "SpruceCost" : 0,
 		"ChestnutCost" : 0, "CherryCost" : 0, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 0,
 		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 0,
-		"Unlocked" : true,
+		"Unlocked" : func(): return true,
 	},
 	"23b" :  {
 		"Name" : "+1 beaver from WC",
@@ -278,7 +278,7 @@ var Research = {
 		"OakCost" : 11000, "AppleCost" : 6000, "MapleCost" : 1000, "BirchCost" : 0, "SpruceCost" : 0,
 		"ChestnutCost" : 0, "CherryCost" : 0, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 0,
 		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 0,
-		"Unlocked" : true,
+		"Unlocked" : func(): return true,
 	},
 	"24" :  {
 		"Name" : "3x wps",
@@ -287,7 +287,7 @@ var Research = {
 		"OakCost" : 11000, "AppleCost" : 6000, "MapleCost" : 1000, "BirchCost" : 0, "SpruceCost" : 0,
 		"ChestnutCost" : 0, "CherryCost" : 0, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 0,
 		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 0,
-		"Unlocked" : true,
+		"Unlocked" : func(): return true,
 	},
 	"25" :  {
 		"Name" : "5x wpc",
@@ -296,7 +296,7 @@ var Research = {
 		"OakCost" : 11000, "AppleCost" : 6000, "MapleCost" : 1000, "BirchCost" : 0, "SpruceCost" : 0,
 		"ChestnutCost" : 0, "CherryCost" : 0, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 0,
 		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 0,
-		"Unlocked" : true,
+		"Unlocked" : func(): return true,
 	},
 	"26" :  {
 		"Name" : "Wood Levels become base click",
@@ -305,7 +305,7 @@ var Research = {
 		"OakCost" : 11000, "AppleCost" : 6000, "MapleCost" : 1000, "BirchCost" : 0, "SpruceCost" : 0,
 		"ChestnutCost" : 0, "CherryCost" : 0, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 0,
 		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 0,
-		"Unlocked" : true,
+		"Unlocked" : func(): return true,
 	},
 	"27" :  { # Rethink
 		"Name" : "Unlock Magic Upgrades",
@@ -314,7 +314,7 @@ var Research = {
 		"OakCost" : 11000, "AppleCost" : 6000, "MapleCost" : 1000, "BirchCost" : 0, "SpruceCost" : 0,
 		"ChestnutCost" : 0, "CherryCost" : 0, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 0,
 		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 0,
-		"Unlocked" : true,
+		"Unlocked" : func(): return true,
 	},
 	"28" :  {
 		"Name" : "Achievments improve gold production",
@@ -323,7 +323,7 @@ var Research = {
 		"OakCost" : 11000, "AppleCost" : 6000, "MapleCost" : 1000, "BirchCost" : 0, "SpruceCost" : 0,
 		"ChestnutCost" : 0, "CherryCost" : 0, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 0,
 		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 0,
-		"Unlocked" : true,
+		"Unlocked" : func(): return true,
 	},
 	"29" :  {
 		"Name" : "gold upgrades 13% cheaper",
@@ -332,7 +332,7 @@ var Research = {
 		"OakCost" : 11000, "AppleCost" : 6000, "MapleCost" : 1000, "BirchCost" : 0, "SpruceCost" : 0,
 		"ChestnutCost" : 0, "CherryCost" : 0, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 0,
 		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 0,
-		"Unlocked" : true,
+		"Unlocked" : func(): return true,
 	},
 	"30" :  {
 		"Name" : "Unlock Fishing",
@@ -341,7 +341,7 @@ var Research = {
 		"OakCost" : 11000, "AppleCost" : 6000, "MapleCost" : 1000, "BirchCost" : 0, "SpruceCost" : 0,
 		"ChestnutCost" : 0, "CherryCost" : 0, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 0,
 		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 0,
-		"Unlocked" : true,
+		"Unlocked" : func(): return true,
 	},
 	"31" :  {
 		"Name" : "Half reaserch times",
@@ -350,7 +350,7 @@ var Research = {
 		"OakCost" : 11000, "AppleCost" : 6000, "MapleCost" : 1000, "BirchCost" : 0, "SpruceCost" : 0,
 		"ChestnutCost" : 0, "CherryCost" : 0, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 0,
 		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 0,
-		"Unlocked" : true,
+		"Unlocked" : func(): return true,
 	},
 	"32" :  {
 		"Name" : "Gain 10x magic",
@@ -359,7 +359,7 @@ var Research = {
 		"OakCost" : 7000, "AppleCost" : 3000, "MapleCost" : 0, "BirchCost" : 0, "SpruceCost" : 0,
 		"ChestnutCost" : 0, "CherryCost" : 0, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 0,
 		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 0,
-		"Unlocked" : true,
+		"Unlocked" : func(): return true,
 	},
 	"33" :  {
 		"Name" : "Unlock Cherry",
@@ -368,7 +368,7 @@ var Research = {
 		"OakCost" : 11000, "AppleCost" : 6000, "MapleCost" : 1000, "BirchCost" : 0, "SpruceCost" : 0,
 		"ChestnutCost" : 0, "CherryCost" : 0, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 0,
 		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 0,
-		"Unlocked" : true,
+		"Unlocked" : func(): return true,
 	},
 	"34" :  {
 		"Name" : "get more fish",
@@ -377,7 +377,7 @@ var Research = {
 		"OakCost" : 11000, "AppleCost" : 6000, "MapleCost" : 1000, "BirchCost" : 0, "SpruceCost" : 0,
 		"ChestnutCost" : 0, "CherryCost" : 0, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 0,
 		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 0,
-		"Unlocked" : true,
+		"Unlocked" : func(): return true,
 	},
 	"35" :  {
 		"Name" : "Fiets of strength improve wood production",
@@ -386,7 +386,7 @@ var Research = {
 		"OakCost" : 11000, "AppleCost" : 6000, "MapleCost" : 1000, "BirchCost" : 0, "SpruceCost" : 0,
 		"ChestnutCost" : 0, "CherryCost" : 0, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 0,
 		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 0,
-		"Unlocked" : true,
+		"Unlocked" : func(): return true,
 	},
 	"36" :  {
 		"Name" : "Levels 10% cheaper",
@@ -395,7 +395,7 @@ var Research = {
 		"OakCost" : 11000, "AppleCost" : 6000, "MapleCost" : 1000, "BirchCost" : 0, "SpruceCost" : 0,
 		"ChestnutCost" : 0, "CherryCost" : 0, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 0,
 		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 0,
-		"Unlocked" : true,
+		"Unlocked" : func(): return true,
 	},
 	"37" :  {
 		"Name" : "Unlock better bait",
@@ -404,7 +404,7 @@ var Research = {
 		"OakCost" : 11000, "AppleCost" : 6000, "MapleCost" : 1000, "BirchCost" : 0, "SpruceCost" : 0,
 		"ChestnutCost" : 0, "CherryCost" : 0, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 0,
 		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 0,
-		"Unlocked" : true,
+		"Unlocked" : func(): return true,
 	},
 	"38" :  {
 		"Name" : "25% magic boost",
@@ -413,7 +413,7 @@ var Research = {
 		"OakCost" : 11000, "AppleCost" : 6000, "MapleCost" : 1000, "BirchCost" : 0, "SpruceCost" : 0,
 		"ChestnutCost" : 0, "CherryCost" : 0, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 0,
 		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 0,
-		"Unlocked" : true,
+		"Unlocked" : func(): return true,
 	},
 	"39" :  {
 		"Name" : "Unlock Dams",
@@ -422,7 +422,7 @@ var Research = {
 		"OakCost" : 11000, "AppleCost" : 6000, "MapleCost" : 1000, "BirchCost" : 0, "SpruceCost" : 0,
 		"ChestnutCost" : 0, "CherryCost" : 0, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 0,
 		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 0,
-		"Unlocked" : true,
+		"Unlocked" : func(): return true,
 	},
 	"40" :  {
 		"Name" : "Wood production increases magic production",
@@ -431,7 +431,7 @@ var Research = {
 		"OakCost" : 11000, "AppleCost" : 6000, "MapleCost" : 1000, "BirchCost" : 0, "SpruceCost" : 0,
 		"ChestnutCost" : 0, "CherryCost" : 0, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 0,
 		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 0,
-		"Unlocked" : true,
+		"Unlocked" : func(): return true,
 	},
 	"41" :  {
 		"Name" : "Wood per click 10x",
@@ -440,7 +440,7 @@ var Research = {
 		"OakCost" : 11000, "AppleCost" : 6000, "MapleCost" : 1000, "BirchCost" : 0, "SpruceCost" : 0,
 		"ChestnutCost" : 0, "CherryCost" : 0, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 0,
 		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 0,
-		"Unlocked" : true,
+		"Unlocked" : func(): return true,
 	},
 	"42" :  {
 		"Name" : "Gain 2x more magic",
@@ -449,7 +449,7 @@ var Research = {
 		"OakCost" : 7000, "AppleCost" : 3000, "MapleCost" : 0, "BirchCost" : 0, "SpruceCost" : 0,
 		"ChestnutCost" : 0, "CherryCost" : 0, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 0,
 		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 0,
-		"Unlocked" : true,
+		"Unlocked" : func(): return true,
 	},
 	"43" :  {
 		"Name" : "Improve bot gps",
@@ -458,7 +458,7 @@ var Research = {
 		"OakCost" : 11000, "AppleCost" : 6000, "MapleCost" : 1000, "BirchCost" : 0, "SpruceCost" : 0,
 		"ChestnutCost" : 0, "CherryCost" : 0, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 0,
 		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 0,
-		"Unlocked" : true,
+		"Unlocked" : func(): return true,
 	},
 	"44" :  {
 		"Name" : "Bait works 8% better",
@@ -467,7 +467,7 @@ var Research = {
 		"OakCost" : 11000, "AppleCost" : 6000, "MapleCost" : 1000, "BirchCost" : 0, "SpruceCost" : 0,
 		"ChestnutCost" : 0, "CherryCost" : 0, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 0,
 		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 0,
-		"Unlocked" : true,
+		"Unlocked" : func(): return true,
 	},
 	"45" :  {
 		"Name" : "Make small dam produce more",
@@ -476,7 +476,7 @@ var Research = {
 		"OakCost" : 11000, "AppleCost" : 6000, "MapleCost" : 1000, "BirchCost" : 0, "SpruceCost" : 0,
 		"ChestnutCost" : 0, "CherryCost" : 0, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 0,
 		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 0,
-		"Unlocked" : true,
+		"Unlocked" : func(): return true,
 	},
 	"46" :  {
 		"Name" : "First 10 fish of a type give effect not only 1",
@@ -485,7 +485,7 @@ var Research = {
 		"OakCost" : 11000, "AppleCost" : 6000, "MapleCost" : 1000, "BirchCost" : 0, "SpruceCost" : 0,
 		"ChestnutCost" : 0, "CherryCost" : 0, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 0,
 		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 0,
-		"Unlocked" : true,
+		"Unlocked" : func(): return true,
 	},
 	"47" :  {
 		"Name" : "all woodcamps 20% cheaper",
@@ -494,7 +494,7 @@ var Research = {
 		"OakCost" : 11000, "AppleCost" : 6000, "MapleCost" : 1000, "BirchCost" : 0, "SpruceCost" : 0,
 		"ChestnutCost" : 0, "CherryCost" : 0, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 0,
 		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 0,
-		"Unlocked" : true,
+		"Unlocked" : func(): return true,
 	},
 	"48" :  {
 		"Name" : "Gain 10% magic every 10 seconds",
@@ -503,7 +503,7 @@ var Research = {
 		"OakCost" : 11000, "AppleCost" : 6000, "MapleCost" : 1000, "BirchCost" : 0, "SpruceCost" : 0,
 		"ChestnutCost" : 0, "CherryCost" : 0, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 0,
 		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 0,
-		"Unlocked" : true,
+		"Unlocked" : func(): return true,
 	},
 	"49" :  {
 		"Name" : "Improve wood sell value 25%",
@@ -512,7 +512,7 @@ var Research = {
 		"OakCost" : 11000, "AppleCost" : 6000, "MapleCost" : 1000, "BirchCost" : 0, "SpruceCost" : 0,
 		"ChestnutCost" : 0, "CherryCost" : 0, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 0,
 		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 0,
-		"Unlocked" : true,
+		"Unlocked" : func(): return true,
 	},
 	"50" :  {
 		"Name" : "bait storage to 100",
@@ -521,7 +521,7 @@ var Research = {
 		"OakCost" : 11000, "AppleCost" : 6000, "MapleCost" : 1000, "BirchCost" : 0, "SpruceCost" : 0,
 		"ChestnutCost" : 0, "CherryCost" : 0, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 0,
 		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 0,
-		"Unlocked" : true,
+		"Unlocked" : func(): return true,
 	},
 	"51" :  {
 		"Name" : "Each dam increases wood capacity 20x",
@@ -530,7 +530,7 @@ var Research = {
 		"OakCost" : 11000, "AppleCost" : 6000, "MapleCost" : 1000, "BirchCost" : 0, "SpruceCost" : 0,
 		"ChestnutCost" : 0, "CherryCost" : 0, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 0,
 		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 0,
-		"Unlocked" : true,
+		"Unlocked" : func(): return true,
 	},
 	"52" :  {
 		"Name" : "Unlock more destinations",
@@ -539,7 +539,7 @@ var Research = {
 		"OakCost" : 7000, "AppleCost" : 3000, "MapleCost" : 0, "BirchCost" : 0, "SpruceCost" : 0,
 		"ChestnutCost" : 0, "CherryCost" : 0, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 0,
 		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 0,
-		"Unlocked" : true,
+		"Unlocked" : func(): return true,
 	},
 	"53" :  {
 		"Name" : "Unlock Mahogany",
@@ -548,7 +548,7 @@ var Research = {
 		"OakCost" : 11000, "AppleCost" : 6000, "MapleCost" : 1000, "BirchCost" : 0, "SpruceCost" : 0,
 		"ChestnutCost" : 0, "CherryCost" : 0, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 0,
 		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 0,
-		"Unlocked" : true,
+		"Unlocked" : func(): return true,
 	},
 	"54" :  {
 		"Name" : "Use 10 bait at a time",
@@ -557,7 +557,7 @@ var Research = {
 		"OakCost" : 11000, "AppleCost" : 6000, "MapleCost" : 1000, "BirchCost" : 0, "SpruceCost" : 0,
 		"ChestnutCost" : 0, "CherryCost" : 0, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 0,
 		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 0,
-		"Unlocked" : true,
+		"Unlocked" : func(): return true,
 	},
 	"55" :  {
 		"Name" : "Make bots 15% cheaper",
@@ -566,7 +566,7 @@ var Research = {
 		"OakCost" : 11000, "AppleCost" : 6000, "MapleCost" : 1000, "BirchCost" : 0, "SpruceCost" : 0,
 		"ChestnutCost" : 0, "CherryCost" : 0, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 0,
 		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 0,
-		"Unlocked" : true,
+		"Unlocked" : func(): return true,
 	},
 	"56" :  {
 		"Name" : "Make medium dam produce more",
@@ -575,7 +575,7 @@ var Research = {
 		"OakCost" : 11000, "AppleCost" : 6000, "MapleCost" : 1000, "BirchCost" : 0, "SpruceCost" : 0,
 		"ChestnutCost" : 0, "CherryCost" : 0, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 0,
 		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 0,
-		"Unlocked" : true,
+		"Unlocked" : func(): return true,
 	},
 	"57" :  {
 		"Name" : "bait storage to 1000",
@@ -584,7 +584,7 @@ var Research = {
 		"OakCost" : 11000, "AppleCost" : 6000, "MapleCost" : 1000, "BirchCost" : 0, "SpruceCost" : 0,
 		"ChestnutCost" : 0, "CherryCost" : 0, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 0,
 		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 0,
-		"Unlocked" : true,
+		"Unlocked" : func(): return true,
 	},
 	"58" :  {
 		"Name" : "Increase Bot capacity",
@@ -593,7 +593,7 @@ var Research = {
 		"OakCost" : 11000, "AppleCost" : 6000, "MapleCost" : 1000, "BirchCost" : 0, "SpruceCost" : 0,
 		"ChestnutCost" : 0, "CherryCost" : 0, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 0,
 		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 0,
-		"Unlocked" : true,
+		"Unlocked" : func(): return true,
 	},
 	"59" :  {
 		"Name" : "Magic ^2 gold production",
@@ -602,7 +602,7 @@ var Research = {
 		"OakCost" : 11000, "AppleCost" : 6000, "MapleCost" : 1000, "BirchCost" : 0, "SpruceCost" : 0,
 		"ChestnutCost" : 0, "CherryCost" : 0, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 0,
 		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 0,
-		"Unlocked" : true,
+		"Unlocked" : func(): return true,
 	},
 	"60" :  {
 		"Name" : "Increase dam power 5x",
@@ -611,7 +611,7 @@ var Research = {
 		"OakCost" : 11000, "AppleCost" : 6000, "MapleCost" : 1000, "BirchCost" : 0, "SpruceCost" : 0,
 		"ChestnutCost" : 0, "CherryCost" : 0, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 0,
 		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 0,
-		"Unlocked" : true,
+		"Unlocked" : func(): return true,
 	},
 	"61" :  {
 		"Name" : "Fishing is 20% easier",
@@ -620,7 +620,7 @@ var Research = {
 		"OakCost" : 11000, "AppleCost" : 6000, "MapleCost" : 1000, "BirchCost" : 0, "SpruceCost" : 0,
 		"ChestnutCost" : 0, "CherryCost" : 0, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 0,
 		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 0,
-		"Unlocked" : true,
+		"Unlocked" : func(): return true,
 	},
 	"62" :  {
 		"Name" : "Magic power increased by 1000%",
@@ -629,7 +629,7 @@ var Research = {
 		"OakCost" : 7000, "AppleCost" : 3000, "MapleCost" : 0, "BirchCost" : 0, "SpruceCost" : 0,
 		"ChestnutCost" : 0, "CherryCost" : 0, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 0,
 		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 0,
-		"Unlocked" : true,
+		"Unlocked" : func(): return true,
 	},
 	"63" :  {
 		"Name" : "Magic improves magic gathering",
@@ -638,7 +638,7 @@ var Research = {
 		"OakCost" : 11000, "AppleCost" : 6000, "MapleCost" : 1000, "BirchCost" : 0, "SpruceCost" : 0,
 		"ChestnutCost" : 0, "CherryCost" : 0, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 0,
 		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 0,
-		"Unlocked" : true,
+		"Unlocked" : func(): return true,
 	},
 	"64" :  {
 		"Name" : "Unlock Dogwood",
@@ -647,7 +647,7 @@ var Research = {
 		"OakCost" : 11000, "AppleCost" : 6000, "MapleCost" : 1000, "BirchCost" : 0, "SpruceCost" : 0,
 		"ChestnutCost" : 0, "CherryCost" : 0, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 0,
 		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 0,
-		"Unlocked" : true,
+		"Unlocked" : func(): return true,
 	},
 	"65" :  {
 		"Name" : "Magic upgrades 10% cheaper",
@@ -656,7 +656,7 @@ var Research = {
 		"OakCost" : 11000, "AppleCost" : 6000, "MapleCost" : 1000, "BirchCost" : 0, "SpruceCost" : 0,
 		"ChestnutCost" : 0, "CherryCost" : 0, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 0,
 		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 0,
-		"Unlocked" : true,
+		"Unlocked" : func(): return true,
 	},
 	"65b" :  {
 		"Name" : "Generate Magic without ascending",
@@ -665,7 +665,7 @@ var Research = {
 		"OakCost" : 11000, "AppleCost" : 6000, "MapleCost" : 1000, "BirchCost" : 0, "SpruceCost" : 0,
 		"ChestnutCost" : 0, "CherryCost" : 0, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 0,
 		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 0,
-		"Unlocked" : true,
+		"Unlocked" : func(): return true,
 	},
 	"66" :  {
 		"Name" : "bait storage to 100k",
@@ -674,7 +674,7 @@ var Research = {
 		"OakCost" : 11000, "AppleCost" : 6000, "MapleCost" : 1000, "BirchCost" : 0, "SpruceCost" : 0,
 		"ChestnutCost" : 0, "CherryCost" : 0, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 0,
 		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 0,
-		"Unlocked" : true,
+		"Unlocked" : func(): return true,
 	},
 	"67" :  {
 		"Name" : "15% more fish",
@@ -683,7 +683,7 @@ var Research = {
 		"OakCost" : 11000, "AppleCost" : 6000, "MapleCost" : 1000, "BirchCost" : 0, "SpruceCost" : 0,
 		"ChestnutCost" : 0, "CherryCost" : 0, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 0,
 		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 0,
-		"Unlocked" : true,
+		"Unlocked" : func(): return true,
 	},
 	"68" :  {
 		"Name" : "10% better bots",
@@ -692,7 +692,7 @@ var Research = {
 		"OakCost" : 11000, "AppleCost" : 6000, "MapleCost" : 1000, "BirchCost" : 0, "SpruceCost" : 0,
 		"ChestnutCost" : 0, "CherryCost" : 0, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 0,
 		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 0,
-		"Unlocked" : true,
+		"Unlocked" : func(): return true,
 	},
 	"69" :  {
 		"Name" : "30% cheaper bait",
@@ -701,7 +701,7 @@ var Research = {
 		"OakCost" : 11000, "AppleCost" : 6000, "MapleCost" : 1000, "BirchCost" : 0, "SpruceCost" : 0,
 		"ChestnutCost" : 0, "CherryCost" : 0, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 0,
 		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 0,
-		"Unlocked" : true,
+		"Unlocked" : func(): return true,
 	},
 	"70" :  {
 		"Name" : "Dam effect 4x",
@@ -710,7 +710,7 @@ var Research = {
 		"OakCost" : 11000, "AppleCost" : 6000, "MapleCost" : 1000, "BirchCost" : 0, "SpruceCost" : 0,
 		"ChestnutCost" : 0, "CherryCost" : 0, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 0,
 		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 0,
-		"Unlocked" : true,
+		"Unlocked" : func(): return true,
 	},
 	"71" :  {
 		"Name" : "Magic upg 20% cheaper",
@@ -719,6 +719,6 @@ var Research = {
 		"OakCost" : 11000, "AppleCost" : 6000, "MapleCost" : 1000, "BirchCost" : 0, "SpruceCost" : 0,
 		"ChestnutCost" : 0, "CherryCost" : 0, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 0,
 		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 0,
-		"Unlocked" : true,
+		"Unlocked" : func(): return true,
 	},
 }

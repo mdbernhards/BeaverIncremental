@@ -33,6 +33,9 @@ func WriteToLog(text):
 			await TextLog.get_v_scroll_bar().changed
 			TextLog.scroll_vertical = int(TextLog.get_v_scroll_bar().max_value)
 
+func clearLog():
+	TextLog.text = ""
+
 func _make_custom_tooltip(_for_text):
 	var name = "????"
 	var description = "????"

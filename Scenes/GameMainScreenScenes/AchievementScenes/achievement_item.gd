@@ -50,13 +50,10 @@ func _on_achievement_timer_timeout() -> void:
 		LockedRect.visible = true
 		UnlockedRect.visible = false
 		
-		var ddd = SaveData.Resources["Oak"]["Count"] > 100
-		var r = Achievements.Achievements[AchievementId]["Trigger"]
-		var r2 = Unlocks.Unlocks["Achievements"]["Unlocked"]
-		var r3 = Values.DebugMode
-		
-		#if r and (r2 or r3):
 		if Achievements.Achievements[AchievementId]["Trigger"].call() == true and (Unlocks.Unlocks["Achievements"]["Unlocked"] or Values.DebugMode):
 			SaveData.UnlockedAchievements[AchievementId] = true
-			var vall = Achievements.Achievements[AchievementId]["Trigger"]
-			print("Achievements.Achievements[AchievementId][trigger]: " + str(vall) + " " + AchievementId)
+
+func _on_locked_rect_gui_input(event: InputEvent) -> void:
+	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
+		if AchievementId == "91":
+			SaveData.UnlockedAchievements[AchievementId] = true

@@ -40,4 +40,5 @@ vertical_alignment = 1
 wait_time = 2.0
 autostart = true
 
+[connection signal="gui_input" from="LockedRect" to="." method="_on_locked_rect_gui_input"]
 [connection signal="timeout" from="AchievementTimer" to="." method="_on_achievement_timer_timeout"]

@@ -37,7 +37,14 @@ var ResourceValues = {
 		"PriceMultip" : 1,
 		"PerSecondMultip" : 1,
 		"PotentialMagic" : 0,
-		"MagicMultip" : 0,
+		"WpsMultip" : 1,
+		"WpcMultip" : 1,
+		"StorageMultip" : 1,
+	},
+	"Achievements" : {
+		"WpsMultip" : 1,
+		"WpcMultip" : 1,
+		"StorageMultip" : 1,
 	},
 	"Dam" : {
 		"EffectMultip" : 1,
