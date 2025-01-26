@@ -32,7 +32,7 @@ var Magic = {
 		"Cost" : 8,
 	},
 	"4" : {
-		"Name" : "Starting Beavers +5",
+		"Name" : "Starting Beavers +2",
 		"Description" : "All wood types start with 2 more beavers",
 		"Cost" : 10,
 	},
@@ -49,6 +49,11 @@ var Magic = {
 	"6" : {
 		"Name" : "Unlock Storage Overloading",
 		"Description" : "",
+		"Cost" : 25,
+	},
+	"6b" : {
+		"Name" : "Start with +2 WC",
+		"Description" : "All wood types start with 2 Woodcamps",
 		"Cost" : 25,
 	},
 	"7" : {

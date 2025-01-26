@@ -1,13 +1,13 @@
 To do all things I can think of:
 First:
 balance some of the first achievements
-Check that all ResourceValues in Values get used
 
 Later:
+Show research only when all needed woodtypes unlocked
 Fish swim, spawn, despawn logic
 Dam completion and Effect application
 Storage overloading
-Upgrade level cap at 100
+Upgrade level cap at 100 and 10
 Tooltip on resource bar for incoming / outgoing wood breakdown
 Tooltip on mouse over magic label to see how much magic each resource gives
 Implement keep first 10 research
@@ -22,13 +22,12 @@ Add auto saves with changable intervals
 Fix/Change/Remove Gold Upgrade multip (for lower price upgrades, really broken)
 Buy max buttons logic for fishing (or myb ctrl click to max buy or a toggle like in other games i think?)
 balancing all of the game
-Add Upgrade LvL cap
 Bait logic
 Add fishing spot logic, different fish in different spots
 Settings screen
 Change achievements to be icons from icon packs
 Add to Scrolling log fishing, dams built and others
-Removing from research queue is bugged
+Apply ResourceValues in Values for Fishing and Dams when implemented
 
 A lot Later:
 Music, music player
@@ -88,3 +87,9 @@ Reset Text Log and Achievements on load DONE
 Make Magic count bonus logarithmic DONE
 Add unlocked achievement count and bonus, labels for them DONE 
 For Last 3 upgrades for each wood add Magic Lock DONE
+Fix bug selling less then 0 wood DONE
+Fix buggs caused by Ascension DONE
+Cleaned up ResourceValues in Values file DONE
+Implemented ~10 upgrades, planned out ~110 more DONE
+Fix upgrade and research unlock triggers DONE
+Fixed research and research cancel button DONE

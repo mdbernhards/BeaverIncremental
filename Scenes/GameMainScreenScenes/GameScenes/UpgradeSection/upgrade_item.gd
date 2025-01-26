@@ -142,7 +142,7 @@ func _on_upgrade_item_timer_timeout() -> void:
 	updateAffordabilityIndicator()
 	updateUpgradeValues()
 	
-	if (Unlocks.Unlocks[ResourceType][str(UpgradeNumber)] and Upgrades.Upgrades[ResourceType][str(UpgradeNumber)]["Unlocked"]) or Values.DebugMode:
+	if (Unlocks.Unlocks[ResourceType][str(UpgradeNumber)] and Upgrades.Upgrades[ResourceType][str(UpgradeNumber)]["Unlocked"].call()) or Values.DebugMode:
 		visible = true
 	else:
 		visible = false

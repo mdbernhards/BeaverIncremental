@@ -24,6 +24,8 @@ var InQueue = false
 
 var IsMouseOnCancel = false
 
+var State
+
 enum ResearchStatesEnum {
 	CurrentlyResearching,
 	Queued,
@@ -88,9 +90,13 @@ func setResearch(ResearchNr):
 
 func updateResearch():
 	ResearchData = Research.Research[ItemId]
-	TimeLeftLabel.text = timeConvert(ResearchData["Time"] * Values.ResourceValues["Research"]["TimeMultip"])
+	
+	var researchTime = ResearchData["Time"] * Values.ResourceValues["Research"]["TimeMultip"]
+	
+	ResearchTimer.wait_time = researchTime
+	TimeLeftLabel.text = timeConvert(researchTime)
+	
 	PriceLabel.text = getPriceText()
-	ResearchTimer.wait_time = ResearchData["Time"] * Values.ResourceValues["Research"]["TimeMultip"]
 
 func timeConvert(timeInSeconds):
 	timeInSeconds = int(timeInSeconds)
@@ -195,44 +201,33 @@ func checkIfCanAfford():
 	if ResearchData == null:
 		return false
 	
-	if (ResearchData["OakCost"] <= SaveData.Resources["Oak"]["Count"]
-	and ResearchData["AppleCost"] <= SaveData.Resources["Apple"]["Count"]
-	and ResearchData["MapleCost"] <= SaveData.Resources["Maple"]["Count"]
-	and ResearchData["BirchCost"] <= SaveData.Resources["Birch"]["Count"]
-	and ResearchData["SpruceCost"] <= SaveData.Resources["Spruce"]["Count"]
-	and ResearchData["ChestnutCost"] <= SaveData.Resources["Chestnut"]["Count"]
-	and ResearchData["CherryCost"] <= SaveData.Resources["Cherry"]["Count"]
-	and ResearchData["AshCost"] <= SaveData.Resources["Ash"]["Count"]
-	and ResearchData["CedarCost"] <= SaveData.Resources["Cedar"]["Count"]
-	and ResearchData["MahoganyCost"] <= SaveData.Resources["Mahogany"]["Count"]
-	and ResearchData["EbonyCost"] <= SaveData.Resources["Ebony"]["Count"]
-	and ResearchData["DogwoodCost"] <= SaveData.Resources["Dogwood"]["Count"]
-	and ResearchData["RosewoodCost"] <= SaveData.Resources["Rosewood"]["Count"]
-	and ResearchData["Ghost GumCost"] <= SaveData.Resources["Ghost Gum"]["Count"]
-	and ResearchData["DragonwoodCost"] <= SaveData.Resources["Dragonwood"]["Count"]):
-		return true
+	var woodTypes = Values.WoodTypes
 	
-	return false
+	for woodType in woodTypes:
+		if ResearchData[woodType + "Cost"] > 0 and ResearchData[woodType + "Cost"] > SaveData.Resources[woodType]["Count"]:
+			return false
+	
+	return true
 
 func checkIfVisible():
 	if ResearchData == null:
 		return false
 	
-	if (ResearchData["OakCost"] * 0.4 <= SaveData.Resources["Oak"]["Count"] and ResearchData["OakCost"] > 0
-	or ResearchData["AppleCost"] * 0.4 <= SaveData.Resources["Apple"]["Count"] and ResearchData["AppleCost"] > 0
-	or ResearchData["MapleCost"] * 0.4 <= SaveData.Resources["Maple"]["Count"] and ResearchData["MapleCost"] > 0
-	or ResearchData["BirchCost"] * 0.4 <= SaveData.Resources["Birch"]["Count"] and ResearchData["BirchCost"] > 0
-	or ResearchData["SpruceCost"] * 0.4 <= SaveData.Resources["Spruce"]["Count"] and ResearchData["SpruceCost"] > 0
-	or ResearchData["ChestnutCost"] * 0.4 <= SaveData.Resources["Chestnut"]["Count"] and ResearchData["ChestnutCost"] > 0
-	or ResearchData["CherryCost"] * 0.4 <= SaveData.Resources["Cherry"]["Count"] and ResearchData["CherryCost"] > 0
-	or ResearchData["AshCost"] * 0.4 <= SaveData.Resources["Ash"]["Count"] and ResearchData["AshCost"] > 0
-	or ResearchData["CedarCost"] * 0.4 <= SaveData.Resources["Cedar"]["Count"] and ResearchData["CedarCost"] > 0
-	or ResearchData["MahoganyCost"] * 0.4 <= SaveData.Resources["Mahogany"]["Count"] and ResearchData["MahoganyCost"] > 0
-	or ResearchData["EbonyCost"] * 0.4 <= SaveData.Resources["Ebony"]["Count"] and ResearchData["EbonyCost"] > 0
-	or ResearchData["DogwoodCost"] * 0.4 <= SaveData.Resources["Dogwood"]["Count"] and ResearchData["DogwoodCost"] > 0
-	or ResearchData["RosewoodCost"] * 0.4 <= SaveData.Resources["Rosewood"]["Count"] and ResearchData["RosewoodCost"] > 0
-	or ResearchData["Ghost GumCost"] * 0.4 <= SaveData.Resources["Ghost Gum"]["Count"] and ResearchData["Ghost GumCost"] > 0
-	or ResearchData["DragonwoodCost"] * 0.4 <= SaveData.Resources["Dragonwood"]["Count"] and ResearchData["DragonwoodCost"] > 0):
+	if (ResearchData["OakCost"] * 0.55 <= SaveData.Resources["Oak"]["Count"] and ResearchData["OakCost"] > 0
+	or ResearchData["AppleCost"] * 0.55 <= SaveData.Resources["Apple"]["Count"] and ResearchData["AppleCost"] > 0
+	or ResearchData["MapleCost"] * 0.55 <= SaveData.Resources["Maple"]["Count"] and ResearchData["MapleCost"] > 0
+	or ResearchData["BirchCost"] * 0.55 <= SaveData.Resources["Birch"]["Count"] and ResearchData["BirchCost"] > 0
+	or ResearchData["SpruceCost"] * 0.55 <= SaveData.Resources["Spruce"]["Count"] and ResearchData["SpruceCost"] > 0
+	or ResearchData["ChestnutCost"] * 0.55 <= SaveData.Resources["Chestnut"]["Count"] and ResearchData["ChestnutCost"] > 0
+	or ResearchData["CherryCost"] * 0.55 <= SaveData.Resources["Cherry"]["Count"] and ResearchData["CherryCost"] > 0
+	or ResearchData["AshCost"] * 0.55 <= SaveData.Resources["Ash"]["Count"] and ResearchData["AshCost"] > 0
+	or ResearchData["CedarCost"] * 0.55 <= SaveData.Resources["Cedar"]["Count"] and ResearchData["CedarCost"] > 0
+	or ResearchData["MahoganyCost"] * 0.55 <= SaveData.Resources["Mahogany"]["Count"] and ResearchData["MahoganyCost"] > 0
+	or ResearchData["EbonyCost"] * 0.55 <= SaveData.Resources["Ebony"]["Count"] and ResearchData["EbonyCost"] > 0
+	or ResearchData["DogwoodCost"] * 0.55 <= SaveData.Resources["Dogwood"]["Count"] and ResearchData["DogwoodCost"] > 0
+	or ResearchData["RosewoodCost"] * 0.55 <= SaveData.Resources["Rosewood"]["Count"] and ResearchData["RosewoodCost"] > 0
+	or ResearchData["Ghost GumCost"] * 0.55 <= SaveData.Resources["Ghost Gum"]["Count"] and ResearchData["Ghost GumCost"] > 0
+	or ResearchData["DragonwoodCost"] * 0.55 <= SaveData.Resources["Dragonwood"]["Count"] and ResearchData["DragonwoodCost"] > 0):
 		return true
 	
 	return false
@@ -248,17 +243,20 @@ func _on_research_timer_timeout():
 	queue_free()
 
 func setResearchState(state):
-	hideAllResearchStates()
-	
-	match state:
-		ResearchStatesEnum.CurrentlyResearching:
-			ResearchingRect.visible = true
-		ResearchStatesEnum.Queued:
-			CancelButton.visible = true
-		ResearchStatesEnum.CanResearch:
-			StartResearchButton.visible = true
-		ResearchStatesEnum.CanQueue:
-			QueueButton.visible = true
+	if State != state:
+		hideAllResearchStates()
+		
+		match state:
+			ResearchStatesEnum.CurrentlyResearching:
+				ResearchingRect.visible = true
+			ResearchStatesEnum.Queued:
+				CancelButton.visible = true
+			ResearchStatesEnum.CanResearch:
+				StartResearchButton.visible = true
+			ResearchStatesEnum.CanQueue:
+				QueueButton.visible = true
+		
+		State = state
 
 func hideAllResearchStates():
 	StartResearchButton.visible = false
@@ -300,7 +298,7 @@ func _on_research_item_refresh_timer_timeout() -> void:
 	setCancelButtonText()
 	updateResearchVisability()
 	
-	if (Unlocks.Unlocks["Research"]["ResearchItems"].has(ItemId) and Research.Research[str(ItemId)]["Unlocked"]) or Values.DebugMode:
+	if (Unlocks.Unlocks["Research"]["ResearchItems"].has(ItemId) and Research.Research[str(ItemId)]["Unlocked"].call()) or Values.DebugMode:
 		visible = true
 	else:
 		visible = false

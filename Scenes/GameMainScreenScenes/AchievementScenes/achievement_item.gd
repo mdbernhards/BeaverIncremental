@@ -43,6 +43,7 @@ func _on_achievement_timer_timeout() -> void:
 		if !PreviousState:
 			PreviousState = true
 			get_tree().get_first_node_in_group("TextLogSection").writeAchievementUnlockToLog(AchievementId)
+			CalculateValues.calculateAllValues()
 		
 		LockedRect.visible = false
 		UnlockedRect.visible = true

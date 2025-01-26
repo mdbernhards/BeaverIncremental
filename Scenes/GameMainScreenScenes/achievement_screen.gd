@@ -49,9 +49,9 @@ func _on_achievement_screen_timer_timeout() -> void:
 		CalculateValues.calculateAllValues()
 		
 		AchievementCountLabel.text = str(AchievementCount) + "/300"
-	
-		var wpcMultip = str((Values.ResourceValues["Achievements"]["WpcMultip"] - 1) * 100)
-		var wpsMultip = str((Values.ResourceValues["Achievements"]["WpsMultip"] - 1) * 100)
-		var storageMultip = str((Values.ResourceValues["Achievements"]["StorageMultip"] - 1) * 100)
+		
+		var wpcMultip = str(roundf((Values.ResourceValues["Achievements"]["WpcMultip"] - 1) * 1000)/10)
+		var wpsMultip = str(roundf((Values.ResourceValues["Achievements"]["WpsMultip"] - 1) * 1000)/10)
+		var storageMultip = str(roundf((Values.ResourceValues["Achievements"]["StorageMultip"] - 1) * 1000)/10)
 		
 		AchievementEffectLabel.text = wpcMultip + "% Wood Per Click\n" + wpsMultip + "% Wood Per Second \n" + storageMultip + "% Storage \n"

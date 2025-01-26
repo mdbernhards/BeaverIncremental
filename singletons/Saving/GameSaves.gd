@@ -49,7 +49,9 @@ func updateSaveFileInfo(saveName):
 	infoFile.store_line(jsonSaveInfo)
 
 func getCurrentPlayTime():
-	return SaveData.GeneralInfo["TimePlayed"] + Time.get_unix_time_from_system() - TimeStart
+	if TimeStart:
+		return SaveData.GeneralInfo["TimePlayed"] + Time.get_unix_time_from_system() - TimeStart
+	return 0
 
 func saveGame(saveName):
 	SaveData.GeneralInfo["TimePlayed"] += Time.get_unix_time_from_system() - TimeStart

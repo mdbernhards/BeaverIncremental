@@ -60,7 +60,7 @@ func calculatePotentialMagicGain():
 		if resourceCount > 0:
 			magic += resourceCount / baseCost
 	
-	Values.ResourceValues["Magic"]["PotentialMagic"] = magic
+	Values.ResourceValues["Magic"]["PotentialMagic"] = magic * Values.ResourceValues["Magic"]["GainMultip"]
 
 func updateMagic():
 	MagicGainLabel.text = "You will gain " + str(floor(Values.ResourceValues["Magic"]["PotentialMagic"])) + " Magic"

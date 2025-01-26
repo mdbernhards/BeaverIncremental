@@ -397,6 +397,7 @@ var Unlocks = {
 			"7" : false,
 			"8" : false,
 			"9" : false,
+			"10" : false,
 			"WoodBait" : false,
 		},
 		"Spot" : {

@@ -1,7 +1,7 @@
 extends Node
 
 var CurrentSaveName
-var DebugMode = true
+var DebugMode = false
 
 var WoodTypes = ["Oak", "Apple", "Maple", "Birch", "Spruce",
 				 "Chestnut", "Cherry", "Ash", "Cedar", "Mahogany",
@@ -24,18 +24,13 @@ var ResourceValues = {
 		"ResearchAtATime" : 1,
 	},
 	"Gold" : {
-		"PerSecond" : 0,
-		"GainMultip" : 1,
-		"UpgradeEffectMultip" : 1,
 		"UpgradePriceMultip" : 1,
 		"Color" : Color(0.877, 0.761, 0.412),
 		"SecondaryColor" : Color(0.64, 0.54, 0.221),
 	},
 	"Magic" : {
 		"GainMultip" : 1,
-		"EffectMultip" : 1,
-		"PriceMultip" : 1,
-		"PerSecondMultip" : 1,
+		"PerSecondMultip" : 1, # idk tbd
 		"PotentialMagic" : 0,
 		"WpsMultip" : 1,
 		"WpcMultip" : 1,
@@ -70,7 +65,7 @@ var ResourceValues = {
 		"BotPriceMultip" : 1,
 		"BotBaseSell" : 1,
 		"WoodSoldPerSecond" : 10,
-		"GoldGainPerSecond" : 10, # from bots selling
+		"GoldGainPerSecond" : 10,
 		"ExtraBeavers" : 0,
 		"ExtraWoodcamps" : 0,
 	},

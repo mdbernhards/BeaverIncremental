@@ -59,6 +59,7 @@ ConstructionResource=""
 ConstructionItem=""
 TextLogSection=""
 AchievementScreen=""
+UpgradePage=""
 
 [gui]
 

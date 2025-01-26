@@ -10,6 +10,7 @@ var SellPrecentigeLabel
 var SellAmountLabel
 var SellGoldGainLabel
 var LeftColorRect
+var SellButton
 
 # Nodes for bots
 var BotCountLabel
@@ -94,6 +95,7 @@ func setNodePaths():
 	SellAmountLabel = $HBox/VBox/MC/VBox/HBox/MC/VBox/MC2/SellAmountLabel
 	SellGoldGainLabel = $HBox/VBox/MC/VBox/HBox/MC2/VBox/MC2/GoldGainLabel
 	LeftColorRect = $HBox/VBox/MC/LeftColorRect
+	SellButton = $HBox/VBox/MC/VBox/HBox/MC3/SellButton
 
 	# Nodes for bots
 	BotCountLabel = $HBox/MC2/BotVBox/HBox2/MC3/VBox/MC2/BotCountRect/BotCountLabel
@@ -122,8 +124,10 @@ func _on_bot_effectivnes_slider_value_changed(value):
 	BotEffectivnesLabel.text = "Effect: " + str(value) + "%"
 
 func _on_sell_button_button_down():
-	SaveData.Resources[WoodType]["Count"] -= WoodLossIfSold
-	SaveData.Gold["Count"] += GoldGainedIfSold
+	SellButton.disabled = true
+	if SaveData.Resources[WoodType]["Count"] > 0:
+		SaveData.Resources[WoodType]["Count"] -= WoodLossIfSold
+		SaveData.Gold["Count"] += GoldGainedIfSold
 
 func checkIfCanAfford(botAmount):
 	var price = 0
@@ -161,6 +165,7 @@ func _on_buy_1000x_button_button_down() -> void:
 		buyBot(1000)
 
 func _on_market_item_timer_timeout() -> void:
+	SellButton.disabled = false
 	updateValues()
 	
 	if CantAffordRect:

@@ -1469,37 +1469,37 @@ var Achievements = {
 	"294" : {
 		"Name" : "10 Achievements Unlocked",
 		"Description" : "10 Achievements Unlocked",
-		"Trigger" : func(): return null,
+		"Trigger" : func(): return SaveData.countAchievements() >= 10,
 	},
 	"295" : {
 		"Name" : "40 Achievements Unlocked",
 		"Description" : "40 Achievements Unlocked",
-		"Trigger" : func(): return null,
+		"Trigger" : func(): return SaveData.countAchievements() >= 40,
 	},
 	"296" : {
 		"Name" : "80 Achievements Unlocked",
 		"Description" : "80 Achievements Unlocked",
-		"Trigger" : func(): return null,
+		"Trigger" : func(): return SaveData.countAchievements() >= 80,
 	},
 	"297" : {
 		"Name" : "130 Achievements Unlocked",
 		"Description" : "130 Achievements Unlocked",
-		"Trigger" : func(): return null,
+		"Trigger" : func(): return SaveData.countAchievements() >= 130,
 	},
 	"298" : {
 		"Name" : "190 Achievements Unlocked",
 		"Description" : "190 Achievements Unlocked",
-		"Trigger" : func(): return null,
+		"Trigger" : func(): return SaveData.countAchievements() >= 190,
 	},
 	"299" : {
 		"Name" : "260 Achievements Unlocked",
 		"Description" : "260 Achievements Unlocked",
-		"Trigger" : func(): return null,
+		"Trigger" : func(): return SaveData.countAchievements() >= 260,
 	},
 	"300" : {
 		"Name" : "All Achievements Unlocked",
 		"Description" : "All Achievements Unlocked",
-		"Trigger" : func(): return null,
+		"Trigger" : func(): return SaveData.countAchievements() >= 299,
 	},
 }
 
@@ -1522,7 +1522,7 @@ func damTypeBuiltCheck(damType):
 	return SaveData.DamData[damType]["Count"] > 0
 
 func checkThatAllDamTypesBuilt():
-	return damTypeBuiltCheck(Dams.DamEnum.SmallDam) + damTypeBuiltCheck(Dams.DamEnum.MediumDam) + damTypeBuiltCheck(Dams.DamEnum.BigDam) + damTypeBuiltCheck(Dams.DamEnum.GiantDam) + damTypeBuiltCheck(Dams.DamEnum.MegaDam)
+	return damTypeBuiltCheck(Dams.DamEnum.SmallDam) and damTypeBuiltCheck(Dams.DamEnum.MediumDam) and damTypeBuiltCheck(Dams.DamEnum.BigDam) and damTypeBuiltCheck(Dams.DamEnum.GiantDam) and damTypeBuiltCheck(Dams.DamEnum.MegaDam)
 
 func checkThatAllBaitsUnlocked():
 	return Unlocks.Unlocks["Fishing"]["Bait"]["1"] and Unlocks.Unlocks["Fishing"]["Bait"]["2"] and Unlocks.Unlocks["Fishing"]["Bait"]["3"] and Unlocks.Unlocks["Fishing"]["Bait"]["4"] and Unlocks.Unlocks["Fishing"]["Bait"]["5"] and Unlocks.Unlocks["Fishing"]["Bait"]["6"] and Unlocks.Unlocks["Fishing"]["Bait"]["7"] and Unlocks.Unlocks["Fishing"]["Bait"]["8"] and Unlocks.Unlocks["Fishing"]["Bait"]["9"] and Unlocks.Unlocks["Fishing"]["Bait"]["10"]
@@ -1546,4 +1546,9 @@ func checkThat0WoodCount():
 	return true
 
 func goldPerSecondCheck(needed):
-	return needed >= Values.ResourceValues["Gold"]["PerSecond"]
+	var goldGainPerSec = 0
+	
+	for woodType in Values.WoodTypes:
+		goldGainPerSec += Values.ResourceValues[woodType]["GoldGainPerSecond"]
+	
+	return needed <= goldGainPerSec

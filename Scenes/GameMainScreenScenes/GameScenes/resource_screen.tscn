@@ -151,6 +151,7 @@ vertical_alignment = 1
 
 [node name="LockedBeaverRect" type="ColorRect" parent="BarsMC/MC/TitleVBox/MC/LabelHBox/BeaverMC"]
 visible = false
+custom_minimum_size = Vector2(190, 0)
 layout_mode = 2
 color = Color(0.385493, 0.385492, 0.385492, 1)
 

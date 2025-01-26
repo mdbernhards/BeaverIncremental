@@ -190,9 +190,11 @@ func tickCalculations():
 	preCalculations()
 	
 	var adjustments = true
+	var i = 0
 	
-	while adjustments:
+	while adjustments and i < 1000:
 		adjustments = postCalculations()
+		i += 1
 		
 	calculateDragonwoodAvailability()
 
@@ -277,7 +279,10 @@ func calculateResourceStorageLimits(woodType):
 	var woodLoss = WoodCalculations[woodType]["WoodProductionLoss"] + WoodCalculations[woodType]["WoodMarkedLoss"] + WoodCalculations[woodType]["WoodDamLoss"]
 	var possibleNetOutcome = WoodCalculations[woodType]["WoodProductionGain"] - woodLoss
 	
-	if possibleNetOutcome > WoodCalculations[woodType]["RemainingCapacity"]:
+	var a = roundf(possibleNetOutcome * 10000)
+	var b = roundf(WoodCalculations[woodType]["RemainingCapacity"] * 10000)
+	
+	if a > b:
 		var originalWoodGain = WoodCalculations[woodType]["WoodProductionGain"]
 		WoodCalculations[woodType]["WoodProductionGain"] -= possibleNetOutcome - WoodCalculations[woodType]["RemainingCapacity"]
 		

@@ -40,6 +40,7 @@ func _on_magic_button_button_down():
 	if SaveData.Magic["Count"] >= Upgrade["Cost"]:
 		SaveData.Magic["Count"] -= Upgrade["Cost"]
 		SaveData.UnlockedMagicUpgrades[Nr] = true
+		CalculateValues.calculateAllValues()
 		get_tree().get_first_node_in_group("TextLogSection").writeMagicUpgradeUnlockToLog(Nr)
 		queue_free()
 
@@ -47,11 +48,9 @@ func checkIfVisible():
 	return Upgrade["Cost"] * 0.5 < SaveData.Magic["Count"]
 
 func _on_magic_item_timer_timeout() -> void:
-	setCantAffordRect()
-	
 	if Unlocks.Unlocks["Magic"]["MagicItems"].has(Nr) or Values.DebugMode:
-		CantAffordRect.visible = true
 		MagicButton.visible = true
+		setCantAffordRect()
 	else:
 		CantAffordRect.visible = false
 		MagicButton.visible = false

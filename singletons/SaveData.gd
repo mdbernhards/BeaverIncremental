@@ -71,9 +71,17 @@ func resetValues():
 	Bait = OriginalBait.duplicate(true)
 	ResearchInfo = OriginalResearchInfo.duplicate(true)
 	MaxResourceCount = OriginalMaxResourceCount.duplicate(true)
-	Unlocks.Unlocks = Unlocks.OriginalUnlocks.duplicate(true)
 	
+	resetUnlocks()
 	recalculateValues()
+
+func resetUnlocks():
+	var magicUnlocks = Unlocks.Unlocks["Magic"].duplicate(true)
+	Unlocks.Unlocks = Unlocks.OriginalUnlocks.duplicate(true)
+	Unlocks.Unlocks["Magic"] = magicUnlocks.duplicate(true)
+	Unlocks.Unlocks["Magic"]["Upgrades"] = true
+	
+	get_tree().get_first_node_in_group("UpgradePage").changePage(1)
 
 func recalculateValues():
 	CalculateValues.calculateAllValues()
