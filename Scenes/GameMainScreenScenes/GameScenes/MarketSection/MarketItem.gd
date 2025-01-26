@@ -75,10 +75,10 @@ func changeItemType(woodType = WoodType):
 	BotEffectivnesSlider.value = SaveData.Resources[WoodType]["BotSellPercentage"]
 
 func updateValues():
-	WoodLossIfSold = SaveData.Resources[WoodType]["Count"] * SellAmountSlider.value / 100
+	WoodLossIfSold = floor(SaveData.Resources[WoodType]["Count"]) * SellAmountSlider.value / 100
 	GoldGainedIfSold = WoodLossIfSold * Values.ResourceValues[WoodType]["SoldFor"]
 	
-	CurrentWoodCountLabel.text = str(NumberFormatting.formatNumber(roundi(SaveData.Resources[WoodType]["Count"]))) + " " + WoodType
+	CurrentWoodCountLabel.text = str(NumberFormatting.formatNumber(floor(SaveData.Resources[WoodType]["Count"]))) + " " + WoodType
 	SellAmountLabel.text = str(NumberFormatting.formatNumber(roundi(WoodLossIfSold))) + " " + WoodType
 	SellGoldGainLabel.text = str(NumberFormatting.formatNumber(roundi(GoldGainedIfSold))) + " Gold"
 	BotPriceLabel.text = "Price: " + str(NumberFormatting.formatNumber(roundi(CalculatePrice.getBotCost(SaveData.Resources[WoodType]["Bots"], WoodType)))) + " gold"
@@ -125,7 +125,7 @@ func _on_bot_effectivnes_slider_value_changed(value):
 
 func _on_sell_button_button_down():
 	SellButton.disabled = true
-	if SaveData.Resources[WoodType]["Count"] > 0:
+	if SaveData.Resources[WoodType]["Count"] > 0.4 and WoodLossIfSold > 0.3 and GoldGainedIfSold > 0:
 		SaveData.Resources[WoodType]["Count"] -= WoodLossIfSold
 		SaveData.Gold["Count"] += GoldGainedIfSold
 

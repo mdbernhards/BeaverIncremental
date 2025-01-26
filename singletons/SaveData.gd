@@ -1240,6 +1240,7 @@ var GeneralInfo = {
 	"MasterVolume" : false,
 	"MusicVolume" : false,
 	"NumberNotation" : NumberFormatting.NotationTypesEnum.Default,
+	"Autoclickers" : 0,
 }
 
 var SavesInfo = {

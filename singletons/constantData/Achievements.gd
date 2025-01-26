@@ -537,7 +537,7 @@ var Achievements = {
 		"Trigger" : func(): return SaveData.Resources["Dragonwood"]["Count"] > pow(10, 25),
 	},
 	"108" : {
-		"Name" : "Have 10^3 Gold",
+		"Name" : "Have 1000 Gold",
 		"Description" : "Collect 10^3 Gold",
 		"Trigger" : func(): return SaveData.Gold["Count"] > pow(10, 3),
 	},

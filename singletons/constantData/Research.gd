@@ -203,7 +203,7 @@ var Research = {
 		"Name" : "Oak, Maple wood price +25%",
 		"Description" : "Oak, Maple wood price +25%",
 		"Time" : 510, # Seconds
-		"OakCost" : 0, "AppleCost" : 275000, "MapleCost" : 55000, "BirchCost" : 35500, "SpruceCost" : 0,
+		"OakCost" : 0, "AppleCost" : 255000, "MapleCost" : 55000, "BirchCost" : 35500, "SpruceCost" : 0,
 		"ChestnutCost" : 0, "CherryCost" : 0, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 0,
 		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 0,
 		"Unlocked" : func(): return true,
@@ -221,7 +221,7 @@ var Research = {
 		"Name" : "20% WPS",
 		"Description" : "20% WPS",
 		"Time" : 660, # Seconds
-		"OakCost" : 500000, "AppleCost" : 29000, "MapleCost" : 15000, "BirchCost" : 25000, "SpruceCost" : 0,
+		"OakCost" : 500000, "AppleCost" : 290000, "MapleCost" : 15000, "BirchCost" : 25000, "SpruceCost" : 0,
 		"ChestnutCost" : 0, "CherryCost" : 0, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 0,
 		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 0,
 		"Unlocked" : func(): return true,
@@ -230,7 +230,7 @@ var Research = {
 		"Name" : "1 WC per 7 Beavers",
 		"Description" : "1 WC per 7 Beavers",
 		"Time" : 720, # Seconds
-		"OakCost" : 750000, "AppleCost" : 96000, "MapleCost" : 96000, "BirchCost" : 35000, "SpruceCost" : 0,
+		"OakCost" : 750000, "AppleCost" : 560000, "MapleCost" : 96000, "BirchCost" : 35000, "SpruceCost" : 0,
 		"ChestnutCost" : 0, "CherryCost" : 0, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 0,
 		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 0,
 		"Unlocked" : func(): return true,
@@ -257,7 +257,7 @@ var Research = {
 		"Name" : "Unlock Spruce Wood",
 		"Description" : "Unlock Spruce Wood",
 		"Time" : 1100, # Seconds
-		"OakCost" : 1250000, "AppleCost" : 550000, "MapleCost" : 200000, "BirchCost" : 1000000, "SpruceCost" : 0,
+		"OakCost" : 1250000, "AppleCost" : 550000, "MapleCost" : 200000, "BirchCost" : 100000, "SpruceCost" : 0,
 		"ChestnutCost" : 0, "CherryCost" : 0, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 0,
 		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 0,
 		"Unlocked" : func(): return true,
@@ -266,7 +266,7 @@ var Research = {
 		"Name" : "10% Cheaper Upgrades",
 		"Description" : "10% Cheaper Upgrades",
 		"Time" : 1250, # Seconds
-		"OakCost" : 1000000, "AppleCost" : 700000, "MapleCost" : 175000, "BirchCost" : 1150000, "SpruceCost" : 0,
+		"OakCost" : 1000000, "AppleCost" : 600000, "MapleCost" : 175000, "BirchCost" : 115000, "SpruceCost" : 0,
 		"ChestnutCost" : 0, "CherryCost" : 0, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 0,
 		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 0,
 		"Unlocked" : func(): return true,
@@ -275,7 +275,7 @@ var Research = {
 		"Name" : "5% WPC To WPS",
 		"Description" : "5% WPC To WPS",
 		"Time" : 1400, # Seconds
-		"OakCost" : 0, "AppleCost" : 900000, "MapleCost" : 0, "BirchCost" : 1750000, "SpruceCost" : 500,
+		"OakCost" : 0, "AppleCost" : 666666, "MapleCost" : 0, "BirchCost" : 175000, "SpruceCost" : 500,
 		"ChestnutCost" : 0, "CherryCost" : 0, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 0,
 		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 0,
 		"Unlocked" : func(): return true,
@@ -293,7 +293,7 @@ var Research = {
 		"Name" : "50% Maple Storage",
 		"Description" : "50% Maple Storage",
 		"Time" : 1660, # Seconds
-		"OakCost" : 1110000, "AppleCost" : 999000, "MapleCost" : 0, "BirchCost" : 2220000, "SpruceCost" : 3333,
+		"OakCost" : 1110000, "AppleCost" : 777777, "MapleCost" : 0, "BirchCost" : 2220000, "SpruceCost" : 3333,
 		"ChestnutCost" : 0, "CherryCost" : 0, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 0,
 		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 0,
 		"Unlocked" : func(): return true,

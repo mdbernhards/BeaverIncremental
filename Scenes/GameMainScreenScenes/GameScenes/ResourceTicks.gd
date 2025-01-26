@@ -221,6 +221,9 @@ func setTickChanges():
 			perSecondPercentage = WoodCalculations[woodType]["WoodDamLoss"] / WoodCalculations[woodType]["MaxWoodDamLoss"]
 		else:
 			perSecondPercentage = 0
+			
+		if SaveData.Resources[woodType]["Count"] > Values.ResourceValues[woodType]["Storage"]:
+			SaveData.Resources[woodType]["Count"] = Values.ResourceValues[woodType]["Storage"]
 		
 		applyDamConstructionResourceUse(woodType, perSecondPercentage)
 	
@@ -258,7 +261,7 @@ func preCalculations():
 		WoodCalculations[woodType]["WoodMarkedLoss"] = SaveData.Resources[woodType]["Bots"] * Values.ResourceValues[woodType]["BotBaseSell"] * SaveData.Resources[woodType]["BotSellPercentage"] / 100.0
 		WoodCalculations[woodType]["WoodDamLoss"] = getMaxDamResourceCost(woodType)
 		WoodCalculations[woodType]["ResourceCount"] = SaveData.Resources[woodType]["Count"]
-		WoodCalculations[woodType]["RemainingCapacity"] = Values.ResourceValues[woodType]["Storage"] - SaveData.Resources[woodType]["Count"]
+		WoodCalculations[woodType]["RemainingCapacity"] = max(Values.ResourceValues[woodType]["Storage"] - SaveData.Resources[woodType]["Count"], 0)
 		
 		WoodCalculations[woodType]["MaxWoodDamLoss"] = WoodCalculations[woodType]["WoodDamLoss"]
 
@@ -279,10 +282,7 @@ func calculateResourceStorageLimits(woodType):
 	var woodLoss = WoodCalculations[woodType]["WoodProductionLoss"] + WoodCalculations[woodType]["WoodMarkedLoss"] + WoodCalculations[woodType]["WoodDamLoss"]
 	var possibleNetOutcome = WoodCalculations[woodType]["WoodProductionGain"] - woodLoss
 	
-	var a = roundf(possibleNetOutcome * 10000)
-	var b = roundf(WoodCalculations[woodType]["RemainingCapacity"] * 10000)
-	
-	if a > b:
+	if roundf(possibleNetOutcome * 10000) > roundf(WoodCalculations[woodType]["RemainingCapacity"] * 10000):
 		var originalWoodGain = WoodCalculations[woodType]["WoodProductionGain"]
 		WoodCalculations[woodType]["WoodProductionGain"] -= possibleNetOutcome - WoodCalculations[woodType]["RemainingCapacity"]
 		

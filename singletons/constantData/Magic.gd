@@ -52,59 +52,69 @@ var Magic = {
 		"Cost" : 25,
 	},
 	"6b" : {
-		"Name" : "Start with +2 WC",
+		"Name" : "Starting WC +2",
 		"Description" : "All wood types start with 2 Woodcamps",
-		"Cost" : 25,
+		"Cost" : 35,
 	},
 	"7" : {
 		"Name" : "Research Times / 2",
 		"Description" : "",
-		"Cost" : 45,
+		"Cost" : 55,
 	},
 	"8" : {
 		"Name" : "0.05% WPC Per Achievement",
 		"Description" : "Allows building woodcamps, unlocks woodcamp upgrades",
-		"Cost" : 90,
+		"Cost" : 75,
+	},
+	"8b" : {
+		"Name" : "+1 Autoclicker",
+		"Description" : "+1 Autoclicker",
+		"Cost" : 75,
 	},
 	"9" : {
 		"Name" : "5% WPC To WPS",
 		"Description" : "Allows building woodcamps, unlocks woodcamp upgrades",
-		"Cost" : 130,
+		"Cost" : 180,
 	},
 	"10" : {
 		"Name" : "Unlock Fishing",
 		"Description" : "Allows building woodcamps, unlocks woodcamp upgrades",
-		"Cost" : 180,
+		"Cost" : 250,
 	},
 	"11" : {
 		"Name" : "Gain 30% More Magic",
 		"Description" : "Allows building woodcamps, unlocks woodcamp upgrades",
-		"Cost" : 300,
+		"Cost" : 400,
 	},
 	"12" : {
 		"Name" : "50% Cheaper Woodcamps",
 		"Description" : "Allows building woodcamps, unlocks woodcamp upgrades",
-		"Cost" : 500,
+		"Cost" : 600,
 	},
 	"13" : {
 		"Name" : "Unlock Research Slot 2",
 		"Description" : "Allows building woodcamps, unlocks woodcamp upgrades",
-		"Cost" : 600,
+		"Cost" : 700,
 	},
 	"14" : {
 		"Name" : "2x Storage",
 		"Description" : "Allows building woodcamps, unlocks woodcamp upgrades",
-		"Cost" : 750,
+		"Cost" : 850,
 	},
 	"15" : {
 		"Name" : "Fish Sell For 22.5% More",
 		"Description" : "Allows building woodcamps, unlocks woodcamp upgrades",
-		"Cost" : 1000,
+		"Cost" : 1100,
 	},
 	"16" : {
 		"Name" : "Unlock Bots",
 		"Description" : "Allows building woodcamps, unlocks woodcamp upgrades",
 		"Cost" : 1300,
+	},
+	"16b" : {
+		"Name" : "+1 Autoclicker",
+		"Description" : "+1 Autoclicker",
+		"Cost" : 1500,
 	},
 	"17" : {
 		"Name" : "15% WPC",
@@ -144,17 +154,22 @@ var Magic = {
 	"24" : {
 		"Name" : "Wood Price 1.5x",
 		"Description" : "Allows building woodcamps, unlocks woodcamp upgrades",
-		"Cost" : 7500,
+		"Cost" : 7750,
+	},
+	"24b" : {
+		"Name" : "+1 Autoclicker",
+		"Description" : "+1 Autoclicker",
+		"Cost" : 10000,
 	},
 	"25" : {
 		"Name" : "Unlock Baits",
 		"Description" : "Allows building woodcamps, unlocks woodcamp upgrades",
-		"Cost" : 10000,
+		"Cost" : 11500,
 	},
 	"26" : {
 		"Name" : "Lower WC Production Costs 15%",
 		"Description" : "Allows building woodcamps, unlocks woodcamp upgrades",
-		"Cost" : 12000,
+		"Cost" : 13000,
 	},
 	"27" : {
 		"Name" : "35% Storage From Woodcamps",
@@ -209,17 +224,22 @@ var Magic = {
 	"37" : {
 		"Name" : "Unlock Fishing Spot",
 		"Description" : "Allows building woodcamps, unlocks woodcamp upgrades",
-		"Cost" : 85000,
+		"Cost" : 77777,
 	},
 	"38" : {
 		"Name" : "0.2% Storage Per Achievement",
 		"Description" : "Allows building woodcamps, unlocks woodcamp upgrades",
-		"Cost" : 99000,
+		"Cost" : 85000,
+	},
+	"38b" : {
+		"Name" : "+1 Autoclicker",
+		"Description" : "+1 Autoclicker",
+		"Cost" : 100000,
 	},
 	"39" : {
 		"Name" : "Fish Rarer Fish 27.5%",
 		"Description" : "Allows building woodcamps, unlocks woodcamp upgrades",
-		"Cost" : 111000,
+		"Cost" : 125000,
 	},
 	"40" : {
 		"Name" : "Unlock Dams",
@@ -280,6 +300,11 @@ var Magic = {
 		"Name" : "Unlock Fishing spot",
 		"Description" : "Allows building woodcamps, unlocks woodcamp upgrades",
 		"Cost" : 8000000,
+	},
+	"51b" : {
+		"Name" : "+1 Autoclicker",
+		"Description" : "+1 Autoclicker",
+		"Cost" : 12000000,
 	},
 	"52" : {
 		"Name" : "Each Dam Gives 1% Gold PS",

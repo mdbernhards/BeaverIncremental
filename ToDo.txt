@@ -3,7 +3,7 @@ First:
 balance some of the first achievements
 
 Later:
-Show research only when all needed woodtypes unlocked
+Add Autoclickers, get up to 5 autoclickers from magic upgrades
 Fish swim, spawn, despawn logic
 Dam completion and Effect application
 Storage overloading
@@ -15,11 +15,9 @@ implement auto research
 implement keep classic, rare, mythic wood upgrades
 implement magic gain without ascending
 implement rest of the achievement triggers
-indicate which resources missing for research (make that part of label red with BBCode)
 info screen with all values
 bait shop logic
 Add auto saves with changable intervals
-Fix/Change/Remove Gold Upgrade multip (for lower price upgrades, really broken)
 Buy max buttons logic for fishing (or myb ctrl click to max buy or a toggle like in other games i think?)
 balancing all of the game
 Bait logic
@@ -93,3 +91,5 @@ Cleaned up ResourceValues in Values file DONE
 Implemented ~10 upgrades, planned out ~110 more DONE
 Fix upgrade and research unlock triggers DONE
 Fixed research and research cancel button DONE
+Show research only when all needed woodtypes unlocked DONE
+indicate which resources missing for research DONE

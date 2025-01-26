@@ -109,38 +109,19 @@ func timeConvert(timeInSeconds):
 
 func getPriceText():
 	var PriceText = "Price: "
-
-	if ResearchData["OakCost"] > 0:
-		PriceText += (str(NumberFormatting.formatNumber(ResearchData["OakCost"])) + " Oak, ")
-	if ResearchData["AppleCost"] > 0:
-		PriceText += (str(NumberFormatting.formatNumber(ResearchData["AppleCost"])) + " Apple, ")
-	if ResearchData["MapleCost"] > 0:
-		PriceText += (str(NumberFormatting.formatNumber(ResearchData["MapleCost"])) + " Maple, ")
-	if ResearchData["BirchCost"] > 0:
-		PriceText += (str(NumberFormatting.formatNumber(ResearchData["BirchCost"])) + " Birch, ")
-	if ResearchData["SpruceCost"] > 0:
-		PriceText += (str(NumberFormatting.formatNumber(ResearchData["SpruceCost"])) + " Spruce, ")
-	if ResearchData["ChestnutCost"] > 0:
-		PriceText += (str(NumberFormatting.formatNumber(ResearchData["ChestnutCost"])) + " Chestnut, ")
-	if ResearchData["CherryCost"] > 0:
-		PriceText += (str(NumberFormatting.formatNumber(ResearchData["CherryCost"])) + " Cherry, ")
-	if ResearchData["AshCost"] > 0:
-		PriceText += (str(NumberFormatting.formatNumber(ResearchData["AshCost"])) + " Ash, ")
-	if ResearchData["CedarCost"] > 0:
-		PriceText += (str(NumberFormatting.formatNumber(ResearchData["CedarCost"])) + " Cedar, ")
-	if ResearchData["MahoganyCost"] > 0:
-		PriceText += (str(NumberFormatting.formatNumber(ResearchData["MahoganyCost"])) + " Mahogany, ")
-	if ResearchData["EbonyCost"] > 0:
-		PriceText += (str(NumberFormatting.formatNumber(ResearchData["EbonyCost"])) + " Ebony, ")
-	if ResearchData["DogwoodCost"] > 0:
-		PriceText += (str(NumberFormatting.formatNumber(ResearchData["DogwoodCost"])) + " Dogwood, ")
-	if ResearchData["RosewoodCost"] > 0:
-		PriceText += (str(NumberFormatting.formatNumber(ResearchData["RosewoodCost"])) + " Rosewood, ")
-	if ResearchData["Ghost GumCost"] > 0:
-		PriceText += (str(NumberFormatting.formatNumber(ResearchData["Ghost GumCost"])) + " Ghost Gum, ")
-	if ResearchData["DragonwoodCost"] > 0:
-		PriceText += (str(NumberFormatting.formatNumber(ResearchData["DragonwoodCost"])) + " Dragonwood, ")
+	
+	var woodTypes = Values.WoodTypes
+	
+	for woodType in woodTypes:
+		var resourceCost = ResearchData[woodType + "Cost"]
+		var formatedCost = str(NumberFormatting.formatNumber(resourceCost)) + " " + woodType
 		
+		if resourceCost > 0:
+			if resourceCost > SaveData.Resources[woodType]["Count"]:
+				PriceText += "[color=red]" + formatedCost + "[/color], "
+			else:
+				PriceText += formatedCost + ", "
+	
 	return PriceText.left(PriceText.length() - 2)
 
 func setNodePaths():
@@ -181,21 +162,10 @@ func resumeResearch(timeLeft):
 	ResearchTimer.start(timeLeft)
 
 func removeResources():
-	SaveData.Resources["Oak"]["Count"] -= ResearchData["OakCost"]
-	SaveData.Resources["Apple"]["Count"] -= ResearchData["AppleCost"]
-	SaveData.Resources["Maple"]["Count"] -= ResearchData["MapleCost"]
-	SaveData.Resources["Birch"]["Count"] -= ResearchData["BirchCost"]
-	SaveData.Resources["Spruce"]["Count"] -= ResearchData["SpruceCost"]
-	SaveData.Resources["Chestnut"]["Count"] -= ResearchData["ChestnutCost"]
-	SaveData.Resources["Cherry"]["Count"] -= ResearchData["CherryCost"]
-	SaveData.Resources["Ash"]["Count"] -= ResearchData["AshCost"]
-	SaveData.Resources["Cedar"]["Count"] -= ResearchData["CedarCost"]
-	SaveData.Resources["Mahogany"]["Count"] -= ResearchData["MahoganyCost"]
-	SaveData.Resources["Ebony"]["Count"] -= ResearchData["EbonyCost"]
-	SaveData.Resources["Dogwood"]["Count"] -= ResearchData["DogwoodCost"]
-	SaveData.Resources["Rosewood"]["Count"] -= ResearchData["RosewoodCost"]
-	SaveData.Resources["Ghost Gum"]["Count"] -= ResearchData["Ghost GumCost"]
-	SaveData.Resources["Dragonwood"]["Count"] -= ResearchData["DragonwoodCost"]
+	var woodTypes = Values.WoodTypes
+	
+	for woodType in woodTypes:
+		SaveData.Resources[woodType]["Count"] -= ResearchData[woodType + "Cost"]
 
 func checkIfCanAfford():
 	if ResearchData == null:
@@ -213,24 +183,16 @@ func checkIfVisible():
 	if ResearchData == null:
 		return false
 	
-	if (ResearchData["OakCost"] * 0.55 <= SaveData.Resources["Oak"]["Count"] and ResearchData["OakCost"] > 0
-	or ResearchData["AppleCost"] * 0.55 <= SaveData.Resources["Apple"]["Count"] and ResearchData["AppleCost"] > 0
-	or ResearchData["MapleCost"] * 0.55 <= SaveData.Resources["Maple"]["Count"] and ResearchData["MapleCost"] > 0
-	or ResearchData["BirchCost"] * 0.55 <= SaveData.Resources["Birch"]["Count"] and ResearchData["BirchCost"] > 0
-	or ResearchData["SpruceCost"] * 0.55 <= SaveData.Resources["Spruce"]["Count"] and ResearchData["SpruceCost"] > 0
-	or ResearchData["ChestnutCost"] * 0.55 <= SaveData.Resources["Chestnut"]["Count"] and ResearchData["ChestnutCost"] > 0
-	or ResearchData["CherryCost"] * 0.55 <= SaveData.Resources["Cherry"]["Count"] and ResearchData["CherryCost"] > 0
-	or ResearchData["AshCost"] * 0.55 <= SaveData.Resources["Ash"]["Count"] and ResearchData["AshCost"] > 0
-	or ResearchData["CedarCost"] * 0.55 <= SaveData.Resources["Cedar"]["Count"] and ResearchData["CedarCost"] > 0
-	or ResearchData["MahoganyCost"] * 0.55 <= SaveData.Resources["Mahogany"]["Count"] and ResearchData["MahoganyCost"] > 0
-	or ResearchData["EbonyCost"] * 0.55 <= SaveData.Resources["Ebony"]["Count"] and ResearchData["EbonyCost"] > 0
-	or ResearchData["DogwoodCost"] * 0.55 <= SaveData.Resources["Dogwood"]["Count"] and ResearchData["DogwoodCost"] > 0
-	or ResearchData["RosewoodCost"] * 0.55 <= SaveData.Resources["Rosewood"]["Count"] and ResearchData["RosewoodCost"] > 0
-	or ResearchData["Ghost GumCost"] * 0.55 <= SaveData.Resources["Ghost Gum"]["Count"] and ResearchData["Ghost GumCost"] > 0
-	or ResearchData["DragonwoodCost"] * 0.55 <= SaveData.Resources["Dragonwood"]["Count"] and ResearchData["DragonwoodCost"] > 0):
-		return true
+	var woodTypes = Values.WoodTypes
 	
-	return false
+	for woodType in woodTypes:
+		if ResearchData[woodType + "Cost"] * 0.3 > SaveData.Resources[woodType]["Count"] and ResearchData[woodType + "Cost"] > 0 and Unlocks.Unlocks[woodType]["Unlocked"]:
+			return false
+			
+		if ResearchData[woodType + "Cost"] > 0 and !Unlocks.Unlocks[woodType]["Unlocked"]:
+			return false
+	
+	return true
 
 func updateProgressBar():
 	ResearchProgressBar.value = remap(ResearchTimer.wait_time - ResearchTimer.time_left, 0, ResearchTimer.wait_time, 0, 100)
@@ -265,21 +227,10 @@ func hideAllResearchStates():
 	CancelButton.visible = false
 	
 func refundResources():
-	SaveData.Resources["Oak"]["Count"] += ResearchData["OakCost"] * 0.75
-	SaveData.Resources["Apple"]["Count"] += ResearchData["AppleCost"] * 0.75
-	SaveData.Resources["Maple"]["Count"] += ResearchData["MapleCost"] * 0.75
-	SaveData.Resources["Birch"]["Count"] += ResearchData["BirchCost"] * 0.75
-	SaveData.Resources["Spruce"]["Count"] += ResearchData["SpruceCost"] * 0.75
-	SaveData.Resources["Chestnut"]["Count"] += ResearchData["ChestnutCost"] * 0.75
-	SaveData.Resources["Cherry"]["Count"] += ResearchData["CherryCost"] * 0.75
-	SaveData.Resources["Ash"]["Count"] += ResearchData["AshCost"] * 0.75
-	SaveData.Resources["Cedar"]["Count"] += ResearchData["CedarCost"] * 0.75
-	SaveData.Resources["Mahogany"]["Count"] += ResearchData["MahoganyCost"] * 0.75
-	SaveData.Resources["Ebony"]["Count"] += ResearchData["EbonyCost"] * 0.75
-	SaveData.Resources["Dogwood"]["Count"] += ResearchData["DogwoodCost"] * 0.75
-	SaveData.Resources["Rosewood"]["Count"] += ResearchData["RosewoodCost"] * 0.75
-	SaveData.Resources["Ghost Gum"]["Count"] += ResearchData["Ghost GumCost"] * 0.75
-	SaveData.Resources["Dragonwood"]["Count"] += ResearchData["DragonwoodCost"] * 0.75
+	var woodTypes = Values.WoodTypes
+	
+	for woodType in woodTypes:
+		SaveData.Resources[woodType]["Count"] += ResearchData[woodType + "Cost"] * 0.75
 
 func _on_cancel_button_button_down() -> void:
 	SaveData.ResearchInfo["Queue"].erase(ItemId)
