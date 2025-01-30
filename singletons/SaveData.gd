@@ -939,6 +939,7 @@ var DamData = {
 }
 
 var CaughtFish = {
+	"FishedCount" : 0,
 	Fishing.FishEnum.Boot : {
 		"Count" : 0,
 		"Caught" : false, # at least once
@@ -1241,6 +1242,9 @@ var GeneralInfo = {
 	"MusicVolume" : false,
 	"NumberNotation" : NumberFormatting.NotationTypesEnum.Default,
 	"Autoclickers" : 0,
+	"ClickCount" : 0,
+	"FishedCount" : 0,
+	"FishSoldCount" : 0,
 }
 
 var SavesInfo = {

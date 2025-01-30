@@ -7,7 +7,7 @@ var Magic = {
 		"Cost" : 1,
 	},
 	"1b" : {
-		"Name" : "-25% Woodcamp Price",
+		"Name" : "-27.5% Woodcamp Price",
 		"Description" : "-25% Woodcamp Price",
 		"Cost" : 1,
 	},
@@ -17,12 +17,12 @@ var Magic = {
 		"Cost" : 2,
 	},
 	"1c" : {
-		"Name" : "Woodcamps use 10% less",
+		"Name" : "Woodcamps use 15% less",
 		"Description" : "Woodcamps use 10% less wood",
 		"Cost" : 3,
 	},
 	"2" : {
-		"Name" : "20% WPS",
+		"Name" : "35% WPS",
 		"Description" : "Improve Wood per Second gain by 20%",
 		"Cost" : 5,
 	},
@@ -37,7 +37,7 @@ var Magic = {
 		"Cost" : 10,
 	},
 	"5" : {
-		"Name" : "Per Achievement 0.1% WPS",
+		"Name" : "Per Achievement 0.35% WPS",
 		"Description" : "",
 		"Cost" : 14,
 	},

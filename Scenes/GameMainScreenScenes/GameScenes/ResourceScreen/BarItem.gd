@@ -144,6 +144,12 @@ func _on_click_button_button_down():
 		SaveData.Resources[WoodType]["Count"] += Values.ResourceValues[WoodType]["PerClick"]
 	else:
 		SaveData.Resources[WoodType]["Count"] = Values.ResourceValues[WoodType]["Storage"]
+		
+	if SaveData.GeneralInfo.has("ClickCount"):
+		SaveData.GeneralInfo["ClickCount"] += 1
+	else:
+		SaveData.GeneralInfo["ClickCount"] = 1
+		
 
 func _on_wood_camp_buy_button_button_down():
 	if WCCurrentPrice <= SaveData.Gold["Count"]:

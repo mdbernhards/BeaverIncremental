@@ -3,10 +3,11 @@ First:
 balance some of the first achievements
 
 Later:
+Need to fix research history ordering, last should be first
+Fix scroll log not scrolling down, if mouse not over it
 Add Autoclickers, get up to 5 autoclickers from magic upgrades
 Fish swim, spawn, despawn logic
 Dam completion and Effect application
-Storage overloading
 Upgrade level cap at 100 and 10
 Tooltip on resource bar for incoming / outgoing wood breakdown
 Tooltip on mouse over magic label to see how much magic each resource gives
@@ -33,6 +34,7 @@ Sound effects?
 Add a lil story
 Tooltips for everything else
 All upgrade, research, magic, dam, achievement names and descriptions (maybe upgrade descriptive names, cute descriptions and for research other way around but rename description to effect:)
+Storage overloading
 
 Done:
 Add save delete button DONE
@@ -93,3 +95,4 @@ Fix upgrade and research unlock triggers DONE
 Fixed research and research cancel button DONE
 Show research only when all needed woodtypes unlocked DONE
 indicate which resources missing for research DONE
+Woodcamp upgrades appear when atleast 1 woodcamp DONE

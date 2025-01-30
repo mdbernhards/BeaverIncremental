@@ -156,19 +156,19 @@ func SetMagicValue(magicNr):
 		"1" :
 			Unlocks.Unlocks["Achievements"]["Unlocked"] = true
 		"1b" :
-			TempValues["Global"]["WcPriceMultip"] *= 0.75
+			TempValues["Global"]["WcPriceMultip"] *= 0.725
 		"1bb" :
 			TempValues["Global"]["StorageMultip"] *= 1.3
 		"1c" :
-			TempValues["Global"]["WcCostsMultip"] *= 0.9
+			TempValues["Global"]["WcCostsMultip"] *= 0.85
 		"2" :
-			TempValues["Global"]["WpsMultip"] *= 1.2
+			TempValues["Global"]["WpsMultip"] *= 1.35
 		"3" :
 			TempValues["Global"]["WcStorageMultip"] *= 2
 		"4" :
 			TempValues["Global"]["ExtraBeavers"] += 2
 		"5" :
-			TempValues["Global"]["WpsMultip"] *= 0.001 * achievementCount + 1
+			TempValues["Global"]["WpsMultip"] *= 0.0035 * achievementCount + 1
 		"5b" :
 			TempValues["Oak"]["UpgradePriceMultip"] *= 0.9
 			TempValues["Apple"]["UpgradePriceMultip"] *= 0.9
@@ -343,6 +343,9 @@ func SetResearchValue(researchNr):
 			TempValues["Global"]["BeaverBaseStorage"] += 100
 		"19" :
 			Unlocks.Unlocks["Birch"]["Unlocked"] = true
+		"19b" :
+			for woodType in WoodTypes:
+				TempValues[woodType]["ExtraBeavers"] += max(0, roundi(SaveData.Resources[woodType]["Woodcamps"] / 9 - 0.5))
 		"20" :
 			TempValues["Oak"]["ExtraBeavers"] += 2
 			TempValues["Apple"]["ExtraBeavers"] += 2
@@ -536,7 +539,7 @@ func SetUpgradeValue(woodType, upgradeId):
 				"5":
 					TempValues[woodType]["StorageMultip"] *= pow(1.065, upgradeLevel)
 				"6":
-					TempValues[woodType]["ExtraBeavers"] += roundi(SaveData.Resources[woodType]["Woodcamps"] / 5 * upgradeLevel - 0.5)
+					TempValues[woodType]["ExtraBeavers"] += max(0, roundi(SaveData.Resources[woodType]["Woodcamps"] / 5 * upgradeLevel - 0.5))
 				"7":
 					TempValues[woodType]["BaseWoodPrice"] += upgradeLevel * 0.005
 				"8":

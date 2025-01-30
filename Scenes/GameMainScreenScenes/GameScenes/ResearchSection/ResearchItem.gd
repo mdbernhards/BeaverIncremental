@@ -186,8 +186,12 @@ func checkIfVisible():
 	var woodTypes = Values.WoodTypes
 	
 	for woodType in woodTypes:
-		if ResearchData[woodType + "Cost"] * 0.3 > SaveData.Resources[woodType]["Count"] and ResearchData[woodType + "Cost"] > 0 and Unlocks.Unlocks[woodType]["Unlocked"]:
-			return false
+		if ResearchData[woodType + "Cost"] > 0 and Unlocks.Unlocks[woodType]["Unlocked"]:
+			if ResearchData[woodType + "Cost"] * 0.66 < SaveData.Resources[woodType]["Count"]:
+				return true
+				
+			if ResearchData[woodType + "Cost"] * 0.3 > SaveData.Resources[woodType]["Count"]:
+				return false
 			
 		if ResearchData[woodType + "Cost"] > 0 and !Unlocks.Unlocks[woodType]["Unlocked"]:
 			return false

@@ -691,55 +691,55 @@ var Achievements = {
 		"Description" : "Unlock All five Fishing Spots",
 		"Trigger" : func(): return Unlocks.Unlocks["Fishing"]["Spot"]["5"] and Unlocks.Unlocks["Fishing"]["Spot"]["4"] and Unlocks.Unlocks["Fishing"]["Spot"]["3"] and Unlocks.Unlocks["Fishing"]["Spot"]["2"] and Unlocks.Unlocks["Fishing"]["Spot"]["1"],
 	},
-	"139" : { #First finish fishing
+	"139" : {
 		"Name" : "Fish 1 Time",
 		"Description" : "Fish 1 Time",
-		"Trigger" : func(): return null,
+		"Trigger" : func(): return SaveData.GeneralInfo.has("FishedCount") and SaveData.GeneralInfo["FishedCount"] > 1,
 	},
 	"140" : {
 		"Name" : "Fish 10 Time",
 		"Description" : "Fish 10 Time",
-		"Trigger" : func(): return null,
+		"Trigger" : func(): return SaveData.GeneralInfo.has("FishedCount") and SaveData.GeneralInfo["FishedCount"] > 10,
 	},
 	"141" : {
 		"Name" : "Fish 100 Time",
 		"Description" : "Fish 100 Time",
-		"Trigger" : func(): return null,
+		"Trigger" : func(): return SaveData.GeneralInfo.has("FishedCount") and SaveData.GeneralInfo["FishedCount"] > 100,
 	},
 	"142" : {
 		"Name" : "Fish 1000 Time",
 		"Description" : "Fish 1000 Time",
-		"Trigger" : func(): return null,
+		"Trigger" : func(): return SaveData.GeneralInfo.has("FishedCount") and SaveData.GeneralInfo["FishedCount"] > 1000,
 	},
 	"143" : {
 		"Name" : "Fish 10000 Time",
 		"Description" : "Fish 10000 Time",
-		"Trigger" : func(): return null,
+		"Trigger" : func(): return SaveData.GeneralInfo.has("FishedCount") and SaveData.GeneralInfo["FishedCount"] > 10000,
 	},
 	"144" : {
 		"Name" : "Sell 1 Fish",
 		"Description" : "Sell 1 Fish",
-		"Trigger" : func(): return null,
+		"Trigger" : func(): return SaveData.GeneralInfo.has("FishSoldCount") and SaveData.GeneralInfo["FishSoldCount"] > 1,
 	},
 	"145" : {
 		"Name" : "Sell 25 Fish",
 		"Description" : "Sell 25 Fish",
-		"Trigger" : func(): return null,
+		"Trigger" : func(): return SaveData.GeneralInfo.has("FishSoldCount") and SaveData.GeneralInfo["FishSoldCount"] > 25,
 	},
 	"146" : {
 		"Name" : "Sell 500 Fish",
 		"Description" : "Sell 500 Fish",
-		"Trigger" : func(): return null,
+		"Trigger" : func(): return SaveData.GeneralInfo.has("FishSoldCount") and SaveData.GeneralInfo["FishSoldCount"] > 500,
 	},
 	"147" : {
 		"Name" : "Sell 7500 Fish",
 		"Description" : "Sell 7500 Fish",
-		"Trigger" : func(): return null,
+		"Trigger" : func(): return SaveData.GeneralInfo.has("FishSoldCount") and SaveData.GeneralInfo["FishSoldCount"] > 7500,
 	},
 	"148" : {
 		"Name" : "Sell 25000 Fish",
 		"Description" : "Sell 25000 Fish",
-		"Trigger" : func(): return null,
+		"Trigger" : func(): return SaveData.GeneralInfo.has("FishSoldCount") and SaveData.GeneralInfo["FishSoldCount"] > 25000,
 	},
 	"149" : {
 		"Name" : "Unlock Bait 1",
@@ -796,65 +796,65 @@ var Achievements = {
 		"Description" : "Unlock All Baits",
 		"Trigger" : func(): return checkThatAllBaitsUnlocked(),
 	},
-	"160" : { # Finish fishing
-		"Name" : "Find Electric Eal",
-		"Description" : "Find Electric Eal",
-		"Trigger" : func(): return null,
+	"160" : {
+		"Name" : "Find The Electric Eal",
+		"Description" : "Find The Electric Eal",
+		"Trigger" : func(): return SaveData.CaughtFish[Fishing.FishEnum.ElectricEal].has("Caught") and SaveData.CaughtFish[Fishing.FishEnum.ElectricEal]["Caught"],
 	},
 	"161" : {
-		"Name" : "Find Giant Squid",
-		"Description" : "Find Giant Squid",
-		"Trigger" : func(): return null,
+		"Name" : "Find The Blue Whale",
+		"Description" : "Find The Blue Whale",
+		"Trigger" : func(): return SaveData.CaughtFish[Fishing.FishEnum.BlueWhale].has("Caught") and SaveData.CaughtFish[Fishing.FishEnum.BlueWhale]["Caught"],
 	},
 	"162" : {
 		"Name" : "Fish 10 Times in One Ascension",
 		"Description" : "Fish 10 Times in One Ascension",
-		"Trigger" : func(): return null,
+		"Trigger" : func(): return SaveData.CaughtFish.has("FishedCount") and SaveData.CaughtFish["FishedCount"] > 10,
 	},
 	"163" : {
 		"Name" : "Fish 100 Times in One Ascension",
 		"Description" : "Fish 100 Times in One Ascension",
-		"Trigger" : func(): return null,
+		"Trigger" : func(): return SaveData.CaughtFish.has("FishedCount") and SaveData.CaughtFish["FishedCount"] > 100,
 	},
 	"164" : {
 		"Name" : "Fish 250 Times in One Ascension",
 		"Description" : "Fish 250 Times in One Ascension",
-		"Trigger" : func(): return null,
+		"Trigger" : func(): return SaveData.CaughtFish.has("FishedCount") and SaveData.CaughtFish["FishedCount"] > 250,
 	},
 	"165" : {
 		"Name" : "Fish 1000 Times in One Ascension",
 		"Description" : "Fish 1000 Times in One Ascension",
-		"Trigger" : func(): return null,
+		"Trigger" : func(): return SaveData.CaughtFish.has("FishedCount") and SaveData.CaughtFish["FishedCount"] > 1000,
 	},
 	"166" : {
 		"Name" : "5 Fish Types Caught",
 		"Description" : "5 Fish Types Caught",
-		"Trigger" : func(): return null,
+		"Trigger" : func(): return fishTypesCaughtCountCheck(5),
 	},
 	"167" : {
 		"Name" : "10 Fish Types Caught",
 		"Description" : "10 Fish Types Caught",
-		"Trigger" : func(): return null,
+		"Trigger" : func(): return fishTypesCaughtCountCheck(10),
 	},
 	"168" : {
 		"Name" : "20 Fish Types Caught",
 		"Description" : "20 Fish Types Caught",
-		"Trigger" : func(): return null,
+		"Trigger" : func(): return fishTypesCaughtCountCheck(20),
 	},
 	"169" : {
 		"Name" : "35 Fish Types Caught",
 		"Description" : "35 Fish Types Caught",
-		"Trigger" : func(): return null,
+		"Trigger" : func(): return fishTypesCaughtCountCheck(35),
 	},
 	"170" : {
 		"Name" : "55 Fish Types Caught",
 		"Description" : "55 Fish Types Caught",
-		"Trigger" : func(): return null,
+		"Trigger" : func(): return fishTypesCaughtCountCheck(55),
 	},
 	"171" : {
 		"Name" : "All Fish Types Caught",
 		"Description" : "All Fish Types Caught",
-		"Trigger" : func(): return null,
+		"Trigger" : func(): return fishTypesCaughtCountCheck(60),
 	},
 	"172" : {
 		"Name" : "Have 100 Woodcamps",
@@ -1222,29 +1222,29 @@ var Achievements = {
 		"Trigger" : func(): return null,
 	},
 	"245" : {
-		"Name" : "Click 1 time",
-		"Description" : "Click 1 time",
-		"Trigger" : func(): return null,
-	},
-	"246" : {
-		"Name" : "Click 100 time",
-		"Description" : "Click 100 time",
-		"Trigger" : func(): return null,
-	},
-	"247" : {
 		"Name" : "Click 1k time",
 		"Description" : "Click 1k time",
-		"Trigger" : func(): return null,
+		"Trigger" : func(): return SaveData.GeneralInfo["ClickCount"] > 1000,
 	},
-	"248" : {
+	"246" : {
 		"Name" : "Click 10k time",
 		"Description" : "Click 10k time",
-		"Trigger" : func(): return null,
+		"Trigger" : func(): return SaveData.GeneralInfo["ClickCount"] > 10000,
+	},
+	"247" : {
+		"Name" : "Click 25k time",
+		"Description" : "Click 25k time",
+		"Trigger" : func(): return SaveData.GeneralInfo["ClickCount"] > 25000,
+	},
+	"248" : {
+		"Name" : "Click 50k time",
+		"Description" : "Click 50k time",
+		"Trigger" : func(): return SaveData.GeneralInfo["ClickCount"] > 50000,
 	},
 	"249" : {
 		"Name" : "Click 100k time",
 		"Description" : "Click 100k time",
-		"Trigger" : func(): return null,
+		"Trigger" : func(): return SaveData.GeneralInfo["ClickCount"] > 100000,
 	},
 	"250" : {
 		"Name" : "Why Are We Clicking?",
@@ -1552,3 +1552,12 @@ func goldPerSecondCheck(needed):
 		goldGainPerSec += Values.ResourceValues[woodType]["GoldGainPerSecond"]
 	
 	return needed <= goldGainPerSec
+
+func fishTypesCaughtCountCheck(needed):
+	var fishTypesCaught
+	
+	for fishType in SaveData.CaughtFish:
+		if SaveData.CaughtFish[fishType].has("Caught") and SaveData.CaughtFish[fishType]["Caught"]:
+			fishTypesCaught += 1
+	
+	return fishTypesCaught >= needed
