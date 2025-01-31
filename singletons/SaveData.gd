@@ -72,6 +72,9 @@ func resetValues():
 	ResearchInfo = OriginalResearchInfo.duplicate(true)
 	MaxResourceCount = OriginalMaxResourceCount.duplicate(true)
 	
+	SaveData.GeneralInfo["TempClickCount"] = 0
+	SaveData.GeneralInfo["TempResearchDone"] = 0
+	
 	resetUnlocks()
 	recalculateValues()
 
@@ -1243,8 +1246,19 @@ var GeneralInfo = {
 	"NumberNotation" : NumberFormatting.NotationTypesEnum.Default,
 	"Autoclickers" : 0,
 	"ClickCount" : 0,
+	"TempClickCount" : 0,
 	"FishedCount" : 0,
 	"FishSoldCount" : 0,
+	"TotalBeaversBought" : 0,
+	"TotalWoodcampsBought" : 0,
+	"TotalWoodProduced" : 0,
+	"TotalWoodSold" : 0,
+	"TotalGoldGain" : 0,
+	"TimesAscended" : 0,
+	"TotalResearchDone" : 0,
+	"TempResearchDone" : 0,
+	"TotalUpgradesBought" : 0,
+	"TotalBotsBought" : 0,
 }
 
 var SavesInfo = {

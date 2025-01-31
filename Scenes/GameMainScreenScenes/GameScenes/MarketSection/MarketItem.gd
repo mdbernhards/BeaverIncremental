@@ -128,6 +128,16 @@ func _on_sell_button_button_down():
 	if SaveData.Resources[WoodType]["Count"] > 0.4 and WoodLossIfSold > 0.3 and GoldGainedIfSold > 0:
 		SaveData.Resources[WoodType]["Count"] -= WoodLossIfSold
 		SaveData.Gold["Count"] += GoldGainedIfSold
+		
+		if SaveData.GeneralInfo.has("TotalGoldGain"):
+			SaveData.GeneralInfo["TotalGoldGain"] += GoldGainedIfSold
+		else:
+			SaveData.GeneralInfo["TotalGoldGain"] = GoldGainedIfSold
+		
+		if SaveData.GeneralInfo.has("TotalWoodSold"):
+			SaveData.GeneralInfo["TotalWoodSold"] += WoodLossIfSold
+		else:
+			SaveData.GeneralInfo["TotalWoodSold"] = WoodLossIfSold
 
 func checkIfCanAfford(botAmount):
 	var price = 0
@@ -147,6 +157,11 @@ func buyBot(botAmount):
 		SaveData.Gold["Count"] -= price
 		SaveData.Resources[WoodType]["Bots"] += 1
 		BotCountLabel.text = str(SaveData.Resources[WoodType]["Bots"])
+		
+		if SaveData.GeneralInfo.has("TotalBotsBought"):
+			SaveData.GeneralInfo["TotalBotsBought"] += 1
+		else:
+			SaveData.GeneralInfo["TotalBotsBought"] = 1
 
 func _on_buy_button_button_down():
 	if checkIfCanAfford(1):

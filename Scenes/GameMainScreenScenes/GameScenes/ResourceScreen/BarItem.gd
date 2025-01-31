@@ -150,6 +150,11 @@ func _on_click_button_button_down():
 	else:
 		SaveData.GeneralInfo["ClickCount"] = 1
 		
+	if SaveData.GeneralInfo.has("TempClickCount"):
+		SaveData.GeneralInfo["TempClickCount"] += 1
+	else:
+		SaveData.GeneralInfo["TempClickCount"] = 1
+		
 
 func _on_wood_camp_buy_button_button_down():
 	if WCCurrentPrice <= SaveData.Gold["Count"]:
@@ -157,6 +162,12 @@ func _on_wood_camp_buy_button_button_down():
 		SaveData.Resources[WoodType]["Woodcamps"] += 1
 		updateBarValues()
 		CalculateValues.calculateAllValues()
+		
+		if SaveData.GeneralInfo.has("TotalWoodcampsBought"):
+			SaveData.GeneralInfo["TotalWoodcampsBought"] += 1
+		else:
+			SaveData.GeneralInfo["TotalWoodcampsBought"] = 1
+			
 		return true
 	
 	return false
@@ -173,6 +184,12 @@ func _on_beaver_buy_button_button_down():
 		SaveData.Resources[WoodType]["Beavers"] += 1
 		updateBarValues()
 		CalculateValues.calculateAllValues()
+		
+		if SaveData.GeneralInfo.has("TotalBeaversBought"):
+			SaveData.GeneralInfo["TotalBeaversBought"] += 1
+		else:
+			SaveData.GeneralInfo["TotalBeaversBought"] = 1
+		
 		return true
 	
 	return false

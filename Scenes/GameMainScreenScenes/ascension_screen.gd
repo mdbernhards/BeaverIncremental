@@ -28,6 +28,7 @@ var MagicLabel
 var EffectLabel
 var MagicGainLabel
 var NextMagicLabel
+var AscendButton
 
 func _ready() -> void:
 	setupNodePaths()
@@ -71,15 +72,27 @@ func setupNodePaths():
 	EffectLabel = $MC/AscensionVBox/TopHBox/MC/VBox/EffectLabel
 	MagicGainLabel = $MC/AscensionVBox/MC2/VBox/MagicGainLabel
 	NextMagicLabel = $MC/AscensionVBox/MC2/VBox/NextMagicLabel
+	AscendButton = $MC/AscensionVBox/MC/AscendButton
 
 func _on_ascend_button_button_down() -> void:
-	SaveData.Magic["Count"] += floor(Values.ResourceValues["Magic"]["PotentialMagic"])
-	SaveData.resetValues()
+	if floor(Values.ResourceValues["Magic"]["PotentialMagic"]) > 0:
+		if SaveData.GeneralInfo.has("TimesAscended"):
+			SaveData.GeneralInfo["TimesAscended"] += 1
+		else:
+			SaveData.GeneralInfo["TimesAscended"] = 1
+		
+		SaveData.Magic["Count"] += floor(Values.ResourceValues["Magic"]["PotentialMagic"])
+		SaveData.resetValues()
 
 func _on_timer_timeout() -> void:
 	checkMaxWoodCounts()
 	calculatePotentialMagicGain()
 	updateMagic()
+	
+	if floor(Values.ResourceValues["Magic"]["PotentialMagic"]) > 0:
+		AscendButton.disabled = false
+	else:
+		AscendButton.disabled = true
 	
 	MagicLabel.text = "You have " + str(SaveData.Magic["Count"]) + " Magic"
 	

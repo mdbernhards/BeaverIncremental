@@ -206,6 +206,17 @@ func _on_research_timer_timeout():
 	SaveData.UnlockedResearch[str(ItemId)] = true
 	CalculateValues.calculateAllValues()
 	get_tree().get_first_node_in_group("TextLogSection").writeResearchUnlockToLog(ItemId)
+	
+	if SaveData.GeneralInfo.has("TotalResearchDone"):
+		SaveData.GeneralInfo["TotalResearchDone"] += 1
+	else:
+		SaveData.GeneralInfo["TotalResearchDone"] = 1
+	
+	if SaveData.GeneralInfo.has("TempResearchDone"):
+		SaveData.GeneralInfo["TempResearchDone"] += 1
+	else:
+		SaveData.GeneralInfo["TempResearchDone"] = 1
+	
 	queue_free()
 
 func setResearchState(state):

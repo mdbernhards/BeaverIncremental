@@ -204,6 +204,11 @@ func setTickChanges():
 		
 		SaveData.Resources[woodType]["Count"] += WoodCalculations[woodType]["WoodProductionGain"] - woodLoss
 		
+		if SaveData.GeneralInfo.has("TotalWoodProduced"):
+			SaveData.GeneralInfo["TotalWoodProduced"] += WoodCalculations[woodType]["WoodProductionGain"]
+		else:
+			SaveData.GeneralInfo["TotalWoodProduced"] = WoodCalculations[woodType]["WoodProductionGain"]
+		
 		# Wood Production
 		Values.ResourceValues[woodType]["RealPerSecondLoss"] = woodLoss
 		Values.ResourceValues[woodType]["RealPerSecondIncrease"] = WoodCalculations[woodType]["WoodProductionGain"]
@@ -211,6 +216,16 @@ func setTickChanges():
 		# Market
 		var goldGain = WoodCalculations[woodType]["WoodMarkedLoss"] * Values.ResourceValues[woodType]["SoldFor"]
 		SaveData.Gold["Count"] += goldGain
+		
+		if SaveData.GeneralInfo.has("TotalGoldGain"):
+			SaveData.GeneralInfo["TotalGoldGain"] += goldGain
+		else:
+			SaveData.GeneralInfo["TotalGoldGain"] = goldGain
+		
+		if SaveData.GeneralInfo.has("TotalWoodSold"):
+			SaveData.GeneralInfo["TotalWoodSold"] += WoodCalculations[woodType]["WoodMarkedLoss"]
+		else:
+			SaveData.GeneralInfo["TotalWoodSold"] = WoodCalculations[woodType]["WoodMarkedLoss"]
 		
 		Values.ResourceValues[woodType]["WoodSoldPerSecond"] = WoodCalculations[woodType]["WoodMarkedLoss"]
 		Values.ResourceValues[woodType]["GoldGainPerSecond"] = goldGain

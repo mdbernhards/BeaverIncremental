@@ -130,6 +130,12 @@ func _on_buy_button_button_down():
 			CalculateValues.calculateAllValues()
 			upgradeBought = true
 	
+	if upgradeBought:
+		if SaveData.GeneralInfo.has("TotalUpgradesBought"):
+			SaveData.GeneralInfo["TotalUpgradesBought"] += 1
+		else:
+			SaveData.GeneralInfo["TotalUpgradesBought"] = 1
+	
 	return upgradeBought
 
 func _on_buy_max_button_button_down() -> void:
