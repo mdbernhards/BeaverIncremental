@@ -409,7 +409,6 @@ var Unlocks = {
 		},
 	},
 	"Storage" : {
-		"Overloading" : false,
 		"Unlimited" : false,
 	},
 }

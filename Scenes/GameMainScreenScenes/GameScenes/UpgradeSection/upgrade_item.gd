@@ -172,3 +172,4 @@ func _on_magic_lock_button_button_down() -> void:
 		SaveData.Magic["Count"] -= Upgrades.Upgrades[ResourceType][str(UpgradeNumber)]["MagicCost"]
 		SaveDataValues["MagicLocked"] = false
 		_on_upgrade_item_timer_timeout()
+		CalculateValues.calculateAllValues()

@@ -1244,7 +1244,7 @@ var GeneralInfo = {
 	"MasterVolume" : false,
 	"MusicVolume" : false,
 	"NumberNotation" : NumberFormatting.NotationTypesEnum.Default,
-	"Autoclickers" : 0,
+	"AutoClickers" : 0,
 	"ClickCount" : 0,
 	"TempClickCount" : 0,
 	"FishSoldCount" : 0,

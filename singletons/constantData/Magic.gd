@@ -41,20 +41,25 @@ var Magic = {
 		"Description" : "All wood types start with 2 more beavers",
 		"Cost" : 10,
 	},
+	"4b" : {
+		"Name" : "Research 25% quicker",
+		"Description" : "Research 25% quicker",
+		"Cost" : 13,
+	},
 	"5" : {
 		"Name" : "Per Achievement 0.35% WPS",
 		"Description" : "",
-		"Cost" : 14,
+		"Cost" : 17,
 	},
 	"5b" : {
 		"Name" : "Upgrades 10% cheaper",
 		"Description" : "",
-		"Cost" : 20,
+		"Cost" : 22,
 	},
 	"6" : {
-		"Name" : "Unlock Storage Overloading",
-		"Description" : "",
-		"Cost" : 25,
+		"Name" : "+1 Autoclicker",
+		"Description" : "+1 Autoclicker",
+		"Cost" : 30,
 	},
 	"6b" : {
 		"Name" : "Starting WC +2",
@@ -74,7 +79,7 @@ var Magic = {
 	"8b" : {
 		"Name" : "+1 Autoclicker",
 		"Description" : "+1 Autoclicker",
-		"Cost" : 75,
+		"Cost" : 125,
 	},
 	"9" : {
 		"Name" : "5% WPC To WPS",

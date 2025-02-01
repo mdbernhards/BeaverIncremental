@@ -16,10 +16,14 @@ func checkInfoFileForSaves():
 	
 	var jsonInfo = infoFile.get_line()
 	SaveData.SavesInfo = parseJson(jsonInfo)
+	
+	var files = DirAccess.get_files_at("user://Saves/")
+	
+	for file in files:
+		if !SaveData.SavesInfo.has(file.replace(".save", '')):
+			addSaveFileToInfo(file.replace(".save", ''))
 
 func addSaveFileToInfo(saveName):
-	checkInfoFileForSaves()
-	
 	var infoFile = FileAccess.open("user://info.save", FileAccess.WRITE)
 	
 	SaveData.SavesInfo[saveName] = {
@@ -56,12 +60,12 @@ func getCurrentPlayTime():
 func saveGame(saveName):
 	SaveData.GeneralInfo["TimePlayed"] += Time.get_unix_time_from_system() - TimeStart
 	
-	if not FileAccess.file_exists("user://" + saveName + ".save"):
+	if not FileAccess.file_exists("user://Saves/" + saveName + ".save"):
 		addSaveFileToInfo(saveName)
 	else:
 		updateSaveFileInfo(saveName)
 	
-	var saveFile = FileAccess.open("user://" + saveName + ".save", FileAccess.WRITE)
+	var saveFile = FileAccess.open("user://Saves/" + saveName + ".save", FileAccess.WRITE)
 	
 	var jsonGold = JSON.stringify(var_to_str(SaveData.Gold))
 	saveFile.store_line(jsonGold)
@@ -106,12 +110,12 @@ func saveGame(saveName):
 	saveFile.store_line(jsonUnlocks)
 
 func saveNewGame(saveName):
-	if not FileAccess.file_exists("user://" + saveName + ".save"):
+	if not FileAccess.file_exists("user://Saves/" + saveName + ".save"):
 		addSaveFileToInfo(saveName)
 	else:
 		updateSaveFileInfo(saveName)
 	
-	var saveFile = FileAccess.open("user://" + saveName + ".save", FileAccess.WRITE)
+	var saveFile = FileAccess.open("user://Saves/" + saveName + ".save", FileAccess.WRITE)
 	
 	var jsonGold = JSON.stringify(var_to_str(SaveData.OriginalGold))
 	saveFile.store_line(jsonGold)
@@ -156,10 +160,10 @@ func saveNewGame(saveName):
 	saveFile.store_line(jsonUnlocks)
 	
 func loadGame(saveName):
-	if not FileAccess.file_exists("user://" + saveName + ".save"):
+	if not FileAccess.file_exists("user://Saves/" + saveName + ".save"):
 		return
 
-	var saveFile = FileAccess.open("user://" + saveName + ".save", FileAccess.READ)
+	var saveFile = FileAccess.open("user://Saves/" + saveName + ".save", FileAccess.READ)
 	
 	var jsonGold = saveFile.get_line()
 	SaveData.Gold = parseJson(jsonGold)
@@ -211,10 +215,8 @@ func loadGame(saveName):
 	TimeStart = Time.get_unix_time_from_system()
 	
 func deleteGame(saveName):
-	if not FileAccess.file_exists("user://" + saveName + ".save"):
-		return
-		
-	DirAccess.remove_absolute("user://" + saveName + ".save")
+	if FileAccess.file_exists("user://Saves/" + saveName + ".save"):
+		DirAccess.remove_absolute("user://Saves/" + saveName + ".save")
 	
 	checkInfoFileForSaves()
 	

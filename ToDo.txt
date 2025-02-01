@@ -1,12 +1,9 @@
 To do all things I can think of:
 First:
-Fix scroll log not scrolling down, if mouse not over it
 Balance the first magic locks
 Upgrade level cap at 100 and 10
-Add Autoclickers, get up to 5 autoclickers from magic upgrades
-Add Magic Upgrade for faster research
+Add Autoclickers, get up to 6 autoclickers from magic upgrades
 Implement keep first 10 research
-Add save detector
 
 Later:
 Dam completion and Effect application
@@ -29,12 +26,12 @@ Buy max buttons logic for fishing
 Add fishing spot logic, different fish in different spots
 
 A lot Later:
+Read data from save if save info is missing
 Music, music player
 Sound effects?
 Add a lil story
 Tooltips for everything else
 All upgrade, research, magic, dam, achievement names and descriptions (maybe upgrade descriptive names, cute descriptions and for research other way around but rename description to effect:)
-Storage overloading
 
 Done:
 Add save delete button DONE
@@ -99,3 +96,6 @@ Woodcamp upgrades appear when atleast 1 woodcamp DONE
 Add most Achievement triggers DONE
 Fix research history ordering DONE
 Fix counting of locked wood type beaver and woodcamp achievements DONE
+Add save detector DONE
+Fix the text log scrolling DONE
+Add Magic Upgrade for faster research DONE

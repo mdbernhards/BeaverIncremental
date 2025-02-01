@@ -15,23 +15,22 @@ func _process(delta: float) -> void:
 
 func writeResearchUnlockToLog(researchId):
 	var researchData = Research.Research[researchId]
-	WriteToLog("[url=tooltip_research,%s][color=#228B22][b][%s][/b][/color][/url] has been researched" % [researchId, researchData["Name"]])
+	writeToLog("[url=tooltip_research,%s][color=#228B22][b][%s][/b][/color][/url] has been researched" % [researchId, researchData["Name"]])
 
 func writeAchievementUnlockToLog(achievementId):
 	var achievementData = Achievements.Achievements[achievementId]
-	WriteToLog("Achievement [url=tooltip_achievement,%s][color=#FFD700][b][%s][/b][/color][/url] has been unlocked" % [achievementId, achievementData["Name"]])
+	writeToLog("Achievement [url=tooltip_achievement,%s][color=#FFD700][b][%s][/b][/color][/url] has been unlocked" % [achievementId, achievementData["Name"]])
 
 func writeMagicUpgradeUnlockToLog(magicId):
 	var magicUpgradeData = Magic.Magic[magicId]
-	WriteToLog("Magic Upgrade [url=tooltip_magic,%s][color=#800080][b][%s][/b][/color][/url] has been unlocked" % [magicId, magicUpgradeData["Name"]])
+	writeToLog("Magic Upgrade [url=tooltip_magic,%s][color=#800080][b][%s][/b][/color][/url] has been unlocked" % [magicId, magicUpgradeData["Name"]])
 
-func WriteToLog(text):
+func writeToLog(text):
 	if text != "":
 		TextLog.append_text(text + "\n")
-	else:
-		if !MouseInFocus:
-			await TextLog.get_v_scroll_bar().changed
-			TextLog.scroll_vertical = int(TextLog.get_v_scroll_bar().max_value)
+	
+	if !MouseInFocus:
+		TextLog.scroll_to_line(TextLog.get_line_count()-1)
 
 func clearLog():
 	TextLog.text = ""
