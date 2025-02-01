@@ -85,7 +85,7 @@ var ResourceValues = {
 		"BotPriceMultip" : 1,
 		"BotBaseSell" : 1,
 		"WoodSoldPerSecond" : 10,
-		"GoldGainPerSecond" : 10, # from bots selling
+		"GoldGainPerSecond" : 10,
 		"ExtraBeavers" : 0,
 		"ExtraWoodcamps" : 0,
 	},
@@ -105,7 +105,7 @@ var ResourceValues = {
 		"BotPriceMultip" : 1,
 		"BotBaseSell" : 1,
 		"WoodSoldPerSecond" : 10,
-		"GoldGainPerSecond" : 10, # from bots selling
+		"GoldGainPerSecond" : 10,
 		"ExtraBeavers" : 0,
 		"ExtraWoodcamps" : 0,
 	},
@@ -115,7 +115,7 @@ var ResourceValues = {
 		"PerSecondLoss" : 0,
 		"Storage" : 1000,
 		"Color" : Color(0.775, 0.614, 0.484),
-		"SecondaryColor" : Color(0.282, 0.2, 0.132),
+		"SecondaryColor" : Color(0.371, 0.268, 0.183),
 		"RealPerSecondIncrease" : 0,
 		"RealPerSecondLoss" : 0,
 		"SoldFor" : 0.35,
@@ -125,7 +125,7 @@ var ResourceValues = {
 		"BotPriceMultip" : 1,
 		"BotBaseSell" : 1,
 		"WoodSoldPerSecond" : 10,
-		"GoldGainPerSecond" : 10, # from bots selling
+		"GoldGainPerSecond" : 10,
 		"ExtraBeavers" : 0,
 		"ExtraWoodcamps" : 0,
 	},
@@ -145,7 +145,7 @@ var ResourceValues = {
 		"BotPriceMultip" : 1,
 		"BotBaseSell" : 1,
 		"WoodSoldPerSecond" : 10,
-		"GoldGainPerSecond" : 10, # from bots selling
+		"GoldGainPerSecond" : 10,
 		"ExtraBeavers" : 0,
 		"ExtraWoodcamps" : 0,
 	},
@@ -165,7 +165,7 @@ var ResourceValues = {
 		"BotPriceMultip" : 1,
 		"BotBaseSell" : 1,
 		"WoodSoldPerSecond" : 10,
-		"GoldGainPerSecond" : 10, # from bots selling
+		"GoldGainPerSecond" : 10,
 		"ExtraBeavers" : 0,
 		"ExtraWoodcamps" : 0,
 	},
@@ -185,7 +185,7 @@ var ResourceValues = {
 		"BotPriceMultip" : 1,
 		"BotBaseSell" : 1,
 		"WoodSoldPerSecond" : 10,
-		"GoldGainPerSecond" : 10, # from bots selling
+		"GoldGainPerSecond" : 10,
 		"ExtraBeavers" : 0,
 		"ExtraWoodcamps" : 0,
 	},
@@ -205,7 +205,7 @@ var ResourceValues = {
 		"BotPriceMultip" : 1,
 		"BotBaseSell" : 1,
 		"WoodSoldPerSecond" : 10,
-		"GoldGainPerSecond" : 10, # from bots selling
+		"GoldGainPerSecond" : 10,
 		"ExtraBeavers" : 0,
 		"ExtraWoodcamps" : 0,
 	},
@@ -225,7 +225,7 @@ var ResourceValues = {
 		"BotPriceMultip" : 1,
 		"BotBaseSell" : 1,
 		"WoodSoldPerSecond" : 10,
-		"GoldGainPerSecond" : 10, # from bots selling
+		"GoldGainPerSecond" : 10,
 		"ExtraBeavers" : 0,
 		"ExtraWoodcamps" : 0,
 	},
@@ -245,7 +245,7 @@ var ResourceValues = {
 		"BotPriceMultip" : 1,
 		"BotBaseSell" : 1,
 		"WoodSoldPerSecond" : 10,
-		"GoldGainPerSecond" : 10, # from bots selling
+		"GoldGainPerSecond" : 10,
 		"ExtraBeavers" : 0,
 		"ExtraWoodcamps" : 0,
 	},
@@ -265,7 +265,7 @@ var ResourceValues = {
 		"BotPriceMultip" : 1,
 		"BotBaseSell" : 1,
 		"WoodSoldPerSecond" : 10,
-		"GoldGainPerSecond" : 10, # from bots selling
+		"GoldGainPerSecond" : 10,
 		"ExtraBeavers" : 0,
 		"ExtraWoodcamps" : 0,
 	},
@@ -285,7 +285,7 @@ var ResourceValues = {
 		"BotPriceMultip" : 1,
 		"BotBaseSell" : 1,
 		"WoodSoldPerSecond" : 10,
-		"GoldGainPerSecond" : 10, # from bots selling
+		"GoldGainPerSecond" : 10,
 		"ExtraBeavers" : 0,
 		"ExtraWoodcamps" : 0,
 	},
@@ -305,7 +305,7 @@ var ResourceValues = {
 		"BotPriceMultip" : 1,
 		"BotBaseSell" : 1,
 		"WoodSoldPerSecond" : 10,
-		"GoldGainPerSecond" : 10, # from bots selling
+		"GoldGainPerSecond" : 10,
 		"ExtraBeavers" : 0,
 		"ExtraWoodcamps" : 0,
 	},
@@ -325,7 +325,7 @@ var ResourceValues = {
 		"BotPriceMultip" : 1,
 		"BotBaseSell" : 1,
 		"WoodSoldPerSecond" : 10,
-		"GoldGainPerSecond" : 10, # from bots selling
+		"GoldGainPerSecond" : 10,
 		"ExtraBeavers" : 0,
 		"ExtraWoodcamps" : 0,
 	},
@@ -345,7 +345,7 @@ var ResourceValues = {
 		"BotPriceMultip" : 1,
 		"BotBaseSell" : 1,
 		"WoodSoldPerSecond" : 10,
-		"GoldGainPerSecond" : 10, # from bots selling
+		"GoldGainPerSecond" : 10,
 		"ExtraBeavers" : 0,
 		"ExtraWoodcamps" : 0,
 	},

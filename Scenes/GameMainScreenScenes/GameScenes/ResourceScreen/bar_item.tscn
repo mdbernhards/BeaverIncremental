@@ -119,6 +119,21 @@ offset_bottom = 0.943001
 theme_override_font_sizes/font_size = 13
 text = "Maple production: 25%"
 
+[node name="AutoclickCheckButton" type="CheckButton" parent="HBox/BarVBox/BarRect"]
+layout_mode = 0
+offset_left = 388.0
+offset_top = 29.0
+offset_right = 432.0
+offset_bottom = 53.0
+focus_mode = 0
+
+[node name="AutoclickLabel" type="Label" parent="HBox/BarVBox/BarRect/AutoclickCheckButton"]
+offset_left = -5.0
+offset_top = -17.0
+offset_right = 53.0
+theme_override_font_sizes/font_size = 12
+text = "Autoclick"
+
 [node name="BeaverMC" type="MarginContainer" parent="HBox"]
 custom_minimum_size = Vector2(210, 0)
 layout_mode = 2

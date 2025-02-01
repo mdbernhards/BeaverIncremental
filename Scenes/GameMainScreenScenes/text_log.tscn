@@ -45,6 +45,7 @@ layout_mode = 2
 theme_override_constants/outline_size = 3
 theme_override_constants/line_separation = 4
 bbcode_enabled = true
+scroll_following = true
 tab_size = 5
 meta_underlined = false
 hint_underlined = false

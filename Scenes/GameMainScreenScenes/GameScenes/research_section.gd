@@ -52,12 +52,20 @@ func setupHistoryItems():
 	deleteAllHistoryItems()
 	var historyItemScene = load("res://Scenes/GameMainScreenScenes/GameScenes/ResearchSection/history_item.tscn")
 	
-	for researchId in SaveData.UnlockedResearch:
+	var keys = SaveData.UnlockedResearch.keys()
+	keys.sort_custom(sortDescending)
+	
+	for researchId in keys:
 		if SaveData.UnlockedResearch[researchId]:
 			var historyItem = historyItemScene.instantiate()
 			
 			historyItem.setResearch(researchId)
 			HistoryList.add_child(historyItem)
+
+func sortDescending(a, b):
+	if int(a) > int(b):
+		return true
+	return false
 
 func deleteAllResearchItems():
 	if !ResearchList:

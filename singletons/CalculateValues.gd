@@ -50,7 +50,7 @@ func CalculateRealValues():
 		if lastWoodType and TempValues["Global"]["LowerStorageMultip"] > 1:
 			storageFromLowerTier = (ResourceValues["Global"]["LowerStorageMultip"] - 1) * ResourceValues[lastWoodType]["Storage"]
 		
-		ResourceValues[woodType]["PerClick"] = beavers * TempValues[woodType]["BeaverUpgrades"] * TempValues[woodType]["BeaverMultip"] * TempValues["Global"]["BeaverMultip"] * magicWpcMultip * achievementWpcMultip
+		ResourceValues[woodType]["PerClick"] = beavers * TempValues[woodType]["BeaverUpgrades"] * TempValues[woodType]["BeaverMultip"] * TempValues["Global"]["BeaverMultip"] * magicWpcMultip * achievementWpcMultip + TempValues[woodType]["FlatWpc"]
 		ResourceValues[woodType]["PerSecondIncrease"] = woodcamps * TempValues[woodType]["WpsPerWc"] * TempValues[woodType]["WpsMultip"] * TempValues["Global"]["WpsMultip"] * TempValues[woodType]["WcEffectMultip"] * SaveData.Resources[woodType]["Production"] * magicWpsMultip * achievementWpsMultip / 100
 		ResourceValues[woodType]["Storage"] = (TempValues[woodType]["BaseStorage"] + beavers * (TempValues["Global"]["BeaverBaseStorage"] + TempValues[woodType]["BeaverBaseStorage"]) + woodcamps * (TempValues[woodType]["WcBaseStorage"] + TempValues["Global"]["WcBaseStorage"]) * TempValues[woodType]["WcStorageMultip"] * TempValues["Global"]["WcStorageMultip"] * TempValues[woodType]["WcEffectMultip"]) * TempValues[woodType]["StorageMultip"] * TempValues["Global"]["StorageMultip"] * magicStorageMultip * achievementStorageMultip + storageFromLowerTier
 		ResourceValues[woodType]["SoldFor"] = TempValues[woodType]["BaseWoodPrice"] * TempValues[woodType]["WoodPriceMultip"] * TempValues["Global"]["WoodPriceMultip"] * TempValues["Gold"]["GainMultip"]
@@ -163,6 +163,12 @@ func SetMagicValue(magicNr):
 			TempValues["Global"]["WcCostsMultip"] *= 0.85
 		"2" :
 			TempValues["Global"]["WpsMultip"] *= 1.35
+		"2b" :
+			TempValues["Oak"]["FlatWpc"] += 25
+			TempValues["Apple"]["FlatWpc"] += 25
+			TempValues["Maple"]["FlatWpc"] += 25
+			TempValues["Birch"]["FlatWpc"] += 25
+			TempValues["Spruce"]["FlatWpc"] += 25
 		"3" :
 			TempValues["Global"]["WcStorageMultip"] *= 2
 		"4" :
@@ -361,6 +367,8 @@ func SetResearchValue(researchNr):
 			TempValues["Maple"]["WoodPriceMultip"] *= 1.25
 		"24" :
 			TempValues["Oak"]["WcPriceMultip"] *= 0.4
+		"24b" :
+			TempValues["Maple"]["StorageMultip"] *= 1.135
 		"25" :
 			TempValues["Global"]["WpsMultip"] *= 1.2
 		"26" :
@@ -543,11 +551,11 @@ func SetUpgradeValue(woodType, upgradeId):
 				"7":
 					TempValues[woodType]["BaseWoodPrice"] += upgradeLevel * 0.005
 				"8":
-					TempValues["Dam"]["PriceMultip"] *= pow(1 - 0.05, upgradeLevel)
+					TempValues["Global"]["UpgradePriceMultip"] *= pow(1 - 0.06, upgradeLevel)
 				"9":
-					TempValues["Research"]["Time"] *= pow(1 - 0.01, upgradeLevel)
+					TempValues["Research"]["Time"] *= pow(1 - 0.03, upgradeLevel)
 				"10":
-					TempValues["Global"]["UpgradePriceMultip"] *= pow(1 - 0.005, upgradeLevel)
+					TempValues["Dam"]["PriceMultip"] *= pow(1 - 0.05, upgradeLevel)
 		"Apple":
 			match upgradeId:
 				"1":
@@ -932,6 +940,7 @@ var OriginalTempValues = {
 		"WcPriceMultip" : 1,
 		"WpsPerWc": 1,
 		"WpsMultip" : 1,
+		"FlatWpc" : 0,
 		"BeaverPriceMultip" : 1,
 		"UpgradePriceMultip" : 1,
 		"BaseWoodPrice" : 0.01,
@@ -954,6 +963,7 @@ var OriginalTempValues = {
 		"WcPriceMultip" : 1,
 		"WpsPerWc": 1,
 		"WpsMultip" : 1,
+		"FlatWpc" : 0,
 		"BeaverPriceMultip" : 1,
 		"UpgradePriceMultip" : 1,
 		"BaseWoodPrice" : 0.05,
@@ -976,6 +986,7 @@ var OriginalTempValues = {
 		"WcPriceMultip" : 1,
 		"WpsPerWc": 1,
 		"WpsMultip" : 1,
+		"FlatWpc" : 0,
 		"BeaverPriceMultip" : 1,
 		"UpgradePriceMultip" : 1,
 		"BaseWoodPrice" : 0.25,
@@ -998,6 +1009,7 @@ var OriginalTempValues = {
 		"WcPriceMultip" : 1,
 		"WpsPerWc": 1,
 		"WpsMultip" : 1,
+		"FlatWpc" : 0,
 		"BeaverPriceMultip" : 1,
 		"UpgradePriceMultip" : 1,
 		"BaseWoodPrice" : 0.70,
@@ -1020,6 +1032,7 @@ var OriginalTempValues = {
 		"WcPriceMultip" : 1,
 		"WpsPerWc": 1,
 		"WpsMultip" : 1,
+		"FlatWpc" : 0,
 		"BeaverPriceMultip" : 1,
 		"UpgradePriceMultip" : 1,
 		"BaseWoodPrice" : 2.55,
@@ -1042,6 +1055,7 @@ var OriginalTempValues = {
 		"WcPriceMultip" : 1,
 		"WpsPerWc": 1,
 		"WpsMultip" : 1,
+		"FlatWpc" : 0,
 		"BeaverPriceMultip" : 1,
 		"UpgradePriceMultip" : 1,
 		"BaseWoodPrice" : 7,
@@ -1064,6 +1078,7 @@ var OriginalTempValues = {
 		"WcPriceMultip" : 1,
 		"WpsPerWc": 1,
 		"WpsMultip" : 1,
+		"FlatWpc" : 0,
 		"BeaverPriceMultip" : 1,
 		"UpgradePriceMultip" : 1,
 		"BaseWoodPrice" : 13,
@@ -1086,6 +1101,7 @@ var OriginalTempValues = {
 		"WcPriceMultip" : 1,
 		"WpsPerWc": 1,
 		"WpsMultip" : 1,
+		"FlatWpc" : 0,
 		"BeaverPriceMultip" : 1,
 		"UpgradePriceMultip" : 1,
 		"BaseWoodPrice" : 33,
@@ -1108,6 +1124,7 @@ var OriginalTempValues = {
 		"WcPriceMultip" : 1,
 		"WpsPerWc": 1,
 		"WpsMultip" : 1,
+		"FlatWpc" : 0,
 		"BeaverPriceMultip" : 1,
 		"UpgradePriceMultip" : 1,
 		"BaseWoodPrice" : 80,
@@ -1130,6 +1147,7 @@ var OriginalTempValues = {
 		"WcPriceMultip" : 1,
 		"WpsPerWc": 1,
 		"WpsMultip" : 1,
+		"FlatWpc" : 0,
 		"BeaverPriceMultip" : 1,
 		"UpgradePriceMultip" : 1,
 		"BaseWoodPrice" : 140,
@@ -1152,6 +1170,7 @@ var OriginalTempValues = {
 		"WcPriceMultip" : 1,
 		"WpsPerWc": 1,
 		"WpsMultip" : 1,
+		"FlatWpc" : 0,
 		"BeaverPriceMultip" : 1,
 		"UpgradePriceMultip" : 1,
 		"BaseWoodPrice" : 500,
@@ -1174,6 +1193,7 @@ var OriginalTempValues = {
 		"WcPriceMultip" : 1,
 		"WpsPerWc": 1,
 		"WpsMultip" : 1,
+		"FlatWpc" : 0,
 		"BeaverPriceMultip" : 1,
 		"UpgradePriceMultip" : 1,
 		"BaseWoodPrice" : 1400,
@@ -1196,6 +1216,7 @@ var OriginalTempValues = {
 		"WcPriceMultip" : 1,
 		"WpsPerWc": 1,
 		"WpsMultip" : 1,
+		"FlatWpc" : 0,
 		"BeaverPriceMultip" : 1,
 		"UpgradePriceMultip" : 1,
 		"BaseWoodPrice" : 3600,
@@ -1218,6 +1239,7 @@ var OriginalTempValues = {
 		"WcPriceMultip" : 1,
 		"WpsPerWc": 1,
 		"WpsMultip" : 1,
+		"FlatWpc" : 0,
 		"BeaverPriceMultip" : 1,
 		"UpgradePriceMultip" : 1,
 		"BaseWoodPrice" : 9999,
@@ -1240,6 +1262,7 @@ var OriginalTempValues = {
 		"WcPriceMultip" : 1,
 		"WpsPerWc": 1,
 		"WpsMultip" : 1,
+		"FlatWpc" : 0,
 		"BeaverPriceMultip" : 1,
 		"UpgradePriceMultip" : 1,
 		"BaseWoodPrice" : 22222,

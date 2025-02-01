@@ -26,6 +26,11 @@ var Magic = {
 		"Description" : "Improve Wood per Second gain by 20%",
 		"Cost" : 5,
 	},
+	"2b" : {
+		"Name" : "+25 Clasic WPC",
+		"Description" : "Flat +25 Wood Per Click for all Classic wood types",
+		"Cost" : 6,
+	},
 	"3" : {
 		"Name" : "2x Storage From WC",
 		"Description" : "2x The Storage gained from Woodcamps",

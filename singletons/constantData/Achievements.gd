@@ -694,27 +694,27 @@ var Achievements = {
 	"139" : {
 		"Name" : "Fish 1 Time",
 		"Description" : "Fish 1 Time",
-		"Trigger" : func(): return SaveData.GeneralInfo.has("FishedCount") and SaveData.GeneralInfo["FishedCount"] >= 1,
+		"Trigger" : func(): return SaveData.GeneralInfo.has("TotalFishedCount") and SaveData.GeneralInfo["TotalFishedCount"] >= 1,
 	},
 	"140" : {
 		"Name" : "Fish 10 Time",
 		"Description" : "Fish 10 Time",
-		"Trigger" : func(): return SaveData.GeneralInfo.has("FishedCount") and SaveData.GeneralInfo["FishedCount"] >= 10,
+		"Trigger" : func(): return SaveData.GeneralInfo.has("TotalFishedCount") and SaveData.GeneralInfo["TotalFishedCount"] >= 10,
 	},
 	"141" : {
 		"Name" : "Fish 100 Time",
 		"Description" : "Fish 100 Time",
-		"Trigger" : func(): return SaveData.GeneralInfo.has("FishedCount") and SaveData.GeneralInfo["FishedCount"] >= 100,
+		"Trigger" : func(): return SaveData.GeneralInfo.has("TotalFishedCount") and SaveData.GeneralInfo["TotalFishedCount"] >= 100,
 	},
 	"142" : {
 		"Name" : "Fish 1000 Time",
 		"Description" : "Fish 1000 Time",
-		"Trigger" : func(): return SaveData.GeneralInfo.has("FishedCount") and SaveData.GeneralInfo["FishedCount"] >= 1000,
+		"Trigger" : func(): return SaveData.GeneralInfo.has("TotalFishedCount") and SaveData.GeneralInfo["TotalFishedCount"] >= 1000,
 	},
 	"143" : {
 		"Name" : "Fish 10000 Time",
 		"Description" : "Fish 10000 Time",
-		"Trigger" : func(): return SaveData.GeneralInfo.has("FishedCount") and SaveData.GeneralInfo["FishedCount"] >= 10000,
+		"Trigger" : func(): return SaveData.GeneralInfo.has("TotalFishedCount") and SaveData.GeneralInfo["TotalFishedCount"] >= 10000,
 	},
 	"144" : {
 		"Name" : "Sell 1 Fish",
@@ -809,22 +809,22 @@ var Achievements = {
 	"162" : {
 		"Name" : "Fish 10 Times in One Ascension",
 		"Description" : "Fish 10 Times in One Ascension",
-		"Trigger" : func(): return SaveData.CaughtFish.has("FishedCount") and SaveData.CaughtFish["FishedCount"] >= 10,
+		"Trigger" : func(): return SaveData.GeneralInfo.has("TempFishedCount") and SaveData.GeneralInfo["TempFishedCount"] >= 10,
 	},
 	"163" : {
 		"Name" : "Fish 100 Times in One Ascension",
 		"Description" : "Fish 100 Times in One Ascension",
-		"Trigger" : func(): return SaveData.CaughtFish.has("FishedCount") and SaveData.CaughtFish["FishedCount"] >= 100,
+		"Trigger" : func(): return SaveData.GeneralInfo.has("TempFishedCount") and SaveData.GeneralInfo["TempFishedCount"] >= 100,
 	},
 	"164" : {
 		"Name" : "Fish 250 Times in One Ascension",
 		"Description" : "Fish 250 Times in One Ascension",
-		"Trigger" : func(): return SaveData.CaughtFish.has("FishedCount") and SaveData.CaughtFish["FishedCount"] >= 250,
+		"Trigger" : func(): return SaveData.GeneralInfo.has("TempFishedCount") and SaveData.GeneralInfo["TempFishedCount"] >= 250,
 	},
 	"165" : {
 		"Name" : "Fish 1000 Times in One Ascension",
 		"Description" : "Fish 1000 Times in One Ascension",
-		"Trigger" : func(): return SaveData.CaughtFish.has("FishedCount") and SaveData.CaughtFish["FishedCount"] >= 1000,
+		"Trigger" : func(): return SaveData.GeneralInfo.has("TempFishedCount") and SaveData.GeneralInfo["TempFishedCount"] >= 1000,
 	},
 	"166" : {
 		"Name" : "5 Fish Types Caught",
@@ -1107,24 +1107,24 @@ var Achievements = {
 		"Trigger" : func(): return SaveData.GeneralInfo.has("TotalGoldGain") and SaveData.GeneralInfo["TotalGoldGain"] >= pow(10, 27),
 	},
 	"222" : {
-		"Name" : "Play 1h",
-		"Description" : "Thank you!",
-		"Trigger" : func(): return playTimeCheck(1),
-	},
-	"223" : {
 		"Name" : "Play 10h",
-		"Description" : "Oh god thanks!",
+		"Description" : "Thank you!",
 		"Trigger" : func(): return playTimeCheck(10),
 	},
-	"224" : {
+	"223" : {
 		"Name" : "Play 24h",
-		"Description" : "You are going to make me cry",
+		"Description" : "Oh god thanks!",
 		"Trigger" : func(): return playTimeCheck(24),
 	},
-	"225" : {
+	"224" : {
 		"Name" : "Play 100h",
-		"Description" : "Wow, myb stop?",
+		"Description" : "You are going to make me cry",
 		"Trigger" : func(): return playTimeCheck(100),
+	},
+	"225" : {
+		"Name" : "Play 250h",
+		"Description" : "Wow, myb stop?",
+		"Trigger" : func(): return playTimeCheck(250),
 	},
 	"226" : {
 		"Name" : "If your a broke boy just say so",
@@ -1249,7 +1249,7 @@ var Achievements = {
 	"250" : {
 		"Name" : "Why Are We Clicking?",
 		"Description" : "Manually click 10,000 times in one session",
-		"Trigger" : func(): return SaveData.GeneralInfo["TempClickCount"] and SaveData.GeneralInfo["TempClickCount"] >= 100000,
+		"Trigger" : func(): return SaveData.GeneralInfo.has("TempClickCount") and SaveData.GeneralInfo["TempClickCount"] >= 100000,
 	},
 	"251" : {
 		"Name" : "Max LvL 1 Upgrade",
@@ -1277,8 +1277,8 @@ var Achievements = {
 		"Trigger" : func(): return null,
 	},
 	"256" : {
-		"Name" : "Buy 1 Magic Upgrades",
-		"Description" : "Buy 1 Magic Upgrades",
+		"Name" : "Buy 1 Magic Upgrade",
+		"Description" : "Buy 1 Magic Upgrade",
 		"Trigger" : func(): return magicUpgradesOwnedCheck(1),
 	},
 	"257" : {
@@ -1339,132 +1339,132 @@ var Achievements = {
 	"268" : {
 		"Name" : "Research 20 upgrades in one ascension",
 		"Description" : "Research 20 upgrades in one ascension",
-		"Trigger" : func(): return SaveData.GeneralInfo["TempResearchDone"] and SaveData.GeneralInfo["TempResearchDone"] >= 20,
+		"Trigger" : func(): return SaveData.GeneralInfo.has("TempResearchDone") and SaveData.GeneralInfo["TempResearchDone"] >= 20,
 	},
 	"269" : {
 		"Name" : "Research 30 upgrades in one ascension",
 		"Description" : "Research 30 upgrades in one ascension",
-		"Trigger" : func(): return SaveData.GeneralInfo["TempResearchDone"] and SaveData.GeneralInfo["TempResearchDone"] >= 30,
+		"Trigger" : func(): return SaveData.GeneralInfo.has("TempResearchDone") and SaveData.GeneralInfo["TempResearchDone"] >= 30,
 	},
 	"270" : {
 		"Name" : "Research 60 upgrades in one ascension",
 		"Description" : "Research 60 upgrades in one ascension",
-		"Trigger" : func(): return SaveData.GeneralInfo["TempResearchDone"] and SaveData.GeneralInfo["TempResearchDone"] >= 60,
+		"Trigger" : func(): return SaveData.GeneralInfo.has("TempResearchDone") and SaveData.GeneralInfo["TempResearchDone"] >= 60,
 	},
 	"271" : {
 		"Name" : "Research 80 upgrades in one ascension",
 		"Description" : "Research 80 upgrades in one ascension",
-		"Trigger" : func(): return SaveData.GeneralInfo["TempResearchDone"] and SaveData.GeneralInfo["TempResearchDone"] >= 80,
+		"Trigger" : func(): return SaveData.GeneralInfo.has("TempResearchDone") and SaveData.GeneralInfo["TempResearchDone"] >= 80,
 	},
 	"272" : {
 		"Name" : "Total Research Done 50",
 		"Description" : "Total Research Done 50",
-		"Trigger" : func(): return SaveData.GeneralInfo["TotalResearchDone"] and SaveData.GeneralInfo["TotalResearchDone"] >= 50,
+		"Trigger" : func(): return SaveData.GeneralInfo.has("TotalResearchDone") and SaveData.GeneralInfo["TotalResearchDone"] >= 50,
 	},
 	"273" : {
 		"Name" : "Total Research Done 150",
 		"Description" : "Total Research Done 150",
-		"Trigger" : func(): return SaveData.GeneralInfo["TotalResearchDone"] and SaveData.GeneralInfo["TotalResearchDone"] >= 150,
+		"Trigger" : func(): return SaveData.GeneralInfo.has("TotalResearchDone") and SaveData.GeneralInfo["TotalResearchDone"] >= 150,
 	},
 	"274" : {
 		"Name" : "Total Research Done 300",
 		"Description" : "Total Research Done 300",
-		"Trigger" : func(): return SaveData.GeneralInfo["TotalResearchDone"] and SaveData.GeneralInfo["TotalResearchDone"] >= 300,
+		"Trigger" : func(): return SaveData.GeneralInfo.has("TotalResearchDone") and SaveData.GeneralInfo["TotalResearchDone"] >= 300,
 	},
 	"275" : {
 		"Name" : "Total Research Done 500",
 		"Description" : "Total Research Done 500",
-		"Trigger" : func(): return SaveData.GeneralInfo["TotalResearchDone"] and SaveData.GeneralInfo["TotalResearchDone"] >= 500,
+		"Trigger" : func(): return SaveData.GeneralInfo.has("TotalResearchDone") and SaveData.GeneralInfo["TotalResearchDone"] >= 500,
 	},
 	"276" : {
 		"Name" : "Total Research Done 750",
 		"Description" : "Total Research Done 750",
-		"Trigger" : func(): return SaveData.GeneralInfo["TotalResearchDone"] and SaveData.GeneralInfo["TotalResearchDone"] >= 750,
+		"Trigger" : func(): return SaveData.GeneralInfo.has("TotalResearchDone") and SaveData.GeneralInfo["TotalResearchDone"] >= 750,
 	},
 	"277" : {
 		"Name" : "Total Research Done 1050",
 		"Description" : "Total Research Done 1050",
-		"Trigger" : func(): return SaveData.GeneralInfo["TotalResearchDone"] and SaveData.GeneralInfo["TotalResearchDone"] >= 1050,
+		"Trigger" : func(): return SaveData.GeneralInfo.has("TotalResearchDone") and SaveData.GeneralInfo["TotalResearchDone"] >= 1050,
 	},
 	"278" : {
 		"Name" : "Total Research Done 1500",
 		"Description" : "Total Research Done 1500",
-		"Trigger" : func(): return SaveData.GeneralInfo["TotalResearchDone"] and SaveData.GeneralInfo["TotalResearchDone"] >= 1500,
+		"Trigger" : func(): return SaveData.GeneralInfo.has("TotalResearchDone") and SaveData.GeneralInfo["TotalResearchDone"] >= 1500,
 	},
 	"279" : {
 		"Name" : "Total Research Done 2500",
 		"Description" : "Total Research Done 2500",
-		"Trigger" : func(): return SaveData.GeneralInfo["TotalResearchDone"] and SaveData.GeneralInfo["TotalResearchDone"] >= 2500,
+		"Trigger" : func(): return SaveData.GeneralInfo.has("TotalResearchDone") and SaveData.GeneralInfo["TotalResearchDone"] >= 2500,
 	},
 	"280" : {
 		"Name" : "Total Upgrades Bought 500",
 		"Description" : "Total Upgrades Bought 500",
-		"Trigger" : func(): return SaveData.GeneralInfo["TotalUpgradesBought"] and SaveData.GeneralInfo["TotalUpgradesBought"] >= 500,
+		"Trigger" : func(): return SaveData.GeneralInfo.has("TotalUpgradesBought") and SaveData.GeneralInfo["TotalUpgradesBought"] >= 500,
 	},
 	"281" : {
 		"Name" : "Total Upgrades Bought 2500",
 		"Description" : "Total Upgrades Bought 2500",
-		"Trigger" : func(): return SaveData.GeneralInfo["TotalUpgradesBought"] and SaveData.GeneralInfo["TotalUpgradesBought"] >= 2500,
+		"Trigger" : func(): return SaveData.GeneralInfo.has("TotalUpgradesBought") and SaveData.GeneralInfo["TotalUpgradesBought"] >= 2500,
 	},
 	"282" : {
 		"Name" : "Total Upgrades Bought 5000",
 		"Description" : "Total Upgrades Bought 5000",
-		"Trigger" : func(): return SaveData.GeneralInfo["TotalUpgradesBought"] and SaveData.GeneralInfo["TotalUpgradesBought"] >= 5000,
+		"Trigger" : func(): return SaveData.GeneralInfo.has("TotalUpgradesBought") and SaveData.GeneralInfo["TotalUpgradesBought"] >= 5000,
 	},
 	"283" : {
 		"Name" : "Total Upgrades Bought 10000",
 		"Description" : "Total Upgrades Bought 10000",
-		"Trigger" : func(): return SaveData.GeneralInfo["TotalUpgradesBought"] and SaveData.GeneralInfo["TotalUpgradesBought"] >= 10000,
+		"Trigger" : func(): return SaveData.GeneralInfo.has("TotalUpgradesBought") and SaveData.GeneralInfo["TotalUpgradesBought"] >= 10000,
 	},
 	"284" : {
 		"Name" : "Total Upgrades Bought 20000",
 		"Description" : "Total Upgrades Bought 20000",
-		"Trigger" : func(): return SaveData.GeneralInfo["TotalUpgradesBought"] and SaveData.GeneralInfo["TotalUpgradesBought"] >= 20000,
+		"Trigger" : func(): return SaveData.GeneralInfo.has("TotalUpgradesBought") and SaveData.GeneralInfo["TotalUpgradesBought"] >= 20000,
 	},
 	"285" : {
 		"Name" : "Total Upgrades Bought 30000",
 		"Description" : "Total Upgrades Bought 30000",
-		"Trigger" : func(): return SaveData.GeneralInfo["TotalUpgradesBought"] and SaveData.GeneralInfo["TotalUpgradesBought"] >= 30000,
+		"Trigger" : func(): return SaveData.GeneralInfo.has("TotalUpgradesBought") and SaveData.GeneralInfo["TotalUpgradesBought"] >= 30000,
 	},
 	"286" : {
 		"Name" : "Total Upgrades Bought 50000",
 		"Description" : "Total Upgrades Bought 50000",
-		"Trigger" : func(): return SaveData.GeneralInfo["TotalUpgradesBought"] and SaveData.GeneralInfo["TotalUpgradesBought"] >= 50000,
+		"Trigger" : func(): return SaveData.GeneralInfo.has("TotalUpgradesBought") and SaveData.GeneralInfo["TotalUpgradesBought"] >= 50000,
 	},
 	"287" : {
 		"Name" : "Total Bots Bought 50",
 		"Description" : "Total Bots Bought 50",
-		"Trigger" : func(): return SaveData.GeneralInfo["TotalBotsBought"] and SaveData.GeneralInfo["TotalBotsBought"] >= 50,
+		"Trigger" : func(): return SaveData.GeneralInfo.has("TotalBotsBought") and SaveData.GeneralInfo["TotalBotsBought"] >= 50,
 	},
 	"288" : {
 		"Name" : "Total Bots Bought 250",
 		"Description" : "Total Bots Bought 250",
-		"Trigger" : func(): return SaveData.GeneralInfo["TotalBotsBought"] and SaveData.GeneralInfo["TotalBotsBought"] >= 250,
+		"Trigger" : func(): return SaveData.GeneralInfo.has("TotalBotsBought") and SaveData.GeneralInfo["TotalBotsBought"] >= 250,
 	},
 	"289" : {
 		"Name" : "Total Bots Bought 500",
 		"Description" : "Total Bots Bought 500",
-		"Trigger" : func(): return SaveData.GeneralInfo["TotalBotsBought"] and SaveData.GeneralInfo["TotalBotsBought"] >= 500,
+		"Trigger" : func(): return SaveData.GeneralInfo.has("TotalBotsBought") and SaveData.GeneralInfo["TotalBotsBought"] >= 500,
 	},
 	"290" : {
 		"Name" : "Total Bots Bought 1000",
 		"Description" : "Total Bots Bought 1000",
-		"Trigger" : func(): return SaveData.GeneralInfo["TotalBotsBought"] and SaveData.GeneralInfo["TotalBotsBought"] >= 1000,
+		"Trigger" : func(): return SaveData.GeneralInfo.has("TotalBotsBought") and SaveData.GeneralInfo["TotalBotsBought"] >= 1000,
 	},
 	"291" : {
 		"Name" : "Total Bots Bought 2000",
 		"Description" : "Total Bots Bought 2000",
-		"Trigger" : func(): return SaveData.GeneralInfo["TotalBotsBought"] and SaveData.GeneralInfo["TotalBotsBought"] >= 2000,
+		"Trigger" : func(): return SaveData.GeneralInfo.has("TotalBotsBought") and SaveData.GeneralInfo["TotalBotsBought"] >= 2000,
 	},
 	"292" : {
 		"Name" : "Total Bots Bought 3000",
 		"Description" : "Total Bots Bought 3000",
-		"Trigger" : func(): return SaveData.GeneralInfo["TotalBotsBought"] and SaveData.GeneralInfo["TotalBotsBought"] >= 3000,
+		"Trigger" : func(): return SaveData.GeneralInfo.has("TotalBotsBought") and SaveData.GeneralInfo["TotalBotsBought"] >= 3000,
 	},
 	"293" : {
 		"Name" : "Total Bots Bought 5000",
 		"Description" : "Total Bots Bought 5000",
-		"Trigger" : func(): return SaveData.GeneralInfo["TotalBotsBought"] and SaveData.GeneralInfo["TotalBotsBought"] >= 5000,
+		"Trigger" : func(): return SaveData.GeneralInfo.has("TotalBotsBought") and SaveData.GeneralInfo["TotalBotsBought"] >= 5000,
 	},
 	"294" : {
 		"Name" : "10 Achievements Unlocked",
@@ -1532,7 +1532,8 @@ func resourceItemCountCheck(countNeeded, type):
 	var woodcampCount = 0
 	
 	for woodType in Values.WoodTypes:
-		woodcampCount += resourceData[woodType][type]
+		if Unlocks.Unlocks[woodType]["Unlocked"]:
+			woodcampCount += resourceData[woodType][type]
 	
 	return woodcampCount >= countNeeded
 
@@ -1554,7 +1555,7 @@ func goldPerSecondCheck(needed):
 	return needed <= goldGainPerSec
 
 func fishTypesCaughtCountCheck(needed):
-	var fishTypesCaught
+	var fishTypesCaught = 0
 	
 	for fishType in SaveData.CaughtFish:
 		if SaveData.CaughtFish[fishType].has("Caught") and SaveData.CaughtFish[fishType]["Caught"]:
@@ -1569,8 +1570,8 @@ func currentDamConstructionCheck(needed):
 	var constructionCount = 0
 	
 	for damType in SaveData.DamData:
-		for damSlot in Dams.ItemNumberEnum:
-			if SaveData.DamData[damType][damSlot]["Constructing"]:
+		for damSlot in SaveData.DamData[damType]["BuildingSlots"]:
+			if SaveData.DamData[damType]["BuildingSlots"][damSlot]["Constructing"]:
 				constructionCount += 1
 	
 	return needed <= constructionCount

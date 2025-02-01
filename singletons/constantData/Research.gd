@@ -226,6 +226,15 @@ var Research = {
 		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 0,
 		"Unlocked" : func(): return true,
 	},
+	"24b" :  {
+		"Name" : "Maple Storage +13.5%",
+		"Description" : "Maple Storage +13.5%",
+		"Time" : 620, # Seconds
+		"OakCost" : 375000, "AppleCost" : 0, "MapleCost" : 0, "BirchCost" : 0, "SpruceCost" : 0,
+		"ChestnutCost" : 0, "CherryCost" : 0, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 0,
+		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 0,
+		"Unlocked" : func(): return true,
+	},
 	"25" :  {
 		"Name" : "20% WPS",
 		"Description" : "20% WPS",

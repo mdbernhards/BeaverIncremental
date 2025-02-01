@@ -23,7 +23,7 @@ func formatNumber(number: float) -> String:
 	if number < 999_999:
 		return str(number)
 	
-	var magnitude = int(floor(log(abs(number)) / log(10)))
+	var magnitude = int(floor(log(abs(number + 1)) / log(10)))
 	var usedMagnitude = magnitude - (magnitude % 3)
 	
 	if usedMagnitude > 24: # works up to Max e24 (Magnitude)

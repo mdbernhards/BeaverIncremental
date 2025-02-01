@@ -1,32 +1,32 @@
 To do all things I can think of:
 First:
-balance some of the first achievements
+Fix scroll log not scrolling down, if mouse not over it
+Balance the first magic locks
+Upgrade level cap at 100 and 10
+Add Autoclickers, get up to 5 autoclickers from magic upgrades
+Add Magic Upgrade for faster research
+Implement keep first 10 research
+Add save detector
 
 Later:
-Need to fix research history ordering, last should be first
-Fix scroll log not scrolling down, if mouse not over it
-Add Autoclickers, get up to 5 autoclickers from magic upgrades
-Fish swim, spawn, despawn logic
 Dam completion and Effect application
-Upgrade level cap at 100 and 10
 Tooltip on resource bar for incoming / outgoing wood breakdown
 Tooltip on mouse over magic label to see how much magic each resource gives
-Implement keep first 10 research
 implement auto research
 implement keep classic, rare, mythic wood upgrades
 implement magic gain without ascending
-implement rest of the achievement triggers
 info screen with all values
-bait shop logic
 Add auto saves with changable intervals
-Buy max buttons logic for fishing (or myb ctrl click to max buy or a toggle like in other games i think?)
 balancing all of the game
-Bait logic
-Add fishing spot logic, different fish in different spots
 Settings screen
 Change achievements to be icons from icon packs
 Add to Scrolling log fishing, dams built and others
 Apply ResourceValues in Values for Fishing and Dams when implemented
+Fish swim, spawn, despawn logic
+bait shop logic
+Bait logic
+Buy max buttons logic for fishing
+Add fishing spot logic, different fish in different spots
 
 A lot Later:
 Music, music player
@@ -96,3 +96,6 @@ Fixed research and research cancel button DONE
 Show research only when all needed woodtypes unlocked DONE
 indicate which resources missing for research DONE
 Woodcamp upgrades appear when atleast 1 woodcamp DONE
+Add most Achievement triggers DONE
+Fix research history ordering DONE
+Fix counting of locked wood type beaver and woodcamp achievements DONE

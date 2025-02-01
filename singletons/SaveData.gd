@@ -74,6 +74,7 @@ func resetValues():
 	
 	SaveData.GeneralInfo["TempClickCount"] = 0
 	SaveData.GeneralInfo["TempResearchDone"] = 0
+	SaveData.GeneralInfo["TempFishedCount"] = 0
 	
 	resetUnlocks()
 	recalculateValues()
@@ -942,7 +943,6 @@ var DamData = {
 }
 
 var CaughtFish = {
-	"FishedCount" : 0,
 	Fishing.FishEnum.Boot : {
 		"Count" : 0,
 		"Caught" : false, # at least once
@@ -1247,7 +1247,6 @@ var GeneralInfo = {
 	"Autoclickers" : 0,
 	"ClickCount" : 0,
 	"TempClickCount" : 0,
-	"FishedCount" : 0,
 	"FishSoldCount" : 0,
 	"TotalBeaversBought" : 0,
 	"TotalWoodcampsBought" : 0,
@@ -1259,6 +1258,8 @@ var GeneralInfo = {
 	"TempResearchDone" : 0,
 	"TotalUpgradesBought" : 0,
 	"TotalBotsBought" : 0,
+	"TotalFishedCount" : 0,
+	"TempFishedCount" : 0,
 }
 
 var SavesInfo = {
