@@ -13,13 +13,14 @@ func checkForUnlocks():
 		Unlocks["Apple"]["ButtonBuyMax"] = true
 	if SaveData.countAchievements() >= 30:
 		Unlocks["Maple"]["ButtonBuyMax"] = true
+		Unlocks["Beavers"]["BuyMax"] = true
 	if SaveData.countAchievements() >= 40:
 		Unlocks["Birch"]["ButtonBuyMax"] = true
 		Unlocks["Oak"]["PageBuyMax"] = true
 	if SaveData.countAchievements() >= 50:
-		Unlocks["Beavers"]["BuyMax"] = true
 		Unlocks["Spruce"]["ButtonBuyMax"] = true
 		Unlocks["Apple"]["PageBuyMax"] = true
+		Unlocks["Woodcamps"]["BuyMax"] = true
 	if SaveData.countAchievements() >= 60:
 		Unlocks["Chestnut"]["ButtonBuyMax"] = true
 		Unlocks["Maple"]["PageBuyMax"] = true
@@ -30,7 +31,6 @@ func checkForUnlocks():
 		Unlocks["Ash"]["ButtonBuyMax"] = true
 		Unlocks["Spruce"]["PageBuyMax"] = true
 	if SaveData.countAchievements() >= 90:
-		Unlocks["Woodcamps"]["BuyMax"] = true
 		Unlocks["Cedar"]["ButtonBuyMax"] = true
 		Unlocks["Upgrades"]["ClassicBuyMax"] = true
 	if SaveData.countAchievements() >= 110:

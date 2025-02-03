@@ -1,11 +1,11 @@
 To do all things I can think of:
 First:
-Balance the first magic locks
-Upgrade level cap at 100 and 10
 Add Autoclickers, get up to 6 autoclickers from magic upgrades
-Implement keep first 10 research
+Write achievement unlock bonusses in the text log
 
 Later:
+Implement keep first 10 research
+Upgrade level cap at 100 and 10
 Dam completion and Effect application
 Tooltip on resource bar for incoming / outgoing wood breakdown
 Tooltip on mouse over magic label to see how much magic each resource gives

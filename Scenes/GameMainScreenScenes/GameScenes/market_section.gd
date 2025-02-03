@@ -34,12 +34,15 @@ func updateBars():
 
 func _on_page_button_1_button_down():
 	changePage(1)
+	_on_market_section_timer_timeout()
 
 func _on_page_button_2_button_down():
 	changePage(2)
+	_on_market_section_timer_timeout()
 
 func _on_page_button_3_button_down():
 	changePage(3)
+	_on_market_section_timer_timeout()
 
 func setNodePaths():
 	MarketVBox = $SellPageMC/MarketVBox

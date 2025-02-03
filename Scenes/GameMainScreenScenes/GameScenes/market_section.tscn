@@ -31,6 +31,7 @@ theme_override_constants/margin_left = 15
 theme_override_constants/margin_right = 15
 
 [node name="MarketVBox" type="VBoxContainer" parent="SellPageMC"]
+custom_minimum_size = Vector2(0, 861)
 layout_mode = 2
 theme_override_constants/separation = 23
 
@@ -52,14 +53,9 @@ layout_mode = 2
 [node name="PageButtonsMC" type="MarginContainer" parent="SellPageMC/MarketVBox"]
 custom_minimum_size = Vector2(0, 45)
 layout_mode = 2
-size_flags_vertical = 8
+size_flags_vertical = 10
 theme_override_constants/margin_left = 5
 theme_override_constants/margin_right = 5
-
-[node name="ColorRect" type="ColorRect" parent="SellPageMC/MarketVBox/PageButtonsMC"]
-visible = false
-layout_mode = 2
-color = Color(0.352941, 0.262745, 0.262745, 1)
 
 [node name="HBox" type="HBoxContainer" parent="SellPageMC/MarketVBox/PageButtonsMC"]
 layout_mode = 2

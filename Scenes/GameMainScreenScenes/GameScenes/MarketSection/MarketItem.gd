@@ -73,6 +73,7 @@ func changeItemType(woodType = WoodType):
 	
 	BotCountLabel.text = str(SaveData.Resources[WoodType]["Bots"])
 	BotEffectivnesSlider.value = SaveData.Resources[WoodType]["BotSellPercentage"]
+	_on_market_item_timer_timeout()
 
 func updateValues():
 	WoodLossIfSold = floor(SaveData.Resources[WoodType]["Count"]) * SellAmountSlider.value / 100

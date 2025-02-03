@@ -131,14 +131,14 @@ var Upgrades = {
 			"Unlocked" : func(): return Unlocks.Unlocks["Woodcamps"]["Unlocked"] and SaveData.Resources["Apple"]["Woodcamps"] > 0,
 		},
 		"8" :  {
-			"Name" : "2% Faster Research",
+			"Name" : "5% Faster Research",
 			"Description" : "",
 			"OtherText" : "",
 			"Unlocked" : func(): return Unlocks.Unlocks["Research"]["Unlocked"],
 			"MagicCost" : 10,
 		},
 		"9" :  {
-			"Name" : "1.5% Dam Effects",
+			"Name" : "3.5% Dam Effects",
 			"Description" : "",
 			"OtherText" : "",
 			"Unlocked" : func(): return Unlocks.Unlocks["Dams"]["Unlocked"],
@@ -172,7 +172,7 @@ var Upgrades = {
 			"Unlocked" : func(): return Unlocks.Unlocks["Woodcamps"]["Unlocked"] and SaveData.Resources["Maple"]["Woodcamps"] > 0,
 		},
 		"4" :  {
-			"Name" : "5% Cheaper WC",
+			"Name" : "7% Cheaper WC",
 			"Description" : "",
 			"OtherText" : "",
 			"Unlocked" : func(): return Unlocks.Unlocks["Woodcamps"]["Unlocked"] and SaveData.Resources["Maple"]["Woodcamps"] > 0,
@@ -184,8 +184,8 @@ var Upgrades = {
 			"Unlocked" : func(): return Unlocks.Unlocks["Woodcamps"]["Unlocked"] and SaveData.Resources["Maple"]["Woodcamps"] > 0,
 		},
 		"6" :  {
-			"Name" : "1.1% WPC to WPS",
-			"Description" : "Unlocks Research",
+			"Name" : "6% WPC to WPS",
+			"Description" : "6% WPC to WPS",
 			"OtherText" : "",
 			"Unlocked" : func(): return Unlocks.Unlocks["Woodcamps"]["Unlocked"] and SaveData.Resources["Maple"]["Woodcamps"] > 0,
 		},
@@ -243,7 +243,7 @@ var Upgrades = {
 			"Unlocked" : func(): return true,
 		},
 		"5" :  {
-			"Name" : "+1.3% WPS",
+			"Name" : "+4% WPS",
 			"Description" : "",
 			"OtherText" : "",
 			"Unlocked" : func(): return Unlocks.Unlocks["Woodcamps"]["Unlocked"] and SaveData.Resources["Birch"]["Woodcamps"] > 0,

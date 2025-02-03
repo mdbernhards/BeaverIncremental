@@ -117,10 +117,15 @@ func getPriceText():
 		var formatedCost = str(NumberFormatting.formatNumber(resourceCost)) + " " + woodType
 		
 		if resourceCost > 0:
-			if resourceCost > SaveData.Resources[woodType]["Count"]:
+			if IsResearchStarted or InQueue:
+				PriceText += "[color=gray]" + formatedCost + "[/color], "
+			elif resourceCost > SaveData.Resources[woodType]["Count"]:
 				PriceText += "[color=red]" + formatedCost + "[/color], "
 			else:
 				PriceText += formatedCost + ", "
+	
+	if IsResearchStarted or InQueue:
+		PriceText = "[color=gray]" + PriceText + "[/color], "
 	
 	return PriceText.left(PriceText.length() - 2)
 

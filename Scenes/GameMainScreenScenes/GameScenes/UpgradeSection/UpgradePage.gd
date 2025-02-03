@@ -47,6 +47,7 @@ func changePage(nr):
 	setUpgradeTabButtons()
 	CurrentResourceType = ResourceTypes[0]
 	UpgradesNode.setupUpgradeTabForWoodType(ResourceTypes[0])
+	_on_upgrade_tab_timer_timeout()
 
 func setUpgradeTabButtons():
 	if ResourceTypes[0] == "Gold":

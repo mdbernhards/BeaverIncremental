@@ -7,7 +7,7 @@ var Magic = {
 		"Cost" : 1,
 	},
 	"1b" : {
-		"Name" : "-27.5% Woodcamp Price",
+		"Name" : "-33% Woodcamp Price",
 		"Description" : "-25% Woodcamp Price",
 		"Cost" : 1,
 	},
@@ -22,7 +22,7 @@ var Magic = {
 		"Cost" : 3,
 	},
 	"2" : {
-		"Name" : "35% WPS",
+		"Name" : "37.5% WPS",
 		"Description" : "Improve Wood per Second gain by 20%",
 		"Cost" : 5,
 	},
@@ -37,22 +37,22 @@ var Magic = {
 		"Cost" : 8,
 	},
 	"4" : {
-		"Name" : "Starting Beavers +2",
+		"Name" : "+3 Starting Beavers",
 		"Description" : "All wood types start with 2 more beavers",
 		"Cost" : 10,
 	},
 	"4b" : {
-		"Name" : "Research 25% quicker",
-		"Description" : "Research 25% quicker",
+		"Name" : "Research 42.5% quicker",
+		"Description" : "Research 42.5% quicker",
 		"Cost" : 13,
 	},
 	"5" : {
-		"Name" : "Per Achievement 0.35% WPS",
+		"Name" : "Per Achievement 0.475% WPS",
 		"Description" : "",
 		"Cost" : 17,
 	},
 	"5b" : {
-		"Name" : "Upgrades 10% cheaper",
+		"Name" : "Classic Upgrades 30% cheaper",
 		"Description" : "",
 		"Cost" : 22,
 	},
@@ -72,7 +72,7 @@ var Magic = {
 		"Cost" : 55,
 	},
 	"8" : {
-		"Name" : "0.05% WPC Per Achievement",
+		"Name" : "0.6% WPC Per Achievement",
 		"Description" : "Allows building woodcamps, unlocks woodcamp upgrades",
 		"Cost" : 75,
 	},
