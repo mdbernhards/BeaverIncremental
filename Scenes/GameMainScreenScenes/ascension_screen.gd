@@ -83,6 +83,7 @@ func _on_ascend_button_button_down() -> void:
 		
 		SaveData.Magic["Count"] += floor(Values.ResourceValues["Magic"]["PotentialMagic"])
 		SaveData.resetValues()
+		_on_timer_timeout()
 
 func _on_timer_timeout() -> void:
 	checkMaxWoodCounts()

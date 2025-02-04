@@ -81,11 +81,19 @@ func resetValues():
 
 func resetUnlocks():
 	var magicUnlocks = Unlocks.Unlocks["Magic"].duplicate(true)
+	var achievementUnlocks = Unlocks.Unlocks["Achievements"].duplicate(true)
+	
 	Unlocks.Unlocks = Unlocks.OriginalUnlocks.duplicate(true)
+	
 	Unlocks.Unlocks["Magic"] = magicUnlocks.duplicate(true)
 	Unlocks.Unlocks["Magic"]["Upgrades"] = true
 	
+	Unlocks.Unlocks["Achievements"] = achievementUnlocks.duplicate(true)
+	
 	get_tree().get_first_node_in_group("UpgradePage").changePage(1)
+	
+	for woodType in Values.WoodTypes:
+		Resources[woodType]["ActiveAutoclicker"] = false
 
 func recalculateValues():
 	CalculateValues.calculateAllValues()
@@ -109,6 +117,7 @@ var Resources = {
 		"MarketSellPercentage": 100, # %
 		"BotSellPercentage": 100, # %
 		"Bots": 0,
+		"ActiveAutoclicker" : false,
 	},
 	"Apple" : {
 		"Count" : 0,
@@ -118,6 +127,7 @@ var Resources = {
 		"MarketSellPercentage": 100, # %
 		"BotSellPercentage": 100, # %
 		"Bots": 0,
+		"ActiveAutoclicker" : false,
 	},
 	"Maple" : {
 		"Count" : 0,
@@ -127,6 +137,7 @@ var Resources = {
 		"MarketSellPercentage": 100, # %
 		"BotSellPercentage": 100, # %
 		"Bots": 0,
+		"ActiveAutoclicker" : false,
 	},
 	"Birch" : {
 		"Count" : 0,
@@ -136,6 +147,7 @@ var Resources = {
 		"MarketSellPercentage": 100, # %
 		"BotSellPercentage": 100, # %
 		"Bots": 0,
+		"ActiveAutoclicker" : false,
 	},
 	"Spruce" : {
 		"Count" : 0,
@@ -145,6 +157,7 @@ var Resources = {
 		"MarketSellPercentage": 50, # %
 		"BotSellPercentage": 100, # %
 		"Bots": 0,
+		"ActiveAutoclicker" : false,
 	},
 	"Chestnut" : {
 		"Count" : 0,
@@ -154,6 +167,7 @@ var Resources = {
 		"MarketSellPercentage": 50, # %
 		"BotSellPercentage": 100, # %
 		"Bots": 0,
+		"ActiveAutoclicker" : false,
 	},
 	"Cherry" : {
 		"Count" : 0,
@@ -163,6 +177,7 @@ var Resources = {
 		"MarketSellPercentage": 50, # %
 		"BotSellPercentage": 100, # %
 		"Bots": 0,
+		"ActiveAutoclicker" : false,
 	},
 	"Ash" : {
 		"Count" : 0,
@@ -172,6 +187,7 @@ var Resources = {
 		"MarketSellPercentage": 50, # %
 		"BotSellPercentage": 100, # %
 		"Bots": 0,
+		"ActiveAutoclicker" : false,
 	},
 	"Cedar" : {
 		"Count" : 0,
@@ -181,6 +197,7 @@ var Resources = {
 		"MarketSellPercentage": 50, # %
 		"BotSellPercentage": 100, # %
 		"Bots": 0,
+		"ActiveAutoclicker" : false,
 	},
 	"Mahogany" : {
 		"Count" : 0,
@@ -190,6 +207,7 @@ var Resources = {
 		"MarketSellPercentage": 50, # %
 		"BotSellPercentage": 100, # %
 		"Bots": 0,
+		"ActiveAutoclicker" : false,
 	},
 	"Ebony" : {
 		"Count" : 0,
@@ -199,6 +217,7 @@ var Resources = {
 		"MarketSellPercentage": 50, # %
 		"BotSellPercentage": 100, # %
 		"Bots": 0,
+		"ActiveAutoclicker" : false,
 	},
 	"Dogwood" : {
 		"Count" : 0,
@@ -208,6 +227,7 @@ var Resources = {
 		"MarketSellPercentage": 50, # %
 		"BotSellPercentage": 100, # %
 		"Bots": 0,
+		"ActiveAutoclicker" : false,
 	},
 	"Rosewood" : {
 		"Count" : 0,
@@ -217,6 +237,7 @@ var Resources = {
 		"MarketSellPercentage": 50, # %
 		"BotSellPercentage": 100, # %
 		"Bots": 0,
+		"ActiveAutoclicker" : false,
 	},
 	"Ghost Gum" : {
 		"Count" : 0,
@@ -226,6 +247,7 @@ var Resources = {
 		"MarketSellPercentage": 50, # %
 		"BotSellPercentage": 100, # %
 		"Bots": 0,
+		"ActiveAutoclicker" : false,
 	},
 	"Dragonwood" : {
 		"Count" : 0,
@@ -235,6 +257,7 @@ var Resources = {
 		"MarketSellPercentage": 50, # %
 		"BotSellPercentage": 100, # %
 		"Bots": 0,
+		"ActiveAutoclicker" : false,
 	},
 }
 
@@ -1273,3 +1296,16 @@ func countAchievements():
 			achievementCount += 1
 	
 	return achievementCount
+
+
+func getActiveAutoclickerCount():
+	var count = 0
+	
+	for woodType in Values.WoodTypes:
+		if !Resources[woodType].has("ActiveAutoclicker"):
+			Resources[woodType]["ActiveAutoclicker"] = false
+			
+		if Resources[woodType]["ActiveAutoclicker"]:
+			count += 1
+	
+	return count

@@ -6,80 +6,138 @@ func _process(delta: float) -> void:
 	pass
 
 func checkForUnlocks():
-	if SaveData.countAchievements() >= 10:
+	if Unlocks["Achievements"]["AchievementUnlocks"][5]:
+		pass
+	if Unlocks["Achievements"]["AchievementUnlocks"][10]:
 		Unlocks["Oak"]["ButtonBuyMax"] = true
 		Unlocks["Research"]["History"] = true
-	if SaveData.countAchievements() >= 20:
+	if Unlocks["Achievements"]["AchievementUnlocks"][15]:
+		pass
+	if Unlocks["Achievements"]["AchievementUnlocks"][20]:
 		Unlocks["Apple"]["ButtonBuyMax"] = true
-	if SaveData.countAchievements() >= 30:
+	if Unlocks["Achievements"]["AchievementUnlocks"][5]:
+		pass
+	if Unlocks["Achievements"]["AchievementUnlocks"][10]:
 		Unlocks["Maple"]["ButtonBuyMax"] = true
 		Unlocks["Beavers"]["BuyMax"] = true
-	if SaveData.countAchievements() >= 40:
+	if Unlocks["Achievements"]["AchievementUnlocks"][5]:
+		pass
+	if Unlocks["Achievements"]["AchievementUnlocks"][10]:
 		Unlocks["Birch"]["ButtonBuyMax"] = true
 		Unlocks["Oak"]["PageBuyMax"] = true
-	if SaveData.countAchievements() >= 50:
+	if Unlocks["Achievements"]["AchievementUnlocks"][5]:
+		pass
+	if Unlocks["Achievements"]["AchievementUnlocks"][10]:
 		Unlocks["Spruce"]["ButtonBuyMax"] = true
 		Unlocks["Apple"]["PageBuyMax"] = true
 		Unlocks["Woodcamps"]["BuyMax"] = true
-	if SaveData.countAchievements() >= 60:
+	if Unlocks["Achievements"]["AchievementUnlocks"][5]:
+		pass
+	if Unlocks["Achievements"]["AchievementUnlocks"][10]:
 		Unlocks["Chestnut"]["ButtonBuyMax"] = true
 		Unlocks["Maple"]["PageBuyMax"] = true
-	if SaveData.countAchievements() >= 70:
+	if Unlocks["Achievements"]["AchievementUnlocks"][5]:
+		pass
+	if Unlocks["Achievements"]["AchievementUnlocks"][10]:
 		Unlocks["Cherry"]["ButtonBuyMax"] = true
 		Unlocks["Birch"]["PageBuyMax"] = true
-	if SaveData.countAchievements() >= 80:
+	if Unlocks["Achievements"]["AchievementUnlocks"][5]:
+		pass
+	if Unlocks["Achievements"]["AchievementUnlocks"][10]:
 		Unlocks["Ash"]["ButtonBuyMax"] = true
 		Unlocks["Spruce"]["PageBuyMax"] = true
-	if SaveData.countAchievements() >= 90:
+	if Unlocks["Achievements"]["AchievementUnlocks"][5]:
+		pass
+	if Unlocks["Achievements"]["AchievementUnlocks"][10]:
 		Unlocks["Cedar"]["ButtonBuyMax"] = true
 		Unlocks["Upgrades"]["ClassicBuyMax"] = true
-	if SaveData.countAchievements() >= 110:
+	if Unlocks["Achievements"]["AchievementUnlocks"][5]:
+		pass
+	if Unlocks["Achievements"]["AchievementUnlocks"][10]:
 		Unlocks["Mahogany"]["ButtonBuyMax"] = true
 		Unlocks["Chestnut"]["PageBuyMax"] = true
-	if SaveData.countAchievements() >= 120:
+	if Unlocks["Achievements"]["AchievementUnlocks"][5]:
+		pass
+	if Unlocks["Achievements"]["AchievementUnlocks"][10]:
 		Unlocks["Ebony"]["ButtonBuyMax"] = true
 		Unlocks["Cherry"]["PageBuyMax"] = true
-	if SaveData.countAchievements() >= 130:
+	if Unlocks["Achievements"]["AchievementUnlocks"][5]:
+		pass
+	if Unlocks["Achievements"]["AchievementUnlocks"][10]:
 		Unlocks["Dogwood"]["ButtonBuyMax"] = true
 		Unlocks["Gold"]["ButtonBuyMax"] = true
 		Unlocks["Ash"]["PageBuyMax"] = true
-	if SaveData.countAchievements() >= 140:
+	if Unlocks["Achievements"]["AchievementUnlocks"][5]:
+		pass
+	if Unlocks["Achievements"]["AchievementUnlocks"][10]:
 		Unlocks["Rosewood"]["ButtonBuyMax"] = true
 		Unlocks["Cedar"]["PageBuyMax"] = true
-	if SaveData.countAchievements() >= 150:
+	if Unlocks["Achievements"]["AchievementUnlocks"][5]:
+		pass
+	if Unlocks["Achievements"]["AchievementUnlocks"][10]:
 		Unlocks["Ghost Gum"]["ButtonBuyMax"] = true
 		Unlocks["Mahogany"]["PageBuyMax"] = true
-	if SaveData.countAchievements() >= 160:
+	if Unlocks["Achievements"]["AchievementUnlocks"][5]:
+		pass
+	if Unlocks["Achievements"]["AchievementUnlocks"][10]:
 		Unlocks["Dragonwood"]["ButtonBuyMax"] = true
 		Unlocks["Upgrades"]["RareBuyMax"] = true
-	if SaveData.countAchievements() >= 170:
+	if Unlocks["Achievements"]["AchievementUnlocks"][5]:
+		pass
+	if Unlocks["Achievements"]["AchievementUnlocks"][10]:
 		Unlocks["Ebony"]["ButtonBuyMax"] = true
-	if SaveData.countAchievements() >= 180:
+	if Unlocks["Achievements"]["AchievementUnlocks"][5]:
+		pass
+	if Unlocks["Achievements"]["AchievementUnlocks"][10]:
 		Unlocks["Dogwood"]["ButtonBuyMax"] = true
 		Unlocks["Gold"]["PageBuyMax"] = true
-	if SaveData.countAchievements() >= 190:
+	if Unlocks["Achievements"]["AchievementUnlocks"][5]:
+		pass
+	if Unlocks["Achievements"]["AchievementUnlocks"][10]:
 		Unlocks["Rosewood"]["ButtonBuyMax"] = true
-	if SaveData.countAchievements() >= 200:
+	if Unlocks["Achievements"]["AchievementUnlocks"][5]:
+		pass
+	if Unlocks["Achievements"]["AchievementUnlocks"][10]:
 		Unlocks["Ghost Gum"]["ButtonBuyMax"] = true
-	if SaveData.countAchievements() >= 210:
+	if Unlocks["Achievements"]["AchievementUnlocks"][5]:
+		pass
+	if Unlocks["Achievements"]["AchievementUnlocks"][10]:
 		Unlocks["Dragonwood"]["ButtonBuyMax"] = true
-	if SaveData.countAchievements() >= 220:
+	if Unlocks["Achievements"]["AchievementUnlocks"][5]:
+		pass
+	if Unlocks["Achievements"]["AchievementUnlocks"][10]:
 		Unlocks["Upgrades"]["MythicBuyMax"] = true
-	if SaveData.countAchievements() >= 230:
+	if Unlocks["Achievements"]["AchievementUnlocks"][5]:
 		pass
-	if SaveData.countAchievements() >= 240:
+	if Unlocks["Achievements"]["AchievementUnlocks"][10]:
+		pass
+	if Unlocks["Achievements"]["AchievementUnlocks"][5]:
+		pass
+	if Unlocks["Achievements"]["AchievementUnlocks"][10]:
 		Unlocks["Upgrades"]["KeepGoldUpgrades"] = true
-	if SaveData.countAchievements() >= 250:
+	if Unlocks["Achievements"]["AchievementUnlocks"][5]:
 		pass
-	if SaveData.countAchievements() >= 260:
+	if Unlocks["Achievements"]["AchievementUnlocks"][10]:
 		pass
-	if SaveData.countAchievements() >= 270:
+	if Unlocks["Achievements"]["AchievementUnlocks"][5]:
 		pass
-	if SaveData.countAchievements() >= 280:
+	if Unlocks["Achievements"]["AchievementUnlocks"][10]:
 		pass
-	if SaveData.countAchievements() >= 290:
+	if Unlocks["Achievements"]["AchievementUnlocks"][5]:
 		pass
-	if SaveData.countAchievements() >= 300:
+	if Unlocks["Achievements"]["AchievementUnlocks"][10]:
+		pass
+	if Unlocks["Achievements"]["AchievementUnlocks"][5]:
+		pass
+	if Unlocks["Achievements"]["AchievementUnlocks"][10]:
+		pass
+	if Unlocks["Achievements"]["AchievementUnlocks"][5]:
+		pass
+	if Unlocks["Achievements"]["AchievementUnlocks"][10]:
+		pass
+	if Unlocks["Achievements"]["AchievementUnlocks"][5]:
+		pass
+	if Unlocks["Achievements"]["AchievementUnlocks"][10]:
 		pass
 
 var Unlocks = {
@@ -383,6 +441,68 @@ var Unlocks = {
 	"Achievements" : {
 		"Unlocked" : false,
 		"AllAchievementsVisible" : false,
+		"AchievementUnlocks" : {
+			5 : false,
+			10 : false,
+			15 : false,
+			20 : false,
+			25 : false,
+			30 : false,
+			35 : false,
+			40 : false,
+			45 : false,
+			50 : false,
+			55 : false,
+			60 : false,
+			65 : false,
+			70 : false,
+			75 : false,
+			80 : false,
+			85 : false,
+			90 : false,
+			95 : false,
+			100 : false,
+			105 : false,
+			110 : false,
+			115 : false,
+			120 : false,
+			125 : false,
+			130 : false,
+			135 : false,
+			140 : false,
+			145 : false,
+			150 : false,
+			155 : false,
+			160 : false,
+			165 : false,
+			170 : false,
+			175 : false,
+			180 : false,
+			185 : false,
+			190 : false,
+			195 : false,
+			200 : false,
+			205 : false,
+			210 : false,
+			215 : false,
+			220 : false,
+			225 : false,
+			230 : false,
+			235 : false,
+			240 : false,
+			245 : false,
+			250 : false,
+			255 : false,
+			260 : false,
+			265 : false,
+			270 : false,
+			275 : false,
+			280 : false,
+			285 : false,
+			290 : false,
+			295 : false,
+			300 : false,
+		},
 	},
 	"Fishing" : {
 		"Unlocked" : false,

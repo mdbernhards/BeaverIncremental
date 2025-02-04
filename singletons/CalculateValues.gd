@@ -819,7 +819,7 @@ func SetUpgradeValue(woodType, upgradeId):
 				"5":
 					TempValues[woodType]["WpcToWpsMultip"] *= pow(1.02, upgradeLevel)
 				"6":
-					TempValues[woodType]["ExtraBeavers"] += upgradeLevel * SaveData.Resources[woodType]["Woodcamps"]
+					TempValues[woodType]["ExtraBeavers"] += max(0, roundi(SaveData.Resources[woodType]["Woodcamps"] / 4 * upgradeLevel - 0.5))
 				"7":
 					TempValues[woodType]["BaseWoodPrice"] += upgradeLevel * 100
 				"8":

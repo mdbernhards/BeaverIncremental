@@ -12,9 +12,10 @@ func _process(_delta):
 	pass
 
 func _on_resource_gain_tick_timeout():
+	autoclick()
 	tickCalculations()
 	setTickChanges()
-	
+
 var WoodTiersLowerTier = {
 	"Oak" : null,
 	"Apple" : "Oak",
@@ -185,6 +186,13 @@ var WoodCalculations = {
 		"ResourceCount": 0,
 	},
 }
+
+func autoclick():
+	var barItem = get_tree().get_first_node_in_group("BarItem")
+	
+	for woodType in WoodTypes:
+		if SaveData.Resources[woodType]["ActiveAutoclicker"]:
+			barItem.woodClick(woodType)
 
 func tickCalculations():
 	preCalculations()

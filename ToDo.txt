@@ -1,6 +1,5 @@
 To do all things I can think of:
 First:
-Add Autoclickers, get up to 6 autoclickers from magic upgrades
 Write achievement unlock bonusses in the text log
 
 Later:
@@ -99,3 +98,4 @@ Fix counting of locked wood type beaver and woodcamp achievements DONE
 Add save detector DONE
 Fix the text log scrolling DONE
 Add Magic Upgrade for faster research DONE
+Add Autoclickers DONE
