@@ -57,8 +57,8 @@ var Magic = {
 		"Cost" : 22,
 	},
 	"6" : {
-		"Name" : "+1 Autoclicker",
-		"Description" : "+1 Autoclicker",
+		"Name" : "+1 Auto Clicker",
+		"Description" : "+1 Auto Clicker",
 		"Cost" : 30,
 	},
 	"6b" : {
@@ -77,8 +77,8 @@ var Magic = {
 		"Cost" : 75,
 	},
 	"8b" : {
-		"Name" : "+1 Autoclicker",
-		"Description" : "+1 Autoclicker",
+		"Name" : "+1 Auto Clicker",
+		"Description" : "+1 Auto Clicker",
 		"Cost" : 125,
 	},
 	"9" : {
@@ -122,8 +122,8 @@ var Magic = {
 		"Cost" : 1300,
 	},
 	"16b" : {
-		"Name" : "+1 Autoclicker",
-		"Description" : "+1 Autoclicker",
+		"Name" : "+1 Auto Clicker",
+		"Description" : "+1 Auto Clicker",
 		"Cost" : 1500,
 	},
 	"17" : {
@@ -167,8 +167,8 @@ var Magic = {
 		"Cost" : 7750,
 	},
 	"24b" : {
-		"Name" : "+1 Autoclicker",
-		"Description" : "+1 Autoclicker",
+		"Name" : "+1 Auto Clicker",
+		"Description" : "+1 Auto Clicker",
 		"Cost" : 10000,
 	},
 	"25" : {
@@ -242,8 +242,8 @@ var Magic = {
 		"Cost" : 85000,
 	},
 	"38b" : {
-		"Name" : "+1 Autoclicker",
-		"Description" : "+1 Autoclicker",
+		"Name" : "+1 Auto Clicker",
+		"Description" : "+1 Auto Clicker",
 		"Cost" : 100000,
 	},
 	"39" : {
@@ -312,8 +312,8 @@ var Magic = {
 		"Cost" : 8000000,
 	},
 	"51b" : {
-		"Name" : "+1 Autoclicker",
-		"Description" : "+1 Autoclicker",
+		"Name" : "+1 Auto Clicker",
+		"Description" : "+1 Auto Clicker",
 		"Cost" : 12000000,
 	},
 	"52" : {

@@ -12,7 +12,7 @@ func _process(_delta):
 	pass
 
 func _on_resource_gain_tick_timeout():
-	autoclick()
+	autoClick()
 	tickCalculations()
 	setTickChanges()
 
@@ -187,11 +187,14 @@ var WoodCalculations = {
 	},
 }
 
-func autoclick():
+func autoClick():
 	var barItem = get_tree().get_first_node_in_group("BarItem")
 	
 	for woodType in WoodTypes:
-		if SaveData.Resources[woodType]["ActiveAutoclicker"]:
+		if !SaveData.Resources[woodType].has("ActiveAutoClicker"):
+			SaveData.Resources[woodType]["ActiveAutoClicker"] = false
+		
+		if SaveData.Resources[woodType]["ActiveAutoClicker"]:
 			barItem.woodClick(woodType)
 
 func tickCalculations():
@@ -208,6 +211,9 @@ func tickCalculations():
 
 func setTickChanges():
 	for woodType in WoodTypes:
+		if is_nan(SaveData.Resources[woodType]["Count"]):
+			SaveData.Resources[woodType]["Count"] = 0
+		
 		var woodLoss = WoodCalculations[woodType]["WoodProductionLoss"] + WoodCalculations[woodType]["WoodMarkedLoss"] + WoodCalculations[woodType]["WoodDamLoss"]
 		
 		SaveData.Resources[woodType]["Count"] += WoodCalculations[woodType]["WoodProductionGain"] - woodLoss

@@ -6,138 +6,98 @@ func _process(delta: float) -> void:
 	pass
 
 func checkForUnlocks():
-	if Unlocks["Achievements"]["AchievementUnlocks"][5]:
-		pass
-	if Unlocks["Achievements"]["AchievementUnlocks"][10]:
+	var num = 10
+	
+	if !Unlocks["Achievements"].has("AchievementUnlocks"):
+		Unlocks["Achievements"]["AchievementUnlocks"] = {}
+		
+		while num < 301:
+			Unlocks["Achievements"]["AchievementUnlocks"][num] = false
+			num += 10
+	
+	while num < 301:
+		if !Unlocks["Achievements"]["AchievementUnlocks"].has(num):
+			Unlocks["Achievements"]["AchievementUnlocks"][num] = false
+		elif !Unlocks["Achievements"]["AchievementUnlocks"][num] and SaveData.countAchievements() >= num:
+			Unlocks["Achievements"]["AchievementUnlocks"][num] = true
+			get_tree().get_first_node_in_group("TextLogSection").writeToLog(str(num) + " Achievements Unlocked")
+			# When finished update to add the effects
+		num += 10
+	
+	if SaveData.countAchievements() >= 10:
 		Unlocks["Oak"]["ButtonBuyMax"] = true
 		Unlocks["Research"]["History"] = true
-	if Unlocks["Achievements"]["AchievementUnlocks"][15]:
-		pass
-	if Unlocks["Achievements"]["AchievementUnlocks"][20]:
+	if SaveData.countAchievements() >= 20:
 		Unlocks["Apple"]["ButtonBuyMax"] = true
-	if Unlocks["Achievements"]["AchievementUnlocks"][5]:
-		pass
-	if Unlocks["Achievements"]["AchievementUnlocks"][10]:
+	if SaveData.countAchievements() >= 30:
 		Unlocks["Maple"]["ButtonBuyMax"] = true
 		Unlocks["Beavers"]["BuyMax"] = true
-	if Unlocks["Achievements"]["AchievementUnlocks"][5]:
-		pass
-	if Unlocks["Achievements"]["AchievementUnlocks"][10]:
+	if SaveData.countAchievements() >= 40:
 		Unlocks["Birch"]["ButtonBuyMax"] = true
 		Unlocks["Oak"]["PageBuyMax"] = true
-	if Unlocks["Achievements"]["AchievementUnlocks"][5]:
-		pass
-	if Unlocks["Achievements"]["AchievementUnlocks"][10]:
+	if SaveData.countAchievements() >= 50:
 		Unlocks["Spruce"]["ButtonBuyMax"] = true
 		Unlocks["Apple"]["PageBuyMax"] = true
 		Unlocks["Woodcamps"]["BuyMax"] = true
-	if Unlocks["Achievements"]["AchievementUnlocks"][5]:
-		pass
-	if Unlocks["Achievements"]["AchievementUnlocks"][10]:
+	if SaveData.countAchievements() >= 60:
 		Unlocks["Chestnut"]["ButtonBuyMax"] = true
 		Unlocks["Maple"]["PageBuyMax"] = true
-	if Unlocks["Achievements"]["AchievementUnlocks"][5]:
-		pass
-	if Unlocks["Achievements"]["AchievementUnlocks"][10]:
+	if SaveData.countAchievements() >= 70:
 		Unlocks["Cherry"]["ButtonBuyMax"] = true
 		Unlocks["Birch"]["PageBuyMax"] = true
-	if Unlocks["Achievements"]["AchievementUnlocks"][5]:
-		pass
-	if Unlocks["Achievements"]["AchievementUnlocks"][10]:
+	if SaveData.countAchievements() >= 80:
 		Unlocks["Ash"]["ButtonBuyMax"] = true
 		Unlocks["Spruce"]["PageBuyMax"] = true
-	if Unlocks["Achievements"]["AchievementUnlocks"][5]:
-		pass
-	if Unlocks["Achievements"]["AchievementUnlocks"][10]:
+	if SaveData.countAchievements() >= 90:
 		Unlocks["Cedar"]["ButtonBuyMax"] = true
 		Unlocks["Upgrades"]["ClassicBuyMax"] = true
-	if Unlocks["Achievements"]["AchievementUnlocks"][5]:
-		pass
-	if Unlocks["Achievements"]["AchievementUnlocks"][10]:
+	if SaveData.countAchievements() >= 110:
 		Unlocks["Mahogany"]["ButtonBuyMax"] = true
 		Unlocks["Chestnut"]["PageBuyMax"] = true
-	if Unlocks["Achievements"]["AchievementUnlocks"][5]:
-		pass
-	if Unlocks["Achievements"]["AchievementUnlocks"][10]:
+	if SaveData.countAchievements() >= 120:
 		Unlocks["Ebony"]["ButtonBuyMax"] = true
 		Unlocks["Cherry"]["PageBuyMax"] = true
-	if Unlocks["Achievements"]["AchievementUnlocks"][5]:
-		pass
-	if Unlocks["Achievements"]["AchievementUnlocks"][10]:
+	if SaveData.countAchievements() >= 130:
 		Unlocks["Dogwood"]["ButtonBuyMax"] = true
 		Unlocks["Gold"]["ButtonBuyMax"] = true
 		Unlocks["Ash"]["PageBuyMax"] = true
-	if Unlocks["Achievements"]["AchievementUnlocks"][5]:
-		pass
-	if Unlocks["Achievements"]["AchievementUnlocks"][10]:
+	if SaveData.countAchievements() >= 140:
 		Unlocks["Rosewood"]["ButtonBuyMax"] = true
 		Unlocks["Cedar"]["PageBuyMax"] = true
-	if Unlocks["Achievements"]["AchievementUnlocks"][5]:
-		pass
-	if Unlocks["Achievements"]["AchievementUnlocks"][10]:
+	if SaveData.countAchievements() >= 150:
 		Unlocks["Ghost Gum"]["ButtonBuyMax"] = true
 		Unlocks["Mahogany"]["PageBuyMax"] = true
-	if Unlocks["Achievements"]["AchievementUnlocks"][5]:
-		pass
-	if Unlocks["Achievements"]["AchievementUnlocks"][10]:
+	if SaveData.countAchievements() >= 160:
 		Unlocks["Dragonwood"]["ButtonBuyMax"] = true
 		Unlocks["Upgrades"]["RareBuyMax"] = true
-	if Unlocks["Achievements"]["AchievementUnlocks"][5]:
-		pass
-	if Unlocks["Achievements"]["AchievementUnlocks"][10]:
+	if SaveData.countAchievements() >= 170:
 		Unlocks["Ebony"]["ButtonBuyMax"] = true
-	if Unlocks["Achievements"]["AchievementUnlocks"][5]:
-		pass
-	if Unlocks["Achievements"]["AchievementUnlocks"][10]:
+	if SaveData.countAchievements() >= 180:
 		Unlocks["Dogwood"]["ButtonBuyMax"] = true
 		Unlocks["Gold"]["PageBuyMax"] = true
-	if Unlocks["Achievements"]["AchievementUnlocks"][5]:
-		pass
-	if Unlocks["Achievements"]["AchievementUnlocks"][10]:
+	if SaveData.countAchievements() >= 190:
 		Unlocks["Rosewood"]["ButtonBuyMax"] = true
-	if Unlocks["Achievements"]["AchievementUnlocks"][5]:
-		pass
-	if Unlocks["Achievements"]["AchievementUnlocks"][10]:
+	if SaveData.countAchievements() >= 200:
 		Unlocks["Ghost Gum"]["ButtonBuyMax"] = true
-	if Unlocks["Achievements"]["AchievementUnlocks"][5]:
-		pass
-	if Unlocks["Achievements"]["AchievementUnlocks"][10]:
+	if SaveData.countAchievements() >= 210:
 		Unlocks["Dragonwood"]["ButtonBuyMax"] = true
-	if Unlocks["Achievements"]["AchievementUnlocks"][5]:
-		pass
-	if Unlocks["Achievements"]["AchievementUnlocks"][10]:
+	if SaveData.countAchievements() >= 220:
 		Unlocks["Upgrades"]["MythicBuyMax"] = true
-	if Unlocks["Achievements"]["AchievementUnlocks"][5]:
+	if SaveData.countAchievements() >= 230:
 		pass
-	if Unlocks["Achievements"]["AchievementUnlocks"][10]:
-		pass
-	if Unlocks["Achievements"]["AchievementUnlocks"][5]:
-		pass
-	if Unlocks["Achievements"]["AchievementUnlocks"][10]:
+	if SaveData.countAchievements() >= 240:
 		Unlocks["Upgrades"]["KeepGoldUpgrades"] = true
-	if Unlocks["Achievements"]["AchievementUnlocks"][5]:
+	if SaveData.countAchievements() >= 250:
 		pass
-	if Unlocks["Achievements"]["AchievementUnlocks"][10]:
+	if SaveData.countAchievements() >= 260:
 		pass
-	if Unlocks["Achievements"]["AchievementUnlocks"][5]:
+	if SaveData.countAchievements() >= 270:
 		pass
-	if Unlocks["Achievements"]["AchievementUnlocks"][10]:
+	if SaveData.countAchievements() >= 280:
 		pass
-	if Unlocks["Achievements"]["AchievementUnlocks"][5]:
+	if SaveData.countAchievements() >= 290:
 		pass
-	if Unlocks["Achievements"]["AchievementUnlocks"][10]:
-		pass
-	if Unlocks["Achievements"]["AchievementUnlocks"][5]:
-		pass
-	if Unlocks["Achievements"]["AchievementUnlocks"][10]:
-		pass
-	if Unlocks["Achievements"]["AchievementUnlocks"][5]:
-		pass
-	if Unlocks["Achievements"]["AchievementUnlocks"][10]:
-		pass
-	if Unlocks["Achievements"]["AchievementUnlocks"][5]:
-		pass
-	if Unlocks["Achievements"]["AchievementUnlocks"][10]:
+	if SaveData.countAchievements() >= 300:
 		pass
 
 var Unlocks = {

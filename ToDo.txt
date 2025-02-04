@@ -1,6 +1,9 @@
 To do all things I can think of:
 First:
-Write achievement unlock bonusses in the text log
+Add < and > buttons to switch upgrade and bar pages at the same time
+Add Magic upgrade history
+On Load Enable / Disable Auto Clickers Correctly
+Magic Locks reset after ascension
 
 Later:
 Implement keep first 10 research
@@ -25,6 +28,7 @@ Buy max buttons logic for fishing
 Add fishing spot logic, different fish in different spots
 
 A lot Later:
+Write achievement unlock bonusses in the text log
 Read data from save if save info is missing
 Music, music player
 Sound effects?
@@ -99,3 +103,4 @@ Add save detector DONE
 Fix the text log scrolling DONE
 Add Magic Upgrade for faster research DONE
 Add Autoclickers DONE
+Fix setting Production to 0 not stopping production 100% DONE

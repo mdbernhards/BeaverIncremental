@@ -11,7 +11,7 @@ var PerSecondLabel
 var StorageLabel
 var WoodProgressBar
 var WoodBarRect
-var AutoclickCheckButton
+var AutoClickCheckButton
 
 # Slider Nodes
 var ResourceProductionSlider
@@ -68,7 +68,7 @@ func updateBarValues(woodType = WoodType):
 	WoodType = woodType
 	PerClickLabel.text = str(NumberFormatting.formatNumber(roundi(Values.ResourceValues[WoodType]["PerClick"]))) + " per click"
 	PerSecondLabel.text = str(NumberFormatting.formatNumber(roundi(Values.ResourceValues[WoodType]["RealPerSecondIncrease"] - Values.ResourceValues[WoodType]["RealPerSecondLoss"]))) + " per second"
-	StorageLabel.text = str(NumberFormatting.formatNumber(floor(SaveData.Resources[WoodType]["Count"]))) + " / " + str(NumberFormatting.formatNumber(floor(Values.ResourceValues[WoodType]["Storage"])))
+	StorageLabel.text = str(NumberFormatting.formatNumber(max(0, floor(SaveData.Resources[WoodType]["Count"])))) + " / " + str(NumberFormatting.formatNumber(floor(Values.ResourceValues[WoodType]["Storage"])))
 	WoodProgressBar.value = remap(SaveData.Resources[WoodType]["Count"], 0, Values.ResourceValues[WoodType]["Storage"], 0, 100)
 	
 	# Slider
@@ -118,7 +118,7 @@ func setNodePaths():
 	StorageLabel = $HBox/BarVBox/BarLabels/MC3/StorageLabel
 	WoodProgressBar = $HBox/BarVBox/BarRect/ProgressBar
 	WoodBarRect = $HBox/BarVBox/BarRect
-	AutoclickCheckButton = $HBox/BarVBox/BarRect/AutoclickCheckButton
+	AutoClickCheckButton = $HBox/BarVBox/BarRect/AutoClickCheckButton
 	
 	ResourceProductionSlider = $HBox/BarVBox/BarRect/ResourceProductionSlider
 	ProductionLabel = $HBox/BarVBox/BarRect/ResourceProductionSlider/ProductionLabel
@@ -267,19 +267,22 @@ func _on_bar_item_timer_timeout() -> void:
 		ResourceProductionSlider.visible = false
 		LockedWCRect.visible = true
 	
-	if SaveData.GeneralInfo["Autoclickers"] > 0:
-		AutoclickCheckButton.visible = true
+	if !SaveData.GeneralInfo.has("AutoClickers"):
+		SaveData.GeneralInfo["AutoClickers"] = 0
+	
+	if SaveData.GeneralInfo["AutoClickers"] > 0:
+		AutoClickCheckButton.visible = true
 		
-		if SaveData.GeneralInfo["Autoclickers"] > SaveData.getActiveAutoclickerCount():
-			AutoclickCheckButton.disabled = false
+		if SaveData.GeneralInfo["AutoClickers"] > SaveData.getActiveAutoClickerCount() or SaveData.Resources[WoodType]["ActiveAutoClicker"]:
+			AutoClickCheckButton.disabled = false
 		else:
-			AutoclickCheckButton.disabled = true
+			AutoClickCheckButton.disabled = true
 	else:
-		AutoclickCheckButton.visible = false
+		AutoClickCheckButton.visible = false
 
 func _on_autoclick_check_button_toggled(toggled_on: bool) -> void:
 	if toggled_on:
-		SaveData.Resources[WoodType]["ActiveAutoclicker"] = true
+		SaveData.Resources[WoodType]["ActiveAutoClicker"] = true
 	else:
-		SaveData.Resources[WoodType]["ActiveAutoclicker"] = false
+		SaveData.Resources[WoodType]["ActiveAutoClicker"] = false
 		

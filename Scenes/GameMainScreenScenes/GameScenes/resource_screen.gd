@@ -98,6 +98,9 @@ func _on_resource_screen_timer_timeout() -> void:
 	if !Unlocks.Unlocks["Gold"].has("Label"):
 		Unlocks.Unlocks["Gold"]["Label"] = false
 	
+	if is_nan(SaveData.Gold["Count"]):
+		SaveData.Gold["Count"] = 0
+	
 	if !Unlocks.Unlocks["Gold"]["Label"] and SaveData.Gold["Count"] > 0:
 		Unlocks.Unlocks["Gold"]["Label"] = true
 	

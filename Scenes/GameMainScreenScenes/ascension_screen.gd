@@ -56,7 +56,7 @@ func calculatePotentialMagicGain():
 		while resourceCount >= baseCost:
 			magic += 1
 			resourceCount -= baseCost
-			baseCost *= 1.15
+			baseCost *= 1.04
 		
 		if resourceCount > 0:
 			magic += resourceCount / baseCost

@@ -40,8 +40,12 @@ func CalculateRealValues():
 	var lastWoodType
 	
 	for woodType in WoodTypes:
-		var extraWoodcamps = TempValues[woodType]["ExtraWoodcamps"] + TempValues["Global"]["ExtraWoodcamps"]
-		var woodcamps = SaveData.Resources[woodType]["Woodcamps"] + extraWoodcamps
+		var extraWoodcamps = 0
+		var woodcamps = 0
+		
+		if Unlocks.Unlocks["Woodcamps"]["Unlocked"] and Unlocks.Unlocks[woodType]["Unlocked"]:
+			extraWoodcamps = TempValues[woodType]["ExtraWoodcamps"] + TempValues["Global"]["ExtraWoodcamps"]
+			woodcamps = SaveData.Resources[woodType]["Woodcamps"] + extraWoodcamps
 		
 		var extraBeavers = TempValues[woodType]["ExtraBeavers"] + TempValues["Global"]["ExtraBeavers"] + (woodcamps * TempValues["Global"]["WcToBeaverMultip"]) 
 		var beavers = SaveData.Resources[woodType]["Beavers"] + extraBeavers
@@ -111,10 +115,10 @@ func CalculateRealAfterValues():
 		var woodCamps = SaveData.Resources[woodType]["Woodcamps"]
 		
 		if woodCamps > 0:
-			ResourceValues[woodType]["PerSecondIncrease"] += (TempValues["Global"]["WpcToWpsMultip"] * TempValues[woodType]["WpcToWpsMultip"] * ResourceValues[woodType]["PerClick"]) - ResourceValues[woodType]["PerClick"]
+			ResourceValues[woodType]["PerSecondIncrease"] += ((TempValues["Global"]["WpcToWpsMultip"] * TempValues[woodType]["WpcToWpsMultip"] * ResourceValues[woodType]["PerClick"]) - ResourceValues[woodType]["PerClick"]) * SaveData.Resources[woodType]["Production"] / 100
 			
 		if woodType != "Oak":
-			ResourceValues[woodType]["PerSecondIncrease"] += (TempValues[woodType]["LowerWpsAddMultip"] * TempValues["Global"]["LowerWpsAddMultip"] - 1) * ResourceValues[lastWoodType]["PerSecondIncrease"]
+			ResourceValues[woodType]["PerSecondIncrease"] += ((TempValues[woodType]["LowerWpsAddMultip"] * TempValues["Global"]["LowerWpsAddMultip"] - 1) * ResourceValues[lastWoodType]["PerSecondIncrease"]) * SaveData.Resources[woodType]["Production"] / 100
 		
 		lastWoodType = woodType
 	
@@ -797,7 +801,7 @@ func SetUpgradeValue(woodType, upgradeId):
 				"5":
 					TempValues[woodType]["WpsMultip"] *= pow(1.025, upgradeLevel)
 				"6":
-					TempValues[woodType]["BeaverMultip"] *= pow(1.03, upgradeLevel) * woodcamps
+					TempValues[woodType]["BeaverMultip"] *= (pow(1.035, upgradeLevel) - 1) * woodcamps
 				"7":
 					TempValues[woodType]["WcCostMultip"] *= pow(1 - 0.005, upgradeLevel)
 				"8":
@@ -821,7 +825,7 @@ func SetUpgradeValue(woodType, upgradeId):
 				"6":
 					TempValues[woodType]["ExtraBeavers"] += max(0, roundi(SaveData.Resources[woodType]["Woodcamps"] / 4 * upgradeLevel - 0.5))
 				"7":
-					TempValues[woodType]["BaseWoodPrice"] += upgradeLevel * 100
+					TempValues[woodType]["BaseWoodPrice"] += upgradeLevel * 0.35
 				"8":
 					TempValues[woodType]["BeaverMultip"] *= pow(1.0075, upgradeLevel) * woodcamps
 				"9":

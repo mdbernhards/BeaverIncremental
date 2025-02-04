@@ -316,8 +316,8 @@ var Upgrades = {
 			"Unlocked" : func(): return Unlocks.Unlocks["Woodcamps"]["Unlocked"] and SaveData.Resources["Spruce"]["Woodcamps"] > 0,
 		},
 		"6" :  {
-			"Name" : "+3% WPC Per WC",
-			"Description" : "+3% WPC Per WC",
+			"Name" : "+3.5% WPC Per WC",
+			"Description" : "+3.5% WPC Per WC",
 			"OtherText" : "",
 			"Unlocked" : func(): return Unlocks.Unlocks["Woodcamps"]["Unlocked"] and SaveData.Resources["Spruce"]["Woodcamps"] > 0,
 		},
@@ -387,8 +387,8 @@ var Upgrades = {
 			"Unlocked" : func(): return Unlocks.Unlocks["Woodcamps"]["Unlocked"] and SaveData.Resources["Chestnut"]["Woodcamps"] > 0,
 		},
 		"7" :  {
-			"Name" : "+100 Chestnut Price",
-			"Description" : "+100 Chestnut Price",
+			"Name" : "+0.35 Chestnut Price",
+			"Description" : "+0.35 Chestnut Price",
 			"OtherText" : "",
 			"Unlocked" : func(): return Unlocks.Unlocks["Market"]["Unlocked"],
 		},

@@ -93,7 +93,7 @@ func resetUnlocks():
 	get_tree().get_first_node_in_group("UpgradePage").changePage(1)
 	
 	for woodType in Values.WoodTypes:
-		Resources[woodType]["ActiveAutoclicker"] = false
+		Resources[woodType]["ActiveAutoClicker"] = false
 
 func recalculateValues():
 	CalculateValues.calculateAllValues()
@@ -117,7 +117,7 @@ var Resources = {
 		"MarketSellPercentage": 100, # %
 		"BotSellPercentage": 100, # %
 		"Bots": 0,
-		"ActiveAutoclicker" : false,
+		"ActiveAutoClicker" : false,
 	},
 	"Apple" : {
 		"Count" : 0,
@@ -127,7 +127,7 @@ var Resources = {
 		"MarketSellPercentage": 100, # %
 		"BotSellPercentage": 100, # %
 		"Bots": 0,
-		"ActiveAutoclicker" : false,
+		"ActiveAutoClicker" : false,
 	},
 	"Maple" : {
 		"Count" : 0,
@@ -137,7 +137,7 @@ var Resources = {
 		"MarketSellPercentage": 100, # %
 		"BotSellPercentage": 100, # %
 		"Bots": 0,
-		"ActiveAutoclicker" : false,
+		"ActiveAutoClicker" : false,
 	},
 	"Birch" : {
 		"Count" : 0,
@@ -147,7 +147,7 @@ var Resources = {
 		"MarketSellPercentage": 100, # %
 		"BotSellPercentage": 100, # %
 		"Bots": 0,
-		"ActiveAutoclicker" : false,
+		"ActiveAutoClicker" : false,
 	},
 	"Spruce" : {
 		"Count" : 0,
@@ -157,7 +157,7 @@ var Resources = {
 		"MarketSellPercentage": 50, # %
 		"BotSellPercentage": 100, # %
 		"Bots": 0,
-		"ActiveAutoclicker" : false,
+		"ActiveAutoClicker" : false,
 	},
 	"Chestnut" : {
 		"Count" : 0,
@@ -167,7 +167,7 @@ var Resources = {
 		"MarketSellPercentage": 50, # %
 		"BotSellPercentage": 100, # %
 		"Bots": 0,
-		"ActiveAutoclicker" : false,
+		"ActiveAutoClicker" : false,
 	},
 	"Cherry" : {
 		"Count" : 0,
@@ -177,7 +177,7 @@ var Resources = {
 		"MarketSellPercentage": 50, # %
 		"BotSellPercentage": 100, # %
 		"Bots": 0,
-		"ActiveAutoclicker" : false,
+		"ActiveAutoClicker" : false,
 	},
 	"Ash" : {
 		"Count" : 0,
@@ -187,7 +187,7 @@ var Resources = {
 		"MarketSellPercentage": 50, # %
 		"BotSellPercentage": 100, # %
 		"Bots": 0,
-		"ActiveAutoclicker" : false,
+		"ActiveAutoClicker" : false,
 	},
 	"Cedar" : {
 		"Count" : 0,
@@ -197,7 +197,7 @@ var Resources = {
 		"MarketSellPercentage": 50, # %
 		"BotSellPercentage": 100, # %
 		"Bots": 0,
-		"ActiveAutoclicker" : false,
+		"ActiveAutoClicker" : false,
 	},
 	"Mahogany" : {
 		"Count" : 0,
@@ -207,7 +207,7 @@ var Resources = {
 		"MarketSellPercentage": 50, # %
 		"BotSellPercentage": 100, # %
 		"Bots": 0,
-		"ActiveAutoclicker" : false,
+		"ActiveAutoClicker" : false,
 	},
 	"Ebony" : {
 		"Count" : 0,
@@ -217,7 +217,7 @@ var Resources = {
 		"MarketSellPercentage": 50, # %
 		"BotSellPercentage": 100, # %
 		"Bots": 0,
-		"ActiveAutoclicker" : false,
+		"ActiveAutoClicker" : false,
 	},
 	"Dogwood" : {
 		"Count" : 0,
@@ -227,7 +227,7 @@ var Resources = {
 		"MarketSellPercentage": 50, # %
 		"BotSellPercentage": 100, # %
 		"Bots": 0,
-		"ActiveAutoclicker" : false,
+		"ActiveAutoClicker" : false,
 	},
 	"Rosewood" : {
 		"Count" : 0,
@@ -237,7 +237,7 @@ var Resources = {
 		"MarketSellPercentage": 50, # %
 		"BotSellPercentage": 100, # %
 		"Bots": 0,
-		"ActiveAutoclicker" : false,
+		"ActiveAutoClicker" : false,
 	},
 	"Ghost Gum" : {
 		"Count" : 0,
@@ -247,7 +247,7 @@ var Resources = {
 		"MarketSellPercentage": 50, # %
 		"BotSellPercentage": 100, # %
 		"Bots": 0,
-		"ActiveAutoclicker" : false,
+		"ActiveAutoClicker" : false,
 	},
 	"Dragonwood" : {
 		"Count" : 0,
@@ -257,7 +257,7 @@ var Resources = {
 		"MarketSellPercentage": 50, # %
 		"BotSellPercentage": 100, # %
 		"Bots": 0,
-		"ActiveAutoclicker" : false,
+		"ActiveAutoClicker" : false,
 	},
 }
 
@@ -1298,14 +1298,14 @@ func countAchievements():
 	return achievementCount
 
 
-func getActiveAutoclickerCount():
+func getActiveAutoClickerCount():
 	var count = 0
 	
 	for woodType in Values.WoodTypes:
-		if !Resources[woodType].has("ActiveAutoclicker"):
-			Resources[woodType]["ActiveAutoclicker"] = false
+		if !Resources[woodType].has("ActiveAutoClicker"):
+			Resources[woodType]["ActiveAutoClicker"] = false
 			
-		if Resources[woodType]["ActiveAutoclicker"]:
+		if Resources[woodType]["ActiveAutoClicker"]:
 			count += 1
 	
 	return count
