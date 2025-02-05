@@ -267,6 +267,9 @@ func _on_bar_item_timer_timeout() -> void:
 		ResourceProductionSlider.visible = false
 		LockedWCRect.visible = true
 	
+	if !SaveData.Resources[WoodType].has("ActiveAutoClicker"):
+		SaveData.Resources[WoodType]["ActiveAutoClicker"] = false
+	
 	if !SaveData.GeneralInfo.has("AutoClickers"):
 		SaveData.GeneralInfo["AutoClickers"] = 0
 	
@@ -279,6 +282,11 @@ func _on_bar_item_timer_timeout() -> void:
 			AutoClickCheckButton.disabled = true
 	else:
 		AutoClickCheckButton.visible = false
+	
+	if SaveData.Resources[WoodType]["ActiveAutoClicker"] and !AutoClickCheckButton.button_pressed:
+		AutoClickCheckButton.button_pressed = true
+	elif !SaveData.Resources[WoodType]["ActiveAutoClicker"] and AutoClickCheckButton.button_pressed:
+		AutoClickCheckButton.button_pressed = false
 
 func _on_autoclick_check_button_toggled(toggled_on: bool) -> void:
 	if toggled_on:

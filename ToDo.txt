@@ -2,8 +2,8 @@ To do all things I can think of:
 First:
 Add < and > buttons to switch upgrade and bar pages at the same time
 Add Magic upgrade history
-On Load Enable / Disable Auto Clickers Correctly
-Magic Locks reset after ascension
+Implement The next research Items
+Add Fishing Gems, Gems Can Be Sold For Gold, Used For An Active Bonus or for building Dams???
 
 Later:
 Implement keep first 10 research
@@ -104,3 +104,5 @@ Fix the text log scrolling DONE
 Add Magic Upgrade for faster research DONE
 Add Autoclickers DONE
 Fix setting Production to 0 not stopping production 100% DONE
+On Load Enable / Disable Auto Clickers Correctly DONE
+Fix Magic Locks reseting after ascension DONE

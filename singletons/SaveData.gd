@@ -63,6 +63,11 @@ func resetValues():
 	if Unlocks.Unlocks["Upgrades"]["KeepGoldUpgrades"]:
 		Upgrades["Gold"] = tempUpgrades["Gold"].duplicate(true)
 	
+	for woodType in Values.WoodTypes:
+		Upgrades[woodType]["8"]["MagicLocked"] = tempUpgrades[woodType]["8"]["MagicLocked"]
+		Upgrades[woodType]["9"]["MagicLocked"] = tempUpgrades[woodType]["9"]["MagicLocked"]
+		Upgrades[woodType]["10"]["MagicLocked"] = tempUpgrades[woodType]["10"]["MagicLocked"]
+	
 	Gold = OriginalGold.duplicate(true)
 	Resources = OriginalResources.duplicate(true)
 	UnlockedResearch = OriginalUnlockedResearch.duplicate(true)

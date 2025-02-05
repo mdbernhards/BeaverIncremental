@@ -803,7 +803,7 @@ func SetUpgradeValue(woodType, upgradeId):
 				"6":
 					TempValues[woodType]["BeaverMultip"] *= (pow(1.035, upgradeLevel) - 1) * woodcamps
 				"7":
-					TempValues[woodType]["WcCostMultip"] *= pow(1 - 0.005, upgradeLevel)
+					TempValues[woodType]["WcCostsMultip"] *= pow(1 - 0.005, upgradeLevel)
 				"8":
 					TempValues["Dam"]["PriceMultip"] *= pow(1 - 0.02, upgradeLevel)
 				"9":
