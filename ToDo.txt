@@ -1,6 +1,5 @@
 To do all things I can think of:
 First:
-Add < and > buttons to switch upgrade and bar pages at the same time
 Add Magic upgrade history
 Implement The next research Items
 Add Fishing Gems, Gems Can Be Sold For Gold, Used For An Active Bonus or for building Dams???
@@ -106,3 +105,4 @@ Add Autoclickers DONE
 Fix setting Production to 0 not stopping production 100% DONE
 On Load Enable / Disable Auto Clickers Correctly DONE
 Fix Magic Locks reseting after ascension DONE
+Add < and > buttons to switch upgrade pages DONE
