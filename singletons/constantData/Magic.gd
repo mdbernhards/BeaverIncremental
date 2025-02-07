@@ -76,25 +76,35 @@ var Magic = {
 		"Description" : "Increase Wood Per Click by 0.6% Per Achievement",
 		"Cost" : 75,
 	},
+	"8a" : {
+		"Name" : "Storage 20%",
+		"Description" : "Increase Storage by 20%",
+		"Cost" : 75,
+	},
 	"8b" : {
 		"Name" : "+1 Auto Clicker",
 		"Description" : "+1 Auto Clicker, every second clicks for you!",
 		"Cost" : 100,
 	},
 	"8bb" : {
-		"Name" : "-0.25% Research Time Per Achievement",
+		"Name" : "-0.25% Research Time Per Ach.",
 		"Description" : "Lower Research Time by 0.25% Per Achievement",
 		"Cost" : 125,
 	},
 	"9" : {
-		"Name" : "5% WPC To WPS",
-		"Description" : "For each wood Type transfer 5% of Wood Per Click to Wood Per Second",
+		"Name" : "15% WPC To WPS",
+		"Description" : "For each wood Type transfer 15% of Wood Per Click to Wood Per Second",
 		"Cost" : 175,
 	},
 	"10" : {
 		"Name" : "Unlock Fishing",
 		"Description" : "Unlock The Ability to Fish. Gain Fishing Bonuses",
 		"Cost" : 250,
+	},
+	"10b" : {
+		"Name" : "Rare Upgrades 85% Cheaper",
+		"Description" : "All Rare Wood Type Upgrade become 85% Cheaper",
+		"Cost" : 325,
 	},
 	"11" : {
 		"Name" : "Gain 30% More Magic",

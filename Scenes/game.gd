@@ -13,7 +13,7 @@ enum BackTrackEnum {
 func _ready() -> void:
 	setupNodePaths()
 	
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	pass
 
 func goToSavesFromMenu():

@@ -11,7 +11,7 @@ func _ready() -> void:
 	setupNodePaths()
 	showConstructionPage(Dams.DamEnum.SmallDam)
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	pass
 
 func showConstructionPage(damType):

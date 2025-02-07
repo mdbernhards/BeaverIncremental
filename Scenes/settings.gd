@@ -10,7 +10,7 @@ var NotationDropDown
 func _ready() -> void:
 	setupNodePaths()
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	pass
 
 func _on_load_button_button_down() -> void:

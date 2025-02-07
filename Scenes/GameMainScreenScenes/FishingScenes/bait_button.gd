@@ -8,7 +8,7 @@ extends Button
 func _ready() -> void:
 	pass
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if SaveData.Bait[BaitType]["Count"] > 0 and SaveData.Bait[BaitType]["Unlocked"] or BaitType == Fishing.BaitEnum.NoBait:
 		visible = true
 	else:

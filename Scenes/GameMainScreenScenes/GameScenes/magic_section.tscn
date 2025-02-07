@@ -20,6 +20,7 @@ alignment = 2
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/margin_left = 5
+theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 6
 
 [node name="TitleLabel" type="Label" parent="VBoxContainer/TopHBox/TitleMC"]
@@ -27,36 +28,73 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 40
 text = "Magic Store"
 
-[node name="MagicCountLabel" type="Label" parent="VBoxContainer/TopHBox/TitleMC"]
+[node name="HBox" type="HBoxContainer" parent="VBoxContainer/TopHBox/TitleMC"]
 layout_mode = 2
+theme_override_constants/separation = 15
+alignment = 2
+
+[node name="MagicCountLabel" type="Label" parent="VBoxContainer/TopHBox/TitleMC/HBox"]
+layout_mode = 2
+size_flags_horizontal = 4
 size_flags_vertical = 1
 theme_override_font_sizes/font_size = 23
 text = "10 Magic"
 horizontal_alignment = 2
-vertical_alignment = 2
+vertical_alignment = 1
 
-[node name="Scroll" type="ScrollContainer" parent="VBoxContainer"]
+[node name="HistoryButton" type="Button" parent="VBoxContainer/TopHBox/TitleMC/HBox"]
+custom_minimum_size = Vector2(100, 40)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 18
+text = "History"
+
+[node name="MagicScroll" type="ScrollContainer" parent="VBoxContainer"]
 custom_minimum_size = Vector2(767, 858)
 layout_mode = 2
 
-[node name="MC" type="MarginContainer" parent="VBoxContainer/Scroll"]
+[node name="MC" type="MarginContainer" parent="VBoxContainer/MagicScroll"]
 custom_minimum_size = Vector2(767, 858)
 layout_mode = 2
 
-[node name="MagicButtonsGrid" type="GridContainer" parent="VBoxContainer/Scroll/MC"]
+[node name="MagicButtonsGrid" type="GridContainer" parent="VBoxContainer/MagicScroll/MC"]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_constants/h_separation = 9
 theme_override_constants/v_separation = 10
 columns = 3
 
-[node name="MagicItem1" parent="VBoxContainer/Scroll/MC/MagicButtonsGrid" instance=ExtResource("1_qe6j3")]
+[node name="MagicItem1" parent="VBoxContainer/MagicScroll/MC/MagicButtonsGrid" instance=ExtResource("1_qe6j3")]
 layout_mode = 2
 Nr = 1
 
-[node name="MagicItem2" parent="VBoxContainer/Scroll/MC/MagicButtonsGrid" instance=ExtResource("1_qe6j3")]
+[node name="MagicItem2" parent="VBoxContainer/MagicScroll/MC/MagicButtonsGrid" instance=ExtResource("1_qe6j3")]
 layout_mode = 2
 Nr = 2
 
-[node name="MagicItem3" parent="VBoxContainer/Scroll/MC/MagicButtonsGrid" instance=ExtResource("1_qe6j3")]
+[node name="MagicItem3" parent="VBoxContainer/MagicScroll/MC/MagicButtonsGrid" instance=ExtResource("1_qe6j3")]
 layout_mode = 2
+
+[node name="HistoryScroll" type="ScrollContainer" parent="VBoxContainer"]
+visible = false
+custom_minimum_size = Vector2(767, 858)
+layout_mode = 2
+
+[node name="MC" type="MarginContainer" parent="VBoxContainer/HistoryScroll"]
+custom_minimum_size = Vector2(767, 858)
+layout_mode = 2
+
+[node name="HistoryGrid" type="GridContainer" parent="VBoxContainer/HistoryScroll/MC"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/h_separation = 9
+theme_override_constants/v_separation = 10
+columns = 3
+
+[node name="MagicRefreshTimer" type="Timer" parent="."]
+wait_time = 0.7
+autostart = true
+
+[connection signal="button_down" from="VBoxContainer/TopHBox/TitleMC/HBox/HistoryButton" to="." method="_on_history_button_button_down"]
+[connection signal="timeout" from="MagicRefreshTimer" to="." method="_on_magic_refresh_timer_timeout"]

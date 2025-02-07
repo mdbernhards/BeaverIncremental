@@ -9,26 +9,35 @@ var MagicButton
 var Upgrade
 @export var Nr = 1
 
+var IsHistoryItem = false
+
 func _ready():
 	setMagicUpgrade()
 
-func _process(delta):
+func _process(_delta):
 	pass
 
 func setCantAffordRect():
-	if Upgrade && (SaveData.Magic["Count"] >= Upgrade["Cost"]):
+	if Upgrade && (SaveData.Magic["Count"] >= Upgrade["Cost"]) or IsHistoryItem:
 		CantAffordRect.visible = false
 	else:
 		CantAffordRect.visible = true
 
-func setMagicUpgrade(nr = Nr):
+func setMagicUpgrade(nr = Nr, isHistoryItem = IsHistoryItem):
 	setNodePaths()
+	
+	IsHistoryItem = isHistoryItem
 	
 	Nr = nr
 	Upgrade = Magic.Magic[str(Nr)]
 	
 	NameLabel.text = Upgrade["Name"]
 	CostLabel.text = str(NumberFormatting.formatNumber(Upgrade["Cost"])) + " Magic"
+	
+	if IsHistoryItem:
+		MagicButton.disabled = true
+	else:
+		MagicButton.disabled = false
 
 func setNodePaths():
 	NameLabel = $MagicButton/MC/VBox/NameLabel
@@ -37,18 +46,19 @@ func setNodePaths():
 	MagicButton = $MagicButton
 
 func _on_magic_button_button_down():
-	if SaveData.Magic["Count"] >= Upgrade["Cost"]:
+	if SaveData.Magic["Count"] >= Upgrade["Cost"] and !IsHistoryItem:
 		SaveData.Magic["Count"] -= Upgrade["Cost"]
 		SaveData.UnlockedMagicUpgrades[Nr] = true
 		CalculateValues.calculateAllValues()
 		get_tree().get_first_node_in_group("TextLogSection").writeMagicUpgradeUnlockToLog(Nr)
+		get_tree().get_first_node_in_group("MagicSection").setHistoryItems()
 		queue_free()
 
 func checkIfVisible():
-	return Upgrade["Cost"] * 0.5 < SaveData.Magic["Count"]
+	return Upgrade["Cost"] * 0.5 < SaveData.Magic["Count"] or IsHistoryItem
 
 func _on_magic_item_timer_timeout() -> void:
-	if Unlocks.Unlocks["Magic"]["MagicItems"].has(Nr) or Values.DebugMode:
+	if Unlocks.Unlocks["Magic"]["MagicItems"].has(Nr) or IsHistoryItem or Values.DebugMode:
 		MagicButton.visible = true
 		setCantAffordRect()
 	else:

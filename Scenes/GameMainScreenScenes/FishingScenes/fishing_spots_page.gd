@@ -9,7 +9,7 @@ var SpotType # need to implement enum for spots
 func _ready() -> void:
 	SetupNodePaths()
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	pass
 
 func SetupNodePaths():

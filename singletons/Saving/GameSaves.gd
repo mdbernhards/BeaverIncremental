@@ -5,7 +5,7 @@ var TimeStart
 func _ready() -> void:
 	checkInfoFileForSaves()
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	pass
 
 func checkInfoFileForSaves():

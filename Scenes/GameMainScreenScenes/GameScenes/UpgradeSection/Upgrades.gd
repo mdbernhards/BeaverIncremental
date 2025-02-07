@@ -16,8 +16,6 @@ func _process(_delta):
 	pass
 
 func checkIfCanAfford():
-	var canAfford = false
-	
 	for upgradeItem in ItemGrid.get_children():
 		if upgradeItem.updateAffordabilityIndicator():
 			return true

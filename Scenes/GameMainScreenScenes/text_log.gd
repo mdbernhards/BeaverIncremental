@@ -10,7 +10,7 @@ var TooltipNode
 func _ready() -> void:
 	setupNodePaths()
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	pass
 
 func writeResearchUnlockToLog(researchId):
@@ -36,24 +36,24 @@ func clearLog():
 	TextLog.text = ""
 
 func _make_custom_tooltip(_for_text):
-	var name = "????"
+	var title = "????"
 	var description = "????"
 	
 	if _for_text.begins_with("tooltip_research"):
 		var researchId = _for_text.split(",")[1]
-		name = Research.Research[researchId]["Name"]
+		title = Research.Research[researchId]["Name"]
 		description = Research.Research[researchId]["Description"]
 	elif _for_text.begins_with("tooltip_achievement"):
 		var achievementId = _for_text.split(",")[1]
-		name = Achievements.Achievements[achievementId]["Name"]
+		title = Achievements.Achievements[achievementId]["Name"]
 		description = Achievements.Achievements[achievementId]["Description"]
 	elif _for_text.begins_with("tooltip_magic"):
 		var magicId = _for_text.split(",")[1]
-		name = Magic.Magic[magicId]["Name"]
+		title = Magic.Magic[magicId]["Name"]
 		description = Magic.Magic[magicId]["Description"]
 		
 	var tooltip = load("res://Scenes/Tooltips/tooltip.tscn").instantiate()
-	tooltip.setTooltip(name, description)
+	tooltip.setTooltip(title, description)
 	
 	return tooltip
 
@@ -72,7 +72,7 @@ func _on_text_log_meta_hover_started(meta: Variant) -> void:
 	TooltipNode.add_child(active_tooltip)
 	active_tooltip.global_position = get_global_mouse_position() + Vector2(5, -200)
 
-func _on_text_log_meta_hover_ended(meta: Variant) -> void:
+func _on_text_log_meta_hover_ended(_meta: Variant) -> void:
 	if active_tooltip:
 		active_tooltip.queue_free()
 		active_tooltip = null

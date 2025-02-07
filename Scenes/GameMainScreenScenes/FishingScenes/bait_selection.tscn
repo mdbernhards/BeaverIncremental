@@ -1,11 +1,13 @@
-[gd_scene load_steps=2 format=3 uid="uid://bijsbcpjdhp2w"]
+[gd_scene load_steps=3 format=3 uid="uid://bijsbcpjdhp2w"]
 
+[ext_resource type="Script" path="res://Scenes/GameMainScreenScenes/FishingScenes/bait_selection.gd" id="1_pgv6i"]
 [ext_resource type="PackedScene" uid="uid://cvsnnxwfl5str" path="res://Scenes/GameMainScreenScenes/FishingScenes/FishPage/bait_button.tscn" id="1_t2b4x"]
 
 [node name="BaitSelection" type="MarginContainer"]
 custom_minimum_size = Vector2(170, 0)
 theme_override_constants/margin_top = 25
 theme_override_constants/margin_bottom = 25
+script = ExtResource("1_pgv6i")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 2
@@ -41,53 +43,57 @@ theme_override_constants/margin_left = 5
 theme_override_constants/margin_top = 15
 theme_override_constants/margin_right = 5
 
-[node name="VBox" type="VBoxContainer" parent="VBox/BaitButtons"]
+[node name="BaitSelectionVBox" type="VBoxContainer" parent="VBox/BaitButtons"]
 layout_mode = 2
 theme_override_constants/separation = 17
 
-[node name="NoBaitButton" parent="VBox/BaitButtons/VBox" instance=ExtResource("1_t2b4x")]
+[node name="NoBaitButton" parent="VBox/BaitButtons/BaitSelectionVBox" instance=ExtResource("1_t2b4x")]
 layout_mode = 2
 
-[node name="LeafBaitButton" parent="VBox/BaitButtons/VBox" instance=ExtResource("1_t2b4x")]
+[node name="LeafBaitButton" parent="VBox/BaitButtons/BaitSelectionVBox" instance=ExtResource("1_t2b4x")]
 layout_mode = 2
 BaitType = 1
 
-[node name="WormBaitButton" parent="VBox/BaitButtons/VBox" instance=ExtResource("1_t2b4x")]
+[node name="WormBaitButton" parent="VBox/BaitButtons/BaitSelectionVBox" instance=ExtResource("1_t2b4x")]
 layout_mode = 2
 BaitType = 2
 
-[node name="JigBaitButton" parent="VBox/BaitButtons/VBox" instance=ExtResource("1_t2b4x")]
+[node name="JigBaitButton" parent="VBox/BaitButtons/BaitSelectionVBox" instance=ExtResource("1_t2b4x")]
 layout_mode = 2
 BaitType = 3
 
-[node name="CricketBaitButton" parent="VBox/BaitButtons/VBox" instance=ExtResource("1_t2b4x")]
+[node name="CricketBaitButton" parent="VBox/BaitButtons/BaitSelectionVBox" instance=ExtResource("1_t2b4x")]
 layout_mode = 2
 BaitType = 4
 
-[node name="CatarpillerBaitButton" parent="VBox/BaitButtons/VBox" instance=ExtResource("1_t2b4x")]
+[node name="CatarpillerBaitButton" parent="VBox/BaitButtons/BaitSelectionVBox" instance=ExtResource("1_t2b4x")]
 layout_mode = 2
 BaitType = 5
 
-[node name="LeechBaitButton" parent="VBox/BaitButtons/VBox" instance=ExtResource("1_t2b4x")]
+[node name="LeechBaitButton" parent="VBox/BaitButtons/BaitSelectionVBox" instance=ExtResource("1_t2b4x")]
 layout_mode = 2
 BaitType = 6
 
-[node name="CrateAtractorBaitButton" parent="VBox/BaitButtons/VBox" instance=ExtResource("1_t2b4x")]
+[node name="CrateAtractorBaitButton" parent="VBox/BaitButtons/BaitSelectionVBox" instance=ExtResource("1_t2b4x")]
 layout_mode = 2
 BaitType = 7
 
-[node name="SquidTentacleBaitButton" parent="VBox/BaitButtons/VBox" instance=ExtResource("1_t2b4x")]
+[node name="SquidTentacleBaitButton" parent="VBox/BaitButtons/BaitSelectionVBox" instance=ExtResource("1_t2b4x")]
 layout_mode = 2
 BaitType = 8
 
-[node name="WyvernBaitButton" parent="VBox/BaitButtons/VBox" instance=ExtResource("1_t2b4x")]
+[node name="WyvernBaitButton" parent="VBox/BaitButtons/BaitSelectionVBox" instance=ExtResource("1_t2b4x")]
 layout_mode = 2
 BaitType = 9
 
-[node name="DevilTongueBaitButton" parent="VBox/BaitButtons/VBox" instance=ExtResource("1_t2b4x")]
+[node name="DevilTongueBaitButton" parent="VBox/BaitButtons/BaitSelectionVBox" instance=ExtResource("1_t2b4x")]
 layout_mode = 2
 BaitType = 10
 
-[node name="ShinyWormBaitButton" parent="VBox/BaitButtons/VBox" instance=ExtResource("1_t2b4x")]
+[node name="ShinyWormBaitButton" parent="VBox/BaitButtons/BaitSelectionVBox" instance=ExtResource("1_t2b4x")]
 layout_mode = 2
 BaitType = 11
+
+[node name="BaitSelectionRefreshTimer" type="Timer" parent="."]
+
+[connection signal="timeout" from="BaitSelectionRefreshTimer" to="." method="_on_bait_selection_refresh_timer_timeout"]

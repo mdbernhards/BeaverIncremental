@@ -24,7 +24,7 @@ func _ready() -> void:
 	SaveState = SaveSlotEnum.New
 	ErrorLabel.visible = false
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if SaveState == SaveSlotEnum.New:
 		NewGame.visible = true
 		LoadGame.visible = false

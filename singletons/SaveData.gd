@@ -106,6 +106,7 @@ func recalculateValues():
 	get_tree().get_first_node_in_group("ResourcePage").updateBars()
 	get_tree().get_first_node_in_group("Settings").updateSettings()
 	get_tree().get_first_node_in_group("MagicSection").setMagicItems()
+	get_tree().get_first_node_in_group("MagicSection").setHistoryItems()
 	get_tree().get_first_node_in_group("DamSection").setDamConstruction()
 	get_tree().get_first_node_in_group("AchievementScreen").resetAchievements()
 

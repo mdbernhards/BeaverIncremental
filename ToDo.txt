@@ -1,8 +1,8 @@
 To do all things I can think of:
 First:
-Add Magic upgrade history
-Implement The next research Items
 Add Fishing Gems, Gems Can Be Sold For Gold, Used For An Active Bonus or for building Dams???
+Spruce 7 seems to do nothing or not enough
+Add Autoclicker Research
 
 Later:
 Implement keep first 10 research
@@ -106,3 +106,6 @@ Fix setting Production to 0 not stopping production 100% DONE
 On Load Enable / Disable Auto Clickers Correctly DONE
 Fix Magic Locks reseting after ascension DONE
 Add < and > buttons to switch upgrade pages DONE
+Add Magic upgrade history DONE
+Implement research items up to 70 DONE
+Implement New Magic Gain System DONE

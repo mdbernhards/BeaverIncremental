@@ -104,7 +104,7 @@ offset_right = 914.0
 offset_bottom = 415.0
 FishType = 10
 
-[node name="Label" type="Label" parent="FishingGameLogic"]
+[node name="ClicksLeftLabel" type="Label" parent="FishingGameLogic"]
 layout_mode = 0
 offset_left = 325.0
 offset_top = 721.0
@@ -148,6 +148,10 @@ theme_override_font_sizes/font_size = 20
 text = "20"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="FishingChanceRefreshTimer" type="Timer" parent="FishingGameLogic"]
+wait_time = 300.0
+one_shot = true
 
 [node name="MC" type="MarginContainer" parent="."]
 layout_mode = 1
@@ -193,6 +197,7 @@ theme_override_constants/separation = 7
 layout_mode = 2
 
 [node name="Button" type="Button" parent="MC/VBox/HBox/VBox/MC"]
+visible = false
 layout_mode = 2
 theme_override_font_sizes/font_size = 18
 text = "1x"
@@ -201,10 +206,57 @@ text = "1x"
 layout_mode = 2
 
 [node name="Button" type="Button" parent="MC/VBox/HBox/VBox/MC2"]
+visible = false
 layout_mode = 2
 theme_override_font_sizes/font_size = 18
 text = "10x"
 
+[node name="VBox2" type="VBoxContainer" parent="MC"]
+layout_mode = 2
+mouse_filter = 2
+alignment = 2
+
+[node name="HBox" type="HBoxContainer" parent="MC/VBox2"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 12
+
+[node name="MC" type="MarginContainer" parent="MC/VBox2/HBox"]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="VBox" type="VBoxContainer" parent="MC/VBox2/HBox/MC"]
+custom_minimum_size = Vector2(160, 90)
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 2
+
+[node name="Label" type="Label" parent="MC/VBox2/HBox/MC/VBox"]
+layout_mode = 2
+text = "Fishing Chances"
+horizontal_alignment = 1
+
+[node name="FishingChancesLabel" type="Label" parent="MC/VBox2/HBox/MC/VBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "0/3"
+horizontal_alignment = 1
+
+[node name="ChanceRefreshLabel" type="Label" parent="MC/VBox2/HBox/MC/VBox"]
+custom_minimum_size = Vector2(0, 25)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.737193, 0.737193, 0.737193, 1)
+theme_override_font_sizes/font_size = 13
+text = "3 min 22 sec until refresh"
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="RefreshTimer" type="Timer" parent="."]
+autostart = true
+
+[connection signal="gui_input" from="FishingGameLogic/Fish" to="." method="_on_fish_gui_input"]
 [connection signal="timeout" from="FishingGameLogic/SpawnTimer" to="." method="_on_spawn_timer_timeout"]
 [connection signal="timeout" from="FishingGameLogic/FishingTimeoutTimer" to="." method="_on_fishing_timeout_timer_timeout"]
+[connection signal="timeout" from="FishingGameLogic/FishingChanceRefreshTimer" to="." method="_on_fishing_chance_refresh_timer_timeout"]
 [connection signal="button_down" from="MC/VBox/HBox/MC/FishButton" to="." method="_on_fish_button_button_down"]
+[connection signal="timeout" from="RefreshTimer" to="." method="_on_refresh_timer_timeout"]

@@ -34,7 +34,7 @@ func _ready() -> void:
 	setupNodePaths()
 	calculatePotentialMagicGain()
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	pass
 
 func checkMaxWoodCounts():
@@ -52,15 +52,38 @@ func calculatePotentialMagicGain():
 	for resourceType in BaseRequirements:
 		var resourceCount = SaveData.MaxResourceCount[resourceType]
 		var baseCost = BaseRequirements[resourceType]
+		var resourcesMagic = 0
 		
 		while resourceCount >= baseCost:
-			magic += 1
+			resourcesMagic += 1
 			resourceCount -= baseCost
-			baseCost *= 1.04
-		
+			
+			if resourceType == "Gold":
+				baseCost *= 1.03
+			else:
+				if resourcesMagic <= 90:
+					baseCost *= 1.032
+				elif resourcesMagic <= 950:
+					baseCost *= 1.0003
+				elif resourcesMagic <= 10000:
+					baseCost *= 1.00001
+				elif resourcesMagic <= 100000:
+					baseCost *= 1.000001
+				elif resourcesMagic <= 250000:
+					baseCost *= 1.0000001
+				elif resourcesMagic <= 5000000:
+					baseCost *= 1.00000001
+				elif resourcesMagic <= 50000000:
+					baseCost *= 1.000000001
+				elif resourcesMagic <= 500000000:
+					baseCost *= 1.0000000001
+				else:
+					baseCost *= 1.00000000001
+
 		if resourceCount > 0:
-			magic += resourceCount / baseCost
-	
+			resourcesMagic += resourceCount / baseCost
+		magic += resourcesMagic
+		
 	Values.ResourceValues["Magic"]["PotentialMagic"] = magic * Values.ResourceValues["Magic"]["GainMultip"]
 
 func updateMagic():

@@ -11,7 +11,7 @@ func _ready() -> void:
 	FishTypes = Fishing.FishEnum
 	SetupNodePaths()
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if CurrentGoldLabel:
 		CurrentGoldLabel.text = "Gold: " + str(floor(SaveData.Gold["Count"]))
 		

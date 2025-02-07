@@ -19,7 +19,7 @@ var PriceLabel
 func _ready() -> void:
 	SetupNodePaths()
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if SaveData.Bait[BaitType]["Unlocked"] or true:
 		visible = true
 		BaitCountLabel.text = str(SaveData.Bait[BaitType]["Count"])

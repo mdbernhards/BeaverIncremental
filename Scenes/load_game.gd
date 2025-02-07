@@ -18,7 +18,7 @@ var BackTrackTo : BackTrackEnum
 func _ready() -> void:
 	setupNodePaths()
 	
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	pass
 
 func _on_back_button_button_down() -> void:
@@ -33,7 +33,6 @@ func _on_back_button_button_down() -> void:
 
 func loadSaves():
 	var saves = SaveData.SavesInfo
-	var saveCount = 0
 	
 	for child in SaveGames.get_children():
 		SaveGames.remove_child(child)

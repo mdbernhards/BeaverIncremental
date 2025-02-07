@@ -134,7 +134,7 @@ var Achievements = {
 	"27" : {
 		"Name" : "Have 10^19 Birch",
 		"Description" : "Collect 10^19 Birch Wood",
-		"Trigger" : func(): SaveData.Resources["Birch"]["Count"] >= pow(10, 19),
+		"Trigger" : func(): return SaveData.Resources["Birch"]["Count"] >= pow(10, 19),
 	},
 	"28" : {
 		"Name" : "Have 10^21 Birch",

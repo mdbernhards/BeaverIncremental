@@ -113,7 +113,7 @@ theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 5
 theme_override_constants/margin_bottom = 10
 
-[node name="BaitButton" type="Button" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/MC/ColorRect/HBox/MC3"]
+[node name="BaitPageButton" type="Button" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/MC/ColorRect/HBox/MC3"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 23
 text = "Bait"
@@ -126,7 +126,7 @@ theme_override_constants/margin_top = 10
 theme_override_constants/margin_right = 5
 theme_override_constants/margin_bottom = 10
 
-[node name="SpotButton" type="Button" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/MC/ColorRect/HBox/MC2"]
+[node name="SpotPageButton" type="Button" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/MC/ColorRect/HBox/MC2"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 23
 text = "Spots"
@@ -146,6 +146,10 @@ layout_mode = 2
 [node name="FishingSpotsPage" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC" instance=ExtResource("6_yccsx")]
 layout_mode = 2
 
+[node name="FishingScreenRefreshTimer" type="Timer" parent="."]
+autostart = true
+
 [connection signal="button_down" from="MC/HBox/FishingImprovementsMenusHBox/VBox/MC/ColorRect/HBox/MC/FishButton" to="." method="_on_fish_button_button_down"]
-[connection signal="button_down" from="MC/HBox/FishingImprovementsMenusHBox/VBox/MC/ColorRect/HBox/MC3/BaitButton" to="." method="_on_bait_button_button_down"]
-[connection signal="button_down" from="MC/HBox/FishingImprovementsMenusHBox/VBox/MC/ColorRect/HBox/MC2/SpotButton" to="." method="_on_spot_button_button_down"]
+[connection signal="button_down" from="MC/HBox/FishingImprovementsMenusHBox/VBox/MC/ColorRect/HBox/MC3/BaitPageButton" to="." method="_on_bait_button_button_down"]
+[connection signal="button_down" from="MC/HBox/FishingImprovementsMenusHBox/VBox/MC/ColorRect/HBox/MC2/SpotPageButton" to="." method="_on_spot_button_button_down"]
+[connection signal="timeout" from="FishingScreenRefreshTimer" to="." method="_on_fishing_screen_refresh_timer_timeout"]

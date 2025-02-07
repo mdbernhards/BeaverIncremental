@@ -198,13 +198,21 @@ func SetMagicValue(magicNr):
 			TempValues["Research"]["Time"] *= 0.5
 		"8" :
 			TempValues["Global"]["AchievementWpcMultip"] *= 1.6
+		"8a" :
+			TempValues["Global"]["StorageMultip"] *= 1.2
 		"8b" :
 			TempValues["Global"]["AutoClickers"] += 1
 		"9" :
-			TempValues["Global"]["WpcToWpsMultip"] *= 1.05
+			TempValues["Global"]["WpcToWpsMultip"] *= 1.15
 		"10" :
 			Unlocks.Unlocks["Fishing"]["Unlocked"] = true
 			Unlocks.Unlocks["Fishing"]["Spot"]["1"] = true
+		"10b" :
+			TempValues["Chestnut"]["UpgradePriceMultip"] *= 0.15
+			TempValues["Cherry"]["UpgradePriceMultip"] *= 0.15
+			TempValues["Ash"]["UpgradePriceMultip"] *= 0.15
+			TempValues["Cedar"]["UpgradePriceMultip"] *= 0.15
+			TempValues["Mahogany"]["UpgradePriceMultip"] *= 0.15
 		"11" :
 			TempValues["Magic"]["GainMultip"] *= 1.3
 		"12" :
@@ -465,56 +473,65 @@ func SetResearchValue(researchNr):
 			TempValues["Birch"]["FlatWpc"] += 199
 			TempValues["Spruce"]["FlatWpc"] += 199
 			TempValues["Chestnut"]["FlatWpc"] += 199
-		"51" : #Stopped here
-			pass # idk
+		"51" :
+			TempValues["Maple"]["WpsMultip"] *= 1.22
+			TempValues["Spruce"]["WpsMultip"] *= 1.22
 		"52" :
-			TempValues["Fish"]["BaitEffectMultip"] *= 1.08
+			TempValues["Oak"]["ExtraWoodcamps"] += 10
+			TempValues["Apple"]["ExtraWoodcamps"] += 10
+			TempValues["Maple"]["ExtraWoodcamps"] += 10
+			TempValues["Birch"]["ExtraWoodcamps"] += 10
+			TempValues["Spruce"]["ExtraWoodcamps"] += 10
 		"53" :
-			pass # idk
+			TempValues["Global"]["AchievementWpsMultip"] *= 1.75
 		"54" :
-			pass # idk
+			TempValues["Chestnut"]["BeaverPriceMultip"] *= 0.45
 		"55" :
-			TempValues["Global"]["WcPriceMultip"] *= 0.8
+			TempValues["Global"]["WcPriceMultip"] *= 0.65
 		"56" :
-			pass # idk
+			TempValues["Research"]["Time"] *= 0.85
 		"57" :
-			TempValues["Global"]["WoodPriceMultip"] *= 1.25
+			TempValues["Global"]["BotSellMoreMultip"] *= 1.25
 		"58" :
-			pass # idk
+			TempValues["Chestnut"]["WoodPriceMultip"] *= 1.15
 		"59" :
-			pass # idk
+			Unlocks.Unlocks["Ash"]["Unlocked"] = true
 		"60" :
-			Unlocks.Unlocks["Fishing"]["Spot"]["2"] = true
+			TempValues["Magic"]["EffectMultip"] *= 1.135
 		"61" :
-			Unlocks.Unlocks["Mahogany"]["Unlocked"] = true
+			TempValues["Birch"]["WpsMultip"] *= 1.099
+			TempValues["Spruce"]["WpsMultip"] *= 1.099
+			TempValues["Birch"]["StorageMultip"] *= 1.099
+			TempValues["Spruce"]["StorageMultip"] *= 1.099
 		"62" :
-			pass # idk
+			TempValues["Chestnut"]["WcPriceMultip"] *= 0.55
 		"63" :
-			TempValues["Global"]["BotPriceMultip"] *= 0.85
+			TempValues["Global"]["BotPriceMultip"] *= 0.5
 		"64" :
-			pass # idk
+			TempValues["Global"]["BeaverBaseStorage"] += 250
 		"65" :
-			pass # idk
+			TempValues["Cherry"]["WoodPriceMultip"] *= 1.45
 		"66" :
-			pass # idk
+			TempValues["Global"]["WcCostsMultip"] *= 1.1
 		"67" :
-			pass # idk
+			TempValues["Cherry"]["WpsMultip"] *= 1.45
 		"68" :
-			TempValues["Dam"]["Multip"] *= 5
+			TempValues["Global"]["StorageMultip"] *= 1.075
 		"69" :
-			pass # idk
+			Unlocks.Unlocks["Cedar"]["Unlocked"] = true
 		"70" :
-			TempValues["Magic"]["EffectMultip"] *= 10
+			TempValues["Ash"]["BeaverMultip"] *= 1.13
+			TempValues["Ash"]["BeaverStorageMultip"] *= 1.13
 		"71" :
-			pass # idk change
+			pass
 		"72" :
-			Unlocks.Unlocks["Dogwood"]["Unlocked"] = true
+			pass
 		"73" :
 			pass
 		"74" :
-			pass # idk
+			pass
 		"75" :
-			pass # idk
+			pass
 		"76" :
 			TempValues["Fish"]["MoreFishMultip"] *= 1.15
 		"77" :
@@ -522,7 +539,7 @@ func SetResearchValue(researchNr):
 		"78" :
 			TempValues["Fish"]["BaitPriceMultip"] *= 0.7
 		"79" :
-			TempValues["Dam"]["Multip"] *= 4
+			Unlocks.Unlocks["Mahogany"]["Unlocked"] = true
 		"80" :
 			pass
 		"81" :
@@ -542,7 +559,7 @@ func SetResearchValue(researchNr):
 		"88" :
 			pass
 		"89" :
-			pass
+			Unlocks.Unlocks["Ebony"]["Unlocked"] = true
 		"90" :
 			pass
 		"91" :
@@ -562,7 +579,7 @@ func SetResearchValue(researchNr):
 		"98" :
 			pass
 		"99" :
-			pass
+			Unlocks.Unlocks["Dogwood"]["Unlocked"] = true
 		"100" :
 			pass
 		"101" :
@@ -582,7 +599,7 @@ func SetResearchValue(researchNr):
 		"108" :
 			pass
 		"109" :
-			pass
+			Unlocks.Unlocks["Rosewood"]["Unlocked"] = true
 		"110" :
 			pass
 		"111" :
@@ -602,7 +619,7 @@ func SetResearchValue(researchNr):
 		"118" :
 			pass
 		"119" :
-			pass
+			Unlocks.Unlocks["Ghost Gum"]["Unlocked"] = true
 		"120" :
 			pass
 		"121" :
@@ -622,7 +639,7 @@ func SetResearchValue(researchNr):
 		"128" :
 			pass
 		"129" :
-			pass
+			Unlocks.Unlocks["Dragonwood"]["Unlocked"] = true
 		"130" :
 			pass
 		"131" :
