@@ -2,15 +2,15 @@ extends Control
 
 # Nodes
 var FishPage
-var BaitPage
+var ShopPage
 var FishingSpotsPage
 
-var BaitPageButton
+var ShopPageButton
 var SpotPageButton
 
 enum Pages {
 	FishPage,
-	BaitPage,
+	ShopPage,
 	FishingSpotsPage,
 }
 
@@ -25,16 +25,16 @@ func _on_fish_button_button_down() -> void:
 	changePage(Pages.FishPage)
 
 func _on_bait_button_button_down() -> void:
-	changePage(Pages.BaitPage)
+	changePage(Pages.ShopPage)
 
 func _on_spot_button_button_down() -> void:
 	changePage(Pages.FishingSpotsPage)
 
 func setupNodePaths():
 	FishPage = $MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/FishPage
-	BaitPage = $MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/BaitPage
+	ShopPage = $MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/ShopPage
 	FishingSpotsPage = $MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC/FishingSpotsPage
-	BaitPageButton = $MC/HBox/FishingImprovementsMenusHBox/VBox/MC/ColorRect/HBox/MC3/BaitPageButton
+	ShopPageButton = $MC/HBox/FishingImprovementsMenusHBox/VBox/MC/ColorRect/HBox/MC3/ShopPageButton
 	SpotPageButton = $MC/HBox/FishingImprovementsMenusHBox/VBox/MC/ColorRect/HBox/MC2/SpotPageButton
 
 func changePage(pageEnum):
@@ -43,23 +43,23 @@ func changePage(pageEnum):
 	match pageEnum:
 		Pages.FishPage:
 			FishPage.visible = true
-		Pages.BaitPage:
-			BaitPage.visible = true
+		Pages.ShopPage:
+			ShopPage.visible = true
 		Pages.FishingSpotsPage:
 			FishingSpotsPage.visible = true
 
 func hideAllPages():
 	FishPage.visible = false
-	BaitPage.visible = false
+	ShopPage.visible = false
 	FishingSpotsPage.visible = false
 
 func _on_fishing_screen_refresh_timer_timeout() -> void:
-	if Unlocks.Unlocks["Fishing"]["Bait"]["Unlocked"]:
-		BaitPageButton.disabled = false
-		BaitPageButton.text = "Bait"
+	if Unlocks.Unlocks["Fishing"]["Shop"]["Unlocked"]:
+		ShopPageButton.disabled = false
+		ShopPageButton.text = "Shop"
 	else:
-		BaitPageButton.disabled = true
-		BaitPageButton.text = "????"
+		ShopPageButton.disabled = true
+		ShopPageButton.text = "????"
 	
 	if Unlocks.Unlocks["Fishing"]["Spot"]["2"]:
 		SpotPageButton.disabled = false

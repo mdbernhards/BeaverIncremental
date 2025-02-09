@@ -4,7 +4,7 @@ var UsedBaitLabel
 var BaitSelectionVBox
 
 func _ready() -> void:
-	pass
+	setupNodePaths()
 
 func _process(_delta: float) -> void:
 	pass

@@ -27,6 +27,7 @@ var ChanceRefreshLabel
 var FishButton
 var FishingChanceRefreshTimer
 var ClicksLeftLabel
+var ChanceVBox
 
 var IsBouncing = false
 var BarUp = true
@@ -109,11 +110,12 @@ func SetNodePaths():
 	FishingTimeoutTimer = $FishingGameLogic/FishingTimeoutTimer
 	TimeoutBar = $FishingGameLogic/TimeoutBar
 	TimeoutLabel = $FishingGameLogic/TimeoutBar/TimeoutLabel
-	FishingChancesLabel = $MC/VBox2/HBox/MC/VBox/FishingChancesLabel
-	ChanceRefreshLabel = $MC/VBox2/HBox/MC/VBox/ChanceRefreshLabel
+	FishingChancesLabel = $MC/ChanceVBox/HBox/MC/VBox/FishingChancesLabel
+	ChanceRefreshLabel = $MC/ChanceVBox/HBox/MC/VBox/ChanceRefreshLabel
 	FishButton = $MC/VBox/HBox/MC/FishButton
 	FishingChanceRefreshTimer = $FishingGameLogic/FishingChanceRefreshTimer
 	ClicksLeftLabel = $FishingGameLogic/ClicksLeftLabel
+	ChanceVBox = $MC/ChanceVBox
 
 func StartSpawningFish():
 	IsFishing = true
@@ -122,7 +124,9 @@ func StartSpawningFish():
 
 func StopFishing():
 	IsFishing = false
+	CurrentFishingChances -= 1
 	SpawnTimer.stop()
+	FishingTimeoutTimer.stop()
 	deleteAllFish()
 
 func _on_spawn_timer_timeout() -> void:
@@ -157,6 +161,11 @@ func _on_refresh_timer_timeout() -> void:
 	FishingChancesLabel.text = str(CurrentFishingChances) + "/" + str(TotalFishingChances)
 	ClicksLeftLabel.text = str(ClicksLeft) + " Clicks Left"
 	
+	if IsBouncing:
+		FishBounceBar.visible = true
+	else:
+		FishBounceBar.visible = false
+	
 	if IsFishing:
 		ClicksLeftLabel.visible = true
 	else:
@@ -173,8 +182,10 @@ func _on_refresh_timer_timeout() -> void:
 		if CurrentFishingChances < TotalFishingChances:
 			FishingChanceRefreshTimer.start()
 	else:
-		var seconds = FishingChanceRefreshTimer.wait_time % 60
-		var minutes = (FishingChanceRefreshTimer.wait_time / 60) % 60
+		var timeLeft = int(FishingChanceRefreshTimer.time_left)
+		
+		var seconds = timeLeft % 60
+		var minutes = (timeLeft / 60) % 60
 		
 		ChanceRefreshLabel.text = str(minutes) + " min " + str(seconds) + " sec until refresh"
 		ChanceRefreshLabel.visible = true

@@ -1,0 +1,88 @@
+[gd_scene load_steps=2 format=3 uid="uid://bnaeq0jnl2qm8"]
+
+[ext_resource type="Script" path="res://Scenes/GameMainScreenScenes/FishingScenes/BaitPage/shop_item.gd" id="1_lhwjp"]
+
+[node name="ShopItem" type="MarginContainer"]
+custom_minimum_size = Vector2(300, 75)
+offset_right = 300.0
+offset_bottom = 65.0
+theme_override_constants/margin_right = 0
+script = ExtResource("1_lhwjp")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 2
+color = Color(0.196078, 0.196078, 0.196078, 1)
+
+[node name="HBox" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="MC" type="MarginContainer" parent="HBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 7
+theme_override_constants/margin_top = 7
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 5
+
+[node name="VBox" type="VBoxContainer" parent="HBox/MC"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="HBox" type="HBoxContainer" parent="HBox/MC/VBox"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="ItemNameLabel" type="Label" parent="HBox/MC/VBox/HBox"]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 18
+text = "Oak Bait"
+vertical_alignment = 1
+
+[node name="ColorRect" type="ColorRect" parent="HBox/MC/VBox/HBox"]
+custom_minimum_size = Vector2(35, 20)
+layout_mode = 2
+size_flags_horizontal = 6
+color = Color(0.388235, 0.388235, 0.388235, 1)
+
+[node name="BaitCountLabel" type="Label" parent="HBox/MC/VBox/HBox/ColorRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 12
+text = "22"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BuyButton" type="Button" parent="HBox/MC/VBox/HBox"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+size_flags_horizontal = 10
+theme_override_font_sizes/font_size = 12
+text = "1000 Biscuts"
+
+[node name="MC" type="MarginContainer" parent="HBox/MC/VBox"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 3
+
+[node name="EffectLabel" type="Label" parent="HBox/MC/VBox/MC"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(0.695503, 0.695503, 0.695503, 1)
+theme_override_font_sizes/font_size = 11
+text = "5% fishing power"
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="ShopItemRefreshTimer" type="Timer" parent="."]
+autostart = true
+
+[connection signal="button_down" from="HBox/MC/VBox/HBox/BuyButton" to="." method="_on_buy_button_button_down"]
+[connection signal="timeout" from="ShopItemRefreshTimer" to="." method="_on_shop_item_refresh_timer_timeout"]

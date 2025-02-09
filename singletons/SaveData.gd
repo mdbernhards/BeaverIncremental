@@ -114,6 +114,10 @@ var Gold = {
 	"Count" : 0,
 }
 
+var FishBiscuits = {
+	"Count" : 0,
+}
+
 var Resources = {
 	"Oak" : {
 		"Count" : 0,

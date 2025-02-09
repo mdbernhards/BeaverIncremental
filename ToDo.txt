@@ -1,8 +1,7 @@
 To do all things I can think of:
 First:
-Add Fishing Gems, Gems Can Be Sold For Gold, Used For An Active Bonus or for building Dams???
-Spruce 7 seems to do nothing or not enough
-Add Autoclicker Research
+Add Fishing Biscuts, Biscuts Can Be Sold To gain bait, unlock autoclickers and get temporary bonuses
+Move Auto Clicker to a seperate Timer and add Auto Clicker Research
 
 Later:
 Implement keep first 10 research
@@ -34,6 +33,8 @@ Sound effects?
 Add a lil story
 Tooltips for everything else
 All upgrade, research, magic, dam, achievement names and descriptions (maybe upgrade descriptive names, cute descriptions and for research other way around but rename description to effect:)
+Add Unlock Time for Achievements
+
 
 Done:
 Add save delete button DONE
@@ -109,3 +110,5 @@ Add < and > buttons to switch upgrade pages DONE
 Add Magic upgrade history DONE
 Implement research items up to 70 DONE
 Implement New Magic Gain System DONE
+Rename Bots to Merchants DONE
+Fix Spruce 7 DONE

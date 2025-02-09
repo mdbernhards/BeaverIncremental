@@ -230,7 +230,7 @@ theme_override_constants/margin_bottom = -1
 [node name="Label" type="Label" parent="HBox/MC2/BotVBox/HBox2/MC3/VBox/MC"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 18
-text = "Bots"
+text = "Merchants"
 horizontal_alignment = 1
 
 [node name="MC2" type="MarginContainer" parent="HBox/MC2/BotVBox/HBox2/MC3/VBox"]

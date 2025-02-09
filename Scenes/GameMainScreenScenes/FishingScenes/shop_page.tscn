@@ -1,0 +1,99 @@
+[gd_scene load_steps=3 format=3 uid="uid://chithml6pwn6b"]
+
+[ext_resource type="Script" path="res://Scenes/GameMainScreenScenes/FishingScenes/shop_page.gd" id="1_klp5r"]
+[ext_resource type="PackedScene" uid="uid://bnaeq0jnl2qm8" path="res://Scenes/GameMainScreenScenes/FishingScenes/BaitPage/shop_item.tscn" id="2_e5bxe"]
+
+[node name="ShopPage" type="VBoxContainer"]
+custom_minimum_size = Vector2(657, 926)
+script = ExtResource("1_klp5r")
+
+[node name="MC" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 3
+
+[node name="Label" type="Label" parent="MC"]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 45
+text = "Fishing Shop"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CurrentBiscutsLabel" type="Label" parent="MC"]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_colors/font_color = Color(0.784314, 0.478431, 0.211765, 1)
+theme_override_font_sizes/font_size = 20
+text = "Fish Biscuts: 100"
+horizontal_alignment = 2
+vertical_alignment = 2
+
+[node name="MC2" type="MarginContainer" parent="."]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="Scroll" type="ScrollContainer" parent="MC2"]
+layout_mode = 2
+
+[node name="MC" type="MarginContainer" parent="MC2/Scroll"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/margin_right = 15
+
+[node name="VBox" type="GridContainer" parent="MC2/Scroll/MC"]
+custom_minimum_size = Vector2(0, 1085)
+layout_mode = 2
+theme_override_constants/h_separation = 15
+theme_override_constants/v_separation = 12
+columns = 2
+
+[node name="BaitItem" parent="MC2/Scroll/MC/VBox" instance=ExtResource("2_e5bxe")]
+layout_mode = 2
+BaitType = 1
+
+[node name="BaitItem2" parent="MC2/Scroll/MC/VBox" instance=ExtResource("2_e5bxe")]
+layout_mode = 2
+BaitType = 2
+
+[node name="BaitItem3" parent="MC2/Scroll/MC/VBox" instance=ExtResource("2_e5bxe")]
+layout_mode = 2
+BaitType = 3
+
+[node name="BaitItem4" parent="MC2/Scroll/MC/VBox" instance=ExtResource("2_e5bxe")]
+layout_mode = 2
+BaitType = 4
+
+[node name="BaitItem5" parent="MC2/Scroll/MC/VBox" instance=ExtResource("2_e5bxe")]
+layout_mode = 2
+BaitType = 5
+
+[node name="BaitItem6" parent="MC2/Scroll/MC/VBox" instance=ExtResource("2_e5bxe")]
+layout_mode = 2
+BaitType = 6
+
+[node name="BaitItem7" parent="MC2/Scroll/MC/VBox" instance=ExtResource("2_e5bxe")]
+layout_mode = 2
+BaitType = 7
+
+[node name="BaitItem8" parent="MC2/Scroll/MC/VBox" instance=ExtResource("2_e5bxe")]
+layout_mode = 2
+BaitType = 8
+
+[node name="BaitItem9" parent="MC2/Scroll/MC/VBox" instance=ExtResource("2_e5bxe")]
+layout_mode = 2
+BaitType = 9
+
+[node name="BaitItem10" parent="MC2/Scroll/MC/VBox" instance=ExtResource("2_e5bxe")]
+layout_mode = 2
+BaitType = 10
+
+[node name="BaitItem11" parent="MC2/Scroll/MC/VBox" instance=ExtResource("2_e5bxe")]
+layout_mode = 2
+BaitType = 11

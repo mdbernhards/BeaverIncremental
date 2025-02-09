@@ -1332,8 +1332,8 @@ var Achievements = {
 		"Trigger" : func(): return SaveData.Magic["Count"] >= pow(10, 11),
 	},
 	"267" : {
-		"Name" : "Unlocked Bots",
-		"Description" : "Unlocked Bots",
+		"Name" : "Unlocked Merchants",
+		"Description" : "Unlocked Merchants",
 		"Trigger" : func(): return Unlocks.Unlocks["Market"]["Bots"]["Unlocked"],
 	},
 	"268" : {
@@ -1432,38 +1432,38 @@ var Achievements = {
 		"Trigger" : func(): return SaveData.GeneralInfo.has("TotalUpgradesBought") and SaveData.GeneralInfo["TotalUpgradesBought"] >= 50000,
 	},
 	"287" : {
-		"Name" : "Total Bots Bought 50",
-		"Description" : "Total Bots Bought 50",
+		"Name" : "Total Merchants Bought 50",
+		"Description" : "Total Merchants Bought 50",
 		"Trigger" : func(): return SaveData.GeneralInfo.has("TotalBotsBought") and SaveData.GeneralInfo["TotalBotsBought"] >= 50,
 	},
 	"288" : {
-		"Name" : "Total Bots Bought 250",
-		"Description" : "Total Bots Bought 250",
+		"Name" : "Total Merchants Bought 250",
+		"Description" : "Total Merchants Bought 250",
 		"Trigger" : func(): return SaveData.GeneralInfo.has("TotalBotsBought") and SaveData.GeneralInfo["TotalBotsBought"] >= 250,
 	},
 	"289" : {
-		"Name" : "Total Bots Bought 500",
-		"Description" : "Total Bots Bought 500",
+		"Name" : "Total Merchants Bought 500",
+		"Description" : "Total Merchants Bought 500",
 		"Trigger" : func(): return SaveData.GeneralInfo.has("TotalBotsBought") and SaveData.GeneralInfo["TotalBotsBought"] >= 500,
 	},
 	"290" : {
-		"Name" : "Total Bots Bought 1000",
-		"Description" : "Total Bots Bought 1000",
+		"Name" : "Total Merchants Bought 1000",
+		"Description" : "Total Merchants Bought 1000",
 		"Trigger" : func(): return SaveData.GeneralInfo.has("TotalBotsBought") and SaveData.GeneralInfo["TotalBotsBought"] >= 1000,
 	},
 	"291" : {
-		"Name" : "Total Bots Bought 2000",
-		"Description" : "Total Bots Bought 2000",
+		"Name" : "Total Merchants Bought 2000",
+		"Description" : "Total Merchants Bought 2000",
 		"Trigger" : func(): return SaveData.GeneralInfo.has("TotalBotsBought") and SaveData.GeneralInfo["TotalBotsBought"] >= 2000,
 	},
 	"292" : {
-		"Name" : "Total Bots Bought 3000",
-		"Description" : "Total Bots Bought 3000",
+		"Name" : "Total Merchants Bought 3000",
+		"Description" : "Total Merchants Bought 3000",
 		"Trigger" : func(): return SaveData.GeneralInfo.has("TotalBotsBought") and SaveData.GeneralInfo["TotalBotsBought"] >= 3000,
 	},
 	"293" : {
-		"Name" : "Total Bots Bought 5000",
-		"Description" : "Total Bots Bought 5000",
+		"Name" : "Total Merchants Bought 5000",
+		"Description" : "Total Merchants Bought 5000",
 		"Trigger" : func(): return SaveData.GeneralInfo.has("TotalBotsBought") and SaveData.GeneralInfo["TotalBotsBought"] >= 5000,
 	},
 	"294" : {

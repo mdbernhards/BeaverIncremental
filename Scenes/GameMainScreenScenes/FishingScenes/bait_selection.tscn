@@ -95,5 +95,6 @@ layout_mode = 2
 BaitType = 11
 
 [node name="BaitSelectionRefreshTimer" type="Timer" parent="."]
+autostart = true
 
 [connection signal="timeout" from="BaitSelectionRefreshTimer" to="." method="_on_bait_selection_refresh_timer_timeout"]

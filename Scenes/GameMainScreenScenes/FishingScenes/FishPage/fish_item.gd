@@ -30,4 +30,4 @@ func setupNodePaths():
 func _on_sell_button_button_down() -> void:
 	if SaveData.CaughtFish[Fish.Type]["Count"] > 0:
 		SaveData.CaughtFish[Fish.Type]["Count"] -= 1
-		SaveData.Gold["Count"] += Fishing.FishPrice[Fish.Type]
+		SaveData.FishBiscuits["Count"] += Fishing.FishPrice[Fish.Type]

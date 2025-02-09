@@ -4,7 +4,7 @@ var FishTypes
 
 # Nodes
 var FishItemGrid
-var CurrentGoldLabel
+var CurrentBiscutsLabel
 var NoFishLabel
 
 func _ready() -> void:
@@ -12,8 +12,8 @@ func _ready() -> void:
 	SetupNodePaths()
 
 func _process(_delta: float) -> void:
-	if CurrentGoldLabel:
-		CurrentGoldLabel.text = "Gold: " + str(floor(SaveData.Gold["Count"]))
+	if CurrentBiscutsLabel:
+		CurrentBiscutsLabel.text = "Fish Biscuits: " + str(floor(SaveData.FishBiscuits["Count"]))
 		
 	if FishItemGrid.get_child_count() > 0:
 		NoFishLabel.visible = false
@@ -37,5 +37,5 @@ func addAllCaughtFish():
 
 func SetupNodePaths():
 	FishItemGrid = $MC2/Scroll/Grid
-	CurrentGoldLabel = $MC/CurrentGoldLabel
+	CurrentBiscutsLabel = $MC/CurrentBiscutsLabel
 	NoFishLabel = $MC2/NoFishLabel

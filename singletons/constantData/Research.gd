@@ -452,8 +452,8 @@ var Research = {
 		"Unlocked" : func(): return true,
 	},
 	"46" :  {
-		"Name" : "Make Bots 15% Cheaper",
-		"Description" : "Make Bots 15% Cheaper",
+		"Name" : "Make Merchants 15% Cheaper",
+		"Description" : "Make Merchants 15% Cheaper",
 		"Time" : 2620, # Seconds
 		"OakCost" : 0, "AppleCost" : 5000000, "MapleCost" : 1500000, "BirchCost" : 0, "SpruceCost" : 210000,
 		"ChestnutCost" : 108000, "CherryCost" : 0, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 0,
@@ -551,8 +551,8 @@ var Research = {
 		"Unlocked" : func(): return true,
 	},
 	"57" :  {
-		"Name" : "Bots Sell 25% More",
-		"Description" : "Bots Sell 25% More",
+		"Name" : "Merchants Sell 25% More",
+		"Description" : "Merchants Sell 25% More",
 		"Time" : 3000, # Seconds
 		"OakCost" : 0, "AppleCost" : 20000000, "MapleCost" : 0, "BirchCost" : 0, "SpruceCost" : 1200000,
 		"ChestnutCost" : 750000, "CherryCost" : 200000, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 0,
@@ -605,8 +605,8 @@ var Research = {
 		"Unlocked" : func(): return true,
 	},
 	"63" :  {
-		"Name" : "50% Cheaper Bots",
-		"Description" : "50% Cheaper Bots",
+		"Name" : "50% Cheaper Merchants",
+		"Description" : "50% Cheaper Merchants",
 		"Time" : 3700, # Seconds
 		"OakCost" : 70000000, "AppleCost" : 33000000, "MapleCost" : 11000000, "BirchCost" : 0, "SpruceCost" : 0,
 		"ChestnutCost" : 1600000, "CherryCost" : 0, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 0,
