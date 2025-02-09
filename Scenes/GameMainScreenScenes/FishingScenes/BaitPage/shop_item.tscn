@@ -45,7 +45,7 @@ layout_mode = 2
 size_flags_horizontal = 6
 color = Color(0.388235, 0.388235, 0.388235, 1)
 
-[node name="BaitCountLabel" type="Label" parent="HBox/MC/VBox/HBox/ColorRect"]
+[node name="ItemCountLabel" type="Label" parent="HBox/MC/VBox/HBox/ColorRect"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -64,6 +64,11 @@ layout_mode = 2
 size_flags_horizontal = 10
 theme_override_font_sizes/font_size = 12
 text = "1000 Biscuts"
+
+[node name="UnlockedLabel" type="Label" parent="HBox/MC/VBox/HBox"]
+visible = false
+layout_mode = 2
+text = "Unlocked"
 
 [node name="MC" type="MarginContainer" parent="HBox/MC/VBox"]
 layout_mode = 2
@@ -85,4 +90,6 @@ autowrap_mode = 3
 autostart = true
 
 [connection signal="button_down" from="HBox/MC/VBox/HBox/BuyButton" to="." method="_on_buy_button_button_down"]
+[connection signal="mouse_entered" from="HBox/MC/VBox/HBox/BuyButton" to="." method="_on_buy_button_mouse_entered"]
+[connection signal="mouse_exited" from="HBox/MC/VBox/HBox/BuyButton" to="." method="_on_buy_button_mouse_exited"]
 [connection signal="timeout" from="ShopItemRefreshTimer" to="." method="_on_shop_item_refresh_timer_timeout"]

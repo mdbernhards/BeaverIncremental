@@ -666,30 +666,30 @@ var Achievements = {
 		"Description" : "Unlocked Fishing",
 		"Trigger" : func(): return Unlocks.Unlocks["Fishing"]["Unlocked"],
 	},
-	"134" : {
+	"134" : { # Replace
 		"Name" : "Unlocked fishing spot 2",
 		"Description" : "Unlocked fishing spot 2",
-		"Trigger" : func(): return Unlocks.Unlocks["Fishing"]["Spot"]["2"],
+		"Trigger" : func(): return false,
 	},
-	"135" : {
+	"135" : { # Replace
 		"Name" : "Unlocked fishing spot 3",
 		"Description" : "Unlocked fishing spot 3",
-		"Trigger" : func(): return Unlocks.Unlocks["Fishing"]["Spot"]["3"],
+		"Trigger" : func(): return false,
 	},
-	"136" : {
+	"136" : { # Replace
 		"Name" : "Unlocked fishing spot 4",
 		"Description" : "Unlocked fishing spot 4",
-		"Trigger" : func(): return Unlocks.Unlocks["Fishing"]["Spot"]["4"],
+		"Trigger" : func(): return false,
 	},
-	"137" : {
+	"137" : { # Replace
 		"Name" : "Unlocked fishing spot 5",
 		"Description" : "Unlocked fishing spot 5",
-		"Trigger" : func(): return Unlocks.Unlocks["Fishing"]["Spot"]["5"],
+		"Trigger" : func(): return false,
 	},
-	"138" : {
+	"138" : { # Replace
 		"Name" : "Unlock All Fishing Spots",
 		"Description" : "Unlock All five Fishing Spots",
-		"Trigger" : func(): return Unlocks.Unlocks["Fishing"]["Spot"]["5"] and Unlocks.Unlocks["Fishing"]["Spot"]["4"] and Unlocks.Unlocks["Fishing"]["Spot"]["3"] and Unlocks.Unlocks["Fishing"]["Spot"]["2"] and Unlocks.Unlocks["Fishing"]["Spot"]["1"],
+		"Trigger" : func(): return false,
 	},
 	"139" : {
 		"Name" : "Fish 1 Time",
@@ -742,59 +742,59 @@ var Achievements = {
 		"Trigger" : func(): return SaveData.GeneralInfo.has("FishSoldCount") and SaveData.GeneralInfo["FishSoldCount"] >= 25000,
 	},
 	"149" : {
-		"Name" : "Unlock Bait 1",
-		"Description" : "Unlock Bait 1",
-		"Trigger" : func(): return Unlocks.Unlocks["Fishing"]["Bait"]["1"],
+		"Name" : "Unlock Worm Bait",
+		"Description" : "Unlock Worm Bait",
+		"Trigger" : func(): return SaveData.ShopItems[Fishing.ShopItemEnum.Worm]["Unlocked"],
 	},
 	"150" : {
-		"Name" : "Unlock Bait 2",
-		"Description" : "Unlock Bait 2",
-		"Trigger" : func(): return Unlocks.Unlocks["Fishing"]["Bait"]["2"],
+		"Name" : "Unlock Cricket Bait",
+		"Description" : "Unlock Cricket Bait",
+		"Trigger" : func(): return SaveData.ShopItems[Fishing.ShopItemEnum.Cricket]["Unlocked"],
 	},
 	"151" : {
-		"Name" : "Unlock Bait 3",
-		"Description" : "Unlock Bait 3",
-		"Trigger" : func(): return Unlocks.Unlocks["Fishing"]["Bait"]["3"],
+		"Name" : "Unlock Jig Bait",
+		"Description" : "Unlock Jig Bait",
+		"Trigger" : func(): return SaveData.ShopItems[Fishing.ShopItemEnum.Jig]["Unlocked"],
 	},
 	"152" : {
-		"Name" : "Unlock Bait 4",
-		"Description" : "Unlock Bait 4",
-		"Trigger" : func(): return Unlocks.Unlocks["Fishing"]["Bait"]["4"],
+		"Name" : "Unlock Leech Bait",
+		"Description" : "Unlock Leech Bait",
+		"Trigger" : func(): return SaveData.ShopItems[Fishing.ShopItemEnum.Leech]["Unlocked"],
 	},
 	"153" : {
-		"Name" : "Unlock Bait 5",
-		"Description" : "Unlock Bait 5",
-		"Trigger" : func(): return Unlocks.Unlocks["Fishing"]["Bait"]["5"],
+		"Name" : "Unlock Wyverns Feather Bait",
+		"Description" : "Unlock Wyverns Feather Bait",
+		"Trigger" : func(): return SaveData.ShopItems[Fishing.ShopItemEnum.WyvernsFeather]["Unlocked"],
 	},
 	"154" : {
-		"Name" : "Unlock Bait 6",
-		"Description" : "Unlock Bait 6",
-		"Trigger" : func(): return Unlocks.Unlocks["Fishing"]["Bait"]["6"],
-	},
-	"155" : {
-		"Name" : "Unlock Bait 7",
-		"Description" : "Unlock Bait 7",
-		"Trigger" : func(): return Unlocks.Unlocks["Fishing"]["Bait"]["7"],
-	},
-	"156" : {
-		"Name" : "Unlock Bait 8",
-		"Description" : "Unlock Bait 8",
-		"Trigger" : func(): return Unlocks.Unlocks["Fishing"]["Bait"]["8"],
-	},
-	"157" : {
-		"Name" : "Unlock Bait 9",
-		"Description" : "Unlock Bait 9",
-		"Trigger" : func(): return Unlocks.Unlocks["Fishing"]["Bait"]["9"],
-	},
-	"158" : {
-		"Name" : "Unlock Bait 10",
-		"Description" : "Unlock Bait 10",
-		"Trigger" : func(): return Unlocks.Unlocks["Fishing"]["Bait"]["10"],
-	},
-	"159" : {
 		"Name" : "Unlock All Baits",
 		"Description" : "Unlock All Baits",
 		"Trigger" : func(): return checkThatAllBaitsUnlocked(),
+	},
+	"155" : { # Replace
+		"Name" : "Unlock Bait 6",
+		"Description" : "Unlock Bait 6",
+		"Trigger" : func(): return false,
+	},
+	"156" : { # Replace
+		"Name" : "Unlock Bait 7",
+		"Description" : "Unlock Bait 7",
+		"Trigger" : func(): return false,
+	},
+	"157" : { # Replace
+		"Name" : "Unlock Bait 8",
+		"Description" : "Unlock Bait 8",
+		"Trigger" : func(): return false,
+	},
+	"158" : { # Replace
+		"Name" : "Unlock Bait 9",
+		"Description" : "Unlock Bait 9",
+		"Trigger" : func(): return false,
+	},
+	"159" : { # Replace
+		"Name" : "Unlock Bait 10",
+		"Description" : "Unlock Bait 10",
+		"Trigger" : func(): return false,
 	},
 	"160" : {
 		"Name" : "Find The Electric Eal",
@@ -1224,27 +1224,27 @@ var Achievements = {
 	"245" : {
 		"Name" : "Click 1k time",
 		"Description" : "Click 1k time",
-		"Trigger" : func(): return SaveData.GeneralInfo["ClickCount"] >= 1000,
+		"Trigger" : func(): return SaveData.GeneralInfo.has("ClickCount") and SaveData.GeneralInfo["ClickCount"] >= 1000,
 	},
 	"246" : {
 		"Name" : "Click 10k time",
 		"Description" : "Click 10k time",
-		"Trigger" : func(): return SaveData.GeneralInfo["ClickCount"] >= 10000,
+		"Trigger" : func(): return SaveData.GeneralInfo.has("ClickCount") and SaveData.GeneralInfo["ClickCount"] >= 10000,
 	},
 	"247" : {
 		"Name" : "Click 25k time",
 		"Description" : "Click 25k time",
-		"Trigger" : func(): return SaveData.GeneralInfo["ClickCount"] >= 25000,
+		"Trigger" : func(): return SaveData.GeneralInfo.has("ClickCount") and SaveData.GeneralInfo["ClickCount"] >= 25000,
 	},
 	"248" : {
 		"Name" : "Click 50k time",
 		"Description" : "Click 50k time",
-		"Trigger" : func(): return SaveData.GeneralInfo["ClickCount"] >= 50000,
+		"Trigger" : func(): return SaveData.GeneralInfo.has("ClickCount") and SaveData.GeneralInfo["ClickCount"] >= 50000,
 	},
 	"249" : {
 		"Name" : "Click 100k time",
 		"Description" : "Click 100k time",
-		"Trigger" : func(): return SaveData.GeneralInfo["ClickCount"] >= 100000,
+		"Trigger" : func(): return SaveData.GeneralInfo.has("ClickCount") and SaveData.GeneralInfo["ClickCount"] >= 100000,
 	},
 	"250" : {
 		"Name" : "Why Are We Clicking?",
@@ -1525,7 +1525,7 @@ func checkThatAllDamTypesBuilt():
 	return damTypeBuiltCheck(Dams.DamEnum.SmallDam) and damTypeBuiltCheck(Dams.DamEnum.MediumDam) and damTypeBuiltCheck(Dams.DamEnum.BigDam) and damTypeBuiltCheck(Dams.DamEnum.GiantDam) and damTypeBuiltCheck(Dams.DamEnum.MegaDam)
 
 func checkThatAllBaitsUnlocked():
-	return Unlocks.Unlocks["Fishing"]["Bait"]["1"] and Unlocks.Unlocks["Fishing"]["Bait"]["2"] and Unlocks.Unlocks["Fishing"]["Bait"]["3"] and Unlocks.Unlocks["Fishing"]["Bait"]["4"] and Unlocks.Unlocks["Fishing"]["Bait"]["5"] and Unlocks.Unlocks["Fishing"]["Bait"]["6"] and Unlocks.Unlocks["Fishing"]["Bait"]["7"] and Unlocks.Unlocks["Fishing"]["Bait"]["8"] and Unlocks.Unlocks["Fishing"]["Bait"]["9"] and Unlocks.Unlocks["Fishing"]["Bait"]["10"]
+	return SaveData.ShopItems[Fishing.ShopItemEnum.Worm]["Unlocked"] and SaveData.ShopItems[Fishing.ShopItemEnum.Cricket]["Unlocked"] and SaveData.ShopItems[Fishing.ShopItemEnum.Jig]["Unlocked"] and SaveData.ShopItems[Fishing.ShopItemEnum.Leech]["Unlocked"] and SaveData.ShopItems[Fishing.ShopItemEnum.WyvernsFeather]["Unlocked"]
 
 func resourceItemCountCheck(countNeeded, type):
 	var resourceData = SaveData.Resources

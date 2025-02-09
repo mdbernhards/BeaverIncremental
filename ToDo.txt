@@ -2,6 +2,7 @@ To do all things I can think of:
 First:
 Add Fishing Biscuts, Biscuts Can Be Sold To gain bait, unlock autoclickers and get temporary bonuses
 Move Auto Clicker to a seperate Timer and add Auto Clicker Research
+Broken Fishing Chances when failing to fish 3 times
 
 Later:
 Implement keep first 10 research

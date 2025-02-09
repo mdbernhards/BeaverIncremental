@@ -7,4 +7,8 @@ theme_override_font_sizes/font_size = 21
 text = "No Bait"
 script = ExtResource("1_mxvjs")
 
+[node name="BaitButtonRefreshTimer" type="Timer" parent="."]
+autostart = true
+
 [connection signal="button_down" from="." to="." method="_on_button_down"]
+[connection signal="timeout" from="BaitButtonRefreshTimer" to="." method="_on_bait_button_refresh_timer_timeout"]

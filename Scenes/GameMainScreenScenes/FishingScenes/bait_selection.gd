@@ -14,10 +14,7 @@ func setupNodePaths():
 	BaitSelectionVBox = $VBox/BaitButtons/BaitSelectionVBox
 
 func _on_bait_selection_refresh_timer_timeout() -> void:
-	if Unlocks.Unlocks["Fishing"]["Bait"]["Unlocked"]:
-		UsedBaitLabel.text = "Used Bait"
+	if SaveData.ShopItems[Fishing.ShopItemEnum.Worm]["Unlocked"]:
+		UsedBaitLabel.text = "Bait Selection"
 	else:
-		UsedBaitLabel.text = "???? ????"
-		
-		for child in BaitSelectionVBox.get_children():
-			child.visible = false
+		UsedBaitLabel.text = "???? ?????????"

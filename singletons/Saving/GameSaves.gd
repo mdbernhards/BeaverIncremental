@@ -88,8 +88,8 @@ func saveGame(saveName):
 	var jsonCaughtFish = JSON.stringify(var_to_str(SaveData.CaughtFish))
 	saveFile.store_line(jsonCaughtFish)
 	
-	var jsonBait = JSON.stringify(var_to_str(SaveData.Bait))
-	saveFile.store_line(jsonBait)
+	var jsonShopItems = JSON.stringify(var_to_str(SaveData.ShopItems))
+	saveFile.store_line(jsonShopItems)
 	
 	var jsonMagic = JSON.stringify(var_to_str(SaveData.Magic))
 	saveFile.store_line(jsonMagic)
@@ -108,6 +108,9 @@ func saveGame(saveName):
 	
 	var jsonUnlocks = JSON.stringify(var_to_str(Unlocks.Unlocks))
 	saveFile.store_line(jsonUnlocks)
+	
+	var jsonFishBiscuts = JSON.stringify(var_to_str(SaveData.FishBiscuits))
+	saveFile.store_line(jsonFishBiscuts)
 
 func saveNewGame(saveName):
 	if not FileAccess.file_exists("user://Saves/" + saveName + ".save"):
@@ -138,8 +141,8 @@ func saveNewGame(saveName):
 	var jsonCaughtFish = JSON.stringify(var_to_str(SaveData.OriginalCaughtFish))
 	saveFile.store_line(jsonCaughtFish)
 	
-	var jsonBait = JSON.stringify(var_to_str(SaveData.OriginalBait))
-	saveFile.store_line(jsonBait)
+	var jsonShopItems = JSON.stringify(var_to_str(SaveData.ShopItems))
+	saveFile.store_line(jsonShopItems)
 	
 	var jsonMagic = JSON.stringify(var_to_str(SaveData.OriginalMagic))
 	saveFile.store_line(jsonMagic)
@@ -158,6 +161,9 @@ func saveNewGame(saveName):
 	
 	var jsonUnlocks = JSON.stringify(var_to_str(Unlocks.Unlocks))
 	saveFile.store_line(jsonUnlocks)
+	
+	var jsonFishBiscuts = JSON.stringify(var_to_str(SaveData.FishBiscuits))
+	saveFile.store_line(jsonFishBiscuts)
 	
 func loadGame(saveName):
 	if not FileAccess.file_exists("user://Saves/" + saveName + ".save"):
@@ -186,8 +192,10 @@ func loadGame(saveName):
 	var jsonCaughtFish = saveFile.get_line()
 	SaveData.CaughtFish = parseJson(jsonCaughtFish)
 	
-	var jsonBait = saveFile.get_line()
-	SaveData.Bait = parseJson(jsonBait)
+	var jsonShopItems = saveFile.get_line()
+	jsonShopItems = parseJson(jsonShopItems)
+	if !jsonShopItems.has(0):
+		SaveData.ShopItems = jsonShopItems
 	
 	var jsonMagic = saveFile.get_line()
 	SaveData.Magic = parseJson(jsonMagic)
@@ -206,6 +214,10 @@ func loadGame(saveName):
 	
 	var jsonUnlocks = saveFile.get_line()
 	Unlocks.Unlocks = parseJson(jsonUnlocks)
+	
+	var jsonFishBiscuts = saveFile.get_line()
+	if jsonFishBiscuts:
+		SaveData.FishBiscuits = parseJson(jsonFishBiscuts)
 	
 	SaveData.recalculateValues()
 	get_tree().get_first_node_in_group("TextLogSection").clearLog()

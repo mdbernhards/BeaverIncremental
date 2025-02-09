@@ -19,6 +19,11 @@ func setResearch(ResearchNr):
 	setNodePaths()
 	
 	ItemId = ResearchNr
+	
+	if !Research.Research.has(ResearchNr):
+		queue_free()
+		return
+	
 	ResearchData = Research.Research[ResearchNr]
 	
 	NameLabel.text = ResearchData["Name"]

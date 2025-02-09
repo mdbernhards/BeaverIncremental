@@ -7,8 +7,6 @@ var OriginalUpgrades
 var OriginalUnlockedResearch
 var OriginalResearchInfo
 var OriginalDamData
-var OriginalCaughtFish
-var OriginalBait
 var OriginalMagic
 var OriginalUnlockedMagicUpgrades
 var OriginalUnlockedAchievements
@@ -25,8 +23,6 @@ func getOriginalValues():
 	OriginalUpgrades = Upgrades.duplicate(true)
 	OriginalUnlockedResearch = UnlockedResearch.duplicate(true)
 	OriginalDamData = DamData.duplicate(true)
-	OriginalCaughtFish = CaughtFish.duplicate(true)
-	OriginalBait = Bait.duplicate(true)
 	OriginalResearchInfo = ResearchInfo.duplicate(true)
 	OriginalMagic = Magic.duplicate(true)
 	OriginalUnlockedMagicUpgrades = UnlockedMagicUpgrades.duplicate(true)
@@ -72,8 +68,6 @@ func resetValues():
 	Resources = OriginalResources.duplicate(true)
 	UnlockedResearch = OriginalUnlockedResearch.duplicate(true)
 	DamData = OriginalDamData.duplicate(true)
-	CaughtFish = OriginalCaughtFish.duplicate(true)
-	Bait = OriginalBait.duplicate(true)
 	ResearchInfo = OriginalResearchInfo.duplicate(true)
 	MaxResourceCount = OriginalMaxResourceCount.duplicate(true)
 	
@@ -1174,52 +1168,76 @@ var CaughtFish = {
 	},
 }
 
-var Bait = {
-	Fishing.BaitEnum.NoBait : {
+var ShopItems = {
+	Fishing.ShopItemEnum.Worm : {
 		"Count" : 0,
-		"Unlocked" : true,
+		"Unlocked" : false,
 	},
-	Fishing.BaitEnum.Leaf : {
+	Fishing.ShopItemEnum.Cricket : {
 		"Count" : 0,
-		"Unlocked" : true,
+		"Unlocked" : false,
 	},
-	Fishing.BaitEnum.Worm : {
-		"Count" : 0,
-		"Unlocked" : true,
-	},
-	Fishing.BaitEnum.Jig : {
+	Fishing.ShopItemEnum.Jig : {
 		"Count" : 5,
-		"Unlocked" : true,
+		"Unlocked" : false,
 	},
-	Fishing.BaitEnum.Cricket : {
+	Fishing.ShopItemEnum.Leech : {
 		"Count" : 0,
 		"Unlocked" : false,
 	},
-	Fishing.BaitEnum.Catarpiller : {
+	Fishing.ShopItemEnum.WyvernsFeather : {
 		"Count" : 0,
 		"Unlocked" : false,
 	},
-	Fishing.BaitEnum.Leech : {
+	Fishing.ShopItemEnum.Autoclicker1 : {
+		"Unlocked" : false,
+	},
+	Fishing.ShopItemEnum.Autoclicker2 : {
+		"Unlocked" : false,
+	},
+	Fishing.ShopItemEnum.Autoclicker3 : {
+		"Unlocked" : false,
+	},
+	Fishing.ShopItemEnum.WpsBonus1 : {
+		"Unlocked" : false,
+	},
+	Fishing.ShopItemEnum.WpsBonus2 : {
+		"Unlocked" : false,
+	},
+	Fishing.ShopItemEnum.WpsBonus3 : {
+		"Unlocked" : false,
+	},
+	Fishing.ShopItemEnum.WpcBonus1 : {
+		"Unlocked" : false,
+	},
+	Fishing.ShopItemEnum.WpcBonus2 : {
+		"Unlocked" : false,
+	},
+	Fishing.ShopItemEnum.WpcBonus3 : {
+		"Unlocked" : false,
+	},
+	Fishing.ShopItemEnum.WpsIncrease : {
 		"Count" : 0,
 		"Unlocked" : false,
 	},
-	Fishing.BaitEnum.CrateAtractor : {
+	Fishing.ShopItemEnum.WpcIncrease : {
 		"Count" : 0,
 		"Unlocked" : false,
 	},
-	Fishing.BaitEnum.GiantSquidsTentacle : {
+	Fishing.ShopItemEnum.StorageIncrease : {
 		"Count" : 0,
 		"Unlocked" : false,
 	},
-	Fishing.BaitEnum.WyvernsFeather : {
-		"Count" : 0,
+	Fishing.ShopItemEnum.ResearchSlot : {
 		"Unlocked" : false,
 	},
-	Fishing.BaitEnum.DevilsTongue : {
-		"Count" : 0,
+	Fishing.ShopItemEnum.FishingChance1 : {
 		"Unlocked" : false,
 	},
-	Fishing.BaitEnum.ShinyWorm : {
+	Fishing.ShopItemEnum.FishingChance2 : {
+		"Unlocked" : false,
+	},
+	Fishing.ShopItemEnum.ChanceToUseBait : {
 		"Count" : 0,
 		"Unlocked" : false,
 	},

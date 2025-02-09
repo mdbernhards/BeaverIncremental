@@ -56,44 +56,33 @@ columns = 2
 
 [node name="BaitItem" parent="MC2/Scroll/MC/VBox" instance=ExtResource("2_e5bxe")]
 layout_mode = 2
-BaitType = 1
 
 [node name="BaitItem2" parent="MC2/Scroll/MC/VBox" instance=ExtResource("2_e5bxe")]
 layout_mode = 2
-BaitType = 2
 
 [node name="BaitItem3" parent="MC2/Scroll/MC/VBox" instance=ExtResource("2_e5bxe")]
 layout_mode = 2
-BaitType = 3
 
 [node name="BaitItem4" parent="MC2/Scroll/MC/VBox" instance=ExtResource("2_e5bxe")]
 layout_mode = 2
-BaitType = 4
 
 [node name="BaitItem5" parent="MC2/Scroll/MC/VBox" instance=ExtResource("2_e5bxe")]
 layout_mode = 2
-BaitType = 5
 
 [node name="BaitItem6" parent="MC2/Scroll/MC/VBox" instance=ExtResource("2_e5bxe")]
 layout_mode = 2
-BaitType = 6
 
 [node name="BaitItem7" parent="MC2/Scroll/MC/VBox" instance=ExtResource("2_e5bxe")]
 layout_mode = 2
-BaitType = 7
 
 [node name="BaitItem8" parent="MC2/Scroll/MC/VBox" instance=ExtResource("2_e5bxe")]
 layout_mode = 2
-BaitType = 8
 
 [node name="BaitItem9" parent="MC2/Scroll/MC/VBox" instance=ExtResource("2_e5bxe")]
 layout_mode = 2
-BaitType = 9
 
 [node name="BaitItem10" parent="MC2/Scroll/MC/VBox" instance=ExtResource("2_e5bxe")]
 layout_mode = 2
-BaitType = 10
 
 [node name="BaitItem11" parent="MC2/Scroll/MC/VBox" instance=ExtResource("2_e5bxe")]
 layout_mode = 2
-BaitType = 11
