@@ -127,6 +127,15 @@ var Research = {
 		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 0,
 		"Unlocked" : func(): return Unlocks.Unlocks["Market"]["Unlocked"],
 	},
+	"14b" :  {
+		"Name" : "Autoclicker ticks -0.1 sec",
+		"Description" : "Autoclicker ticks take 0.1 second less (default 1 sec)",
+		"Time" : 360, # Seconds
+		"OakCost" : 75000, "AppleCost" : 65000, "MapleCost" : 15000, "BirchCost" : 0, "SpruceCost" : 0,
+		"ChestnutCost" : 0, "CherryCost" : 0, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 0,
+		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 0,
+		"Unlocked" : func(): return SaveData.GeneralInfo["AutoClickers"] > 0,
+	},
 	"15" :  {
 		"Name" : "Woodcamp Base Storage +150",
 		"Description" : "Increases All Woodcamp Base Storage By 150",
@@ -352,6 +361,15 @@ var Research = {
 		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 0,
 		"Unlocked" : func(): return Unlocks.Unlocks["Gold"]["Unlocked"],
 	},
+	"35b" :  {
+		"Name" : "Autoclicker ticks -0.1 sec",
+		"Description" : "Autoclicker ticks take 0.1 second less (default 1 sec)",
+		"Time" : 1950, # Seconds
+		"OakCost" : 3000000, "AppleCost" : 1500000, "MapleCost" : 1000000, "BirchCost" : 0, "SpruceCost" : 0,
+		"ChestnutCost" : 0, "CherryCost" : 0, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 0,
+		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 0,
+		"Unlocked" : func(): return SaveData.GeneralInfo["AutoClickers"] > 0,
+	},
 	"36" :  {
 		"Name" : "33% Cheaper Classic Woodcamps",
 		"Description" : "33% Cheaper Classic Woodcamps",
@@ -559,6 +577,15 @@ var Research = {
 		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 0,
 		"Unlocked" : func(): return true,
 	},
+	"57b" :  {
+		"Name" : "Autoclicker ticks -0.1 sec",
+		"Description" : "Autoclicker ticks take 0.1 second less (default 1 sec)",
+		"Time" : 3050, # Seconds
+		"OakCost" : 66600000, "AppleCost" : 33300000, "MapleCost" : 6660000, "BirchCost" : 3330000, "SpruceCost" : 2220000,
+		"ChestnutCost" : 999000, "CherryCost" : 333000, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 0,
+		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 0,
+		"Unlocked" : func(): return SaveData.GeneralInfo["AutoClickers"] > 0,
+	},
 	"58" :  {
 		"Name" : "Chestnut Price 15%",
 		"Description" : "Chestnut Price 15%",
@@ -756,6 +783,15 @@ var Research = {
 		"ChestnutCost" : 0, "CherryCost" : 0, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 0,
 		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 100,
 		"Unlocked" : func(): return true,
+	},
+	"79b" :  {
+		"Name" : "Autoclicker ticks -0.1 sec",
+		"Description" : "Autoclicker ticks take 0.1 second less (default 1 sec)",
+		"Time" : 4920, # Seconds
+		"OakCost" : 0, "AppleCost" : 0, "MapleCost" : 0, "BirchCost" : 0, "SpruceCost" : 0,
+		"ChestnutCost" : 0, "CherryCost" : 0, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 0,
+		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 0,
+		"Unlocked" : func(): return SaveData.GeneralInfo["AutoClickers"] > 0,
 	},
 	"80" :  {
 		"Name" : "WPS +5% Per Unlocked Wood Type",
@@ -973,6 +1009,15 @@ var Research = {
 		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 100,
 		"Unlocked" : func(): return true,
 	},
+	"103b" :  {
+		"Name" : "Autoclicker ticks -0.1 sec",
+		"Description" : "Autoclicker ticks take 0.1 second less (default 1 sec)",
+		"Time" : 6630, # Seconds
+		"OakCost" : 0, "AppleCost" : 0, "MapleCost" : 0, "BirchCost" : 0, "SpruceCost" : 0,
+		"ChestnutCost" : 0, "CherryCost" : 0, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 0,
+		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 0,
+		"Unlocked" : func(): return SaveData.GeneralInfo["AutoClickers"] > 0,
+	},
 	"104" :  {
 		"Name" : "Magic Bonuses x1.2",
 		"Description" : "Magic Bonuses x1.2",
@@ -1161,6 +1206,15 @@ var Research = {
 		"ChestnutCost" : 0, "CherryCost" : 0, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 0,
 		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 100,
 		"Unlocked" : func(): return true,
+	},
+	"124b" :  {
+		"Name" : "Autoclicker ticks -0.1 sec",
+		"Description" : "Autoclicker ticks take 0.1 second less (default 1 sec)",
+		"Time" : 8300, # Seconds
+		"OakCost" : 0, "AppleCost" : 0, "MapleCost" : 0, "BirchCost" : 0, "SpruceCost" : 0,
+		"ChestnutCost" : 0, "CherryCost" : 0, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 0,
+		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 0,
+		"Unlocked" : func(): return SaveData.GeneralInfo["AutoClickers"] > 0,
 	},
 	"125" :  {
 		"Name" : "Achievement Bonuses +15%",

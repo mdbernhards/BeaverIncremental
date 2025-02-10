@@ -107,6 +107,7 @@ func CalculateRealValues():
 	
 	# AutoClickers
 	SaveData.GeneralInfo["AutoClickers"] = TempValues["Global"]["AutoClickers"]
+	Values.ResourceValues["AutoClickers"]["AutoClickerTickLength"] = TempValues["Global"]["AutoClickerTickLength"]
 
 func CalculateRealAfterValues():
 	var lastWoodType
@@ -204,6 +205,8 @@ func SetMagicValue(magicNr):
 			TempValues["Global"]["AutoClickers"] += 1
 		"9" :
 			TempValues["Global"]["WpcToWpsMultip"] *= 1.15
+		"9b" :
+			TempValues["Global"]["AutoClickerTickLength"] -= 0.1
 		"10" :
 			Unlocks.Unlocks["Fishing"]["Unlocked"] = true
 			Unlocks.Unlocks["Fishing"]["Spot"]["1"] = true
@@ -255,6 +258,8 @@ func SetMagicValue(magicNr):
 			TempValues["Global"]["WcCostsMultip"] *= 0.85
 		"27" :
 			TempValues["Global"]["WcStorageMultip"] *= 1.35
+		"27b" :
+			TempValues["Global"]["AutoClickerTickLength"] -= 0.1
 		"28" :
 			Unlocks.Unlocks["Fishing"]["Spot"]["3"] = true
 		"29" :
@@ -305,6 +310,8 @@ func SetMagicValue(magicNr):
 			TempValues["Gold"]["UpgradePriceMultip"] *= 0.65
 		"49" :
 			Unlocks.Unlocks["Upgrades"]["KeepClassicUpgrades"] = true
+		"49b" :
+			TempValues["Global"]["AutoClickerTickLength"] -= 0.1
 		"50" :
 			TempValues["Dam"]["EffectMultip"] *= 1.15
 		"51" :
@@ -368,6 +375,8 @@ func SetResearchValue(researchNr):
 			TempValues["Global"]["WcCostsMultip"] *= 0.95
 		"14" :
 			TempValues["Global"]["WoodPriceMultip"] *= 1.25
+		"14b" :
+			TempValues["Global"]["AutoClickerTickLength"] -= 0.1
 		"15" :
 			TempValues["Global"]["WcBaseStorage"] += 150
 		"16" :
@@ -423,6 +432,8 @@ func SetResearchValue(researchNr):
 			TempValues["Global"]["AchievementWpsMultip"] *= 1.45
 		"35" :
 			TempValues["Gold"]["UpgradePriceMultip"] *= 0.87
+		"35b" :
+			TempValues["Global"]["AutoClickerTickLength"] -= 0.1
 		"36" :
 			TempValues["Oak"]["WcPriceMultip"] *= 0.67
 			TempValues["Apple"]["WcPriceMultip"] *= 0.67
@@ -492,6 +503,8 @@ func SetResearchValue(researchNr):
 			TempValues["Research"]["Time"] *= 0.85
 		"57" :
 			TempValues["Global"]["BotSellMoreMultip"] *= 1.25
+		"57b" :
+			TempValues["Global"]["AutoClickerTickLength"] -= 0.1
 		"58" :
 			TempValues["Chestnut"]["WoodPriceMultip"] *= 1.15
 		"59" :
@@ -540,6 +553,8 @@ func SetResearchValue(researchNr):
 			TempValues["Fish"]["BaitPriceMultip"] *= 0.7
 		"79" :
 			Unlocks.Unlocks["Mahogany"]["Unlocked"] = true
+		"79b" :
+			TempValues["Global"]["AutoClickerTickLength"] -= 0.1
 		"80" :
 			pass
 		"81" :
@@ -588,6 +603,8 @@ func SetResearchValue(researchNr):
 			pass
 		"103" :
 			pass
+		"103b" :
+			TempValues["Global"]["AutoClickerTickLength"] -= 0.1
 		"104" :
 			pass
 		"105" :
@@ -630,6 +647,8 @@ func SetResearchValue(researchNr):
 			pass
 		"124" :
 			pass
+		"124b" :
+			TempValues["Global"]["AutoClickerTickLength"] -= 0.1
 		"125" :
 			pass
 		"126" :
@@ -1076,6 +1095,7 @@ var OriginalTempValues = {
 		"AchievementWpcMultip" : 1,
 		"AchievementWpsMultip" : 1,
 		"AchievementStorageMultip" : 1,
+		"AutoClickerTickLength" : 1,
 	},
 	"Fish" : {
 		"FishingWoodMultip" : 1,

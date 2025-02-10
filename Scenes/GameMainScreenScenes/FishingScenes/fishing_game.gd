@@ -128,6 +128,7 @@ func StopFishing():
 	SpawnTimer.stop()
 	FishingTimeoutTimer.stop()
 	deleteAllFish()
+	ClicksLeft = 3
 
 func _on_spawn_timer_timeout() -> void:
 	spawnFish()
@@ -171,7 +172,7 @@ func _on_refresh_timer_timeout() -> void:
 	else:
 		ClicksLeftLabel.visible = false
 	
-	if CurrentFishingChances <= 0:
+	if CurrentFishingChances <= 0 or IsFishing and !IsBouncing:
 		FishButton.disabled = true
 	else:
 		FishButton.disabled = false

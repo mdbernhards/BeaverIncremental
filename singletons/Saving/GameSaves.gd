@@ -141,7 +141,7 @@ func saveNewGame(saveName):
 	var jsonCaughtFish = JSON.stringify(var_to_str(SaveData.OriginalCaughtFish))
 	saveFile.store_line(jsonCaughtFish)
 	
-	var jsonShopItems = JSON.stringify(var_to_str(SaveData.ShopItems))
+	var jsonShopItems = JSON.stringify(var_to_str(SaveData.OriginalShopItems))
 	saveFile.store_line(jsonShopItems)
 	
 	var jsonMagic = JSON.stringify(var_to_str(SaveData.OriginalMagic))
@@ -159,10 +159,10 @@ func saveNewGame(saveName):
 	var jsonMaxResourceCount = JSON.stringify(var_to_str(SaveData.OriginalMaxResourceCount))
 	saveFile.store_line(jsonMaxResourceCount)
 	
-	var jsonUnlocks = JSON.stringify(var_to_str(Unlocks.Unlocks))
+	var jsonUnlocks = JSON.stringify(var_to_str(Unlocks.OriginalUnlocks))
 	saveFile.store_line(jsonUnlocks)
 	
-	var jsonFishBiscuts = JSON.stringify(var_to_str(SaveData.FishBiscuits))
+	var jsonFishBiscuts = JSON.stringify(var_to_str(SaveData.OriginalFishBiscuits))
 	saveFile.store_line(jsonFishBiscuts)
 	
 func loadGame(saveName):

@@ -108,7 +108,7 @@ func _on_upgrade_tab_timer_timeout() -> void:
 	var resource = ResourceTypes[0]
 	if (resource == "Oak" and Unlocks.Unlocks["Upgrades"]["ClassicBuyMax"]) or \
 		(resource == "Chestnut" and Unlocks.Unlocks["Upgrades"]["RareBuyMax"]) or \
-		(resource == "Ebony" and Unlocks.Unlocks["Upgrades"]["MyticBuyMax"]) or \
+		(resource == "Ebony" and Unlocks.Unlocks["Upgrades"]["MythicBuyMax"]) or \
 		Values.DebugMode:
 		AllTabsBuyMaxButton.visible = true
 	else:

@@ -96,6 +96,11 @@ var Magic = {
 		"Description" : "For each wood Type transfer 15% of Wood Per Click to Wood Per Second",
 		"Cost" : 175,
 	},
+	"9b" : {
+		"Name" : "Autoclicker ticks -0.1 sec",
+		"Description" : "Autoclicker ticks take 0.1 second less (default 1 sec)",
+		"Cost" : 225,
+	},
 	"10" : {
 		"Name" : "Unlock Fishing",
 		"Description" : "Unlock The Ability to Fish. Gain Fishing Bonuses",
@@ -200,6 +205,11 @@ var Magic = {
 		"Name" : "35% Storage From Woodcamps",
 		"Description" : "Increase the storage from Woodcamps by 35%",
 		"Cost" : 2275,
+	},
+	"27b" : {
+		"Name" : "Autoclicker ticks -0.1 sec",
+		"Description" : "Autoclicker ticks take 0.1 second less (default 1 sec)",
+		"Cost" : 2300,
 	},
 	"28" : {
 		"Name" : "Unlock Fishing Spot",
@@ -315,6 +325,11 @@ var Magic = {
 		"Name" : "Keep Classic Wood Upgrades",
 		"Description" : "After Ascending keep all Classic Wood Upgrades",
 		"Cost" : 95000,
+	},
+	"49b" : {
+		"Name" : "Autoclicker ticks -0.1 sec",
+		"Description" : "Autoclicker ticks take 0.1 second less (default 1 sec)",
+		"Cost" : 97500,
 	},
 	"50" : {
 		"Name" : "Dam Effects 15%",

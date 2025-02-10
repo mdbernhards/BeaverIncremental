@@ -1,9 +1,13 @@
 extends Node
 
+# Nodes
+var AutoClickerTickTimer
+
 var WoodTypes
 var ReversedWoodTypes
 
 func _ready():
+	AutoClickerTickTimer = $AutoClickerTick
 	WoodTypes = Values.WoodTypes
 	ReversedWoodTypes = WoodTypes.duplicate(true)
 	ReversedWoodTypes.reverse()
@@ -12,9 +16,14 @@ func _process(_delta):
 	pass
 
 func _on_resource_gain_tick_timeout():
-	autoClick()
 	tickCalculations()
 	setTickChanges()
+
+func _on_auto_clicker_tick_timeout() -> void:
+	if AutoClickerTickTimer.wait_time != Values.ResourceValues["AutoClickers"]["AutoClickerTickLength"]:
+		AutoClickerTickTimer.wait_time = Values.ResourceValues["AutoClickers"]["AutoClickerTickLength"]
+	
+	autoClick()
 
 var WoodTiersLowerTier = {
 	"Oak" : null,

@@ -1,7 +1,7 @@
 extends Node
 
 var CurrentSaveName
-var DebugMode = false
+var DebugMode = true
 
 var WoodTypes = ["Oak", "Apple", "Maple", "Birch", "Spruce",
 				 "Chestnut", "Cherry", "Ash", "Cedar", "Mahogany",
@@ -22,6 +22,9 @@ var ResourceValues = {
 	"Research" : {
 		"TimeMultip" : 1,
 		"ResearchAtATime" : 1,
+	},
+	"AutoClickers" : {
+		"AutoClickerTickLength" : 1,
 	},
 	"Gold" : {
 		"UpgradePriceMultip" : 1,

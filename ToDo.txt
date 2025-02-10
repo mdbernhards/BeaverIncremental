@@ -1,12 +1,14 @@
-To do all things I can think of:
+TODO
+
 First:
-Add Fishing Biscuts, Biscuts Can Be Sold To gain bait, unlock autoclickers and get temporary bonuses
-Move Auto Clicker to a seperate Timer and add Auto Clicker Research
-Broken Fishing Chances when failing to fish 3 times
+Finish Fish shop logic
+Remake Fish Swim Logic
+Add Fish Spawn, Despawn Logic
+Finish Bait logic
 
 Later:
+Making The Game Playable from start to finish
 Implement keep first 10 research
-Upgrade level cap at 100 and 10
 Dam completion and Effect application
 Tooltip on resource bar for incoming / outgoing wood breakdown
 Tooltip on mouse over magic label to see how much magic each resource gives
@@ -15,16 +17,11 @@ implement keep classic, rare, mythic wood upgrades
 implement magic gain without ascending
 info screen with all values
 Add auto saves with changable intervals
-balancing all of the game
 Settings screen
-Change achievements to be icons from icon packs
 Add to Scrolling log fishing, dams built and others
 Apply ResourceValues in Values for Fishing and Dams when implemented
-Fish swim, spawn, despawn logic
-bait shop logic
-Bait logic
-Buy max buttons logic for fishing
-Add fishing spot logic, different fish in different spots
+10x, 100x or sell to limit for fish
+Upgrade level cap at 100 and 10
 
 A lot Later:
 Write achievement unlock bonusses in the text log
@@ -35,7 +32,7 @@ Add a lil story
 Tooltips for everything else
 All upgrade, research, magic, dam, achievement names and descriptions (maybe upgrade descriptive names, cute descriptions and for research other way around but rename description to effect:)
 Add Unlock Time for Achievements
-
+Change achievements to be icons from icon packs
 
 Done:
 Add save delete button DONE
@@ -113,3 +110,6 @@ Implement research items up to 70 DONE
 Implement New Magic Gain System DONE
 Rename Bots to Merchants DONE
 Fix Spruce 7 DONE
+Add Fishing Biscuts, Biscuts Can Be Sold To gain bait, unlock autoclickers and get temporary bonuses DONE
+Move Auto Clicker to a separate Timer, add Auto Clicker Research and Magic Upgrades DONE
+Fix broken Fishing Chances when failing to fish 3 times DONE

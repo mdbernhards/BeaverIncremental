@@ -13,6 +13,9 @@ var OriginalUnlockedAchievements
 var OriginalUnlockedFeatsOfStrength
 var OriginalGeneralInfo
 var OriginalMaxResourceCount
+var OriginalCaughtFish
+var OriginalShopItems
+var OriginalFishBiscuits
 
 func _ready():
 	getOriginalValues()
@@ -30,6 +33,9 @@ func getOriginalValues():
 	OriginalGeneralInfo = GeneralInfo.duplicate(true)
 	OriginalMaxResourceCount = MaxResourceCount.duplicate(true)
 	Unlocks.OriginalUnlocks = Unlocks.Unlocks.duplicate(true)
+	OriginalCaughtFish = CaughtFish.duplicate(true)
+	OriginalShopItems = ShopItems.duplicate(true)
+	OriginalFishBiscuits = FishBiscuits.duplicate(true)
 
 func resetValues():
 	var tempUpgrades = Upgrades.duplicate(true)

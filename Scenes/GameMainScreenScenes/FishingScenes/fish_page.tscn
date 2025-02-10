@@ -54,3 +54,8 @@ theme_override_font_sizes/font_size = 60
 text = "NO FISH!"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="FishPageRefreshTimer" type="Timer" parent="."]
+autostart = true
+
+[connection signal="timeout" from="FishPageRefreshTimer" to="." method="_on_fish_page_refresh_timer_timeout"]

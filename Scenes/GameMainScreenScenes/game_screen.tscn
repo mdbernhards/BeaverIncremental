@@ -133,6 +133,9 @@ script = ExtResource("4_ojdqe")
 [node name="ResourceGainTick" type="Timer" parent="ResourceTicks"]
 autostart = true
 
+[node name="AutoClickerTick" type="Timer" parent="ResourceTicks"]
+autostart = true
+
 [connection signal="button_down" from="GameScreenHBox/ImprovementsScreen/RightVBox/TopMenuMC/ButtonMC/VBox/UpgradesButton" to="GameScreenHBox/ImprovementsScreen" method="_on_upgrades_button_button_down"]
 [connection signal="button_down" from="GameScreenHBox/ImprovementsScreen/RightVBox/TopMenuMC/ButtonMC/VBox/ResearchButton" to="GameScreenHBox/ImprovementsScreen" method="_on_research_button_button_down"]
 [connection signal="button_down" from="GameScreenHBox/ImprovementsScreen/RightVBox/TopMenuMC/ButtonMC/VBox/MarketButton" to="GameScreenHBox/ImprovementsScreen" method="_on_market_button_button_down"]
@@ -140,3 +143,4 @@ autostart = true
 [connection signal="button_down" from="GameScreenHBox/ImprovementsScreen/RightVBox/TopMenuMC/ButtonMC/VBox/DamButton" to="GameScreenHBox/ImprovementsScreen" method="_on_dam_button_button_down"]
 [connection signal="timeout" from="GameScreenHBox/ImprovementsScreen/ImprovementScreenTimer" to="GameScreenHBox/ImprovementsScreen" method="_on_improvement_screen_timer_timeout"]
 [connection signal="timeout" from="ResourceTicks/ResourceGainTick" to="ResourceTicks" method="_on_resource_gain_tick_timeout"]
+[connection signal="timeout" from="ResourceTicks/AutoClickerTick" to="ResourceTicks" method="_on_auto_clicker_tick_timeout"]
