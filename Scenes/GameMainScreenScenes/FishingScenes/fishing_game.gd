@@ -6,7 +6,7 @@ var ClicksLeft = 3
 var RNG = RandomNumberGenerator.new()
 
 # Game Values
-var BaitUsed = "No"
+var BaitUsed = Fishing.ShopItemEnum.NoBait
 var FishingWoodMultiplier
 var MoreFishMultiplier
 var BetterFishMultiplier
@@ -35,7 +35,6 @@ var BounceTime := 0.0
 var BouncingFishType
 
 var TotalFishingChances = 3
-var CurrentFishingChances = 3
 
 var FishObjectScene = preload("res://Scenes/GameMainScreenScenes/FishingScenes/fish_button.tscn")
 
@@ -85,7 +84,9 @@ func updateFishingValues():
 	FishSpeedMultiplier = Values.ResourceValues["Fish"]["FishSpeedMultip"]
 	BaitEffectMultiplier = Values.ResourceValues["Fish"]["BaitEffectMultip"]
 	
-	ClicksLeft = 3
+	BaitUsed = Values.ResourceValues["Fish"]["SelectedBait"]
+	ClicksLeft = Values.ResourceValues["Fish"]["FishingClicks"]
+	TotalFishingChances = Values.ResourceValues["Fish"]["FishingChances"]
 
 func _on_fish_button_button_down() -> void:
 	if IsBouncing:
@@ -124,7 +125,7 @@ func StartSpawningFish():
 
 func StopFishing():
 	IsFishing = false
-	CurrentFishingChances -= 1
+	SaveData.GeneralInfo["CurrentFishingChances"] = max(SaveData.GeneralInfo["CurrentFishingChances"] - 1, 0)
 	SpawnTimer.stop()
 	FishingTimeoutTimer.stop()
 	deleteAllFish()
@@ -159,7 +160,10 @@ func _on_fishing_timeout_timer_timeout() -> void:
 	deleteAllFish()
 
 func _on_refresh_timer_timeout() -> void:
-	FishingChancesLabel.text = str(CurrentFishingChances) + "/" + str(TotalFishingChances)
+	if !SaveData.GeneralInfo.has("CurrentFishingChances"):
+		SaveData.GeneralInfo["CurrentFishingChances"] =  3
+	
+	FishingChancesLabel.text = str(SaveData.GeneralInfo["CurrentFishingChances"]) + "/" + str(TotalFishingChances)
 	ClicksLeftLabel.text = str(ClicksLeft) + " Clicks Left"
 	
 	if IsBouncing:
@@ -172,7 +176,7 @@ func _on_refresh_timer_timeout() -> void:
 	else:
 		ClicksLeftLabel.visible = false
 	
-	if CurrentFishingChances <= 0 or IsFishing and !IsBouncing:
+	if SaveData.GeneralInfo["CurrentFishingChances"] <= 0 or IsFishing and !IsBouncing:
 		FishButton.disabled = true
 	else:
 		FishButton.disabled = false
@@ -180,7 +184,7 @@ func _on_refresh_timer_timeout() -> void:
 	if FishingChanceRefreshTimer.is_stopped():
 		ChanceRefreshLabel.visible = false
 		
-		if CurrentFishingChances < TotalFishingChances:
+		if SaveData.GeneralInfo["CurrentFishingChances"] < TotalFishingChances:
 			FishingChanceRefreshTimer.start()
 	else:
 		var timeLeft = int(FishingChanceRefreshTimer.time_left)
@@ -192,7 +196,7 @@ func _on_refresh_timer_timeout() -> void:
 		ChanceRefreshLabel.visible = true
 
 func _on_fishing_chance_refresh_timer_timeout() -> void:
-	CurrentFishingChances = min(CurrentFishingChances + 1, TotalFishingChances)
+	SaveData.GeneralInfo["CurrentFishingChances"] = min(SaveData.GeneralInfo["CurrentFishingChances"] + 1, TotalFishingChances)
 
 func _on_fish_gui_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:

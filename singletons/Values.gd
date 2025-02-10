@@ -18,6 +18,9 @@ var ResourceValues = {
 		"FishPriceMultip": 1,
 		"BaitEffectMultip" : 1,
 		"BaitPriceMultip" : 1,
+		"SelectedBait" : Fishing.ShopItemEnum.NoBait,
+		"FishingChances" : 3,
+		"FishingClicks" : 3,
 	},
 	"Research" : {
 		"TimeMultip" : 1,

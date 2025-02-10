@@ -1317,6 +1317,7 @@ var GeneralInfo = {
 	"TotalBotsBought" : 0,
 	"TotalFishedCount" : 0,
 	"TempFishedCount" : 0,
+	"CurrentFishingChances" : 3
 }
 
 var SavesInfo = {

@@ -12,7 +12,7 @@ func _process(_delta: float) -> void:
 	pass
 
 func _on_button_down() -> void:
-	pass
+	Values.ResourceValues["Fish"]["SelectedBait"] = BaitType
 
 func _on_bait_button_refresh_timer_timeout() -> void:
 	if SaveData.ShopItems.has(BaitType) and SaveData.ShopItems[BaitType]["Unlocked"]:
