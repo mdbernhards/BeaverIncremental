@@ -68,7 +68,6 @@ func CalculateRealValues():
 		lastWoodType = woodType
 	
 	# Fishing
-	ResourceValues["Fish"]["FishingWoodMultip"] = TempValues["Fish"]["FishingWoodMultip"]
 	ResourceValues["Fish"]["MoreFishMultip"] = TempValues["Fish"]["MoreFishMultip"]
 	ResourceValues["Fish"]["BetterFishMultip"] = TempValues["Fish"]["BetterFishMultip"]
 	ResourceValues["Fish"]["LongerFishMultip"] = TempValues["Fish"]["LongerFishMultip"]
@@ -1098,7 +1097,6 @@ var OriginalTempValues = {
 		"AutoClickerTickLength" : 1,
 	},
 	"Fish" : {
-		"FishingWoodMultip" : 1,
 		"MoreFishMultip" : 1,
 		"BetterFishMultip" : 1,
 		"LongerFishMultip" : 1,

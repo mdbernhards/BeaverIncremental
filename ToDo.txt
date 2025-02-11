@@ -2,8 +2,6 @@ TODO
 
 First:
 Finish Fish shop logic
-Remake Fish Swim Logic
-Add Fish Spawn, Despawn Logic
 Finish Bait logic
 
 Later:
@@ -113,3 +111,5 @@ Fix Spruce 7 DONE
 Add Fishing Biscuts, Biscuts Can Be Sold To gain bait, unlock autoclickers and get temporary bonuses DONE
 Move Auto Clicker to a separate Timer, add Auto Clicker Research and Magic Upgrades DONE
 Fix broken Fishing Chances when failing to fish 3 times DONE
+Remake Fish Swim Logic DONE
+Add Fish Spawn, Despawn Logic DONE

@@ -9,7 +9,6 @@ var WoodTypes = ["Oak", "Apple", "Maple", "Birch", "Spruce",
 
 var ResourceValues = {
 	"Fish" : {
-		"FishingWoodMultip" : 1,
 		"MoreFishMultip" : 1,
 		"BetterFishMultip" : 1,
 		"LongerFishMultip" : 1,

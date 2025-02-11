@@ -7,7 +7,6 @@ var RNG = RandomNumberGenerator.new()
 
 # Game Values
 var BaitUsed = Fishing.ShopItemEnum.NoBait
-var FishingWoodMultiplier
 var MoreFishMultiplier
 var BetterFishMultiplier
 var LongerTimeFishMultiplier
@@ -49,7 +48,7 @@ func _process(delta: float) -> void:
 		
 	if IsFishing:
 		TimeoutBar.visible = true
-		TimeoutBar.value = remap(FishingTimeoutTimer.time_left, 0, 20, 0, 100)
+		TimeoutBar.value = remap(FishingTimeoutTimer.time_left, 0, FishingTimeoutTimer.wait_time, 0, 100)
 		TimeoutLabel.text = str(roundi(FishingTimeoutTimer.time_left))
 	else:
 		TimeoutBar.visible = false
@@ -77,7 +76,6 @@ func StartFishingTimeout():
 	FishingTimeoutTimer.start()
 
 func updateFishingValues():
-	FishingWoodMultiplier = Values.ResourceValues["Fish"]["FishingWoodMultip"]
 	MoreFishMultiplier = Values.ResourceValues["Fish"]["MoreFishMultip"]
 	BetterFishMultiplier = Values.ResourceValues["Fish"]["BetterFishMultip"]
 	LongerTimeFishMultiplier = Values.ResourceValues["Fish"]["LongerFishMultip"]
@@ -134,9 +132,41 @@ func StopFishing():
 func _on_spawn_timer_timeout() -> void:
 	spawnFish()
 	SpawnTimer.start()
+	
+func pickFishToSpawn():
+	var weightList = []
+	var totalWeight = 0
+	var baitUsed
+	var baitType = Values.ResourceValues["Fish"]["SelectedBait"]
+	
+	if baitType == Fishing.ShopItemEnum.NoBait:
+		baitUsed = { "FishingPower" : 0}
+	else:
+		baitUsed = Fishing.ShopItems[baitType]
+	
+	for fishTypeName in Fishing.FishEnum:
+		var fishType = Fishing.FishEnum[fishTypeName]
+		
+		var fishLevel = Fishing.FishLevel[fishType]
+		var weight = Fishing.FishRarity[fishType]
+		
+		if fishLevel > baitUsed["FishingPower"]:
+			continue
+		elif fishLevel < baitUsed["FishingPower"]:
+			var differenceMultip = 1 - (baitUsed["FishingPower"] - fishLevel / 10)
+			weight *= differenceMultip
+		
+		weightList.append({"FishType": fishType, "Weight": totalWeight + weight})
+		totalWeight += weight
+	
+	var spawningWeight = RNG.randi_range(0, totalWeight)
+	
+	for weightItem in weightList:
+		if spawningWeight <= weightItem["Weight"]:
+			return weightItem["FishType"]
 
 func spawnFish():
-	var fishType = Fishing.FishEnum.Boot
+	var fishType = pickFishToSpawn()
 	
 	var tempFish = FishObjectScene.instantiate()
 	tempFish.FishType = fishType

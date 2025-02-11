@@ -11,9 +11,12 @@ theme_override_font_sizes/font_size = 25
 script = ExtResource("1_ipjx1")
 FishType = 3
 
-[node name="ChangeDirectionTimer" type="Timer" parent="."]
-wait_time = 2.0
+[node name="RefreshTimer" type="Timer" parent="."]
 autostart = true
 
+[node name="DespawnTimer" type="Timer" parent="."]
+wait_time = 10.0
+
 [connection signal="button_down" from="." to="." method="_on_button_down"]
-[connection signal="timeout" from="ChangeDirectionTimer" to="." method="_on_change_direction_timer_timeout"]
+[connection signal="timeout" from="RefreshTimer" to="." method="_on_refresh_timer_timeout"]
+[connection signal="timeout" from="DespawnTimer" to="." method="_on_despawn_timer_timeout"]
