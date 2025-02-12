@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://da0054l6vw7u0"]
+[gd_scene load_steps=4 format=3 uid="uid://da0054l6vw7u0"]
 
 [ext_resource type="Script" path="res://Scenes/GameMainScreenScenes/FishingScenes/fishing_game.gd" id="1_rdjpf"]
 [ext_resource type="PackedScene" uid="uid://3j6oh2o8nb3f" path="res://Scenes/GameMainScreenScenes/FishingScenes/fish_button.tscn" id="2_p5n1t"]
+[ext_resource type="Texture2D" uid="uid://djm4hmmtmd8fx" path="res://Art/BounceBar.png" id="3_to5xh"]
 
 [node name="FishingGame" type="ColorRect"]
 custom_minimum_size = Vector2(1030, 785)
@@ -62,12 +63,20 @@ text = "3 Clicks Left"
 [node name="SpawnTimer" type="Timer" parent="FishingGameLogic"]
 one_shot = true
 
-[node name="FishBounceBar" type="ProgressBar" parent="FishingGameLogic"]
+[node name="BounceTexture" type="TextureRect" parent="FishingGameLogic"]
+modulate = Color(1, 1, 1, 0.372549)
 layout_mode = 0
 offset_left = 904.0
 offset_top = 27.0
 offset_right = 995.0
 offset_bottom = 696.0
+texture = ExtResource("3_to5xh")
+expand_mode = 1
+
+[node name="FishBounceBar" type="ProgressBar" parent="FishingGameLogic/BounceTexture"]
+layout_mode = 0
+offset_right = 91.0
+offset_bottom = 669.0
 step = 1.0
 fill_mode = 3
 
@@ -99,6 +108,14 @@ vertical_alignment = 1
 [node name="FishingChanceRefreshTimer" type="Timer" parent="FishingGameLogic"]
 wait_time = 300.0
 one_shot = true
+
+[node name="SelectedBaitLabel" type="Label" parent="FishingGameLogic"]
+layout_mode = 0
+offset_left = 18.0
+offset_top = 650.0
+offset_right = 184.0
+offset_bottom = 673.0
+text = "Selected Bait: No Bait"
 
 [node name="MC" type="MarginContainer" parent="."]
 layout_mode = 1

@@ -9,18 +9,18 @@ var Fish: Fishing.FishObject = Fishing.Fish[Fishing.FishEnum.Boot] :
 		setupNodePaths()
 		Fish = value
 		
-		NameLabel.text = Fish.Name
+		NameLabel.text = Fish.FishName
 		CountLabel.text = str(SaveData.CaughtFish[Fish.Type]["Count"])
 
 func _ready() -> void:
 	setupNodePaths()
 
 func _process(delta: float) -> void:
-	updateData()
+	pass
 
 func updateData():
 	if Fish:
-		NameLabel.text = Fish.Name
+		NameLabel.text = Fish.FishName
 		CountLabel.text = str(SaveData.CaughtFish[Fish.Type]["Count"])
 
 func setupNodePaths():
@@ -31,3 +31,7 @@ func _on_sell_button_button_down() -> void:
 	if SaveData.CaughtFish[Fish.Type]["Count"] > 0:
 		SaveData.CaughtFish[Fish.Type]["Count"] -= 1
 		SaveData.FishBiscuits["Count"] += Fishing.FishPrice[Fish.Type]
+		updateData()
+
+func _on_fish_item_refresh_timer_timeout() -> void:
+	updateData()

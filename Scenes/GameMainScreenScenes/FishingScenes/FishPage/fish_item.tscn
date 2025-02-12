@@ -70,4 +70,9 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "Sell"
 
+[node name="FishItemRefreshTimer" type="Timer" parent="."]
+wait_time = 0.5
+autostart = true
+
 [connection signal="button_down" from="HBox/MC2/SellButton" to="." method="_on_sell_button_button_down"]
+[connection signal="timeout" from="FishItemRefreshTimer" to="." method="_on_fish_item_refresh_timer_timeout"]

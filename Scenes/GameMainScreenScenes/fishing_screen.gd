@@ -50,5 +50,8 @@ func _on_fishing_screen_refresh_timer_timeout() -> void:
 		ShopPageButton.disabled = false
 		ShopPageButton.text = "Shop"
 	else:
+		if SaveData.FishBiscuits["Count"] > 0:
+			Unlocks.Unlocks["Fishing"]["Shop"]["Unlocked"] = true
+		
 		ShopPageButton.disabled = true
 		ShopPageButton.text = "????"

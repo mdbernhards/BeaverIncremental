@@ -17,7 +17,7 @@ func _on_button_down() -> void:
 func _on_bait_button_refresh_timer_timeout() -> void:
 	if SaveData.ShopItems.has(BaitType) and SaveData.ShopItems[BaitType]["Unlocked"]:
 		visible = true
-		text = Fishing.ShopItems[BaitType]["Name"] + " (" + SaveData.ShopItems[BaitType]["Count"] + " )"
+		text = Fishing.ShopItems[BaitType]["Name"] + " (" + str(SaveData.ShopItems[BaitType]["Count"]) + ")"
 		
 		if SaveData.ShopItems[BaitType]["Count"] > 0:
 			disabled = false

@@ -60,6 +60,7 @@ ConstructionItem=""
 TextLogSection=""
 AchievementScreen=""
 UpgradePage=""
+ShopPage=""
 
 [gui]
 

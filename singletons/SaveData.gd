@@ -1176,76 +1176,72 @@ var CaughtFish = {
 
 var ShopItems = {
 	Fishing.ShopItemEnum.Worm : {
-		"Count" : 0,
 		"Unlocked" : false,
+		"Count" : 0,
 	},
 	Fishing.ShopItemEnum.Cricket : {
-		"Count" : 0,
 		"Unlocked" : false,
+		"Count" : 0,
 	},
 	Fishing.ShopItemEnum.Jig : {
-		"Count" : 5,
 		"Unlocked" : false,
+		"Count" : 0,
 	},
 	Fishing.ShopItemEnum.Leech : {
-		"Count" : 0,
 		"Unlocked" : false,
+		"Count" : 0,
 	},
 	Fishing.ShopItemEnum.WyvernsFeather : {
-		"Count" : 0,
 		"Unlocked" : false,
+		"Count" : 0,
 	},
 	Fishing.ShopItemEnum.Autoclicker1 : {
-		"Unlocked" : false,
+		"Bought" : false,
 	},
 	Fishing.ShopItemEnum.Autoclicker2 : {
-		"Unlocked" : false,
+		"Bought" : false,
 	},
 	Fishing.ShopItemEnum.Autoclicker3 : {
-		"Unlocked" : false,
+		"Bought" : false,
 	},
 	Fishing.ShopItemEnum.WpsBonus1 : {
-		"Unlocked" : false,
+		"Bought" : false,
 	},
 	Fishing.ShopItemEnum.WpsBonus2 : {
-		"Unlocked" : false,
+		"Bought" : false,
 	},
 	Fishing.ShopItemEnum.WpsBonus3 : {
-		"Unlocked" : false,
+		"Bought" : false,
 	},
 	Fishing.ShopItemEnum.WpcBonus1 : {
-		"Unlocked" : false,
+		"Bought" : false,
 	},
 	Fishing.ShopItemEnum.WpcBonus2 : {
-		"Unlocked" : false,
+		"Bought" : false,
 	},
 	Fishing.ShopItemEnum.WpcBonus3 : {
-		"Unlocked" : false,
+		"Bought" : false,
 	},
 	Fishing.ShopItemEnum.WpsIncrease : {
 		"Count" : 0,
-		"Unlocked" : false,
 	},
 	Fishing.ShopItemEnum.WpcIncrease : {
 		"Count" : 0,
-		"Unlocked" : false,
 	},
 	Fishing.ShopItemEnum.StorageIncrease : {
 		"Count" : 0,
-		"Unlocked" : false,
 	},
 	Fishing.ShopItemEnum.ResearchSlot : {
-		"Unlocked" : false,
+		"Bought" : false,
 	},
 	Fishing.ShopItemEnum.FishingChance1 : {
-		"Unlocked" : false,
+		"Bought" : false,
 	},
 	Fishing.ShopItemEnum.FishingChance2 : {
-		"Unlocked" : false,
+		"Bought" : false,
 	},
 	Fishing.ShopItemEnum.ChanceToUseBait : {
 		"Count" : 0,
-		"Unlocked" : false,
 	},
 }
 

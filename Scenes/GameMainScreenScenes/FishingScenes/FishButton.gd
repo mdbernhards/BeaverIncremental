@@ -36,7 +36,7 @@ var DespawnTimer
 
 func ChangeFishName():
 	if SaveData.CaughtFish[FishType]["Caught"]:
-		text = FishData.Name
+		text = FishData.FishName
 	else:
 		text = "????"
 
@@ -45,7 +45,7 @@ func _ready() -> void:
 
 func settingFishData():
 	Direction = Vector2(RNG.randf_range(-1, 1), RNG.randf_range(-1, 1))
-	position += Vector2(RNG.randf_range(-300, 300), RNG.randf_range(-300, 300))
+	position += Vector2(RNG.randf_range(-320, 120), RNG.randf_range(-200, 150))
 	SwimType = RNG.randi_range(0, 2)
 	Angle = RNG.randi_range(-180, 180)
 	AngleDirection = RNG.randi_range(0, 3)

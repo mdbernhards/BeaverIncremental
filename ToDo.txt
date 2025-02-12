@@ -1,10 +1,10 @@
 TODO
 
 First:
-Finish Fish shop logic
-Finish Bait logic
+Keep Playing
 
 Later:
+Balance Fishing
 Making The Game Playable from start to finish
 Implement keep first 10 research
 Dam completion and Effect application
@@ -20,6 +20,7 @@ Add to Scrolling log fishing, dams built and others
 Apply ResourceValues in Values for Fishing and Dams when implemented
 10x, 100x or sell to limit for fish
 Upgrade level cap at 100 and 10
+Set Number Notation for all numbers missing it
 
 A lot Later:
 Write achievement unlock bonusses in the text log
@@ -113,3 +114,5 @@ Move Auto Clicker to a separate Timer, add Auto Clicker Research and Magic Upgra
 Fix broken Fishing Chances when failing to fish 3 times DONE
 Remake Fish Swim Logic DONE
 Add Fish Spawn, Despawn Logic DONE
+Fish shop logic DONE
+Bait logic DONE

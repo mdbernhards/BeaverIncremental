@@ -122,10 +122,10 @@ layout_mode = 2
 size_flags_vertical = 3
 
 [node name="FishPage" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC" groups=["FishPage"] instance=ExtResource("3_o2ikf")]
+visible = false
 layout_mode = 2
 
 [node name="ShopPage" parent="MC/HBox/FishingImprovementsMenusHBox/VBox/PagesMC" instance=ExtResource("5_dqra7")]
-visible = false
 layout_mode = 2
 
 [node name="FishingScreenRefreshTimer" type="Timer" parent="."]

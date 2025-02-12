@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://bnaeq0jnl2qm8"]
 
-[ext_resource type="Script" path="res://Scenes/GameMainScreenScenes/FishingScenes/BaitPage/shop_item.gd" id="1_lhwjp"]
+[ext_resource type="Script" path="res://Scenes/GameMainScreenScenes/FishingScenes/ShopPage/shop_item.gd" id="1_lhwjp"]
 
 [node name="ShopItem" type="MarginContainer"]
 custom_minimum_size = Vector2(300, 75)
@@ -24,28 +24,29 @@ theme_override_constants/margin_top = 7
 theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 5
 
-[node name="VBox" type="VBoxContainer" parent="HBox/MC"]
+[node name="BuyVBox" type="VBoxContainer" parent="HBox/MC"]
 layout_mode = 2
 theme_override_constants/separation = 0
 
-[node name="HBox" type="HBoxContainer" parent="HBox/MC/VBox"]
+[node name="HBox" type="HBoxContainer" parent="HBox/MC/BuyVBox"]
 layout_mode = 2
 theme_override_constants/separation = 10
 
-[node name="ItemNameLabel" type="Label" parent="HBox/MC/VBox/HBox"]
+[node name="ItemNameLabel" type="Label" parent="HBox/MC/BuyVBox/HBox"]
 layout_mode = 2
 size_flags_vertical = 1
-theme_override_font_sizes/font_size = 18
+theme_override_font_sizes/font_size = 14
 text = "Oak Bait"
 vertical_alignment = 1
 
-[node name="ColorRect" type="ColorRect" parent="HBox/MC/VBox/HBox"]
+[node name="ItemCountRect" type="ColorRect" parent="HBox/MC/BuyVBox/HBox"]
+visible = false
 custom_minimum_size = Vector2(35, 20)
 layout_mode = 2
-size_flags_horizontal = 6
+size_flags_horizontal = 10
 color = Color(0.388235, 0.388235, 0.388235, 1)
 
-[node name="ItemCountLabel" type="Label" parent="HBox/MC/VBox/HBox/ColorRect"]
+[node name="ItemCountLabel" type="Label" parent="HBox/MC/BuyVBox/HBox/ItemCountRect"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -58,25 +59,25 @@ text = "22"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="BuyButton" type="Button" parent="HBox/MC/VBox/HBox"]
+[node name="BuyButton" type="Button" parent="HBox/MC/BuyVBox/HBox"]
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 size_flags_horizontal = 10
 theme_override_font_sizes/font_size = 12
 text = "1000 Biscuts"
 
-[node name="UnlockedLabel" type="Label" parent="HBox/MC/VBox/HBox"]
+[node name="BoughtLabel" type="Label" parent="HBox/MC/BuyVBox/HBox"]
 visible = false
 layout_mode = 2
-text = "Unlocked"
+text = "Bought"
 
-[node name="MC" type="MarginContainer" parent="HBox/MC/VBox"]
+[node name="MC" type="MarginContainer" parent="HBox/MC/BuyVBox"]
 layout_mode = 2
 size_flags_vertical = 3
 theme_override_constants/margin_left = 10
 theme_override_constants/margin_top = 3
 
-[node name="EffectLabel" type="Label" parent="HBox/MC/VBox/MC"]
+[node name="EffectLabel" type="Label" parent="HBox/MC/BuyVBox/MC"]
 custom_minimum_size = Vector2(100, 0)
 layout_mode = 2
 size_flags_vertical = 1
@@ -86,10 +87,31 @@ text = "5% fishing power"
 vertical_alignment = 1
 autowrap_mode = 3
 
+[node name="UnlockVBox" type="VBoxContainer" parent="HBox/MC"]
+visible = false
+layout_mode = 2
+
+[node name="HBox" type="HBoxContainer" parent="HBox/MC/UnlockVBox"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="LockedLabel" type="Label" parent="HBox/MC/UnlockVBox/HBox"]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 18
+text = "Bait Locked"
+vertical_alignment = 1
+
+[node name="UnlockButton" type="Button" parent="HBox/MC/UnlockVBox/HBox"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+size_flags_horizontal = 10
+theme_override_font_sizes/font_size = 12
+text = "1000 Biscuts"
+
 [node name="ShopItemRefreshTimer" type="Timer" parent="."]
 autostart = true
 
-[connection signal="button_down" from="HBox/MC/VBox/HBox/BuyButton" to="." method="_on_buy_button_button_down"]
-[connection signal="mouse_entered" from="HBox/MC/VBox/HBox/BuyButton" to="." method="_on_buy_button_mouse_entered"]
-[connection signal="mouse_exited" from="HBox/MC/VBox/HBox/BuyButton" to="." method="_on_buy_button_mouse_exited"]
+[connection signal="button_down" from="HBox/MC/BuyVBox/HBox/BuyButton" to="." method="_on_buy_button_button_down"]
+[connection signal="button_down" from="HBox/MC/UnlockVBox/HBox/UnlockButton" to="." method="_on_unlock_button_button_down"]
 [connection signal="timeout" from="ShopItemRefreshTimer" to="." method="_on_shop_item_refresh_timer_timeout"]
