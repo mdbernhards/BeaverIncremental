@@ -1,7 +1,5 @@
 extends Node
 
-var Spots
-
 class FishObject:
 	var Type
 	var FishName
@@ -256,6 +254,7 @@ enum ShopItemEnum {
 	FishingChance1,
 	FishingChance2,
 	ChanceToUseBait,
+	FishingClick,
 }
 
 var ShopItems = {
@@ -415,6 +414,13 @@ var ShopItems = {
 		"Price" : 100,
 		"IsBait" : false,
 		"HasCount" : true,
+	},
+	ShopItemEnum.FishingClick : {
+		"Name" : "+1 Fishing Click",
+		"Description" : "+1 Chance To Click on Fish Before Failing When Fishing",
+		"Price" : 35000,
+		"IsBait" : false,
+		"HasCount" : false,
 	},
 }
 

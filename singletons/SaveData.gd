@@ -1243,6 +1243,9 @@ var ShopItems = {
 	Fishing.ShopItemEnum.ChanceToUseBait : {
 		"Count" : 0,
 	},
+	Fishing.ShopItemEnum.FishingClick : {
+		"Bought" : false,
+	},
 }
 
 var Magic = {

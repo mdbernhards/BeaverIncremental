@@ -145,10 +145,19 @@ var Research = {
 		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 0,
 		"Unlocked" : func(): return Unlocks.Unlocks["Woodcamps"]["Unlocked"],
 	},
+	"15b" :  {
+		"Name" : "Fish Live 10% Longer",
+		"Description" : "Fish Stay on Screen for a 10% Longer Time",
+		"Time" : 380, # Seconds
+		"OakCost" : 450000, "AppleCost" : 200000, "MapleCost" : 70000, "BirchCost" : 0, "SpruceCost" : 0,
+		"ChestnutCost" : 0, "CherryCost" : 0, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 0,
+		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 0,
+		"Unlocked" : func(): return Unlocks.Unlocks["Fishing"]["Unlocked"],
+	},
 	"16" :  {
 		"Name" : "+5 Oak Woodcamps",
 		"Description" : "Adds 5 Extra Oak Woodcamps",
-		"Time" : 380, # Seconds
+		"Time" : 390, # Seconds
 		"OakCost" : 0, "AppleCost" : 46000, "MapleCost" : 7500, "BirchCost" : 0, "SpruceCost" : 0,
 		"ChestnutCost" : 0, "CherryCost" : 0, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 0,
 		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 0,
@@ -270,6 +279,15 @@ var Research = {
 		"ChestnutCost" : 0, "CherryCost" : 0, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 0,
 		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 0,
 		"Unlocked" : func(): return true,
+	},
+	"27b" :  {
+		"Name" : "12.5% Slower Fish",
+		"Description" : "Fish Swim 12.5% Slower",
+		"Time" : 920, # Seconds
+		"OakCost" : 1450000, "AppleCost" : 800000, "MapleCost" : 360000, "BirchCost" : 150000, "SpruceCost" : 0,
+		"ChestnutCost" : 0, "CherryCost" : 0, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 0,
+		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 0,
+		"Unlocked" : func(): return Unlocks.Unlocks["Fishing"]["Unlocked"],
 	},
 	"28" :  {
 		"Name" : "12.5% WPC",
@@ -523,6 +541,15 @@ var Research = {
 		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 0,
 		"Unlocked" : func(): return true,
 	},
+	"51b" :  {
+		"Name" : "Fish Become 15% Bigger",
+		"Description" : "Increases Fish Size By 15%",
+		"Time" : 3900, # Seconds
+		"OakCost" : 50000000, "AppleCost" : 29000000, "MapleCost" : 7500000, "BirchCost" : 0, "SpruceCost" : 0,
+		"ChestnutCost" : 0, "CherryCost" : 0, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 0,
+		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 0,
+		"Unlocked" : func(): return Unlocks.Unlocks["Fishing"]["Unlocked"],
+	},
 	"52" :  {
 		"Name" : "Classic Wood +10 Woodcamps",
 		"Description" : "Classic Wood +10 Woodcamps",
@@ -667,10 +694,19 @@ var Research = {
 		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 0,
 		"Unlocked" : func(): return true,
 	},
+	"66b" :  {
+		"Name" : "Catching Bar 10% Slower",
+		"Description" : "The Bouncing Bar Becomes 10% Slower When Catching Fish",
+		"Time" : 3900, # Seconds
+		"OakCost" : 200000000, "AppleCost" : 55000000, "MapleCost" : 40000000, "BirchCost" : 0, "SpruceCost" : 0,
+		"ChestnutCost" : 0, "CherryCost" : 0, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 0,
+		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 0,
+		"Unlocked" : func(): return Unlocks.Unlocks["Fishing"]["Unlocked"],
+	},
 	"67" :  {
 		"Name" : "Cherry WPS 25%",
 		"Description" : "Cherry WPS 25%",
-		"Time" : 3910, # Seconds
+		"Time" : 3930, # Seconds
 		"OakCost" : 0, "AppleCost" : 28000000, "MapleCost" : 0, "BirchCost" : 0, "SpruceCost" : 4000000,
 		"ChestnutCost" : 1800000, "CherryCost" : 0, "AshCost" : 250000, "CedarCost" : 0, "MahoganyCost" : 0,
 		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 0,
@@ -811,6 +847,15 @@ var Research = {
 		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 100,
 		"Unlocked" : func(): return true,
 	},
+	"81b" :  {
+		"Name" : "Fishing Time 10% Longer",
+		"Description" : "Fish Stay on Screen for a 10% Longer Time",
+		"Time" : 5140, # Seconds
+		"OakCost" : 0, "AppleCost" : 0, "MapleCost" : 0, "BirchCost" : 0, "SpruceCost" : 0,
+		"ChestnutCost" : 0, "CherryCost" : 0, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 0,
+		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 0,
+		"Unlocked" : func(): return Unlocks.Unlocks["Fishing"]["Unlocked"],
+	},
 	"82" :  {
 		"Name" : "Woodcamp Base Storage +200",
 		"Description" : "Woodcamp Base Storage +200",
@@ -918,6 +963,15 @@ var Research = {
 		"ChestnutCost" : 0, "CherryCost" : 0, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 0,
 		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 100,
 		"Unlocked" : func(): return true,
+	},
+	"93b" :  {
+		"Name" : "+1 Chance To Fish",
+		"Description" : "Adds +1 Chance For Fishing",
+		"Time" : 5820, # Seconds
+		"OakCost" : 0, "AppleCost" : 0, "MapleCost" : 0, "BirchCost" : 0, "SpruceCost" : 0,
+		"ChestnutCost" : 0, "CherryCost" : 0, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 0,
+		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 0,
+		"Unlocked" : func(): return Unlocks.Unlocks["Fishing"]["Unlocked"],
 	},
 	"94" :  {
 		"Name" : "Mahogany Price 11%",
@@ -1036,6 +1090,15 @@ var Research = {
 		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 100,
 		"Unlocked" : func(): return true,
 	},
+	"105b" :  {
+		"Name" : "Fish Effects 20% Stronger",
+		"Description" : "All Fish effects become 20% better",
+		"Time" : 6920, # Seconds
+		"OakCost" : 0, "AppleCost" : 0, "MapleCost" : 0, "BirchCost" : 0, "SpruceCost" : 0,
+		"ChestnutCost" : 0, "CherryCost" : 0, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 0,
+		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 0,
+		"Unlocked" : func(): return Unlocks.Unlocks["Fishing"]["Unlocked"],
+	},
 	"106" :  {
 		"Name" : "Ebony +7 Woodcamps",
 		"Description" : "Ebony +7 Woodcamps",
@@ -1138,11 +1201,20 @@ var Research = {
 	"117" :  {
 		"Name" : "44% Reaserch Time",
 		"Description" : "44% Reaserch Time",
-		"Time" : 7700, # Seconds
+		"Time" : 7660, # Seconds
 		"OakCost" : 0, "AppleCost" : 0, "MapleCost" : 0, "BirchCost" : 0, "SpruceCost" : 0,
 		"ChestnutCost" : 0, "CherryCost" : 0, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 0,
 		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 100,
 		"Unlocked" : func(): return true,
+	},
+	"117b" :  {
+		"Name" : "Fish Price +33%",
+		"Description" : "Increases all fish price by 33%",
+		"Time" : 7700, # Seconds
+		"OakCost" : 0, "AppleCost" : 0, "MapleCost" : 0, "BirchCost" : 0, "SpruceCost" : 0,
+		"ChestnutCost" : 0, "CherryCost" : 0, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 0,
+		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 0,
+		"Unlocked" : func(): return Unlocks.Unlocks["Fishing"]["Unlocked"],
 	},
 	"118" :  {
 		"Name" : "Dogwood +1 WC Per 19 Beavers",
@@ -1260,6 +1332,15 @@ var Research = {
 		"ChestnutCost" : 0, "CherryCost" : 0, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 0,
 		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 100,
 		"Unlocked" : func(): return true,
+	},
+	"129b" :  {
+		"Name" : "+1 Click Chance When Fishing",
+		"Description" : "Adds +1 Chance To Click On A Fish When Fishing",
+		"Time" : 8700, # Seconds
+		"OakCost" : 0, "AppleCost" : 0, "MapleCost" : 0, "BirchCost" : 0, "SpruceCost" : 0,
+		"ChestnutCost" : 0, "CherryCost" : 0, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 0,
+		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 0,
+		"Unlocked" : func(): return Unlocks.Unlocks["Fishing"]["Unlocked"],
 	},
 	"130" :  {
 		"Name" : "Ghost Gum WC and Beavers 30% Cheaper",

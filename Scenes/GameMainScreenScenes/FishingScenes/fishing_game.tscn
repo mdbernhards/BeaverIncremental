@@ -81,7 +81,7 @@ step = 1.0
 fill_mode = 3
 
 [node name="FishingTimeoutTimer" type="Timer" parent="FishingGameLogic"]
-wait_time = 200.0
+wait_time = 15.0
 one_shot = true
 
 [node name="TimeoutBar" type="ProgressBar" parent="FishingGameLogic"]

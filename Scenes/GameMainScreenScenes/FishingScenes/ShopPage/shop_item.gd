@@ -88,7 +88,7 @@ func _on_buy_button_button_down() -> void:
 		SaveData.FishBiscuits["Count"] -= getPrice()
 		
 		if IsBait:
-			SaveData.ShopItems[ShopItemType]["Count"] += 10
+			SaveData.ShopItems[ShopItemType]["Count"] += Values.ResourceValues["Fish"]["BaitBuyCount"]
 		elif HasCount:
 			SaveData.ShopItems[ShopItemType]["Count"] += 1
 		else:

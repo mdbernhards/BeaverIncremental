@@ -263,10 +263,10 @@ var Upgrades = {
 			"Unlocked" : func(): return true,
 		},
 		"8" :  {
-			"Name" : "4% Cheaper Bait",
-			"Description" : "4% Cheaper Bait",
+			"Name" : "Catching 2% Slower",
+			"Description" : "The Bouncing Bar Becomes 2% Slower When Catching Fish",
 			"OtherText" : "",
-			"Unlocked" : func(): return Unlocks.Unlocks["Fishing"]["Bait"]["Unlocked"],
+			"Unlocked" : func(): return Unlocks.Unlocks["Fishing"]["Unlocked"],
 			"MagicCost" : 1000,
 		},
 		"9" :  {
@@ -667,10 +667,10 @@ var Upgrades = {
 			"MagicCost" : 5e9,
 		},
 		"10" :  {
-			"Name" : "+0.75% Bait Effects",
-			"Description" : "+0.75% Bait Effects",
+			"Name" : "Chance Bait Used -1%",
+			"Description" : "1% Chance That Bait Is Not Used When Fishing",
 			"OtherText" : "",
-			"Unlocked" : func(): return Unlocks.Unlocks["Fishing"]["Bait"]["Unlocked"],
+			"Unlocked" : func(): return Unlocks.Unlocks["Fishing"]["Unlocked"],
 			"MagicCost" : 15e9,
 		},
 	},

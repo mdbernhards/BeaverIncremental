@@ -50,11 +50,11 @@ func settingFishData():
 	Angle = RNG.randi_range(-180, 180)
 	AngleDirection = RNG.randi_range(0, 3)
 	
-	Speed = FishData.Speed
+	Speed = FishData.Speed * Values.ResourceValues["Fish"]["FishSpeedMultip"]
 	CurveAmplitude = FishData.CurveAmplitude
 	CurveFrequency = FishData.CurveFrequency
 	TurnChance = FishData.TurnChance
-	Scale = FishData.Scale
+	Scale = FishData.Scale * Values.ResourceValues["Fish"]["FishSizeMultip"]
 	scale *= Scale
 
 func _process(delta: float) -> void:
@@ -119,7 +119,7 @@ func _on_despawn_timer_timeout() -> void:
 
 func _on_refresh_timer_timeout() -> void:
 	if DespawnTimer and DespawnTimer.is_stopped():
-		DespawnTimer.wait_time = FishData.LifeTime
+		DespawnTimer.wait_time = FishData.LifeTime * Values.ResourceValues["Fish"]["LongerFishLifetimeMultip"]
 		DespawnTimer.start()
 
 func setupNodePaths():

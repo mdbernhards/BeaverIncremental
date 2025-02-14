@@ -152,8 +152,8 @@ var Magic = {
 		"Cost" : 900,
 	},
 	"18" : {
-		"Name" : "Unlock Fishing Spot",
-		"Description" : "Unlock another Fishing Spot to fish at",
+		"Name" : "22% Slower Fish",
+		"Description" : "Fish Swim 22% Slower",
 		"Cost" : 950,
 	},
 	"19" : {
@@ -192,8 +192,8 @@ var Magic = {
 		"Cost" : 1800,
 	},
 	"25" : {
-		"Name" : "Unlock Baits",
-		"Description" : "Unlock Baits that when applied increase fishing skills and rewards",
+		"Name" : "+2 Bait When Buying",
+		"Description" : "When Buying Bait Get 2 More",
 		"Cost" : 2000,
 	},
 	"26" : {
@@ -212,13 +212,13 @@ var Magic = {
 		"Cost" : 2300,
 	},
 	"28" : {
-		"Name" : "Unlock Fishing Spot",
-		"Description" : "Unlock another Fishing Spot to fish at",
+		"Name" : "Bonus From First 5 Fish",
+		"Description" : "Increase Fish Bonus To Work For The First 5 Fish",
 		"Cost" : 2400,
 	},
 	"29" : {
-		"Name" : "Bait Effects 15%",
-		"Description" : "Improve the Bait effects for fishing by 15%",
+		"Name" : "Fishing Time 15% Longer",
+		"Description" : "Have 15% More Time To Fish",
 		"Cost" : 2500,
 	},
 	"30" : {
@@ -257,8 +257,8 @@ var Magic = {
 		"Cost" : 5000,
 	},
 	"37" : {
-		"Name" : "Unlock Fishing Spot",
-		"Description" : "Unlock another Fishing Spot to fish at",
+		"Name" : "+2 Bait When Buying",
+		"Description" : "When Buying Bait Get 2 More",
 		"Cost" : 7777,
 	},
 	"38" : {
@@ -272,8 +272,8 @@ var Magic = {
 		"Cost" : 10000,
 	},
 	"39" : {
-		"Name" : "Fish Rarer Fish 27.5%",
-		"Description" : "When Fishing Improve Rare Fish Spawn Rate By 27.5%",
+		"Name" : "Fish Effects 27.5% Stronger",
+		"Description" : "All Fish effects become 27.5% better",
 		"Cost" : 12500,
 	},
 	"40" : {
@@ -337,8 +337,8 @@ var Magic = {
 		"Cost" : 100000,
 	},
 	"51" : {
-		"Name" : "Unlock Fishing spot",
-		"Description" : "Unlock another Fishing Spot to fish at",
+		"Name" : "Bonus From First 20 Fish",
+		"Description" : "Increase Fish Bonus To Work For The First 20 Fish",
 		"Cost" : 200000,
 	},
 	"51b" : {
@@ -357,8 +357,8 @@ var Magic = {
 		"Cost" : 250000,
 	},
 	"54" : {
-		"Name" : "Fish Price 2x",
-		"Description" : "Double All Fish Prices",
+		"Name" : "+1 Chance To Fish",
+		"Description" : "Adds +1 Chance For Fishing",
 		"Cost" : 300000,
 	},
 	"55" : {

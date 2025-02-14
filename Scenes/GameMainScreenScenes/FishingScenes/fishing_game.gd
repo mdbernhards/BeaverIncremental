@@ -1,17 +1,17 @@
 extends ColorRect
 
 var IsFishing = false
-var ClicksLeft = 3
 
 var RNG = RandomNumberGenerator.new()
 
 # Game Values
 var BaitUsed = Fishing.ShopItemEnum.NoBait
-var MoreFishMultiplier
-var BetterFishMultiplier
-var LongerTimeFishMultiplier
-var FishSpeedMultiplier
-var BaitEffectMultiplier
+var MoreFishMultip
+var LongerFishingTimeMultip
+var FishBounceMultip
+var FishingChances
+var FishingClicks
+var ChanceToUseBait
 
 # Nodes
 var SpawnTimer
@@ -35,8 +35,6 @@ var BarUp = true
 var BounceTime := 0.0
 var BouncingFishType
 
-var TotalFishingChances = 3
-
 var FishObjectScene = preload("res://Scenes/GameMainScreenScenes/FishingScenes/fish_button.tscn")
 
 func _ready() -> void:
@@ -55,14 +53,16 @@ func _process(delta: float) -> void:
 	else:
 		TimeoutBar.visible = false
 		
-	if ClicksLeft <= 0:
+	if FishingClicks <= 0:
 		StopFishing()
 
 func RunBounceProgressBar(delta):
+	var bounceIncrement = delta * 75 * FishBounceMultip
+	
 	if BarUp:
-		BounceTime += delta * 75
+		BounceTime += bounceIncrement
 	else:
-		BounceTime -= delta * 75
+		BounceTime -= bounceIncrement
 	
 	if BounceTime >= 100 or BounceTime <= 0:
 		BarUp = !BarUp
@@ -75,18 +75,17 @@ func startFishing():
 	StartFishingTimeout()
 
 func StartFishingTimeout():
+	FishingTimeoutTimer.wait_time = 15 * LongerFishingTimeMultip
 	FishingTimeoutTimer.start()
 
 func updateFishingValues():
-	MoreFishMultiplier = Values.ResourceValues["Fish"]["MoreFishMultip"]
-	BetterFishMultiplier = Values.ResourceValues["Fish"]["BetterFishMultip"]
-	LongerTimeFishMultiplier = Values.ResourceValues["Fish"]["LongerFishMultip"]
-	FishSpeedMultiplier = Values.ResourceValues["Fish"]["FishSpeedMultip"]
-	BaitEffectMultiplier = Values.ResourceValues["Fish"]["BaitEffectMultip"]
-	
+	MoreFishMultip = Values.ResourceValues["Fish"]["MoreFishMultip"]
+	LongerFishingTimeMultip = Values.ResourceValues["Fish"]["LongerFishingTimeMultip"]
+	FishBounceMultip = Values.ResourceValues["Fish"]["FishBounceMultip"]
+	FishingChances = Values.ResourceValues["Fish"]["FishingChances"]
+	FishingClicks = Values.ResourceValues["Fish"]["FishingClicks"]
+	ChanceToUseBait = Values.ResourceValues["Fish"]["ChanceToUseBait"]
 	BaitUsed = Values.ResourceValues["Fish"]["SelectedBait"]
-	ClicksLeft = Values.ResourceValues["Fish"]["FishingClicks"]
-	TotalFishingChances = Values.ResourceValues["Fish"]["FishingChances"]
 
 func _on_fish_button_button_down() -> void:
 	if IsBouncing:
@@ -102,7 +101,7 @@ func checkIfFishCaught():
 		get_tree().get_first_node_in_group("FishPage").addAllCaughtFish()
 		StopFishing()
 	IsBouncing = false
-	ClicksLeft -= 1
+	FishingClicks -= 1
 
 func SetNodePaths():
 	SpawnTimer = $FishingGameLogic/SpawnTimer
@@ -123,7 +122,9 @@ func SetNodePaths():
 
 func StartSpawningFish():
 	IsFishing = true
-	SpawnTimer.wait_time = RNG.randf_range(1, 7)
+	
+	var spawnTimeMultip = 1 / MoreFishMultip
+	SpawnTimer.wait_time = RNG.randf_range(2 * spawnTimeMultip, 8 * spawnTimeMultip)
 	SpawnTimer.start()
 
 func StopFishing():
@@ -133,7 +134,7 @@ func StopFishing():
 	SpawnTimer.stop()
 	FishingTimeoutTimer.stop()
 	deleteAllFish()
-	ClicksLeft = 3
+	FishingClicks = Values.ResourceValues["Fish"]["FishingChances"]
 
 func _on_spawn_timer_timeout() -> void:
 	spawnFish()
@@ -194,8 +195,8 @@ func _on_refresh_timer_timeout() -> void:
 	if !SaveData.GeneralInfo.has("CurrentFishingChances"):
 		SaveData.GeneralInfo["CurrentFishingChances"] =  3
 	
-	FishingChancesLabel.text = str(SaveData.GeneralInfo["CurrentFishingChances"]) + "/" + str(TotalFishingChances)
-	ClicksLeftLabel.text = str(ClicksLeft) + " Clicks Left"
+	FishingChancesLabel.text = str(SaveData.GeneralInfo["CurrentFishingChances"]) + "/" + str(FishingChances)
+	ClicksLeftLabel.text = str(FishingClicks) + " Clicks Left"
 	
 	if IsBouncing:
 		BounceTexture.visible = true
@@ -215,7 +216,7 @@ func _on_refresh_timer_timeout() -> void:
 	if FishingChanceRefreshTimer.is_stopped():
 		ChanceRefreshLabel.visible = false
 		
-		if SaveData.GeneralInfo["CurrentFishingChances"] < TotalFishingChances:
+		if SaveData.GeneralInfo["CurrentFishingChances"] < FishingChances:
 			FishingChanceRefreshTimer.start()
 	else:
 		var timeLeft = int(FishingChanceRefreshTimer.time_left)
@@ -238,9 +239,9 @@ func _on_refresh_timer_timeout() -> void:
 		SelectedBaitLabel.visible = false
 
 func _on_fishing_chance_refresh_timer_timeout() -> void:
-	SaveData.GeneralInfo["CurrentFishingChances"] = min(SaveData.GeneralInfo["CurrentFishingChances"] + 1, TotalFishingChances)
+	SaveData.GeneralInfo["CurrentFishingChances"] = min(SaveData.GeneralInfo["CurrentFishingChances"] + 1, FishingChances)
 
 func _on_fish_gui_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
-		ClicksLeft -= 1
+		FishingClicks -= 1
 	_on_refresh_timer_timeout()
