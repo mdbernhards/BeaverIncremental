@@ -50,11 +50,18 @@ func settingFishData():
 	Angle = RNG.randi_range(-180, 180)
 	AngleDirection = RNG.randi_range(0, 3)
 	
-	Speed = FishData.Speed * Values.ResourceValues["Fish"]["FishSpeedMultip"]
+	var baitMultip
+	
+	if Values.ResourceValues["Fish"]["SelectedBait"] == 0:
+		baitMultip = 1
+	else:
+		baitMultip = 1 - ((Fishing.ShopItems[Values.ResourceValues["Fish"]["SelectedBait"]]["FishingPower"] - Fishing.FishLevel[FishType]) / 8)
+	
+	Speed = FishData.Speed * Values.ResourceValues["Fish"]["FishSpeedMultip"] * baitMultip
 	CurveAmplitude = FishData.CurveAmplitude
 	CurveFrequency = FishData.CurveFrequency
 	TurnChance = FishData.TurnChance
-	Scale = FishData.Scale * Values.ResourceValues["Fish"]["FishSizeMultip"]
+	Scale = FishData.Scale * Values.ResourceValues["Fish"]["FishSizeMultip"] / baitMultip
 	scale *= Scale
 
 func _process(delta: float) -> void:

@@ -666,30 +666,30 @@ var Achievements = {
 		"Description" : "Unlocked Fishing",
 		"Trigger" : func(): return Unlocks.Unlocks["Fishing"]["Unlocked"],
 	},
-	"134" : { # Replace
-		"Name" : "Unlocked fishing spot 2",
-		"Description" : "Unlocked fishing spot 2",
-		"Trigger" : func(): return false,
+	"134" : {
+		"Name" : "1 Autoclicker",
+		"Description" : "Have Atleast 1 Autoclicker",
+		"Trigger" : func(): return SaveData.GeneralInfo["AutoClickers"] >= 1,
 	},
-	"135" : { # Replace
-		"Name" : "Unlocked fishing spot 3",
-		"Description" : "Unlocked fishing spot 3",
-		"Trigger" : func(): return false,
+	"135" : {
+		"Name" : "5 Autoclickers",
+		"Description" : "Have Atleast 5 Autoclickers",
+		"Trigger" : func(): return SaveData.GeneralInfo["AutoClickers"] >= 5,
 	},
-	"136" : { # Replace
-		"Name" : "Unlocked fishing spot 4",
-		"Description" : "Unlocked fishing spot 4",
-		"Trigger" : func(): return false,
+	"136" : {
+		"Name" : "10 Autoclickers",
+		"Description" : "Have Atleast 10 Autoclickers",
+		"Trigger" : func(): return SaveData.GeneralInfo["AutoClickers"] >= 10,
 	},
-	"137" : { # Replace
-		"Name" : "Unlocked fishing spot 5",
-		"Description" : "Unlocked fishing spot 5",
-		"Trigger" : func(): return false,
+	"137" : {
+		"Name" : "Don't Use Bait 10 Times",
+		"Description" : "10 Times When Fishing With Bait, Don't Use It!",
+		"Trigger" : func(): return SaveData.GeneralInfo.has("TimesBaitNotUsed") and SaveData.GeneralInfo["TimesBaitNotUsed"] >= 10,
 	},
-	"138" : { # Replace
-		"Name" : "Unlock All Fishing Spots",
-		"Description" : "Unlock All five Fishing Spots",
-		"Trigger" : func(): return false,
+	"138" : {
+		"Name" : "Don't Use Bait 100 Times",
+		"Description" : "100 Times When Fishing With Bait, Don't Use It!",
+		"Trigger" : func(): return SaveData.GeneralInfo.has("TimesBaitNotUsed") and SaveData.GeneralInfo["TimesBaitNotUsed"] >= 100,
 	},
 	"139" : {
 		"Name" : "Fish 1 Time",
@@ -842,19 +842,19 @@ var Achievements = {
 		"Trigger" : func(): return fishTypesCaughtCountCheck(20),
 	},
 	"169" : {
-		"Name" : "35 Fish Types Caught",
-		"Description" : "35 Fish Types Caught",
-		"Trigger" : func(): return fishTypesCaughtCountCheck(35),
+		"Name" : "30 Fish Types Caught",
+		"Description" : "30 Fish Types Caught",
+		"Trigger" : func(): return fishTypesCaughtCountCheck(30),
 	},
 	"170" : {
-		"Name" : "55 Fish Types Caught",
-		"Description" : "55 Fish Types Caught",
-		"Trigger" : func(): return fishTypesCaughtCountCheck(55),
+		"Name" : "40 Fish Types Caught",
+		"Description" : "40 Fish Types Caught",
+		"Trigger" : func(): return fishTypesCaughtCountCheck(40),
 	},
 	"171" : {
 		"Name" : "All Fish Types Caught",
 		"Description" : "All Fish Types Caught",
-		"Trigger" : func(): return fishTypesCaughtCountCheck(60),
+		"Trigger" : func(): return fishTypesCaughtCountCheck(49),
 	},
 	"172" : {
 		"Name" : "Have 100 Woodcamps",
@@ -1251,27 +1251,27 @@ var Achievements = {
 		"Description" : "Manually click 10,000 times in one session",
 		"Trigger" : func(): return SaveData.GeneralInfo.has("TempClickCount") and SaveData.GeneralInfo["TempClickCount"] >= 100000,
 	},
-	"251" : {
+	"251" : { # Prob Change
 		"Name" : "Max LvL 1 Upgrade",
 		"Description" : "Max LvL 1 Upgrade",
 		"Trigger" : func(): return null,
 	},
-	"252" : {
+	"252" : { # Prob Change
 		"Name" : "Max LvL 10 Upgrades",
 		"Description" : "Max LvL 10 Upgrades",
 		"Trigger" : func(): return null,
 	},
-	"253" : {
+	"253" : { # Prob Change
 		"Name" : "Max LvL 100 Upgrades",
 		"Description" : "Max LvL 100 Upgrades",
 		"Trigger" : func(): return null,
 	},
-	"254" : {
+	"254" : { # Prob Change
 		"Name" : "Max LvL All Upgrades",
 		"Description" : "Max LvL All Upgrades",
 		"Trigger" : func(): return null,
 	},
-	"255" : {
+	"255" : {# First Need To Finish The Game
 		"Name" : "Click all buttons in the game",
 		"Description" : "Click all buttons in the game",
 		"Trigger" : func(): return null,
@@ -1342,19 +1342,19 @@ var Achievements = {
 		"Trigger" : func(): return SaveData.GeneralInfo.has("TempResearchDone") and SaveData.GeneralInfo["TempResearchDone"] >= 20,
 	},
 	"269" : {
-		"Name" : "Research 30 upgrades in one ascension",
-		"Description" : "Research 30 upgrades in one ascension",
-		"Trigger" : func(): return SaveData.GeneralInfo.has("TempResearchDone") and SaveData.GeneralInfo["TempResearchDone"] >= 30,
+		"Name" : "Research 40 upgrades in one ascension",
+		"Description" : "Research 40 upgrades in one ascension",
+		"Trigger" : func(): return SaveData.GeneralInfo.has("TempResearchDone") and SaveData.GeneralInfo["TempResearchDone"] >= 40,
 	},
 	"270" : {
-		"Name" : "Research 60 upgrades in one ascension",
-		"Description" : "Research 60 upgrades in one ascension",
-		"Trigger" : func(): return SaveData.GeneralInfo.has("TempResearchDone") and SaveData.GeneralInfo["TempResearchDone"] >= 60,
+		"Name" : "Research 75 upgrades in one ascension",
+		"Description" : "Research 75 upgrades in one ascension",
+		"Trigger" : func(): return SaveData.GeneralInfo.has("TempResearchDone") and SaveData.GeneralInfo["TempResearchDone"] >= 75,
 	},
 	"271" : {
-		"Name" : "Research 80 upgrades in one ascension",
-		"Description" : "Research 80 upgrades in one ascension",
-		"Trigger" : func(): return SaveData.GeneralInfo.has("TempResearchDone") and SaveData.GeneralInfo["TempResearchDone"] >= 80,
+		"Name" : "Research 130 upgrades in one ascension",
+		"Description" : "Research 130 upgrades in one ascension",
+		"Trigger" : func(): return SaveData.GeneralInfo.has("TempResearchDone") and SaveData.GeneralInfo["TempResearchDone"] >= 130,
 	},
 	"272" : {
 		"Name" : "Total Research Done 50",

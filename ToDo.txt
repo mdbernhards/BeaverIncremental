@@ -1,17 +1,15 @@
 TODO
 
 First:
-Remove Bait when Fishing
-Add Bounce Bar Speed For Fish
-Change the bad achievements (Replace some With Autoclicker, Fishing Item Shop, think of more)
 Keep Playing
 
 Later:
-Add Temp Fishing Bonuses
+Write all Fish Effects, add tooltips for them
 Balance Fishing
 Making The Game Playable from start to finish
-Implement keep first 10 research
 Dam completion and Effect application
+Dam, Fishing Achievements
+Change the bad achievements (Fishing Item Shop, think of more)
 Tooltip on resource bar for incoming / outgoing wood breakdown
 Tooltip on mouse over magic label to see how much magic each resource gives
 implement auto research
@@ -25,9 +23,11 @@ Apply ResourceValues in Values for Fishing and Dams when implemented
 10x, 100x or sell to limit for fish
 Upgrade level cap at 100 and 10
 Set Number Notation for all numbers missing it
+Hide/Show Buttons faster when loading
+Color gold prices yellow, fish biscuts orange and Magic purple???
 
 A lot Later:
-Write achievement unlock bonusses in the text log
+Write achievement unlock bonuses in the text log
 Read data from save if save info is missing
 Music, music player
 Sound effects?
@@ -122,3 +122,17 @@ Fish shop logic DONE
 Bait logic DONE
 Update Upgrades, Research and Magic Upgrades for Fishing DONE
 Apply and Fix the ResourceValues and TempValues for Fishing DONE
+Add Bounce Bar Speed For Fish DONE
+Use Bait when Fishing DONE
+Recalculate Values When Buying From Fishing Store DONE
+Fix Fishing Saving And Loading DONE
+Recalculate Values When Catching A Fish DONE
+Fix Fishing Bonuses DONE
+Reset Fishing Timers On Load DONE
+Better Bait Increases Size, Lowers Fish and Bounce Speed DONE
+Fix Load Not Loading Shop Items DONE
+Stop Bait Changing While Fishing DONE
+Add Temp Fishing Bonuses DONE
+Add Improvements That lower Chance recharge time DONE
+Connect The Banners With Temp Bonuses DONE
+Implement keeping research after Ascension DONE

@@ -17,13 +17,28 @@ func calculateAllValues():
 	TempValues = OriginalTempValues.duplicate(true)
 	
 	ApplyUpgrades()
-	ApplyResearch()
 	ApplyMagicUpgrades()
+	setUnlockedResearch()
+	ApplyResearch()
 	ApplyFishingUpgradesAndBonuses()
 	#ApplyDamUpgrades()
 	
 	CalculateRealValues()
 	CalculateRealAfterValues()
+
+func setUnlockedResearch():
+	var preUnlockedCount = TempValues["Research"]["PreUnlockedResearch"]
+	var currentlyUnlocked = 0
+	
+	if currentlyUnlocked == 0:
+		return
+	
+	for researchId in Research.Research:
+		SaveData.UnlockedResearch[researchId] = true
+		currentlyUnlocked += 1
+		
+		if currentlyUnlocked >= preUnlockedCount:
+			return
 
 func CalculateRealValues():
 	var magicMultip = log(SaveData.Magic["Count"] + 1) / log(25) * TempValues["Magic"]["EffectMultip"]
@@ -82,6 +97,7 @@ func CalculateRealValues():
 	ResourceValues["Fish"]["BonusCapacity"] = TempValues["Fish"]["BonusCapacity"]
 	ResourceValues["Fish"]["ChanceToUseBait"] = TempValues["Fish"]["ChanceToUseBait"]
 	ResourceValues["Fish"]["BaitBuyCount"] = TempValues["Fish"]["BaitBuyCount"]
+	ResourceValues["Fish"]["FishingChanceRefreshTime"] = TempValues["Fish"]["FishingChanceRefreshTime"]
 	
 	# Research
 	ResourceValues["Research"]["TimeMultip"] = TempValues["Research"]["Time"]
@@ -172,34 +188,37 @@ func ApplyFishingUpgradesAndBonuses():
 			SetFishingBonuses(fishId)
 
 func SetFishingShopUpgrades(shopItemId):
+	if !SaveData.ShopItems[Fishing.ShopItemEnum.Autoclicker1].has("Bought"):
+		SaveData.ShopItems = SaveData.OriginalShopItems.duplicate(true)
+	
 	match shopItemId:
 		Fishing.ShopItemEnum.Autoclicker1, Fishing.ShopItemEnum.Autoclicker2, Fishing.ShopItemEnum.Autoclicker3:
 			if SaveData.ShopItems[shopItemId]["Bought"]:
 				TempValues["Global"]["AutoClickers"] += 1
 		Fishing.ShopItemEnum.WpsBonus1:
 			if SaveData.ShopItems[shopItemId]["Bought"]:
-				pass
+				TempValues["Global"]["WpsMultip"] *= 1.1
 		Fishing.ShopItemEnum.WpsBonus2:
 			if SaveData.ShopItems[shopItemId]["Bought"]:
-				pass
+				TempValues["Global"]["WpsMultip"] *= 1.2
 		Fishing.ShopItemEnum.WpsBonus3:
 			if SaveData.ShopItems[shopItemId]["Bought"]:
-				pass
+				TempValues["Global"]["WpsMultip"] *= 1.3
 		Fishing.ShopItemEnum.WpcBonus1:
 			if SaveData.ShopItems[shopItemId]["Bought"]:
-				pass
+				TempValues["Global"]["BeaverMultip"] *= 1.3
 		Fishing.ShopItemEnum.WpcBonus2:
 			if SaveData.ShopItems[shopItemId]["Bought"]:
-				pass
+				TempValues["Global"]["BeaverMultip"] *= 1.6
 		Fishing.ShopItemEnum.WpcBonus3:
 			if SaveData.ShopItems[shopItemId]["Bought"]:
-				pass
+				TempValues["Global"]["BeaverMultip"] *= 1.9
 		Fishing.ShopItemEnum.WpsIncrease:
 			if SaveData.ShopItems[shopItemId]["Count"] > 0:
 				TempValues["Global"]["WpsMultip"] *= pow(1.01, SaveData.ShopItems[shopItemId]["Count"])
 		Fishing.ShopItemEnum.WpcIncrease:
 			if SaveData.ShopItems[shopItemId]["Count"] > 0:
-				TempValues["Global"]["WpcMultip"] *= pow(1.01, SaveData.ShopItems[shopItemId]["Count"])
+				TempValues["Global"]["BeaverMultip"] *= pow(1.01, SaveData.ShopItems[shopItemId]["Count"])
 		Fishing.ShopItemEnum.StorageIncrease:
 			if SaveData.ShopItems[shopItemId]["Count"] > 0:
 				TempValues["Global"]["StorageMultip"] *= pow(1.01, SaveData.ShopItems[shopItemId]["Count"])
@@ -218,16 +237,22 @@ func SetFishingShopUpgrades(shopItemId):
 		Fishing.ShopItemEnum.FishingClick:
 			if SaveData.ShopItems[shopItemId]["Bought"]:
 				TempValues["Fish"]["FishingClicks"] += 1
+		Fishing.ShopItemEnum.ChanceRefresh1:
+			if SaveData.ShopItems[shopItemId]["Bought"]:
+				TempValues["Fish"]["FishingChanceRefreshTime"] -= 60
+		Fishing.ShopItemEnum.ChanceRefresh2:
+			if SaveData.ShopItems[shopItemId]["Bought"]:
+				TempValues["Fish"]["FishingChanceRefreshTime"] -= 60
 	
 func SetFishingBonuses(fishId):
-	var upgradeMultiplier = min(SaveData.CaughtFish[fishId]["Count"], Values.ResourceValues["BonusCapacity"])
+	var upgradeMultiplier = min(SaveData.CaughtFish[fishId]["Count"], Values.ResourceValues["Fish"]["BonusCapacity"])
 	var EffectMultip = TempValues["Fish"]["FishEffectMultip"]
 	
 	match fishId:
 		Fishing.FishEnum.Boot:
 			TempValues["Global"]["WpsMultip"] *= pow(1.01, upgradeMultiplier) * EffectMultip
 		Fishing.FishEnum.Seaweed:
-			TempValues["Global"]["WpcMultip"] *= pow(1.01, upgradeMultiplier) * EffectMultip
+			TempValues["Global"]["BeaverMultip"] *= pow(1.01, upgradeMultiplier) * EffectMultip
 		Fishing.FishEnum.ColaBottle:
 			TempValues["Global"]["StorageMultip"] *= pow(1.01, upgradeMultiplier) * EffectMultip
 		Fishing.FishEnum.Catfish:
@@ -274,7 +299,7 @@ func SetFishingBonuses(fishId):
 		Fishing.FishEnum.ElectricJellyfish:
 			TempValues["Fish"]["LongerFishLifetimeMultip"] *= pow(1.03, upgradeMultiplier) * EffectMultip
 		Fishing.FishEnum.ElectricSponge:
-			TempValues["Fish"]["ChanceToUseBait"] *= pow(1.01, upgradeMultiplier) * EffectMultip
+			TempValues["Fish"]["ChanceToUseBait"] *= pow(1 - 0.01, upgradeMultiplier) * EffectMultip
 		Fishing.FishEnum.ConstructionShark:
 			TempValues["Global"]["WcPriceMultip"] *= pow(1 - 0.01, upgradeMultiplier) * EffectMultip
 		Fishing.FishEnum.SalmonLumberJack:
@@ -322,7 +347,7 @@ func SetFishingBonuses(fishId):
 			TempValues["Dragonwood"]["WpsMultip"] *= pow(1.025, upgradeMultiplier) * EffectMultip
 		Fishing.FishEnum.BlueWhale:
 			TempValues["Global"]["WpsMultip"] *= pow(1.03, upgradeMultiplier) * EffectMultip
-			TempValues["Global"]["WpcMultip"] *= pow(1.03, upgradeMultiplier) * EffectMultip
+			TempValues["Global"]["BeaverMultip"] *= pow(1.03, upgradeMultiplier) * EffectMultip
 			TempValues["Global"]["StorageMultip"] *= pow(1.03, upgradeMultiplier) * EffectMultip
 		Fishing.FishEnum.MultiplyingFish:
 			TempValues["Fish"]["MoreFishMultip"] *= pow(1.03, upgradeMultiplier) * EffectMultip
@@ -371,7 +396,7 @@ func SetMagicValue(magicNr):
 		"8" :
 			TempValues["Global"]["AchievementWpcMultip"] *= 1.6
 		"8a" :
-			TempValues["Global"]["StorageMultip"] *= 1.2
+			TempValues["Global"]["StorageMultip"] *= 1.35
 		"8b" :
 			TempValues["Global"]["AutoClickers"] += 1
 		"9" :
@@ -380,6 +405,8 @@ func SetMagicValue(magicNr):
 			TempValues["Global"]["AutoClickerTickLength"] -= 0.1
 		"10" :
 			Unlocks.Unlocks["Fishing"]["Unlocked"] = true
+		"10a" :
+			TempValues["Research"]["PreUnlockedResearch"] += 10
 		"10b" :
 			TempValues["Chestnut"]["UpgradePriceMultip"] *= 0.15
 			TempValues["Cherry"]["UpgradePriceMultip"] *= 0.15
@@ -390,6 +417,12 @@ func SetMagicValue(magicNr):
 			TempValues["Magic"]["GainMultip"] *= 1.3
 		"12" :
 			TempValues["Global"]["WcCostsMultip"] *= 0.5
+		"12b" :
+			TempValues["Oak"]["WpsMultip"] *= 3
+			TempValues["Apple"]["WpsMultip"] *= 3
+			TempValues["Maple"]["WpsMultip"] *= 3
+			TempValues["Birch"]["WpsMultip"] *= 3
+			TempValues["Spruce"]["WpsMultip"] *= 3
 		"13" :
 			TempValues["Research"]["ResearchAtATime"] += 1
 		"14" :
@@ -405,7 +438,7 @@ func SetMagicValue(magicNr):
 		"18" :
 			TempValues["Fish"]["FishSpeedMultip"] *= 0.78
 		"19" :
-			SaveData.ResearchInfo["PreUnlockedResearch"] += 10
+			TempValues["Research"]["PreUnlockedResearch"] += 10
 		"20" :
 			TempValues["Global"]["WcStorageMultip"] *= 1.15
 			TempValues["Global"]["WcPriceMultip"] *= 1.15
@@ -474,7 +507,7 @@ func SetMagicValue(magicNr):
 		"46" :
 			TempValues["Fish"]["LongerFishLifetimeMultip"] *= 1.25
 		"47" :
-			SaveData.ResearchInfo["PreUnlockedResearch"] += 20
+			TempValues["Research"]["PreUnlockedResearch"] += 20
 		"48" :
 			TempValues["Gold"]["UpgradePriceMultip"] *= 0.65
 		"49" :
@@ -718,6 +751,8 @@ func SetResearchValue(researchNr):
 			pass
 		"73" :
 			pass
+		"73b" :
+			TempValues["Fish"]["FishingChanceRefreshTime"] -= 60
 		"74" :
 			pass
 		"75" :
@@ -776,6 +811,8 @@ func SetResearchValue(researchNr):
 			pass
 		"99" :
 			Unlocks.Unlocks["Dogwood"]["Unlocked"] = true
+		"99b" :
+			TempValues["Fish"]["FishingChanceRefreshTime"] -= 60
 		"100" :
 			pass
 		"101" :
@@ -1142,7 +1179,7 @@ func SetUpgradeValue(woodType, upgradeId):
 				"9":
 					TempValues["Dam"]["ConstructionSpeedMultip"] *= pow(1.0009, upgradeLevel)
 				"10":
-					TempValues["Fish"]["ChanceToUseBait"] *= pow(1.01, upgradeLevel)
+					TempValues["Fish"]["ChanceToUseBait"] *= pow(1 - 0.01, upgradeLevel)
 		"Ebony":
 			match upgradeId:
 				"1":
@@ -1295,13 +1332,15 @@ var OriginalTempValues = {
 		"FishSizeMultip" : 1,
 		"FishingChances" : 3,
 		"FishingClicks" : 3,
-		"BonusCapacity" : 3,
+		"BonusCapacity" : 1,
 		"ChanceToUseBait" : 1,
 		"BaitBuyCount" : 3,
+		"FishingChanceRefreshTime" : 300,
 	},
 	"Research" : {
 		"Time" : 1,
 		"ResearchAtATime" : 1,
+		"PreUnlockedResearch" : 0,
 	},
 	"Gold" : {
 		"GainMultip" : 1,

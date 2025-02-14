@@ -77,7 +77,7 @@ var Magic = {
 		"Cost" : 75,
 	},
 	"8a" : {
-		"Name" : "Storage 20%",
+		"Name" : "Storage 35%",
 		"Description" : "Increase Storage by 20%",
 		"Cost" : 75,
 	},
@@ -106,6 +106,11 @@ var Magic = {
 		"Description" : "Unlock The Ability to Fish. Gain Fishing Bonuses",
 		"Cost" : 250,
 	},
+	"10a" : {
+		"Name" : "Unlock First 10 Research",
+		"Description" : "Unlock First 10 Research Items Permenantly",
+		"Cost" : 1000,
+	},
 	"10b" : {
 		"Name" : "Rare Upgrades 85% Cheaper",
 		"Description" : "All Rare Wood Type Upgrade become 85% Cheaper",
@@ -120,6 +125,11 @@ var Magic = {
 		"Name" : "50% Cheaper Woodcamps",
 		"Description" : "All Woodcamps become 50% cheaper",
 		"Cost" : 450,
+	},
+	"12b" : {
+		"Name" : "Classic WPS 3x",
+		"Description" : "All Classic Wood WPS Increased 3x",
+		"Cost" : 500,
 	},
 	"13" : {
 		"Name" : "Unlock Research Slot 2",
@@ -157,8 +167,8 @@ var Magic = {
 		"Cost" : 950,
 	},
 	"19" : {
-		"Name" : "Keep First 10 Research",
-		"Description" : "After Ascending keep first 10 Research Items",
+		"Name" : "Keep 10 More Research",
+		"Description" : "After Ascending keep 10 More Research Items",
 		"Cost" : 1000,
 	},
 	"20" : {

@@ -7,6 +7,7 @@ var ItemCountRect
 var ItemCountLabel
 var BuyButton
 var BoughtLabel
+var TimerLabel
 var EffectLabel
 
 # Unlock Nodes
@@ -74,14 +75,28 @@ func setShopItem():
 		ItemCountLabel.text = str(Count)
 		BuyButton.text = str(getPrice())
 	else:
+		ItemCountRect.visible = false
 		BuyButton.text = str(getPrice())
 		
-		if Bought:
-			BuyButton.visible = false
-			BoughtLabel.visible = true
-		else:
-			BuyButton.visible = true
+		if ShopItemType == Fishing.ShopItemEnum.WpsBonus1 or ShopItemType == Fishing.ShopItemEnum.WpsBonus2 or ShopItemType == Fishing.ShopItemEnum.WpsBonus3 \
+		or ShopItemType == Fishing.ShopItemEnum.WpcBonus1 or ShopItemType == Fishing.ShopItemEnum.WpcBonus2 or ShopItemType == Fishing.ShopItemEnum.WpcBonus3:
 			BoughtLabel.visible = false
+			
+			if Bought:
+				BuyButton.visible = false
+				TimerLabel.visible = true
+			else:
+				BuyButton.visible = true
+				TimerLabel.visible = false
+		else:
+			TimerLabel.visible = false
+			
+			if Bought:
+				BuyButton.visible = false
+				BoughtLabel.visible = true
+			else:
+				BuyButton.visible = true
+				BoughtLabel.visible = false
 
 func _on_buy_button_button_down() -> void:
 	if SaveData.FishBiscuits["Count"] >= getPrice():
@@ -93,14 +108,72 @@ func _on_buy_button_button_down() -> void:
 			SaveData.ShopItems[ShopItemType]["Count"] += 1
 		else:
 			SaveData.ShopItems[ShopItemType]["Bought"] = true
+			
+			if ShopItemType == Fishing.ShopItemEnum.WpsBonus1 or ShopItemType == Fishing.ShopItemEnum.WpsBonus2 or ShopItemType == Fishing.ShopItemEnum.WpsBonus3:
+				get_tree().get_first_node_in_group("ShopPage").setWpsTempBonus(ShopItemType)
+			elif ShopItemType == Fishing.ShopItemEnum.WpcBonus1 or ShopItemType == Fishing.ShopItemEnum.WpcBonus2 or ShopItemType == Fishing.ShopItemEnum.WpcBonus3:
+				get_tree().get_first_node_in_group("ShopPage").setWpcTempBonus(ShopItemType)
+	
 	refreshItemData()
+	CalculateValues.calculateAllValues()
 
 func _on_shop_item_refresh_timer_timeout() -> void:
 	if ShopItemType == Fishing.ShopItemEnum.NoBait:
 		queue_free()
 		return
 	
-	if Unlocked:
+	if ShopItemType == Fishing.ShopItemEnum.WpsBonus1 or ShopItemType == Fishing.ShopItemEnum.WpsBonus2 or ShopItemType == Fishing.ShopItemEnum.WpsBonus3 \
+	or ShopItemType == Fishing.ShopItemEnum.WpcBonus1 or ShopItemType == Fishing.ShopItemEnum.WpcBonus2 or ShopItemType == Fishing.ShopItemEnum.WpcBonus3:
+		match ShopItemType:
+			Fishing.ShopItemEnum.WpsBonus1:
+				if Bought:
+					TimerLabel.text = timeConvert(get_tree().get_first_node_in_group("ShopPage").WpsBonusTimer.time_left)
+					SaveData.ShopItems[ShopItemType]["TimeLeft"] = get_tree().get_first_node_in_group("ShopPage").WpsBonusTimer.time_left
+				elif SaveData.ShopItems[Fishing.ShopItemEnum.WpsBonus2]["Bought"] or SaveData.ShopItems[Fishing.ShopItemEnum.WpsBonus3]["Bought"] or SaveData.FishBiscuits["Count"] < getPrice():
+					BuyButton.disabled = true
+				else:
+					BuyButton.disabled = false
+			Fishing.ShopItemEnum.WpsBonus2:
+				if Bought:
+					TimerLabel.text = timeConvert(get_tree().get_first_node_in_group("ShopPage").WpsBonusTimer.time_left)
+					SaveData.ShopItems[ShopItemType]["TimeLeft"] = get_tree().get_first_node_in_group("ShopPage").WpsBonusTimer.time_left
+				elif SaveData.ShopItems[Fishing.ShopItemEnum.WpsBonus1]["Bought"] or SaveData.ShopItems[Fishing.ShopItemEnum.WpsBonus3]["Bought"] or SaveData.FishBiscuits["Count"] < getPrice():
+					BuyButton.disabled = true
+				else:
+					BuyButton.disabled = false
+			Fishing.ShopItemEnum.WpsBonus3:
+				if Bought:
+					TimerLabel.text = timeConvert(get_tree().get_first_node_in_group("ShopPage").WpsBonusTimer.time_left)
+					SaveData.ShopItems[ShopItemType]["TimeLeft"] = get_tree().get_first_node_in_group("ShopPage").WpsBonusTimer.time_left
+				elif SaveData.ShopItems[Fishing.ShopItemEnum.WpsBonus2]["Bought"] or SaveData.ShopItems[Fishing.ShopItemEnum.WpsBonus1]["Bought"] or SaveData.FishBiscuits["Count"] < getPrice():
+					BuyButton.disabled = true
+				else:
+					BuyButton.disabled = false
+			Fishing.ShopItemEnum.WpcBonus1:
+				if Bought:
+					TimerLabel.text = timeConvert(get_tree().get_first_node_in_group("ShopPage").WpcBonusTimer.time_left)
+					SaveData.ShopItems[ShopItemType]["TimeLeft"] = get_tree().get_first_node_in_group("ShopPage").WpcBonusTimer.time_left
+				elif SaveData.ShopItems[Fishing.ShopItemEnum.WpcBonus2]["Bought"] or SaveData.ShopItems[Fishing.ShopItemEnum.WpcBonus3]["Bought"] or SaveData.FishBiscuits["Count"] < getPrice():
+					BuyButton.disabled = true
+				else:
+					BuyButton.disabled = false
+			Fishing.ShopItemEnum.WpcBonus2:
+				if Bought:
+					TimerLabel.text = timeConvert(get_tree().get_first_node_in_group("ShopPage").WpcBonusTimer.time_left)
+					SaveData.ShopItems[ShopItemType]["TimeLeft"] = get_tree().get_first_node_in_group("ShopPage").WpcBonusTimer.time_left
+				elif SaveData.ShopItems[Fishing.ShopItemEnum.WpcBonus1]["Bought"] or SaveData.ShopItems[Fishing.ShopItemEnum.WpcBonus3]["Bought"] or SaveData.FishBiscuits["Count"] < getPrice():
+					BuyButton.disabled = true
+				else:
+					BuyButton.disabled = false
+			Fishing.ShopItemEnum.WpcBonus3:
+				if Bought:
+					TimerLabel.text = timeConvert(get_tree().get_first_node_in_group("ShopPage").WpcBonusTimer.time_left)
+					SaveData.ShopItems[ShopItemType]["TimeLeft"] = get_tree().get_first_node_in_group("ShopPage").WpcBonusTimer.time_left
+				elif SaveData.ShopItems[Fishing.ShopItemEnum.WpcBonus2]["Bought"] or SaveData.ShopItems[Fishing.ShopItemEnum.WpcBonus1]["Bought"] or SaveData.FishBiscuits["Count"] < getPrice():
+					BuyButton.disabled = true
+				else:
+					BuyButton.disabled = false
+	elif Unlocked:
 		BuyButton.text = str(getPrice())
 		if SaveData.FishBiscuits["Count"] >= getPrice():
 			BuyButton.disabled = false
@@ -111,6 +184,14 @@ func _on_shop_item_refresh_timer_timeout() -> void:
 			UnlockButton.disabled = false
 		else:
 			UnlockButton.disabled = true
+
+func timeConvert(timeInSeconds):
+	timeInSeconds = int(timeInSeconds)
+	
+	var seconds = timeInSeconds % 60
+	var minutes = (timeInSeconds / 60) % 60
+	
+	return "%02d:%02d" % [minutes, seconds]
 
 func getPrice():
 	if !HasCount or IsBait:
@@ -126,6 +207,7 @@ func setupNodePaths():
 	ItemCountLabel = $HBox/MC/BuyVBox/HBox/ItemCountRect/ItemCountLabel
 	BuyButton = $HBox/MC/BuyVBox/HBox/BuyButton
 	BoughtLabel = $HBox/MC/BuyVBox/HBox/BoughtLabel
+	TimerLabel = $HBox/MC/BuyVBox/HBox/TimerLabel
 	EffectLabel = $HBox/MC/BuyVBox/MC/EffectLabel
 
 	UnlockVBox = $HBox/MC/UnlockVBox

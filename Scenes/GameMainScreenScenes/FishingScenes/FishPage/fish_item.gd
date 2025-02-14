@@ -8,8 +8,20 @@ var CountColorRect
 var Fish: Fishing.FishObject = Fishing.Fish[Fishing.FishEnum.Boot] :
 	set(value):
 		setupNodePaths()
-		Fish = value
 		
+		Fish = value
+		NameLabel.text = Fish.FishName
+		
+		updateData()
+
+func _ready() -> void:
+	setupNodePaths()
+
+func _process(delta: float) -> void:
+	pass
+
+func updateData():
+	if Fish:
 		NameLabel.text = Fish.FishName
 		
 		var fishCount = SaveData.CaughtFish[Fish.Type]["Count"]
@@ -21,17 +33,6 @@ var Fish: Fishing.FishObject = Fishing.Fish[Fishing.FishEnum.Boot] :
 			CountColorRect.color = Color("486d53")
 		else:
 			CountColorRect.color = Color("694c26")
-
-func _ready() -> void:
-	setupNodePaths()
-
-func _process(delta: float) -> void:
-	pass
-
-func updateData():
-	if Fish:
-		NameLabel.text = Fish.FishName
-		CountLabel.text = str(SaveData.CaughtFish[Fish.Type]["Count"])
 
 func setupNodePaths():
 	NameLabel = $HBox/MC1/VBox/MC/NameLabel

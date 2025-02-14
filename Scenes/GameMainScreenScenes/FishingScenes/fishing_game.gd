@@ -1,7 +1,5 @@
 extends ColorRect
 
-var IsFishing = false
-
 var RNG = RandomNumberGenerator.new()
 
 # Game Values
@@ -38,26 +36,32 @@ var BouncingFishType
 var FishObjectScene = preload("res://Scenes/GameMainScreenScenes/FishingScenes/fish_button.tscn")
 
 func _ready() -> void:
-	pass
+	SetNodePaths()
+	updateFishingValues()
 
 func _process(delta: float) -> void:
-	SetNodePaths()
-	
 	if IsBouncing:
 		RunBounceProgressBar(delta)
 		
-	if IsFishing:
+	if Values.ResourceValues["Fish"]["IsFishing"]:
 		TimeoutBar.visible = true
 		TimeoutBar.value = remap(FishingTimeoutTimer.time_left, 0, FishingTimeoutTimer.wait_time, 0, 100)
 		TimeoutLabel.text = str(roundi(FishingTimeoutTimer.time_left))
+		
+		if FishingClicks <= 0:
+			stopFishing()
 	else:
 		TimeoutBar.visible = false
-		
-	if FishingClicks <= 0:
-		StopFishing()
 
 func RunBounceProgressBar(delta):
-	var bounceIncrement = delta * 75 * FishBounceMultip
+	var baitMultip
+	
+	if Values.ResourceValues["Fish"]["SelectedBait"] == 0:
+		baitMultip = 1
+	else:
+		baitMultip = 1 - ((Fishing.ShopItems[BaitUsed]["FishingPower"] - Fishing.FishLevel[BouncingFishType]) / 8)
+	
+	var bounceIncrement = delta * 75 * FishBounceMultip * Fishing.Fish[BouncingFishType].BounceMultip * baitMultip
 	
 	if BarUp:
 		BounceTime += bounceIncrement
@@ -74,11 +78,33 @@ func startFishing():
 	StartSpawningFish()
 	StartFishingTimeout()
 
+func stopFishing():
+	useBait()
+	Values.ResourceValues["Fish"]["IsFishing"] = false
+	IsBouncing = false
+	SaveData.GeneralInfo["CurrentFishingChances"] = max(SaveData.GeneralInfo["CurrentFishingChances"] - 1, 0)
+	SpawnTimer.stop()
+	FishingTimeoutTimer.stop()
+	deleteAllFish()
+	FishingClicks = Values.ResourceValues["Fish"]["FishingChances"]
+
+func useBait():
+	if BaitUsed == Fishing.ShopItemEnum.NoBait:
+		return
+	
+	if ChanceToUseBait > RNG.randf():
+		SaveData.ShopItems[BaitUsed]["Count"] -= 1
+	else:
+		if !SaveData.GeneralInfo.has("TimesBaitNotUsed"):
+			SaveData.GeneralInfo["TimesBaitNotUsed"] = 0
+		
+		SaveData.GeneralInfo["TimesBaitNotUsed"] += 1
+
 func StartFishingTimeout():
 	FishingTimeoutTimer.wait_time = 15 * LongerFishingTimeMultip
 	FishingTimeoutTimer.start()
 
-func updateFishingValues():
+func updateFishingValues(onLoad = false):
 	MoreFishMultip = Values.ResourceValues["Fish"]["MoreFishMultip"]
 	LongerFishingTimeMultip = Values.ResourceValues["Fish"]["LongerFishingTimeMultip"]
 	FishBounceMultip = Values.ResourceValues["Fish"]["FishBounceMultip"]
@@ -86,6 +112,13 @@ func updateFishingValues():
 	FishingClicks = Values.ResourceValues["Fish"]["FishingClicks"]
 	ChanceToUseBait = Values.ResourceValues["Fish"]["ChanceToUseBait"]
 	BaitUsed = Values.ResourceValues["Fish"]["SelectedBait"]
+	
+	if !Values.ResourceValues["Fish"].has("IsFishing"):
+		Values.ResourceValues["Fish"]["IsFishing"] = false
+	
+	if onLoad:
+		FishingChanceRefreshTimer.stop()
+		BaitUsed = Fishing.ShopItemEnum.NoBait
 
 func _on_fish_button_button_down() -> void:
 	if IsBouncing:
@@ -99,7 +132,9 @@ func checkIfFishCaught():
 		SaveData.CaughtFish[BouncingFishType]["Count"] += 1
 		SaveData.CaughtFish[BouncingFishType]["Caught"] = true
 		get_tree().get_first_node_in_group("FishPage").addAllCaughtFish()
-		StopFishing()
+		stopFishing()
+		CalculateValues.calculateAllValues()
+	
 	IsBouncing = false
 	FishingClicks -= 1
 
@@ -121,23 +156,17 @@ func SetNodePaths():
 	SelectedBaitLabel = $FishingGameLogic/SelectedBaitLabel
 
 func StartSpawningFish():
-	IsFishing = true
+	Values.ResourceValues["Fish"]["IsFishing"] = true
 	
 	var spawnTimeMultip = 1 / MoreFishMultip
-	SpawnTimer.wait_time = RNG.randf_range(2 * spawnTimeMultip, 8 * spawnTimeMultip)
+	SpawnTimer.wait_time = RNG.randf_range(0.8 * spawnTimeMultip, 6.5 * spawnTimeMultip)
 	SpawnTimer.start()
-
-func StopFishing():
-	IsFishing = false
-	IsBouncing = false
-	SaveData.GeneralInfo["CurrentFishingChances"] = max(SaveData.GeneralInfo["CurrentFishingChances"] - 1, 0)
-	SpawnTimer.stop()
-	FishingTimeoutTimer.stop()
-	deleteAllFish()
-	FishingClicks = Values.ResourceValues["Fish"]["FishingChances"]
 
 func _on_spawn_timer_timeout() -> void:
 	spawnFish()
+	
+	var spawnTimeMultip = 1 / MoreFishMultip
+	SpawnTimer.wait_time = RNG.randf_range(0.8 * spawnTimeMultip, 6.5 * spawnTimeMultip)
 	SpawnTimer.start()
 	
 func pickFishToSpawn():
@@ -189,7 +218,7 @@ func deleteAllFish():
 		fish.queue_free()
 
 func _on_fishing_timeout_timer_timeout() -> void:
-	StopFishing()
+	stopFishing()
 
 func _on_refresh_timer_timeout() -> void:
 	if !SaveData.GeneralInfo.has("CurrentFishingChances"):
@@ -203,12 +232,12 @@ func _on_refresh_timer_timeout() -> void:
 	else:
 		BounceTexture.visible = false
 	
-	if IsFishing:
+	if Values.ResourceValues["Fish"]["IsFishing"]:
 		ClicksLeftLabel.visible = true
 	else:
 		ClicksLeftLabel.visible = false
 	
-	if SaveData.GeneralInfo["CurrentFishingChances"] <= 0 or IsFishing and !IsBouncing:
+	if SaveData.GeneralInfo["CurrentFishingChances"] <= 0 or Values.ResourceValues["Fish"]["IsFishing"] and !IsBouncing:
 		FishButton.disabled = true
 	else:
 		FishButton.disabled = false
@@ -216,7 +245,8 @@ func _on_refresh_timer_timeout() -> void:
 	if FishingChanceRefreshTimer.is_stopped():
 		ChanceRefreshLabel.visible = false
 		
-		if SaveData.GeneralInfo["CurrentFishingChances"] < FishingChances:
+		if FishingChances and SaveData.GeneralInfo["CurrentFishingChances"] < FishingChances:
+			FishingChanceRefreshTimer.wait_time = Values.ResourceValues["Fish"]["FishingChanceRefreshTime"]
 			FishingChanceRefreshTimer.start()
 	else:
 		var timeLeft = int(FishingChanceRefreshTimer.time_left)

@@ -1,19 +1,7 @@
-[gd_scene load_steps=9 format=3 uid="uid://bijsbcpjdhp2w"]
+[gd_scene load_steps=3 format=3 uid="uid://bijsbcpjdhp2w"]
 
 [ext_resource type="Script" path="res://Scenes/GameMainScreenScenes/FishingScenes/bait_selection.gd" id="1_pgv6i"]
 [ext_resource type="PackedScene" uid="uid://cvsnnxwfl5str" path="res://Scenes/GameMainScreenScenes/FishingScenes/FishPage/bait_button.tscn" id="1_t2b4x"]
-
-[sub_resource type="ButtonGroup" id="ButtonGroup_pcnp2"]
-
-[sub_resource type="ButtonGroup" id="ButtonGroup_lwonw"]
-
-[sub_resource type="ButtonGroup" id="ButtonGroup_6s887"]
-
-[sub_resource type="ButtonGroup" id="ButtonGroup_lj7ld"]
-
-[sub_resource type="ButtonGroup" id="ButtonGroup_6htwu"]
-
-[sub_resource type="ButtonGroup" id="ButtonGroup_y7xvw"]
 
 [node name="BaitSelection" type="MarginContainer"]
 custom_minimum_size = Vector2(170, 480)
@@ -59,34 +47,27 @@ theme_override_constants/margin_right = 5
 layout_mode = 2
 theme_override_constants/separation = 17
 
-[node name="NoBaitButton" parent="VBox/BaitButtons/BaitSelectionVBox" instance=ExtResource("1_t2b4x")]
+[node name="BaitButton" parent="VBox/BaitButtons/BaitSelectionVBox" instance=ExtResource("1_t2b4x")]
 layout_mode = 2
-button_pressed = true
-button_group = SubResource("ButtonGroup_pcnp2")
 
-[node name="CricketBaitButton" parent="VBox/BaitButtons/BaitSelectionVBox" instance=ExtResource("1_t2b4x")]
+[node name="BaitButton2" parent="VBox/BaitButtons/BaitSelectionVBox" instance=ExtResource("1_t2b4x")]
 layout_mode = 2
-button_group = SubResource("ButtonGroup_lwonw")
 BaitType = 1
 
-[node name="WormBaitButton" parent="VBox/BaitButtons/BaitSelectionVBox" instance=ExtResource("1_t2b4x")]
+[node name="BaitButton3" parent="VBox/BaitButtons/BaitSelectionVBox" instance=ExtResource("1_t2b4x")]
 layout_mode = 2
-button_group = SubResource("ButtonGroup_6s887")
 BaitType = 2
 
-[node name="JigBaitButton" parent="VBox/BaitButtons/BaitSelectionVBox" instance=ExtResource("1_t2b4x")]
+[node name="BaitButton4" parent="VBox/BaitButtons/BaitSelectionVBox" instance=ExtResource("1_t2b4x")]
 layout_mode = 2
-button_group = SubResource("ButtonGroup_lj7ld")
 BaitType = 3
 
-[node name="LeechBaitButton" parent="VBox/BaitButtons/BaitSelectionVBox" instance=ExtResource("1_t2b4x")]
+[node name="BaitButton5" parent="VBox/BaitButtons/BaitSelectionVBox" instance=ExtResource("1_t2b4x")]
 layout_mode = 2
-button_group = SubResource("ButtonGroup_6htwu")
 BaitType = 4
 
-[node name="WyvernBaitButton" parent="VBox/BaitButtons/BaitSelectionVBox" instance=ExtResource("1_t2b4x")]
+[node name="BaitButton6" parent="VBox/BaitButtons/BaitSelectionVBox" instance=ExtResource("1_t2b4x")]
 layout_mode = 2
-button_group = SubResource("ButtonGroup_y7xvw")
 BaitType = 5
 
 [node name="BaitSelectionRefreshTimer" type="Timer" parent="."]

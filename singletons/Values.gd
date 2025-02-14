@@ -1,7 +1,7 @@
 extends Node
 
 var CurrentSaveName
-var DebugMode = true
+var DebugMode = false
 
 var WoodTypes = ["Oak", "Apple", "Maple", "Birch", "Spruce",
 				 "Chestnut", "Cherry", "Ash", "Cedar", "Mahogany",
@@ -23,6 +23,8 @@ var ResourceValues = {
 		"ChanceToUseBait" : 1,
 		"BaitBuyCount" : 3,
 		"SelectedBait" : Fishing.ShopItemEnum.NoBait,
+		"IsFishing" : false,
+		"FishingChanceRefreshTime" : 300,
 	},
 	"Research" : {
 		"TimeMultip" : 1,

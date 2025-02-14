@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://45ggwxc6rcjg" path="res://Scenes/GameMainScreenScenes/FishingScenes/fish_page.tscn" id="3_o2ikf"]
 [ext_resource type="PackedScene" uid="uid://chithml6pwn6b" path="res://Scenes/GameMainScreenScenes/FishingScenes/shop_page.tscn" id="5_dqra7"]
 
-[node name="FishingScreen" type="Control"]
+[node name="FishingScreen" type="Control" groups=["FishingScreen"]]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0

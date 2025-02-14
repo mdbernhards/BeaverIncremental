@@ -109,6 +109,10 @@ func recalculateValues():
 	get_tree().get_first_node_in_group("MagicSection").setHistoryItems()
 	get_tree().get_first_node_in_group("DamSection").setDamConstruction()
 	get_tree().get_first_node_in_group("AchievementScreen").resetAchievements()
+	get_tree().get_first_node_in_group("FishingGame").updateFishingValues(true)
+	get_tree().get_first_node_in_group("FishPage").addAllCaughtFish()
+	get_tree().get_first_node_in_group("ShopPage").setShopItems()
+	get_tree().get_first_node_in_group("FishingScreen").changePage(0)
 
 var Gold = {
 	"Count" : 0,
@@ -859,7 +863,6 @@ var UnlockedResearch = {
 var ResearchInfo = {
 	"CurrentResearch" : {},
 	"Queue" : [],
-	"PreUnlockedResearch" : 0,
 }
 
 var DamData = {
@@ -1206,21 +1209,27 @@ var ShopItems = {
 	},
 	Fishing.ShopItemEnum.WpsBonus1 : {
 		"Bought" : false,
+		"TimeLeft" : 0,
 	},
 	Fishing.ShopItemEnum.WpsBonus2 : {
 		"Bought" : false,
+		"TimeLeft" : 0,
 	},
 	Fishing.ShopItemEnum.WpsBonus3 : {
 		"Bought" : false,
+		"TimeLeft" : 0,
 	},
 	Fishing.ShopItemEnum.WpcBonus1 : {
 		"Bought" : false,
+		"TimeLeft" : 0,
 	},
 	Fishing.ShopItemEnum.WpcBonus2 : {
 		"Bought" : false,
+		"TimeLeft" : 0,
 	},
 	Fishing.ShopItemEnum.WpcBonus3 : {
 		"Bought" : false,
+		"TimeLeft" : 0,
 	},
 	Fishing.ShopItemEnum.WpsIncrease : {
 		"Count" : 0,
@@ -1244,6 +1253,12 @@ var ShopItems = {
 		"Count" : 0,
 	},
 	Fishing.ShopItemEnum.FishingClick : {
+		"Bought" : false,
+	},
+	Fishing.ShopItemEnum.ChanceRefresh1 : {
+		"Bought" : false,
+	},
+	Fishing.ShopItemEnum.ChanceRefresh2 : {
 		"Bought" : false,
 	},
 }
@@ -1316,7 +1331,8 @@ var GeneralInfo = {
 	"TotalBotsBought" : 0,
 	"TotalFishedCount" : 0,
 	"TempFishedCount" : 0,
-	"CurrentFishingChances" : 3
+	"CurrentFishingChances" : 3,
+	"TimesBaitNotUsed" : 0
 }
 
 var SavesInfo = {

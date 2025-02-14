@@ -61,6 +61,9 @@ TextLogSection=""
 AchievementScreen=""
 UpgradePage=""
 ShopPage=""
+FishingGame=""
+FishingScreen=""
+BaitButton=""
 
 [gui]
 

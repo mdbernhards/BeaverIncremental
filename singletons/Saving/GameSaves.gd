@@ -195,7 +195,9 @@ func loadGame(saveName):
 	var jsonShopItems = saveFile.get_line()
 	jsonShopItems = parseJson(jsonShopItems)
 	if !jsonShopItems.has(0):
-		SaveData.ShopItems = jsonShopItems
+		SaveData.ShopItems = jsonShopItems.duplicate(true)
+	else:
+		SaveData.ShopItems = SaveData.OriginalShopItems.duplicate(true)
 	
 	var jsonMagic = saveFile.get_line()
 	SaveData.Magic = parseJson(jsonMagic)

@@ -69,7 +69,16 @@ text = "1000 Biscuts"
 [node name="BoughtLabel" type="Label" parent="HBox/MC/BuyVBox/HBox"]
 visible = false
 layout_mode = 2
+size_flags_horizontal = 10
+theme_override_font_sizes/font_size = 14
 text = "Bought"
+
+[node name="TimerLabel" type="Label" parent="HBox/MC/BuyVBox/HBox"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 10
+theme_override_font_sizes/font_size = 14
+text = "22:11"
 
 [node name="MC" type="MarginContainer" parent="HBox/MC/BuyVBox"]
 layout_mode = 2

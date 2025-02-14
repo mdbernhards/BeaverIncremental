@@ -19,7 +19,7 @@ func _on_bait_button_refresh_timer_timeout() -> void:
 		visible = true
 		text = Fishing.ShopItems[BaitType]["Name"] + " (" + str(SaveData.ShopItems[BaitType]["Count"]) + ")"
 		
-		if SaveData.ShopItems[BaitType]["Count"] > 0:
+		if SaveData.ShopItems[BaitType]["Count"] > 0 and !Values.ResourceValues["Fish"]["IsFishing"]:
 			disabled = false
 		else:
 			disabled = true
@@ -28,8 +28,11 @@ func _on_bait_button_refresh_timer_timeout() -> void:
 	
 	if BaitType == Fishing.ShopItemEnum.NoBait:
 		if SaveData.ShopItems[Fishing.ShopItemEnum.Worm]["Unlocked"]:
+			visible = true
+		else:
+			visible = false
+		
+		if !Values.ResourceValues["Fish"]["IsFishing"]:
 			disabled = false
-			text = "No Bait"
 		else:
 			disabled = true
-			text = "?? ????"

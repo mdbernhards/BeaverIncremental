@@ -44,6 +44,46 @@ theme_override_constants/margin_bottom = 25
 layout_mode = 2
 color = Color(0.309804, 0.443137, 0.4, 1)
 
+[node name="WpcBonusRect" type="ColorRect" parent="BarsMC/Background/ColorRect"]
+layout_mode = 2
+offset_left = 680.0
+offset_top = 7.0
+offset_right = 839.0
+offset_bottom = 43.0
+color = Color(0.2735, 0.422576, 0.477167, 1)
+
+[node name="WpcBonusLabel" type="Label" parent="BarsMC/Background/ColorRect/WpcBonusRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 17
+text = "WPC UP 10% 19:33"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="WpsBonusRect" type="ColorRect" parent="BarsMC/Background/ColorRect"]
+layout_mode = 2
+offset_left = 846.0
+offset_top = 7.0
+offset_right = 1005.0
+offset_bottom = 43.0
+color = Color(0.140087, 0.373178, 0.265163, 1)
+
+[node name="WpsBonusLabel" type="Label" parent="BarsMC/Background/ColorRect/WpsBonusRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 17
+text = "WPS UP 10% 19:33"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="MC" type="MarginContainer" parent="BarsMC"]
 layout_mode = 2
 theme_override_constants/margin_left = 25

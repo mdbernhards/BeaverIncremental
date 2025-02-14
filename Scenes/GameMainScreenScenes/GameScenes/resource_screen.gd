@@ -20,6 +20,12 @@ var LockedGoldRect
 var MagicRect
 var LockedMagicRect
 
+# Temp Bonus Nodes
+var WpcBonusRect
+var WpcBonusLabel
+var WpsBonusRect
+var WpsBonusLabel
+
 func _ready():
 	setNodePaths()
 	ResourcePage.changePage(1)
@@ -65,6 +71,47 @@ func setNodePaths():
 	
 	MagicRect = $BarsMC/MC/TitleVBox/MC/LabelHBox/MagicMC/MagicRect
 	LockedMagicRect = $BarsMC/MC/TitleVBox/MC/LabelHBox/MagicMC/LockedMagicRect
+	
+	WpcBonusRect = $BarsMC/Background/ColorRect/WpcBonusRect
+	WpcBonusLabel = $BarsMC/Background/ColorRect/WpcBonusRect/WpcBonusLabel
+	WpsBonusRect = $BarsMC/Background/ColorRect/WpsBonusRect
+	WpsBonusLabel = $BarsMC/Background/ColorRect/WpsBonusRect/WpsBonusLabel
+
+func setTempBanners():
+	var shopItems = SaveData.ShopItems
+	var itemEnum = Fishing.ShopItemEnum
+	
+	if shopItems[itemEnum.WpsBonus1]["Bought"]:
+		WpsBonusRect.visible = true
+		WpsBonusLabel.text = "WPS UP 10% " + timeConvert(shopItems[itemEnum.WpsBonus1]["TimeLeft"])
+	elif shopItems[itemEnum.WpsBonus2]["Bought"]:
+		WpsBonusRect.visible = true
+		WpsBonusLabel.text = "WPS UP 20% " + timeConvert(shopItems[itemEnum.WpsBonus2]["TimeLeft"])
+	elif shopItems[itemEnum.WpsBonus3]["Bought"]:
+		WpsBonusRect.visible = true
+		WpsBonusLabel.text = "WPS UP 30% " + timeConvert(shopItems[itemEnum.WpsBonus3]["TimeLeft"])
+	else:
+		WpsBonusRect.visible = false
+	
+	if shopItems[itemEnum.WpcBonus1]["Bought"]:
+		WpcBonusRect.visible = true
+		WpcBonusLabel.text = "WPC UP 30% " + timeConvert(shopItems[itemEnum.WpcBonus1]["TimeLeft"])
+	elif shopItems[itemEnum.WpcBonus2]["Bought"]:
+		WpcBonusRect.visible = true
+		WpcBonusLabel.text = "WPC UP 60% " + timeConvert(shopItems[itemEnum.WpcBonus2]["TimeLeft"])
+	elif shopItems[itemEnum.WpcBonus3]["Bought"]:
+		WpcBonusRect.visible = true
+		WpcBonusLabel.text = "WPC UP 90% " + timeConvert(shopItems[itemEnum.WpcBonus3]["TimeLeft"])
+	else:
+		WpcBonusRect.visible = false
+
+func timeConvert(timeInSeconds):
+	timeInSeconds = int(timeInSeconds)
+	
+	var seconds = timeInSeconds % 60
+	var minutes = (timeInSeconds / 60) % 60
+	
+	return "%02d:%02d" % [minutes, seconds]
 
 func _on_resource_screen_timer_timeout() -> void:
 	setGoldAndMagicLabels()
@@ -117,3 +164,5 @@ func _on_resource_screen_timer_timeout() -> void:
 	else:
 		MagicRect.visible = false
 		LockedMagicRect.visible = true
+	
+	setTempBanners()

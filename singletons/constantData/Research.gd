@@ -766,6 +766,15 @@ var Research = {
 		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 100,
 		"Unlocked" : func(): return true,
 	},
+	"73b" :  {
+		"Name" : "Fishing Chance Refresh -1 min",
+		"Description" : "Lowers Fishing Chance Refresh Time By 1 minute",
+		"Time" : 4620, # Seconds
+		"OakCost" : 0, "AppleCost" : 0, "MapleCost" : 0, "BirchCost" : 0, "SpruceCost" : 0,
+		"ChestnutCost" : 0, "CherryCost" : 0, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 0,
+		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 100,
+		"Unlocked" : func(): return Unlocks.Unlocks["Fishing"]["Unlocked"],
+	},
 	"74" :  {
 		"Name" : "Each Achievement Gives +0.55% Storage",
 		"Description" : "Each Achievement Gives +0.55% Storage",
@@ -826,7 +835,7 @@ var Research = {
 		"Time" : 4920, # Seconds
 		"OakCost" : 0, "AppleCost" : 0, "MapleCost" : 0, "BirchCost" : 0, "SpruceCost" : 0,
 		"ChestnutCost" : 0, "CherryCost" : 0, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 0,
-		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 0,
+		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 100,
 		"Unlocked" : func(): return SaveData.GeneralInfo["AutoClickers"] > 0,
 	},
 	"80" :  {
@@ -853,7 +862,7 @@ var Research = {
 		"Time" : 5140, # Seconds
 		"OakCost" : 0, "AppleCost" : 0, "MapleCost" : 0, "BirchCost" : 0, "SpruceCost" : 0,
 		"ChestnutCost" : 0, "CherryCost" : 0, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 0,
-		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 0,
+		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 100,
 		"Unlocked" : func(): return Unlocks.Unlocks["Fishing"]["Unlocked"],
 	},
 	"82" :  {
@@ -970,7 +979,7 @@ var Research = {
 		"Time" : 5820, # Seconds
 		"OakCost" : 0, "AppleCost" : 0, "MapleCost" : 0, "BirchCost" : 0, "SpruceCost" : 0,
 		"ChestnutCost" : 0, "CherryCost" : 0, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 0,
-		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 0,
+		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 100,
 		"Unlocked" : func(): return Unlocks.Unlocks["Fishing"]["Unlocked"],
 	},
 	"94" :  {
@@ -1027,6 +1036,15 @@ var Research = {
 		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 100,
 		"Unlocked" : func(): return true,
 	},
+	"99b" :  {
+		"Name" : "Fishing Chance Refresh -1 min",
+		"Description" : "Lowers Fishing Chance Refresh Time By 1 minute",
+		"Time" : 6100, # Seconds
+		"OakCost" : 0, "AppleCost" : 0, "MapleCost" : 0, "BirchCost" : 0, "SpruceCost" : 0,
+		"ChestnutCost" : 0, "CherryCost" : 0, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 0,
+		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 100,
+		"Unlocked" : func(): return Unlocks.Unlocks["Fishing"]["Unlocked"],
+	},
 	"100" :  {
 		"Name" : "Gain +1 Beaver Per 20 Achievements",
 		"Description" : "Gain +1 Beaver Per 20 Achievements",
@@ -1069,7 +1087,7 @@ var Research = {
 		"Time" : 6630, # Seconds
 		"OakCost" : 0, "AppleCost" : 0, "MapleCost" : 0, "BirchCost" : 0, "SpruceCost" : 0,
 		"ChestnutCost" : 0, "CherryCost" : 0, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 0,
-		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 0,
+		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 100,
 		"Unlocked" : func(): return SaveData.GeneralInfo["AutoClickers"] > 0,
 	},
 	"104" :  {
@@ -1096,7 +1114,7 @@ var Research = {
 		"Time" : 6920, # Seconds
 		"OakCost" : 0, "AppleCost" : 0, "MapleCost" : 0, "BirchCost" : 0, "SpruceCost" : 0,
 		"ChestnutCost" : 0, "CherryCost" : 0, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 0,
-		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 0,
+		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 100,
 		"Unlocked" : func(): return Unlocks.Unlocks["Fishing"]["Unlocked"],
 	},
 	"106" :  {
@@ -1213,7 +1231,7 @@ var Research = {
 		"Time" : 7700, # Seconds
 		"OakCost" : 0, "AppleCost" : 0, "MapleCost" : 0, "BirchCost" : 0, "SpruceCost" : 0,
 		"ChestnutCost" : 0, "CherryCost" : 0, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 0,
-		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 0,
+		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 100,
 		"Unlocked" : func(): return Unlocks.Unlocks["Fishing"]["Unlocked"],
 	},
 	"118" :  {
@@ -1285,7 +1303,7 @@ var Research = {
 		"Time" : 8300, # Seconds
 		"OakCost" : 0, "AppleCost" : 0, "MapleCost" : 0, "BirchCost" : 0, "SpruceCost" : 0,
 		"ChestnutCost" : 0, "CherryCost" : 0, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 0,
-		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 0,
+		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 100,
 		"Unlocked" : func(): return SaveData.GeneralInfo["AutoClickers"] > 0,
 	},
 	"125" :  {
@@ -1339,7 +1357,7 @@ var Research = {
 		"Time" : 8700, # Seconds
 		"OakCost" : 0, "AppleCost" : 0, "MapleCost" : 0, "BirchCost" : 0, "SpruceCost" : 0,
 		"ChestnutCost" : 0, "CherryCost" : 0, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 0,
-		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 0,
+		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 100,
 		"Unlocked" : func(): return Unlocks.Unlocks["Fishing"]["Unlocked"],
 	},
 	"130" :  {

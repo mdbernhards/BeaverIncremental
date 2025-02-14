@@ -1,7 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://chithml6pwn6b"]
+[gd_scene load_steps=2 format=3 uid="uid://chithml6pwn6b"]
 
 [ext_resource type="Script" path="res://Scenes/GameMainScreenScenes/FishingScenes/shop_page.gd" id="1_klp5r"]
-[ext_resource type="PackedScene" uid="uid://bnaeq0jnl2qm8" path="res://Scenes/GameMainScreenScenes/FishingScenes/ShopPage/shop_item.tscn" id="2_e5bxe"]
 
 [node name="ShopPage" type="VBoxContainer" groups=["ShopPage"]]
 custom_minimum_size = Vector2(657, 926)
@@ -54,35 +53,16 @@ theme_override_constants/h_separation = 12
 theme_override_constants/v_separation = 12
 columns = 2
 
-[node name="BaitItem" parent="MC2/Scroll/MC/ShopItemVBox" instance=ExtResource("2_e5bxe")]
-layout_mode = 2
+[node name="WpsBonusTimer" type="Timer" parent="."]
+one_shot = true
 
-[node name="BaitItem2" parent="MC2/Scroll/MC/ShopItemVBox" instance=ExtResource("2_e5bxe")]
-layout_mode = 2
+[node name="WpcBonusTimer" type="Timer" parent="."]
+one_shot = true
 
-[node name="BaitItem3" parent="MC2/Scroll/MC/ShopItemVBox" instance=ExtResource("2_e5bxe")]
-layout_mode = 2
+[node name="ShopPageRefreshTimer" type="Timer" parent="."]
+wait_time = 0.484
+autostart = true
 
-[node name="BaitItem4" parent="MC2/Scroll/MC/ShopItemVBox" instance=ExtResource("2_e5bxe")]
-layout_mode = 2
-
-[node name="BaitItem5" parent="MC2/Scroll/MC/ShopItemVBox" instance=ExtResource("2_e5bxe")]
-layout_mode = 2
-
-[node name="BaitItem6" parent="MC2/Scroll/MC/ShopItemVBox" instance=ExtResource("2_e5bxe")]
-layout_mode = 2
-
-[node name="BaitItem7" parent="MC2/Scroll/MC/ShopItemVBox" instance=ExtResource("2_e5bxe")]
-layout_mode = 2
-
-[node name="BaitItem8" parent="MC2/Scroll/MC/ShopItemVBox" instance=ExtResource("2_e5bxe")]
-layout_mode = 2
-
-[node name="BaitItem9" parent="MC2/Scroll/MC/ShopItemVBox" instance=ExtResource("2_e5bxe")]
-layout_mode = 2
-
-[node name="BaitItem10" parent="MC2/Scroll/MC/ShopItemVBox" instance=ExtResource("2_e5bxe")]
-layout_mode = 2
-
-[node name="BaitItem11" parent="MC2/Scroll/MC/ShopItemVBox" instance=ExtResource("2_e5bxe")]
-layout_mode = 2
+[connection signal="timeout" from="WpsBonusTimer" to="." method="_on_wps_bonus_timer_timeout"]
+[connection signal="timeout" from="WpcBonusTimer" to="." method="_on_wpc_bonus_timer_timeout"]
+[connection signal="timeout" from="ShopPageRefreshTimer" to="." method="_on_shop_page_refresh_timer_timeout"]
