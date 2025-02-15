@@ -22,12 +22,12 @@ func checkIfCanAfford():
 	
 	return false
 
-func setupUpgradeTabForWoodType(type):
+func setupUpgradeTabForWoodType(type, cantAffordCheck = false):
 	ResourceType = type
 	UpgradeTabTitle.text = ResourceType
-	setupUpgrades()
+	setupUpgrades(cantAffordCheck)
 
-func setupUpgrades():
+func setupUpgrades(cantAffordCheck = false):
 	var upgradeItems = ItemGrid.get_children()
 	
 	for nr in 10:
@@ -35,7 +35,9 @@ func setupUpgrades():
 	
 	for item in upgradeItems:
 		item.changeUpgrade(ResourceType)
-		item._on_upgrade_item_timer_timeout()
+		
+		if !cantAffordCheck:
+			item._on_upgrade_item_timer_timeout()
 
 func setNodePaths():
 	UpgradeTabTitle = $VBox/TopHBox/TitleMC/TitleLabel

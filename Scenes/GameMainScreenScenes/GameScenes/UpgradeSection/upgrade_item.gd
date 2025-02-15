@@ -150,17 +150,17 @@ func _on_upgrade_item_timer_timeout() -> void:
 	
 	if (Unlocks.Unlocks[ResourceType][str(UpgradeNumber)] and Upgrades.Upgrades[ResourceType][str(UpgradeNumber)]["Unlocked"].call()) or Values.DebugMode:
 		visible = true
+	
+		if checkIfMagicLocked():
+			MagicLockVBox.visible = true
+			UpgradeVBox.visible = false
+		else:
+			MagicLockVBox.visible = false
+			UpgradeVBox.visible = true
 	else:
 		visible = false
 		if CurrentPrice * 0.4 < SaveData.Resources[ResourceType]["Count"]:
 			Unlocks.Unlocks[ResourceType][str(UpgradeNumber)] = true
-	
-	if checkIfMagicLocked():
-		UpgradeVBox.visible = false
-		MagicLockVBox.visible = true
-	else:
-		UpgradeVBox.visible = true
-		MagicLockVBox.visible = false
 	
 	if Unlocks.Unlocks[ResourceType]["ButtonBuyMax"] or Values.DebugMode:
 		BuyMaxButton.visible = true

@@ -55,7 +55,7 @@ func updateResearchVisability():
 
 func setCancelButtonText():
 	if IsMouseOnCancel:
-		CancelButton.text = "Remove?"
+		CancelButton.text = "Refund 75%?"
 	else:
 		var spotInQueue = 1
 		var buttonText

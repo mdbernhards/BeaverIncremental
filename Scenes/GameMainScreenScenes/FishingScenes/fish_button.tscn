@@ -2,14 +2,18 @@
 
 [ext_resource type="Script" path="res://Scenes/GameMainScreenScenes/FishingScenes/FishButton.gd" id="1_ipjx1"]
 
-[node name="FishButton" type="Button" groups=["FishObject"]]
-offset_left = 678.0
-offset_top = 416.0
-offset_right = 734.0
-offset_bottom = 459.0
-theme_override_font_sizes/font_size = 25
+[node name="Fish" type="Node2D" groups=["FishObject"]]
+process_mode = 3
+process_priority = 1
+process_physics_priority = 1
+physics_interpolation_mode = 1
 script = ExtResource("1_ipjx1")
-FishType = 3
+
+[node name="FishButton" type="Button" parent="."]
+offset_right = 56.0
+offset_bottom = 43.0
+theme_override_font_sizes/font_size = 25
+text = "hello?"
 
 [node name="RefreshTimer" type="Timer" parent="."]
 autostart = true
@@ -17,6 +21,6 @@ autostart = true
 [node name="DespawnTimer" type="Timer" parent="."]
 wait_time = 10.0
 
-[connection signal="button_down" from="." to="." method="_on_button_down"]
+[connection signal="button_down" from="FishButton" to="." method="_on_fish_button_button_down"]
 [connection signal="timeout" from="RefreshTimer" to="." method="_on_refresh_timer_timeout"]
 [connection signal="timeout" from="DespawnTimer" to="." method="_on_despawn_timer_timeout"]

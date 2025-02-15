@@ -98,6 +98,8 @@ func CalculateRealValues():
 	ResourceValues["Fish"]["ChanceToUseBait"] = TempValues["Fish"]["ChanceToUseBait"]
 	ResourceValues["Fish"]["BaitBuyCount"] = TempValues["Fish"]["BaitBuyCount"]
 	ResourceValues["Fish"]["FishingChanceRefreshTime"] = TempValues["Fish"]["FishingChanceRefreshTime"]
+	ResourceValues["Fish"]["FishingTimeout"] = TempValues["Fish"]["FishingTimeout"]
+	ResourceValues["Fish"]["ChanceToRefundChance"] = TempValues["Fish"]["ChanceToRefundChance"]
 	
 	# Research
 	ResourceValues["Research"]["TimeMultip"] = TempValues["Research"]["Time"]
@@ -191,6 +193,10 @@ func SetFishingShopUpgrades(shopItemId):
 	if !SaveData.ShopItems[Fishing.ShopItemEnum.Autoclicker1].has("Bought"):
 		SaveData.ShopItems = SaveData.OriginalShopItems.duplicate(true)
 	
+	if shopItemId == Fishing.ShopItemEnum.FishingChance3 or shopItemId == Fishing.ShopItemEnum.FishingClick1 or shopItemId == Fishing.ShopItemEnum.FishingClick2 or shopItemId == Fishing.ShopItemEnum.FishingTime2 or shopItemId == Fishing.ShopItemEnum.RefundChance1 or shopItemId == Fishing.ShopItemEnum.RefundChance2:
+		if !SaveData.ShopItems[shopItemId].has("Bought"):
+			SaveData.ShopItems[shopItemId]["Bought"] = false
+	
 	match shopItemId:
 		Fishing.ShopItemEnum.Autoclicker1, Fishing.ShopItemEnum.Autoclicker2, Fishing.ShopItemEnum.Autoclicker3:
 			if SaveData.ShopItems[shopItemId]["Bought"]:
@@ -231,10 +237,16 @@ func SetFishingShopUpgrades(shopItemId):
 		Fishing.ShopItemEnum.FishingChance2:
 			if SaveData.ShopItems[shopItemId]["Bought"]:
 				TempValues["Fish"]["FishingChances"] += 1
+		Fishing.ShopItemEnum.FishingChance3:
+			if SaveData.ShopItems[shopItemId]["Bought"]:
+				TempValues["Fish"]["FishingChances"] += 1
 		Fishing.ShopItemEnum.ChanceToUseBait:
 			if SaveData.ShopItems[shopItemId]["Count"] > 0:
 				TempValues["Fish"]["ChanceToUseBait"] *= pow(1 - 0.01, SaveData.ShopItems[shopItemId]["Count"])
-		Fishing.ShopItemEnum.FishingClick:
+		Fishing.ShopItemEnum.FishingClick1:
+			if SaveData.ShopItems[shopItemId]["Bought"]:
+				TempValues["Fish"]["FishingClicks"] += 1
+		Fishing.ShopItemEnum.FishingClick2:
 			if SaveData.ShopItems[shopItemId]["Bought"]:
 				TempValues["Fish"]["FishingClicks"] += 1
 		Fishing.ShopItemEnum.ChanceRefresh1:
@@ -243,6 +255,18 @@ func SetFishingShopUpgrades(shopItemId):
 		Fishing.ShopItemEnum.ChanceRefresh2:
 			if SaveData.ShopItems[shopItemId]["Bought"]:
 				TempValues["Fish"]["FishingChanceRefreshTime"] -= 60
+		Fishing.ShopItemEnum.FishingTime1:
+			if SaveData.ShopItems[shopItemId]["Bought"]:
+				TempValues["Fish"]["FishingTimeout"] += 5
+		Fishing.ShopItemEnum.FishingTime2:
+			if SaveData.ShopItems[shopItemId]["Bought"]:
+				TempValues["Fish"]["FishingTimeout"] += 5
+		Fishing.ShopItemEnum.FishingChance1:
+			if SaveData.ShopItems[shopItemId]["Bought"]:
+				TempValues["Fish"]["ChanceToRefundChance"] += 0.15
+		Fishing.ShopItemEnum.FishingChance2:
+			if SaveData.ShopItems[shopItemId]["Bought"]:
+				TempValues["Fish"]["ChanceToRefundChance"] += 0.15
 	
 func SetFishingBonuses(fishId):
 	var upgradeMultiplier = min(SaveData.CaughtFish[fishId]["Count"], Values.ResourceValues["Fish"]["BonusCapacity"])
@@ -415,6 +439,8 @@ func SetMagicValue(magicNr):
 			TempValues["Mahogany"]["UpgradePriceMultip"] *= 0.15
 		"11" :
 			TempValues["Magic"]["GainMultip"] *= 1.3
+		"11b" :
+			TempValues["Fish"]["ChanceToRefundChance"] += 0.2
 		"12" :
 			TempValues["Global"]["WcCostsMultip"] *= 0.5
 		"12b" :
@@ -1336,6 +1362,8 @@ var OriginalTempValues = {
 		"ChanceToUseBait" : 1,
 		"BaitBuyCount" : 3,
 		"FishingChanceRefreshTime" : 300,
+		"FishingTimeout" : 15,
+		"ChanceToRefundChance" : 0,
 	},
 	"Research" : {
 		"Time" : 1,

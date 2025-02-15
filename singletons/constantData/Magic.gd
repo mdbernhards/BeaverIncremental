@@ -121,6 +121,11 @@ var Magic = {
 		"Description" : "Gain 30% More Magic then before",
 		"Cost" : 375,
 	},
+	"11b" : {
+		"Name" : "+20% Refund Chance",
+		"Description" : "20% Bigger Chance To Refund A Fishing Chance When Failing To Catch A Fish",
+		"Cost" : 400,
+	},
 	"12" : {
 		"Name" : "50% Cheaper Woodcamps",
 		"Description" : "All Woodcamps become 50% cheaper",

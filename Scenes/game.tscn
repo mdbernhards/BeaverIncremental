@@ -42,3 +42,10 @@ layout_mode = 1
 [node name="GameMainScreen" parent="." instance=ExtResource("4_btfnp")]
 visible = false
 layout_mode = 1
+
+[node name="FPSLabel" type="Label" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_font_sizes/font_size = 17
+text = "FPS: 0"

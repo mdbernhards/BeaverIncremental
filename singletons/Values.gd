@@ -25,6 +25,8 @@ var ResourceValues = {
 		"SelectedBait" : Fishing.ShopItemEnum.NoBait,
 		"IsFishing" : false,
 		"FishingChanceRefreshTime" : 300,
+		"FishingTimeout" : 15,
+		"ChanceToRefundChance" : 0,
 	},
 	"Research" : {
 		"TimeMultip" : 1,

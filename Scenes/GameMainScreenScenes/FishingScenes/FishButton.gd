@@ -1,4 +1,4 @@
-extends Button
+extends Node2D
 
 signal FishHooked(FishType)
 
@@ -26,9 +26,11 @@ enum SwimTypeEnum {
 
 # Nodes
 var DespawnTimer
+var FishButton
 
 @export var FishType: Fishing.FishEnum = Fishing.FishEnum.Boot :
 	set(value):
+		FishType = value
 		FishData = Fishing.Fish[value] as Fishing.FishObject
 		setupNodePaths()
 		ChangeFishName()
@@ -36,16 +38,16 @@ var DespawnTimer
 
 func ChangeFishName():
 	if SaveData.CaughtFish[FishType]["Caught"]:
-		text = FishData.FishName
+		FishButton.text = FishData.FishName
 	else:
-		text = "????"
+		FishButton.text = "????"
 
 func _ready() -> void:
 	setupNodePaths()
 
 func settingFishData():
 	Direction = Vector2(RNG.randf_range(-1, 1), RNG.randf_range(-1, 1))
-	position += Vector2(RNG.randf_range(-320, 120), RNG.randf_range(-200, 150))
+	position += Vector2(RNG.randf_range(0, 850), RNG.randf_range(0, 680))
 	SwimType = RNG.randi_range(0, 2)
 	Angle = RNG.randi_range(-180, 180)
 	AngleDirection = RNG.randi_range(0, 3)
@@ -65,11 +67,14 @@ func settingFishData():
 	scale *= Scale
 
 func _process(delta: float) -> void:
+	pass
+	
+func _physics_process(delta):
 	move(delta)
 
 func move(delta):
 	TimePassed += delta
-	position += Direction * Speed * delta
+	position += (Direction.normalized() * Speed * delta).round()
 	
 	match SwimType:
 		0: 
@@ -79,14 +84,14 @@ func move(delta):
 		2: 
 			moveWander(delta)
 	
-	if position.x > (1030 - size.x * Scale * Scale) and Direction.x > 0:
+	if position.x + FishButton.size.x * Scale > 1030 and Direction.x > 0:
 		Direction.x *= -1
 		AngleDirection = RNG.randi_range(0, 3)
 	elif position.x < 0 and Direction.x < 0:
 		Direction.x *= -1
 		AngleDirection = RNG.randi_range(0, 3)
 
-	if position.y > (785 - size.y * Scale * Scale) and Direction.y > 0:
+	if position.y + FishButton.size.y * Scale > 785 and Direction.y > 0:
 		Direction.y *= -1
 		AngleDirection = RNG.randi_range(0, 3)
 	elif position.y < 0 and Direction.y < 0:
@@ -117,17 +122,18 @@ func moveWander(delta):
 	if randf() < TurnChance / 60:
 		Direction = Vector2(randf_range(-0.8, 0.8), randf_range(-0.8, 0.8)).normalized()
 
-func _on_button_down() -> void:
-	emit_signal("FishHooked", FishData.Type)
-	queue_free()
-
 func _on_despawn_timer_timeout() -> void:
 	queue_free()
 
 func _on_refresh_timer_timeout() -> void:
 	if DespawnTimer and DespawnTimer.is_stopped():
-		DespawnTimer.wait_time = FishData.LifeTime * Values.ResourceValues["Fish"]["LongerFishLifetimeMultip"]
+		DespawnTimer.wait_time = FishData.LifeTime * Values.ResourceValues["Fish"]["LongerFishLifetimeMultip"] * 1.1
 		DespawnTimer.start()
+
+func _on_fish_button_button_down() -> void:
+	emit_signal("FishHooked", FishData.Type)
+	queue_free()
 
 func setupNodePaths():
 	DespawnTimer = $DespawnTimer
+	FishButton = $FishButton

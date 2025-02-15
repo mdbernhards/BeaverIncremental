@@ -85,7 +85,7 @@ func setWpcTempBonus(bonusType):
 			WpcBonusTimer.wait_time = 1800
 	
 	WpcBonusTimer.start()
-	Values.calculateAllValues()
+	CalculateValues.calculateAllValues()
 
 func _on_wps_bonus_timer_timeout() -> void:
 	SaveData.ShopItems[Fishing.ShopItemEnum.WpsBonus1]["Bought"] = false

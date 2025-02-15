@@ -33,23 +33,29 @@ var ShopItemType: Fishing.ShopItemEnum :
 		refreshItemData()
 
 func refreshItemData():
-		ItemNameLabel.text = Fishing.ShopItems[ShopItemType]["Name"]
-		EffectLabel.text = str(Fishing.ShopItems[ShopItemType]["Description"])
+	if !SaveData.ShopItems.has(ShopItemType):
+		SaveData.ShopItems[ShopItemType] = SaveData.OriginalShopItems[ShopItemType]
+	
+	ItemNameLabel.text = Fishing.ShopItems[ShopItemType]["Name"]
+	EffectLabel.text = str(Fishing.ShopItems[ShopItemType]["Description"])
+	
+	IsBait = Fishing.ShopItems[ShopItemType]["IsBait"]
+	HasCount = Fishing.ShopItems[ShopItemType]["HasCount"]
+	Price = Fishing.ShopItems[ShopItemType]["Price"]
+	
+	if IsBait:
+		UnlockPrice = Fishing.ShopItems[ShopItemType]["UnlockPrice"]
+		Unlocked = SaveData.ShopItems[ShopItemType]["Unlocked"]
+	
+	if HasCount:
+		Count = SaveData.ShopItems[ShopItemType]["Count"]
+	else:
+		if !SaveData.ShopItems[ShopItemType].has("Bought"):
+			SaveData.ShopItems[ShopItemType]["Bought"] = false
 		
-		IsBait = Fishing.ShopItems[ShopItemType]["IsBait"]
-		HasCount = Fishing.ShopItems[ShopItemType]["HasCount"]
-		Price = Fishing.ShopItems[ShopItemType]["Price"]
-		
-		if IsBait:
-			UnlockPrice = Fishing.ShopItems[ShopItemType]["UnlockPrice"]
-			Unlocked = SaveData.ShopItems[ShopItemType]["Unlocked"]
-		
-		if HasCount:
-			Count = SaveData.ShopItems[ShopItemType]["Count"]
-		else:
-			Bought = SaveData.ShopItems[ShopItemType]["Bought"]
-		
-		setShopItem()
+		Bought = SaveData.ShopItems[ShopItemType]["Bought"]
+	
+	setShopItem()
 
 func _ready() -> void:
 	setupNodePaths()

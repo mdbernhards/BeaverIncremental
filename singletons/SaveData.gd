@@ -110,6 +110,7 @@ func recalculateValues():
 	get_tree().get_first_node_in_group("DamSection").setDamConstruction()
 	get_tree().get_first_node_in_group("AchievementScreen").resetAchievements()
 	get_tree().get_first_node_in_group("FishingGame").updateFishingValues(true)
+	get_tree().get_first_node_in_group("FishingGame").stopFishing(true)
 	get_tree().get_first_node_in_group("FishPage").addAllCaughtFish()
 	get_tree().get_first_node_in_group("ShopPage").setShopItems()
 	get_tree().get_first_node_in_group("FishingScreen").changePage(0)
@@ -1249,16 +1250,34 @@ var ShopItems = {
 	Fishing.ShopItemEnum.FishingChance2 : {
 		"Bought" : false,
 	},
+	Fishing.ShopItemEnum.FishingChance3 : {
+		"Bought" : false,
+	},
 	Fishing.ShopItemEnum.ChanceToUseBait : {
 		"Count" : 0,
 	},
-	Fishing.ShopItemEnum.FishingClick : {
+	Fishing.ShopItemEnum.FishingClick1 : {
+		"Bought" : false,
+	},
+	Fishing.ShopItemEnum.FishingClick2 : {
 		"Bought" : false,
 	},
 	Fishing.ShopItemEnum.ChanceRefresh1 : {
 		"Bought" : false,
 	},
 	Fishing.ShopItemEnum.ChanceRefresh2 : {
+		"Bought" : false,
+	},
+	Fishing.ShopItemEnum.FishingTime1 : {
+		"Bought" : false,
+	},
+	Fishing.ShopItemEnum.FishingTime2 : {
+		"Bought" : false,
+	},
+	Fishing.ShopItemEnum.RefundChance1 : {
+		"Bought" : false,
+	},
+	Fishing.ShopItemEnum.RefundChance2 : {
 		"Bought" : false,
 	},
 }

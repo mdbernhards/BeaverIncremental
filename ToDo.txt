@@ -25,6 +25,7 @@ Upgrade level cap at 100 and 10
 Set Number Notation for all numbers missing it
 Hide/Show Buttons faster when loading
 Color gold prices yellow, fish biscuts orange and Magic purple???
+Check if All Tabs BuyMax Works
 
 A lot Later:
 Write achievement unlock bonuses in the text log
@@ -36,6 +37,7 @@ Tooltips for everything else
 All upgrade, research, magic, dam, achievement names and descriptions (maybe upgrade descriptive names, cute descriptions and for research other way around but rename description to effect:)
 Add Unlock Time for Achievements
 Change achievements to be icons from icon packs
+Fix fish stutter
 
 Done:
 Add save delete button DONE
@@ -136,3 +138,12 @@ Add Temp Fishing Bonuses DONE
 Add Improvements That lower Chance recharge time DONE
 Connect The Banners With Temp Bonuses DONE
 Implement keeping research after Ascension DONE
+Fix Magic Lock flickering DONE
+Fix bounce system DONE
+Improve Fishing Shop DONE
+Stop fishing when game load DONE
+Fix gold pot 3 showing DONE
+Change Remove? to Refund 75% DONE
+Fix fish name being shown before caught once DONE
+Update Fishing Chance Label when Buying Upgrade DONE
+Add Fishing Chance Refund DONE

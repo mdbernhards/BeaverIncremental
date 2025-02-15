@@ -21,7 +21,7 @@ func checkIfCanAfford():
 	var canAfford = false
 	
 	for resourceType in ResourceTypes:
-		UpgradesNode.setupUpgradeTabForWoodType(resourceType)
+		UpgradesNode.setupUpgradeTabForWoodType(resourceType, true)
 		if UpgradesNode.checkIfCanAfford():
 			canAfford = true
 			break

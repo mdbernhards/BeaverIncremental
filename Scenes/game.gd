@@ -4,6 +4,7 @@ extends Control
 var MainMenu
 var LoadGame
 var GameMainScreen
+var FPSLabel
 
 enum BackTrackEnum {
 	ToMainMenu,
@@ -14,7 +15,7 @@ func _ready() -> void:
 	setupNodePaths()
 	
 func _process(_delta: float) -> void:
-	pass
+	FPSLabel.text = "FPS: " + str(Engine.get_frames_per_second())
 
 func goToSavesFromMenu():
 	MainMenu.visible = false
@@ -60,3 +61,4 @@ func setupNodePaths():
 	MainMenu = $MainMenu
 	LoadGame = $LoadGame
 	GameMainScreen = $GameMainScreen
+	FPSLabel = $FPSLabel
