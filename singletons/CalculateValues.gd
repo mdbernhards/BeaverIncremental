@@ -159,7 +159,8 @@ func ApplyUpgrades():
 	for woodType in WoodTypes:
 		var existingUpgrades = SaveData.Upgrades[woodType]
 		for upgradeId in existingUpgrades:
-			SetUpgradeValue(woodType, upgradeId)
+			if !SaveData.Upgrades[woodType][upgradeId].has("MagicLocked") or SaveData.Upgrades[woodType][upgradeId].has("MagicLocked") and !SaveData.Upgrades[woodType][upgradeId]["MagicLocked"]:
+				SetUpgradeValue(woodType, upgradeId)
 	
 	SetPreGoldUpgrades()
 	
@@ -1023,7 +1024,7 @@ func SetUpgradeValue(woodType, upgradeId):
 				"6":
 					TempValues[woodType]["WpsMultip"] *= pow(1.045, upgradeLevel)
 				"7":
-					TempValues["Oak"]["WcCostsMultip"] *= pow(1 - 0.0275, upgradeLevel)
+					TempValues["Oak"]["WcCostsMultip"] *= pow(1 - 0.0215, upgradeLevel)
 				"8":
 					TempValues["Global"]["WpsMultip"] *= pow(1.025, upgradeLevel)
 				"9":
@@ -1051,7 +1052,7 @@ func SetUpgradeValue(woodType, upgradeId):
 				"9":
 					TempValues["Global"]["WpsMultip"] *= pow(1.0005, upgradeLevel)
 				"10":
-					TempValues["Magic"]["Multip"] *= pow(1.12, upgradeLevel)
+					TempValues["Magic"]["GainMultip"] *= pow(1.12, upgradeLevel)
 		"Birch":
 			match upgradeId:
 				"1":
@@ -1089,7 +1090,7 @@ func SetUpgradeValue(woodType, upgradeId):
 				"6":
 					TempValues[woodType]["BeaverMultip"] *= (pow(1.035, upgradeLevel) - 1) * woodcamps
 				"7":
-					TempValues[woodType]["WcCostsMultip"] *= pow(1 - 0.0325, upgradeLevel)
+					TempValues["Birch"]["WcCostsMultip"] *= pow(1 - 0.0325, upgradeLevel)
 				"8":
 					TempValues["Global"]["BotBaseSell"] += upgradeLevel * 25
 				"9":
@@ -1129,7 +1130,7 @@ func SetUpgradeValue(woodType, upgradeId):
 				"4":
 					TempValues[woodType]["WpcToWpsMultip"] *= pow(1.075, upgradeLevel)
 				"5":
-					TempValues[woodType]["BeaverPriceMultip"] *= pow(1.11, upgradeLevel)
+					TempValues[woodType]["BeaverPriceMultip"] *= pow(1 - 0.11, upgradeLevel)
 				"6":
 					TempValues[woodType]["WoodPriceMultip"] *= pow(1.025, upgradeLevel)
 				"7":

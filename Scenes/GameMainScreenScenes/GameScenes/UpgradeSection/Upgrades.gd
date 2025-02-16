@@ -50,8 +50,9 @@ func _on_tab_buy_max_button_button_down() -> void:
 		var cheapestItem = ItemGrid.get_child(1)
 		
 		for upgradeItem in ItemGrid.get_children():
-			if upgradeItem.CurrentPrice < cheapestItem.CurrentPrice:
-				cheapestItem = upgradeItem
+			if !SaveData.Upgrades[ResourceType][str(upgradeItem.UpgradeNumber)].has("MagicLocked") or SaveData.Upgrades[ResourceType][str(upgradeItem.UpgradeNumber)].has("MagicLocked") and !SaveData.Upgrades[ResourceType][str(upgradeItem.UpgradeNumber)]["MagicLocked"]:
+				if upgradeItem.CurrentPrice < cheapestItem.CurrentPrice:
+					cheapestItem = upgradeItem
 				
 		if !cheapestItem._on_buy_button_button_down():
 			return

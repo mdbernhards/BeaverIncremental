@@ -42,6 +42,7 @@ size_flags_horizontal = 3
 
 [node name="VBox" type="VBoxContainer" parent="BG/HBox/MC"]
 layout_mode = 2
+theme_override_constants/separation = 0
 
 [node name="MC" type="MarginContainer" parent="BG/HBox/MC/VBox"]
 layout_mode = 2
@@ -49,6 +50,8 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_constants/margin_left = 10
 theme_override_constants/margin_top = 3
+theme_override_constants/margin_right = 0
+theme_override_constants/margin_bottom = -3
 
 [node name="TitleLabel" type="Label" parent="BG/HBox/MC/VBox/MC"]
 layout_mode = 2
@@ -61,6 +64,8 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_constants/margin_left = 25
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_bottom = 0
 
 [node name="EffectLabel" type="Label" parent="BG/HBox/MC/VBox/MC2"]
 layout_mode = 2
@@ -72,17 +77,20 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_constants/margin_left = 25
-theme_override_constants/margin_bottom = 4
+theme_override_constants/margin_top = -2
+theme_override_constants/margin_bottom = 2
 
 [node name="PriceLabel" type="RichTextLabel" parent="BG/HBox/MC/VBox/MC3"]
 layout_mode = 2
+size_flags_vertical = 4
 theme_override_font_sizes/bold_italics_font_size = 10
 theme_override_font_sizes/italics_font_size = 10
 theme_override_font_sizes/mono_font_size = 10
-theme_override_font_sizes/normal_font_size = 10
+theme_override_font_sizes/normal_font_size = 9
 theme_override_font_sizes/bold_font_size = 10
 bbcode_enabled = true
 text = "Price: 1000 Oak, 500 Apple"
+fit_content = true
 
 [node name="MC2" type="MarginContainer" parent="BG/HBox"]
 layout_mode = 2

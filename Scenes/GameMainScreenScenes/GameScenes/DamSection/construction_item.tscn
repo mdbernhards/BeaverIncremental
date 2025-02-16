@@ -264,6 +264,10 @@ layout_mode = 2
 
 [node name="ConstructionCheckTimer" type="Timer" parent="."]
 
+[node name="ConstructionItemRefreshTimer" type="Timer" parent="."]
+autostart = true
+
 [connection signal="value_changed" from="CurrentConstructionVBox/VBox/MC/ColorRect/VBox/MC3/ConstructionSpeedSlider" to="." method="_on_construction_speed_slider_value_changed"]
 [connection signal="button_down" from="UnlockedVBox/ColorRect/StartBuildingButton" to="." method="_on_start_building_button_button_down"]
 [connection signal="timeout" from="ConstructionCheckTimer" to="." method="_on_construction_check_timer_timeout"]
+[connection signal="timeout" from="ConstructionItemRefreshTimer" to="." method="_on_construction_item_refresh_timer_timeout"]

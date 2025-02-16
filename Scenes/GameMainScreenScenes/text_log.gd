@@ -25,6 +25,13 @@ func writeMagicUpgradeUnlockToLog(magicId):
 	var magicUpgradeData = Magic.Magic[magicId]
 	writeToLog("Magic Upgrade [url=tooltip_magic,%s][color=#800080][b][%s][/b][/color][/url] has been unlocked" % [magicId, magicUpgradeData["Name"]])
 
+func writeCaughtFishToLog(fishId):
+	var fishData = Fishing.Fish[fishId]
+	if SaveData.CaughtFish[fishId]["Caught"]:
+		writeToLog("[url=tooltip_fish,%s][color=#2999ff][b][%s][/b][/color][/url] has been caught" % [fishId, fishData.FishName])
+	else:
+		writeToLog("[url=tooltip_fish,%s][color=#2999ff][b][%s][/b][/color][/url] has been caught for the first time" % [fishId, fishData.FishName])
+
 func writeToLog(text):
 	if text != "":
 		TextLog.append_text(text + "\n")
@@ -51,6 +58,10 @@ func _make_custom_tooltip(_for_text):
 		var magicId = _for_text.split(",")[1]
 		title = Magic.Magic[magicId]["Name"]
 		description = Magic.Magic[magicId]["Description"]
+	elif _for_text.begins_with("tooltip_fish"):
+		var fishId = _for_text.split(",")[1]
+		title = Fishing.Fish[int(fishId)].FishName
+		description = "Fish Fish Fish!"
 		
 	var tooltip = load("res://Scenes/Tooltips/tooltip.tscn").instantiate()
 	tooltip.setTooltip(title, description)

@@ -45,7 +45,7 @@ func _process(delta: float) -> void:
 		
 	if Values.ResourceValues["Fish"]["IsFishing"]:
 		TimeoutBar.visible = true
-		TimeoutBar.value = remap(FishingTimeoutTimer.time_left, 0, FishingTimeoutTimer.wait_time, 0, 100)
+		TimeoutBar.value = remap(FishingTimeoutTimer.time_left, 0, Values.ResourceValues["Fish"]["FishingTimeout"] * LongerFishingTimeMultip, 0, 100)
 		TimeoutLabel.text = str(roundi(FishingTimeoutTimer.time_left))
 		
 		if FishingClicks <= 0:
@@ -106,7 +106,7 @@ func useBait():
 		SaveData.GeneralInfo["TimesBaitNotUsed"] += 1
 
 func StartFishingTimeout():
-	FishingTimeoutTimer.wait_time = Values.ResourceValues["Fish"]["FishingTimeout"] * LongerFishingTimeMultip * 100
+	FishingTimeoutTimer.wait_time = Values.ResourceValues["Fish"]["FishingTimeout"] * LongerFishingTimeMultip
 	FishingTimeoutTimer.start()
 
 func updateFishingValues(onLoad = false):
@@ -134,6 +134,7 @@ func _on_fish_button_button_down() -> void:
 
 func checkIfFishCaught():
 	if FishBounceBar.value >= 60 and FishBounceBar.value <= 80:
+		get_tree().get_first_node_in_group("TextLogSection").writeCaughtFishToLog(BouncingFishType)
 		SaveData.CaughtFish[BouncingFishType]["Count"] += 1
 		SaveData.CaughtFish[BouncingFishType]["Caught"] = true
 		get_tree().get_first_node_in_group("FishPage").addAllCaughtFish()
@@ -217,6 +218,9 @@ func spawnFish():
 func startFishCatchPhase(fishType):
 	IsBouncing = true
 	BouncingFishType = fishType
+	
+	var newTime = min(FishingTimeoutTimer.get_time_left() + 5, Values.ResourceValues["Fish"]["FishingTimeout"] * LongerFishingTimeMultip)
+	FishingTimeoutTimer.start(newTime)
 
 func deleteAllFish():
 	for fish in Fish.get_children():
@@ -243,7 +247,7 @@ func _on_refresh_timer_timeout() -> void:
 	else:
 		ClicksLeftLabel.visible = false
 	
-	if 5 <= 0 or Values.ResourceValues["Fish"]["IsFishing"] and !IsBouncing:
+	if SaveData.GeneralInfo["CurrentFishingChances"] <= 0 or Values.ResourceValues["Fish"]["IsFishing"] and !IsBouncing:
 		FishButton.disabled = true
 	else:
 		FishButton.disabled = false
@@ -276,6 +280,10 @@ func _on_refresh_timer_timeout() -> void:
 
 func _on_fishing_chance_refresh_timer_timeout() -> void:
 	SaveData.GeneralInfo["CurrentFishingChances"] = min(SaveData.GeneralInfo["CurrentFishingChances"] + 1, FishingChances)
+	get_tree().get_first_node_in_group("TextLogSection").writeToLog("Fishing Chance Recharged")
+	
+	if SaveData.GeneralInfo["CurrentFishingChances"] == FishingChances:
+		get_tree().get_first_node_in_group("TextLogSection").writeToLog("All Fishing Chances Have Been Recharged!")
 
 func _on_fish_gui_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:

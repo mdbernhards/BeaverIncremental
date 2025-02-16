@@ -35,27 +35,25 @@ func setShopItems():
 	loadTemporaryBonuses()
 
 func loadTemporaryBonuses():
-	if WpsBonusTimer.is_stopped():
-		if SaveData.ShopItems[Fishing.ShopItemEnum.WpsBonus1]["Bought"]:
-			WpsBonusTimer.wait_time = SaveData.ShopItems[Fishing.ShopItemEnum.WpsBonus1]["TimeLeft"]
-			WpsBonusTimer.start()
-		if SaveData.ShopItems[Fishing.ShopItemEnum.WpsBonus2]["Bought"]:
-			WpsBonusTimer.wait_time = SaveData.ShopItems[Fishing.ShopItemEnum.WpsBonus2]["TimeLeft"]
-			WpsBonusTimer.start()
-		if SaveData.ShopItems[Fishing.ShopItemEnum.WpsBonus3]["Bought"]:
-			WpsBonusTimer.wait_time = SaveData.ShopItems[Fishing.ShopItemEnum.WpsBonus3]["TimeLeft"]
-			WpsBonusTimer.start()
+	if SaveData.ShopItems[Fishing.ShopItemEnum.WpsBonus1]["Bought"]:
+		WpsBonusTimer.wait_time = SaveData.ShopItems[Fishing.ShopItemEnum.WpsBonus1]["TimeLeft"]
+		WpsBonusTimer.start()
+	elif SaveData.ShopItems[Fishing.ShopItemEnum.WpsBonus2]["Bought"]:
+		WpsBonusTimer.wait_time = SaveData.ShopItems[Fishing.ShopItemEnum.WpsBonus2]["TimeLeft"]
+		WpsBonusTimer.start()
+	elif SaveData.ShopItems[Fishing.ShopItemEnum.WpsBonus3]["Bought"]:
+		WpsBonusTimer.wait_time = SaveData.ShopItems[Fishing.ShopItemEnum.WpsBonus3]["TimeLeft"]
+		WpsBonusTimer.start()
 	
-	if WpcBonusTimer.is_stopped():
-		if SaveData.ShopItems[Fishing.ShopItemEnum.WpcBonus1]["Bought"]:
-			WpcBonusTimer.wait_time = SaveData.ShopItems[Fishing.ShopItemEnum.WpcBonus1]["TimeLeft"]
-			WpcBonusTimer.start()
-		if SaveData.ShopItems[Fishing.ShopItemEnum.WpcBonus2]["Bought"]:
-			WpcBonusTimer.wait_time = SaveData.ShopItems[Fishing.ShopItemEnum.WpcBonus2]["TimeLeft"]
-			WpcBonusTimer.start()
-		if SaveData.ShopItems[Fishing.ShopItemEnum.WpcBonus3]["Bought"]:
-			WpcBonusTimer.wait_time = SaveData.ShopItems[Fishing.ShopItemEnum.WpcBonus3]["TimeLeft"]
-			WpcBonusTimer.start()
+	if SaveData.ShopItems[Fishing.ShopItemEnum.WpcBonus1]["Bought"]:
+		WpcBonusTimer.wait_time = SaveData.ShopItems[Fishing.ShopItemEnum.WpcBonus1]["TimeLeft"]
+		WpcBonusTimer.start()
+	elif SaveData.ShopItems[Fishing.ShopItemEnum.WpcBonus2]["Bought"]:
+		WpcBonusTimer.wait_time = SaveData.ShopItems[Fishing.ShopItemEnum.WpcBonus2]["TimeLeft"]
+		WpcBonusTimer.start()
+	elif SaveData.ShopItems[Fishing.ShopItemEnum.WpcBonus3]["Bought"]:
+		WpcBonusTimer.wait_time = SaveData.ShopItems[Fishing.ShopItemEnum.WpcBonus3]["TimeLeft"]
+		WpcBonusTimer.start()
 
 func setWpsTempBonus(bonusType):
 	if !SaveData.ShopItems[bonusType]["Bought"] or !WpsBonusTimer.is_stopped():
@@ -95,6 +93,7 @@ func _on_wps_bonus_timer_timeout() -> void:
 	SaveData.ShopItems[Fishing.ShopItemEnum.WpsBonus2]["TimeLeft"] = 0
 	SaveData.ShopItems[Fishing.ShopItemEnum.WpsBonus3]["TimeLeft"] = 0
 	CalculateValues.calculateAllValues()
+	get_tree().get_first_node_in_group("TextLogSection").writeToLog("Wood Per Second Bonus Ended")
 
 func _on_wpc_bonus_timer_timeout() -> void:
 	SaveData.ShopItems[Fishing.ShopItemEnum.WpcBonus1]["Bought"] = false
@@ -104,6 +103,7 @@ func _on_wpc_bonus_timer_timeout() -> void:
 	SaveData.ShopItems[Fishing.ShopItemEnum.WpcBonus2]["TimeLeft"] = 0
 	SaveData.ShopItems[Fishing.ShopItemEnum.WpcBonus3]["TimeLeft"] = 0
 	CalculateValues.calculateAllValues()
+	get_tree().get_first_node_in_group("TextLogSection").writeToLog("Wood Per Click Bonus Ended")
 
 func _on_shop_page_refresh_timer_timeout() -> void:
 	if CurrentBiscutsLabel:

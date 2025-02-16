@@ -4,7 +4,9 @@
 [ext_resource type="Script" path="res://Scenes/GameMainScreenScenes/GameScenes/market_section.gd" id="1_xx4uw"]
 
 [node name="MarketSection" type="VBoxContainer"]
-custom_minimum_size = Vector2(798, 926)
+custom_minimum_size = Vector2(798, 925)
+offset_right = 798.0
+offset_bottom = 926.0
 script = ExtResource("1_xx4uw")
 
 [node name="TopHBox" type="HBoxContainer" parent="."]
@@ -31,9 +33,9 @@ theme_override_constants/margin_left = 15
 theme_override_constants/margin_right = 15
 
 [node name="MarketVBox" type="VBoxContainer" parent="SellPageMC"]
-custom_minimum_size = Vector2(0, 861)
+custom_minimum_size = Vector2(0, 860)
 layout_mode = 2
-theme_override_constants/separation = 23
+theme_override_constants/separation = 22
 
 [node name="MarketItem1" parent="SellPageMC/MarketVBox" instance=ExtResource("1_ilmxg")]
 layout_mode = 2

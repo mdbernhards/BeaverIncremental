@@ -25,12 +25,7 @@ func _ready() -> void:
 	ErrorLabel.visible = false
 
 func _process(_delta: float) -> void:
-	if SaveState == SaveSlotEnum.New:
-		NewGame.visible = true
-		LoadGame.visible = false
-	elif SaveState == SaveSlotEnum.Existing:
-		NewGame.visible = false
-		LoadGame.visible = true
+	pass
 
 func setupNodePaths():
 	SaveNameLabel = $ColorRect/LoadGame/MC/VBox/SaveNameLabel
@@ -93,3 +88,11 @@ func checkIfSaveNameIsValid(saveName):
 		return false
 	
 	return true
+
+func _on_save_item_refresh_timer_timeout() -> void:
+	if SaveState == SaveSlotEnum.New:
+		NewGame.visible = true
+		LoadGame.visible = false
+	elif SaveState == SaveSlotEnum.Existing:
+		NewGame.visible = false
+		LoadGame.visible = true

@@ -1,14 +1,22 @@
 TODO
 
 First:
+Fishing Achievements
+Make ash have a lot of storage but not a lot of wps and wpc
+Scale Down Magic Locks
+
 Keep Playing
 
 Later:
-Write all Fish Effects, add tooltips for them
+Around research 80 make clicking good again
+Make Page And Tab Buttons Toggleable Radio Buttons
+Add < and > Buttons for bars and market
+Around 50 - 53 add some storage research, mainly for chestnut, or not?
+Write all Fish Effects, tooltips with effect and price
 Balance Fishing
 Making The Game Playable from start to finish
 Dam completion and Effect application
-Dam, Fishing Achievements
+Dam Achievements
 Change the bad achievements (Fishing Item Shop, think of more)
 Tooltip on resource bar for incoming / outgoing wood breakdown
 Tooltip on mouse over magic label to see how much magic each resource gives
@@ -147,3 +155,21 @@ Change Remove? to Refund 75% DONE
 Fix fish name being shown before caught once DONE
 Update Fishing Chance Label when Buying Upgrade DONE
 Add Fishing Chance Refund DONE
+Fix WPS and WPC temp bonus not starting/stopping correctly on load DONE
+Fix Market Page Moving Everything a little bit DONE
+Scale Down Some Of The Achievements and research time post 30 DONE
+Fix Spruce 7 DONE
+Make Apple 7 scale more, lvl 34 only 3.1 mil DONE
+Fix Buy Max Button Buying Magic Locked Items DONE
+Fix Fishing Shop Item Moving When Bought DONE
+Indicate A Fish Has Been Unlocked / Caught in The Text Log DONE
+Fix Research Cost Labels DONE
+When Clicking on a fish add +5 sec for catching DONE
+Write in Log Temp Bonus ending, Fishing chance recharging and fully charging DONE
+Inflate Maple Prices post 52 research DONE
+Fix Maple 10 Upgrade DONE
+Big Optimization That Fixed Fishing Stutter DONE
+Fix Fish Button Not Disabled when out of chances DONE
+Make Research 57 and 63 locked behind Merchants DONE
+Update Fishing Shop Item Affordability straight after buying DONE
+add 33% storage for chestnut and cherry DONE

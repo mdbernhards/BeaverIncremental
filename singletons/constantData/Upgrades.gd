@@ -127,8 +127,8 @@ var Upgrades = {
 			"Unlocked" : func(): return Unlocks.Unlocks["Woodcamps"]["Unlocked"] and SaveData.Resources["Apple"]["Woodcamps"] > 0,
 		},
 		"7" :  {
-			"Name" : "WC Uses 2.75% Less Wood",
-			"Description" : "Apple woodcamps use 2.75% less lower tier wood",
+			"Name" : "WC Uses 2.15% Less Wood",
+			"Description" : "Apple woodcamps use 2.15% less lower tier wood",
 			"OtherText" : "",
 			"Unlocked" : func(): return Unlocks.Unlocks["Woodcamps"]["Unlocked"] and SaveData.Resources["Apple"]["Woodcamps"] > 0,
 		},

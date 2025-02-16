@@ -43,7 +43,7 @@ func _ready() -> void:
 	deleteAllConstructionResourceItems()
 
 func _process(_delta: float) -> void:
-	setCantAffordRect()
+	pass
 
 func setCantAffordRect():
 	if checkIfCanAfford():
@@ -243,3 +243,6 @@ func _on_construction_check_timer_timeout() -> void:
 			return
 	
 	switchStage()
+
+func _on_construction_item_refresh_timer_timeout() -> void:
+	setCantAffordRect()

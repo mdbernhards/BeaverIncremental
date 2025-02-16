@@ -15,131 +15,133 @@ func checkForUnlocks():
 			Unlocks["Achievements"]["AchievementUnlocks"][num] = false
 			num += 5
 	
+	var achievementCount = SaveData.countAchievements()
+	
 	while num < 301:
 		if !Unlocks["Achievements"]["AchievementUnlocks"].has(num):
 			Unlocks["Achievements"]["AchievementUnlocks"][num] = false
-		elif !Unlocks["Achievements"]["AchievementUnlocks"][num] and SaveData.countAchievements() >= num:
+		elif !Unlocks["Achievements"]["AchievementUnlocks"][num] and achievementCount >= num:
 			Unlocks["Achievements"]["AchievementUnlocks"][num] = true
 			get_tree().get_first_node_in_group("TextLogSection").writeToLog(str(num) + " Achievements Unlocked")
 			# When finished update to add the effects
 		num += 5
 	
-	if SaveData.countAchievements() >= 5:
+	if achievementCount >= 5:
 		Unlocks["Beavers"]["BuyMax"] = true
-	if SaveData.countAchievements() >= 10:
+	if achievementCount >= 10:
 		Unlocks["Oak"]["ButtonBuyMax"] = true
 		Unlocks["Research"]["History"] = true
-	if SaveData.countAchievements() >= 15:
+	if achievementCount >= 15:
 		Unlocks["Woodcamps"]["BuyMax"] = true
-	if SaveData.countAchievements() >= 20:
+	if achievementCount >= 20:
 		Unlocks["Apple"]["ButtonBuyMax"] = true
-	if SaveData.countAchievements() >= 25:
+	if achievementCount >= 25:
 		Unlocks["Oak"]["PageBuyMax"] = true
-	if SaveData.countAchievements() >= 30:
+	if achievementCount >= 30:
 		Unlocks["Maple"]["ButtonBuyMax"] = true
-	if SaveData.countAchievements() >= 35:
+	if achievementCount >= 35:
 		Unlocks["Apple"]["PageBuyMax"] = true
-	if SaveData.countAchievements() >= 40:
+	if achievementCount >= 40:
 		Unlocks["Birch"]["ButtonBuyMax"] = true
-	if SaveData.countAchievements() >= 45:
+	if achievementCount >= 45:
 		Unlocks["Maple"]["PageBuyMax"] = true
-	if SaveData.countAchievements() >= 50:
+	if achievementCount >= 50:
 		Unlocks["Spruce"]["ButtonBuyMax"] = true
-	if SaveData.countAchievements() >= 55:
+	if achievementCount >= 55:
 		Unlocks["Birch"]["PageBuyMax"] = true
-	if SaveData.countAchievements() >= 60:
+	if achievementCount >= 60:
 		Unlocks["Chestnut"]["ButtonBuyMax"] = true
-	if SaveData.countAchievements() >= 65:
+	if achievementCount >= 65:
 		Unlocks["Spruce"]["PageBuyMax"] = true
-	if SaveData.countAchievements() >= 70:
+	if achievementCount >= 70:
 		Unlocks["Cherry"]["ButtonBuyMax"] = true
-	if SaveData.countAchievements() >= 75:
+	if achievementCount >= 75:
 		Unlocks["Upgrades"]["ClassicBuyMax"] = true
-	if SaveData.countAchievements() >= 80:
+	if achievementCount >= 80:
 		Unlocks["Ash"]["ButtonBuyMax"] = true
-	if SaveData.countAchievements() >= 85:
+	if achievementCount >= 85:
 		Unlocks["Chestnut"]["PageBuyMax"] = true
-	if SaveData.countAchievements() >= 90:
+	if achievementCount >= 90:
 		Unlocks["Cedar"]["ButtonBuyMax"] = true
-	if SaveData.countAchievements() >= 95:
+	if achievementCount >= 95:
 		Unlocks["Cherry"]["PageBuyMax"] = true
-	if SaveData.countAchievements() >= 110:
+	if achievementCount >= 110:
 		Unlocks["Mahogany"]["ButtonBuyMax"] = true
-	if SaveData.countAchievements() >= 115:
+	if achievementCount >= 115:
 		Unlocks["Ash"]["PageBuyMax"] = true
-	if SaveData.countAchievements() >= 120:
+	if achievementCount >= 120:
 		Unlocks["Ebony"]["ButtonBuyMax"] = true
-	if SaveData.countAchievements() >= 125:
+	if achievementCount >= 125:
 		Unlocks["Gold"]["ButtonBuyMax"] = true
-	if SaveData.countAchievements() >= 130:
+	if achievementCount >= 130:
 		Unlocks["Dogwood"]["ButtonBuyMax"] = true
-	if SaveData.countAchievements() >= 135:
+	if achievementCount >= 135:
 		Unlocks["Cedar"]["PageBuyMax"] = true
-	if SaveData.countAchievements() >= 140:
+	if achievementCount >= 140:
 		Unlocks["Rosewood"]["ButtonBuyMax"] = true
-	if SaveData.countAchievements() >= 145:
+	if achievementCount >= 145:
 		Unlocks["Mahogany"]["PageBuyMax"] = true
-	if SaveData.countAchievements() >= 150:
+	if achievementCount >= 150:
 		Unlocks["Ghost Gum"]["ButtonBuyMax"] = true
-	if SaveData.countAchievements() >= 155:
+	if achievementCount >= 155:
 		Unlocks["Upgrades"]["RareBuyMax"] = true
-	if SaveData.countAchievements() >= 160:
+	if achievementCount >= 160:
 		Unlocks["Dragonwood"]["ButtonBuyMax"] = true
-	if SaveData.countAchievements() >= 165:
+	if achievementCount >= 165:
 		pass
-	if SaveData.countAchievements() >= 170:
+	if achievementCount >= 170:
 		Unlocks["Ebony"]["ButtonBuyMax"] = true
-	if SaveData.countAchievements() >= 175:
+	if achievementCount >= 175:
 		Unlocks["Gold"]["PageBuyMax"] = true
-	if SaveData.countAchievements() >= 180:
+	if achievementCount >= 180:
 		Unlocks["Dogwood"]["ButtonBuyMax"] = true
-	if SaveData.countAchievements() >= 185:
+	if achievementCount >= 185:
 		pass
-	if SaveData.countAchievements() >= 190:
+	if achievementCount >= 190:
 		Unlocks["Rosewood"]["ButtonBuyMax"] = true
-	if SaveData.countAchievements() >= 195:
+	if achievementCount >= 195:
 		pass
-	if SaveData.countAchievements() >= 200:
+	if achievementCount >= 200:
 		Unlocks["Ghost Gum"]["ButtonBuyMax"] = true
-	if SaveData.countAchievements() >= 205:
+	if achievementCount >= 205:
 		pass
-	if SaveData.countAchievements() >= 210:
+	if achievementCount >= 210:
 		Unlocks["Dragonwood"]["ButtonBuyMax"] = true
-	if SaveData.countAchievements() >= 215:
+	if achievementCount >= 215:
 		pass
-	if SaveData.countAchievements() >= 220:
+	if achievementCount >= 220:
 		Unlocks["Upgrades"]["MythicBuyMax"] = true
-	if SaveData.countAchievements() >= 225:
+	if achievementCount >= 225:
 		pass
-	if SaveData.countAchievements() >= 230:
+	if achievementCount >= 230:
 		pass
-	if SaveData.countAchievements() >= 235:
+	if achievementCount >= 235:
 		pass
-	if SaveData.countAchievements() >= 240:
+	if achievementCount >= 240:
 		Unlocks["Upgrades"]["KeepGoldUpgrades"] = true
-	if SaveData.countAchievements() >= 245:
+	if achievementCount >= 245:
 		pass
-	if SaveData.countAchievements() >= 250:
+	if achievementCount >= 250:
 		pass
-	if SaveData.countAchievements() >= 255:
+	if achievementCount >= 255:
 		pass
-	if SaveData.countAchievements() >= 260:
+	if achievementCount >= 260:
 		pass
-	if SaveData.countAchievements() >= 265:
+	if achievementCount >= 265:
 		pass
-	if SaveData.countAchievements() >= 270:
+	if achievementCount >= 270:
 		pass
-	if SaveData.countAchievements() >= 275:
+	if achievementCount >= 275:
 		pass
-	if SaveData.countAchievements() >= 280:
+	if achievementCount >= 280:
 		pass
-	if SaveData.countAchievements() >= 285:
+	if achievementCount >= 285:
 		pass
-	if SaveData.countAchievements() >= 290:
+	if achievementCount >= 290:
 		pass
-	if SaveData.countAchievements() >= 295:
+	if achievementCount >= 295:
 		pass
-	if SaveData.countAchievements() >= 300:
+	if achievementCount >= 300:
 		pass
 
 var Unlocks = {

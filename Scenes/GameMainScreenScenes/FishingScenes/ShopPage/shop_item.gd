@@ -119,6 +119,7 @@ func _on_buy_button_button_down() -> void:
 				get_tree().get_first_node_in_group("ShopPage").setWpsTempBonus(ShopItemType)
 			elif ShopItemType == Fishing.ShopItemEnum.WpcBonus1 or ShopItemType == Fishing.ShopItemEnum.WpcBonus2 or ShopItemType == Fishing.ShopItemEnum.WpcBonus3:
 				get_tree().get_first_node_in_group("ShopPage").setWpcTempBonus(ShopItemType)
+		_on_shop_item_refresh_timer_timeout()
 	
 	refreshItemData()
 	CalculateValues.calculateAllValues()

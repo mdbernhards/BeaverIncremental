@@ -306,7 +306,7 @@ layout_mode = 2
 color = Color(0.385493, 0.385492, 0.385492, 1)
 
 [node name="BarItemTimer" type="Timer" parent="."]
-wait_time = 0.05
+wait_time = 0.1
 autostart = true
 
 [connection signal="button_down" from="HBox/BarVBox/BarRect/HBox/MC2/ClickButton" to="." method="_on_click_button_button_down"]

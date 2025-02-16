@@ -20,6 +20,8 @@ enum ResearchStatesEnum {
 	CanQueue,
 }
 
+var ActiveResearch
+
 func _ready():
 	setupNodePaths()
 	setupResearchItems()
@@ -147,7 +149,10 @@ func _on_history_button_button_down() -> void:
 		HistoryButton.text = "History"
 
 func _on_research_section_timer_timeout() -> void:
-	setupHistoryItems()
+	if ActiveResearch != getActiveResearch().keys():
+		setupHistoryItems()
+		ActiveResearch = getActiveResearch().keys()
+	
 	setResearchStates()
 	checkQueue()
 	

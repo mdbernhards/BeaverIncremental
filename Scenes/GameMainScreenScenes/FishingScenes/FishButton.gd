@@ -74,7 +74,9 @@ func _physics_process(delta):
 
 func move(delta):
 	TimePassed += delta
-	position += (Direction.normalized() * Speed * delta).round()
+	
+	move_local_x(Direction.x * Speed * delta)
+	move_local_y(Direction.y * Speed * delta)
 	
 	match SwimType:
 		0: 
