@@ -43,6 +43,11 @@ func _on_sell_button_button_down() -> void:
 	if SaveData.CaughtFish[Fish.Type]["Count"] > 0:
 		SaveData.CaughtFish[Fish.Type]["Count"] -= 1
 		SaveData.FishBiscuits["Count"] += Fishing.FishPrice[Fish.Type] * Values.ResourceValues["Fish"]["FishPriceMultip"]
+		
+		if !SaveData.GeneralInfo.has("FishSoldCount"):
+			SaveData.GeneralInfo["FishSoldCount"] = 0
+		
+		SaveData.GeneralInfo["FishSoldCount"] += 1
 		updateData()
 
 func _on_fish_item_refresh_timer_timeout() -> void:

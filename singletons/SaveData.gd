@@ -77,9 +77,9 @@ func resetValues():
 	ResearchInfo = OriginalResearchInfo.duplicate(true)
 	MaxResourceCount = OriginalMaxResourceCount.duplicate(true)
 	
-	SaveData.GeneralInfo["TempClickCount"] = 0
-	SaveData.GeneralInfo["TempResearchDone"] = 0
-	SaveData.GeneralInfo["TempFishedCount"] = 0
+	GeneralInfo["TempClickCount"] = 0
+	GeneralInfo["TempResearchDone"] = 0
+	GeneralInfo["TempFishedCount"] = 0
 	
 	resetUnlocks()
 	recalculateValues()
@@ -1351,7 +1351,8 @@ var GeneralInfo = {
 	"TotalFishedCount" : 0,
 	"TempFishedCount" : 0,
 	"CurrentFishingChances" : 3,
-	"TimesBaitNotUsed" : 0
+	"TimesBaitNotUsed" : 0,
+	"FishShopItemsBoughtCount" : 0,
 }
 
 var SavesInfo = {

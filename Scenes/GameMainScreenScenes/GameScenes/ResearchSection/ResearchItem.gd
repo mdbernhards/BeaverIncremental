@@ -125,6 +125,7 @@ func getPriceText():
 				PriceText += formatedCost + ", "
 	
 	if IsResearchStarted or InQueue:
+		PriceText = PriceText.left(PriceText.length() - 2)
 		PriceText = "[color=gray]" + PriceText + "[/color], "
 	
 	return PriceText.left(PriceText.length() - 2)

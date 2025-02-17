@@ -83,6 +83,7 @@ func updateValues():
 	SellAmountLabel.text = str(NumberFormatting.formatNumber(roundi(WoodLossIfSold))) + " " + WoodType
 	SellGoldGainLabel.text = str(NumberFormatting.formatNumber(roundi(GoldGainedIfSold))) + " Gold"
 	BotPriceLabel.text = "Price: " + str(NumberFormatting.formatNumber(roundi(CalculatePrice.getBotCost(SaveData.Resources[WoodType]["Bots"], WoodType)))) + " gold"
+	BotCountLabel.text = str(SaveData.Resources[WoodType]["Bots"])
 	
 	PerSecondWoodSoldLabel.text = str(NumberFormatting.formatNumber(roundi(Values.ResourceValues[WoodType]["WoodSoldPerSecond"])))
 	PerSecondGoldGainLabel.text = str(NumberFormatting.formatNumber(roundi(Values.ResourceValues[WoodType]["GoldGainPerSecond"])))

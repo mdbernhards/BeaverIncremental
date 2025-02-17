@@ -120,6 +120,11 @@ func _on_buy_button_button_down() -> void:
 			elif ShopItemType == Fishing.ShopItemEnum.WpcBonus1 or ShopItemType == Fishing.ShopItemEnum.WpcBonus2 or ShopItemType == Fishing.ShopItemEnum.WpcBonus3:
 				get_tree().get_first_node_in_group("ShopPage").setWpcTempBonus(ShopItemType)
 		_on_shop_item_refresh_timer_timeout()
+		
+		if !SaveData.GeneralInfo.has("FishShopItemsBoughtCount"):
+			SaveData.GeneralInfo["FishShopItemsBoughtCount"] = 0
+		
+		SaveData.GeneralInfo["FishShopItemsBoughtCount"] += 1
 	
 	refreshItemData()
 	CalculateValues.calculateAllValues()
@@ -224,4 +229,9 @@ func _on_unlock_button_button_down() -> void:
 	if SaveData.FishBiscuits["Count"] >= Fishing.ShopItems[ShopItemType]["UnlockPrice"]:
 		SaveData.FishBiscuits["Count"] -= Fishing.ShopItems[ShopItemType]["UnlockPrice"]
 		SaveData.ShopItems[ShopItemType]["Unlocked"] = true
+		
+		if !SaveData.GeneralInfo.has("FishShopItemsBoughtCount"):
+			SaveData.GeneralInfo["FishShopItemsBoughtCount"] = 0
+		
+		SaveData.GeneralInfo["FishShopItemsBoughtCount"] += 1
 	refreshItemData()

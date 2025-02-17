@@ -6,14 +6,15 @@ var DescriptionLabel
 var UnlockLabel
 var SecondaryDescriptionLabel
 var IconRect
+var PriceLabel
 
 func _ready() -> void:
 	setupNodePaths()
 
 func _process(delta: float) -> void:
-	pass
+	global_position = get_global_mouse_position() + Vector2(5, -size.y - 5)
 
-func setTooltip(title, description, secondaryDescription = null, unlocked = null, type = null):
+func setTooltip(title, description, secondaryDescription = null, unlocked = null, type = null, price = null):
 	setupNodePaths()
 	
 	TitleLabel.text = title
@@ -30,6 +31,12 @@ func setTooltip(title, description, secondaryDescription = null, unlocked = null
 		UnlockLabel.text = unlocked
 	else:
 		UnlockLabel.visible = false
+	
+	if price:
+		PriceLabel.visible = true
+		PriceLabel.text = "Sell For: " + str(price)
+	else:
+		PriceLabel.visible = false
 	
 	if type == "Research":
 		IconRect.visible = true # change to research icon
@@ -48,3 +55,4 @@ func setupNodePaths():
 	UnlockLabel = $MC/MC/VBox/HBox/MC2/UnlockLabel
 	SecondaryDescriptionLabel = $MC/MC/VBox/SecondaryMC/SecondaryDescriptionLabel
 	IconRect = $MC/MC/VBox/HBox/MC/IconRect
+	PriceLabel = $MC/MC/VBox/PriceMc/PriceLabel

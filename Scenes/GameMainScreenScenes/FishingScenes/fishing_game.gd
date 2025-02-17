@@ -129,6 +129,11 @@ func _on_fish_button_button_down() -> void:
 	if IsBouncing:
 		checkIfFishCaught()
 	else:
+		if !SaveData.GeneralInfo.has("TotalFishedCount"):
+			SaveData.GeneralInfo["TotalFishedCount"] = 0
+		
+		SaveData.GeneralInfo["TempFishedCount"] += 1
+		SaveData.GeneralInfo["TotalFishedCount"] += 1
 		startFishing()
 	_on_refresh_timer_timeout()
 
@@ -208,12 +213,13 @@ func pickFishToSpawn():
 			return weightItem["FishType"]
 
 func spawnFish():
-	var fishType = pickFishToSpawn()
-	
-	var tempFish = FishObjectScene.instantiate()
-	tempFish.FishType = fishType
-	tempFish.FishHooked.connect(startFishCatchPhase)
-	Fish.add_child(tempFish)
+	if !IsBouncing:
+		var fishType = pickFishToSpawn()
+		
+		var tempFish = FishObjectScene.instantiate()
+		tempFish.FishType = fishType
+		tempFish.FishHooked.connect(startFishCatchPhase)
+		Fish.add_child(tempFish)
 
 func startFishCatchPhase(fishType):
 	IsBouncing = true
@@ -221,6 +227,7 @@ func startFishCatchPhase(fishType):
 	
 	var newTime = min(FishingTimeoutTimer.get_time_left() + 5, Values.ResourceValues["Fish"]["FishingTimeout"] * LongerFishingTimeMultip)
 	FishingTimeoutTimer.start(newTime)
+	deleteAllFish()
 
 func deleteAllFish():
 	for fish in Fish.get_children():

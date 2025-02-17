@@ -109,7 +109,7 @@ var Magic = {
 	"10a" : {
 		"Name" : "Unlock First 10 Research",
 		"Description" : "Unlock First 10 Research Items Permenantly",
-		"Cost" : 1000,
+		"Cost" : 300,
 	},
 	"10b" : {
 		"Name" : "Rare Upgrades 85% Cheaper",

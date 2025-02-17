@@ -326,7 +326,7 @@ func SetFishingBonuses(fishId):
 		Fishing.FishEnum.ElectricSponge:
 			TempValues["Fish"]["ChanceToUseBait"] *= pow(1 - 0.01, upgradeMultiplier) * EffectMultip
 		Fishing.FishEnum.ConstructionShark:
-			TempValues["Global"]["WcPriceMultip"] *= pow(1 - 0.01, upgradeMultiplier) * EffectMultip
+			TempValues["Global"]["WcCostsMultip"] *= pow(1 - 0.01, upgradeMultiplier) * EffectMultip
 		Fishing.FishEnum.SalmonLumberJack:
 			TempValues["Global"]["WcStorageMultip"] *= pow(1.01, upgradeMultiplier) * EffectMultip
 			TempValues["Global"]["WpsMultip"] *= pow(1.01, upgradeMultiplier) * EffectMultip
@@ -342,34 +342,64 @@ func SetFishingBonuses(fishId):
 			TempValues["Global"]["WpsMultip"] *= pow(1.02, upgradeMultiplier) * EffectMultip
 		Fishing.FishEnum.OakCrate:
 			TempValues["Oak"]["WpsMultip"] *= pow(1.025, upgradeMultiplier) * EffectMultip
+			TempValues["Oak"]["BeaverMultip"] *= pow(1.025, upgradeMultiplier) * EffectMultip
+			TempValues["Oak"]["StorageMultip"] *= pow(1.025, upgradeMultiplier) * EffectMultip
 		Fishing.FishEnum.AppleCrate:
 			TempValues["Apple"]["WpsMultip"] *= pow(1.025, upgradeMultiplier) * EffectMultip
+			TempValues["Apple"]["BeaverMultip"] *= pow(1.025, upgradeMultiplier) * EffectMultip
+			TempValues["Apple"]["StorageMultip"] *= pow(1.025, upgradeMultiplier) * EffectMultip
 		Fishing.FishEnum.MapleCrate:
 			TempValues["Maple"]["WpsMultip"] *= pow(1.025, upgradeMultiplier) * EffectMultip
+			TempValues["Maple"]["BeaverMultip"] *= pow(1.025, upgradeMultiplier) * EffectMultip
+			TempValues["Maple"]["StorageMultip"] *= pow(1.025, upgradeMultiplier) * EffectMultip
 		Fishing.FishEnum.BirchCrate:
 			TempValues["Birch"]["WpsMultip"] *= pow(1.025, upgradeMultiplier) * EffectMultip
+			TempValues["Birch"]["BeaverMultip"] *= pow(1.025, upgradeMultiplier) * EffectMultip
+			TempValues["Birch"]["StorageMultip"] *= pow(1.025, upgradeMultiplier) * EffectMultip
 		Fishing.FishEnum.SpruceCrate:
 			TempValues["Spruce"]["WpsMultip"] *= pow(1.025, upgradeMultiplier) * EffectMultip
+			TempValues["Spruce"]["BeaverMultip"] *= pow(1.025, upgradeMultiplier) * EffectMultip
+			TempValues["Spruce"]["StorageMultip"] *= pow(1.025, upgradeMultiplier) * EffectMultip
 		Fishing.FishEnum.ChestnutCrate:
 			TempValues["Chestnut"]["WpsMultip"] *= pow(1.025, upgradeMultiplier) * EffectMultip
+			TempValues["Chestnut"]["BeaverMultip"] *= pow(1.025, upgradeMultiplier) * EffectMultip
+			TempValues["Chestnut"]["StorageMultip"] *= pow(1.025, upgradeMultiplier) * EffectMultip
 		Fishing.FishEnum.CherryCrate:
 			TempValues["Cherry"]["WpsMultip"] *= pow(1.025, upgradeMultiplier) * EffectMultip
+			TempValues["Cherry"]["BeaverMultip"] *= pow(1.025, upgradeMultiplier) * EffectMultip
+			TempValues["Cherry"]["StorageMultip"] *= pow(1.025, upgradeMultiplier) * EffectMultip
 		Fishing.FishEnum.AshCrate:
 			TempValues["Ash"]["WpsMultip"] *= pow(1.025, upgradeMultiplier) * EffectMultip
+			TempValues["Ash"]["BeaverMultip"] *= pow(1.025, upgradeMultiplier) * EffectMultip
+			TempValues["Ash"]["StorageMultip"] *= pow(1.025, upgradeMultiplier) * EffectMultip
 		Fishing.FishEnum.CedarCrate:
 			TempValues["Cedar"]["WpsMultip"] *= pow(1.025, upgradeMultiplier) * EffectMultip
+			TempValues["Cedar"]["BeaverMultip"] *= pow(1.025, upgradeMultiplier) * EffectMultip
+			TempValues["Cedar"]["StorageMultip"] *= pow(1.025, upgradeMultiplier) * EffectMultip
 		Fishing.FishEnum.MahoganyCrate:
 			TempValues["Mahogany"]["WpsMultip"] *= pow(1.025, upgradeMultiplier) * EffectMultip
+			TempValues["Mahogany"]["BeaverMultip"] *= pow(1.025, upgradeMultiplier) * EffectMultip
+			TempValues["Mahogany"]["StorageMultip"] *= pow(1.025, upgradeMultiplier) * EffectMultip
 		Fishing.FishEnum.EbonyCrate:
 			TempValues["Ebony"]["WpsMultip"] *= pow(1.025, upgradeMultiplier) * EffectMultip
+			TempValues["Ebony"]["BeaverMultip"] *= pow(1.025, upgradeMultiplier) * EffectMultip
+			TempValues["Ebony"]["StorageMultip"] *= pow(1.025, upgradeMultiplier) * EffectMultip
 		Fishing.FishEnum.DogwoodCrate:
 			TempValues["Dogwood"]["WpsMultip"] *= pow(1.025, upgradeMultiplier) * EffectMultip
+			TempValues["Dogwood"]["BeaverMultip"] *= pow(1.025, upgradeMultiplier) * EffectMultip
+			TempValues["Dogwood"]["StorageMultip"] *= pow(1.025, upgradeMultiplier) * EffectMultip
 		Fishing.FishEnum.RosewoodCrate:
 			TempValues["Rosewood"]["WpsMultip"] *= pow(1.025, upgradeMultiplier) * EffectMultip
+			TempValues["Rosewood"]["BeaverMultip"] *= pow(1.025, upgradeMultiplier) * EffectMultip
+			TempValues["Rosewood"]["StorageMultip"] *= pow(1.025, upgradeMultiplier) * EffectMultip
 		Fishing.FishEnum.GhostGumCrate:
 			TempValues["Ghost Gum"]["WpsMultip"] *= pow(1.025, upgradeMultiplier) * EffectMultip
+			TempValues["Ghost Gum"]["BeaverMultip"] *= pow(1.025, upgradeMultiplier) * EffectMultip
+			TempValues["Ghost Gum"]["StorageMultip"] *= pow(1.025, upgradeMultiplier) * EffectMultip
 		Fishing.FishEnum.DragonwoodCrate:
 			TempValues["Dragonwood"]["WpsMultip"] *= pow(1.025, upgradeMultiplier) * EffectMultip
+			TempValues["Dragonwood"]["BeaverMultip"] *= pow(1.025, upgradeMultiplier) * EffectMultip
+			TempValues["Dragonwood"]["StorageMultip"] *= pow(1.025, upgradeMultiplier) * EffectMultip
 		Fishing.FishEnum.BlueWhale:
 			TempValues["Global"]["WpsMultip"] *= pow(1.03, upgradeMultiplier) * EffectMultip
 			TempValues["Global"]["BeaverMultip"] *= pow(1.03, upgradeMultiplier) * EffectMultip
@@ -1339,7 +1369,7 @@ var OriginalTempValues = {
 		"BotPriceMultip" : 1,
 		"AutoClickers" : 0,
 		"BotSellMoreMultip" : 1,
-		"BotBaseSell" : 10,
+		"BotBaseSell" : 1000,
 		"WpcToWpsMultip" : 1,
 		"LowerStorageMultip" : 1,
 		"LowerWpsAddMultip" : 1,

@@ -45,6 +45,7 @@ func clearLog():
 func _make_custom_tooltip(_for_text):
 	var title = "????"
 	var description = "????"
+	var price = null
 	
 	if _for_text.begins_with("tooltip_research"):
 		var researchId = _for_text.split(",")[1]
@@ -61,10 +62,11 @@ func _make_custom_tooltip(_for_text):
 	elif _for_text.begins_with("tooltip_fish"):
 		var fishId = _for_text.split(",")[1]
 		title = Fishing.Fish[int(fishId)].FishName
-		description = "Fish Fish Fish!"
+		description = Fishing.FishEffect[int(fishId)]
+		price = Fishing.FishPrice[int(fishId)]
 		
 	var tooltip = load("res://Scenes/Tooltips/tooltip.tscn").instantiate()
-	tooltip.setTooltip(title, description)
+	tooltip.setTooltip(title, description, null, null, null, price)
 	
 	return tooltip
 
@@ -81,7 +83,6 @@ func setupNodePaths():
 func _on_text_log_meta_hover_started(meta: Variant) -> void:
 	active_tooltip = _make_custom_tooltip(meta)
 	TooltipNode.add_child(active_tooltip)
-	active_tooltip.global_position = get_global_mouse_position() + Vector2(5, -200)
 
 func _on_text_log_meta_hover_ended(_meta: Variant) -> void:
 	if active_tooltip:

@@ -1,9 +1,17 @@
 TODO
 
 First:
-Fishing Achievements
-Make ash have a lot of storage but not a lot of wps and wpc
-Scale Down Magic Locks
+Pre Research 69 Have The Great Reset:
+First Check After Reset How Mutch I can Farm Through When I get Back
+Then Starting From Oak Have A Storage 5x and Each Storage After That Gets Proporonal Storage Nx
+Have Relativly Short 5 min timers for those researches to Kinda Reset Everything, Have A choke point, bottle Neck
+Then Unlock Cedar and try to continue
+
+Need to change bait to no bait when 0
+Need to refresh Fishing Shop items when bait used
+
+Scale up Research Prices and Storage biggly To get exponential Magic Gain, Make it more fun?
+Somehow make Storage limits kinda fibonachi like, need to think about this
 
 Keep Playing
 
@@ -11,8 +19,6 @@ Later:
 Around research 80 make clicking good again
 Make Page And Tab Buttons Toggleable Radio Buttons
 Add < and > Buttons for bars and market
-Around 50 - 53 add some storage research, mainly for chestnut, or not?
-Write all Fish Effects, tooltips with effect and price
 Balance Fishing
 Making The Game Playable from start to finish
 Dam completion and Effect application
@@ -34,6 +40,8 @@ Set Number Notation for all numbers missing it
 Hide/Show Buttons faster when loading
 Color gold prices yellow, fish biscuts orange and Magic purple???
 Check if All Tabs BuyMax Works
+Might Need To Check Upgrade Trigger to not buy it with buy max button
+Market Sell Precentige Doesn't Save When Switching Page
 
 A lot Later:
 Write achievement unlock bonuses in the text log
@@ -167,9 +175,20 @@ Fix Research Cost Labels DONE
 When Clicking on a fish add +5 sec for catching DONE
 Write in Log Temp Bonus ending, Fishing chance recharging and fully charging DONE
 Inflate Maple Prices post 52 research DONE
+Enable Fishing Achievements DONE
 Fix Maple 10 Upgrade DONE
 Big Optimization That Fixed Fishing Stutter DONE
 Fix Fish Button Not Disabled when out of chances DONE
 Make Research 57 and 63 locked behind Merchants DONE
 Update Fishing Shop Item Affordability straight after buying DONE
 add 33% storage for chestnut and cherry DONE
+Make Magic Label Font a lil smaller DONE
+Add Fish Tooltips that show effect and sell price DONE
+Add Fishing Shop items bought count Achievements DONE
+Scale Down Magic Locks DONE
+Balance Ash DONE
+Cap Storage Min to 0 DONE
+Stop Spawning and Despawn All Fish In Bouncing Phase DONE
+Fix Text Log Tooltip DONE
+Merchant Banner Isn't Showing Correct Count DONE
+Fix Comma Showing on queue items DONE

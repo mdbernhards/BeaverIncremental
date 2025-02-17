@@ -226,6 +226,7 @@ func setTickChanges():
 		var woodLoss = WoodCalculations[woodType]["WoodProductionLoss"] + WoodCalculations[woodType]["WoodMarkedLoss"] + WoodCalculations[woodType]["WoodDamLoss"]
 		
 		SaveData.Resources[woodType]["Count"] += WoodCalculations[woodType]["WoodProductionGain"] - woodLoss
+		SaveData.Resources[woodType]["Count"] = max(SaveData.Resources[woodType]["Count"], 0)
 		
 		if SaveData.GeneralInfo.has("TotalWoodProduced"):
 			SaveData.GeneralInfo["TotalWoodProduced"] += WoodCalculations[woodType]["WoodProductionGain"]
