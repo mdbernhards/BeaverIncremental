@@ -797,6 +797,22 @@ func SetResearchValue(researchNr):
 			TempValues["Cherry"]["WpsMultip"] *= 1.45
 		"68" :
 			TempValues["Global"]["StorageMultip"] *= 1.075
+		"68b" :
+			TempValues["Oak"]["StorageMultip"] *= 10
+		"68c" :
+			TempValues["Apple"]["StorageMultip"] *= 8
+		"68d" :
+			TempValues["Maple"]["StorageMultip"] *= 6
+		"68e" :
+			TempValues["Birch"]["StorageMultip"] *= 25
+		"68f" :
+			TempValues["Spruce"]["StorageMultip"] *= 15
+		"68g" :
+			TempValues["Chestnut"]["StorageMultip"] *= 22
+		"68h" :
+			TempValues["Cherry"]["StorageMultip"] *= 28
+		"68i" :
+			TempValues["Ash"]["StorageMultip"] *= 16
 		"69" :
 			Unlocks.Unlocks["Cedar"]["Unlocked"] = true
 		"70" :

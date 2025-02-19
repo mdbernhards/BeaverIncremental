@@ -66,6 +66,7 @@ func _make_custom_tooltip(_for_text):
 		price = Fishing.FishPrice[int(fishId)]
 		
 	var tooltip = load("res://Scenes/Tooltips/tooltip.tscn").instantiate()
+	tooltip.IsTextLogTooltip = true
 	tooltip.setTooltip(title, description, null, null, null, price)
 	
 	return tooltip

@@ -37,6 +37,13 @@ text = "2 Magic"
 horizontal_alignment = 2
 vertical_alignment = 2
 
+[node name="MagicIdLabel" type="Label" parent="MagicButton/MC"]
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_colors/font_color = Color(0, 0.501961, 0, 1)
+text = "10"
+horizontal_alignment = 1
+
 [node name="CantAffordColorRect" type="ColorRect" parent="."]
 layout_mode = 2
 color = Color(0.513726, 0.0941176, 0, 0.301961)

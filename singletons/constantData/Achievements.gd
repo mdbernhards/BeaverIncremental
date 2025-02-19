@@ -791,11 +791,6 @@ var Achievements = {
 		"Description" : "Buy 250 Things From The Fishing Shop",
 		"Trigger" : func(): return SaveData.GeneralInfo.has("FishShopItemsBoughtCount") and SaveData.GeneralInfo["FishShopItemsBoughtCount"] >= 250,
 	},
-	"159" : { # Replace
-		"Name" : "Unlock Bait 10",
-		"Description" : "Unlock Bait 10",
-		"Trigger" : func(): return false,
-	},
 	"251" : { # Prob Change
 		"Name" : "Max LvL 1 Upgrade",
 		"Description" : "Max LvL 1 Upgrade",
@@ -1243,28 +1238,33 @@ var Achievements = {
 	},
 	"245" : {
 		"Name" : "Click 1k time",
-		"Description" : "Click 1k time",
+		"Description" : "Click or Auto Click 1k time",
 		"Trigger" : func(): return SaveData.GeneralInfo.has("ClickCount") and SaveData.GeneralInfo["ClickCount"] >= 1000,
 	},
 	"246" : {
 		"Name" : "Click 10k time",
-		"Description" : "Click 10k time",
+		"Description" : "Click or Auto Click 10k time",
 		"Trigger" : func(): return SaveData.GeneralInfo.has("ClickCount") and SaveData.GeneralInfo["ClickCount"] >= 10000,
 	},
 	"247" : {
 		"Name" : "Click 25k time",
-		"Description" : "Click 25k time",
+		"Description" : "Click or Auto Click 25k time",
 		"Trigger" : func(): return SaveData.GeneralInfo.has("ClickCount") and SaveData.GeneralInfo["ClickCount"] >= 25000,
 	},
 	"248" : {
 		"Name" : "Click 50k time",
-		"Description" : "Click 50k time",
+		"Description" : "Click or Auto Click 50k time",
 		"Trigger" : func(): return SaveData.GeneralInfo.has("ClickCount") and SaveData.GeneralInfo["ClickCount"] >= 50000,
 	},
 	"249" : {
 		"Name" : "Click 100k time",
-		"Description" : "Click 100k time",
+		"Description" : "Click or Auto Click 100k time",
 		"Trigger" : func(): return SaveData.GeneralInfo.has("ClickCount") and SaveData.GeneralInfo["ClickCount"] >= 100000,
+	},
+	"159" : {
+		"Name" : "Click 1m times",
+		"Description" : "Click or Auto Click 1m time",
+		"Trigger" : func(): return SaveData.GeneralInfo.has("ClickCount") and SaveData.GeneralInfo["ClickCount"] >= 1000000,
 	},
 	"250" : {
 		"Name" : "Why Are We Clicking?",

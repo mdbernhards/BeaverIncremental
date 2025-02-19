@@ -63,14 +63,14 @@ func calculatePotentialMagicGain():
 			else:
 				if resourcesMagic <= 90:
 					baseCost *= 1.032
-				elif resourcesMagic <= 950:
-					baseCost *= 1.0003
+				elif resourcesMagic <= 999:
+					baseCost *= 1.0005
 				elif resourcesMagic <= 10000:
-					baseCost *= 1.00001
+					baseCost *= 1.00002
 				elif resourcesMagic <= 100000:
-					baseCost *= 1.000001
+					baseCost *= 1.000002
 				elif resourcesMagic <= 250000:
-					baseCost *= 1.0000001
+					baseCost *= 1.0000002
 				elif resourcesMagic <= 5000000:
 					baseCost *= 1.00000001
 				elif resourcesMagic <= 50000000:

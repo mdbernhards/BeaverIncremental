@@ -278,6 +278,12 @@ func _on_refresh_timer_timeout() -> void:
 		SelectedBaitLabel.visible = true
 		var baitType = Values.ResourceValues["Fish"]["SelectedBait"]
 		
+		if baitType != Fishing.ShopItemEnum.NoBait:
+			if SaveData.ShopItems[baitType]["Count"] == 0:
+				BaitUsed = Fishing.ShopItemEnum.NoBait
+				baitType = Fishing.ShopItemEnum.NoBait
+				Values.ResourceValues["Fish"]["SelectedBait"] = Fishing.ShopItemEnum.NoBait
+		
 		if baitType == Fishing.ShopItemEnum.NoBait:
 			SelectedBaitLabel.text = "Selected Bait: No Bait"
 		else:

@@ -19,12 +19,12 @@ func setupNodePaths():
 	WpsBonusTimer = $WpsBonusTimer
 	WpcBonusTimer = $WpcBonusTimer
 
-func deleteAllFish():
+func deleteAllShopItem():
 	for item in ShopItemVBox.get_children():
 		item.queue_free()
 
 func setShopItems():
-	deleteAllFish()
+	deleteAllShopItem()
 	var shopItemScene = load("res://Scenes/GameMainScreenScenes/FishingScenes/ShopPage/shop_item.tscn")
 	
 	for item in Fishing.ShopItems:

@@ -8,11 +8,14 @@ var SecondaryDescriptionLabel
 var IconRect
 var PriceLabel
 
+var IsTextLogTooltip = false
+
 func _ready() -> void:
 	setupNodePaths()
 
 func _process(delta: float) -> void:
-	global_position = get_global_mouse_position() + Vector2(5, -size.y - 5)
+	if IsTextLogTooltip:
+		global_position = get_global_mouse_position() + Vector2(5, -size.y - 5)
 
 func setTooltip(title, description, secondaryDescription = null, unlocked = null, type = null, price = null):
 	setupNodePaths()

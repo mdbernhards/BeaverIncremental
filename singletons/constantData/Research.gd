@@ -730,10 +730,82 @@ var Research = {
 		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 0,
 		"Unlocked" : func(): return true,
 	},
+	"68b" :  {
+		"Name" : "10x Oak Storage",
+		"Description" : "10x Oak Storage",
+		"Time" : 4700, # Seconds
+		"OakCost" : 650000000, "AppleCost" : 0, "MapleCost" : 0, "BirchCost" : 0, "SpruceCost" : 0,
+		"ChestnutCost" : 0, "CherryCost" : 0, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 0,
+		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 0,
+		"Unlocked" : func(): return true,
+	},
+	"68c" :  {
+		"Name" : "8x Apple Storage",
+		"Description" : "8x Apple Storage",
+		"Time" : 5200, # Seconds
+		"OakCost" : 0, "AppleCost" : 333000000, "MapleCost" : 0, "BirchCost" : 0, "SpruceCost" : 0,
+		"ChestnutCost" : 0, "CherryCost" : 0, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 0,
+		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 0,
+		"Unlocked" : func(): return true,
+	},
+	"68d" :  {
+		"Name" : "6x Maple Storage",
+		"Description" : "6x Maple Storage",
+		"Time" : 5500, # Seconds
+		"OakCost" : 0, "AppleCost" : 0, "MapleCost" : 220000000, "BirchCost" : 0, "SpruceCost" : 0,
+		"ChestnutCost" : 0, "CherryCost" : 0, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 0,
+		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 0,
+		"Unlocked" : func(): return true,
+	},
+	"68e" :  {
+		"Name" : "25x Birch Storage",
+		"Description" : "25x Birch Storage",
+		"Time" : 5700, # Seconds
+		"OakCost" : 0, "AppleCost" : 0, "MapleCost" : 0, "BirchCost" : 25000000, "SpruceCost" : 0,
+		"ChestnutCost" : 0, "CherryCost" : 0, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 0,
+		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 0,
+		"Unlocked" : func(): return true,
+	},
+	"68f" :  {
+		"Name" : "15x Spruce Storage",
+		"Description" : "15x Spruce Storage",
+		"Time" : 5900, # Seconds
+		"OakCost" : 0, "AppleCost" : 0, "MapleCost" : 0, "BirchCost" : 0, "SpruceCost" : 20000000,
+		"ChestnutCost" : 0, "CherryCost" : 0, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 0,
+		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 0,
+		"Unlocked" : func(): return true,
+	},
+	"68g" :  {
+		"Name" : "22x Chestnut Storage",
+		"Description" : "22x Chestnut Storage",
+		"Time" : 6100, # Seconds
+		"OakCost" : 0, "AppleCost" : 0, "MapleCost" : 0, "BirchCost" : 0, "SpruceCost" : 0,
+		"ChestnutCost" : 6500000, "CherryCost" : 0, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 0,
+		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 0,
+		"Unlocked" : func(): return true,
+	},
+	"68h" :  {
+		"Name" : "28x Cherry Storage",
+		"Description" : "28x Cherry Storage",
+		"Time" : 6300, # Seconds
+		"OakCost" : 0, "AppleCost" : 0, "MapleCost" : 0, "BirchCost" : 0, "SpruceCost" : 0,
+		"ChestnutCost" : 0, "CherryCost" : 2000000, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 0,
+		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 0,
+		"Unlocked" : func(): return true,
+	},
+	"68i" :  {
+		"Name" : "16x Ash Storage",
+		"Description" : "16x Ash Storage",
+		"Time" : 6500, # Seconds
+		"OakCost" : 0, "AppleCost" : 0, "MapleCost" : 0, "BirchCost" : 0, "SpruceCost" : 0,
+		"ChestnutCost" : 0, "CherryCost" : 0, "AshCost" : 1700000, "CedarCost" : 0, "MahoganyCost" : 0,
+		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 0,
+		"Unlocked" : func(): return true,
+	},
 	"69" :  {
 		"Name" : "Unlock Cedar",
 		"Description" : "Unlock Cedar",
-		"Time" : 4000, # Seconds
+		"Time" : 6600, # Seconds
 		"OakCost" : 100000000, "AppleCost" : 50000000, "MapleCost" : 47500000, "BirchCost" : 10000000, "SpruceCost" : 5000000,
 		"ChestnutCost" : 2500000, "CherryCost" : 1500000, "AshCost" : 500000, "CedarCost" : 0, "MahoganyCost" : 0,
 		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 0,
@@ -742,7 +814,7 @@ var Research = {
 	"70" :  {
 		"Name" : "Ash Beavers 13% Better",
 		"Description" : "Ash Beavers 13% Better",
-		"Time" : 4200, # Seconds
+		"Time" : 6800, # Seconds
 		"OakCost" : 95000000, "AppleCost" : 0, "MapleCost" : 55500000, "BirchCost" : 0, "SpruceCost" : 7500000,
 		"ChestnutCost" : 2750000, "CherryCost" : 0, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 0,
 		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 0,
@@ -751,7 +823,7 @@ var Research = {
 	"71" :  {
 		"Name" : "Woodcamps 20% More Storage",
 		"Description" : "Woodcamps 20% More Storage",
-		"Time" : 4500, # Seconds
+		"Time" : 7000, # Seconds
 		"OakCost" : 0, "AppleCost" : 0, "MapleCost" : 0, "BirchCost" : 0, "SpruceCost" : 0,
 		"ChestnutCost" : 0, "CherryCost" : 0, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 0,
 		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 100,
@@ -760,7 +832,7 @@ var Research = {
 	"72" :  {
 		"Name" : "15% More Magic",
 		"Description" : "15% More Magic",
-		"Time" : 4550, # Seconds
+		"Time" : 7350, # Seconds
 		"OakCost" : 0, "AppleCost" : 0, "MapleCost" : 0, "BirchCost" : 0, "SpruceCost" : 0,
 		"ChestnutCost" : 0, "CherryCost" : 0, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 0,
 		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 100,
@@ -769,7 +841,7 @@ var Research = {
 	"73" :  {
 		"Name" : "Birch WPS 36%",
 		"Description" : "Birch WPS 36%",
-		"Time" : 4590, # Seconds
+		"Time" : 7530, # Seconds
 		"OakCost" : 0, "AppleCost" : 0, "MapleCost" : 0, "BirchCost" : 0, "SpruceCost" : 0,
 		"ChestnutCost" : 0, "CherryCost" : 0, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 0,
 		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 100,
@@ -778,7 +850,7 @@ var Research = {
 	"73b" :  {
 		"Name" : "Fishing Chance Refresh -1 min",
 		"Description" : "Lowers Fishing Chance Refresh Time By 1 minute",
-		"Time" : 4620, # Seconds
+		"Time" : 7780, # Seconds
 		"OakCost" : 0, "AppleCost" : 0, "MapleCost" : 0, "BirchCost" : 0, "SpruceCost" : 0,
 		"ChestnutCost" : 0, "CherryCost" : 0, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 0,
 		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 100,
@@ -787,7 +859,7 @@ var Research = {
 	"74" :  {
 		"Name" : "Each Achievement Gives +0.55% Storage",
 		"Description" : "Each Achievement Gives +0.55% Storage",
-		"Time" : 4660, # Seconds
+		"Time" : 8020, # Seconds
 		"OakCost" : 0, "AppleCost" : 0, "MapleCost" : 0, "BirchCost" : 0, "SpruceCost" : 0,
 		"ChestnutCost" : 0, "CherryCost" : 0, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 0,
 		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 100,
@@ -796,7 +868,7 @@ var Research = {
 	"75" :  {
 		"Name" : "6% WPS",
 		"Description" : "6% WPS",
-		"Time" : 4720, # Seconds
+		"Time" : 8570, # Seconds
 		"OakCost" : 0, "AppleCost" : 0, "MapleCost" : 0, "BirchCost" : 0, "SpruceCost" : 0,
 		"ChestnutCost" : 0, "CherryCost" : 0, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 0,
 		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 100,
@@ -805,7 +877,7 @@ var Research = {
 	"76" :  {
 		"Name" : "storage From WC +27.5%",
 		"Description" : "storage From WC +27.5%",
-		"Time" : 4770, # Seconds
+		"Time" : 8700, # Seconds
 		"OakCost" : 0, "AppleCost" : 0, "MapleCost" : 0, "BirchCost" : 0, "SpruceCost" : 0,
 		"ChestnutCost" : 0, "CherryCost" : 0, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 0,
 		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 100,
@@ -814,7 +886,7 @@ var Research = {
 	"77" :  {
 		"Name" : "Oak Gives 25% More Magic",
 		"Description" : "Oak Gives 25% More Magic",
-		"Time" : 4820, # Seconds
+		"Time" : 8920, # Seconds
 		"OakCost" : 0, "AppleCost" : 0, "MapleCost" : 0, "BirchCost" : 0, "SpruceCost" : 0,
 		"ChestnutCost" : 0, "CherryCost" : 0, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 0,
 		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 100,
@@ -823,7 +895,7 @@ var Research = {
 	"78" :  {
 		"Name" : "Classic WPC +9%",
 		"Description" : "Classic WPC +9%",
-		"Time" : 4840, # Seconds
+		"Time" : 9340, # Seconds
 		"OakCost" : 0, "AppleCost" : 0, "MapleCost" : 0, "BirchCost" : 0, "SpruceCost" : 0,
 		"ChestnutCost" : 0, "CherryCost" : 0, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 0,
 		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 100,
@@ -832,7 +904,7 @@ var Research = {
 	"79" :  {
 		"Name" : "Unlock Mahogany",
 		"Description" : "Unlock Mahogany",
-		"Time" : 4860, # Seconds
+		"Time" : 9700, # Seconds
 		"OakCost" : 0, "AppleCost" : 0, "MapleCost" : 0, "BirchCost" : 0, "SpruceCost" : 0,
 		"ChestnutCost" : 0, "CherryCost" : 0, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 0,
 		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 100,
@@ -841,7 +913,7 @@ var Research = {
 	"79b" :  {
 		"Name" : "Autoclicker ticks -0.1 sec",
 		"Description" : "Autoclicker ticks take 0.1 second less (default 1 sec)",
-		"Time" : 4920, # Seconds
+		"Time" : 10080, # Seconds
 		"OakCost" : 0, "AppleCost" : 0, "MapleCost" : 0, "BirchCost" : 0, "SpruceCost" : 0,
 		"ChestnutCost" : 0, "CherryCost" : 0, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 0,
 		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 100,
@@ -850,7 +922,7 @@ var Research = {
 	"80" :  {
 		"Name" : "WPS +5% Per Unlocked Wood Type",
 		"Description" : "WPS +5% Per Unlocked Wood Type",
-		"Time" : 5000, # Seconds
+		"Time" : 10900, # Seconds
 		"OakCost" : 0, "AppleCost" : 0, "MapleCost" : 0, "BirchCost" : 0, "SpruceCost" : 0,
 		"ChestnutCost" : 0, "CherryCost" : 0, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 0,
 		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 100,
@@ -859,7 +931,7 @@ var Research = {
 	"81" :  {
 		"Name" : "Each Achievement Gives +0.25% WPC",
 		"Description" : "Each Achievement Gives +0.25% WPC",
-		"Time" : 5100, # Seconds
+		"Time" : 10950, # Seconds
 		"OakCost" : 0, "AppleCost" : 0, "MapleCost" : 0, "BirchCost" : 0, "SpruceCost" : 0,
 		"ChestnutCost" : 0, "CherryCost" : 0, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 0,
 		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 100,
@@ -868,7 +940,7 @@ var Research = {
 	"81b" :  {
 		"Name" : "Fishing Time 10% Longer",
 		"Description" : "Fish Stay on Screen for a 10% Longer Time",
-		"Time" : 5140, # Seconds
+		"Time" : 11370, # Seconds
 		"OakCost" : 0, "AppleCost" : 0, "MapleCost" : 0, "BirchCost" : 0, "SpruceCost" : 0,
 		"ChestnutCost" : 0, "CherryCost" : 0, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 0,
 		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 100,
@@ -877,7 +949,7 @@ var Research = {
 	"82" :  {
 		"Name" : "Woodcamp Base Storage +200",
 		"Description" : "Woodcamp Base Storage +200",
-		"Time" : 5200, # Seconds
+		"Time" : 11500, # Seconds
 		"OakCost" : 0, "AppleCost" : 0, "MapleCost" : 0, "BirchCost" : 0, "SpruceCost" : 0,
 		"ChestnutCost" : 0, "CherryCost" : 0, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 0,
 		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 100,
@@ -886,7 +958,7 @@ var Research = {
 	"83" :  {
 		"Name" : "Spruce WC Price -66%",
 		"Description" : "Spruce WC Price -66%",
-		"Time" : 5230, # Seconds
+		"Time" : 11900, # Seconds
 		"OakCost" : 0, "AppleCost" : 0, "MapleCost" : 0, "BirchCost" : 0, "SpruceCost" : 0,
 		"ChestnutCost" : 0, "CherryCost" : 0, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 0,
 		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 100,
@@ -895,7 +967,7 @@ var Research = {
 	"84" :  {
 		"Name" : "33% Reaserch Time",
 		"Description" : "33% Reaserch Time",
-		"Time" : 5400, # Seconds
+		"Time" : 12140, # Seconds
 		"OakCost" : 0, "AppleCost" : 0, "MapleCost" : 0, "BirchCost" : 0, "SpruceCost" : 0,
 		"ChestnutCost" : 0, "CherryCost" : 0, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 0,
 		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 100,
@@ -904,7 +976,7 @@ var Research = {
 	"85" :  {
 		"Name" : "Cedar WPS 19.5%",
 		"Description" : "Cedar WPS 19.5%",
-		"Time" : 5500, # Seconds
+		"Time" : 12200, # Seconds
 		"OakCost" : 0, "AppleCost" : 0, "MapleCost" : 0, "BirchCost" : 0, "SpruceCost" : 0,
 		"ChestnutCost" : 0, "CherryCost" : 0, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 0,
 		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 100,
@@ -913,7 +985,7 @@ var Research = {
 	"86" :  {
 		"Name" : "Rare Upgrades 44% Cheaper",
 		"Description" : "Rare Upgrades 44% Cheaper",
-		"Time" : 5550, # Seconds
+		"Time" : 12810, # Seconds
 		"OakCost" : 0, "AppleCost" : 0, "MapleCost" : 0, "BirchCost" : 0, "SpruceCost" : 0,
 		"ChestnutCost" : 0, "CherryCost" : 0, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 0,
 		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 100,
@@ -922,7 +994,7 @@ var Research = {
 	"87" :  {
 		"Name" : "Cedar WC Production Cost -30%",
 		"Description" : "Cedar WC Production Cost -30%",
-		"Time" : 5570, # Seconds
+		"Time" : 13230, # Seconds
 		"OakCost" : 0, "AppleCost" : 0, "MapleCost" : 0, "BirchCost" : 0, "SpruceCost" : 0,
 		"ChestnutCost" : 0, "CherryCost" : 0, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 0,
 		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 100,
@@ -931,7 +1003,7 @@ var Research = {
 	"88" :  {
 		"Name" : "1 Beaver Per 11 WC",
 		"Description" : "1 Beaver Per 11 WC",
-		"Time" : 5610, # Seconds
+		"Time" : 13270, # Seconds
 		"OakCost" : 0, "AppleCost" : 0, "MapleCost" : 0, "BirchCost" : 0, "SpruceCost" : 0,
 		"ChestnutCost" : 0, "CherryCost" : 0, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 0,
 		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 100,
@@ -940,7 +1012,7 @@ var Research = {
 	"89" :  {
 		"Name" : "Unlock Ebony",
 		"Description" : "Unlock Ebony",
-		"Time" : 5640, # Seconds
+		"Time" : 13400, # Seconds
 		"OakCost" : 0, "AppleCost" : 0, "MapleCost" : 0, "BirchCost" : 0, "SpruceCost" : 0,
 		"ChestnutCost" : 0, "CherryCost" : 0, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 0,
 		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 100,
@@ -949,7 +1021,7 @@ var Research = {
 	"90" :  {
 		"Name" : "Rare Storage +23.5%",
 		"Description" : "Rare Storage +23.5%",
-		"Time" : 5650, # Seconds
+		"Time" : 14450, # Seconds
 		"OakCost" : 0, "AppleCost" : 0, "MapleCost" : 0, "BirchCost" : 0, "SpruceCost" : 0,
 		"ChestnutCost" : 0, "CherryCost" : 0, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 0,
 		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 100,
@@ -958,7 +1030,7 @@ var Research = {
 	"91" :  {
 		"Name" : "3.5% WPC To WPS",
 		"Description" : "3.5% WPC To WPS",
-		"Time" : 5700, # Seconds
+		"Time" : 14500, # Seconds
 		"OakCost" : 0, "AppleCost" : 0, "MapleCost" : 0, "BirchCost" : 0, "SpruceCost" : 0,
 		"ChestnutCost" : 0, "CherryCost" : 0, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 0,
 		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 100,
@@ -967,7 +1039,7 @@ var Research = {
 	"92" :  {
 		"Name" : "Upgrade Price -20%",
 		"Description" : "Upgrade Price -20%",
-		"Time" : 5750, # Seconds
+		"Time" : 15350, # Seconds
 		"OakCost" : 0, "AppleCost" : 0, "MapleCost" : 0, "BirchCost" : 0, "SpruceCost" : 0,
 		"ChestnutCost" : 0, "CherryCost" : 0, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 0,
 		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 100,
@@ -976,7 +1048,7 @@ var Research = {
 	"93" :  {
 		"Name" : "WPC, Storage +3% Per Unlocked Wood",
 		"Description" : "WPC, Storage +3% Per Unlocked Wood",
-		"Time" : 5780, # Seconds
+		"Time" : 15750, # Seconds
 		"OakCost" : 0, "AppleCost" : 0, "MapleCost" : 0, "BirchCost" : 0, "SpruceCost" : 0,
 		"ChestnutCost" : 0, "CherryCost" : 0, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 0,
 		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 100,
@@ -985,7 +1057,7 @@ var Research = {
 	"93b" :  {
 		"Name" : "+1 Chance To Fish",
 		"Description" : "Adds +1 Chance For Fishing",
-		"Time" : 5820, # Seconds
+		"Time" : 15990, # Seconds
 		"OakCost" : 0, "AppleCost" : 0, "MapleCost" : 0, "BirchCost" : 0, "SpruceCost" : 0,
 		"ChestnutCost" : 0, "CherryCost" : 0, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 0,
 		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 100,
@@ -994,7 +1066,7 @@ var Research = {
 	"94" :  {
 		"Name" : "Mahogany Price 11%",
 		"Description" : "Mahogany Price 11%",
-		"Time" : 5860, # Seconds
+		"Time" : 16360, # Seconds
 		"OakCost" : 0, "AppleCost" : 0, "MapleCost" : 0, "BirchCost" : 0, "SpruceCost" : 0,
 		"ChestnutCost" : 0, "CherryCost" : 0, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 0,
 		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 100,
@@ -1003,7 +1075,7 @@ var Research = {
 	"95" :  {
 		"Name" : "7.5% More Magic",
 		"Description" : "7.5% More Magic",
-		"Time" : 5890, # Seconds
+		"Time" : 16890, # Seconds
 		"OakCost" : 0, "AppleCost" : 0, "MapleCost" : 0, "BirchCost" : 0, "SpruceCost" : 0,
 		"ChestnutCost" : 0, "CherryCost" : 0, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 0,
 		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 100,
@@ -1012,7 +1084,7 @@ var Research = {
 	"96" :  {
 		"Name" : "1% WPS Per Achievement",
 		"Description" : "1% WPS Per Achievement",
-		"Time" : 5940, # Seconds
+		"Time" : 16940, # Seconds
 		"OakCost" : 0, "AppleCost" : 0, "MapleCost" : 0, "BirchCost" : 0, "SpruceCost" : 0,
 		"ChestnutCost" : 0, "CherryCost" : 0, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 0,
 		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 100,
@@ -1021,7 +1093,7 @@ var Research = {
 	"97" :  {
 		"Name" : "Ebony Storage 15%",
 		"Description" : "Ebony Storage 15%",
-		"Time" : 5980, # Seconds
+		"Time" : 17780, # Seconds
 		"OakCost" : 0, "AppleCost" : 0, "MapleCost" : 0, "BirchCost" : 0, "SpruceCost" : 0,
 		"ChestnutCost" : 0, "CherryCost" : 0, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 0,
 		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 100,
@@ -1030,7 +1102,7 @@ var Research = {
 	"98" :  {
 		"Name" : "Research Time -55%",
 		"Description" : "Research Time -55%",
-		"Time" : 6000, # Seconds
+		"Time" : 18000, # Seconds
 		"OakCost" : 0, "AppleCost" : 0, "MapleCost" : 0, "BirchCost" : 0, "SpruceCost" : 0,
 		"ChestnutCost" : 0, "CherryCost" : 0, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 0,
 		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 100,
@@ -1039,7 +1111,7 @@ var Research = {
 	"99" :  {
 		"Name" : "Unlock Dogwood",
 		"Description" : "Unlock Dogwood",
-		"Time" : 6060, # Seconds
+		"Time" : 18160, # Seconds
 		"OakCost" : 0, "AppleCost" : 0, "MapleCost" : 0, "BirchCost" : 0, "SpruceCost" : 0,
 		"ChestnutCost" : 0, "CherryCost" : 0, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 0,
 		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 100,
@@ -1048,7 +1120,7 @@ var Research = {
 	"99b" :  {
 		"Name" : "Fishing Chance Refresh -1 min",
 		"Description" : "Lowers Fishing Chance Refresh Time By 1 minute",
-		"Time" : 6100, # Seconds
+		"Time" : 18500, # Seconds
 		"OakCost" : 0, "AppleCost" : 0, "MapleCost" : 0, "BirchCost" : 0, "SpruceCost" : 0,
 		"ChestnutCost" : 0, "CherryCost" : 0, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 0,
 		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 100,
@@ -1057,7 +1129,7 @@ var Research = {
 	"100" :  {
 		"Name" : "Gain +1 Beaver Per 20 Achievements",
 		"Description" : "Gain +1 Beaver Per 20 Achievements",
-		"Time" : 6120, # Seconds
+		"Time" : 19120, # Seconds
 		"OakCost" : 0, "AppleCost" : 0, "MapleCost" : 0, "BirchCost" : 0, "SpruceCost" : 0,
 		"ChestnutCost" : 0, "CherryCost" : 0, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 0,
 		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 100,
@@ -1066,7 +1138,7 @@ var Research = {
 	"101" :  {
 		"Name" : "Mahogany WPS 11%",
 		"Description" : "Mahogany WPS 11%",
-		"Time" : 6240, # Seconds
+		"Time" : 19240, # Seconds
 		"OakCost" : 0, "AppleCost" : 0, "MapleCost" : 0, "BirchCost" : 0, "SpruceCost" : 0,
 		"ChestnutCost" : 0, "CherryCost" : 0, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 0,
 		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 100,
@@ -1075,7 +1147,7 @@ var Research = {
 	"102" :  {
 		"Name" : "Rare WPC +8%",
 		"Description" : "Rare WPC +8%",
-		"Time" : 6500, # Seconds
+		"Time" : 19500, # Seconds
 		"OakCost" : 0, "AppleCost" : 0, "MapleCost" : 0, "BirchCost" : 0, "SpruceCost" : 0,
 		"ChestnutCost" : 0, "CherryCost" : 0, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 0,
 		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 100,
@@ -1084,7 +1156,7 @@ var Research = {
 	"103" :  {
 		"Name" : "Classic And Rare WPS 15.5%",
 		"Description" : "Classic And Rare WPS 15.5%",
-		"Time" : 6600, # Seconds
+		"Time" : 19600, # Seconds
 		"OakCost" : 0, "AppleCost" : 0, "MapleCost" : 0, "BirchCost" : 0, "SpruceCost" : 0,
 		"ChestnutCost" : 0, "CherryCost" : 0, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 0,
 		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 100,
@@ -1093,7 +1165,7 @@ var Research = {
 	"103b" :  {
 		"Name" : "Autoclicker ticks -0.1 sec",
 		"Description" : "Autoclicker ticks take 0.1 second less (default 1 sec)",
-		"Time" : 6630, # Seconds
+		"Time" : 19930, # Seconds
 		"OakCost" : 0, "AppleCost" : 0, "MapleCost" : 0, "BirchCost" : 0, "SpruceCost" : 0,
 		"ChestnutCost" : 0, "CherryCost" : 0, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 0,
 		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 100,
@@ -1102,7 +1174,7 @@ var Research = {
 	"104" :  {
 		"Name" : "Magic Bonuses x1.2",
 		"Description" : "Magic Bonuses x1.2",
-		"Time" : 6660, # Seconds
+		"Time" : 20660, # Seconds
 		"OakCost" : 0, "AppleCost" : 0, "MapleCost" : 0, "BirchCost" : 0, "SpruceCost" : 0,
 		"ChestnutCost" : 0, "CherryCost" : 0, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 0,
 		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 100,
@@ -1111,7 +1183,7 @@ var Research = {
 	"105" :  {
 		"Name" : "Storage 4.5%",
 		"Description" : "Storage 4.5%",
-		"Time" : 6840, # Seconds
+		"Time" : 20940, # Seconds
 		"OakCost" : 0, "AppleCost" : 0, "MapleCost" : 0, "BirchCost" : 0, "SpruceCost" : 0,
 		"ChestnutCost" : 0, "CherryCost" : 0, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 0,
 		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 100,
@@ -1120,7 +1192,7 @@ var Research = {
 	"105b" :  {
 		"Name" : "Fish Effects 20% Stronger",
 		"Description" : "All Fish effects become 20% better",
-		"Time" : 6920, # Seconds
+		"Time" : 21920, # Seconds
 		"OakCost" : 0, "AppleCost" : 0, "MapleCost" : 0, "BirchCost" : 0, "SpruceCost" : 0,
 		"ChestnutCost" : 0, "CherryCost" : 0, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 0,
 		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 100,
@@ -1129,7 +1201,7 @@ var Research = {
 	"106" :  {
 		"Name" : "Ebony +7 Woodcamps",
 		"Description" : "Ebony +7 Woodcamps",
-		"Time" : 7000, # Seconds
+		"Time" : 22000, # Seconds
 		"OakCost" : 0, "AppleCost" : 0, "MapleCost" : 0, "BirchCost" : 0, "SpruceCost" : 0,
 		"ChestnutCost" : 0, "CherryCost" : 0, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 0,
 		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 100,
@@ -1138,7 +1210,7 @@ var Research = {
 	"107" :  {
 		"Name" : "WC +1 Per 22 Beavers",
 		"Description" : "WC +1 Per 22 Beavers",
-		"Time" : 7040, # Seconds
+		"Time" : 22040, # Seconds
 		"OakCost" : 0, "AppleCost" : 0, "MapleCost" : 0, "BirchCost" : 0, "SpruceCost" : 0,
 		"ChestnutCost" : 0, "CherryCost" : 0, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 0,
 		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 100,
@@ -1147,7 +1219,7 @@ var Research = {
 	"108" :  {
 		"Name" : "Research Time -0.2% Per Achievement",
 		"Description" : "Research Time -0.2% Per Achievement",
-		"Time" : 7070, # Seconds
+		"Time" : 23070, # Seconds
 		"OakCost" : 0, "AppleCost" : 0, "MapleCost" : 0, "BirchCost" : 0, "SpruceCost" : 0,
 		"ChestnutCost" : 0, "CherryCost" : 0, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 0,
 		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 100,
@@ -1156,7 +1228,7 @@ var Research = {
 	"109" :  {
 		"Name" : "Unlock Rosewood",
 		"Description" : "Unlock Rosewood",
-		"Time" : 7110, # Seconds
+		"Time" : 23610, # Seconds
 		"OakCost" : 0, "AppleCost" : 0, "MapleCost" : 0, "BirchCost" : 0, "SpruceCost" : 0,
 		"ChestnutCost" : 0, "CherryCost" : 0, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 0,
 		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 100,
@@ -1165,7 +1237,7 @@ var Research = {
 	"110" :  {
 		"Name" : "Woodcamps 27.5% WPS",
 		"Description" : "Woodcamps 27.5% WPS",
-		"Time" : 7150, # Seconds
+		"Time" : 24150, # Seconds
 		"OakCost" : 0, "AppleCost" : 0, "MapleCost" : 0, "BirchCost" : 0, "SpruceCost" : 0,
 		"ChestnutCost" : 0, "CherryCost" : 0, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 0,
 		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 100,
@@ -1174,7 +1246,7 @@ var Research = {
 	"111" :  {
 		"Name" : "Dogwood Beaver Price -11%",
 		"Description" : "Dogwood Beaver Price -11%",
-		"Time" : 7200, # Seconds
+		"Time" : 24500, # Seconds
 		"OakCost" : 0, "AppleCost" : 0, "MapleCost" : 0, "BirchCost" : 0, "SpruceCost" : 0,
 		"ChestnutCost" : 0, "CherryCost" : 0, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 0,
 		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 100,
@@ -1183,7 +1255,7 @@ var Research = {
 	"112" :  {
 		"Name" : "Wood Price +33%",
 		"Description" : "Wood Price +33%",
-		"Time" : 7290, # Seconds
+		"Time" : 25290, # Seconds
 		"OakCost" : 0, "AppleCost" : 0, "MapleCost" : 0, "BirchCost" : 0, "SpruceCost" : 0,
 		"ChestnutCost" : 0, "CherryCost" : 0, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 0,
 		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 100,
@@ -1192,7 +1264,7 @@ var Research = {
 	"113" :  {
 		"Name" : "Ebony +7 Beavers",
 		"Description" : "Ebony +7 Beavers",
-		"Time" : 7370, # Seconds
+		"Time" : 25370, # Seconds
 		"OakCost" : 0, "AppleCost" : 0, "MapleCost" : 0, "BirchCost" : 0, "SpruceCost" : 0,
 		"ChestnutCost" : 0, "CherryCost" : 0, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 0,
 		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 100,
@@ -1201,7 +1273,7 @@ var Research = {
 	"114" :  {
 		"Name" : "WC Effects 11.5%",
 		"Description" : "WC Effects 11.5%",
-		"Time" : 7440, # Seconds
+		"Time" : 27440, # Seconds
 		"OakCost" : 0, "AppleCost" : 0, "MapleCost" : 0, "BirchCost" : 0, "SpruceCost" : 0,
 		"ChestnutCost" : 0, "CherryCost" : 0, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 0,
 		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 100,
@@ -1210,7 +1282,7 @@ var Research = {
 	"115" :  {
 		"Name" : "8% WPS",
 		"Description" : "8% WPS",
-		"Time" : 7500, # Seconds
+		"Time" : 29500, # Seconds
 		"OakCost" : 0, "AppleCost" : 0, "MapleCost" : 0, "BirchCost" : 0, "SpruceCost" : 0,
 		"ChestnutCost" : 0, "CherryCost" : 0, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 0,
 		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 100,
@@ -1219,7 +1291,7 @@ var Research = {
 	"116" :  {
 		"Name" : "Rare Wood WPC To WPS 6%",
 		"Description" : "Rare Wood WPC To WPS 6%",
-		"Time" : 7600, # Seconds
+		"Time" : 29600, # Seconds
 		"OakCost" : 0, "AppleCost" : 0, "MapleCost" : 0, "BirchCost" : 0, "SpruceCost" : 0,
 		"ChestnutCost" : 0, "CherryCost" : 0, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 0,
 		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 100,
@@ -1228,7 +1300,7 @@ var Research = {
 	"117" :  {
 		"Name" : "44% Reaserch Time",
 		"Description" : "44% Reaserch Time",
-		"Time" : 7660, # Seconds
+		"Time" : 30660, # Seconds
 		"OakCost" : 0, "AppleCost" : 0, "MapleCost" : 0, "BirchCost" : 0, "SpruceCost" : 0,
 		"ChestnutCost" : 0, "CherryCost" : 0, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 0,
 		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 100,
@@ -1237,7 +1309,7 @@ var Research = {
 	"117b" :  {
 		"Name" : "Fish Price +33%",
 		"Description" : "Increases all fish price by 33%",
-		"Time" : 7700, # Seconds
+		"Time" : 31700, # Seconds
 		"OakCost" : 0, "AppleCost" : 0, "MapleCost" : 0, "BirchCost" : 0, "SpruceCost" : 0,
 		"ChestnutCost" : 0, "CherryCost" : 0, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 0,
 		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 100,
@@ -1246,7 +1318,7 @@ var Research = {
 	"118" :  {
 		"Name" : "Dogwood +1 WC Per 19 Beavers",
 		"Description" : "Dogwood +1 WC Per 19 Beavers",
-		"Time" : 7740, # Seconds
+		"Time" : 31740, # Seconds
 		"OakCost" : 0, "AppleCost" : 0, "MapleCost" : 0, "BirchCost" : 0, "SpruceCost" : 0,
 		"ChestnutCost" : 0, "CherryCost" : 0, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 0,
 		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 100,
@@ -1255,7 +1327,7 @@ var Research = {
 	"119" :  {
 		"Name" : "Unlock Ghost Gum",
 		"Description" : "Unlock Ghost Gum",
-		"Time" : 7770, # Seconds
+		"Time" : 32790, # Seconds
 		"OakCost" : 0, "AppleCost" : 0, "MapleCost" : 0, "BirchCost" : 0, "SpruceCost" : 0,
 		"ChestnutCost" : 0, "CherryCost" : 0, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 0,
 		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 100,
@@ -1264,7 +1336,7 @@ var Research = {
 	"120" :  {
 		"Name" : "Gain +1 WC Per 25 Achievements",
 		"Description" : "Gain +1 WC Per 25 Achievements",
-		"Time" : 7850, # Seconds
+		"Time" : 32950, # Seconds
 		"OakCost" : 0, "AppleCost" : 0, "MapleCost" : 0, "BirchCost" : 0, "SpruceCost" : 0,
 		"ChestnutCost" : 0, "CherryCost" : 0, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 0,
 		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 100,
@@ -1273,7 +1345,7 @@ var Research = {
 	"121" :  {
 		"Name" : "Rosewood Storage 13.5%",
 		"Description" : "Rosewood Storage 13.5%",
-		"Time" : 8000, # Seconds
+		"Time" : 33000, # Seconds
 		"OakCost" : 0, "AppleCost" : 0, "MapleCost" : 0, "BirchCost" : 0, "SpruceCost" : 0,
 		"ChestnutCost" : 0, "CherryCost" : 0, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 0,
 		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 100,
@@ -1282,7 +1354,7 @@ var Research = {
 	"122" :  {
 		"Name" : "Dogwood Production Cost -25%",
 		"Description" : "Dogwood Production Cost -25%",
-		"Time" : 8080, # Seconds
+		"Time" : 33180, # Seconds
 		"OakCost" : 0, "AppleCost" : 0, "MapleCost" : 0, "BirchCost" : 0, "SpruceCost" : 0,
 		"ChestnutCost" : 0, "CherryCost" : 0, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 0,
 		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 100,
@@ -1291,7 +1363,7 @@ var Research = {
 	"123" :  {
 		"Name" : "Classic Upgrades 39% Cheaper",
 		"Description" : "Classic Upgrades 39% Cheaper",
-		"Time" : 8120, # Seconds
+		"Time" : 33320, # Seconds
 		"OakCost" : 0, "AppleCost" : 0, "MapleCost" : 0, "BirchCost" : 0, "SpruceCost" : 0,
 		"ChestnutCost" : 0, "CherryCost" : 0, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 0,
 		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 100,
@@ -1300,7 +1372,7 @@ var Research = {
 	"124" :  {
 		"Name" : "2.5% WPC To WPS",
 		"Description" : "2.5% WPC To WPS",
-		"Time" : 8250, # Seconds
+		"Time" : 33550, # Seconds
 		"OakCost" : 0, "AppleCost" : 0, "MapleCost" : 0, "BirchCost" : 0, "SpruceCost" : 0,
 		"ChestnutCost" : 0, "CherryCost" : 0, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 0,
 		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 100,
@@ -1309,7 +1381,7 @@ var Research = {
 	"124b" :  {
 		"Name" : "Autoclicker ticks -0.1 sec",
 		"Description" : "Autoclicker ticks take 0.1 second less (default 1 sec)",
-		"Time" : 8300, # Seconds
+		"Time" : 33700, # Seconds
 		"OakCost" : 0, "AppleCost" : 0, "MapleCost" : 0, "BirchCost" : 0, "SpruceCost" : 0,
 		"ChestnutCost" : 0, "CherryCost" : 0, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 0,
 		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 100,
@@ -1318,7 +1390,7 @@ var Research = {
 	"125" :  {
 		"Name" : "Achievement Bonuses +15%",
 		"Description" : "Achievement Bonuses +15%",
-		"Time" : 8330, # Seconds
+		"Time" : 34160, # Seconds
 		"OakCost" : 0, "AppleCost" : 0, "MapleCost" : 0, "BirchCost" : 0, "SpruceCost" : 0,
 		"ChestnutCost" : 0, "CherryCost" : 0, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 0,
 		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 100,
@@ -1327,7 +1399,7 @@ var Research = {
 	"126" :  {
 		"Name" : "17.5% More Magic",
 		"Description" : "17.5% More Magic",
-		"Time" : 8490, # Seconds
+		"Time" : 35490, # Seconds
 		"OakCost" : 0, "AppleCost" : 0, "MapleCost" : 0, "BirchCost" : 0, "SpruceCost" : 0,
 		"ChestnutCost" : 0, "CherryCost" : 0, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 0,
 		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 100,
@@ -1336,7 +1408,7 @@ var Research = {
 	"127" :  {
 		"Name" : "Rosewood WC Effect +8%",
 		"Description" : "Rosewood WC Effect +8%",
-		"Time" : 8520, # Seconds
+		"Time" : 35880, # Seconds
 		"OakCost" : 0, "AppleCost" : 0, "MapleCost" : 0, "BirchCost" : 0, "SpruceCost" : 0,
 		"ChestnutCost" : 0, "CherryCost" : 0, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 0,
 		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 100,
@@ -1345,7 +1417,7 @@ var Research = {
 	"128" :  {
 		"Name" : "10% WPS",
 		"Description" : "10% WPS",
-		"Time" : 8550, # Seconds
+		"Time" : 36550, # Seconds
 		"OakCost" : 0, "AppleCost" : 0, "MapleCost" : 0, "BirchCost" : 0, "SpruceCost" : 0,
 		"ChestnutCost" : 0, "CherryCost" : 0, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 0,
 		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 100,
@@ -1354,7 +1426,7 @@ var Research = {
 	"129" :  {
 		"Name" : "Unlock Dragonwood",
 		"Description" : "Unlock Dragonwood",
-		"Time" : 8600, # Seconds
+		"Time" : 36800, # Seconds
 		"OakCost" : 0, "AppleCost" : 0, "MapleCost" : 0, "BirchCost" : 0, "SpruceCost" : 0,
 		"ChestnutCost" : 0, "CherryCost" : 0, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 0,
 		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 100,
@@ -1363,7 +1435,7 @@ var Research = {
 	"129b" :  {
 		"Name" : "+1 Click Chance When Fishing",
 		"Description" : "Adds +1 Chance To Click On A Fish When Fishing",
-		"Time" : 8700, # Seconds
+		"Time" : 37000, # Seconds
 		"OakCost" : 0, "AppleCost" : 0, "MapleCost" : 0, "BirchCost" : 0, "SpruceCost" : 0,
 		"ChestnutCost" : 0, "CherryCost" : 0, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 0,
 		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 100,
@@ -1372,7 +1444,7 @@ var Research = {
 	"130" :  {
 		"Name" : "Ghost Gum WC and Beavers 30% Cheaper",
 		"Description" : "Ghost Gum WC and Beavers 30% Cheaper",
-		"Time" : 8740, # Seconds
+		"Time" : 37740, # Seconds
 		"OakCost" : 0, "AppleCost" : 0, "MapleCost" : 0, "BirchCost" : 0, "SpruceCost" : 0,
 		"ChestnutCost" : 0, "CherryCost" : 0, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 0,
 		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 100,
@@ -1381,7 +1453,7 @@ var Research = {
 	"131" :  {
 		"Name" : "Gold Upgrades 30% Cheaper",
 		"Description" : "Gold Upgrades 30% Cheaper",
-		"Time" : 8800, # Seconds
+		"Time" : 38500, # Seconds
 		"OakCost" : 0, "AppleCost" : 0, "MapleCost" : 0, "BirchCost" : 0, "SpruceCost" : 0,
 		"ChestnutCost" : 0, "CherryCost" : 0, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 0,
 		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 100,
@@ -1390,7 +1462,7 @@ var Research = {
 	"132" :  {
 		"Name" : "Magic Gain 30%",
 		"Description" : "Magic Gain 30%",
-		"Time" : 8900, # Seconds
+		"Time" : 38900, # Seconds
 		"OakCost" : 0, "AppleCost" : 0, "MapleCost" : 0, "BirchCost" : 0, "SpruceCost" : 0,
 		"ChestnutCost" : 0, "CherryCost" : 0, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 0,
 		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 100,
@@ -1399,7 +1471,7 @@ var Research = {
 	"133" :  {
 		"Name" : "Ghost Gum WPS and Storage 25%",
 		"Description" : "Ghost Gum WPS and Storage 25%",
-		"Time" : 9000, # Seconds
+		"Time" : 39000, # Seconds
 		"OakCost" : 0, "AppleCost" : 0, "MapleCost" : 0, "BirchCost" : 0, "SpruceCost" : 0,
 		"ChestnutCost" : 0, "CherryCost" : 0, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 0,
 		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 100,
@@ -1408,7 +1480,7 @@ var Research = {
 	"134" :  {
 		"Name" : "Wood Price +50%",
 		"Description" : "Wood Price +50%",
-		"Time" : 9060, # Seconds
+		"Time" : 40060, # Seconds
 		"OakCost" : 0, "AppleCost" : 0, "MapleCost" : 0, "BirchCost" : 0, "SpruceCost" : 0,
 		"ChestnutCost" : 0, "CherryCost" : 0, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 0,
 		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 100,
@@ -1417,7 +1489,7 @@ var Research = {
 	"135" :  {
 		"Name" : "Mythic Upgrades 44% Cheaper",
 		"Description" : "Mythic Upgrades 44% Cheaper",
-		"Time" : 9130, # Seconds
+		"Time" : 41130, # Seconds
 		"OakCost" : 0, "AppleCost" : 0, "MapleCost" : 0, "BirchCost" : 0, "SpruceCost" : 0,
 		"ChestnutCost" : 0, "CherryCost" : 0, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 0,
 		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 100,
@@ -1426,7 +1498,7 @@ var Research = {
 	"136" :  {
 		"Name" : "WPS 1% Per Achievement",
 		"Description" : "WPS 1% Per Achievement",
-		"Time" : 9200, # Seconds
+		"Time" : 42200, # Seconds
 		"OakCost" : 0, "AppleCost" : 0, "MapleCost" : 0, "BirchCost" : 0, "SpruceCost" : 0,
 		"ChestnutCost" : 0, "CherryCost" : 0, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 0,
 		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 100,
@@ -1435,7 +1507,7 @@ var Research = {
 	"137" :  {
 		"Name" : "Mythic Storage 28%",
 		"Description" : "Mythic Storage 28%",
-		"Time" : 9330, # Seconds
+		"Time" : 43330, # Seconds
 		"OakCost" : 0, "AppleCost" : 0, "MapleCost" : 0, "BirchCost" : 0, "SpruceCost" : 0,
 		"ChestnutCost" : 0, "CherryCost" : 0, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 0,
 		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 100,
@@ -1444,7 +1516,7 @@ var Research = {
 	"138" :  {
 		"Name" : "Dragonwood WPS, WPC and Storage x1.5",
 		"Description" : "Dragonwood WPS, WPC and Storage x1.5",
-		"Time" : 9370, # Seconds
+		"Time" : 44370, # Seconds
 		"OakCost" : 0, "AppleCost" : 0, "MapleCost" : 0, "BirchCost" : 0, "SpruceCost" : 0,
 		"ChestnutCost" : 0, "CherryCost" : 0, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 0,
 		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 100,
@@ -1453,7 +1525,7 @@ var Research = {
 	"139" :  {
 		"Name" : "Mythic WPC x2",
 		"Description" : "Mythic WPC x2",
-		"Time" : 9500, # Seconds
+		"Time" : 45500, # Seconds
 		"OakCost" : 0, "AppleCost" : 0, "MapleCost" : 0, "BirchCost" : 0, "SpruceCost" : 0,
 		"ChestnutCost" : 0, "CherryCost" : 0, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 0,
 		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 100,
@@ -1462,7 +1534,7 @@ var Research = {
 	"140" :  {
 		"Name" : "WPS x5",
 		"Description" : "WPS x5",
-		"Time" : 10000, # Seconds
+		"Time" : 50000, # Seconds
 		"OakCost" : 0, "AppleCost" : 0, "MapleCost" : 0, "BirchCost" : 0, "SpruceCost" : 0,
 		"ChestnutCost" : 0, "CherryCost" : 0, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 0,
 		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 100,

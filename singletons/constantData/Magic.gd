@@ -91,7 +91,7 @@ var Magic = {
 		"Description" : "Lower Research Time by 0.25% Per Achievement",
 		"Cost" : 125,
 	},
-	"9" : {
+	"9" : { # here
 		"Name" : "15% WPC To WPS",
 		"Description" : "For each wood Type transfer 15% of Wood Per Click to Wood Per Second",
 		"Cost" : 175,
@@ -187,7 +187,7 @@ var Magic = {
 		"Cost" : 1250,
 	},
 	"22" : {
-		"Name" : "3.5% of Lower Tier Storage Added",
+		"Name" : "3.5% Lower Tier Storage",
 		"Description" : "Add 3.5% of lower tier storage to higher tier storage",
 		"Cost" : 1400,
 	},
@@ -212,12 +212,12 @@ var Magic = {
 		"Cost" : 2000,
 	},
 	"26" : {
-		"Name" : "Lower WC Production Costs 15%",
+		"Name" : "WC Wood Costs -15%",
 		"Description" : "Lower the wood used by 15% by Woodcamps",
 		"Cost" : 2250,
 	},
 	"27" : {
-		"Name" : "35% Storage From Woodcamps",
+		"Name" : "Woodcamp Storage 35%",
 		"Description" : "Increase the storage from Woodcamps by 35%",
 		"Cost" : 2275,
 	},
