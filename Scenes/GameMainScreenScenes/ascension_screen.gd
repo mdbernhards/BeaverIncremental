@@ -59,26 +59,31 @@ func calculatePotentialMagicGain():
 			resourceCount -= baseCost
 			
 			if resourceType == "Gold":
-				baseCost *= 1.03
+				if resourcesMagic <= 250:
+					baseCost *= 1.031
+				elif resourcesMagic <= 1000:
+					baseCost *= 1.003
+				else:
+					baseCost *= 1.0003
 			else:
 				if resourcesMagic <= 90:
 					baseCost *= 1.032
-				elif resourcesMagic <= 999:
-					baseCost *= 1.0005
+				elif resourcesMagic <= 1000:
+					baseCost *= 1.00055
 				elif resourcesMagic <= 10000:
-					baseCost *= 1.00002
+					baseCost *= 1.00003
 				elif resourcesMagic <= 100000:
-					baseCost *= 1.000002
+					baseCost *= 1.000003
 				elif resourcesMagic <= 250000:
-					baseCost *= 1.0000002
+					baseCost *= 1.0000003
 				elif resourcesMagic <= 5000000:
-					baseCost *= 1.00000001
+					baseCost *= 1.00000003
 				elif resourcesMagic <= 50000000:
-					baseCost *= 1.000000001
+					baseCost *= 1.000000003
 				elif resourcesMagic <= 500000000:
-					baseCost *= 1.0000000001
+					baseCost *= 1.0000000003
 				else:
-					baseCost *= 1.00000000001
+					baseCost *= 1.00000000003
 
 		if resourceCount > 0:
 			resourcesMagic += resourceCount / baseCost

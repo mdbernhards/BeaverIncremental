@@ -11,7 +11,6 @@ var SwimType = SwimTypeEnum.Bouncing
 var Scale = 1
 
 var Direction = Vector2(1,1)
-var TimePassed = 0
 var Angle
 var AngleDirection = 0
 
@@ -22,6 +21,7 @@ enum SwimTypeEnum {
 	Bouncing,
 	Curved,
 	Random,
+	Wierd,
 }
 
 # Nodes
@@ -48,7 +48,7 @@ func _ready() -> void:
 func settingFishData():
 	Direction = Vector2(RNG.randf_range(-1, 1), RNG.randf_range(-1, 1))
 	position += Vector2(RNG.randf_range(0, 850), RNG.randf_range(0, 680))
-	SwimType = RNG.randi_range(0, 2)
+	SwimType = RNG.randi_range(0, 3)
 	Angle = RNG.randi_range(-180, 180)
 	AngleDirection = RNG.randi_range(0, 3)
 	
@@ -73,18 +73,20 @@ func _physics_process(delta):
 	move(delta)
 
 func move(delta):
-	TimePassed += delta
-	
 	move_local_x(Direction.x * Speed * delta)
 	move_local_y(Direction.y * Speed * delta)
 	
+	Angle += CurveSpeed * delta
+	
 	match SwimType:
-		0: 
+		SwimTypeEnum.Bouncing: 
 			moveBouncing(delta)
-		1: 
+		SwimTypeEnum.Curved: 
 			moveCurved(delta)
-		2: 
+		SwimTypeEnum.Random: 
 			moveWander(delta)
+		SwimTypeEnum.Wierd: 
+			moveWierd(delta)
 	
 	if position.x + FishButton.size.x * Scale > 1030 and Direction.x > 0:
 		Direction.x *= -1
@@ -101,12 +103,11 @@ func move(delta):
 		AngleDirection = RNG.randi_range(0, 3)
 
 func moveBouncing(delta):
-	Direction.x += RNG.randf_range(-0.03, 0.03)
-	Direction.y += RNG.randf_range(-0.03, 0.03)
+	Direction.x += RNG.randf_range(-0.05, 0.05)
+	Direction.y += RNG.randf_range(-0.05, 0.05)
+	Direction *= RNG.randf_range(1, 1.0003)
 
 func moveCurved(delta):
-	Angle += CurveSpeed * delta
-	
 	if randf() < TurnChance / 200:
 		AngleDirection = RNG.randi_range(0, 3)
 	
@@ -119,10 +120,33 @@ func moveCurved(delta):
 			Direction = Vector2(-cos(Angle), sin(Angle))
 		3:
 			Direction = Vector2(cos(Angle), -sin(Angle))
+	
+	Direction *= RNG.randf_range(1.2, 1.5)
 
 func moveWander(delta):
-	if randf() < TurnChance / 60:
-		Direction = Vector2(randf_range(-0.8, 0.8), randf_range(-0.8, 0.8)).normalized()
+	if randf() < TurnChance / 10:
+		Direction = Vector2(randf_range(-0.9, 0.9), randf_range(-0.9, 0.9)).normalized()
+		Direction *= RNG.randf_range(1.4, 1.8)
+
+func moveWierd(delta):
+	if randf() < TurnChance / 90:
+		AngleDirection = RNG.randi_range(0, 3)
+		
+	match AngleDirection:
+		0:
+			Direction = Vector2(cos(Angle * CurveFrequency) * CurveAmplitude * delta, Direction.y)
+			Direction += Vector2(0.42, 0)
+		1:
+			Direction = Vector2(-cos(Angle * CurveFrequency) * CurveAmplitude * delta, Direction.y)
+			Direction += Vector2(-0.42, 0)
+		2:
+			Direction = Vector2(Direction.x, sin(Angle * CurveFrequency) * CurveAmplitude * delta)
+			Direction += Vector2(0, 0.42)
+		3:
+			Direction = Vector2(Direction.x, -sin(Angle * CurveFrequency) * CurveAmplitude * delta)
+			Direction += Vector2(0, -0.42)
+	
+	Direction *= RNG.randf_range(1, 1.03)
 
 func _on_despawn_timer_timeout() -> void:
 	queue_free()

@@ -145,7 +145,7 @@ func checkIfCanAfford(botAmount):
 	var price = 0
 	
 	for n in botAmount:
-		price += CalculatePrice.getBotCost(SaveData.Resources[WoodType]["Bots"] + n, WoodType) * Values.ResourceValues[WoodType]["BotPriceMultip"]
+		price += CalculatePrice.getBotCost(SaveData.Resources[WoodType]["Bots"] + n, WoodType)
 	
 	if SaveData.Gold["Count"] >= price:
 		return true
@@ -154,7 +154,7 @@ func checkIfCanAfford(botAmount):
 
 func buyBot(botAmount):
 	for n in botAmount:
-		var price = CalculatePrice.getBotCost(SaveData.Resources[WoodType]["Bots"], WoodType) * Values.ResourceValues[WoodType]["BotPriceMultip"]
+		var price = CalculatePrice.getBotCost(SaveData.Resources[WoodType]["Bots"], WoodType)
 		
 		SaveData.Gold["Count"] -= price
 		SaveData.Resources[WoodType]["Bots"] += 1

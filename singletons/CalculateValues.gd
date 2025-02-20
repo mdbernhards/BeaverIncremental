@@ -30,8 +30,10 @@ func setUnlockedResearch():
 	var preUnlockedCount = TempValues["Research"]["PreUnlockedResearch"]
 	var currentlyUnlocked = 0
 	
-	if currentlyUnlocked == 0:
+	if preUnlockedCount <= 0:
 		return
+	else:
+		SaveData.Upgrades["Oak"]["3"]["Level"] = max(SaveData.Upgrades["Oak"]["3"]["Level"], 1)
 	
 	for researchId in Research.Research:
 		SaveData.UnlockedResearch[researchId] = true
@@ -473,17 +475,17 @@ func SetMagicValue(magicNr):
 		"11b" :
 			TempValues["Fish"]["ChanceToRefundChance"] += 0.2
 		"12" :
-			TempValues["Global"]["WcCostsMultip"] *= 0.5
+			TempValues["Global"]["WcPriceMultip"] *= 0.5
 		"12b" :
-			TempValues["Oak"]["WpsMultip"] *= 3
-			TempValues["Apple"]["WpsMultip"] *= 3
-			TempValues["Maple"]["WpsMultip"] *= 3
-			TempValues["Birch"]["WpsMultip"] *= 3
-			TempValues["Spruce"]["WpsMultip"] *= 3
+			TempValues["Oak"]["WpsMultip"] *= 2
+			TempValues["Apple"]["WpsMultip"] *= 2
+			TempValues["Maple"]["WpsMultip"] *= 2
+			TempValues["Birch"]["WpsMultip"] *= 2
+			TempValues["Spruce"]["WpsMultip"] *= 2
 		"13" :
 			TempValues["Research"]["ResearchAtATime"] += 1
 		"14" :
-			TempValues["Global"]["StorageMultip"] *= 2
+			TempValues["Global"]["StorageMultip"] *= 1.5
 		"15" :
 			TempValues["Fish"]["FishPriceMultip"] *= 1.225
 		"16" :
@@ -1098,7 +1100,7 @@ func SetUpgradeValue(woodType, upgradeId):
 				"9":
 					TempValues["Global"]["WpsMultip"] *= pow(1.0005, upgradeLevel)
 				"10":
-					TempValues["Magic"]["GainMultip"] *= pow(1.12, upgradeLevel)
+					TempValues["Magic"]["GainMultip"] *= pow(1.03, upgradeLevel)
 		"Birch":
 			match upgradeId:
 				"1":

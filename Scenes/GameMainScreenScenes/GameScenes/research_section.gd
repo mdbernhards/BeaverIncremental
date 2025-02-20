@@ -87,10 +87,13 @@ func deleteAllHistoryItems():
 
 func checkQueue():
 	var queue = SaveData.ResearchInfo["Queue"]
-	for QueueResearchId in queue:
+	for queueResearchId in queue:
 		for researchItem in ResearchList.get_children():
-			if researchItem.ItemId == QueueResearchId and Values.ResourceValues["Research"]["ResearchAtATime"] > getActiveResearch().size():
+			if researchItem.ItemId == queueResearchId and Values.ResourceValues["Research"]["ResearchAtATime"] > getActiveResearch().size():
 				researchItem.startResearch()
+		
+		if SaveData.UnlockedResearch.has(queueResearchId) and SaveData.UnlockedResearch[queueResearchId]:
+			SaveData.ResearchInfo["Queue"].erase(queueResearchId)
 
 func setResearchStates():
 	var researchState

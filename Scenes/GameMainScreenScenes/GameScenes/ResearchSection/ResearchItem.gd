@@ -270,6 +270,9 @@ func _on_research_item_refresh_timer_timeout() -> void:
 	setCancelButtonText()
 	updateResearchVisability()
 	
+	if SaveData.UnlockedResearch.has(str(ItemId)) and SaveData.UnlockedResearch[str(ItemId)]:
+		_on_research_timer_timeout()
+	
 	if (Unlocks.Unlocks["Research"]["ResearchItems"].has(ItemId) and Research.Research[str(ItemId)]["Unlocked"].call()) or Values.DebugMode:
 		visible = true
 	else:

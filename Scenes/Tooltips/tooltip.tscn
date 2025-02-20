@@ -8,7 +8,7 @@ specular_color = Color(0.165198, 0.542669, 0.441428, 1)
 [node name="Tooltip" type="MarginContainer"]
 custom_minimum_size = Vector2(400, 0)
 offset_right = 400.0
-offset_bottom = 93.0
+offset_bottom = 169.0
 size_flags_horizontal = 3
 size_flags_vertical = 0
 script = ExtResource("1_rfsal")

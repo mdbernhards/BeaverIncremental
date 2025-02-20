@@ -771,44 +771,44 @@ var Achievements = {
 		"Description" : "Unlock All Baits",
 		"Trigger" : func(): return checkThatAllBaitsUnlocked(),
 	},
-	"155" : { # Replace
+	"155" : {
 		"Name" : "Buy 1 Thing From The Fishing Shop",
 		"Description" : "Buy 1 Thing From The Fishing Shop",
 		"Trigger" : func(): return SaveData.GeneralInfo.has("FishShopItemsBoughtCount") and SaveData.GeneralInfo["FishShopItemsBoughtCount"] >= 1,
 	},
-	"156" : { # Replace
+	"156" : {
 		"Name" : "Buy 10 Things From The Fishing Shop",
 		"Description" : "Buy 10 Things From The Fishing Shop",
 		"Trigger" : func(): return SaveData.GeneralInfo.has("FishShopItemsBoughtCount") and SaveData.GeneralInfo["FishShopItemsBoughtCount"] >= 10,
 	},
-	"157" : { # Replace
+	"157" : {
 		"Name" : "Buy 100 Things From The Fishing Shop",
 		"Description" : "Buy 100 Things From The Fishing Shop",
 		"Trigger" : func(): return SaveData.GeneralInfo.has("FishShopItemsBoughtCount") and SaveData.GeneralInfo["FishShopItemsBoughtCount"] >= 100,
 	},
-	"158" : { # Replace
+	"158" : {
 		"Name" : "Buy 250 Things From The Fishing Shop",
 		"Description" : "Buy 250 Things From The Fishing Shop",
 		"Trigger" : func(): return SaveData.GeneralInfo.has("FishShopItemsBoughtCount") and SaveData.GeneralInfo["FishShopItemsBoughtCount"] >= 250,
 	},
-	"251" : { # Prob Change
-		"Name" : "Max LvL 1 Upgrade",
-		"Description" : "Max LvL 1 Upgrade",
-		"Trigger" : func(): return null,
+	"251" : {
+		"Name" : "Open 1 Magic Lock",
+		"Description" : "Open 1 Magic Lock",
+		"Trigger" : func(): return magicLocksOpenedCheck(1),
 	},
-	"252" : { # Prob Change
-		"Name" : "Max LvL 10 Upgrades",
-		"Description" : "Max LvL 10 Upgrades",
-		"Trigger" : func(): return null,
+	"252" : {
+		"Name" : "Open 10 Magic Locks",
+		"Description" : "Open 10 Magic Locks",
+		"Trigger" : func(): return magicLocksOpenedCheck(10),
 	},
-	"253" : { # Prob Change
-		"Name" : "Max LvL 100 Upgrades",
-		"Description" : "Max LvL 100 Upgrades",
-		"Trigger" : func(): return null,
+	"253" : {
+		"Name" : "Open 40 Magic Locks",
+		"Description" : "Open 40 Magic Locks",
+		"Trigger" : func(): return magicLocksOpenedCheck(40),
 	},
-	"254" : { # Prob Change
-		"Name" : "Max LvL All Upgrades",
-		"Description" : "Max LvL All Upgrades",
+	"254" : {
+		"Name" : "Can't Find Me!",
+		"Description" : "Click On This Achievement :P",
 		"Trigger" : func(): return null,
 	},
 	"160" : {
@@ -1584,3 +1584,16 @@ func magicUpgradesOwnedCheck(needed):
 			magicUpgradeCount += 1
 	
 	return needed <= magicUpgradeCount
+
+func magicLocksOpenedCheck(needed):
+	var magicLocksOpened = 0
+	
+	for woodType in Values.WoodTypes:
+		for upgradeId in SaveData.Upgrades[woodType]:
+			var upgrade = SaveData.Upgrades[woodType][upgradeId]
+		
+			if upgrade.has("MagicLocked") and !upgrade["MagicLocked"]:
+				magicLocksOpened += 1
+			
+	
+	return needed <= magicLocksOpened

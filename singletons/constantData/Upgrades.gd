@@ -192,7 +192,7 @@ var Upgrades = {
 			"Unlocked" : func(): return Unlocks.Unlocks["Woodcamps"]["Unlocked"] and SaveData.Resources["Maple"]["Woodcamps"] > 0,
 		},
 		"7" :  {
-			"Name" : "9% Cheaper Beavers",
+			"Name" : "9% Cheaper Global Beavers",
 			"Description" : "9% Cheaper Beavers",
 			"OtherText" : "",
 			"Unlocked" : func(): return true,
@@ -212,8 +212,8 @@ var Upgrades = {
 			"MagicCost" : 250,
 		},
 		"10" :  {
-			"Name" : "12% More Magic",
-			"Description" : "12% More Magic",
+			"Name" : "3% More Magic",
+			"Description" : "3% More Magic",
 			"OtherText" : "",
 			"Unlocked" : func(): return Unlocks.Unlocks["Magic"]["Ascention"],
 			"MagicCost" : 750,

@@ -1,13 +1,12 @@
 TODO
 
 First:
-Fix Bot prices not showing correctly
-Adjust Cedar Unlock Prices
-Adjust Magic Upgrade Prices and Order
-Adjust Fish Values
 Fix bait selection visual bugs
-Before Ascending adjust Magic Gain
 Keep Playing
+Add Magic Lock Achievements
+Fix Apple 10
+Add some more wps magic upgrades
+Scale Down / add some more research
 
 Later:
 If there are remove upgrades that improve bots for one wood, add research and magic upgrades that do that
@@ -194,3 +193,13 @@ Refresh Fishing Shop items when bait used DONE
 Added Research Great Leap DONE
 Fix Tooltips in Achievement screen DONE
 Adjust Chestnut, Cherry and Ash Upgrades Prices DONE
+Fix Bot prices not showing correctly DONE
+Scale Up Ash 6 DONE
+Adjust Cedar Unlock Prices DONE
+Adjust Fish Values DONE
+Adjust Fishing Shop Prices DONE
+Adjust Magic Upgrade Prices and Order DONE
+Before Ascending adjust Magic Gain DONE
+Adjust Cedar Upgrade Prices DONE
+Clean Queue from already researched research items DONE
+Update Apple 9, Spruce 8, Maple 10 Upgrades DONE

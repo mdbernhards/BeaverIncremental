@@ -63,7 +63,7 @@ func _make_custom_tooltip(_for_text):
 		var fishId = _for_text.split(",")[1]
 		title = Fishing.Fish[int(fishId)].FishName
 		description = Fishing.FishEffect[int(fishId)]
-		price = Fishing.FishPrice[int(fishId)]
+		price = Fishing.FishPrice[int(fishId)] * Values.ResourceValues["Fish"]["FishPriceMultip"]
 		
 	var tooltip = load("res://Scenes/Tooltips/tooltip.tscn").instantiate()
 	tooltip.IsTextLogTooltip = true

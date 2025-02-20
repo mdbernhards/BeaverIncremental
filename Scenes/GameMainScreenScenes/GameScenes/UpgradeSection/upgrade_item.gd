@@ -159,8 +159,13 @@ func _on_upgrade_item_timer_timeout() -> void:
 			UpgradeVBox.visible = true
 	else:
 		visible = false
-		if CurrentPrice * 0.4 < SaveData.Resources[ResourceType]["Count"]:
-			Unlocks.Unlocks[ResourceType][str(UpgradeNumber)] = true
+		
+		if ResourceType == "Gold":
+			if CurrentPrice * 0.4 < SaveData.Gold["Count"]:
+				Unlocks.Unlocks[ResourceType][str(UpgradeNumber)] = true
+		else:
+			if CurrentPrice * 0.4 < SaveData.Resources[ResourceType]["Count"]:
+				Unlocks.Unlocks[ResourceType][str(UpgradeNumber)] = true
 	
 	if Unlocks.Unlocks[ResourceType]["ButtonBuyMax"] or Values.DebugMode:
 		BuyMaxButton.visible = true
