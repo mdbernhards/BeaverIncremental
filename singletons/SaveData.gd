@@ -113,7 +113,8 @@ func recalculateValues():
 	get_tree().get_first_node_in_group("FishingGame").stopFishing(true)
 	get_tree().get_first_node_in_group("FishPage").addAllCaughtFish()
 	get_tree().get_first_node_in_group("ShopPage").setShopItems()
-	get_tree().get_first_node_in_group("FishingScreen").changePage(0)
+	get_tree().get_first_node_in_group("FishingScreen").changePage(0) # Classic
+	get_tree().get_first_node_in_group("UpgradePage").changePage(1) # Classic
 
 var Gold = {
 	"Count" : 0,

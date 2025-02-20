@@ -176,6 +176,11 @@ var Magic = {
 		"Description" : "Research takes 17.5% less time",
 		"Cost" : 2890,
 	},
+	"21b" : {
+		"Name" : "Classic WPC 2.5x",
+		"Description" : "Classic WPC 2.5x",
+		"Cost" : 3500,
+	},
 	"22" : {
 		"Name" : "3.5% Lower Tier Storage",
 		"Description" : "Add 3.5% of lower tier storage to higher tier storage",
@@ -206,10 +211,15 @@ var Magic = {
 		"Description" : "Lower the wood used by 15% by Woodcamps",
 		"Cost" : 7750,
 	},
+	"26b" : {
+		"Name" : "Classic, Rare WPC 2x",
+		"Description" : "Classic, Rare WPC 2x",
+		"Cost" : 8000,
+	},
 	"12b" : {
-		"Name" : "Classic WPS 2x",
-		"Description" : "All Classic Wood WPS Increased 2x",
-		"Cost" : 8500,
+		"Name" : "Classic WPS 3.5x",
+		"Description" : "All Classic Wood WPS Increased 3.5x",
+		"Cost" : 8300,
 	},
 	"27" : {
 		"Name" : "Woodcamp Storage 35%",
@@ -220,6 +230,11 @@ var Magic = {
 		"Name" : "Autoclicker ticks -0.1 sec",
 		"Description" : "Autoclicker ticks take 0.1 second less (default 1 sec)",
 		"Cost" : 10000,
+	},
+	"27c" : {
+		"Name" : "Rare WPS +37.5%",
+		"Description" : "Rare WPS +37.5%",
+		"Cost" : 11000,
 	},
 	"28" : {
 		"Name" : "Bonus From First 5 Fish",
@@ -254,6 +269,11 @@ var Magic = {
 	"33" : {
 		"Name" : "Unlock Research Slot 3",
 		"Description" : "Unlock a third Research slot, to do 3 Research at a time",
+		"Cost" : 35000,
+	},
+	"40" : {
+		"Name" : "Unlock Dams",
+		"Description" : "Unlock Dams, Large Projects That Need a lot of resources and give Great Bonuses",
 		"Cost" : 40000,
 	},
 	"34" : {
@@ -290,11 +310,6 @@ var Magic = {
 		"Name" : "Fish Effects 27.5% Stronger",
 		"Description" : "All Fish effects become 27.5% better",
 		"Cost" : 125000,
-	},
-	"40" : {
-		"Name" : "Unlock Dams",
-		"Description" : "Unlock Dams, Large Projects That Need a lot of resources and give Great Bonuses",
-		"Cost" : 150000,
 	},
 	"41" : {
 		"Name" : "40% Cheaper Merchants",

@@ -58,7 +58,7 @@ func _on_magic_button_button_down():
 		queue_free()
 
 func checkIfVisible():
-	return Upgrade["Cost"] * 0.5 < SaveData.Magic["Count"] or IsHistoryItem
+	return Upgrade["Cost"] * 0.7 < SaveData.Magic["Count"] or IsHistoryItem
 
 func _on_magic_item_timer_timeout() -> void:
 	if Unlocks.Unlocks["Magic"]["MagicItems"].has(Nr) or IsHistoryItem or Values.DebugMode:

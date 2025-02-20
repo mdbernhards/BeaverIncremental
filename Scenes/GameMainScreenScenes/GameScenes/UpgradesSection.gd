@@ -44,11 +44,14 @@ func setNodePaths():
 	RightPageButton = $UpgradePage/UpgradeTabs/HBox/TabButtonsMC/HBox/RightPageButton
 
 func _on_page_buttons_timer_timeout() -> void:
-	if Unlocks.Unlocks["Chestnut"]["Unlocked"] or Values.DebugMode:
+	if Unlocks.Unlocks["Chestnut"]["Unlocked"] or Unlocks.Unlocks["Gold"]["Unlocked"] or Values.DebugMode:
 		Page1Button.visible = true
-		Page2Button.visible = true
 	else:
 		Page1Button.visible = false
+	
+	if Unlocks.Unlocks["Chestnut"]["Unlocked"] or Values.DebugMode:
+		Page2Button.visible = true
+	else:
 		Page2Button.visible = false
 	
 	if Unlocks.Unlocks["Ebony"]["Unlocked"] or Values.DebugMode:
@@ -67,19 +70,19 @@ func SetNextPageVisibility():
 	match Page:
 		1:
 			LeftPageButton.visible = false
-			if Unlocks.Unlocks["Chestnut"]["Unlocked"] or Values.DebugMode:
+			if Unlocks.Unlocks["Chestnut"]["Unlocked"] or Unlocks.Unlocks["Gold"]["Unlocked"] or Values.DebugMode:
 				RightPageButton.visible = true
 			else:
 				RightPageButton.visible = false
 		2:
 			LeftPageButton.visible = true
-			if Unlocks.Unlocks["Ebony"]["Unlocked"] or Values.DebugMode:
+			if Unlocks.Unlocks["Ebony"]["Unlocked"] or Unlocks.Unlocks["Gold"]["Unlocked"] or Values.DebugMode:
 				RightPageButton.visible = true
 			else:
 				RightPageButton.visible = false
 		3:
 			LeftPageButton.visible = true
-			if Unlocks.Unlocks["Gold"]["Unlocked"] or Values.DebugMode:
+			if Unlocks.Unlocks["Gold"]["Unlocked"] or Unlocks.Unlocks["Gold"]["Unlocked"] or Values.DebugMode:
 				RightPageButton.visible = true
 			else:
 				RightPageButton.visible = false
@@ -88,7 +91,18 @@ func SetNextPageVisibility():
 			RightPageButton.visible = false
 
 func _on_left_page_button_button_down() -> void:
-	changePage(max(Page - 1, 0))
+	if Page == 4:
+		if Unlocks.Unlocks["Ebony"]["Unlocked"]:
+			changePage(3)
+		elif Unlocks.Unlocks["Chestnut"]["Unlocked"]:
+			changePage(2)
+		else:
+			changePage(1)
+	else:
+		changePage(max(Page - 1, 1))
 
 func _on_right_page_button_button_down() -> void:
-	changePage(min(Page + 1, 4))
+	if Page == 1 and !Unlocks.Unlocks["Chestnut"]["Unlocked"] or Page == 2 and !Unlocks.Unlocks["Ebony"]["Unlocked"]:
+			changePage(4)
+	else:
+		changePage(min(Page + 1, 4))

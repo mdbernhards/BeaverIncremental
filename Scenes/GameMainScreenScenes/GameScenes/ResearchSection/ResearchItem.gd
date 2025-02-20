@@ -210,6 +210,8 @@ func updateProgressBar():
 
 func _on_research_timer_timeout():
 	SaveData.UnlockedResearch[str(ItemId)] = true
+
+func finishResearch():
 	CalculateValues.calculateAllValues()
 	get_tree().get_first_node_in_group("TextLogSection").writeResearchUnlockToLog(ItemId)
 	
@@ -271,7 +273,7 @@ func _on_research_item_refresh_timer_timeout() -> void:
 	updateResearchVisability()
 	
 	if SaveData.UnlockedResearch.has(str(ItemId)) and SaveData.UnlockedResearch[str(ItemId)]:
-		_on_research_timer_timeout()
+		finishResearch()
 	
 	if (Unlocks.Unlocks["Research"]["ResearchItems"].has(ItemId) and Research.Research[str(ItemId)]["Unlocked"].call()) or Values.DebugMode:
 		visible = true

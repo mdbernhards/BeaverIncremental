@@ -1,12 +1,22 @@
 TODO
 
 First:
-Fix bait selection visual bugs
 Keep Playing
-Add Magic Lock Achievements
-Fix Apple 10
-Add some more wps magic upgrades
-Scale Down / add some more research
+Adjust Gold Upgrades
+Adjust Mahogany Beaver, Woodcamp and Upgrade Prices
+Adjust Mahogany Achievements (starts at 12mil...)
+Adjust Prices For Magic Locked Upgrades
+Set Prices For The Next 10 Research
+Check Bounce, scale up as I never fail...
+Add Some Research For Apple WPS
+Scale Up Some Of The Magic Upgrade Costs a bit
+Scale Up Ash 6, Cedar 3
+
+Fix bait selection visual bugs
+Need To Check Fishing Chance, how it works
+Write In Text Log Fishing Chance Or Bait Refunds
+If possible Show Text Log On Achievement Screen, or somehow indicate an unlocked Achievement
+Make Notation Work with negative Numbers
 
 Later:
 If there are remove upgrades that improve bots for one wood, add research and magic upgrades that do that
@@ -49,6 +59,8 @@ All upgrade, research, magic, dam, achievement names and descriptions (maybe upg
 Add Unlock Time for Achievements
 Change achievements to be icons from icon packs
 Fix fish stutter
+Fish Price In Tooltips need Rounding / Nottation
+Fix Gold Gain Achievements 2 of them are the same
 
 Done:
 Add save delete button DONE
@@ -203,3 +215,11 @@ Before Ascending adjust Magic Gain DONE
 Adjust Cedar Upgrade Prices DONE
 Clean Queue from already researched research items DONE
 Update Apple 9, Spruce 8, Maple 10 Upgrades DONE
+Add Magic Lock Achievements DONE
+Fix Apple 10 DONE
+Add Beaver Price -95% Birch and Maple DONE
+Add Rest Of the Research Value Calculations DONE
+Add WPC and WPS magic Upgrades DONE
+On Load Switch Upgrades To Oak DONE
+On Gold Upgrade Unlock Fix Buttons DONE
+Fix Left Right Buttons DONE

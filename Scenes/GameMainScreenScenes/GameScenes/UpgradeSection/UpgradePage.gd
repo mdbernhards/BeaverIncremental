@@ -50,10 +50,7 @@ func changePage(nr):
 	_on_upgrade_tab_timer_timeout()
 
 func setUpgradeTabButtons():
-	if ResourceTypes[0] == "Gold":
-		$UpgradeTabs/HBox.visible = false
-	else:
-		$UpgradeTabs/HBox.visible = true
+	$UpgradeTabs/HBox.visible = true
 
 	for i in ResourceTypes.size():
 		TabButtons[i].text = ResourceTypes[i]
@@ -103,6 +100,10 @@ func _on_upgrade_tab_timer_timeout() -> void:
 		if (Unlocks.Unlocks[ResourceTypes[i]]["Unlocked"] and Unlocks.Unlocks["Apple"]["Unlocked"]) or Values.DebugMode:
 			TabButtons[i].visible = true
 		else:
+			TabButtons[i].visible = false
+	
+	if PageNr == 4:
+		for i in 5:
 			TabButtons[i].visible = false
 	
 	var resource = ResourceTypes[0]

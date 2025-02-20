@@ -32,31 +32,6 @@ var ShopItemType: Fishing.ShopItemEnum :
 		setupNodePaths()
 		refreshItemData()
 
-func refreshItemData():
-	if !SaveData.ShopItems.has(ShopItemType):
-		SaveData.ShopItems[ShopItemType] = SaveData.OriginalShopItems[ShopItemType]
-	
-	ItemNameLabel.text = Fishing.ShopItems[ShopItemType]["Name"]
-	EffectLabel.text = str(Fishing.ShopItems[ShopItemType]["Description"])
-	
-	IsBait = Fishing.ShopItems[ShopItemType]["IsBait"]
-	HasCount = Fishing.ShopItems[ShopItemType]["HasCount"]
-	Price = Fishing.ShopItems[ShopItemType]["Price"]
-	
-	if IsBait:
-		UnlockPrice = Fishing.ShopItems[ShopItemType]["UnlockPrice"]
-		Unlocked = SaveData.ShopItems[ShopItemType]["Unlocked"]
-	
-	if HasCount:
-		Count = SaveData.ShopItems[ShopItemType]["Count"]
-	else:
-		if !SaveData.ShopItems[ShopItemType].has("Bought"):
-			SaveData.ShopItems[ShopItemType]["Bought"] = false
-		
-		Bought = SaveData.ShopItems[ShopItemType]["Bought"]
-	
-	setShopItem()
-
 func _ready() -> void:
 	setupNodePaths()
 
@@ -104,34 +79,30 @@ func setShopItem():
 				BuyButton.visible = true
 				BoughtLabel.visible = false
 
-func _on_buy_button_button_down() -> void:
-	if SaveData.FishBiscuits["Count"] >= getPrice():
-		SaveData.FishBiscuits["Count"] -= getPrice()
-		
-		if IsBait:
-			SaveData.ShopItems[ShopItemType]["Count"] += Values.ResourceValues["Fish"]["BaitBuyCount"]
-		elif HasCount:
-			SaveData.ShopItems[ShopItemType]["Count"] += 1
-		else:
-			SaveData.ShopItems[ShopItemType]["Bought"] = true
-			
-			if ShopItemType == Fishing.ShopItemEnum.WpsBonus1 or ShopItemType == Fishing.ShopItemEnum.WpsBonus2 or ShopItemType == Fishing.ShopItemEnum.WpsBonus3:
-				get_tree().get_first_node_in_group("ShopPage").setWpsTempBonus(ShopItemType)
-			elif ShopItemType == Fishing.ShopItemEnum.WpcBonus1 or ShopItemType == Fishing.ShopItemEnum.WpcBonus2 or ShopItemType == Fishing.ShopItemEnum.WpcBonus3:
-				get_tree().get_first_node_in_group("ShopPage").setWpcTempBonus(ShopItemType)
-		RefreshItemValues()
-		
-		if !SaveData.GeneralInfo.has("FishShopItemsBoughtCount"):
-			SaveData.GeneralInfo["FishShopItemsBoughtCount"] = 0
-		
-		SaveData.GeneralInfo["FishShopItemsBoughtCount"] += 1
+func refreshItemData():
+	if !SaveData.ShopItems.has(ShopItemType):
+		SaveData.ShopItems[ShopItemType] = SaveData.OriginalShopItems[ShopItemType]
 	
-	refreshItemData()
-	CalculateValues.calculateAllValues()
-
-func _on_shop_item_refresh_timer_timeout() -> void:
-	RefreshItemValues()
-	refreshItemData()
+	ItemNameLabel.text = Fishing.ShopItems[ShopItemType]["Name"]
+	EffectLabel.text = str(Fishing.ShopItems[ShopItemType]["Description"])
+	
+	IsBait = Fishing.ShopItems[ShopItemType]["IsBait"]
+	HasCount = Fishing.ShopItems[ShopItemType]["HasCount"]
+	Price = Fishing.ShopItems[ShopItemType]["Price"]
+	
+	if IsBait:
+		UnlockPrice = Fishing.ShopItems[ShopItemType]["UnlockPrice"]
+		Unlocked = SaveData.ShopItems[ShopItemType]["Unlocked"]
+	
+	if HasCount:
+		Count = SaveData.ShopItems[ShopItemType]["Count"]
+	else:
+		if !SaveData.ShopItems[ShopItemType].has("Bought"):
+			SaveData.ShopItems[ShopItemType]["Bought"] = false
+		
+		Bought = SaveData.ShopItems[ShopItemType]["Bought"]
+	
+	setShopItem()
 
 func RefreshItemValues():
 	if ShopItemType == Fishing.ShopItemEnum.NoBait:
@@ -200,6 +171,35 @@ func RefreshItemValues():
 			UnlockButton.disabled = false
 		else:
 			UnlockButton.disabled = true
+
+func _on_buy_button_button_down() -> void:
+	if SaveData.FishBiscuits["Count"] >= getPrice():
+		SaveData.FishBiscuits["Count"] -= getPrice()
+		
+		if IsBait:
+			SaveData.ShopItems[ShopItemType]["Count"] += Values.ResourceValues["Fish"]["BaitBuyCount"]
+		elif HasCount:
+			SaveData.ShopItems[ShopItemType]["Count"] += 1
+		else:
+			SaveData.ShopItems[ShopItemType]["Bought"] = true
+			
+			if ShopItemType == Fishing.ShopItemEnum.WpsBonus1 or ShopItemType == Fishing.ShopItemEnum.WpsBonus2 or ShopItemType == Fishing.ShopItemEnum.WpsBonus3:
+				get_tree().get_first_node_in_group("ShopPage").setWpsTempBonus(ShopItemType)
+			elif ShopItemType == Fishing.ShopItemEnum.WpcBonus1 or ShopItemType == Fishing.ShopItemEnum.WpcBonus2 or ShopItemType == Fishing.ShopItemEnum.WpcBonus3:
+				get_tree().get_first_node_in_group("ShopPage").setWpcTempBonus(ShopItemType)
+		
+		if !SaveData.GeneralInfo.has("FishShopItemsBoughtCount"):
+			SaveData.GeneralInfo["FishShopItemsBoughtCount"] = 0
+		
+		SaveData.GeneralInfo["FishShopItemsBoughtCount"] += 1
+	
+	RefreshItemValues()
+	refreshItemData()
+	CalculateValues.calculateAllValues()
+
+func _on_shop_item_refresh_timer_timeout() -> void:
+	RefreshItemValues()
+	refreshItemData()
 
 func timeConvert(timeInSeconds):
 	timeInSeconds = int(timeInSeconds)

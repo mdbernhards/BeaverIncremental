@@ -6,11 +6,8 @@
 specular_color = Color(0.165198, 0.542669, 0.441428, 1)
 
 [node name="Tooltip" type="MarginContainer"]
-custom_minimum_size = Vector2(400, 0)
-offset_right = 400.0
-offset_bottom = 169.0
-size_flags_horizontal = 3
-size_flags_vertical = 0
+offset_right = 396.0
+offset_bottom = 93.0
 script = ExtResource("1_rfsal")
 
 [node name="Background1" type="ColorRect" parent="."]
@@ -19,6 +16,7 @@ color = Color(0.054902, 0.0784314, 0.105882, 1)
 
 [node name="MC" type="MarginContainer" parent="."]
 layout_mode = 2
+size_flags_vertical = 4
 theme_override_constants/margin_left = 7
 theme_override_constants/margin_top = 7
 theme_override_constants/margin_right = 7
@@ -30,10 +28,12 @@ color = Color(0.137255, 0.14902, 0.180392, 1)
 
 [node name="MC" type="MarginContainer" parent="MC"]
 layout_mode = 2
+size_flags_vertical = 4
 theme_override_constants/margin_bottom = 5
 
 [node name="VBox" type="VBoxContainer" parent="MC/MC"]
 layout_mode = 2
+size_flags_vertical = 4
 
 [node name="HBox" type="HBoxContainer" parent="MC/MC/VBox"]
 custom_minimum_size = Vector2(0, 50)
@@ -78,7 +78,7 @@ layout_mode = 2
 theme_override_colors/font_color = Color(0.881937, 0.881937, 0.881937, 1)
 theme_override_constants/line_spacing = -2
 theme_override_font_sizes/font_size = 9
-text = "Tooltip Description  Tooltip Description Tooltip Tooltip Description  Tooltip Description Tooltip Description Tooltip Description Tooltip Description Tooltip Description Tooltip Description Tooltip Description Tooltip Description  Tooltip Description Tooltip Description  Tooltip Description Tooltip Description Tooltip Description Tooltip Description Tooltip Description  Tooltip Description Tooltip Description Tooltip Description Tooltip Description Tooltip Description Tooltip Description Tooltip Description"
+text = "Tooltip Description  Tooltip Description Tooltip Tooltip Description  Tooltip Descriptiaon Tooltip Description Tooltip Description Tooltip Description Tooltip Description Tooltip Description Tooltip Description Tooltip Description  Tooltip Description Tooltip Description  Tooltip Description Tooltip Description Tooltip Description Tooltip Description Tooltip Description  Tooltip Description Tooltip Description Tooltip Description Tooltip Description Tooltip Description Tooltip Description Tooltip Description"
 autowrap_mode = 3
 
 [node name="MC2" type="MarginContainer" parent="MC/MC/VBox/HBox"]
