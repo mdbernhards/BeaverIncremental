@@ -322,39 +322,39 @@ var Achievements = {
 		"Trigger" : func(): return SaveData.Resources["Cedar"]["Count"] >= pow(10, 28),
 	},
 	"65" : {
-		"Name" : "Have 10^4 Mahogany",
-		"Description" : "Collect 10^4 Mahogany Wood",
-		"Trigger" : func(): return SaveData.Resources["Mahogany"]["Count"] >= pow(10, 4),
-	},
-	"66" : {
 		"Name" : "Have 10^5 Mahogany",
 		"Description" : "Collect 10^5 Mahogany Wood",
 		"Trigger" : func(): return SaveData.Resources["Mahogany"]["Count"] >= pow(10, 5),
 	},
-	"67" : {
-		"Name" : "Have 10^6 Mahogany",
-		"Description" : "Collect 10^6 Mahogany Wood",
-		"Trigger" : func(): return SaveData.Resources["Mahogany"]["Count"] >= pow(10, 6),
+	"66" : {
+		"Name" : "Have 10^7 Mahogany",
+		"Description" : "Collect 10^7 Mahogany Wood",
+		"Trigger" : func(): return SaveData.Resources["Mahogany"]["Count"] >= pow(10, 7),
 	},
-	"68" : {
+	"67" : {
 		"Name" : "Have 10^9 Mahogany",
 		"Description" : "Collect 10^9 Mahogany Wood",
 		"Trigger" : func(): return SaveData.Resources["Mahogany"]["Count"] >= pow(10, 9),
 	},
+	"68" : {
+		"Name" : "Have 10^11 Mahogany",
+		"Description" : "Collect 10^11 Mahogany Wood",
+		"Trigger" : func(): return SaveData.Resources["Mahogany"]["Count"] >= pow(10, 11),
+	},
 	"69" : {
-		"Name" : "Have 10^14 Mahogany",
+		"Name" : "Have 10^13 Mahogany",
 		"Description" : "Collect 10^14 Mahogany Wood",
-		"Trigger" : func(): return SaveData.Resources["Mahogany"]["Count"] >= pow(10, 14),
+		"Trigger" : func(): return SaveData.Resources["Mahogany"]["Count"] >= pow(10, 13),
 	},
 	"70" : {
-		"Name" : "Have 10^19 Mahogany",
-		"Description" : "Collect 10^19 Mahogany Wood",
-		"Trigger" : func(): return SaveData.Resources["Mahogany"]["Count"] >= pow(10, 19),
+		"Name" : "Have 10^15 Mahogany",
+		"Description" : "Collect 10^15 Mahogany Wood",
+		"Trigger" : func(): return SaveData.Resources["Mahogany"]["Count"] >= pow(10, 15),
 	},
 	"71" : {
-		"Name" : "Have 10^25 Mahogany",
-		"Description" : "Collect 10^25 Mahogany Wood",
-		"Trigger" : func(): return SaveData.Resources["Mahogany"]["Count"] >= pow(10, 25),
+		"Name" : "Have 10^17 Mahogany",
+		"Description" : "Collect 10^17 Mahogany Wood",
+		"Trigger" : func(): return SaveData.Resources["Mahogany"]["Count"] >= pow(10, 17),
 	},
 	"72" : {
 		"Name" : "Have 10^5 Ebony",
@@ -1172,9 +1172,9 @@ var Achievements = {
 		"Trigger" : func(): return goldPerSecondCheck(37000000),
 	},
 	"232" : {
-		"Name" : "gold gain per sec +4.6 * 10^7",
-		"Description" : "gold gain per sec +4.6 * 10^7",
-		"Trigger" : func(): return goldPerSecondCheck(4.6 * pow(10, 7)),
+		"Name" : "gold gain per sec +4.6 * 10^8",
+		"Description" : "gold gain per sec +4.6 * 10^8",
+		"Trigger" : func(): return goldPerSecondCheck(4.6 * pow(10, 8)),
 	},
 	"233" : {
 		"Name" : "gold gain per sec +5.7 * 10^9",

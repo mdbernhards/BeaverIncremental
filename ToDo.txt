@@ -2,23 +2,16 @@ TODO
 
 First:
 Keep Playing
-Adjust Gold Upgrades
-Adjust Mahogany Beaver, Woodcamp and Upgrade Prices
-Adjust Mahogany Achievements (starts at 12mil...)
+Remake Dams, Change All Dam Research, Magic Upgrades, Achievements, Fish and Upgrades
 Adjust Prices For Magic Locked Upgrades
-Set Prices For The Next 10 Research
-Check Bounce, scale up as I never fail...
-Add Some Research For Apple WPS
-Scale Up Some Of The Magic Upgrade Costs a bit
-Scale Up Ash 6, Cedar 3
 
-Fix bait selection visual bugs
 Need To Check Fishing Chance, how it works
 Write In Text Log Fishing Chance Or Bait Refunds
 If possible Show Text Log On Achievement Screen, or somehow indicate an unlocked Achievement
 Make Notation Work with negative Numbers
 
 Later:
+Fix bait selection visual bugs
 If there are remove upgrades that improve bots for one wood, add research and magic upgrades that do that
 Make Other Tooltips like the text log ones
 Around research 80 make clicking good again
@@ -223,3 +216,13 @@ Add WPC and WPS magic Upgrades DONE
 On Load Switch Upgrades To Oak DONE
 On Gold Upgrade Unlock Fix Buttons DONE
 Fix Left Right Buttons DONE
+Adjust Gold Upgrades DONE
+Adjust Mahogany Beaver, Woodcamp and Upgrade Prices DONE
+Adjust Mahogany Achievements DONE
+Adjust Bounce Speed DONE
+Change Mahogany 7 DONE
+Scale Up Ash 6, Cedar 3 DONE
+Set Prices For The Next 10 Research DONE
+Add Some Research For Apple WPS DONE
+Fix History DONE
+Scale Up Magic Upgrade Costs DONE

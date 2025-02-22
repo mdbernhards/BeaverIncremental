@@ -61,7 +61,7 @@ func RunBounceProgressBar(delta):
 	else:
 		baitMultip = 1 - ((Fishing.ShopItems[BaitUsed]["FishingPower"] - Fishing.FishLevel[BouncingFishType]) / 8)
 	
-	var bounceIncrement = delta * 75 * FishBounceMultip * Fishing.Fish[BouncingFishType].BounceMultip * baitMultip
+	var bounceIncrement = delta * 99 * FishBounceMultip * Fishing.Fish[BouncingFishType].BounceMultip * baitMultip
 	
 	if BarUp:
 		BounceTime += bounceIncrement

@@ -118,7 +118,7 @@ func checkForUnlocks():
 	if achievementCount >= 235:
 		pass
 	if achievementCount >= 240:
-		Unlocks["Upgrades"]["KeepGoldUpgrades"] = true
+		pass #Unlocks["Upgrades"]["KeepGoldUpgrades"] = true
 	if achievementCount >= 245:
 		pass
 	if achievementCount >= 250:

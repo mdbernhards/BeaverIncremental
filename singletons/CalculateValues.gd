@@ -165,8 +165,6 @@ func ApplyUpgrades():
 			if !SaveData.Upgrades[woodType][upgradeId].has("MagicLocked") or SaveData.Upgrades[woodType][upgradeId].has("MagicLocked") and !SaveData.Upgrades[woodType][upgradeId]["MagicLocked"]:
 				SetUpgradeValue(woodType, upgradeId)
 	
-	SetPreGoldUpgrades()
-	
 	var existingGoldUpgrades = SaveData.Upgrades["Gold"]
 	for upgradeId in existingGoldUpgrades:
 		SetGoldUpgradeValue(upgradeId)
@@ -899,6 +897,8 @@ func SetResearchValue(researchNr):
 			TempValues["Global"]["WcBaseStorage"] += 200
 		"83" :
 			TempValues["Spruce"]["WcPriceMultip"] *= 0.34
+		"83b" :
+			TempValues["Apple"]["WpsMultip"] *= 2
 		"84" :
 			TempValues["Research"]["Time"] *= 0.67
 		"85" :
@@ -1107,42 +1107,33 @@ func SetResearchValue(researchNr):
 		"140" :
 			TempValues["Global"]["WpsMultip"] *= 5
 
-func SetPreGoldUpgrades():
-	var upgradeLevel = SaveData.Upgrades["Gold"]["6"]["Level"]
-	
-	if upgradeLevel == 0:
-		return
-		
-	TempValues["Gold"]["UpgradeEffect"] *= pow(1.003, upgradeLevel)
-
 func SetGoldUpgradeValue(upgradeId):
 	var upgradeLevel = SaveData.Upgrades["Gold"][upgradeId]["Level"]
-	var goldEffectMultip = TempValues["Gold"]["UpgradeEffect"]
 	
 	if upgradeLevel == 0:
 		return
 	
 	match upgradeId:
 		"1":
-			TempValues["Global"]["BeaverMultip"] *= pow(1.05, upgradeLevel) * goldEffectMultip
+			TempValues["Global"]["BeaverMultip"] *= pow(1.01, upgradeLevel)
 		"2":
-			TempValues["Global"]["WpsMultip"] *= pow(1.085, upgradeLevel) * goldEffectMultip
+			TempValues["Global"]["WpsMultip"] *= pow(1.01, upgradeLevel)
 		"3":
-			TempValues["Global"]["StorageMultip"] *= pow(1.075, upgradeLevel) * goldEffectMultip
+			TempValues["Global"]["StorageMultip"] *= pow(1.01, upgradeLevel)
 		"4":
-			TempValues["Research"]["Time"] *= pow(1 - 0.005, upgradeLevel) * goldEffectMultip
+			TempValues["Research"]["Time"] *= pow(1 - 0.01, upgradeLevel)
 		"5":
-			TempValues["Global"]["WoodPriceMultip"] *= pow(1.03, upgradeLevel) * goldEffectMultip
+			TempValues["Global"]["WoodPriceMultip"] *= pow(1.01, upgradeLevel)
 		"6":
-			TempValues["Global"]["BeaverPriceMultip"] *= pow(1 - 0.035, upgradeLevel) * goldEffectMultip
+			TempValues["Global"]["BeaverPriceMultip"] *= pow(1 - 0.01, upgradeLevel)
 		"7":
-			TempValues["Global"]["WcPriceMultip"] *= pow(1 - 0.015, upgradeLevel) * goldEffectMultip
+			TempValues["Global"]["WcPriceMultip"] *= pow(1 - 0.01, upgradeLevel)
 		"8":
-			TempValues["Magic"]["Multip"] *= pow(1.04, upgradeLevel) * goldEffectMultip
+			TempValues["Magic"]["GainMultip"] *= pow(1.01, upgradeLevel)
 		"9":
-			TempValues["Global"]["BotPriceMultip"] *= pow(1 - 0.025, upgradeLevel) * goldEffectMultip
+			TempValues["Global"]["BotPriceMultip"] *= pow(1 - 0.01, upgradeLevel)
 		"10":
-			TempValues["Dam"]["PriceMultip"] *= pow(1 - 0.025, upgradeLevel) * goldEffectMultip
+			TempValues["Dam"]["PriceMultip"] *= pow(1 - 0.01, upgradeLevel)
 
 func SetUpgradeValue(woodType, upgradeId):
 	var upgradeLevel = SaveData.Upgrades[woodType][upgradeId]["Level"]
@@ -1194,7 +1185,7 @@ func SetUpgradeValue(woodType, upgradeId):
 				"4":
 					TempValues[woodType]["WpsPerWc"] += upgradeLevel * 1
 				"5":
-					TempValues["Oak"]["WpsMultip"] *= pow(1.125, upgradeLevel)
+					TempValues["Oak"]["WpsMultip"] *= pow(1.115, upgradeLevel)
 				"6":
 					TempValues[woodType]["WpsMultip"] *= pow(1.045, upgradeLevel)
 				"7":
@@ -1242,7 +1233,7 @@ func SetUpgradeValue(woodType, upgradeId):
 				"6":
 					TempValues[woodType]["StorageMultip"] *= pow(1.033, upgradeLevel)
 				"7":
-					TempValues["Maple"]["WpsMultip"] *= pow(1.05, upgradeLevel)
+					TempValues["Maple"]["WpsMultip"] *= pow(1.035, upgradeLevel)
 				"8":
 					TempValues["Fish"]["FishSpeedMultip"] *= pow(1 - 0.025, upgradeLevel)
 				"9":
@@ -1370,11 +1361,15 @@ func SetUpgradeValue(woodType, upgradeId):
 				"4":
 					TempValues[woodType]["BeaverPriceMultip"] *= pow(1 - 0.05, upgradeLevel)
 				"5":
-					TempValues[woodType]["ExtraWoodcamps"] += roundi(SaveData.Resources[woodType]["Beavers"] / 20 * upgradeLevel - 0.5)
+					TempValues[woodType]["ExtraWoodcamps"] += roundi(SaveData.Resources[woodType]["Beavers"] / 10 * upgradeLevel - 0.5)
 				"6":
 					TempValues[woodType]["WcEffectMultip"] *= pow(1.1, upgradeLevel)
 				"7":
-					TempValues["Global"]["WpsMultip"] *= pow(1.0009, upgradeLevel) * achievementCount
+					TempValues["Oak"]["WpsMultip"] *= pow(1.01, upgradeLevel)
+					TempValues["Apple"]["WpsMultip"] *= pow(1.01, upgradeLevel)
+					TempValues["Maple"]["WpsMultip"] *= pow(1.01, upgradeLevel)
+					TempValues["Birch"]["WpsMultip"] *= pow(1.01, upgradeLevel)
+					TempValues["Spruce"]["WpsMultip"] *= pow(1.01, upgradeLevel)
 				"8":
 					TempValues["Global"]["BeaverMultip"] *= pow(1.005, upgradeLevel)
 				"9":
@@ -1547,7 +1542,6 @@ var OriginalTempValues = {
 	},
 	"Gold" : {
 		"GainMultip" : 1,
-		"UpgradeEffect" : 1,
 		"UpgradePriceMultip" : 1,
 	},
 	"Magic" : {

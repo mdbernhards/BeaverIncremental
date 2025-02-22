@@ -47,6 +47,7 @@ size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_constants/margin_left = 10
 theme_override_constants/margin_top = 3
+theme_override_constants/margin_bottom = -3
 
 [node name="TitleLabel" type="Label" parent="BG/HBox/MC/VBox/MC"]
 layout_mode = 2
@@ -70,13 +71,15 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_constants/margin_left = 25
-theme_override_constants/margin_bottom = 4
+theme_override_constants/margin_top = -2
+theme_override_constants/margin_bottom = 2
 
-[node name="PriceLabel" type="Label" parent="BG/HBox/MC/VBox/MC3"]
+[node name="PriceLabel" type="RichTextLabel" parent="BG/HBox/MC/VBox/MC3"]
 layout_mode = 2
-theme_override_colors/font_color = Color(0.709804, 0.709804, 0.709804, 1)
-theme_override_font_sizes/font_size = 10
+theme_override_colors/default_color = Color(0.745098, 0.745098, 0.745098, 1)
+theme_override_font_sizes/normal_font_size = 9
 text = "Price: 1000 Oak, 500 Apple"
+fit_content = true
 
 [node name="MC2" type="MarginContainer" parent="BG/HBox"]
 layout_mode = 2
