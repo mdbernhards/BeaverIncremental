@@ -1,0 +1,276 @@
+[gd_scene load_steps=3 format=3 uid="uid://c7kwe1fnpr5x6"]
+
+[ext_resource type="Script" path="res://Scenes/GameMainScreenScenes/GameScenes/FinalDamSection.gd" id="1_jmld6"]
+[ext_resource type="PackedScene" uid="uid://dqpjm5b2x5u16" path="res://Scenes/GameMainScreenScenes/GameScenes/FinalDamSection/final_dam_item.tscn" id="2_k3b35"]
+
+[node name="FinalDamSection" type="MarginContainer" groups=["DamSection"]]
+custom_minimum_size = Vector2(798, 926)
+offset_right = 798.0
+offset_bottom = 926.0
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
+script = ExtResource("1_jmld6")
+
+[node name="VBox" type="VBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="TitleMC" type="MarginContainer" parent="VBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="DamsLabel" type="Label" parent="VBox/TitleMC"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "THE FINAL DAM"
+horizontal_alignment = 1
+
+[node name="ColorRect" type="ColorRect" parent="VBox"]
+layout_mode = 2
+size_flags_vertical = 3
+color = Color(0.396078, 0.396078, 0.396078, 1)
+
+[node name="DamItemsMC" type="MarginContainer" parent="VBox/ColorRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
+
+[node name="HBox" type="VBoxContainer" parent="VBox/ColorRect/DamItemsMC"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 25
+
+[node name="DamSection1" type="ColorRect" parent="VBox/ColorRect/DamItemsMC/HBox"]
+custom_minimum_size = Vector2(0, 255)
+layout_mode = 2
+color = Color(0.494118, 0.494118, 0.494118, 1)
+
+[node name="MC" type="MarginContainer" parent="VBox/ColorRect/DamItemsMC/HBox/DamSection1"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 20
+
+[node name="DamSelectionVBox" type="HBoxContainer" parent="VBox/ColorRect/DamItemsMC/HBox/DamSection1/MC"]
+custom_minimum_size = Vector2(245, 0)
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="FinalDamItem" parent="VBox/ColorRect/DamItemsMC/HBox/DamSection1/MC/DamSelectionVBox" instance=ExtResource("2_k3b35")]
+layout_mode = 2
+WoodType = "Oak"
+
+[node name="FinalDamItem2" parent="VBox/ColorRect/DamItemsMC/HBox/DamSection1/MC/DamSelectionVBox" instance=ExtResource("2_k3b35")]
+layout_mode = 2
+WoodType = "Apple"
+
+[node name="FinalDamItem3" parent="VBox/ColorRect/DamItemsMC/HBox/DamSection1/MC/DamSelectionVBox" instance=ExtResource("2_k3b35")]
+layout_mode = 2
+WoodType = "Maple"
+
+[node name="FinalDamItem4" parent="VBox/ColorRect/DamItemsMC/HBox/DamSection1/MC/DamSelectionVBox" instance=ExtResource("2_k3b35")]
+layout_mode = 2
+WoodType = "Birch"
+
+[node name="FinalDamItem5" parent="VBox/ColorRect/DamItemsMC/HBox/DamSection1/MC/DamSelectionVBox" instance=ExtResource("2_k3b35")]
+layout_mode = 2
+WoodType = "Spruce"
+
+[node name="DamSection2" type="ColorRect" parent="VBox/ColorRect/DamItemsMC/HBox"]
+custom_minimum_size = Vector2(0, 255)
+layout_mode = 2
+color = Color(0.494118, 0.494118, 0.494118, 1)
+
+[node name="RareMC" type="MarginContainer" parent="VBox/ColorRect/DamItemsMC/HBox/DamSection2"]
+visible = false
+layout_mode = 2
+offset_right = 748.0
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_right = 20
+
+[node name="DamSelectionVBox" type="HBoxContainer" parent="VBox/ColorRect/DamItemsMC/HBox/DamSection2/RareMC"]
+custom_minimum_size = Vector2(245, 0)
+layout_mode = 2
+theme_override_constants/separation = 13
+
+[node name="FinalDamItem" parent="VBox/ColorRect/DamItemsMC/HBox/DamSection2/RareMC/DamSelectionVBox" instance=ExtResource("2_k3b35")]
+layout_mode = 2
+WoodType = "Chestnut"
+
+[node name="FinalDamItem2" parent="VBox/ColorRect/DamItemsMC/HBox/DamSection2/RareMC/DamSelectionVBox" instance=ExtResource("2_k3b35")]
+layout_mode = 2
+WoodType = "Cherry"
+
+[node name="FinalDamItem3" parent="VBox/ColorRect/DamItemsMC/HBox/DamSection2/RareMC/DamSelectionVBox" instance=ExtResource("2_k3b35")]
+layout_mode = 2
+WoodType = "Ash"
+
+[node name="FinalDamItem4" parent="VBox/ColorRect/DamItemsMC/HBox/DamSection2/RareMC/DamSelectionVBox" instance=ExtResource("2_k3b35")]
+layout_mode = 2
+WoodType = "Cedar"
+
+[node name="FinalDamItem5" parent="VBox/ColorRect/DamItemsMC/HBox/DamSection2/RareMC/DamSelectionVBox" instance=ExtResource("2_k3b35")]
+layout_mode = 2
+WoodType = "Mahogany"
+
+[node name="RareLockedVBox" type="VBoxContainer" parent="VBox/ColorRect/DamItemsMC/HBox/DamSection2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 14
+alignment = 1
+
+[node name="Label" type="Label" parent="VBox/ColorRect/DamItemsMC/HBox/DamSection2/RareLockedVBox"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 55
+text = "Locked"
+
+[node name="RareLockedButton" type="Button" parent="VBox/ColorRect/DamItemsMC/HBox/DamSection2/RareLockedVBox"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 25
+text = "Unlock For 1m Magic"
+
+[node name="RareCantAffordRect" type="ColorRect" parent="VBox/ColorRect/DamItemsMC/HBox/DamSection2/RareLockedVBox/RareLockedButton"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.941176, 0, 0, 0.32549)
+
+[node name="DamSection3" type="ColorRect" parent="VBox/ColorRect/DamItemsMC/HBox"]
+custom_minimum_size = Vector2(0, 255)
+layout_mode = 2
+color = Color(0.494118, 0.494118, 0.494118, 1)
+
+[node name="MythicMC" type="MarginContainer" parent="VBox/ColorRect/DamItemsMC/HBox/DamSection3"]
+visible = false
+layout_mode = 2
+offset_right = 748.0
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_right = 20
+
+[node name="DamSelectionVBox" type="HBoxContainer" parent="VBox/ColorRect/DamItemsMC/HBox/DamSection3/MythicMC"]
+custom_minimum_size = Vector2(245, 0)
+layout_mode = 2
+theme_override_constants/separation = 13
+
+[node name="FinalDamItem" parent="VBox/ColorRect/DamItemsMC/HBox/DamSection3/MythicMC/DamSelectionVBox" instance=ExtResource("2_k3b35")]
+layout_mode = 2
+WoodType = "Ebony"
+
+[node name="FinalDamItem2" parent="VBox/ColorRect/DamItemsMC/HBox/DamSection3/MythicMC/DamSelectionVBox" instance=ExtResource("2_k3b35")]
+layout_mode = 2
+WoodType = "Dogwood"
+
+[node name="FinalDamItem3" parent="VBox/ColorRect/DamItemsMC/HBox/DamSection3/MythicMC/DamSelectionVBox" instance=ExtResource("2_k3b35")]
+layout_mode = 2
+WoodType = "Rosewood"
+
+[node name="FinalDamItem4" parent="VBox/ColorRect/DamItemsMC/HBox/DamSection3/MythicMC/DamSelectionVBox" instance=ExtResource("2_k3b35")]
+layout_mode = 2
+WoodType = "Ghost Gum"
+
+[node name="FinalDamItem5" parent="VBox/ColorRect/DamItemsMC/HBox/DamSection3/MythicMC/DamSelectionVBox" instance=ExtResource("2_k3b35")]
+layout_mode = 2
+WoodType = "Dragonwood"
+
+[node name="MythicLockedVBox" type="VBoxContainer" parent="VBox/ColorRect/DamItemsMC/HBox/DamSection3"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 14
+alignment = 1
+
+[node name="Label" type="Label" parent="VBox/ColorRect/DamItemsMC/HBox/DamSection3/MythicLockedVBox"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 55
+text = "Locked"
+
+[node name="MythicLockedButton" type="Button" parent="VBox/ColorRect/DamItemsMC/HBox/DamSection3/MythicLockedVBox"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 25
+text = "Unlock For 10m Magic"
+
+[node name="MythicCantAffordRect" type="ColorRect" parent="VBox/ColorRect/DamItemsMC/HBox/DamSection3/MythicLockedVBox/MythicLockedButton"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.941176, 0, 0, 0.32549)
+
+[node name="GameDoneNode" type="Control" parent="VBox/ColorRect"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBox" type="VBoxContainer" parent="VBox/ColorRect/GameDoneNode"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 25
+alignment = 1
+
+[node name="Label" type="Label" parent="VBox/ColorRect/GameDoneNode/VBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 70
+text = "Congratulations!"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="VBox/ColorRect/GameDoneNode/VBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "You Have Completed The Game"
+horizontal_alignment = 1
+
+[node name="Label3" type="Label" parent="VBox/ColorRect/GameDoneNode/VBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 29
+text = "Thanks For Playing!"
+horizontal_alignment = 1
+
+[node name="FinalDamSectionRefreshTimer" type="Timer" parent="."]
+autostart = true
+
+[connection signal="button_down" from="VBox/ColorRect/DamItemsMC/HBox/DamSection2/RareLockedVBox/RareLockedButton" to="." method="_on_rare_locked_button_button_down"]
+[connection signal="button_down" from="VBox/ColorRect/DamItemsMC/HBox/DamSection3/MythicLockedVBox/MythicLockedButton" to="." method="_on_mythic_locked_button_button_down"]
+[connection signal="timeout" from="FinalDamSectionRefreshTimer" to="." method="_on_final_dam_section_refresh_timer_timeout"]

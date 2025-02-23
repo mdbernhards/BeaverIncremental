@@ -1,0 +1,131 @@
+[gd_scene load_steps=3 format=3 uid="uid://dqpjm5b2x5u16"]
+
+[ext_resource type="Script" path="res://Scenes/GameMainScreenScenes/GameScenes/FinalDamSection/final_dam_item.gd" id="1_bxkw0"]
+[ext_resource type="Texture2D" uid="uid://b0qfgkhe3vo07" path="res://Art/DamWhite.jpg" id="2_qcfqp"]
+
+[node name="FinalDamItem" type="MarginContainer" groups=["FinalDamItem"]]
+custom_minimum_size = Vector2(130, 250)
+theme_override_constants/margin_bottom = 10
+script = ExtResource("1_bxkw0")
+
+[node name="VBox" type="VBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="WoodTypeLabel" type="Label" parent="VBox"]
+layout_mode = 2
+text = "Oak"
+
+[node name="BGColorRect" type="ColorRect" parent="VBox"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="WoodProgressBar" type="TextureProgressBar" parent="VBox/BGColorRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+value = 30.0
+fill_mode = 3
+texture_progress = ExtResource("2_qcfqp")
+
+[node name="ProgressMC" type="MarginContainer" parent="VBox/BGColorRect/WoodProgressBar"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 10
+
+[node name="VBox" type="VBoxContainer" parent="VBox/BGColorRect/WoodProgressBar/ProgressMC"]
+layout_mode = 2
+theme_override_constants/separation = 7
+
+[node name="PercentigeDoneLabel" type="Label" parent="VBox/BGColorRect/WoodProgressBar/ProgressMC/VBox"]
+layout_mode = 2
+text = "30% Done"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="StorageLabel" type="Label" parent="VBox/BGColorRect/WoodProgressBar/ProgressMC/VBox"]
+layout_mode = 2
+text = "10b / 10Qa"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="EmptySpaceMC" type="MarginContainer" parent="VBox/BGColorRect/WoodProgressBar/ProgressMC/VBox"]
+custom_minimum_size = Vector2(0, 55)
+layout_mode = 2
+
+[node name="PerSecondLabel" type="Label" parent="VBox/BGColorRect/WoodProgressBar/ProgressMC/VBox"]
+layout_mode = 2
+size_flags_vertical = 10
+text = "1b Per Sec"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SliderPercentageLabel" type="Label" parent="VBox/BGColorRect/WoodProgressBar/ProgressMC/VBox"]
+layout_mode = 2
+size_flags_vertical = 10
+theme_override_font_sizes/font_size = 11
+text = "20%"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ProductionSlider" type="HSlider" parent="VBox/BGColorRect/WoodProgressBar/ProgressMC/VBox"]
+layout_mode = 2
+size_flags_vertical = 8
+
+[node name="UnlockButton" type="Button" parent="VBox/BGColorRect/WoodProgressBar"]
+custom_minimum_size = Vector2(110, 70)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -55.0
+offset_top = -35.0
+offset_right = 55.0
+offset_bottom = 35.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 14
+
+[node name="CantAffordRect" type="ColorRect" parent="VBox/BGColorRect/WoodProgressBar/UnlockButton"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.941176, 0, 0, 0.32549)
+
+[node name="CompleteLabel" type="Label" parent="VBox/BGColorRect/WoodProgressBar"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Completed!
+15% WPS
+15% WPC
+15% Storage"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="FinalDamRefreshTimer" type="Timer" parent="."]
+autostart = true
+
+[connection signal="value_changed" from="VBox/BGColorRect/WoodProgressBar/ProgressMC/VBox/ProductionSlider" to="." method="_on_production_slider_value_changed"]
+[connection signal="button_down" from="VBox/BGColorRect/WoodProgressBar/UnlockButton" to="." method="_on_unlock_button_button_down"]
+[connection signal="timeout" from="FinalDamRefreshTimer" to="." method="_on_final_dam_refresh_timer_timeout"]

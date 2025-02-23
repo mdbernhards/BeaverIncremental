@@ -607,59 +607,79 @@ var Achievements = {
 		"Trigger" : func(): return Unlocks.Unlocks["Dams"]["Unlocked"],
 	},
 	"122" : {
-		"Name" : "Build 1 Dam",
-		"Description" : "Build 1 Dam",
-		"Trigger" : func(): return damCountCheck(1),
+		"Name" : "Complete Dam Oak Section",
+		"Description" : "Complete Dam Oak Section",
+		"Trigger" : func(): return SaveData.FinalDamData["Oak"]["Completed"],
 	},
 	"123" : {
-		"Name" : "Build 10 Dam",
-		"Description" : "Build 10 Dam",
-		"Trigger" : func(): return damCountCheck(10),
+		"Name" : "Complete Dam Apple Section",
+		"Description" : "Complete Dam Apple Section",
+		"Trigger" : func(): return SaveData.FinalDamData["Apple"]["Completed"],
 	},
 	"124" : {
-		"Name" : "Build 100 Dam",
-		"Description" : "Build 100 Dam",
-		"Trigger" : func(): return damCountCheck(100),
+		"Name" : "Complete Dam Maple Section",
+		"Description" : "Complete Dam Maple Section",
+		"Trigger" : func(): return SaveData.FinalDamData["Maple"]["Completed"],
 	},
 	"125" : {
-		"Name" : "Build 1000 Dam",
-		"Description" : "Build 1000 Dam",
-		"Trigger" : func(): return damCountCheck(1000),
+		"Name" : "Complete Dam Birch Section",
+		"Description" : "Complete Dam Birch Section",
+		"Trigger" : func(): return SaveData.FinalDamData["Birch"]["Completed"],
 	},
 	"126" : {
-		"Name" : "Build 10000 Dam",
-		"Description" : "Build 10000 Dam",
-		"Trigger" : func(): return damCountCheck(10000),
+		"Name" : "Complete Dam Spruce Section",
+		"Description" : "Complete Dam Spruce Section",
+		"Trigger" : func(): return SaveData.FinalDamData["Spruce"]["Completed"],
 	},
 	"127" : {
-		"Name" : "Construct a Small Dam",
-		"Description" : "Construct your first Small Dam",
-		"Trigger" : func(): return damTypeBuiltCheck(Dams.DamEnum.SmallDam),
+		"Name" : "Complete Dam Chestnut Section",
+		"Description" : "Complete Dam Chestnut Section",
+		"Trigger" : func(): return SaveData.FinalDamData["Chestnut"]["Completed"],
 	},
 	"128" : {
-		"Name" : "Construct a Medium Dam",
-		"Description" : "Construct your first Medium Dam",
-		"Trigger" : func(): return damTypeBuiltCheck(Dams.DamEnum.MediumDam),
+		"Name" : "Complete Dam Cherry Section",
+		"Description" : "Complete Dam Cherry Section",
+		"Trigger" : func(): return SaveData.FinalDamData["Cherry"]["Completed"],
 	},
 	"129" : {
-		"Name" : "Construct a Big Dam",
-		"Description" : "Construct your first Big Dam",
-		"Trigger" : func(): return damTypeBuiltCheck(Dams.DamEnum.BigDam),
+		"Name" : "Complete Dam Ash Section",
+		"Description" : "Complete Dam Ash Section",
+		"Trigger" : func(): return SaveData.FinalDamData["Ash"]["Completed"],
 	},
 	"130" : {
-		"Name" : "Construct a Giant Dam",
-		"Description" : "Construct your first Giant Dam",
-		"Trigger" : func(): return damTypeBuiltCheck(Dams.DamEnum.GiantDam),
+		"Name" : "Complete Dam Cedar Section",
+		"Description" : "Complete Dam Cedar Section",
+		"Trigger" : func(): return SaveData.FinalDamData["Cedar"]["Completed"],
 	},
 	"131" : {
-		"Name" : "Construct a Mega Dam",
-		"Description" : "Construct your first Mega Dam",
-		"Trigger" : func(): return damTypeBuiltCheck(Dams.DamEnum.MegaDam),
+		"Name" : "Complete Dam Mahogany Section",
+		"Description" : "Complete Dam Mahogany Section",
+		"Trigger" : func(): return SaveData.FinalDamData["Mahogany"]["Completed"],
 	},
 	"132" : {
-		"Name" : "Build All Dam Types",
-		"Description" : "Build at least one of each Dam Type",
-		"Trigger" : func(): return checkThatAllDamTypesBuilt(),
+		"Name" : "Complete Dam Ebony Section",
+		"Description" : "Complete Dam Ebony Section",
+		"Trigger" : func(): return SaveData.FinalDamData["Ebony"]["Completed"],
+	},
+	"237" : {
+		"Name" : "Complete Dam Dogwood Section",
+		"Description" : "Complete Dam Dogwood Section",
+		"Trigger" : func(): return SaveData.FinalDamData["Dogwood"]["Completed"],
+	},
+	"238" : {
+		"Name" : "Complete Dam Rosewood Section",
+		"Description" : "Complete Dam Rosewood Section",
+		"Trigger" : func(): return SaveData.FinalDamData["Rosewood"]["Completed"],
+	},
+	"239" : {
+		"Name" : "Complete Dam Ghost Gum Section",
+		"Description" : "Complete Dam Ghost Gum Section",
+		"Trigger" : func(): return SaveData.FinalDamData["Ghost Gum"]["Completed"],
+	},
+	"154" : {
+		"Name" : "Build The Final Dam, Complete The Game!",
+		"Description" : "gz!",
+		"Trigger" : func(): return checkThatAllDamStagesCompleted(),
 	},
 	"133" : {
 		"Name" : "Unlocked Fishing",
@@ -766,11 +786,6 @@ var Achievements = {
 		"Description" : "Unlock Wyverns Feather Bait",
 		"Trigger" : func(): return SaveData.ShopItems[Fishing.ShopItemEnum.WyvernsFeather]["Unlocked"],
 	},
-	"154" : {
-		"Name" : "Unlock All Baits",
-		"Description" : "Unlock All Baits",
-		"Trigger" : func(): return checkThatAllBaitsUnlocked(),
-	},
 	"155" : {
 		"Name" : "Buy 1 Thing From The Fishing Shop",
 		"Description" : "Buy 1 Thing From The Fishing Shop",
@@ -809,7 +824,7 @@ var Achievements = {
 	"254" : {
 		"Name" : "Can't Find Me!",
 		"Description" : "Click On This Achievement :P",
-		"Trigger" : func(): return null,
+		"Trigger" : func(): return null, # Doesn't need a trigger
 	},
 	"160" : {
 		"Name" : "Find The Electric Eal",
@@ -1196,21 +1211,6 @@ var Achievements = {
 		"Description" : "gold gain per sec +9 * 10^15",
 		"Trigger" : func(): return goldPerSecondCheck(9 * pow(10, 15)),
 	},
-	"237" : { # Finish Settings first
-		"Name" : "Change All Settings Atleast Once",
-		"Description" : "Change All Settings Atleast Once",
-		"Trigger" : func(): return null,
-	},
-	"238" : {
-		"Name" : "Construct 5 Dams At The Same Time",
-		"Description" : "Construct 5 Dams At The Same Time",
-		"Trigger" : func(): return currentDamConstructionCheck(5),
-	},
-	"239" : {
-		"Name" : "Construct 13 Dams At The Same Time",
-		"Description" : "Construct 13 Dams At The Same Time",
-		"Trigger" : func(): return currentDamConstructionCheck(13),
-	},
 	"240" : {
 		"Name" : "Ascend 1 time",
 		"Description" : "Ascend 1 time",
@@ -1512,18 +1512,6 @@ func unlockedWoodCheck(countNeeded):
 	
 	return unlockedWoodTypes >= countNeeded
 
-func damCountCheck(countNeeded):
-	var damData = SaveData.DamData
-	var damCount = damData[Dams.DamEnum.SmallDam]["Count"] + damData[Dams.DamEnum.MediumDam]["Count"] + damData[Dams.DamEnum.BigDam]["Count"] + damData[Dams.DamEnum.GiantDam]["Count"] + damData[Dams.DamEnum.MegaDam]["Count"]
-	
-	return damCount >= countNeeded
-
-func damTypeBuiltCheck(damType):
-	return SaveData.DamData[damType]["Count"] > 0
-
-func checkThatAllDamTypesBuilt():
-	return damTypeBuiltCheck(Dams.DamEnum.SmallDam) and damTypeBuiltCheck(Dams.DamEnum.MediumDam) and damTypeBuiltCheck(Dams.DamEnum.BigDam) and damTypeBuiltCheck(Dams.DamEnum.GiantDam) and damTypeBuiltCheck(Dams.DamEnum.MegaDam)
-
 func checkThatAllBaitsUnlocked():
 	return SaveData.ShopItems[Fishing.ShopItemEnum.Worm]["Unlocked"] and SaveData.ShopItems[Fishing.ShopItemEnum.Cricket]["Unlocked"] and SaveData.ShopItems[Fishing.ShopItemEnum.Jig]["Unlocked"] and SaveData.ShopItems[Fishing.ShopItemEnum.Leech]["Unlocked"] and SaveData.ShopItems[Fishing.ShopItemEnum.WyvernsFeather]["Unlocked"]
 
@@ -1566,16 +1554,6 @@ func fishTypesCaughtCountCheck(needed):
 func countDams():
 	var constructionCount = 0
 
-func currentDamConstructionCheck(needed):
-	var constructionCount = 0
-	
-	for damType in SaveData.DamData:
-		for damSlot in SaveData.DamData[damType]["BuildingSlots"]:
-			if SaveData.DamData[damType]["BuildingSlots"][damSlot]["Constructing"]:
-				constructionCount += 1
-	
-	return needed <= constructionCount
-
 func magicUpgradesOwnedCheck(needed):
 	var magicUpgradeCount = 0
 	
@@ -1597,3 +1575,10 @@ func magicLocksOpenedCheck(needed):
 			
 	
 	return needed <= magicLocksOpened
+
+func checkThatAllDamStagesCompleted():
+	for woodType in Values.WoodTypes:
+		if !SaveData.FinalDamData[woodType]["Completed"]:
+			return false
+	
+	return true

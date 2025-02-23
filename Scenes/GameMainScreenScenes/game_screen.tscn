@@ -7,7 +7,7 @@
 [ext_resource type="Script" path="res://Scenes/GameMainScreenScenes/GameScenes/ResourceTicks.gd" id="4_ojdqe"]
 [ext_resource type="PackedScene" uid="uid://btne0bg2tjivh" path="res://Scenes/GameMainScreenScenes/GameScenes/market_section.tscn" id="5_htdo4"]
 [ext_resource type="PackedScene" uid="uid://dmpunawnh13ed" path="res://Scenes/GameMainScreenScenes/GameScenes/magic_section.tscn" id="6_b5lsl"]
-[ext_resource type="PackedScene" uid="uid://dgw2ln358unw8" path="res://Scenes/GameMainScreenScenes/GameScenes/dam_section.tscn" id="7_esmds"]
+[ext_resource type="PackedScene" uid="uid://c7kwe1fnpr5x6" path="res://Scenes/GameMainScreenScenes/GameScenes/FinalDamSection.tscn" id="7_mkn26"]
 
 [node name="GameScreen" type="Control"]
 layout_mode = 3
@@ -120,7 +120,7 @@ layout_mode = 2
 visible = false
 layout_mode = 2
 
-[node name="DamSection" parent="GameScreenHBox/ImprovementsScreen/RightVBox/TabsMC" instance=ExtResource("7_esmds")]
+[node name="DamSection" parent="GameScreenHBox/ImprovementsScreen/RightVBox/TabsMC" instance=ExtResource("7_mkn26")]
 visible = false
 layout_mode = 2
 

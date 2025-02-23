@@ -82,7 +82,7 @@ func saveGame(saveName):
 	var jsonResearchInfo = JSON.stringify(var_to_str(SaveData.ResearchInfo))
 	saveFile.store_line(jsonResearchInfo)
 	
-	var jsonDamData = JSON.stringify(var_to_str(SaveData.DamData))
+	var jsonDamData = JSON.stringify(var_to_str(SaveData.FinalDamData))
 	saveFile.store_line(jsonDamData)
 	
 	var jsonCaughtFish = JSON.stringify(var_to_str(SaveData.CaughtFish))
@@ -135,7 +135,7 @@ func saveNewGame(saveName):
 	var jsonResearchInfo = JSON.stringify(var_to_str(SaveData.OriginalResearchInfo))
 	saveFile.store_line(jsonResearchInfo)
 	
-	var jsonDamData = JSON.stringify(var_to_str(SaveData.OriginalDamData))
+	var jsonDamData = JSON.stringify(var_to_str(SaveData.OriginalFinalDamData))
 	saveFile.store_line(jsonDamData)
 	
 	var jsonCaughtFish = JSON.stringify(var_to_str(SaveData.OriginalCaughtFish))
@@ -187,13 +187,19 @@ func loadGame(saveName):
 	SaveData.ResearchInfo = parseJson(jsonResearchInfo)
 	
 	var jsonDamData = saveFile.get_line()
-	SaveData.DamData = parseJson(jsonDamData)
+	jsonDamData = parseJson(jsonDamData)
+	
+	if !jsonDamData.has(0):
+		SaveData.FinalDamData = jsonDamData.duplicate(true)
+	else:
+		SaveData.FinalDamData = SaveData.OriginalFinalDamData.duplicate(true)
 	
 	var jsonCaughtFish = saveFile.get_line()
 	SaveData.CaughtFish = parseJson(jsonCaughtFish)
 	
 	var jsonShopItems = saveFile.get_line()
 	jsonShopItems = parseJson(jsonShopItems)
+	
 	if !jsonShopItems.has(0):
 		SaveData.ShopItems = jsonShopItems.duplicate(true)
 	else:

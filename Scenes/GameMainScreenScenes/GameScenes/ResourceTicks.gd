@@ -45,7 +45,6 @@ var WoodTiersLowerTier = {
 
 var WoodCalculations = {
 	"Oak" : {
-		"MaxWoodDamLoss": 0,
 		"WoodProductionGain" : 0,
 		"WoodProductionLoss" : 0,
 		"WoodMarkedLoss": 0,
@@ -55,7 +54,6 @@ var WoodCalculations = {
 		"ResourceCount": 0,
 	},
 	"Apple" : {
-		"MaxWoodDamLoss": 0,
 		"WoodProductionGain" : 0,
 		"WoodProductionLoss" : 0,
 		"WoodMarkedLoss": 0,
@@ -65,7 +63,6 @@ var WoodCalculations = {
 		"ResourceCount": 0,
 	},
 	"Maple" : {
-		"MaxWoodDamLoss": 0,
 		"WoodProductionGain" : 0,
 		"WoodProductionLoss" : 0,
 		"WoodMarkedLoss": 0,
@@ -75,7 +72,6 @@ var WoodCalculations = {
 		"ResourceCount": 0,
 	},
 	"Birch" : {
-		"MaxWoodDamLoss": 0,
 		"WoodProductionGain" : 0,
 		"WoodProductionLoss" : 0,
 		"WoodMarkedLoss": 0,
@@ -85,7 +81,6 @@ var WoodCalculations = {
 		"ResourceCount": 0,
 	},
 	"Spruce" : {
-		"MaxWoodDamLoss": 0,
 		"WoodProductionGain" : 0,
 		"WoodProductionLoss" : 0,
 		"WoodMarkedLoss": 0,
@@ -95,7 +90,6 @@ var WoodCalculations = {
 		"ResourceCount": 0,
 	},
 	"Chestnut" : {
-		"MaxWoodDamLoss": 0,
 		"WoodProductionGain" : 0,
 		"WoodProductionLoss" : 0,
 		"WoodMarkedLoss": 0,
@@ -105,7 +99,6 @@ var WoodCalculations = {
 		"ResourceCount": 0,
 	},
 	"Cherry" : {
-		"MaxWoodDamLoss": 0,
 		"WoodProductionGain" : 0,
 		"WoodProductionLoss" : 0,
 		"WoodMarkedLoss": 0,
@@ -115,7 +108,6 @@ var WoodCalculations = {
 		"ResourceCount": 0,
 	},
 	"Ash" : {
-		"MaxWoodDamLoss": 0,
 		"WoodProductionGain" : 0,
 		"WoodProductionLoss" : 0,
 		"WoodMarkedLoss": 0,
@@ -125,7 +117,6 @@ var WoodCalculations = {
 		"ResourceCount": 0,
 	},
 	"Cedar" : {
-		"MaxWoodDamLoss": 0,
 		"WoodProductionGain" : 0,
 		"WoodProductionLoss" : 0,
 		"WoodMarkedLoss": 0,
@@ -135,7 +126,6 @@ var WoodCalculations = {
 		"ResourceCount": 0,
 	},
 	"Mahogany" : {
-		"MaxWoodDamLoss": 0,
 		"WoodProductionGain" : 0,
 		"WoodProductionLoss" : 0,
 		"WoodMarkedLoss": 0,
@@ -145,7 +135,6 @@ var WoodCalculations = {
 		"ResourceCount": 0,
 	},
 	"Ebony" : {
-		"MaxWoodDamLoss": 0,
 		"WoodProductionGain" : 0,
 		"WoodProductionLoss" : 0,
 		"WoodMarkedLoss": 0,
@@ -155,7 +144,6 @@ var WoodCalculations = {
 		"ResourceCount": 0,
 	},
 	"Dogwood" : {
-		"MaxWoodDamLoss": 0,
 		"WoodProductionGain" : 0,
 		"WoodProductionLoss" : 0,
 		"WoodMarkedLoss": 0,
@@ -165,7 +153,6 @@ var WoodCalculations = {
 		"ResourceCount": 0,
 	},
 	"Rosewood" : {
-		"MaxWoodDamLoss": 0,
 		"WoodProductionGain" : 0,
 		"WoodProductionLoss" : 0,
 		"WoodMarkedLoss": 0,
@@ -175,7 +162,6 @@ var WoodCalculations = {
 		"ResourceCount": 0,
 	},
 	"Ghost Gum" : {
-		"MaxWoodDamLoss": 0,
 		"WoodProductionGain" : 0,
 		"WoodProductionLoss" : 0,
 		"WoodMarkedLoss": 0,
@@ -185,7 +171,6 @@ var WoodCalculations = {
 		"ResourceCount": 0,
 	},
 	"Dragonwood" : {
-		"MaxWoodDamLoss": 0,
 		"WoodProductionGain" : 0,
 		"WoodProductionLoss" : 0,
 		"WoodMarkedLoss": 0,
@@ -220,6 +205,9 @@ func tickCalculations():
 
 func setTickChanges():
 	for woodType in WoodTypes:
+		if !Unlocks.Unlocks[woodType]["Unlocked"]:
+			continue
+		
 		if is_nan(SaveData.Resources[woodType]["Count"]):
 			SaveData.Resources[woodType]["Count"] = 0
 		
@@ -254,60 +242,32 @@ func setTickChanges():
 		Values.ResourceValues[woodType]["WoodSoldPerSecond"] = WoodCalculations[woodType]["WoodMarkedLoss"]
 		Values.ResourceValues[woodType]["GoldGainPerSecond"] = goldGain
 		
-		var perSecondPercentage = 1
+		# Dam
+		SaveData.FinalDamData[woodType]["ResourceCountUsed"] += WoodCalculations[woodType]["WoodDamLoss"]
+		Values.ResourceValues[woodType]["FinalDamPerSecond"] = WoodCalculations[woodType]["WoodDamLoss"]
 		
-		if WoodCalculations[woodType]["WoodDamLoss"] > 0 and WoodCalculations[woodType]["MaxWoodDamLoss"] > 0:
-			perSecondPercentage = WoodCalculations[woodType]["WoodDamLoss"] / WoodCalculations[woodType]["MaxWoodDamLoss"]
-		else:
-			perSecondPercentage = 0
-			
 		if SaveData.Resources[woodType]["Count"] > Values.ResourceValues[woodType]["Storage"]:
 			SaveData.Resources[woodType]["Count"] = Values.ResourceValues[woodType]["Storage"]
-		
-		applyDamConstructionResourceUse(woodType, perSecondPercentage)
-	
-	setDamGoldConstructionResourceChanges()
-
-func setDamGoldConstructionResourceChanges():
-	var goldNeededForDams = getMaxDamResourceCost("Gold")
-	var goldNeededPercentage = 1
-	
-	if goldNeededForDams > SaveData.Gold["Count"]:
-		goldNeededPercentage = SaveData.Gold["Count"] / goldNeededForDams
-	
-	applyDamConstructionResourceUse("Gold", goldNeededPercentage)
-
-func applyDamConstructionResourceUse(resourceType, perSecondPercentage):
-	var resourceItems = get_tree().get_nodes_in_group("ConstructionResource")
-	var generalResourcesPerSecond = Values.ResourceValues["Dam"]["ResourcesPerSecond"]
-	
-	for resourceItem in resourceItems:
-		if resourceItem.ResourceType == resourceType:
-			var resourcesPerSecond = generalResourcesPerSecond * (SaveData.DamData[resourceItem.DamType]["ConstructionSpeedPrecentige"][resourceItem.ItemNum] / 100)
-			var resourcesLeft = resourceItem.Needed - resourceItem.Collected
-			
-			resourcesPerSecond *= perSecondPercentage
-			
-			if resourcesLeft < resourcesPerSecond and resourcesLeft > 0:
-				resourcesPerSecond = resourcesLeft
-			
-			resourceItem.useResources(resourcesPerSecond)
 
 func preCalculations():
 	for woodType in ReversedWoodTypes:
+		if !Unlocks.Unlocks[woodType]["Unlocked"]:
+			continue
+		
 		WoodCalculations[woodType]["WoodProductionGain"] = Values.ResourceValues[woodType]["PerSecondIncrease"]
 		WoodCalculations[woodType]["WoodProductionLoss"] = Values.ResourceValues[woodType]["PerSecondLoss"]
 		WoodCalculations[woodType]["WoodMarkedLoss"] = SaveData.Resources[woodType]["Bots"] * Values.ResourceValues[woodType]["BotBaseSell"] * SaveData.Resources[woodType]["BotSellPercentage"] / 100.0
 		WoodCalculations[woodType]["WoodDamLoss"] = getMaxDamResourceCost(woodType)
 		WoodCalculations[woodType]["ResourceCount"] = SaveData.Resources[woodType]["Count"]
 		WoodCalculations[woodType]["RemainingCapacity"] = max(Values.ResourceValues[woodType]["Storage"] - SaveData.Resources[woodType]["Count"], 0)
-		
-		WoodCalculations[woodType]["MaxWoodDamLoss"] = WoodCalculations[woodType]["WoodDamLoss"]
 
 func postCalculations():
 	var adjustments = false
 	
 	for woodType in ReversedWoodTypes:
+		if !Unlocks.Unlocks[woodType]["Unlocked"]:
+			continue
+		
 		adjustments = calculateResourceStorageLimits(woodType)
 		
 		if woodType != "Oak":
@@ -374,26 +334,26 @@ func calculateDragonwoodAvailability():
 		WoodCalculations["Dragonwood"]["WoodMarkedLoss"] *= adjustmentPercentage
 		WoodCalculations["Dragonwood"]["WoodDamLoss"] *= adjustmentPercentage
 
-func getMaxDamResourceCost(resourceType):
-	var resourceItems = get_tree().get_nodes_in_group("ConstructionResource")
-	var generalResourcesPerSecond = Values.ResourceValues["Dam"]["ResourcesPerSecond"]
+func getMaxDamResourceCost(woodType):
+	var damData = SaveData.FinalDamData[woodType]
 	
-	var totalResourcesNeeded = 0
+	if !damData["Unlocked"] or damData["Completed"]:
+		return 0
 	
-	for resourceItem in resourceItems:
-		if resourceItem.ResourceType == resourceType:
-			var resourcesPerSecond = generalResourcesPerSecond * (SaveData.DamData[resourceItem.DamType]["ConstructionSpeedPrecentige"][resourceItem.ItemNum] / 100)
-			var resourcesLeft = resourceItem.Needed - resourceItem.Collected
+	var damItems = get_tree().get_nodes_in_group("FinalDamItem")
+	
+	for damItem in damItems:
+		if damItem.WoodType == woodType:
+			var woodPerSecond = damItem.BasePerSecondIncrease * (damData["ProductionSpeedSlider"] / 100) * Values.ResourceValues["Dam"]["ConstructionSpeedMultip"]
+			var woodStillNeeded = damItem.TotalNeeded - damData["ResourceCountUsed"]
 			
-			if resourcesLeft < resourcesPerSecond:
-				if resourcesLeft > 0:
-					resourcesPerSecond = resourcesLeft
+			if woodStillNeeded < woodPerSecond:
+				if woodStillNeeded > 0:
+					woodPerSecond = woodStillNeeded
 				else:
-					resourcesPerSecond = 0
+					woodPerSecond = 0
 			
-			totalResourcesNeeded += resourcesPerSecond
-	
-	return totalResourcesNeeded
+			return woodPerSecond
 
 func UpdateAllBarValues():
 	var BarItems = get_tree().get_nodes_in_group("BarItem")

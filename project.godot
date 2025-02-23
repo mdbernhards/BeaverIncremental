@@ -29,7 +29,6 @@ CalculateFishing="*res://singletons/CalculateFishing.gd"
 Fishing="*res://singletons/constantData/Fishing.gd"
 Achievements="*res://singletons/constantData/Achievements.gd"
 GameSaves="*res://singletons/Saving/GameSaves.gd"
-Dams="*res://singletons/constantData/Dams.gd"
 NumberFormatting="*res://singletons/NumberFormatting.gd"
 
 [display]
@@ -65,6 +64,7 @@ ShopPage=""
 FishingGame=""
 FishingScreen=""
 BaitButton=""
+FinalDamItem=""
 
 [gui]
 

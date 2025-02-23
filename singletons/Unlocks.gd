@@ -426,21 +426,9 @@ var Unlocks = {
 	},
 	"Dams" : {
 		"Unlocked" : false,
-		"Small Dam" : {
-			"Unlocked" : false,
-		},
-		"Medium Dam" : {
-			"Unlocked" : false,
-		},
-		"Big Dam" : {
-			"Unlocked" : false,
-		},
-		"Giant Dam" : {
-			"Unlocked" : false,
-		},
-		"Mega Dam" : {
-			"Unlocked" : false,
-		},
+		"AnySectionCompleted" : false,
+		"RareUnlocked" : false,
+		"MythicUnlocked" : false,
 	},
 	"Achievements" : {
 		"Unlocked" : false,

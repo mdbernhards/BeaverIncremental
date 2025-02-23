@@ -1,5 +1,8 @@
 extends Control
 
+var MagicThread = Thread.new()
+var StopThread = false
+
 var WoodTypes = ["Oak", "Apple", "Maple", "Birch", "Spruce",
 				 "Chestnut", "Cherry", "Ash", "Cedar", "Mahogany",
 				 "Ebony", "Dogwood", "Rosewood", "Ghost Gum", "Dragonwood",]
@@ -31,11 +34,15 @@ var NextMagicLabel
 var AscendButton
 
 func _ready() -> void:
+	MagicThread.start(calculatePotentialMagicGain)
 	setupNodePaths()
-	calculatePotentialMagicGain()
 
 func _process(_delta: float) -> void:
 	pass
+
+func _exit_tree():
+	StopThread = true
+	MagicThread.wait_to_finish()
 
 func checkMaxWoodCounts():
 	for resourceType in SaveData.MaxResourceCount:
@@ -47,51 +54,55 @@ func checkMaxWoodCounts():
 				SaveData.MaxResourceCount[resourceType] = SaveData.Resources[resourceType]["Count"]
 
 func calculatePotentialMagicGain():
-	var magic = 0
-	
-	for resourceType in BaseRequirements:
-		var resourceCount = SaveData.MaxResourceCount[resourceType]
-		var baseCost = BaseRequirements[resourceType]
-		var resourcesMagic = 0
+	while not StopThread:
+		var magic = 0
 		
-		while resourceCount >= baseCost:
-			resourcesMagic += 1
-			resourceCount -= baseCost
+		for resourceType in BaseRequirements:
+			var resourceCount = SaveData.MaxResourceCount[resourceType]
+			var baseCost = BaseRequirements[resourceType]
+			var resourcesMagic = 0
+			
+			var thresholds = []
+			var multipliers = []
 			
 			if resourceType == "Gold":
-				if resourcesMagic <= 250:
-					baseCost *= 1.029
-				elif resourcesMagic <= 1000:
-					baseCost *= 1.002
-				elif resourcesMagic <= 10000:
-					baseCost *= 1.0006
-				else:
-					baseCost *= 1.0003
+				thresholds = [250, 1000, 10000]
+				multipliers = [1.029, 1.002, 1.0006, 1.0003]
 			else:
-				if resourcesMagic <= 90:
-					baseCost *= 1.032
-				elif resourcesMagic <= 1000:
-					baseCost *= 1.00055
-				elif resourcesMagic <= 10000:
-					baseCost *= 1.00003
-				elif resourcesMagic <= 100000:
-					baseCost *= 1.000003
-				elif resourcesMagic <= 250000:
-					baseCost *= 1.0000003
-				elif resourcesMagic <= 5000000:
-					baseCost *= 1.00000003
-				elif resourcesMagic <= 50000000:
-					baseCost *= 1.000000003
-				elif resourcesMagic <= 500000000:
-					baseCost *= 1.0000000003
-				else:
-					baseCost *= 1.00000000003
+				thresholds = [90, 1000, 10000, 100000, 250000, 5000000, 50000000, 500000000]
+				multipliers = [1.032, 1.00055, 1.00003, 1.000003, 1.0000003, 1.00000003, 1.000000003, 1.0000000003, 1.00000000003]
 
-		if resourceCount > 0:
-			resourcesMagic += resourceCount / baseCost
-		magic += resourcesMagic
+			var level = 0
+			var currentMultiplier = multipliers[level]
+			
+			while resourceCount >= baseCost:
+				var maxAffordable = floor(resourceCount / baseCost)  # Number of times we can afford at this base cost
+				var nextThreshold = thresholds[level] if level < thresholds.size() else INF
+				
+				if resourcesMagic + maxAffordable > nextThreshold:
+					maxAffordable = nextThreshold - resourcesMagic
+				
+				resourcesMagic += maxAffordable
+				resourceCount -= maxAffordable * baseCost
+				
+				for i in range(maxAffordable):
+					baseCost *= currentMultiplier
+				
+				while level < thresholds.size() and resourcesMagic >= thresholds[level]:
+					level += 1
+					currentMultiplier = multipliers[level]
+			
+			if resourceCount > 0:
+				resourcesMagic += resourceCount / baseCost
+			magic += resourcesMagic
+			
+		var potentialMagic = magic * Values.ResourceValues["Magic"]["GainMultip"] * 0.89
+		call_deferred("updateMagicValue", potentialMagic)
 		
-	Values.ResourceValues["Magic"]["PotentialMagic"] = magic * Values.ResourceValues["Magic"]["GainMultip"]
+		await get_tree().create_timer(2.0).timeout
+
+func updateMagicValue(value):
+	Values.ResourceValues["Magic"]["PotentialMagic"] = value
 
 func updateMagic():
 	MagicGainLabel.text = "You will gain " + str(floor(Values.ResourceValues["Magic"]["PotentialMagic"])) + " Magic"
@@ -117,7 +128,6 @@ func _on_ascend_button_button_down() -> void:
 
 func _on_timer_timeout() -> void:
 	checkMaxWoodCounts()
-	calculatePotentialMagicGain()
 	updateMagic()
 	
 	if floor(Values.ResourceValues["Magic"]["PotentialMagic"]) > 0:

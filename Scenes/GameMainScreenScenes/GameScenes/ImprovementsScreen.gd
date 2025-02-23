@@ -78,7 +78,7 @@ func _on_improvement_screen_timer_timeout() -> void:
 		MagicButton.text = "?????"
 	
 	if Unlocks.Unlocks["Dams"]["Unlocked"] or Values.DebugMode:
-		DamButton.text = "Dams"
+		DamButton.text = "Dam"
 		DamButton.disabled = false
 	else:
 		DamButton.disabled = true

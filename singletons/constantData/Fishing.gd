@@ -46,7 +46,7 @@ var Fish = {#						type,		name,												speed	scale	curveAmp	curveFrq.	turnCh
 	FishEnum.SpeedFish : FishObject.new(FishEnum.SpeedFish,"Speed Fish",							799,	1.23,	200,		33,			0.15,		6.6,	2),
 	FishEnum.BaitFish : FishObject.new(FishEnum.BaitFish,"Bait Fish",								711,	0.97,	86,			1,			0.04,		5,		1.4),
 	FishEnum.GoldFish : FishObject.new(FishEnum.GoldFish,"Gold Fish",								666,	0.79,	120,		7,			0.005,		5,		1.85),
-	FishEnum.ConstructionShark : FishObject.new(FishEnum.ConstructionShark,"Construction Shark",	545,	1.25,	93,			30,			0.23,		9,		1.7),
+	FishEnum.ConstructionShark : FishObject.new(FishEnum.ConstructionShark,"Bob The Shark",	545,	1.25,	93,			30,			0.23,		9,		1.7),
 	FishEnum.LuckyFish : FishObject.new(FishEnum.LuckyFish,"Lucky Fish", 							777,	1.25,	77,			0.77,		0.77,		7,		2.5),
 	
 	FishEnum.Stick : FishObject.new(FishEnum.Stick,"Stick", 										499,	1.3,	23,			0.1,		0.001,		10,		1.25),

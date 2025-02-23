@@ -6,7 +6,7 @@ var OriginalResources
 var OriginalUpgrades
 var OriginalUnlockedResearch
 var OriginalResearchInfo
-var OriginalDamData
+var OriginalFinalDamData
 var OriginalMagic
 var OriginalUnlockedMagicUpgrades
 var OriginalUnlockedAchievements
@@ -25,7 +25,7 @@ func getOriginalValues():
 	OriginalResources = Resources.duplicate(true)
 	OriginalUpgrades = Upgrades.duplicate(true)
 	OriginalUnlockedResearch = UnlockedResearch.duplicate(true)
-	OriginalDamData = DamData.duplicate(true)
+	OriginalFinalDamData = FinalDamData.duplicate(true)
 	OriginalResearchInfo = ResearchInfo.duplicate(true)
 	OriginalMagic = Magic.duplicate(true)
 	OriginalUnlockedMagicUpgrades = UnlockedMagicUpgrades.duplicate(true)
@@ -69,11 +69,12 @@ func resetValues():
 		Upgrades[woodType]["8"]["MagicLocked"] = tempUpgrades[woodType]["8"]["MagicLocked"]
 		Upgrades[woodType]["9"]["MagicLocked"] = tempUpgrades[woodType]["9"]["MagicLocked"]
 		Upgrades[woodType]["10"]["MagicLocked"] = tempUpgrades[woodType]["10"]["MagicLocked"]
+		
+		FinalDamData[woodType]["ProductionSpeedSlider"] = 0
 	
 	Gold = OriginalGold.duplicate(true)
 	Resources = OriginalResources.duplicate(true)
 	UnlockedResearch = OriginalUnlockedResearch.duplicate(true)
-	DamData = OriginalDamData.duplicate(true)
 	ResearchInfo = OriginalResearchInfo.duplicate(true)
 	MaxResourceCount = OriginalMaxResourceCount.duplicate(true)
 	
@@ -107,7 +108,7 @@ func recalculateValues():
 	get_tree().get_first_node_in_group("Settings").updateSettings()
 	get_tree().get_first_node_in_group("MagicSection").setMagicItems()
 	get_tree().get_first_node_in_group("MagicSection").setHistoryItems()
-	get_tree().get_first_node_in_group("DamSection").setDamConstruction()
+	# get_tree().get_first_node_in_group("DamSection").setDamConstruction() Change Change
 	get_tree().get_first_node_in_group("AchievementScreen").resetAchievements()
 	get_tree().get_first_node_in_group("FishingGame").updateFishingValues(true)
 	get_tree().get_first_node_in_group("FishingGame").stopFishing(true)
@@ -867,116 +868,96 @@ var ResearchInfo = {
 	"Queue" : [],
 }
 
-var DamData = {
-	Dams.DamEnum.SmallDam : {
-		"AvailableBuilds" : 1,
-		"Count" : 0,
-		"ConstructionSpeedPrecentige" : [100,100,100],
-		"BuildingSlots" : {
-			Dams.ItemNumberEnum.one : {
-				"Stage" : 0,
-				"Constructing" : false,
-				"ResourcesCollected" : {},
-			},
-			Dams.ItemNumberEnum.two : {
-				"Stage" : 0,
-				"Constructing" : false,
-				"ResourcesCollected" : {},
-			},
-			Dams.ItemNumberEnum.three : {
-				"Stage" : 0,
-				"Constructing" : false,
-				"ResourcesCollected" : {},
-			},
-		},
+var FinalDamData = {
+	"Oak" : {
+		"Unlocked" : false,
+		"Completed" : false,
+		"ResourceCountUsed" : 0,
+		"ProductionSpeedSlider" : 0,
 	},
-	Dams.DamEnum.MediumDam : {
-		"AvailableBuilds" : 1,
-		"Count" : 0,
-		"ConstructionSpeedPrecentige" : [100,100,100],
-		"BuildingSlots" : {
-			Dams.ItemNumberEnum.one : {
-				"Stage" : 0,
-				"Constructing" : false,
-				"ResourcesCollected" : {},
-			},
-			Dams.ItemNumberEnum.two : {
-				"Stage" : 0,
-				"Constructing" : false,
-				"ResourcesCollected" : {},
-			},
-			Dams.ItemNumberEnum.three : {
-				"Stage" : 0,
-				"Constructing" : false,
-				"ResourcesCollected" : {},
-			},
-		},
+	"Apple" : {
+		"Unlocked" : false,
+		"Completed" : false,
+		"ResourceCountUsed" : 0,
+		"ProductionSpeedSlider" : 0,
 	},
-	Dams.DamEnum.BigDam : {
-		"AvailableBuilds" : 1,
-		"Count" : 0,
-		"ConstructionSpeedPrecentige" : [100,100,100],
-		"BuildingSlots" : {
-			Dams.ItemNumberEnum.one : {
-				"Stage" : 0,
-				"Constructing" : false,
-				"ResourcesCollected" : {},
-			},
-			Dams.ItemNumberEnum.two : {
-				"Stage" : 0,
-				"Constructing" : false,
-				"ResourcesCollected" : {},
-			},
-			Dams.ItemNumberEnum.three : {
-				"Stage" : 0,
-				"Constructing" : false,
-				"ResourcesCollected" : {},
-			},
-		},
+	"Maple" : {
+		"Unlocked" : false,
+		"Completed" : false,
+		"ResourceCountUsed" : 0,
+		"ProductionSpeedSlider" : 0,
 	},
-	Dams.DamEnum.GiantDam : {
-		"AvailableBuilds" : 1,
-		"Count" : 0,
-		"ConstructionSpeedPrecentige" : [100,100,100],
-		"BuildingSlots" : {
-			Dams.ItemNumberEnum.one : {
-				"Stage" : 0,
-				"Constructing" : false,
-				"ResourcesCollected" : {},
-			},
-			Dams.ItemNumberEnum.two : {
-				"Stage" : 0,
-				"Constructing" : false,
-				"ResourcesCollected" : {},
-			},
-			Dams.ItemNumberEnum.three : {
-				"Stage" : 0,
-				"Constructing" : false,
-				"ResourcesCollected" : {},
-			},
-		},
+	"Birch" : {
+		"Unlocked" : false,
+		"Completed" : false,
+		"ResourceCountUsed" : 0,
+		"ProductionSpeedSlider" : 0,
 	},
-	Dams.DamEnum.MegaDam : {
-		"AvailableBuilds" : 1,
-		"Count" : 0,
-		"ConstructionSpeedPrecentige" : [100,100,100],
-		"BuildingSlots" : {
-			Dams.ItemNumberEnum.one : {
-				"Stage" : 0,
-				"Constructing" : false,
-				"ResourcesCollected" : {},
-			},
-			Dams.ItemNumberEnum.two : {
-				"Stage" : 0,
-				"Constructing" : false,
-				"ResourcesCollected" : {},
-			},
-			Dams.ItemNumberEnum.three : {
-				"Stage" : 0,
-				"Constructing" : false,
-				"ResourcesCollected" : {},
-			},
-		},
+	"Spruce" : {
+		"Unlocked" : false,
+		"Completed" : false,
+		"ResourceCountUsed" : 0,
+		"ProductionSpeedSlider" : 0,
+	},
+	"Chestnut" : {
+		"Unlocked" : false,
+		"Completed" : false,
+		"ResourceCountUsed" : 0,
+		"ProductionSpeedSlider" : 0,
+	},
+	"Cherry" : {
+		"Unlocked" : false,
+		"Completed" : false,
+		"ResourceCountUsed" : 0,
+		"ProductionSpeedSlider" : 0,
+	},
+	"Ash" : {
+		"Unlocked" : false,
+		"Completed" : false,
+		"ResourceCountUsed" : 0,
+		"ProductionSpeedSlider" : 0,
+	},
+	"Cedar" : {
+		"Unlocked" : false,
+		"Completed" : false,
+		"ResourceCountUsed" : 0,
+		"ProductionSpeedSlider" : 0,
+	},
+	"Mahogany" : {
+		"Unlocked" : false,
+		"Completed" : false,
+		"ResourceCountUsed" : 0,
+		"ProductionSpeedSlider" : 0,
+	},
+	"Ebony" : {
+		"Unlocked" : false,
+		"Completed" : false,
+		"ResourceCountUsed" : 0,
+		"ProductionSpeedSlider" : 0,
+	},
+	"Dogwood" : {
+		"Unlocked" : false,
+		"Completed" : false,
+		"ResourceCountUsed" : 0,
+		"ProductionSpeedSlider" : 0,
+	},
+	"Rosewood" : {
+		"Unlocked" : false,
+		"Completed" : false,
+		"ResourceCountUsed" : 0,
+		"ProductionSpeedSlider" : 0,
+	},
+	"Ghost Gum" : {
+		"Unlocked" : false,
+		"Completed" : false,
+		"ResourceCountUsed" : 0,
+		"ProductionSpeedSlider" : 0,
+	},
+	"Dragonwood" : {
+		"Unlocked" : false,
+		"Completed" : false,
+		"ResourceCountUsed" : 0,
+		"ProductionSpeedSlider" : 0,
 	},
 }
 
@@ -1368,7 +1349,6 @@ func countAchievements():
 	
 	return achievementCount
 
-
 func getActiveAutoClickerCount():
 	var count = 0
 	
@@ -1380,3 +1360,12 @@ func getActiveAutoClickerCount():
 			count += 1
 	
 	return count
+
+func countCompletedDamSections():
+	var sectionCount = 0
+	
+	for woodType in Values.WoodTypes:
+		if FinalDamData[woodType]["Completed"]:
+			sectionCount += 1
+	
+	return sectionCount

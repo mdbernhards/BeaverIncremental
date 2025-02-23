@@ -91,7 +91,7 @@ func updateBarValues(woodType = WoodType):
 		WCCantAffordRect.visible = true
 		WCMaxCantAffordRect.visible = true
 	
-	# Levels
+	# Beavers
 	BeaverCurrentPrice = round(CalculatePrice.getBeaverCost(SaveData.Resources[WoodType]["Beavers"], WoodType) * Values.ResourceValues[WoodType]["BeaverPriceMultip"])
 	
 	if mouseOverBeaver and Values.ResourceValues[WoodType]["ExtraBeavers"] > 0:

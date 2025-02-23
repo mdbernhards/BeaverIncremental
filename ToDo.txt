@@ -2,13 +2,14 @@ TODO
 
 First:
 Keep Playing
-Remake Dams, Change All Dam Research, Magic Upgrades, Achievements, Fish and Upgrades
 Adjust Prices For Magic Locked Upgrades
 
 Need To Check Fishing Chance, how it works
 Write In Text Log Fishing Chance Or Bait Refunds
 If possible Show Text Log On Achievement Screen, or somehow indicate an unlocked Achievement
-Make Notation Work with negative Numbers
+Add Buy 10, 100 Merchants Buttons and Unlocks For Them
+Add Nottation to Magic Label
+Dams Item Label Round To 0.000001% and Add Other Adjustments
 
 Later:
 Fix bait selection visual bugs
@@ -226,3 +227,7 @@ Set Prices For The Next 10 Research DONE
 Add Some Research For Apple WPS DONE
 Fix History DONE
 Scale Up Magic Upgrade Costs DONE
+Remake Dams DONE
+Change All Dam Research, Magic Upgrades, Achievements, Fish and Upgrades DONE
+Make Notation Work with negative Numbers DONE
+Add Threading for Magic calculations To Improve Performance DONE

@@ -85,16 +85,25 @@ func setResearch(ResearchNr):
 	NameLabel.text = ResearchData["Name"]
 	DescriptionLabel.text = ResearchData["Description"]
 	ResearchIdLabel.text = str(ResearchNr)
+	PriceLabel.text = getPriceText()
+	
+	var researchTime = ResearchData["Time"] * Values.ResourceValues["Research"]["TimeMultip"]
+	ResearchTimer.wait_time = researchTime
+	TimeLeftLabel.text = timeConvert(researchTime)
 	
 	updateResearch()
 
 func updateResearch():
 	ResearchData = Research.Research[ItemId]
 	
-	var researchTime = ResearchData["Time"] * Values.ResourceValues["Research"]["TimeMultip"]
-	
-	ResearchTimer.wait_time = researchTime
-	TimeLeftLabel.text = timeConvert(researchTime)
+	if IsResearchStarted:
+		TimeLeftLabel.text = timeConvert(ResearchTimer.time_left)
+	else:
+		var researchTime = ResearchData["Time"] * Values.ResourceValues["Research"]["TimeMultip"]
+		
+		if researchTime != ResearchTimer.wait_time:
+			ResearchTimer.wait_time = researchTime
+			TimeLeftLabel.text = timeConvert(researchTime)
 	
 	PriceLabel.text = getPriceText()
 
@@ -114,9 +123,10 @@ func getPriceText():
 	
 	for woodType in woodTypes:
 		var resourceCost = ResearchData[woodType + "Cost"]
-		var formatedCost = str(NumberFormatting.formatNumber(resourceCost)) + " " + woodType
 		
 		if resourceCost > 0:
+			var formatedCost = str(NumberFormatting.formatNumber(resourceCost)) + " " + woodType
+			
 			if IsResearchStarted or InQueue:
 				PriceText += "[color=gray]" + formatedCost + "[/color], "
 			elif resourceCost > SaveData.Resources[woodType]["Count"]:
@@ -210,6 +220,7 @@ func updateProgressBar():
 
 func _on_research_timer_timeout():
 	SaveData.UnlockedResearch[str(ItemId)] = true
+	updateResearch()
 
 func finishResearch():
 	CalculateValues.calculateAllValues()
@@ -263,14 +274,16 @@ func _on_cancel_button_button_down() -> void:
 
 func _on_cancel_button_mouse_entered() -> void:
 	IsMouseOnCancel = true
+	setCancelButtonText()
 
 func _on_cancel_button_mouse_exited() -> void:
 	IsMouseOnCancel = false
+	setCancelButtonText()
 
 func _on_research_item_refresh_timer_timeout() -> void:
-	updateResearch()
 	setCancelButtonText()
 	updateResearchVisability()
+	updateResearch()
 	
 	if SaveData.UnlockedResearch.has(str(ItemId)) and SaveData.UnlockedResearch[str(ItemId)]:
 		finishResearch()

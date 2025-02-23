@@ -7,6 +7,10 @@ var WoodTypes = ["Oak", "Apple", "Maple", "Birch", "Spruce",
 				 "Chestnut", "Cherry", "Ash", "Cedar", "Mahogany",
 				 "Ebony", "Dogwood", "Rosewood", "Ghost Gum", "Dragonwood",]
 
+enum WoodTypesEnum { Oak, Apple, Maple, Birch, Spruce,
+				 Chestnut, Cherry, Ash, Cedar, Mahogany,
+				 Ebony, Dogwood, Rosewood, GhostGum, Dragonwood }
+
 var ResourceValues = {
 	"Fish" : {
 		"MoreFishMultip" : 1,
@@ -54,12 +58,8 @@ var ResourceValues = {
 		"StorageMultip" : 1,
 	},
 	"Dam" : {
-		"EffectMultip" : 1,
-		"PriceMultip" : 1,
-		"MaterialsNeededMultip" : 1,
-		"ResourcesPerSecond" : 100,
-		"GoldGainMultip" : 1,
-		"WoodGainMultip" : 1,
+		"ConstructionSpeedMultip" : 1,
+		"CompletedSectionCount" : 0,
 	},
 	"Oak" : {
 		"PerClick" : 100,
@@ -80,6 +80,8 @@ var ResourceValues = {
 		"GoldGainPerSecond" : 10,
 		"ExtraBeavers" : 0,
 		"ExtraWoodcamps" : 0,
+		"FinalDamPerSecond" : 0,
+		"MagicToUnlockDamSection" : 100000,
 	},
 	"Apple" : {
 		"PerClick" : 100,
@@ -100,6 +102,8 @@ var ResourceValues = {
 		"GoldGainPerSecond" : 10,
 		"ExtraBeavers" : 0,
 		"ExtraWoodcamps" : 0,
+		"FinalDamPerSecond" : 0,
+		"MagicToUnlockDamSection" : 200000,
 	},
 	"Maple" : {
 		"PerClick" : 100,
@@ -120,6 +124,8 @@ var ResourceValues = {
 		"GoldGainPerSecond" : 10,
 		"ExtraBeavers" : 0,
 		"ExtraWoodcamps" : 0,
+		"FinalDamPerSecond" : 0,
+		"MagicToUnlockDamSection" : 300000,
 	},
 	"Birch" : {
 		"PerClick" : 100,
@@ -140,6 +146,8 @@ var ResourceValues = {
 		"GoldGainPerSecond" : 10,
 		"ExtraBeavers" : 0,
 		"ExtraWoodcamps" : 0,
+		"FinalDamPerSecond" : 0,
+		"MagicToUnlockDamSection" : 400000,
 	},
 	"Spruce" : {
 		"PerClick" : 100,
@@ -160,6 +168,8 @@ var ResourceValues = {
 		"GoldGainPerSecond" : 10,
 		"ExtraBeavers" : 0,
 		"ExtraWoodcamps" : 0,
+		"FinalDamPerSecond" : 0,
+		"MagicToUnlockDamSection" : 500000,
 	},
 	"Chestnut" : {
 		"PerClick" : 100,
@@ -180,6 +190,8 @@ var ResourceValues = {
 		"GoldGainPerSecond" : 10,
 		"ExtraBeavers" : 0,
 		"ExtraWoodcamps" : 0,
+		"FinalDamPerSecond" : 0,
+		"MagicToUnlockDamSection" : 1000000,
 	},
 	"Cherry" : {
 		"PerClick" : 100,
@@ -200,6 +212,8 @@ var ResourceValues = {
 		"GoldGainPerSecond" : 10,
 		"ExtraBeavers" : 0,
 		"ExtraWoodcamps" : 0,
+		"FinalDamPerSecond" : 0,
+		"MagicToUnlockDamSection" : 2000000,
 	},
 	"Ash" : {
 		"PerClick" : 100,
@@ -220,6 +234,8 @@ var ResourceValues = {
 		"GoldGainPerSecond" : 10,
 		"ExtraBeavers" : 0,
 		"ExtraWoodcamps" : 0,
+		"FinalDamPerSecond" : 0,
+		"MagicToUnlockDamSection" : 3000000,
 	},
 	"Cedar" : {
 		"PerClick" : 100000000,
@@ -240,6 +256,8 @@ var ResourceValues = {
 		"GoldGainPerSecond" : 10,
 		"ExtraBeavers" : 0,
 		"ExtraWoodcamps" : 0,
+		"FinalDamPerSecond" : 0,
+		"MagicToUnlockDamSection" : 4000000,
 	},
 	"Mahogany" : {
 		"PerClick" : 100,
@@ -260,6 +278,8 @@ var ResourceValues = {
 		"GoldGainPerSecond" : 10,
 		"ExtraBeavers" : 0,
 		"ExtraWoodcamps" : 0,
+		"FinalDamPerSecond" : 0,
+		"MagicToUnlockDamSection" : 5000000,
 	},
 	"Ebony" : {
 		"PerClick" : 100,
@@ -280,6 +300,8 @@ var ResourceValues = {
 		"GoldGainPerSecond" : 10,
 		"ExtraBeavers" : 0,
 		"ExtraWoodcamps" : 0,
+		"FinalDamPerSecond" : 0,
+		"MagicToUnlockDamSection" : 10000000,
 	},
 	"Dogwood" : {
 		"PerClick" : 100,
@@ -300,6 +322,8 @@ var ResourceValues = {
 		"GoldGainPerSecond" : 10,
 		"ExtraBeavers" : 0,
 		"ExtraWoodcamps" : 0,
+		"FinalDamPerSecond" : 0,
+		"MagicToUnlockDamSection" : 20000000,
 	},
 	"Rosewood" : {
 		"PerClick" : 100,
@@ -320,6 +344,8 @@ var ResourceValues = {
 		"GoldGainPerSecond" : 10,
 		"ExtraBeavers" : 0,
 		"ExtraWoodcamps" : 0,
+		"FinalDamPerSecond" : 0,
+		"MagicToUnlockDamSection" : 30000000,
 	},
 	"Ghost Gum" : {
 		"PerClick" : 100,
@@ -340,6 +366,8 @@ var ResourceValues = {
 		"GoldGainPerSecond" : 10,
 		"ExtraBeavers" : 0,
 		"ExtraWoodcamps" : 0,
+		"FinalDamPerSecond" : 0,
+		"MagicToUnlockDamSection" : 40000000,
 	},
 	"Dragonwood" : {
 		"PerClick" : 100,
@@ -360,5 +388,7 @@ var ResourceValues = {
 		"GoldGainPerSecond" : 10,
 		"ExtraBeavers" : 0,
 		"ExtraWoodcamps" : 0,
+		"FinalDamPerSecond" : 0,
+		"MagicToUnlockDamSection" : 50000000,
 	},
 }

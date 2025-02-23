@@ -56,11 +56,6 @@ func setCantAffordRects():
 	else:
 		CantAffordRect100.visible = true
 
-	if checkIfCanAfford(1000):
-		CantAffordRect1000.visible = false
-	else:
-		CantAffordRect1000.visible = true
-
 func changeItemType(woodType = WoodType):
 	WoodType = woodType
 	
@@ -168,25 +163,28 @@ func buyBot(botAmount):
 func _on_buy_button_button_down():
 	if checkIfCanAfford(1):
 		buyBot(1)
+	updateValues()
 
 func _on_buy_10x_button_button_down() -> void:
 	if checkIfCanAfford(10):
 		buyBot(10)
+	updateValues()
 
 func _on_buy_100x_button_button_down() -> void:
 	if checkIfCanAfford(100):
 		buyBot(100)
+	updateValues()
 
 func _on_buy_1000x_button_button_down() -> void:
 	if checkIfCanAfford(1000):
 		buyBot(1000)
+	updateValues()
 
 func _on_market_item_timer_timeout() -> void:
 	SellButton.disabled = false
 	updateValues()
 	
-	if CantAffordRect:
-		setCantAffordRects()
+	setCantAffordRects()
 	
 	if Unlocks.Unlocks["Market"]["Bots"]["Unlocked"] or Values.DebugMode:
 		BotVBox.visible = true

@@ -20,7 +20,7 @@ const Prefixes = {
 }
 
 func formatNumber(number: float) -> String:
-	if number < 999_999:
+	if number < 999_999 and number > -999_999:
 		return str(number)
 	
 	var magnitude = int(floor(log(abs(number + 1)) / log(10)))

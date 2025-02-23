@@ -262,7 +262,7 @@ var Magic = {
 		"Cost" : 52500,
 	},
 	"32" : {
-		"Name" : "Per Achievement -0.1% WC Price",
+		"Name" : "Per Achiev. -0.1% WC Price",
 		"Description" : "Lower Woodcamp Price by 0.1% Per Achievement",
 		"Cost" : 65000,
 	},
@@ -282,7 +282,7 @@ var Magic = {
 		"Cost" : 125000,
 	},
 	"35" : {
-		"Name" : "Add 5% of Lower Tier Wood WPS",
+		"Name" : "5% of Lower Tier Wood WPS",
 		"Description" : "Add 5% of Wood Per Second from Lower Tier Wood To Higher Tier Wood",
 		"Cost" : 140000,
 	},
@@ -294,52 +294,52 @@ var Magic = {
 	"37" : {
 		"Name" : "+2 Bait When Buying",
 		"Description" : "When Buying Bait Get 2 More",
-		"Cost" : 160000,
+		"Cost" : 175000,
 	},
 	"38" : {
 		"Name" : "0.2% Storage Per Achievement",
 		"Description" : "Increase All Storage by 0.2% Per Achievement",
-		"Cost" : 175000,
+		"Cost" : 200000,
 	},
 	"38b" : {
 		"Name" : "+1 Auto Clicker",
 		"Description" : "+1 Auto Clicker, every second clicks for you!",
-		"Cost" : 200000,
+		"Cost" : 225000,
 	},
 	"39" : {
 		"Name" : "Fish Effects 27.5% Stronger",
 		"Description" : "All Fish effects become 27.5% better",
-		"Cost" : 225000,
+		"Cost" : 250000,
 	},
 	"41" : {
 		"Name" : "40% Cheaper Merchants",
 		"Description" : "Lower All Merchant Prices By 40%",
-		"Cost" : 255000,
+		"Cost" : 275000,
 	},
 	"42" : {
 		"Name" : "+10 Starting Woodcamps",
 		"Description" : "All Wood Types Get +10 Extra Woodcamps",
-		"Cost" : 280000,
+		"Cost" : 300000,
 	},
 	"43" : {
 		"Name" : "Unlock Auto Research",
 		"Description" : "Unlock The Ability To Queue Up Research Automaticly when there are enough Resources",
-		"Cost" : 355000,
+		"Cost" : 400000,
 	},
 	"44" : {
-		"Name" : "Each Dam Gives 1% WPS",
-		"Description" : "Improve Wood Per Second By 1% for Each Dam Built",
-		"Cost" : 400000,
+		"Name" : "Dam Construction Speed 10%",
+		"Description" : "Increases The Speed That Materials are Consumed For Dam Construction By 10%",
+		"Cost" : 500000,
 	},
 	"45" : {
 		"Name" : "+10 Starting Beavers",
 		"Description" : "All Wood Types Get +10 Extra Beavers",
-		"Cost" : 550000,
+		"Cost" : 600000,
 	},
 	"46" : {
 		"Name" : "Fish Stay 25% Longer",
 		"Description" : "When Fishing fish stay 25% longer on the screen before despawning",
-		"Cost" : 700000,
+		"Cost" : 750000,
 	},
 	"47" : {
 		"Name" : "Keep 20 more research",
@@ -354,17 +354,17 @@ var Magic = {
 	"49" : {
 		"Name" : "Keep Classic Wood Upgrades",
 		"Description" : "After Ascending keep all Classic Wood Upgrades",
-		"Cost" : 1100000,
+		"Cost" : 1250000,
 	},
 	"49b" : {
 		"Name" : "Autoclicker ticks -0.1 sec",
 		"Description" : "Autoclicker ticks take 0.1 second less (default 1 sec)",
-		"Cost" : 1275000,
+		"Cost" : 1500000,
 	},
 	"50" : {
 		"Name" : "Dam Effects 15%",
-		"Description" : "Improve All Dam effects by 15%",
-		"Cost" : 1500000,
+		"Description" : "Improve All Dam Section effects by 15%",
+		"Cost" : 1750000,
 	},
 	"51" : {
 		"Name" : "Bonus From First 20 Fish",
@@ -374,17 +374,17 @@ var Magic = {
 	"51b" : {
 		"Name" : "+1 Auto Clicker",
 		"Description" : "+1 Auto Clicker, every second clicks for you!",
-		"Cost" : 2200000,
+		"Cost" : 2250000,
 	},
 	"52" : {
-		"Name" : "Each Dam Gives 1% Gold PS",
-		"Description" : "Improve Gold Per Second By 1% Per Dam",
-		"Cost" : 2450000,
+		"Name" : "Dam Construction Speed 25%",
+		"Description" : "Increases The Speed That Materials are Consumed For Dam Construction By 25%",
+		"Cost" : 2500000,
 	},
 	"53" : {
 		"Name" : "Merchants Sell 20% More Wood",
 		"Description" : "All Merchants Sell 20% More Wood",
-		"Cost" : 2500000,
+		"Cost" : 2750000,
 	},
 	"54" : {
 		"Name" : "+1 Chance To Fish",
@@ -397,8 +397,8 @@ var Magic = {
 		"Cost" : 4500000,
 	},
 	"56" : {
-		"Name" : "Dams 30% Cheaper",
-		"Description" : "Make Dams 30% Cheaper To Start Building",
+		"Name" : "Dam Effects 20%",
+		"Description" : "Improve All Dam Section effects by 20%",
 		"Cost" : 5500000,
 	},
 	"57" : {
@@ -422,8 +422,8 @@ var Magic = {
 		"Cost" : 9500000,
 	},
 	"61" : {
-		"Name" : "Unlock Mega Dam",
-		"Description" : "Unlock The Ability To Build Mega Dams",
+		"Name" : "Dam Construction Speed 50%",
+		"Description" : "Increases The Speed That Materials are Consumed For Dam Construction By 50%",
 		"Cost" : 10000000,
 	},
 }
