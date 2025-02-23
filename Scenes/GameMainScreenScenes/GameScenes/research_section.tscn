@@ -31,6 +31,21 @@ size_flags_vertical = 4
 theme_override_font_sizes/font_size = 18
 text = "History"
 
+[node name="AutoResearchButton" type="CheckButton" parent="TopHBox/TitleMC"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+focus_mode = 0
+
+[node name="AutoResearchLabel" type="Label" parent="TopHBox/TitleMC/AutoResearchButton"]
+layout_mode = 0
+offset_left = -16.0
+offset_top = -16.0
+offset_right = 68.0
+offset_bottom = 1.0
+theme_override_font_sizes/font_size = 12
+text = "Auto Research"
+
 [node name="Research" type="MarginContainer" parent="."]
 layout_mode = 2
 size_flags_vertical = 3
@@ -84,4 +99,5 @@ wait_time = 0.2
 autostart = true
 
 [connection signal="button_down" from="TopHBox/TitleMC/HistoryButton" to="." method="_on_history_button_button_down"]
+[connection signal="toggled" from="TopHBox/TitleMC/AutoResearchButton" to="." method="_on_auto_research_button_toggled"]
 [connection signal="timeout" from="ResearchSectionTimer" to="." method="_on_research_section_timer_timeout"]

@@ -19,7 +19,7 @@ const Prefixes = {
 	24: {"Default": "C", "Alternative": "Sp", "Long": "Septillion"},
 }
 
-func formatNumber(number: float) -> String:
+func formatNumber(number: float, floatCount = 3) -> String:
 	if number < 999_999 and number > -999_999:
 		return str(number)
 	
@@ -41,9 +41,9 @@ func formatNumber(number: float) -> String:
 		NotationTypesEnum.Scientific:
 			var exponent = int(floor(log(abs(number)) / log(10)))
 			var mantissa = number / pow(10, exponent)
-			return "%.3f" % mantissa + "e" + str(exponent)
+			return "%.*fe%d" % [floatCount, mantissa, exponent]
 		NotationTypesEnum.Engineering:
-			return "%.3f" % formattedNumber + "e" + str(usedMagnitude)
+			return "%.*fe%d" % [floatCount, formattedNumber, usedMagnitude]
 		NotationTypesEnum.Default, NotationTypesEnum.Alternative, NotationTypesEnum.Mixed:
 			var prefixType
 			
@@ -55,9 +55,9 @@ func formatNumber(number: float) -> String:
 			if formattingType == NotationTypesEnum.Mixed and usedMagnitude > 15:
 				var exponent = int(floor(log(abs(number)) / log(10)))
 				var mantissa = number / pow(10, exponent)
-				return "%.3f" % mantissa + "e" + str(exponent)
+				return "%.*fe%d" % [floatCount, mantissa, exponent]
 			else:
 				var prefix = Prefixes.get(usedMagnitude, {}).get(prefixType, "")
-				return "%.3f%s" % [formattedNumber, prefix]
+				return "%.*f%s" % [floatCount, formattedNumber, prefix]
 		_:
 			return str(number)

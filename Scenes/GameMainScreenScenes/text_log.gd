@@ -17,6 +17,10 @@ func writeResearchUnlockToLog(researchId):
 	var researchData = Research.Research[researchId]
 	writeToLog("[url=tooltip_research,%s][color=#228B22][b][%s][/b][/color][/url] has been researched" % [researchId, researchData["Name"]])
 
+func writeResearchAutoQueuedToLog(researchId):
+	var researchData = Research.Research[researchId]
+	writeToLog("[url=tooltip_research,%s][color=#228B22][b][%s][/b][/color][/url] has been automaticaly queued to be researched" % [researchId, researchData["Name"]])
+
 func writeAchievementUnlockToLog(achievementId):
 	var achievementData = Achievements.Achievements[achievementId]
 	writeToLog("Achievement [url=tooltip_achievement,%s][color=#FFD700][b][%s][/b][/color][/url] has been unlocked" % [achievementId, achievementData["Name"]])

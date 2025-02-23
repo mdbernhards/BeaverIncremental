@@ -25,9 +25,9 @@ var CompletedLabel
 		BGColorRect.color = Values.ResourceValues[WoodType]["SecondaryColor"]
 		UnlockButton.text = str(Values.ResourceValues[WoodType]["MagicToUnlockDamSection"]) + " Magic"
 
-var TotalNeeded = 1e15
+var TotalNeeded = 1e15 + 1000
 var UnlockCost = 1e9
-var BasePerSecondIncrease = 1e6
+var BasePerSecondIncrease = 1e7
 
 func _ready() -> void:
 	setupNodePaths()
@@ -45,12 +45,23 @@ func checkIfCanAfford():
 	return SaveData.Magic["Count"] >= Values.ResourceValues[WoodType]["MagicToUnlockDamSection"]
 
 func updateBarValues():
-	PerSecondLabel.text = str(NumberFormatting.formatNumber(roundi(Values.ResourceValues[WoodType]["FinalDamPerSecond"]))) + " Per Sec"
-	StorageLabel.text = str(NumberFormatting.formatNumber(max(0, floor(SaveData.FinalDamData[WoodType]["ResourceCountUsed"])))) + " / " + str(NumberFormatting.formatNumber(TotalNeeded))
+	PerSecondLabel.text = str(NumberFormatting.formatNumber(roundi(Values.ResourceValues[WoodType]["FinalDamPerSecond"]), 2)) + " Per Sec"
+	StorageLabel.text = str(NumberFormatting.formatNumber(max(0, floor(SaveData.FinalDamData[WoodType]["ResourceCountUsed"])), 2)) + " / " + str(NumberFormatting.formatNumber(TotalNeeded + 1, 2))
 	
 	var progressPercentige = remap(SaveData.FinalDamData[WoodType]["ResourceCountUsed"], 0, TotalNeeded, 0, 100)
-	PercentigeDoneLabel.text = str(progressPercentige) + "% Done"
+	PercentigeDoneLabel.text = str(roundPercentige(progressPercentige)) + "% Done"
 	WoodProgressBar.value = progressPercentige
+	ProductionSlider.value = SaveData.FinalDamData[WoodType]["ProductionSpeedSlider"]
+
+func roundPercentige(percentige):
+	if percentige < 0.01:
+		return roundf(percentige * 10000)/10000
+	elif percentige < 0.1:
+		return roundf(percentige * 1000)/1000
+	elif percentige < 1:
+		return roundf(percentige * 100)/100
+	else:
+		return roundf(percentige * 10)/10
 
 func checkIfCompleted():
 	if SaveData.FinalDamData[WoodType]["ResourceCountUsed"] >= TotalNeeded:
@@ -63,9 +74,10 @@ func _on_production_slider_value_changed(value: float) -> void:
 
 func _on_unlock_button_button_down() -> void:
 	if checkIfCanAfford():
-		SaveData.Magic["Count"] >= Values.ResourceValues[WoodType]["MagicToUnlockDamSection"]
-		SaveData.FinalDamData[WoodType]["Unlocked"] = true
-		_on_final_dam_refresh_timer_timeout()
+		if SaveData.Magic["Count"] >= Values.ResourceValues[WoodType]["MagicToUnlockDamSection"]:
+			SaveData.Magic["Count"] -= Values.ResourceValues[WoodType]["MagicToUnlockDamSection"]
+			SaveData.FinalDamData[WoodType]["Unlocked"] = true
+			_on_final_dam_refresh_timer_timeout()
 
 func _on_final_dam_refresh_timer_timeout() -> void:
 	setCantAffordRect()

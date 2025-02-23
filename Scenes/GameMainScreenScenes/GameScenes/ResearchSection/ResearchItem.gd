@@ -49,6 +49,9 @@ func updateResearchVisability():
 		if checkIfCanAfford():
 			ResearchCantAffordColorRect.visible = false
 			QueueCantAffordColorRect.visible = false
+			
+			if Values.ResourceValues["Research"]["AutoResearch"]:
+				checkAutoResearch()
 		else:
 			ResearchCantAffordColorRect.visible = true
 			QueueCantAffordColorRect.visible = true	
@@ -161,8 +164,11 @@ func _on_start_research_button_button_down():
 		removeResources()
 		startResearch()
 
-func _on_queue_button_button_down() -> void:
+func _on_queue_button_button_down(isAuto = false) -> void:
 	if checkIfCanAfford():
+		if isAuto:
+			get_tree().get_first_node_in_group("TextLogSection").writeResearchAutoQueuedToLog(ItemId)
+		
 		removeResources()
 		SaveData.ResearchInfo["Queue"].append(ItemId)
 		InQueue = true
@@ -265,6 +271,10 @@ func refundResources():
 	
 	for woodType in woodTypes:
 		SaveData.Resources[woodType]["Count"] += ResearchData[woodType + "Cost"] * 0.75
+
+func checkAutoResearch():
+	if !IsResearchStarted and !InQueue and Unlocks.Unlocks["Research"]["AutoResearch"]:
+		_on_queue_button_button_down(true)
 
 func _on_cancel_button_button_down() -> void:
 	SaveData.ResearchInfo["Queue"].erase(ItemId)

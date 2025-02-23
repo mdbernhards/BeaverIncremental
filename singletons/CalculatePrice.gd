@@ -23,15 +23,15 @@ func getBeaverCost(beaverCount, woodType):
 		"Mahogany" :
 			return round(pow(3.01, beaverCount) + 2111 * pow(beaverCount, 7.15)) + beaverCount   * 399264666    + 24864666
 		"Ebony" :
-			return round(pow(3.23, beaverCount) + 9294 * pow(beaverCount, 8.34)) + beaverCount   * 846661525    + 212661525
+			return round(pow(3.23, beaverCount) + 8294 * pow(beaverCount, 7.35)) + beaverCount   * 846661525    + 212661525
 		"Dogwood" :
-			return round(pow(3.36, beaverCount) + 26236 * pow(beaverCount, 8.76)) + beaverCount  * 2400966634   + 855766634
+			return round(pow(3.36, beaverCount) + 26236 * pow(beaverCount, 7.56)) + beaverCount  * 2400966634   + 855766634
 		"Rosewood" :
-			return round(pow(3.42, beaverCount) + 75113 * pow(beaverCount, 9.11)) + beaverCount  * 7615252600   + 2257252600
+			return round(pow(3.42, beaverCount) + 75113 * pow(beaverCount, 7.82)) + beaverCount  * 7615252600   + 2257252600
 		"Ghost Gum" :
-			return round(pow(3.57, beaverCount) + 374522 * pow(beaverCount, 9.34)) + beaverCount * 57004666152  + 31574666152
+			return round(pow(3.57, beaverCount) + 374522 * pow(beaverCount, 7.99)) + beaverCount * 57004666152  + 31574666152
 		"Dragonwood" :
-			return round(pow(3.74, beaverCount) + 658313 * pow(beaverCount, 9.83)) + beaverCount * 235966624800 + 94676624800
+			return round(pow(3.74, beaverCount) + 658313 * pow(beaverCount, 8.11)) + beaverCount * 235966624800 + 94676624800
 
 func getWoodcampCost(woodcampCount, woodType):
 	match woodType :
@@ -222,7 +222,7 @@ func getUpgradeCost(level, woodType, upgradeNr): # first number more later, seco
 				"9" :
 					return round(pow(2.131, level) + 51340 * pow(level, 7.77)) + level * 735512800  + 329999900
 				"10" :
-					return round(pow(2.352, level) + 133246 * pow(level, 9.9)) + level * 2839992200 + 7292100000
+					return round(pow(2.35, level) + 8993246 * pow(level, 7.9)) + level * 9839992200 + 9292100000
 		"Cherry" :
 			match upgradeNr :
 				"1" :
@@ -316,7 +316,7 @@ func getUpgradeCost(level, woodType, upgradeNr): # first number more later, seco
 				"1" :
 					return round(pow(1.749, level) + 222.576 * pow(level, 7.04)) + level  * 6114327        + 3467442
 				"2" :
-					return round(pow(1.722, level) + 333.486 * pow(level, 8.21)) + level  * 42215675       + 21143464
+					return round(pow(1.722, level) + 311.486 * pow(level, 6.71)) + level  * 32215675       + 21143464
 				"3" :
 					return round(pow(1.413, level) + 11947.5 * pow(level, 8.87)) + level  * 165232654      + 63533262
 				"4" :
@@ -324,7 +324,7 @@ func getUpgradeCost(level, woodType, upgradeNr): # first number more later, seco
 				"5" :
 					return round(pow(1.628, level) + 347423  * pow(level, 6.23)) + level  * 7311232502     + 1232435462
 				"6" :
-					return round(pow(1.836, level) + 212.122 * pow(level, 6.33)) + level  * 26456227501    + 61456353425
+					return round(pow(1.836, level) + 211.111 * pow(level, 6.33)) + level  * 12456227501    + 1945635342
 				"7" :
 					return round(pow(1.623, level) + 317.350 * pow(level, 6.21)) + level  * 286543662503   + 129499436544
 				"8" :
@@ -425,32 +425,32 @@ func getUpgradeCost(level, woodType, upgradeNr): # first number more later, seco
 func getBotCost(botCount, woodType):
 	match woodType :
 		"Oak" :
-			return round(pow(1.367, botCount) + 19.23 * pow(botCount, 3.69)) + botCount * 25534        + 9999 * Values.ResourceValues[woodType]["BotPriceMultip"]
+			return round((pow(1.367, botCount) + 21.23 * pow(botCount, 4.27) + botCount * 25534        + 9999) * Values.ResourceValues[woodType]["BotPriceMultip"])
 		"Apple" :
-			return round(pow(1.414, botCount) + 24.88 * pow(botCount, 3.92)) + botCount * 72315        + 39799 * Values.ResourceValues[woodType]["BotPriceMultip"]
+			return round((pow(1.414, botCount) + 26.88 * pow(botCount, 4.66) + botCount * 72315        + 39799) * Values.ResourceValues[woodType]["BotPriceMultip"])
 		"Maple" :
-			return round(pow(1.440, botCount) + 29.98 * pow(botCount, 4.79)) + botCount * 222553       + 132999 * Values.ResourceValues[woodType]["BotPriceMultip"]
+			return round((pow(1.440, botCount) + 31.98 * pow(botCount, 4.99) + botCount * 222553       + 132999) * Values.ResourceValues[woodType]["BotPriceMultip"])
 		"Birch" :
-			return round(pow(1.448, botCount) + 32.26 * pow(botCount, 4.81)) + botCount * 792355       + 479949 * Values.ResourceValues[woodType]["BotPriceMultip"]
+			return round((pow(1.448, botCount) + 33.26 * pow(botCount, 5.33) + botCount * 792355       + 479949) * Values.ResourceValues[woodType]["BotPriceMultip"])
 		"Spruce" :
-			return round(pow(1.456, botCount) + 35.48 * pow(botCount, 4.83)) + botCount * 2184257      + 767579 * Values.ResourceValues[woodType]["BotPriceMultip"]
+			return round((pow(1.456, botCount) + 37.48 * pow(botCount, 5.66) + botCount * 2184257      + 767579) * Values.ResourceValues[woodType]["BotPriceMultip"])
 		"Chestnut" :
-			return round(pow(1.467, botCount) + 42.02 * pow(botCount, 5.84)) + botCount * 7227932      + 2333489 * Values.ResourceValues[woodType]["BotPriceMultip"]
+			return round((pow(1.467, botCount) + 46.02 * pow(botCount, 5.99) + botCount * 7227932      + 2333489) * Values.ResourceValues[woodType]["BotPriceMultip"])
 		"Cherry" :
-			return round(pow(1.529, botCount) + 53.43 * pow(botCount, 5.86)) + botCount * 33283425     + 7631794 * Values.ResourceValues[woodType]["BotPriceMultip"]
+			return round((pow(1.529, botCount) + 63.43 * pow(botCount, 6.33) + botCount * 33283425     + 7631794) * Values.ResourceValues[woodType]["BotPriceMultip"])
 		"Ash" :
-			return round(pow(1.594, botCount) + 57.05 * pow(botCount, 5.87)) + botCount * 99327250     + 39699543 * Values.ResourceValues[woodType]["BotPriceMultip"]
+			return round((pow(1.594, botCount) + 77.05 * pow(botCount, 6.44) + botCount * 99327250     + 39699543) * Values.ResourceValues[woodType]["BotPriceMultip"])
 		"Cedar" :
-			return round(pow(1.631, botCount) + 64.40 * pow(botCount, 5.89)) + botCount * 12884825     + 132357923 * Values.ResourceValues[woodType]["BotPriceMultip"]
+			return round((pow(1.631, botCount) + 144.3 * pow(botCount, 6.66) + botCount * 12884825     + 132357923) * Values.ResourceValues[woodType]["BotPriceMultip"])
 		"Mahogany" :
-			return round(pow(1.668, botCount) + 66.33 * pow(botCount, 6.91)) + botCount * 55936225     + 647952345 * Values.ResourceValues[woodType]["BotPriceMultip"]
+			return round((pow(1.668, botCount) + 663.3 * pow(botCount, 7.11) + botCount * 55936225     + 647952345) * Values.ResourceValues[woodType]["BotPriceMultip"])
 		"Ebony" :
-			return round(pow(1.670, botCount) + 74.55 * pow(botCount, 6.93)) + botCount * 491578225    + 2243217532 * Values.ResourceValues[woodType]["BotPriceMultip"]
+			return round((pow(1.670, botCount) + 1745  * pow(botCount, 7.33) + botCount * 491578225    + 2243217532) * Values.ResourceValues[woodType]["BotPriceMultip"])
 		"Dogwood" :
-			return round(pow(1.694, botCount) + 76.81 * pow(botCount, 6.95)) + botCount * 2844671220   + 9379454369 * Values.ResourceValues[woodType]["BotPriceMultip"]
+			return round((pow(1.694, botCount) + 2681  * pow(botCount, 7.66) + botCount * 2844671220   + 9379454369) * Values.ResourceValues[woodType]["BotPriceMultip"])
 		"Rosewood" :
-			return round(pow(1.790, botCount) + 85.19 * pow(botCount, 7.97)) + botCount * 8888315250   + 35324579699 * Values.ResourceValues[woodType]["BotPriceMultip"]
+			return round((pow(1.790, botCount) + 8519  * pow(botCount, 7.99) + botCount * 8888315250   + 35324579699) * Values.ResourceValues[woodType]["BotPriceMultip"])
 		"Ghost Gum" :
-			return round(pow(1.801, botCount) + 88.15 * pow(botCount, 7.98)) + botCount * 22245222250  + 177234993249 * Values.ResourceValues[woodType]["BotPriceMultip"]
+			return round((pow(1.801, botCount) + 28815 * pow(botCount, 8.33) + botCount * 22245222250  + 177234993249) * Values.ResourceValues[woodType]["BotPriceMultip"])
 		"Dragonwood" :
-			return round(pow(1.873, botCount) + 96.34 * pow(botCount, 7.99)) + botCount * 165486335250 + 929292922994 * Values.ResourceValues[woodType]["BotPriceMultip"]
+			return round((pow(1.873, botCount) + 96334 * pow(botCount, 8.66) + botCount * 165486335250 + 929292922994) * Values.ResourceValues[woodType]["BotPriceMultip"])

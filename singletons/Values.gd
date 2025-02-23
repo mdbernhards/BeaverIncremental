@@ -35,6 +35,7 @@ var ResourceValues = {
 	"Research" : {
 		"TimeMultip" : 1,
 		"ResearchAtATime" : 1,
+		"AutoResearch" : false,
 	},
 	"AutoClickers" : {
 		"AutoClickerTickLength" : 1,

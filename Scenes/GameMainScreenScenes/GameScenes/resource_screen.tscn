@@ -130,7 +130,7 @@ grow_vertical = 2
 [node name="GoldLabel" type="Label" parent="BarsMC/MC/TitleVBox/MC/LabelHBox/GoldMC/GoldRect/MC"]
 layout_mode = 2
 size_flags_vertical = 1
-theme_override_font_sizes/font_size = 25
+theme_override_font_sizes/font_size = 22
 text = "Gold: 10k"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -159,7 +159,7 @@ grow_vertical = 2
 [node name="MagicLabel" type="Label" parent="BarsMC/MC/TitleVBox/MC/LabelHBox/MagicMC/MagicRect/MC"]
 layout_mode = 2
 size_flags_vertical = 1
-theme_override_font_sizes/font_size = 23
+theme_override_font_sizes/font_size = 22
 text = "Magic: 10k"
 horizontal_alignment = 1
 vertical_alignment = 1

@@ -10,6 +10,7 @@ var ResearchTab
 var HistoryTab
 var SectionTitleLabel
 var HistoryButton
+var AutoResearchButton
 
 var IsHistoryOpen = false
 
@@ -136,6 +137,7 @@ func setupNodePaths():
 	HistoryTab = $History
 	SectionTitleLabel = $TopHBox/TitleMC/TitleLabel
 	HistoryButton = $TopHBox/TitleMC/HistoryButton
+	AutoResearchButton = $TopHBox/TitleMC/AutoResearchButton
 
 func _on_history_button_button_down() -> void:
 	IsHistoryOpen = !IsHistoryOpen
@@ -163,3 +165,12 @@ func _on_research_section_timer_timeout() -> void:
 		HistoryButton.visible = true
 	else:
 		HistoryButton.visible = false
+	
+	if Unlocks.Unlocks["Research"]["AutoResearch"] or Values.DebugMode:
+		AutoResearchButton.visible = true
+	else:
+		AutoResearchButton.visible = false
+		AutoResearchButton.button_pressed = false
+
+func _on_auto_research_button_toggled(toggled_on: bool) -> void:
+	Values.ResourceValues["Research"]["AutoResearch"] = toggled_on

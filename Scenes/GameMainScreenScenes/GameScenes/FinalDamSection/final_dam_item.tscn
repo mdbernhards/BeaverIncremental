@@ -18,8 +18,10 @@ text = "Oak"
 [node name="BGColorRect" type="ColorRect" parent="VBox"]
 layout_mode = 2
 size_flags_vertical = 3
+color = Color(0.347817, 0.347817, 0.347817, 1)
 
 [node name="WoodProgressBar" type="TextureProgressBar" parent="VBox/BGColorRect"]
+self_modulate = Color(0.589096, 0.589096, 0.589096, 1)
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -32,7 +34,6 @@ fill_mode = 3
 texture_progress = ExtResource("2_qcfqp")
 
 [node name="ProgressMC" type="MarginContainer" parent="VBox/BGColorRect/WoodProgressBar"]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -50,6 +51,7 @@ theme_override_constants/separation = 7
 
 [node name="PercentigeDoneLabel" type="Label" parent="VBox/BGColorRect/WoodProgressBar/ProgressMC/VBox"]
 layout_mode = 2
+theme_override_font_sizes/font_size = 14
 text = "30% Done"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -61,12 +63,13 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="EmptySpaceMC" type="MarginContainer" parent="VBox/BGColorRect/WoodProgressBar/ProgressMC/VBox"]
-custom_minimum_size = Vector2(0, 55)
+custom_minimum_size = Vector2(0, 60)
 layout_mode = 2
 
 [node name="PerSecondLabel" type="Label" parent="VBox/BGColorRect/WoodProgressBar/ProgressMC/VBox"]
 layout_mode = 2
 size_flags_vertical = 10
+theme_override_font_sizes/font_size = 14
 text = "1b Per Sec"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -84,6 +87,7 @@ layout_mode = 2
 size_flags_vertical = 8
 
 [node name="UnlockButton" type="Button" parent="VBox/BGColorRect/WoodProgressBar"]
+visible = false
 custom_minimum_size = Vector2(110, 70)
 layout_mode = 1
 anchors_preset = 8
