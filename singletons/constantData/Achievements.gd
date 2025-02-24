@@ -392,49 +392,49 @@ var Achievements = {
 		"Trigger" : func(): return SaveData.Resources["Ebony"]["Count"] >= pow(10, 25),
 	},
 	"79" : {
-		"Name" : "Have 10^3 Dogwood",
-		"Description" : "Collect 10^3 Dogwood",
-		"Trigger" : func(): return SaveData.Resources["Dogwood"]["Count"] >= pow(10, 3),
-	},
-	"80" : {
-		"Name" : "Have 10^5 Dogwood",
-		"Description" : "Collect 10^5 Dogwood",
-		"Trigger" : func(): return SaveData.Resources["Dogwood"]["Count"] >= pow(10, 5),
-	},
-	"81" : {
-		"Name" : "Have 10^6 Dogwood",
-		"Description" : "Collect 10^6 Dogwood",
-		"Trigger" : func(): return SaveData.Resources["Dogwood"]["Count"] >= pow(10, 6),
-	},
-	"82" : {
 		"Name" : "Have 10^7 Dogwood",
 		"Description" : "Collect 10^7 Dogwood",
 		"Trigger" : func(): return SaveData.Resources["Dogwood"]["Count"] >= pow(10, 7),
 	},
-	"83" : {
+	"80" : {
+		"Name" : "Have 10^8 Dogwood",
+		"Description" : "Collect 10^8 Dogwood",
+		"Trigger" : func(): return SaveData.Resources["Dogwood"]["Count"] >= pow(10, 8),
+	},
+	"81" : {
 		"Name" : "Have 10^9 Dogwood",
 		"Description" : "Collect 10^9 Dogwood",
 		"Trigger" : func(): return SaveData.Resources["Dogwood"]["Count"] >= pow(10, 9),
 	},
+	"82" : {
+		"Name" : "Have 10^10 Dogwood",
+		"Description" : "Collect 10^10 Dogwood",
+		"Trigger" : func(): return SaveData.Resources["Dogwood"]["Count"] >= pow(10, 10),
+	},
+	"83" : {
+		"Name" : "Have 10^11 Dogwood",
+		"Description" : "Collect 10^11 Dogwood",
+		"Trigger" : func(): return SaveData.Resources["Dogwood"]["Count"] >= pow(10, 11),
+	},
 	"84" : {
+		"Name" : "Have 10^12 Dogwood",
+		"Description" : "Collect 10^12 Dogwood",
+		"Trigger" : func(): return SaveData.Resources["Dogwood"]["Count"] >= pow(10, 12),
+	},
+	"85" : {
 		"Name" : "Have 10^13 Dogwood",
 		"Description" : "Collect 10^13 Dogwood",
 		"Trigger" : func(): return SaveData.Resources["Dogwood"]["Count"] >= pow(10, 13),
 	},
-	"85" : {
-		"Name" : "Have 10^18 Dogwood",
-		"Description" : "Collect 10^18 Dogwood",
-		"Trigger" : func(): return SaveData.Resources["Dogwood"]["Count"] >= pow(10, 18),
-	},
 	"86" : {
-		"Name" : "Have 10^4 Rosewood",
-		"Description" : "Collect 10^4 Rosewood",
-		"Trigger" : func(): return SaveData.Resources["Rosewood"]["Count"] >= pow(10, 4),
-	},
-	"87" : {
 		"Name" : "Have 10^6 Rosewood",
 		"Description" : "Collect 10^6 Rosewood",
 		"Trigger" : func(): return SaveData.Resources["Rosewood"]["Count"] >= pow(10, 6),
+	},
+	"87" : {
+		"Name" : "Have 10^8 Rosewood",
+		"Description" : "Collect 10^8 Rosewood",
+		"Trigger" : func(): return SaveData.Resources["Rosewood"]["Count"] >= pow(10, 8),
 	},
 	"88" : {
 		"Name" : "Have 10^9 Rosewood",
@@ -457,59 +457,59 @@ var Achievements = {
 		"Trigger" : func(): return null, # Doesn't need a trigger
 	},
 	"92" : {
-		"Name" : "Have 10^17 Rosewood",
-		"Description" : "Collect 10^17 Rosewood",
-		"Trigger" : func(): return SaveData.Resources["Rosewood"]["Count"] >= pow(10, 17),
+		"Name" : "Have 10^14 Rosewood",
+		"Description" : "Collect 10^14 Rosewood",
+		"Trigger" : func(): return SaveData.Resources["Rosewood"]["Count"] >= pow(10, 14),
 	},
 	"93" : {
-		"Name" : "Have 10^20 Rosewood",
-		"Description" : "Collect 10^20 Rosewood",
-		"Trigger" : func(): return SaveData.Resources["Rosewood"]["Count"] >= pow(10, 20),
+		"Name" : "Have 10^15 Rosewood",
+		"Description" : "Collect 10^15 Rosewood",
+		"Trigger" : func(): return SaveData.Resources["Rosewood"]["Count"] >= pow(10, 15),
 	},
 	"94" : {
-		"Name" : "Have 10^5 Ghost Gum",
-		"Description" : "Collect 10^5 Ghost Gum Wood",
-		"Trigger" : func(): return SaveData.Resources["Ghost Gum"]["Count"] >= pow(10, 5),
+		"Name" : "Have 10^6 Ghost Gum",
+		"Description" : "Collect 10^6 Ghost Gum Wood",
+		"Trigger" : func(): return SaveData.Resources["Ghost Gum"]["Count"] >= pow(10, 6),
 	},
 	"95" : {
-		"Name" : "Have 10^7 Ghost Gum",
-		"Description" : "Collect 10^7 Ghost Gum Wood",
-		"Trigger" : func(): return SaveData.Resources["Ghost Gum"]["Count"] >= pow(10, 7),
+		"Name" : "Have 10^8 Ghost Gum",
+		"Description" : "Collect 10^8 Ghost Gum Wood",
+		"Trigger" : func(): return SaveData.Resources["Ghost Gum"]["Count"] >= pow(10, 8),
 	},
 	"96" : {
+		"Name" : "Have 10^9 Ghost Gum",
+		"Description" : "Collect 10^9 Ghost Gum Wood",
+		"Trigger" : func(): return SaveData.Resources["Ghost Gum"]["Count"] >= pow(10, 9),
+	},
+	"97" : {
+		"Name" : "Have 10^10 Ghost Gum",
+		"Description" : "Collect 10^10 Ghost Gum Wood",
+		"Trigger" : func(): return SaveData.Resources["Ghost Gum"]["Count"] >= pow(10, 10),
+	},
+	"98" : {
 		"Name" : "Have 10^11 Ghost Gum",
 		"Description" : "Collect 10^11 Ghost Gum Wood",
 		"Trigger" : func(): return SaveData.Resources["Ghost Gum"]["Count"] >= pow(10, 11),
 	},
-	"97" : {
-		"Name" : "Have 10^16 Ghost Gum",
-		"Description" : "Collect 10^16 Ghost Gum Wood",
-		"Trigger" : func(): return SaveData.Resources["Ghost Gum"]["Count"] >= pow(10, 16),
-	},
-	"98" : {
-		"Name" : "Have 10^20 Ghost Gum",
-		"Description" : "Collect 10^20 Ghost Gum Wood",
-		"Trigger" : func(): return SaveData.Resources["Ghost Gum"]["Count"] >= pow(10, 20),
-	},
 	"99" : {
-		"Name" : "Have 10^24 Ghost Gum",
-		"Description" : "Collect 10^24 Ghost Gum Wood",
-		"Trigger" : func(): return SaveData.Resources["Ghost Gum"]["Count"] >= pow(10, 24),
+		"Name" : "Have 10^13 Ghost Gum",
+		"Description" : "Collect 10^13 Ghost Gum Wood",
+		"Trigger" : func(): return SaveData.Resources["Ghost Gum"]["Count"] >= pow(10, 13),
 	},
 	"100" : {
-		"Name" : "Have 10^25 Ghost Gum",
-		"Description" : "Collect 10^25 Ghost Gum Wood",
-		"Trigger" : func(): return SaveData.Resources["Ghost Gum"]["Count"] >= pow(10, 25),
+		"Name" : "Have 10^14 Ghost Gum",
+		"Description" : "Collect 10^14 Ghost Gum Wood",
+		"Trigger" : func(): return SaveData.Resources["Ghost Gum"]["Count"] >= pow(10, 14),
 	},
 	"101" : {
-		"Name" : "Have 10^3 Dragonwood",
-		"Description" : "Collect 10^3 Dragonwood Wood",
-		"Trigger" : func(): return SaveData.Resources["Dragonwood"]["Count"] >= pow(10, 3),
-	},
-	"102" : {
 		"Name" : "Have 10^6 Dragonwood",
 		"Description" : "Collect 10^6 Dragonwood Wood",
 		"Trigger" : func(): return SaveData.Resources["Dragonwood"]["Count"] >= pow(10, 6),
+	},
+	"102" : {
+		"Name" : "Have 10^8 Dragonwood",
+		"Description" : "Collect 10^8 Dragonwood Wood",
+		"Trigger" : func(): return SaveData.Resources["Dragonwood"]["Count"] >= pow(10, 8),
 	},
 	"103" : {
 		"Name" : "Have 10^9 Dragonwood",
@@ -517,24 +517,24 @@ var Achievements = {
 		"Trigger" : func(): return SaveData.Resources["Dragonwood"]["Count"] >= pow(10, 9),
 	},
 	"104" : {
+		"Name" : "Have 10^11 Dragonwood",
+		"Description" : "Collect 10^11 Dragonwood Wood",
+		"Trigger" : func(): return SaveData.Resources["Dragonwood"]["Count"] >= pow(10, 11),
+	},
+	"105" : {
 		"Name" : "Have 10^12 Dragonwood",
 		"Description" : "Collect 10^12 Dragonwood Wood",
 		"Trigger" : func(): return SaveData.Resources["Dragonwood"]["Count"] >= pow(10, 12),
 	},
-	"105" : {
-		"Name" : "Have 10^15 Dragonwood",
-		"Description" : "Collect 10^15 Dragonwood Wood",
-		"Trigger" : func(): return SaveData.Resources["Dragonwood"]["Count"] >= pow(10, 15),
-	},
 	"106" : {
-		"Name" : "Have 10^20 Dragonwood",
-		"Description" : "Collect 10^20 Dragonwood Wood",
-		"Trigger" : func(): return SaveData.Resources["Dragonwood"]["Count"] >= pow(10, 20),
+		"Name" : "Have 10^13 Dragonwood",
+		"Description" : "Collect 10^13 Dragonwood Wood",
+		"Trigger" : func(): return SaveData.Resources["Dragonwood"]["Count"] >= pow(10, 13),
 	},
 	"107" : {
-		"Name" : "Have 10^24 Dragonwood",
-		"Description" : "Collect 10^24 Dragonwood Wood",
-		"Trigger" : func(): return SaveData.Resources["Dragonwood"]["Count"] >= pow(10, 24),
+		"Name" : "Have 10^14 Dragonwood",
+		"Description" : "Collect 10^14 Dragonwood Wood",
+		"Trigger" : func(): return SaveData.Resources["Dragonwood"]["Count"] >= pow(10, 14),
 	},
 	"108" : {
 		"Name" : "Have 1000 Gold",

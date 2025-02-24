@@ -6,7 +6,6 @@ Keep Playing
 Add
 Mahogany Storage 3x
 
-Fix Dogwood Achievements Start From 10mil
 Fix Loading Saves, When Another Is Already Loaded
 Fix Buy All Magic Upgrades Achievement
 Change Dam Item Cap to 100t
@@ -240,3 +239,5 @@ Add Notation to Magic Label DONE
 Dams Item Label Round To 0.000001% and other fixes DONE
 Add Auto Research and show Auto Queued Research in The Text Log DONE
 Adjust Prices For Magic Locked Upgrades DONE
+Fix Dogwood Achievements DONE
+Fix Ebony 4

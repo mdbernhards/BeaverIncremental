@@ -52,7 +52,7 @@ var Fish = {#						type,		name,												speed	scale	curveAmp	curveFrq.	turnCh
 	FishEnum.Stick : FishObject.new(FishEnum.Stick,"Stick", 										499,	0.97,	23,			0.1,		0.001,		10,		1.25),
 	FishEnum.MagicFish : FishObject.new(FishEnum.MagicFish,"Magic Fish",							655,	0.83,	150,		20,			0.055,		4,		1.9),
 	FishEnum.WoodFish : FishObject.new(FishEnum.WoodFish,"Wood Fish",								345,	0.95,	40,			6,			0.3,		10,		2.1),
-	FishEnum.BotFish : FishObject.new(FishEnum.BotFish,"Bot Fish",									595,	0.72,	127,		35,			0.035,		4,		1.6),
+	FishEnum.BotFish : FishObject.new(FishEnum.BotFish,"Merchant Fish",									595,	0.72,	127,		35,			0.035,		4,		1.6),
 	FishEnum.MultiplyingFish : FishObject.new(FishEnum.MultiplyingFish,"Multiplying Fish",			666,	0.65,	80,			14,			0.01,		4,		2.5),
 	
 	FishEnum.ResearchFish : FishObject.new(FishEnum.ResearchFish,"Research Fish",					422,	1.03,	66,			9,			0.0005,		4.3,	1.85),
@@ -286,7 +286,7 @@ var FishEffect = {
 	FishEnum.DamFish : "3% Dam Effect",
 	FishEnum.LuckyFish : "1.5% Fish Price and Fish Effects",
 	FishEnum.CrateFish : "+30 Beaver Storage",
-	FishEnum.BotFish : "1% Cheaper Bots",
+	FishEnum.BotFish : "1% Cheaper Merchants",
 	FishEnum.IceFish : "1% Lower Fish Bounce",
 	FishEnum.BaitFish : "+1 Bait Count In Shop",
 	FishEnum.ElectricEal : "5% Longer Fishing Time",

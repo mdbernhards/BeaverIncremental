@@ -397,8 +397,8 @@ var Magic = {
 		"Cost" : 10000000,
 	},
 	"51" : {
-		"Name" : "Bonus From First 20 Fish",
-		"Description" : "Increase Fish Bonus To Work For The First 20 Fish",
+		"Name" : "Bonus From First 10 Fish",
+		"Description" : "Increase Fish Bonus To Work For The First 10 Fish",
 		"Cost" : 12500000,
 	},
 	"51b" : {
