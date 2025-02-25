@@ -45,8 +45,8 @@ func checkIfCanAfford():
 	return SaveData.Magic["Count"] >= Values.ResourceValues[WoodType]["MagicToUnlockDamSection"]
 
 func updateBarValues():
-	PerSecondLabel.text = str(NumberFormatting.formatNumber(roundi(Values.ResourceValues[WoodType]["FinalDamPerSecond"]), 2)) + " Per Sec"
-	StorageLabel.text = str(NumberFormatting.formatNumber(max(0, floor(SaveData.FinalDamData[WoodType]["ResourceCountUsed"])), 2)) + " / " + str(NumberFormatting.formatNumber(TotalNeeded + 1, 2))
+	PerSecondLabel.text = str(NumberFormatting.formatNumber(roundi(Values.ResourceValues[WoodType]["FinalDamPerSecond"]))) + " Per Sec"
+	StorageLabel.text = str(NumberFormatting.formatNumber(max(0, floor(SaveData.FinalDamData[WoodType]["ResourceCountUsed"])))) + " / " + str(NumberFormatting.formatNumber(TotalNeeded + 1))
 	
 	var progressPercentige = remap(SaveData.FinalDamData[WoodType]["ResourceCountUsed"], 0, TotalNeeded, 0, 100)
 	PercentigeDoneLabel.text = str(roundPercentige(progressPercentige)) + "% Done"

@@ -39,7 +39,7 @@ func setMythicCantAffordRect():
 		MythicCantAffordRect.visible = true
 
 func checkMythicIfCanAfford():
-	return SaveData.Magic["Count"] >= 10000000
+	return SaveData.Magic["Count"] >= 100000000
 
 func setupNodePaths():
 	DamItemsMC = $VBox/ColorRect/DamItemsMC
@@ -98,5 +98,5 @@ func _on_rare_locked_button_button_down() -> void:
 
 func _on_mythic_locked_button_button_down() -> void:
 	if checkMythicIfCanAfford():
-		SaveData.Magic["Count"] -= 10000000
+		SaveData.Magic["Count"] -= 100000000
 		Unlocks.Unlocks["Dams"]["MythicUnlocked"] = true

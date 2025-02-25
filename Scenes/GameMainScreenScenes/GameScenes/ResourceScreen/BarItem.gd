@@ -57,6 +57,11 @@ func changeBarValues(woodType = WoodType):
 	WoodProgressBar.tint_progress = Values.ResourceValues[WoodType]["Color"]
 	WoodBarRect.color = Values.ResourceValues[WoodType]["SecondaryColor"]
 	
+	if Unlocks.Unlocks[WoodType]["Unlocked"] or Values.DebugMode:
+		visible = true
+	else:
+		visible = false
+	
 	updateBarValues()
 	
 	if WoodType == "Oak":

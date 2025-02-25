@@ -319,22 +319,6 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.513726, 0.0941176, 0, 0.301961)
 
-[node name="Buy1000xButton" type="Button" parent="HBox/MC2/BotVBox/HBox2/MC2/VBox/HBox"]
-custom_minimum_size = Vector2(42, 0)
-layout_mode = 2
-theme_override_font_sizes/font_size = 12
-text = "1000x"
-
-[node name="1000CantAffordRect" type="ColorRect" parent="HBox/MC2/BotVBox/HBox2/MC2/VBox/HBox/Buy1000xButton"]
-visible = false
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0.513726, 0.0941176, 0, 0.301961)
-
 [node name="BotPriceLabel" type="Label" parent="HBox/MC2/BotVBox/HBox2/MC2/VBox"]
 layout_mode = 2
 size_flags_vertical = 3
@@ -467,6 +451,5 @@ autostart = true
 [connection signal="button_down" from="HBox/MC2/BotVBox/HBox2/MC2/VBox/HBox/BuyButton" to="." method="_on_buy_button_button_down"]
 [connection signal="button_down" from="HBox/MC2/BotVBox/HBox2/MC2/VBox/HBox/Buy10xButton" to="." method="_on_buy_10x_button_button_down"]
 [connection signal="button_down" from="HBox/MC2/BotVBox/HBox2/MC2/VBox/HBox/Buy100xButton" to="." method="_on_buy_100x_button_button_down"]
-[connection signal="button_down" from="HBox/MC2/BotVBox/HBox2/MC2/VBox/HBox/Buy1000xButton" to="." method="_on_buy_1000x_button_button_down"]
 [connection signal="value_changed" from="HBox/MC2/BotVBox/HBox/MC/BotEffectivnesSlider" to="." method="_on_bot_effectivnes_slider_value_changed"]
 [connection signal="timeout" from="MarketItemTimer" to="." method="_on_market_item_timer_timeout"]

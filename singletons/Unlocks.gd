@@ -73,6 +73,7 @@ func checkForUnlocks():
 		Unlocks["Ebony"]["ButtonBuyMax"] = true
 	if achievementCount >= 125:
 		Unlocks["Gold"]["ButtonBuyMax"] = true
+		Unlocks["Market"]["Bots"]["10x Buy"] = true
 	if achievementCount >= 130:
 		Unlocks["Dogwood"]["ButtonBuyMax"] = true
 	if achievementCount >= 135:
@@ -100,7 +101,7 @@ func checkForUnlocks():
 	if achievementCount >= 190:
 		Unlocks["Rosewood"]["ButtonBuyMax"] = true
 	if achievementCount >= 195:
-		pass
+		Unlocks["Market"]["Bots"]["100x Buy"] = true
 	if achievementCount >= 200:
 		Unlocks["Ghost Gum"]["ButtonBuyMax"] = true
 	if achievementCount >= 205:
@@ -415,7 +416,6 @@ var Unlocks = {
 			"Unlocked" : false,
 			"10x Buy" : false,
 			"100x Buy" : false,
-			"1000x Buy" : false,
 		},
 	},
 	"Magic" : {

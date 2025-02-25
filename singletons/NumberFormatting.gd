@@ -19,15 +19,19 @@ const Prefixes = {
 	24: {"Default": "C", "Alternative": "Sp", "Long": "Septillion"},
 }
 
-func formatNumber(number: float, floatCount = 3) -> String:
+func formatNumber(number: float, floatCount = null) -> String:
 	if number < 999_999 and number > -999_999:
 		return str(number)
 	
 	var magnitude = int(floor(log(abs(number + 1)) / log(10)))
+	
 	var usedMagnitude = magnitude - (magnitude % 3)
 	
 	if usedMagnitude > 24: # works up to Max e24 (Magnitude)
 		usedMagnitude = 24
+	
+	if floatCount == null:
+		floatCount = 3 - (magnitude % 3)
 	
 	var divisor = pow(10, usedMagnitude)
 	var formattedNumber = number / divisor

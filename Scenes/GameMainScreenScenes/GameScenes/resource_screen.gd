@@ -39,7 +39,7 @@ func setGoldAndMagicLabels():
 		
 	if MagicLabel:
 		if floor(Values.ResourceValues["Magic"]["PotentialMagic"]) > 0:
-			MagicLabel.text = "Magic: " + NumberFormatting.formatNumber(floor(SaveData.Magic["Count"]), 2) + "+" + NumberFormatting.formatNumber(floor(Values.ResourceValues["Magic"]["PotentialMagic"]), 2)
+			MagicLabel.text = "Magic: " + NumberFormatting.formatNumber(floor(SaveData.Magic["Count"])) + "+" + NumberFormatting.formatNumber(floor(Values.ResourceValues["Magic"]["PotentialMagic"]))
 		else:
 			MagicLabel.text = "Magic: " + NumberFormatting.formatNumber(floor(SaveData.Magic["Count"]))
 

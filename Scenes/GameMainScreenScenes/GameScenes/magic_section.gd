@@ -86,4 +86,4 @@ func _on_history_button_button_down() -> void:
 
 func _on_magic_refresh_timer_timeout() -> void:
 	if MagicCountLabel:
-		MagicCountLabel.text = str(SaveData.Magic["Count"]) + " Magic"
+		MagicCountLabel.text = NumberFormatting.formatNumber(SaveData.Magic["Count"]) + " Magic"

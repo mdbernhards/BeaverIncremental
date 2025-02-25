@@ -91,6 +91,7 @@ func resetValues():
 func resetUnlocks():
 	var magicUnlocks = Unlocks.Unlocks["Magic"].duplicate(true)
 	var achievementUnlocks = Unlocks.Unlocks["Achievements"].duplicate(true)
+	var damUnlocks = Unlocks.Unlocks["Dams"].duplicate(true)
 	
 	Unlocks.Unlocks = Unlocks.OriginalUnlocks.duplicate(true)
 	
@@ -98,6 +99,8 @@ func resetUnlocks():
 	Unlocks.Unlocks["Magic"]["Upgrades"] = true
 	
 	Unlocks.Unlocks["Achievements"] = achievementUnlocks.duplicate(true)
+	
+	Unlocks.Unlocks["Dams"] = damUnlocks.duplicate(true)
 	
 	get_tree().get_first_node_in_group("UpgradePage").changePage(1)
 	

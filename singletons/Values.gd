@@ -104,7 +104,7 @@ var ResourceValues = {
 		"ExtraBeavers" : 0,
 		"ExtraWoodcamps" : 0,
 		"FinalDamPerSecond" : 0,
-		"MagicToUnlockDamSection" : 200000,
+		"MagicToUnlockDamSection" : 250000,
 	},
 	"Maple" : {
 		"PerClick" : 100,
@@ -126,7 +126,7 @@ var ResourceValues = {
 		"ExtraBeavers" : 0,
 		"ExtraWoodcamps" : 0,
 		"FinalDamPerSecond" : 0,
-		"MagicToUnlockDamSection" : 300000,
+		"MagicToUnlockDamSection" : 500000,
 	},
 	"Birch" : {
 		"PerClick" : 100,
@@ -148,7 +148,7 @@ var ResourceValues = {
 		"ExtraBeavers" : 0,
 		"ExtraWoodcamps" : 0,
 		"FinalDamPerSecond" : 0,
-		"MagicToUnlockDamSection" : 400000,
+		"MagicToUnlockDamSection" : 1000000,
 	},
 	"Spruce" : {
 		"PerClick" : 100,
@@ -170,7 +170,7 @@ var ResourceValues = {
 		"ExtraBeavers" : 0,
 		"ExtraWoodcamps" : 0,
 		"FinalDamPerSecond" : 0,
-		"MagicToUnlockDamSection" : 500000,
+		"MagicToUnlockDamSection" : 1750000,
 	},
 	"Chestnut" : {
 		"PerClick" : 100,
@@ -192,7 +192,7 @@ var ResourceValues = {
 		"ExtraBeavers" : 0,
 		"ExtraWoodcamps" : 0,
 		"FinalDamPerSecond" : 0,
-		"MagicToUnlockDamSection" : 1000000,
+		"MagicToUnlockDamSection" : 2500000,
 	},
 	"Cherry" : {
 		"PerClick" : 100,
@@ -214,7 +214,7 @@ var ResourceValues = {
 		"ExtraBeavers" : 0,
 		"ExtraWoodcamps" : 0,
 		"FinalDamPerSecond" : 0,
-		"MagicToUnlockDamSection" : 2000000,
+		"MagicToUnlockDamSection" : 5000000,
 	},
 	"Ash" : {
 		"PerClick" : 100,
@@ -236,7 +236,7 @@ var ResourceValues = {
 		"ExtraBeavers" : 0,
 		"ExtraWoodcamps" : 0,
 		"FinalDamPerSecond" : 0,
-		"MagicToUnlockDamSection" : 3000000,
+		"MagicToUnlockDamSection" : 10000000,
 	},
 	"Cedar" : {
 		"PerClick" : 100000000,
@@ -258,7 +258,7 @@ var ResourceValues = {
 		"ExtraBeavers" : 0,
 		"ExtraWoodcamps" : 0,
 		"FinalDamPerSecond" : 0,
-		"MagicToUnlockDamSection" : 4000000,
+		"MagicToUnlockDamSection" : 25000000,
 	},
 	"Mahogany" : {
 		"PerClick" : 100,
@@ -280,7 +280,7 @@ var ResourceValues = {
 		"ExtraBeavers" : 0,
 		"ExtraWoodcamps" : 0,
 		"FinalDamPerSecond" : 0,
-		"MagicToUnlockDamSection" : 5000000,
+		"MagicToUnlockDamSection" : 50000000,
 	},
 	"Ebony" : {
 		"PerClick" : 100,
@@ -302,7 +302,7 @@ var ResourceValues = {
 		"ExtraBeavers" : 0,
 		"ExtraWoodcamps" : 0,
 		"FinalDamPerSecond" : 0,
-		"MagicToUnlockDamSection" : 10000000,
+		"MagicToUnlockDamSection" : 200000000,
 	},
 	"Dogwood" : {
 		"PerClick" : 100,
@@ -324,7 +324,7 @@ var ResourceValues = {
 		"ExtraBeavers" : 0,
 		"ExtraWoodcamps" : 0,
 		"FinalDamPerSecond" : 0,
-		"MagicToUnlockDamSection" : 20000000,
+		"MagicToUnlockDamSection" : 600000000,
 	},
 	"Rosewood" : {
 		"PerClick" : 100,
@@ -346,7 +346,7 @@ var ResourceValues = {
 		"ExtraBeavers" : 0,
 		"ExtraWoodcamps" : 0,
 		"FinalDamPerSecond" : 0,
-		"MagicToUnlockDamSection" : 30000000,
+		"MagicToUnlockDamSection" : 1500000000,
 	},
 	"Ghost Gum" : {
 		"PerClick" : 100,
@@ -368,7 +368,7 @@ var ResourceValues = {
 		"ExtraBeavers" : 0,
 		"ExtraWoodcamps" : 0,
 		"FinalDamPerSecond" : 0,
-		"MagicToUnlockDamSection" : 40000000,
+		"MagicToUnlockDamSection" : 3000000000,
 	},
 	"Dragonwood" : {
 		"PerClick" : 100,
@@ -390,6 +390,6 @@ var ResourceValues = {
 		"ExtraBeavers" : 0,
 		"ExtraWoodcamps" : 0,
 		"FinalDamPerSecond" : 0,
-		"MagicToUnlockDamSection" : 50000000,
+		"MagicToUnlockDamSection" : 5000000000,
 	},
 }

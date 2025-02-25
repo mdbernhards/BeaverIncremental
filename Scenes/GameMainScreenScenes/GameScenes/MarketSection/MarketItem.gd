@@ -27,7 +27,6 @@ var CantAffordRect100
 var CantAffordRect1000
 var Buy10xButton
 var Buy100xButton
-var Buy1000xButton
 var BotVBox
 
 var WoodLossIfSold
@@ -106,10 +105,8 @@ func setNodePaths():
 	CantAffordRect = $HBox/MC2/BotVBox/HBox2/MC2/VBox/HBox/BuyButton/CantAffordRect
 	CantAffordRect10 = $"HBox/MC2/BotVBox/HBox2/MC2/VBox/HBox/Buy10xButton/10CantAffordRect"
 	CantAffordRect100 = $"HBox/MC2/BotVBox/HBox2/MC2/VBox/HBox/Buy100xButton/100CantAffordRect"
-	CantAffordRect1000 = $"HBox/MC2/BotVBox/HBox2/MC2/VBox/HBox/Buy1000xButton/1000CantAffordRect"
 	Buy10xButton = $HBox/MC2/BotVBox/HBox2/MC2/VBox/HBox/Buy10xButton
 	Buy100xButton = $HBox/MC2/BotVBox/HBox2/MC2/VBox/HBox/Buy100xButton
-	Buy1000xButton = $HBox/MC2/BotVBox/HBox2/MC2/VBox/HBox/Buy1000xButton
 	BotVBox = $HBox/MC2/BotVBox
 
 func _on_sell_amount_slider_value_changed(value):
@@ -175,11 +172,6 @@ func _on_buy_100x_button_button_down() -> void:
 		buyBot(100)
 	updateValues()
 
-func _on_buy_1000x_button_button_down() -> void:
-	if checkIfCanAfford(1000):
-		buyBot(1000)
-	updateValues()
-
 func _on_market_item_timer_timeout() -> void:
 	SellButton.disabled = false
 	updateValues()
@@ -200,8 +192,3 @@ func _on_market_item_timer_timeout() -> void:
 		Buy100xButton.visible = true
 	else:
 		Buy100xButton.visible = false
-	
-	if Unlocks.Unlocks["Market"]["Bots"]["1000x Buy"] or Values.DebugMode:
-		Buy1000xButton.visible = true
-	else:
-		Buy1000xButton.visible = false
