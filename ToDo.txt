@@ -3,8 +3,12 @@ TODO
 First:
 Keep Playing
 
-cap fishing chances to max, after load broken
-Adjust Magic Upgrade Costs
+Fix Fishing
+
+Add
+Mahogany Storage 3x
+Birch Storage 30%
+Spruce, Ash WPS 27.5%
 
 Later:
 Need To Check Fishing Chance, how it works
@@ -242,3 +246,5 @@ Push Down Dam Effects Magic Upgrades DONE
 Add 26 Magic Upgrades DONE
 Fix .5 Beavers DONE
 Round Fish Price DONE
+Adjust Magic Upgrade Costs DONE
+cap fishing chances to max, after loading DONE

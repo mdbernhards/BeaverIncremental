@@ -91,7 +91,7 @@ func stopFishing(gameLoad = false):
 	
 	if !gameLoad:
 		if Values.ResourceValues["Fish"]["ChanceToRefundChance"] < RNG.randf():
-			SaveData.GeneralInfo["CurrentFishingChances"] = max(SaveData.GeneralInfo["CurrentFishingChances"] - 1, 0)
+			SaveData.GeneralInfo["CurrentFishingChances"] = clamp(SaveData.GeneralInfo["CurrentFishingChances"] - 1, 0, FishingChances)
 
 func useBait():
 	if BaitUsed == Fishing.ShopItemEnum.NoBait:
@@ -243,6 +243,7 @@ func _on_refresh_timer_timeout() -> void:
 	FishingChances = Values.ResourceValues["Fish"]["FishingChances"]
 	FishingChancesLabel.text = str(SaveData.GeneralInfo["CurrentFishingChances"]) + "/" + str(FishingChances)
 	ClicksLeftLabel.text = str(FishingClicks) + " Clicks Left"
+	SaveData.GeneralInfo["CurrentFishingChances"] = clamp(SaveData.GeneralInfo["CurrentFishingChances"], 0, FishingChances)
 	
 	if IsBouncing:
 		BounceTexture.visible = true

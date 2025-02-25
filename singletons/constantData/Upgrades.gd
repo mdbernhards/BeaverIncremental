@@ -400,7 +400,7 @@ var Upgrades = {
 			"MagicCost" : 1000,
 		},
 		"9" :  {
-			"Name" : "0.85% Cheaper Gold Upgrades",
+			"Name" : "2.85% Cheaper Gold Upgrades",
 			"Description" : "0.85% Cheaper Gold Upgrades",
 			"OtherText" : "",
 			"Unlocked" : func(): return true,
@@ -602,8 +602,8 @@ var Upgrades = {
 			"MagicCost" : 250000,
 		},
 		"10" :  {
-			"Name" : "1% Cheaper WC Globaly",
-			"Description" : "1% Cheaper WC Globaly",
+			"Name" : "4% Cheaper WC Globaly",
+			"Description" : "4% Cheaper WC Globaly",
 			"OtherText" : "",
 			"Unlocked" : func(): return true,
 			"MagicCost" : 750000,
@@ -771,8 +771,8 @@ var Upgrades = {
 			"Unlocked" : func(): return true,
 		},
 		"6" :  {
-			"Name" : "+2% Storage Per Beaver",
-			"Description" : "+2% Storage Per Beaver",
+			"Name" : "+3% Storage Per Beaver",
+			"Description" : "+3% Storage Per Beaver",
 			"OtherText" : "",
 			"Unlocked" : func(): return true,
 		},
