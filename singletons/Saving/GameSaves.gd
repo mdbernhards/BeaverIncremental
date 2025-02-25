@@ -111,6 +111,9 @@ func saveGame(saveName):
 	
 	var jsonFishBiscuts = JSON.stringify(var_to_str(SaveData.FishBiscuits))
 	saveFile.store_line(jsonFishBiscuts)
+	
+	var jsonSavedMagicCalculation = JSON.stringify(var_to_str(SaveData.SavedMagicCalculation))
+	saveFile.store_line(jsonSavedMagicCalculation)
 
 func saveNewGame(saveName):
 	if not FileAccess.file_exists("user://Saves/" + saveName + ".save"):
@@ -164,6 +167,9 @@ func saveNewGame(saveName):
 	
 	var jsonFishBiscuts = JSON.stringify(var_to_str(SaveData.OriginalFishBiscuits))
 	saveFile.store_line(jsonFishBiscuts)
+	
+	var jsonSavedMagicCalculation = JSON.stringify(var_to_str(SaveData.OriginalSavedMagicCalculation))
+	saveFile.store_line(jsonSavedMagicCalculation)
 	
 func loadGame(saveName):
 	if not FileAccess.file_exists("user://Saves/" + saveName + ".save"):
@@ -226,6 +232,14 @@ func loadGame(saveName):
 	var jsonFishBiscuts = saveFile.get_line()
 	if jsonFishBiscuts:
 		SaveData.FishBiscuits = parseJson(jsonFishBiscuts)
+	else:
+		SaveData.FishBiscuits = SaveData.OriginalFishBiscuits
+	
+	var jsonSavedMagicCalculation = saveFile.get_line()
+	if jsonSavedMagicCalculation:
+		SaveData.SavedMagicCalculation = parseJson(jsonSavedMagicCalculation)
+	else:
+		SaveData.SavedMagicCalculation = SaveData.OriginalSavedMagicCalculation.duplicate(true)
 	
 	SaveData.recalculateValues()
 	get_tree().get_first_node_in_group("TextLogSection").clearLog()

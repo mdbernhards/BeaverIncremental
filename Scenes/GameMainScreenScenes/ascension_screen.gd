@@ -1,7 +1,12 @@
 extends Control
 
-var MagicThread = Thread.new()
-var StopThread = false
+# Nodes
+var MagicLabel
+var EffectLabel
+var MagicGainLabel
+var NextMagicLabel
+var AscendButton
+
 var PotentialMagic = 0
 
 var WoodTypes = ["Oak", "Apple", "Maple", "Birch", "Spruce",
@@ -27,23 +32,11 @@ var BaseRequirements = {
 		"Gold": 250000
 	}
 
-# Nodes
-var MagicLabel
-var EffectLabel
-var MagicGainLabel
-var NextMagicLabel
-var AscendButton
-
 func _ready() -> void:
-	MagicThread.start(calculatePotentialMagicGain)
 	setupNodePaths()
 
 func _process(_delta: float) -> void:
 	pass
-
-func _exit_tree():
-	StopThread = true
-	MagicThread.wait_to_finish()
 
 func checkMaxWoodCounts():
 	for resourceType in SaveData.MaxResourceCount:
@@ -55,52 +48,72 @@ func checkMaxWoodCounts():
 				SaveData.MaxResourceCount[resourceType] = SaveData.Resources[resourceType]["Count"]
 
 func calculatePotentialMagicGain():
-	while not StopThread:
-		if !Values.ResourceValues["Fish"]["IsFishing"]:
-			var magic = 0
+	if !Values.ResourceValues["Fish"]["IsFishing"]:
+		var magic = 0
+		
+		for resourceType in BaseRequirements:
+			var resourceCount = SaveData.MaxResourceCount[resourceType] - SaveData.SavedMagicCalculation[resourceType]["WoodCountCalculatedOn"]
 			
-			for resourceType in BaseRequirements:
-				var resourceCount: int = SaveData.MaxResourceCount[resourceType]
-				var baseCost = BaseRequirements[resourceType]
-				var resourcesMagic = 0
-				
-				var thresholds = []
-				var multipliers = []
+			if resourceCount < 0:
+				continue
+			
+			var baseCost
+			if SaveData.SavedMagicCalculation[resourceType]["CurrentBaseCost"] > BaseRequirements[resourceType]:
+				baseCost = SaveData.SavedMagicCalculation[resourceType]["CurrentBaseCost"]
+			else:
+				baseCost = BaseRequirements[resourceType]
+			
+			var resourcesMagic = 0
+			if SaveData.SavedMagicCalculation[resourceType]["PotentialMagicGain"] > resourcesMagic:
+				resourcesMagic = SaveData.SavedMagicCalculation[resourceType]["PotentialMagicGain"]
+			
+			var usedWoodCount = 0
+			
+			while resourceCount >= baseCost:
+				resourcesMagic += 1
+				resourceCount -= baseCost
+				usedWoodCount += baseCost
 				
 				if resourceType == "Gold":
-					thresholds = [250, 1000, 10000]
-					multipliers = [1.029, 1.002, 1.0006, 1.0003]
+					if resourcesMagic <= 250:
+						baseCost *= 1.029
+					elif resourcesMagic <= 1000:
+						baseCost *= 1.002
+					elif resourcesMagic <= 10000:
+						baseCost *= 1.0006
+					else:
+						baseCost *= 1.0003
 				else:
-					thresholds = [90,     1000,    10000,    100000,    250000,    5000000,   50000000,  500000000]
-					multipliers = [1.032, 1.00055, 1.000033, 1.0000045, 1.0000015, 1.0000009, 1.0000001, 1.00000009, 1.00000003]
+					if resourcesMagic <= 90:
+						baseCost *= 1.032
+					elif resourcesMagic <= 1000:
+						baseCost *= 1.00055
+					elif resourcesMagic <= 10000:
+						baseCost *= 1.000035
+					elif resourcesMagic <= 100000:
+						baseCost *= 1.00001
+					elif resourcesMagic <= 250000:
+						baseCost *= 1.0000017
+					elif resourcesMagic <= 5000000:
+						baseCost *= 1.000001
+					elif resourcesMagic <= 50000000:
+						baseCost *= 1.0000008
+					elif resourcesMagic <= 500000000:
+						baseCost *= 1.0000002
+					else:
+						baseCost *= 1.0000001
 
-				var level = 0
-				var currentMultiplier = multipliers[level]
+			if resourceCount > 0:
+				resourcesMagic += resourceCount / baseCost
+				usedWoodCount += resourceCount / baseCost
 				
-				while resourceCount >= baseCost:
-					var maxAffordable = floor(resourceCount / baseCost)  # Number of times we can afford at this base cost
-					var nextThreshold = thresholds[level] if level < thresholds.size() else INF
-					
-					if resourcesMagic + maxAffordable > nextThreshold:
-						maxAffordable = nextThreshold - resourcesMagic
-					
-					resourcesMagic += maxAffordable
-					resourceCount -= maxAffordable * baseCost
-					
-					for i in range(maxAffordable):
-						baseCost *= currentMultiplier
-					
-					while level < thresholds.size() and resourcesMagic >= thresholds[level]:
-						level += 1
-						currentMultiplier = multipliers[level]
-				
-				if resourceCount > 0:
-					resourcesMagic += resourceCount / baseCost
-				magic += resourcesMagic
-				
-			PotentialMagic = magic * Values.ResourceValues["Magic"]["GainMultip"] * 0.89
-		
-		await get_tree().create_timer(2.0).timeout
+			magic += resourcesMagic
+			
+			SaveData.SavedMagicCalculation[resourceType]["PotentialMagicGain"] = resourcesMagic
+			SaveData.SavedMagicCalculation[resourceType]["CurrentBaseCost"] = baseCost
+			SaveData.SavedMagicCalculation[resourceType]["WoodCountCalculatedOn"] += usedWoodCount
+			
+		Values.ResourceValues["Magic"]["PotentialMagic"] = magic * Values.ResourceValues["Magic"]["GainMultip"]
 
 func updateMagicValue(value):
 	Values.ResourceValues["Magic"]["PotentialMagic"] = PotentialMagic
@@ -130,13 +143,12 @@ func _on_ascend_button_button_down() -> void:
 func _on_timer_timeout() -> void:
 	checkMaxWoodCounts()
 	updateMagic()
+	calculatePotentialMagicGain()
 	
 	if floor(Values.ResourceValues["Magic"]["PotentialMagic"]) > 0:
 		AscendButton.disabled = false
 	else:
 		AscendButton.disabled = true
-	
-	Values.ResourceValues["Magic"]["PotentialMagic"] = PotentialMagic
 	
 	MagicLabel.text = "You have " + str(NumberFormatting.formatNumber(SaveData.Magic["Count"])) + " Magic"
 	

@@ -3,19 +3,16 @@ TODO
 First:
 Keep Playing
 
-Add
-Mahogany Storage 3x
+cap fishing chances to max, after load broken
+Adjust Magic Upgrade Costs
 
-Fix Loading Saves, When Another Is Already Loaded
-Fix Buy All Magic Upgrades Achievement
-Change Dam Item Cap to 100t
-
+Later:
 Need To Check Fishing Chance, how it works
 Write In Text Log Fishing Chance Or Bait Refunds
 If possible Show Text Log On Achievement Screen, or somehow indicate an unlocked Achievement
 Add Buy 10, 100 Merchants Buttons and Unlocks For Them
-
-Later:
+Fix Buy All Magic Upgrades Achievement
+Fix Loading Saves, When Another Is Already Loaded
 Fix bait selection visual bugs
 If there are remove upgrades that improve bots for one wood, add research and magic upgrades that do that
 Make Other Tooltips like the text log ones
@@ -240,4 +237,8 @@ Dams Item Label Round To 0.000001% and other fixes DONE
 Add Auto Research and show Auto Queued Research in The Text Log DONE
 Adjust Prices For Magic Locked Upgrades DONE
 Fix Dogwood Achievements DONE
-Fix Ebony 4
+Fix Ebony 4 DONE
+Push Down Dam Effects Magic Upgrades DONE
+Add 26 Magic Upgrades DONE
+Fix .5 Beavers DONE
+Round Fish Price DONE

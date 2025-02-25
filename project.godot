@@ -65,6 +65,7 @@ FishingGame=""
 FishingScreen=""
 BaitButton=""
 FinalDamItem=""
+ResourceScreen=""
 
 [gui]
 

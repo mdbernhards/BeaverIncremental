@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://ci2fcxc5eos5e" path="res://Scenes/GameMainScreenScenes/GameScenes/MarketSection/market_item.tscn" id="1_ilmxg"]
 [ext_resource type="Script" path="res://Scenes/GameMainScreenScenes/GameScenes/market_section.gd" id="1_xx4uw"]
 
-[node name="MarketSection" type="VBoxContainer"]
+[node name="MarketSection" type="VBoxContainer" groups=["MarketSection"]]
 custom_minimum_size = Vector2(798, 925)
 offset_right = 798.0
 offset_bottom = 926.0

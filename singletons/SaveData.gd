@@ -16,6 +16,7 @@ var OriginalMaxResourceCount
 var OriginalCaughtFish
 var OriginalShopItems
 var OriginalFishBiscuits
+var OriginalSavedMagicCalculation
 
 func _ready():
 	getOriginalValues()
@@ -36,6 +37,7 @@ func getOriginalValues():
 	OriginalCaughtFish = CaughtFish.duplicate(true)
 	OriginalShopItems = ShopItems.duplicate(true)
 	OriginalFishBiscuits = FishBiscuits.duplicate(true)
+	OriginalSavedMagicCalculation = SavedMagicCalculation.duplicate(true)
 
 func resetValues():
 	var tempUpgrades = Upgrades.duplicate(true)
@@ -77,6 +79,7 @@ func resetValues():
 	UnlockedResearch = OriginalUnlockedResearch.duplicate(true)
 	ResearchInfo = OriginalResearchInfo.duplicate(true)
 	MaxResourceCount = OriginalMaxResourceCount.duplicate(true)
+	SavedMagicCalculation = OriginalSavedMagicCalculation.duplicate(true)
 	
 	GeneralInfo["TempClickCount"] = 0
 	GeneralInfo["TempResearchDone"] = 0
@@ -116,6 +119,8 @@ func recalculateValues():
 	get_tree().get_first_node_in_group("ShopPage").setShopItems()
 	get_tree().get_first_node_in_group("FishingScreen").changePage(0) # Classic
 	get_tree().get_first_node_in_group("UpgradePage").changePage(1) # Classic
+	get_tree().get_first_node_in_group("ResourcePage").changePage(1) # Classic
+	get_tree().get_first_node_in_group("MarketSection").changePage(1) # Classic
 
 var Gold = {
 	"Count" : 0,
@@ -1305,6 +1310,89 @@ var UnlockedAchievements = {
 	"1" : false,
 	"2" : false,
 	"3" : false,
+}
+
+var SavedMagicCalculation = {
+	"Oak" : {
+		"WoodCountCalculatedOn" : 0,
+		"CurrentBaseCost" : 0,
+		"PotentialMagicGain" : 0,
+	},
+	"Apple" : {
+		"WoodCountCalculatedOn" : 0,
+		"CurrentBaseCost" : 0,
+		"PotentialMagicGain" : 0,
+	},
+	"Maple" : {
+		"WoodCountCalculatedOn" : 0,
+		"CurrentBaseCost" : 0,
+		"PotentialMagicGain" : 0,
+	},
+	"Birch" : {
+		"WoodCountCalculatedOn" : 0,
+		"CurrentBaseCost" : 0,
+		"PotentialMagicGain" : 0,
+	},
+	"Spruce" : {
+		"WoodCountCalculatedOn" : 0,
+		"CurrentBaseCost" : 0,
+		"PotentialMagicGain" : 0,
+	},
+	"Chestnut" : {
+		"WoodCountCalculatedOn" : 0,
+		"CurrentBaseCost" : 0,
+		"PotentialMagicGain" : 0,
+	},
+	"Cherry" : {
+		"WoodCountCalculatedOn" : 0,
+		"CurrentBaseCost" : 0,
+		"PotentialMagicGain" : 0,
+	},
+	"Ash" : {
+		"WoodCountCalculatedOn" : 0,
+		"CurrentBaseCost" : 0,
+		"PotentialMagicGain" : 0,
+	},
+	"Cedar" : {
+		"WoodCountCalculatedOn" : 0,
+		"CurrentBaseCost" : 0,
+		"PotentialMagicGain" : 0,
+	},
+	"Mahogany" : {
+		"WoodCountCalculatedOn" : 0,
+		"CurrentBaseCost" : 0,
+		"PotentialMagicGain" : 0,
+	},
+	"Ebony" : {
+		"WoodCountCalculatedOn" : 0,
+		"CurrentBaseCost" : 0,
+		"PotentialMagicGain" : 0,
+	},
+	"Dogwood" : {
+		"WoodCountCalculatedOn" : 0,
+		"CurrentBaseCost" : 0,
+		"PotentialMagicGain" : 0,
+	},
+	"Rosewood" : {
+		"WoodCountCalculatedOn" : 0,
+		"CurrentBaseCost" : 0,
+		"PotentialMagicGain" : 0,
+	},
+	"Ghost Gum" : {
+		"WoodCountCalculatedOn" : 0,
+		"CurrentBaseCost" : 0,
+		"PotentialMagicGain" : 0,
+	},
+	"Dragonwood" : {
+		"WoodCountCalculatedOn" : 0,
+		"CurrentBaseCost" : 0,
+		"PotentialMagicGain" : 0,
+	},
+	"Gold" : {
+		"WoodCountCalculatedOn" : 0,
+		"CurrentBaseCost" : 0,
+		"PotentialMagicGain" : 0,
+	},
 }
 
 var GeneralInfo = {

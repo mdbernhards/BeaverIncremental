@@ -1285,7 +1285,7 @@ var Research = {
 		"Time" : 37750, # Seconds
 		"OakCost" : 2e13, "AppleCost" : 1e13, "MapleCost" : 0, "BirchCost" : 2e12, "SpruceCost" : 1.5e12,
 		"ChestnutCost" : 0, "CherryCost" : 5e11, "AshCost" : 3.5e11, "CedarCost" : 0, "MahoganyCost" : 0,
-		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 100,
+		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 0,
 		"Unlocked" : func(): return true,
 	},
 	"107" :  {
@@ -1294,7 +1294,7 @@ var Research = {
 		"Time" : 38040, # Seconds
 		"OakCost" : 2.5e13, "AppleCost" : 0, "MapleCost" : 0, "BirchCost" : 0, "SpruceCost" : 1.75e12,
 		"ChestnutCost" : 6.5e11, "CherryCost" : 0, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 1e10,
-		"EbonyCost" : 1.5e9, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 100,
+		"EbonyCost" : 1.5e9, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 0,
 		"Unlocked" : func(): return true,
 	},
 	"108" :  {
@@ -1303,7 +1303,7 @@ var Research = {
 		"Time" : 39070, # Seconds
 		"OakCost" : 0, "AppleCost" : 0, "MapleCost" : 5e12, "BirchCost" : 0, "SpruceCost" : 0,
 		"ChestnutCost" : 0, "CherryCost" : 0, "AshCost" : 0, "CedarCost" : 3.5e11, "MahoganyCost" : 0,
-		"EbonyCost" : 0, "DogwoodCost" : 1e9, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 100,
+		"EbonyCost" : 0, "DogwoodCost" : 1e9, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 0,
 		"Unlocked" : func(): return true,
 	},
 	"109" :  {
@@ -1312,7 +1312,7 @@ var Research = {
 		"Time" : 39610, # Seconds
 		"OakCost" : 3e13, "AppleCost" : 1.5e13, "MapleCost" : 7.5e12, "BirchCost" : 2.5e12, "SpruceCost" : 1.75e12,
 		"ChestnutCost" : 9e11, "CherryCost" : 6.5e11, "AshCost" : 4.5e11, "CedarCost" : 4e11, "MahoganyCost" : 2e10,
-		"EbonyCost" : 3e9, "DogwoodCost" : 1.5e9, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 100,
+		"EbonyCost" : 3e9, "DogwoodCost" : 1.5e9, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 0,
 		"Unlocked" : func(): return true,
 	},
 	"110" :  {
@@ -1321,7 +1321,7 @@ var Research = {
 		"Time" : 40150, # Seconds
 		"OakCost" : 0, "AppleCost" : 1.65e13, "MapleCost" : 0, "BirchCost" : 3e12, "SpruceCost" : 0,
 		"ChestnutCost" : 0, "CherryCost" : 0, "AshCost" : 5e11, "CedarCost" : 0, "MahoganyCost" : 0,
-		"EbonyCost" : 0, "DogwoodCost" : 2e9, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 100,
+		"EbonyCost" : 0, "DogwoodCost" : 2e9, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 0,
 		"Unlocked" : func(): return true,
 	},
 	"111" :  {

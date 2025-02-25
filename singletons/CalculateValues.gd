@@ -621,38 +621,121 @@ func SetMagicValue(magicNr):
 			TempValues["Gold"]["UpgradePriceMultip"] *= 0.45
 		"48b" :
 			TempValues["Ebony"]["StorageMultip"] *= 3
+		"48c" :
+			TempValues["Global"]["BotPriceMultip"] *= 0.8
+		"48d" :
+			TempValues["Global"]["AchievementWpcMultip"] *= 1.25
+			TempValues["Global"]["AchievementWpsMultip"] *= 1.25
+			TempValues["Global"]["AchievementStorageMultip"] *= 1.25
+		"48e" :
+			TempValues["Oak"]["UpgradePriceMultip"] *= 0.5
+			TempValues["Apple"]["UpgradePriceMultip"] *= 0.5
+			TempValues["Maple"]["UpgradePriceMultip"] *= 0.5
+			TempValues["Birch"]["UpgradePriceMultip"] *= 0.5
+			TempValues["Spruce"]["UpgradePriceMultip"] *= 0.5
+		"48f" :
+			TempValues["Global"]["AutoClickers"] += 1
+		"48g" :
+			TempValues["Research"]["Time"] *= 0.5
 		"49" :
 			Unlocks.Unlocks["Upgrades"]["KeepClassicUpgrades"] = true
 		"49b" :
 			TempValues["Global"]["AutoClickerTickLength"] -= 0.1
+		"49c" :
+			TempValues["Global"]["WoodPriceMultip"] *= 1.55
 		"50" :
 			TempValues["Dam"]["SectionWpsMultip"] *= 1.15
 			TempValues["Dam"]["SectionWpcMultip"] *= 1.15
 			TempValues["Dam"]["SectionStorageMultip"] *= 1.15
 		"51" :
 			TempValues["Fish"]["BonusCapacity"] += 5
+		"51a" :
+			TempValues["Mahogany"]["StorageMultip"] *= 2
+			TempValues["Chestnut"]["StorageMultip"] *= 2
 		"51b" :
 			TempValues["Global"]["AutoClickers"] += 1
 		"52" :
 			TempValues["Dam"]["ConstructionSpeedMultip"] *= 2.5
+		"52a" :
+			TempValues["Research"]["PreUnlockedResearch"] += 10
+		"52b" :
+			TempValues["Fish"]["FishPriceMultip"] *= 2
+		"52c" :
+			TempValues["Chestnut"]["StorageMultip"] *= 1.35
+			TempValues["Cherry"]["StorageMultip"] *= 1.35
+			TempValues["Ash"]["StorageMultip"] *= 1.35
+			TempValues["Cedar"]["StorageMultip"] *= 1.35
+			TempValues["Mahogany"]["StorageMultip"] *= 1.35
+			TempValues["Ebony"]["StorageMultip"] *= 1.35
+			TempValues["Dogwood"]["StorageMultip"] *= 1.35
+			TempValues["Rosewood"]["StorageMultip"] *= 1.35
+			TempValues["Ghost Gum"]["StorageMultip"] *= 1.35
+			TempValues["Dragonwood"]["StorageMultip"] *= 1.35
 		"53" :
 			TempValues["Global"]["BotSellMoreMultip"] *= 1.2
+		"53b" :
+			TempValues["Global"]["AchievementStorageMultip"] *= 1.25
 		"54" :
 			TempValues["Fish"]["FishingChances"] += 1
+		"54a" :
+			TempValues["Global"]["AutoClickers"] += 1
+		"54b" :
+			TempValues["Chestnut"]["UpgradePriceMultip"] *= 0.34
+			TempValues["Cherry"]["UpgradePriceMultip"] *= 0.34
+			TempValues["Ash"]["UpgradePriceMultip"] *= 0.34
+			TempValues["Cedar"]["UpgradePriceMultip"] *= 0.34
+			TempValues["Mahogany"]["UpgradePriceMultip"] *= 0.34
 		"55" :
 			Unlocks.Unlocks["Upgrades"]["KeepRareUpgrades"] = true
+		"55b" :
+			TempValues["Research"]["PreUnlockedResearch"] += 10
 		"56" :
 			TempValues["Dam"]["SectionWpsMultip"] *= 1.20
 			TempValues["Dam"]["SectionWpcMultip"] *= 1.20
 			TempValues["Dam"]["SectionStorageMultip"] *= 1.20
+		"56a" :
+			TempValues["Global"]["AutoClickers"] += 1
+		"56b" :
+			TempValues["Global"]["BotSellMoreMultip"] *= 2
+		"56c" :
+			TempValues["Ebony"]["UpgradePriceMultip"] *= 0.25
+			TempValues["Dogwood"]["UpgradePriceMultip"] *= 0.25
+			TempValues["Rosewood"]["UpgradePriceMultip"] *= 0.25
+			TempValues["Ghost Gum"]["UpgradePriceMultip"] *= 0.25
+			TempValues["Dragonwood"]["UpgradePriceMultip"] *= 0.25
 		"57" :
 			Unlocks.Unlocks["Upgrades"]["KeepGoldUpgrades"] = true
+		"57a" :
+			TempValues["Oak"]["WpsMultip"] *= 2
+			TempValues["Apple"]["WpsMultip"] *= 2
+			TempValues["Maple"]["WpsMultip"] *= 2
+			TempValues["Birch"]["WpsMultip"] *= 2
+			TempValues["Spruce"]["WpsMultip"] *= 2
+			TempValues["Chestnut"]["WpsMultip"] *= 2
+			TempValues["Cherry"]["WpsMultip"] *= 2
+			TempValues["Ash"]["WpsMultip"] *= 2
+			TempValues["Cedar"]["WpsMultip"] *= 2
+			TempValues["Mahogany"]["WpsMultip"] *= 2
+		"57b" :
+			TempValues["Global"]["BotPriceMultip"] *= 0.25
 		"58" :
 			TempValues["Magic"]["EffectMultip"] *= 2
 		"59" :
 			TempValues["Global"]["UpgradePriceMultip"] *= 0.5
+		"59b" :
+			TempValues["Global"]["AutoClickers"] += 1
+		"59c" :
+			TempValues["Global"]["BeaverMultip"] *= 10
+		"59d" :
+			TempValues["Global"]["WpsMultip"] *= 5
 		"60" :
-			Unlocks.Unlocks["Magic"]["PasiveGain"] = true
+			TempValues["Global"]["BeaverPriceMultip"] *= 0.3
+		"60a" :
+			TempValues["Global"]["WcPriceMultip"] *= 0.45
+		"60b" :
+			TempValues["Global"]["AutoClickers"] += 1
+		"60c" :
+			TempValues["Global"]["StorageMultip"] *= 2
 		"61" :
 			TempValues["Dam"]["ConstructionSpeedMultip"] *= 3
 
@@ -1015,7 +1098,7 @@ func SetResearchValue(researchNr):
 		"99b" :
 			TempValues["Fish"]["FishingChanceRefreshTime"] -= 60
 		"100" :
-			TempValues["Global"]["ExtraBeavers"] += max(0, achievementCount / 20 - 0.5)
+			TempValues["Global"]["ExtraBeavers"] += round(max(0, achievementCount / 20 - 0.5))
 		"101" :
 			TempValues["Mahogany"]["WpsMultip"] *= 1.22
 		"102" :

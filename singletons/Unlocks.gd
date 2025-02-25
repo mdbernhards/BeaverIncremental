@@ -421,7 +421,6 @@ var Unlocks = {
 	"Magic" : {
 		"Ascention" : false,
 		"Upgrades" : false,
-		"PasiveGain" : false,
 		"MagicItems" : {},
 	},
 	"Dams" : {

@@ -46,40 +46,70 @@ layout_mode = 2
 theme_override_constants/separation = 6
 alignment = 1
 
-[node name="LeftPageButton" type="Button" parent="UpgradePage/UpgradeTabs/HBox/TabButtonsMC/HBox"]
+[node name="MC" type="MarginContainer" parent="UpgradePage/UpgradeTabs/HBox/TabButtonsMC/HBox"]
+layout_mode = 2
+size_flags_horizontal = 2
+
+[node name="LeftPageButton" type="Button" parent="UpgradePage/UpgradeTabs/HBox/TabButtonsMC/HBox/MC"]
 custom_minimum_size = Vector2(30, 0)
 layout_mode = 2
+size_flags_horizontal = 2
 theme_override_font_sizes/font_size = 19
 text = "<"
 
-[node name="UpgradeTabButton1" type="Button" parent="UpgradePage/UpgradeTabs/HBox/TabButtonsMC/HBox"]
+[node name="MC2" type="MarginContainer" parent="UpgradePage/UpgradeTabs/HBox/TabButtonsMC/HBox"]
+custom_minimum_size = Vector2(95, 0)
+layout_mode = 2
+
+[node name="UpgradeTabButton1" type="Button" parent="UpgradePage/UpgradeTabs/HBox/TabButtonsMC/HBox/MC2"]
 custom_minimum_size = Vector2(95, 0)
 layout_mode = 2
 text = "Oak"
 
-[node name="UpgradeTabButton2" type="Button" parent="UpgradePage/UpgradeTabs/HBox/TabButtonsMC/HBox"]
+[node name="MC3" type="MarginContainer" parent="UpgradePage/UpgradeTabs/HBox/TabButtonsMC/HBox"]
+custom_minimum_size = Vector2(95, 0)
+layout_mode = 2
+
+[node name="UpgradeTabButton2" type="Button" parent="UpgradePage/UpgradeTabs/HBox/TabButtonsMC/HBox/MC3"]
 custom_minimum_size = Vector2(95, 0)
 layout_mode = 2
 text = "Apple"
 
-[node name="UpgradeTabButton3" type="Button" parent="UpgradePage/UpgradeTabs/HBox/TabButtonsMC/HBox"]
+[node name="MC4" type="MarginContainer" parent="UpgradePage/UpgradeTabs/HBox/TabButtonsMC/HBox"]
+custom_minimum_size = Vector2(95, 0)
+layout_mode = 2
+
+[node name="UpgradeTabButton3" type="Button" parent="UpgradePage/UpgradeTabs/HBox/TabButtonsMC/HBox/MC4"]
 custom_minimum_size = Vector2(95, 0)
 layout_mode = 2
 text = "Maple"
 
-[node name="UpgradeTabButton4" type="Button" parent="UpgradePage/UpgradeTabs/HBox/TabButtonsMC/HBox"]
+[node name="MC5" type="MarginContainer" parent="UpgradePage/UpgradeTabs/HBox/TabButtonsMC/HBox"]
+custom_minimum_size = Vector2(95, 0)
+layout_mode = 2
+
+[node name="UpgradeTabButton4" type="Button" parent="UpgradePage/UpgradeTabs/HBox/TabButtonsMC/HBox/MC5"]
 custom_minimum_size = Vector2(95, 0)
 layout_mode = 2
 text = "Birch"
 
-[node name="UpgradeTabButton5" type="Button" parent="UpgradePage/UpgradeTabs/HBox/TabButtonsMC/HBox"]
+[node name="MC6" type="MarginContainer" parent="UpgradePage/UpgradeTabs/HBox/TabButtonsMC/HBox"]
+custom_minimum_size = Vector2(95, 0)
+layout_mode = 2
+
+[node name="UpgradeTabButton5" type="Button" parent="UpgradePage/UpgradeTabs/HBox/TabButtonsMC/HBox/MC6"]
 custom_minimum_size = Vector2(95, 0)
 layout_mode = 2
 text = "Spruce"
 
-[node name="RightPageButton" type="Button" parent="UpgradePage/UpgradeTabs/HBox/TabButtonsMC/HBox"]
+[node name="MC7" type="MarginContainer" parent="UpgradePage/UpgradeTabs/HBox/TabButtonsMC/HBox"]
+layout_mode = 2
+size_flags_horizontal = 10
+
+[node name="RightPageButton" type="Button" parent="UpgradePage/UpgradeTabs/HBox/TabButtonsMC/HBox/MC7"]
 custom_minimum_size = Vector2(30, 0)
 layout_mode = 2
+size_flags_horizontal = 10
 theme_override_font_sizes/font_size = 19
 text = ">"
 
@@ -282,13 +312,13 @@ wait_time = 2.0
 autostart = true
 
 [connection signal="timeout" from="UpgradePage/UpgradeTabs/UpgradeTabTimer" to="UpgradePage" method="_on_upgrade_tab_timer_timeout"]
-[connection signal="button_down" from="UpgradePage/UpgradeTabs/HBox/TabButtonsMC/HBox/LeftPageButton" to="." method="_on_left_page_button_button_down"]
-[connection signal="button_down" from="UpgradePage/UpgradeTabs/HBox/TabButtonsMC/HBox/UpgradeTabButton1" to="UpgradePage" method="_on_upgrade_tab_button_1_button_down"]
-[connection signal="button_down" from="UpgradePage/UpgradeTabs/HBox/TabButtonsMC/HBox/UpgradeTabButton2" to="UpgradePage" method="_on_upgrade_tab_button_2_button_down"]
-[connection signal="button_down" from="UpgradePage/UpgradeTabs/HBox/TabButtonsMC/HBox/UpgradeTabButton3" to="UpgradePage" method="_on_upgrade_tab_button_3_button_down"]
-[connection signal="button_down" from="UpgradePage/UpgradeTabs/HBox/TabButtonsMC/HBox/UpgradeTabButton4" to="UpgradePage" method="_on_upgrade_tab_button_4_button_down"]
-[connection signal="button_down" from="UpgradePage/UpgradeTabs/HBox/TabButtonsMC/HBox/UpgradeTabButton5" to="UpgradePage" method="_on_upgrade_tab_button_5_button_down"]
-[connection signal="button_down" from="UpgradePage/UpgradeTabs/HBox/TabButtonsMC/HBox/RightPageButton" to="." method="_on_right_page_button_button_down"]
+[connection signal="button_down" from="UpgradePage/UpgradeTabs/HBox/TabButtonsMC/HBox/MC/LeftPageButton" to="." method="_on_left_page_button_button_down"]
+[connection signal="button_down" from="UpgradePage/UpgradeTabs/HBox/TabButtonsMC/HBox/MC2/UpgradeTabButton1" to="UpgradePage" method="_on_upgrade_tab_button_1_button_down"]
+[connection signal="button_down" from="UpgradePage/UpgradeTabs/HBox/TabButtonsMC/HBox/MC3/UpgradeTabButton2" to="UpgradePage" method="_on_upgrade_tab_button_2_button_down"]
+[connection signal="button_down" from="UpgradePage/UpgradeTabs/HBox/TabButtonsMC/HBox/MC4/UpgradeTabButton3" to="UpgradePage" method="_on_upgrade_tab_button_3_button_down"]
+[connection signal="button_down" from="UpgradePage/UpgradeTabs/HBox/TabButtonsMC/HBox/MC5/UpgradeTabButton4" to="UpgradePage" method="_on_upgrade_tab_button_4_button_down"]
+[connection signal="button_down" from="UpgradePage/UpgradeTabs/HBox/TabButtonsMC/HBox/MC6/UpgradeTabButton5" to="UpgradePage" method="_on_upgrade_tab_button_5_button_down"]
+[connection signal="button_down" from="UpgradePage/UpgradeTabs/HBox/TabButtonsMC/HBox/MC7/RightPageButton" to="." method="_on_right_page_button_button_down"]
 [connection signal="button_down" from="UpgradePage/UpgradeTabs/HBox/BuyMaxMC/AllTabsBuyMaxButton" to="UpgradePage" method="_on_all_tabs_buy_max_button_button_down"]
 [connection signal="button_down" from="UpgradePage/Upgrades/VBox/TopHBox/BuyMaxMC/TabBuyMaxButton" to="UpgradePage/Upgrades" method="_on_tab_buy_max_button_button_down"]
 [connection signal="timeout" from="UpgradePage/Upgrades/UpgradesRefreshTimer" to="UpgradePage/Upgrades" method="_on_upgrades_refresh_timer_timeout"]

@@ -56,11 +56,11 @@ func setUpgradeTabButtons():
 		TabButtons[i].text = ResourceTypes[i]
 
 func setNodePaths():
-	TabButtons.append($UpgradeTabs/HBox/TabButtonsMC/HBox/UpgradeTabButton1)
-	TabButtons.append($UpgradeTabs/HBox/TabButtonsMC/HBox/UpgradeTabButton2)
-	TabButtons.append($UpgradeTabs/HBox/TabButtonsMC/HBox/UpgradeTabButton3)
-	TabButtons.append($UpgradeTabs/HBox/TabButtonsMC/HBox/UpgradeTabButton4)
-	TabButtons.append($UpgradeTabs/HBox/TabButtonsMC/HBox/UpgradeTabButton5)
+	TabButtons.append($UpgradeTabs/HBox/TabButtonsMC/HBox/MC2/UpgradeTabButton1)
+	TabButtons.append($UpgradeTabs/HBox/TabButtonsMC/HBox/MC3/UpgradeTabButton2)
+	TabButtons.append($UpgradeTabs/HBox/TabButtonsMC/HBox/MC4/UpgradeTabButton3)
+	TabButtons.append($UpgradeTabs/HBox/TabButtonsMC/HBox/MC5/UpgradeTabButton4)
+	TabButtons.append($UpgradeTabs/HBox/TabButtonsMC/HBox/MC6/UpgradeTabButton5)
 	
 	UpgradesNode = $Upgrades
 	AllTabsCantAffordRect = $UpgradeTabs/HBox/BuyMaxMC/AllTabsBuyMaxButton/AllTabsCantAffordRect

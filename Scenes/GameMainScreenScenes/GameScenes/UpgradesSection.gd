@@ -40,8 +40,8 @@ func setNodePaths():
 	Page2Button = $PageButtons/HBox/PageButtonMC/HBox/Page2Button
 	Page3Button = $PageButtons/HBox/PageButtonMC/HBox/Page3Button
 	Page4Button = $PageButtons/HBox/PageButtonMC/HBox/Page4Button
-	LeftPageButton = $UpgradePage/UpgradeTabs/HBox/TabButtonsMC/HBox/LeftPageButton
-	RightPageButton = $UpgradePage/UpgradeTabs/HBox/TabButtonsMC/HBox/RightPageButton
+	LeftPageButton = $UpgradePage/UpgradeTabs/HBox/TabButtonsMC/HBox/MC/LeftPageButton
+	RightPageButton = $UpgradePage/UpgradeTabs/HBox/TabButtonsMC/HBox/MC7/RightPageButton
 
 func _on_page_buttons_timer_timeout() -> void:
 	if Unlocks.Unlocks["Chestnut"]["Unlocked"] or Unlocks.Unlocks["Gold"]["Unlocked"] or Values.DebugMode:

@@ -21,9 +21,9 @@ func getBeaverCost(beaverCount, woodType):
 		"Cedar" :
 			return round(pow(2.92, beaverCount) + 273 * pow(beaverCount, 7.03)) + beaverCount    * 4999666      + 8666666
 		"Mahogany" :
-			return round(pow(3.01, beaverCount) + 2111 * pow(beaverCount, 7.15)) + beaverCount   * 399264666    + 24864666
+			return round(pow(3.01, beaverCount) + 2111 * pow(beaverCount, 7.12)) + beaverCount   * 399264666    + 24864666
 		"Ebony" :
-			return round(pow(3.23, beaverCount) + 8294 * pow(beaverCount, 7.35)) + beaverCount   * 846661525    + 212661525
+			return round(pow(3.23, beaverCount) + 6294 * pow(beaverCount, 7.15)) + beaverCount   * 846661525    + 212661525
 		"Dogwood" :
 			return round(pow(3.36, beaverCount) + 26236 * pow(beaverCount, 7.56)) + beaverCount  * 2400966634   + 855766634
 		"Rosewood" :
@@ -316,7 +316,7 @@ func getUpgradeCost(level, woodType, upgradeNr): # first number more later, seco
 				"1" :
 					return round(pow(1.749, level) + 222.576 * pow(level, 7.04)) + level  * 6114327        + 3467442
 				"2" :
-					return round(pow(1.722, level) + 311.486 * pow(level, 6.71)) + level  * 32215675       + 21143464
+					return round(pow(1.722, level) + 311.486 * pow(level, 6.11)) + level  * 29215675       + 21143464
 				"3" :
 					return round(pow(1.413, level) + 11947.5 * pow(level, 8.87)) + level  * 165232654      + 63533262
 				"4" :
@@ -336,7 +336,7 @@ func getUpgradeCost(level, woodType, upgradeNr): # first number more later, seco
 		"Dogwood" :
 			match upgradeNr :
 				"1" :
-					return round(pow(1.954, level) + 333.375 * pow(level, 4.64)) + level * 9355524        + 5535955
+					return round(pow(1.954, level) + 333.375 * pow(level, 5.64)) + level * 9355524        + 5535955
 				"2" :
 					return round(pow(1.525, level) + 385.409 * pow(level, 9.64)) + level * 75432335       + 33445215
 				"3" :

@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://Scenes/GameMainScreenScenes/GameScenes/ResourceScreen/ResourcePage.gd" id="2_0raen"]
 [ext_resource type="PackedScene" uid="uid://co5g5f1jr31nm" path="res://Scenes/GameMainScreenScenes/GameScenes/ResourceScreen/bar_item.tscn" id="3_2g2q1"]
 
-[node name="ResourceScreen" type="VBoxContainer"]
+[node name="ResourceScreen" type="VBoxContainer" groups=["ResourceScreen"]]
 custom_minimum_size = Vector2(1055, 0)
 size_flags_horizontal = 4
 size_flags_vertical = 0
