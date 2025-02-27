@@ -38,7 +38,7 @@ func SetupNodePaths():
 
 func _on_fish_page_refresh_timer_timeout() -> void:
 	if CurrentBiscutsLabel:
-		CurrentBiscutsLabel.text = "Fish Biscuits: " + str(floor(SaveData.FishBiscuits["Count"] * 10) / 10)
+		CurrentBiscutsLabel.text = "Fish Biscuits: " + NumberFormatting.formatNumber(floor(SaveData.FishBiscuits["Count"] * 10) / 10)
 		
 	if FishItemGrid.get_child_count() > 0:
 		NoFishLabel.visible = false

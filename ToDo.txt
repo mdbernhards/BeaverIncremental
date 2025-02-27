@@ -3,27 +3,35 @@ TODO
 First:
 Keep Playing
 
-Scale Up Dam Unlock Costs even more
+127b
+b Oak
+c Apple
+d Maple
+e Birch
+f Spruce
+g Chestnut
+h Cherry
+i Ash
+j Cedar
+k Mahogany
+l Ebony
+m Dogwood
+n Rosewood
+o Ghost Gum
+
+Def Before Launch:
+Need To Fix Fishing Chance
+Write In Text Log Fishing Chance Or Bait Refunds
+Fix Buy All Magic Upgrades Achievement
+Making The Game Playable from start to finish
+Color gold prices yellow, fish biscuts orange and Magic purple
 
 Later:
 Show 10x, 100x Merchant price on mouseover
-Show How many Upgrades Bought With Buy Max In Text Log
-Need To Check Fishing Chance, how it works
-Write In Text Log Fishing Chance Or Bait Refunds
 If possible Show Text Log On Achievement Screen, or somehow indicate an unlocked Achievement
-Fix Buy All Magic Upgrades Achievement
-Fix Loading Saves, When Another Is Already Loaded
 Fix bait selection visual bugs
-If there are remove upgrades that improve bots for one wood, add research and magic upgrades that do that
-Make Other Tooltips like the text log ones
-Around research 80 make clicking good again
 Make Page And Tab Buttons Toggleable Radio Buttons
 Add < and > Buttons for bars and market
-Balance Fishing
-Making The Game Playable from start to finish
-Dam completion and Effect application
-Dam Achievements
-Change the bad achievements (Fishing Item Shop, think of more)
 Tooltip on resource bar for incoming / outgoing wood breakdown
 Tooltip on mouse over magic label to see how much magic each resource gives
 implement auto research
@@ -35,10 +43,8 @@ Settings screen
 Add to Scrolling log fishing, dams built and others
 Apply ResourceValues in Values for Fishing and Dams when implemented
 10x, 100x or sell to limit for fish
-Upgrade level cap at 100 and 10
 Set Number Notation for all numbers missing it
 Hide/Show Buttons faster when loading
-Color gold prices yellow, fish biscuts orange and Magic purple???
 Check if All Tabs BuyMax Works
 Might Need To Check Upgrade Trigger to not buy it with buy max button
 Market Sell Precentige Doesn't Save When Switching Page
@@ -252,3 +258,6 @@ Fix Mahogany DONE
 Scale Down Fishing Upgrades DONE
 Scale Up Research Times DONE
 Add More Research Costs DONE
+Show How many Upgrades Bought With Buy Max In Text Log DONE
+Scale Up Dam Unlock Costs even more DONE
+Add notation To Magic Locks, Fish Buiscits, Fish shop item prices DONE

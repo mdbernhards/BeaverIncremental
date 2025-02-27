@@ -71,11 +71,11 @@ func changeItemType(woodType = WoodType):
 
 func updateValues():
 	WoodLossIfSold = floor(SaveData.Resources[WoodType]["Count"]) * SellAmountSlider.value / 100
-	GoldGainedIfSold = WoodLossIfSold * Values.ResourceValues[WoodType]["SoldFor"]
+	GoldGainedIfSold = float(WoodLossIfSold * Values.ResourceValues[WoodType]["SoldFor"])
 	
 	CurrentWoodCountLabel.text = str(NumberFormatting.formatNumber(floor(SaveData.Resources[WoodType]["Count"]))) + " " + WoodType
 	SellAmountLabel.text = str(NumberFormatting.formatNumber(roundi(WoodLossIfSold))) + " " + WoodType
-	SellGoldGainLabel.text = str(NumberFormatting.formatNumber(roundi(GoldGainedIfSold))) + " Gold"
+	SellGoldGainLabel.text = str(NumberFormatting.formatNumber(roundf(GoldGainedIfSold))) + " Gold"
 	BotPriceLabel.text = "Price: " + str(NumberFormatting.formatNumber(roundi(CalculatePrice.getBotCost(SaveData.Resources[WoodType]["Bots"], WoodType)))) + " gold"
 	BotCountLabel.text = str(SaveData.Resources[WoodType]["Bots"])
 	

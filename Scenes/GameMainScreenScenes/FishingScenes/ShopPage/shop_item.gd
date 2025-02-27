@@ -47,17 +47,17 @@ func setShopItem():
 		BuyVbox.visible = false
 		UnlockVBox.visible = true
 		
-		UnlockButton.text = str(UnlockPrice)
+		UnlockButton.text = NumberFormatting.formatNumber(UnlockPrice)
 	elif IsBait or HasCount:
 		BuyVbox.visible = true
 		UnlockVBox.visible = false
 		ItemCountRect.visible = true
 		
 		ItemCountLabel.text = str(Count)
-		BuyButton.text = str(getPrice())
+		BuyButton.text = NumberFormatting.formatNumber(getPrice())
 	else:
 		ItemCountRect.visible = false
-		BuyButton.text = str(getPrice())
+		BuyButton.text = NumberFormatting.formatNumber(getPrice())
 		
 		if ShopItemType == Fishing.ShopItemEnum.WpsBonus1 or ShopItemType == Fishing.ShopItemEnum.WpsBonus2 or ShopItemType == Fishing.ShopItemEnum.WpsBonus3 \
 		or ShopItemType == Fishing.ShopItemEnum.WpcBonus1 or ShopItemType == Fishing.ShopItemEnum.WpcBonus2 or ShopItemType == Fishing.ShopItemEnum.WpcBonus3:
@@ -161,7 +161,7 @@ func RefreshItemValues():
 				else:
 					BuyButton.disabled = false
 	elif Unlocked:
-		BuyButton.text = str(getPrice())
+		BuyButton.text = NumberFormatting.formatNumber(getPrice())
 		if SaveData.FishBiscuits["Count"] >= getPrice():
 			BuyButton.disabled = false
 		else:
@@ -214,6 +214,11 @@ func getPrice():
 		return Price
 	
 	var priceMultip = SaveData.ShopItems[ShopItemType]["Count"]
+	
+	if priceMultip > 45:
+		var multip = priceMultip / 40.0
+		priceMultip *= multip
+	
 	return max(round((0.04 * pow(priceMultip, 3) + pow(priceMultip, 2) + priceMultip + Price) * Price / 5), 1)
 
 func setupNodePaths():

@@ -188,7 +188,7 @@ func getUpgradeCost(level, woodType, upgradeNr): # first number more later, seco
 				"3" :
 					return round(pow(1.731, level) + 3.557 * pow(level, 2.68)) + level  * 8265       + 6899
 				"4" :
-					return round(pow(1.762, level) + 1.456 * pow(level, 3.23)) + level  * 32000      + 16499
+					return round(pow(1.777, level) + 1.456 * pow(level, 3.23)) + level  * 32000      + 16499
 				"5" :
 					return round(pow(1.699, level) + 1.330 * pow(level, 3.42)) + level  * 91250      + 45499
 				"6" :
@@ -222,7 +222,7 @@ func getUpgradeCost(level, woodType, upgradeNr): # first number more later, seco
 				"9" :
 					return round(pow(2.131, level) + 51340 * pow(level, 7.77)) + level * 735512800  + 329999900
 				"10" :
-					return round(pow(2.35, level) + 8993246 * pow(level, 7.9)) + level * 9839992200 + 9292100000
+					return round(pow(2.46, level) + 9993246 * pow(level, 8.02)) + level * 9939992200 + 9292100000
 		"Cherry" :
 			match upgradeNr :
 				"1" :
@@ -236,9 +236,9 @@ func getUpgradeCost(level, woodType, upgradeNr): # first number more later, seco
 				"5" :
 					return round(pow(1.682, level) + 6.666 * pow(level, 5.22)) + level   * 171250      + 224499
 				"6" :
-					return round(pow(1.693, level) + 12.545 * pow(level, 6.95)) + level  * 545150      + 4217999
+					return round(pow(1.737, level) + 12.545 * pow(level, 6.95)) + level  * 545150      + 4217999
 				"7" :
-					return round(pow(1.499, level) + 3569.5 * pow(level, 7.86)) + level  * 189178625   + 33114499
+					return round(pow(2.631, level) + 3569.5 * pow(level, 7.86)) + level  * 189178625   + 33114499
 				"8" :
 					return round(pow(2.437, level) + 35.386 * pow(level, 11.76)) + level * 312318128   + 2153699999
 				"9" :
@@ -254,13 +254,13 @@ func getUpgradeCost(level, woodType, upgradeNr): # first number more later, seco
 				"3" :
 					return round(pow(1.666, level) + 335.3 * pow(level, 7.79)) + level    * 1888416     + 489239
 				"4" :
-					return round(pow(1.799, level) + 9.967 * pow(level, 8.08)) + level    * 244320      + 311499
+					return round(pow(2.064, level) + 99.99 * pow(level, 9.46)) + level    * 254320      + 311499
 				"5" :
 					return round(pow(1.798, level) + 99.555 * pow(level, 7.74)) + level   * 2754530     + 4443499
 				"6" :
-					return round(pow(1.678, level) + 222.66 * pow(level, 6.49)) + level   * 692553420   + 199312999
+					return round(pow(1.758, level) + 222.66 * pow(level, 6.49)) + level   * 692553420   + 199312999
 				"7" :
-					return round(pow(1.567, level) + 2851.4 * pow(level, 6.94)) + level   * 1492214450  + 743214499
+					return round(pow(1.572, level) + 4852.4 * pow(level, 6.99)) + level   * 1592214450  + 743214499
 				"8" :
 					return round(pow(1.667, level) + 77.328 * pow(level, 14.4)) + level   * 112358128   + 4143456999
 				"9" :
@@ -278,9 +278,9 @@ func getUpgradeCost(level, woodType, upgradeNr): # first number more later, seco
 				"4" :
 					return round(pow(2.139, level) + 777.221 * pow(level, 6.25)) + level * 4464300       + 5644399
 				"5" :
-					return round(pow(1.855, level) + 88827.1 * pow(level, 6.55)) + level * 2924664250    + 264432499
+					return round(pow(1.866, level) + 99999.9 * pow(level, 6.66)) + level * 2994664250    + 264432499
 				"6" :
-					return round(pow(1.657, level) + 111.207 * pow(level, 7.73)) + level * 756443330     + 736447999
+					return round(pow(1.699, level) + 149.207 * pow(level, 7.77)) + level * 7777443330     + 736447999
 				"7" :
 					return round(pow(1.971, level) + 222.372 * pow(level, 6.25)) + level * 9425544450    + 5364314499
 				"8" :
@@ -302,7 +302,7 @@ func getUpgradeCost(level, woodType, upgradeNr): # first number more later, seco
 				"5" :
 					return round(pow(1.943, level) + 99998.4 * pow(level, 5.95)) + level  * 95451250      + 144923190
 				"6" :
-					return round(pow(1.680, level) + 144.220 * pow(level, 8.32)) + level  * 93232250      + 395443990
+					return round(pow(1.999, level) + 145.520 * pow(level, 8.35)) + level  * 94232250      + 395443990
 				"7" :
 					return round(pow(1.793, level) + 266.362 * pow(level, 8.5)) + level   * 1243246250    + 632457449
 				"8" :
@@ -326,7 +326,7 @@ func getUpgradeCost(level, woodType, upgradeNr): # first number more later, seco
 				"6" :
 					return round(pow(1.836, level) + 211.111 * pow(level, 6.33)) + level  * 12456227501    + 1945635342
 				"7" :
-					return round(pow(1.623, level) + 317.350 * pow(level, 6.21)) + level  * 286543662503   + 129499436544
+					return round(pow(1.923, level) + 9673.53 * pow(level, 8.88)) + level  * 986543662503   + 129499436544
 				"8" :
 					return round(pow(2.574, level) + 948.122 * pow(level, 8.26)) + level  * 1474567218284  + 499992354543
 				"9" :

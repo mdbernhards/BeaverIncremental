@@ -46,6 +46,14 @@ func setNodePaths():
 	TabBuyMaxButton = $VBox/TopHBox/BuyMaxMC/TabBuyMaxButton
 
 func _on_tab_buy_max_button_button_down() -> void:
+	var upgradesBought = buyMaxPage()
+	
+	if upgradesBought > 9:
+		get_tree().get_first_node_in_group("TextLogSection").writeToLog("Bought " + str(upgradesBought) + " upgrades")
+
+func buyMaxPage():
+	var upgradesBought = 0
+	
 	while true:
 		var cheapestItem = ItemGrid.get_child(1)
 		
@@ -55,7 +63,9 @@ func _on_tab_buy_max_button_button_down() -> void:
 					cheapestItem = upgradeItem
 				
 		if !cheapestItem._on_buy_button_button_down():
-			return
+			return upgradesBought
+			
+		upgradesBought += 1
 
 func _on_upgrades_refresh_timer_timeout() -> void:
 	if Unlocks.Unlocks[ResourceType]["PageBuyMax"] or Values.DebugMode:

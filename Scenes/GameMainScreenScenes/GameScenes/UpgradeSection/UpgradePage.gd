@@ -87,11 +87,16 @@ func _on_upgrade_tab_button_5_button_down():
 	UpgradesNode.setupUpgradeTabForWoodType(ResourceTypes[4])
 
 func _on_all_tabs_buy_max_button_button_down() -> void:
+	var upgradesBought = 0
+	
 	for resourceType in ResourceTypes:
 		UpgradesNode.setupUpgradeTabForWoodType(resourceType)
-		UpgradesNode._on_tab_buy_max_button_button_down()
+		upgradesBought += UpgradesNode.buyMaxPage()
 		
 	UpgradesNode.setupUpgradeTabForWoodType(CurrentResourceType)
+	
+	if upgradesBought > 9:
+		get_tree().get_first_node_in_group("TextLogSection").writeToLog("Bought " + str(upgradesBought) + " upgrades")
 
 func _on_upgrade_tab_timer_timeout() -> void:
 	checkIfCanAfford()

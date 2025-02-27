@@ -76,7 +76,7 @@ func changeUpgrade(woodType, upgradeNr = UpgradeNumber):
 	SecondaryName = null
 	
 	if upgrade.has("MagicCost"):
-		MagicLockButton.text = str(upgrade.MagicCost) + " Magic"
+		MagicLockButton.text = NumberFormatting.formatNumber(upgrade.MagicCost) + " Magic"
 	
 	if upgrade.has("SecondaryName"):
 		SecondaryName = upgrade.SecondaryName
@@ -140,9 +140,15 @@ func _on_buy_button_button_down():
 
 func _on_buy_max_button_button_down() -> void:
 	var keepBuying = true
+	var upgradesBought = 0
 	
 	while keepBuying:
 		keepBuying = _on_buy_button_button_down()
+		upgradesBought += 1
+	
+	upgradesBought -= 1
+	if upgradesBought > 9:
+		get_tree().get_first_node_in_group("TextLogSection").writeToLog("Bought " + str(upgradesBought) + " upgrades")
 
 func _on_upgrade_item_timer_timeout() -> void:
 	updateAffordabilityIndicator()
