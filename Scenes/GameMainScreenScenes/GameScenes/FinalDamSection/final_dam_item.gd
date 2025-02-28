@@ -23,7 +23,7 @@ var CompletedLabel
 		ProductionSlider.value = SaveData.FinalDamData[WoodType]["ProductionSpeedSlider"]
 		WoodProgressBar.tint_progress = Values.ResourceValues[WoodType]["Color"]
 		BGColorRect.color = Values.ResourceValues[WoodType]["SecondaryColor"]
-		UnlockButton.text = str(Values.ResourceValues[WoodType]["MagicToUnlockDamSection"]) + " Magic"
+		UnlockButton.text = NumberFormatting.formatNumber(Values.ResourceValues[WoodType]["MagicToUnlockDamSection"]) + " Magic"
 
 var TotalNeeded = 1e15 + 1000
 var UnlockCost = 1e9
@@ -45,7 +45,7 @@ func checkIfCanAfford():
 	return SaveData.Magic["Count"] >= Values.ResourceValues[WoodType]["MagicToUnlockDamSection"]
 
 func updateBarValues():
-	PerSecondLabel.text = str(NumberFormatting.formatNumber(roundi(Values.ResourceValues[WoodType]["FinalDamPerSecond"]))) + " Per Sec"
+	PerSecondLabel.text = str(NumberFormatting.formatNumber(roundf(Values.ResourceValues[WoodType]["FinalDamPerSecond"]))) + " Per Sec"
 	StorageLabel.text = str(NumberFormatting.formatNumber(max(0, floor(SaveData.FinalDamData[WoodType]["ResourceCountUsed"])))) + " / " + str(NumberFormatting.formatNumber(TotalNeeded + 1))
 	
 	var progressPercentige = remap(SaveData.FinalDamData[WoodType]["ResourceCountUsed"], 0, TotalNeeded, 0, 100)
@@ -64,7 +64,8 @@ func roundPercentige(percentige):
 		return roundf(percentige * 10)/10
 
 func checkIfCompleted():
-	if SaveData.FinalDamData[WoodType]["ResourceCountUsed"] >= TotalNeeded:
+	if SaveData.FinalDamData[WoodType]["ResourceCountUsed"] >= TotalNeeded and SaveData.FinalDamData[WoodType]["Completed"] == false:
+		get_tree().get_first_node_in_group("TextLogSection").writeToLog(WoodType + " Section of the dam is completed!")
 		SaveData.FinalDamData[WoodType]["Completed"] = true
 
 func _on_production_slider_value_changed(value: float) -> void:

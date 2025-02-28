@@ -23,7 +23,6 @@ func checkForUnlocks():
 		elif !Unlocks["Achievements"]["AchievementUnlocks"][num] and achievementCount >= num:
 			Unlocks["Achievements"]["AchievementUnlocks"][num] = true
 			get_tree().get_first_node_in_group("TextLogSection").writeToLog(str(num) + " Achievements Unlocked")
-			# When finished update to add the effects
 		num += 5
 	
 	if achievementCount >= 5:
@@ -91,43 +90,43 @@ func checkForUnlocks():
 	if achievementCount >= 165:
 		pass
 	if achievementCount >= 170:
-		Unlocks["Ebony"]["ButtonBuyMax"] = true
+		pass
 	if achievementCount >= 175:
-		Unlocks["Gold"]["PageBuyMax"] = true
+		pass
 	if achievementCount >= 180:
-		Unlocks["Dogwood"]["ButtonBuyMax"] = true
+		Unlocks["Ebony"]["PageBuyMax"] = true
 	if achievementCount >= 185:
 		pass
 	if achievementCount >= 190:
-		Unlocks["Rosewood"]["ButtonBuyMax"] = true
+		Unlocks["Gold"]["PageBuyMax"] = true
 	if achievementCount >= 195:
-		Unlocks["Market"]["Bots"]["100x Buy"] = true
+		pass
 	if achievementCount >= 200:
-		Unlocks["Ghost Gum"]["ButtonBuyMax"] = true
+		Unlocks["Dogwood"]["PageBuyMax"] = true
 	if achievementCount >= 205:
 		pass
 	if achievementCount >= 210:
-		Unlocks["Dragonwood"]["ButtonBuyMax"] = true
+		Unlocks["Rosewood"]["PageBuyMax"] = true
 	if achievementCount >= 215:
 		pass
 	if achievementCount >= 220:
-		Unlocks["Upgrades"]["MythicBuyMax"] = true
+		pass
 	if achievementCount >= 225:
 		pass
 	if achievementCount >= 230:
-		pass
+		Unlocks["Market"]["Bots"]["100x Buy"] = true
 	if achievementCount >= 235:
 		pass
 	if achievementCount >= 240:
-		pass #Unlocks["Upgrades"]["KeepGoldUpgrades"] = true
+		Unlocks["Ghost Gum"]["PageBuyMax"] = true
 	if achievementCount >= 245:
 		pass
 	if achievementCount >= 250:
-		pass
+		Unlocks["Dragonwood"]["PageBuyMax"] = true
 	if achievementCount >= 255:
 		pass
 	if achievementCount >= 260:
-		pass
+		Unlocks["Upgrades"]["MythicBuyMax"] = true
 	if achievementCount >= 265:
 		pass
 	if achievementCount >= 270:

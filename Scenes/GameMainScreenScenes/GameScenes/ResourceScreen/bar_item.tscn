@@ -259,6 +259,7 @@ horizontal_alignment = 1
 
 [node name="wcPriceLabel" type="Label" parent="HBox/WCMC/WCHBox/MC/VBox"]
 layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.85098, 0.0627451, 1)
 theme_override_font_sizes/font_size = 14
 text = "0"
 horizontal_alignment = 1

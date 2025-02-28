@@ -25,7 +25,12 @@ func setCantAffordRect():
 		CantAffordRect.visible = true
 
 func setMagicUpgrade(nr = Nr, isHistoryItem = IsHistoryItem):
+	if str(nr) == "49":
+		queue_free()
+		return
+	
 	setNodePaths()
+	
 	
 	IsHistoryItem = isHistoryItem
 	

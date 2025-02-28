@@ -43,7 +43,7 @@ theme_override_constants/margin_bottom = 5
 
 [node name="HBox" type="HBoxContainer" parent="UpgradePage/UpgradeTabs/HBox/TabButtonsMC"]
 layout_mode = 2
-theme_override_constants/separation = 6
+theme_override_constants/separation = 5
 alignment = 1
 
 [node name="MC" type="MarginContainer" parent="UpgradePage/UpgradeTabs/HBox/TabButtonsMC/HBox"]

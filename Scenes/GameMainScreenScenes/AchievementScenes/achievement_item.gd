@@ -56,7 +56,5 @@ func _on_achievement_timer_timeout() -> void:
 
 func _on_locked_rect_gui_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
-		if AchievementId == "91":
-			SaveData.UnlockedAchievements[AchievementId] = true
-		elif AchievementId == "254":
+		if AchievementId == "91" or AchievementId == "254" or AchievementId == "255":
 			SaveData.UnlockedAchievements[AchievementId] = true

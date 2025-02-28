@@ -476,7 +476,7 @@ var Upgrades = {
 			"Description" : "+4.5% More WPS Per Dam Section",
 			"OtherText" : "",
 			"Unlocked" : func(): return Unlocks.Unlocks["Dams"]["AnySectionCompleted"],
-			"MagicCost" : 5e9,
+			"MagicCost" : 7.5e9,
 		},
 	},
 	"Ash" : {
@@ -712,8 +712,8 @@ var Upgrades = {
 			"Unlocked" : func(): return true,
 		},
 		"7" :  {
-			"Name" : "+1000 Ebony Price",
-			"Description" : "+1000 Ebony Price",
+			"Name" : "+750 Ebony Price",
+			"Description" : "+750 Ebony Price",
 			"OtherText" : "",
 			"Unlocked" : func(): return true,
 		},
@@ -889,8 +889,8 @@ var Upgrades = {
 			"Unlocked" : func(): return true,
 		},
 		"4" :  {
-			"Name" : "Beaver Gets +0.7 Wood Per WC",
-			"Description" : "Beaver Gets +0.7 Wood Per Woodcamp",
+			"Name" : "Beaver Gets +0.5 Wood Per WC",
+			"Description" : "Beaver Gets +0.5 Wood Per Woodcamp",
 			"OtherText" : "",
 			"Unlocked" : func(): return true,
 		},
@@ -920,8 +920,8 @@ var Upgrades = {
 			"MagicCost" : 4e9,
 		},
 		"9" :  {
-			"Name" : "+5.5% Global Storage",
-			"Description" : "+5.5% Global Storage",
+			"Name" : "+2% Global Storage",
+			"Description" : "+2% Global Storage",
 			"OtherText" : "",
 			"Unlocked" : func(): return true,
 			"MagicCost" : 1.1e10,

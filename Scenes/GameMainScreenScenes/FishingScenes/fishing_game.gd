@@ -92,6 +92,8 @@ func stopFishing(gameLoad = false):
 	if !gameLoad:
 		if Values.ResourceValues["Fish"]["ChanceToRefundChance"] < RNG.randf():
 			SaveData.GeneralInfo["CurrentFishingChances"] = clamp(SaveData.GeneralInfo["CurrentFishingChances"] - 1, 0, FishingChances)
+		else:
+			get_tree().get_first_node_in_group("TextLogSection").writeToLog("Fishing Chance Refunded!")
 
 func useBait():
 	if BaitUsed == Fishing.ShopItemEnum.NoBait:
@@ -104,6 +106,7 @@ func useBait():
 			SaveData.GeneralInfo["TimesBaitNotUsed"] = 0
 		
 		SaveData.GeneralInfo["TimesBaitNotUsed"] += 1
+		get_tree().get_first_node_in_group("TextLogSection").writeToLog("Bait Refunded!")
 
 func StartFishingTimeout():
 	FishingTimeoutTimer.wait_time = Values.ResourceValues["Fish"]["FishingTimeout"] * LongerFishingTimeMultip

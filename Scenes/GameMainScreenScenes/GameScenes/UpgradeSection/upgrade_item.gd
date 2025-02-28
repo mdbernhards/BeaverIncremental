@@ -167,10 +167,10 @@ func _on_upgrade_item_timer_timeout() -> void:
 		visible = false
 		
 		if ResourceType == "Gold":
-			if CurrentPrice * 0.4 < SaveData.Gold["Count"]:
+			if CurrentPrice * 0.4 < SaveData.Gold["Count"] or SaveData.Upgrades[ResourceType][str(UpgradeNumber)]["Level"] > 0:
 				Unlocks.Unlocks[ResourceType][str(UpgradeNumber)] = true
 		else:
-			if CurrentPrice * 0.4 < SaveData.Resources[ResourceType]["Count"]:
+			if CurrentPrice * 0.4 < SaveData.Resources[ResourceType]["Count"] or SaveData.Upgrades[ResourceType][str(UpgradeNumber)]["Level"] > 0:
 				Unlocks.Unlocks[ResourceType][str(UpgradeNumber)] = true
 	
 	if Unlocks.Unlocks[ResourceType]["ButtonBuyMax"] or Values.DebugMode:

@@ -71,8 +71,8 @@ func changeBarValues(woodType = WoodType):
 
 func updateBarValues(woodType = WoodType):
 	WoodType = woodType
-	PerClickLabel.text = str(NumberFormatting.formatNumber(roundi(Values.ResourceValues[WoodType]["PerClick"]))) + " per click"
-	PerSecondLabel.text = str(NumberFormatting.formatNumber(roundi(Values.ResourceValues[WoodType]["RealPerSecondIncrease"] - Values.ResourceValues[WoodType]["RealPerSecondLoss"]))) + " per second"
+	PerClickLabel.text = str(NumberFormatting.formatNumber(roundf(Values.ResourceValues[WoodType]["PerClick"]))) + " per click"
+	PerSecondLabel.text = str(NumberFormatting.formatNumber(roundf(Values.ResourceValues[WoodType]["RealPerSecondIncrease"] - Values.ResourceValues[WoodType]["RealPerSecondLoss"]))) + " per second"
 	StorageLabel.text = str(NumberFormatting.formatNumber(max(0, floor(SaveData.Resources[WoodType]["Count"])))) + " / " + str(NumberFormatting.formatNumber(floor(Values.ResourceValues[WoodType]["Storage"])))
 	WoodProgressBar.value = remap(SaveData.Resources[WoodType]["Count"], 0, Values.ResourceValues[WoodType]["Storage"], 0, 100)
 	

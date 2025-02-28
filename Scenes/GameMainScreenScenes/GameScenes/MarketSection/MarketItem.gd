@@ -74,13 +74,13 @@ func updateValues():
 	GoldGainedIfSold = float(WoodLossIfSold * Values.ResourceValues[WoodType]["SoldFor"])
 	
 	CurrentWoodCountLabel.text = str(NumberFormatting.formatNumber(floor(SaveData.Resources[WoodType]["Count"]))) + " " + WoodType
-	SellAmountLabel.text = str(NumberFormatting.formatNumber(roundi(WoodLossIfSold))) + " " + WoodType
+	SellAmountLabel.text = str(NumberFormatting.formatNumber(roundf(WoodLossIfSold))) + " " + WoodType
 	SellGoldGainLabel.text = str(NumberFormatting.formatNumber(roundf(GoldGainedIfSold))) + " Gold"
-	BotPriceLabel.text = "Price: " + str(NumberFormatting.formatNumber(roundi(CalculatePrice.getBotCost(SaveData.Resources[WoodType]["Bots"], WoodType)))) + " gold"
+	BotPriceLabel.text = "Price: " + str(NumberFormatting.formatNumber(roundf(CalculatePrice.getBotCost(SaveData.Resources[WoodType]["Bots"], WoodType)))) + " gold"
 	BotCountLabel.text = str(SaveData.Resources[WoodType]["Bots"])
 	
-	PerSecondWoodSoldLabel.text = str(NumberFormatting.formatNumber(roundi(Values.ResourceValues[WoodType]["WoodSoldPerSecond"])))
-	PerSecondGoldGainLabel.text = str(NumberFormatting.formatNumber(roundi(Values.ResourceValues[WoodType]["GoldGainPerSecond"])))
+	PerSecondWoodSoldLabel.text = str(NumberFormatting.formatNumber(roundf(Values.ResourceValues[WoodType]["WoodSoldPerSecond"])))
+	PerSecondGoldGainLabel.text = str(NumberFormatting.formatNumber(roundf(Values.ResourceValues[WoodType]["GoldGainPerSecond"])))
 
 func setNodePaths():
 	# Nodes for selling
@@ -123,14 +123,21 @@ func _on_sell_button_button_down():
 		SaveData.Resources[WoodType]["Count"] -= WoodLossIfSold
 		SaveData.Gold["Count"] += GoldGainedIfSold
 		
-		if SaveData.GeneralInfo.has("TotalGoldGain"):
+		if SaveData.GeneralInfo.has("TotalGoldGain") and GoldGainedIfSold > 0:
+			var egg = SaveData.GeneralInfo["TotalGoldGain"]
+			if is_nan(SaveData.GeneralInfo["TotalGoldGain"]):
+				SaveData.GeneralInfo["TotalGoldGain"] = 0
+			
 			SaveData.GeneralInfo["TotalGoldGain"] += GoldGainedIfSold
-		else:
+		elif GoldGainedIfSold > 0:
 			SaveData.GeneralInfo["TotalGoldGain"] = GoldGainedIfSold
 		
-		if SaveData.GeneralInfo.has("TotalWoodSold"):
+		if SaveData.GeneralInfo.has("TotalWoodSold") and WoodLossIfSold > 0:
+			if is_nan(SaveData.GeneralInfo["TotalWoodSold"]):
+				SaveData.GeneralInfo["TotalWoodSold"] = 0
+			
 			SaveData.GeneralInfo["TotalWoodSold"] += WoodLossIfSold
-		else:
+		elif WoodLossIfSold > 0:
 			SaveData.GeneralInfo["TotalWoodSold"] = WoodLossIfSold
 
 func checkIfCanAfford(botAmount):

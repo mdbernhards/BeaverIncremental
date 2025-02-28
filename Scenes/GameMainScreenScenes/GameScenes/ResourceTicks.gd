@@ -216,9 +216,12 @@ func setTickChanges():
 		SaveData.Resources[woodType]["Count"] += WoodCalculations[woodType]["WoodProductionGain"] - woodLoss
 		SaveData.Resources[woodType]["Count"] = max(SaveData.Resources[woodType]["Count"], 0)
 		
-		if SaveData.GeneralInfo.has("TotalWoodProduced"):
+		if SaveData.GeneralInfo.has("TotalWoodProduced") and WoodCalculations[woodType]["WoodProductionGain"] > 0:
+			if is_nan(SaveData.GeneralInfo["TotalWoodProduced"]):
+				SaveData.GeneralInfo["TotalWoodProduced"] = 0
+			
 			SaveData.GeneralInfo["TotalWoodProduced"] += WoodCalculations[woodType]["WoodProductionGain"]
-		else:
+		elif WoodCalculations[woodType]["WoodProductionGain"] > 0:
 			SaveData.GeneralInfo["TotalWoodProduced"] = WoodCalculations[woodType]["WoodProductionGain"]
 		
 		# Wood Production
@@ -229,14 +232,20 @@ func setTickChanges():
 		var goldGain = WoodCalculations[woodType]["WoodMarkedLoss"] * Values.ResourceValues[woodType]["SoldFor"]
 		SaveData.Gold["Count"] += goldGain
 		
-		if SaveData.GeneralInfo.has("TotalGoldGain"):
+		if SaveData.GeneralInfo.has("TotalGoldGain") and goldGain > 0:
+			if is_nan(SaveData.GeneralInfo["TotalGoldGain"]):
+				SaveData.GeneralInfo["TotalGoldGain"] = 0
+			
 			SaveData.GeneralInfo["TotalGoldGain"] += goldGain
-		else:
+		elif goldGain > 0:
 			SaveData.GeneralInfo["TotalGoldGain"] = goldGain
 		
-		if SaveData.GeneralInfo.has("TotalWoodSold"):
+		if SaveData.GeneralInfo.has("TotalWoodSold") and WoodCalculations[woodType]["WoodMarkedLoss"] > 0:
+			if is_nan(SaveData.GeneralInfo["TotalWoodSold"]):
+				SaveData.GeneralInfo["TotalWoodSold"] = 0
+			
 			SaveData.GeneralInfo["TotalWoodSold"] += WoodCalculations[woodType]["WoodMarkedLoss"]
-		else:
+		elif WoodCalculations[woodType]["WoodMarkedLoss"] > 0:
 			SaveData.GeneralInfo["TotalWoodSold"] = WoodCalculations[woodType]["WoodMarkedLoss"]
 		
 		Values.ResourceValues[woodType]["WoodSoldPerSecond"] = WoodCalculations[woodType]["WoodMarkedLoss"]

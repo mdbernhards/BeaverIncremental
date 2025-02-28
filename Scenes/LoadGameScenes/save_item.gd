@@ -51,12 +51,12 @@ func getSaveData(saveName):
 	TimePlayedLabel.text = "Time Played: " + str(roundf(SaveInfo.TimePlayed / 360) / 10) + "h"
 	
 	if SaveInfo.CurrentMagic > 0:
-		CurrentMagicLabel.text = "Magic: " + str(floor(SaveInfo.CurrentMagic))
+		CurrentMagicLabel.text = "Magic: " + NumberFormatting.formatNumber(SaveInfo.CurrentMagic)
 	else:
 		CurrentMagicLabel.text = ""
 	
 	if SaveInfo.CurrentGold > 0:
-		CurrentGoldLabel.text = "Gold: " + str(floor(SaveInfo.CurrentGold))
+		CurrentGoldLabel.text = "Gold: " + NumberFormatting.formatNumber(SaveInfo.CurrentGold)
 	else:
 		CurrentGoldLabel.text = ""
 	

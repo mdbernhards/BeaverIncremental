@@ -43,21 +43,21 @@ func resetValues():
 	var tempUpgrades = Upgrades.duplicate(true)
 	Upgrades = OriginalUpgrades.duplicate(true)
 	
-	if Unlocks.Unlocks["Upgrades"]["KeepClassicUpgrades"]:
+	if Unlocks.Unlocks["Upgrades"]["KeepClassicUpgrades"] and false:
 		Upgrades["Oak"] = tempUpgrades["Oak"].duplicate(true)
 		Upgrades["Apple"] = tempUpgrades["Apple"].duplicate(true)
 		Upgrades["Maple"] = tempUpgrades["Maple"].duplicate(true)
 		Upgrades["Birch"] = tempUpgrades["Birch"].duplicate(true)
 		Upgrades["Spruce"] = tempUpgrades["Spruce"].duplicate(true)
 	
-	if Unlocks.Unlocks["Upgrades"]["KeepRareUpgrades"]:
+	if Unlocks.Unlocks["Upgrades"]["KeepRareUpgrades"] and false:
 		Upgrades["Chestnut"] = tempUpgrades["Chestnut"].duplicate(true)
 		Upgrades["Cherry"] = tempUpgrades["Cherry"].duplicate(true)
 		Upgrades["Ash"] = tempUpgrades["Ash"].duplicate(true)
 		Upgrades["Cedar"] = tempUpgrades["Cedar"].duplicate(true)
 		Upgrades["Mahogany"] = tempUpgrades["Mahogany"].duplicate(true)
 	
-	if Unlocks.Unlocks["Upgrades"]["KeepMythicUpgrades"]:
+	if Unlocks.Unlocks["Upgrades"]["KeepMythicUpgrades"] and false:
 		Upgrades["Ebony"] = tempUpgrades["Ebony"].duplicate(true)
 		Upgrades["Dogwood"] = tempUpgrades["Dogwood"].duplicate(true)
 		Upgrades["Rosewood"] = tempUpgrades["Rosewood"].duplicate(true)
@@ -1262,6 +1262,12 @@ var ShopItems = {
 		"Bought" : false,
 	},
 	Fishing.ShopItemEnum.FishingTime2 : {
+		"Bought" : false,
+	},
+	Fishing.ShopItemEnum.ChanceToRefundChance1 : {
+		"Bought" : false,
+	},
+	Fishing.ShopItemEnum.ChanceToRefundChance2 : {
 		"Bought" : false,
 	},
 	Fishing.ShopItemEnum.RefundChance1 : {

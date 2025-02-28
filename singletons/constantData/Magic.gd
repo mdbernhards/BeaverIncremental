@@ -112,8 +112,8 @@ var Magic = {
 		"Cost" : 350,
 	},
 	"11b" : {
-		"Name" : "+20% Refund Chance",
-		"Description" : "20% Bigger Chance To Refund A Fishing Chance When Failing To Catch A Fish",
+		"Name" : "+5% Fishing Refund",
+		"Description" : "+5% Chance That a Fishing Chance gets refunded after use",
 		"Cost" : 440,
 	},
 	"11" : {
@@ -242,8 +242,8 @@ var Magic = {
 		"Cost" : 25000,
 	},
 	"29" : {
-		"Name" : "Fishing Time 7.5% Longer",
-		"Description" : "Have 7.5% More Time To Fish",
+		"Name" : "Fishing Time 5% Longer",
+		"Description" : "Have 5% More Time To Fish",
 		"Cost" : 33000,
 	},
 	"14" : {
@@ -484,7 +484,7 @@ var Magic = {
 	"53" : {
 		"Name" : "Merchants Sell 20% More",
 		"Description" : "All Merchants Sell 20% More Wood",
-		"Cost" : 1650000000,
+		"Cost" : 1750000000,
 	},
 	"53b" : {
 		"Name" : "Achievement Storage 25%",
@@ -494,116 +494,141 @@ var Magic = {
 	"54" : {
 		"Name" : "+1 Chance To Fish",
 		"Description" : "Adds +1 Chance For Fishing",
-		"Cost" : 2500000000,
-	},
-	"54a" : {
-		"Name" : "+1 Auto Clicker",
-		"Description" : "+1 Auto Clicker, every second clicks for you!",
-		"Cost" : 3150000000,
+		"Cost" : 3000000000,
 	},
 	"54b" : {
 		"Name" : "Rare Upgrades -66%",
 		"Description" : "Rare Upgrades 66% Cheaper",
 		"Cost" : 3850000000,
 	},
+	"54a" : {
+		"Name" : "+1 Auto Clicker",
+		"Description" : "+1 Auto Clicker, every second clicks for you!",
+		"Cost" : 5500000000,
+	},
 	"54c" : {
 		"Name" : "Dam Construction Speed 2x",
 		"Description" : "Increases The Speed That Materials are Consumed For Dam Construction By 2x",
-		"Cost" : 4000000000,
+		"Cost" : 8000000000,
 	},
-	"50" : {
-		"Name" : "Dam Effects 15%",
-		"Description" : "Improve All Dam Section effects by 15%",
-		"Cost" : 4500000000,
+	"56b" : {
+		"Name" : "Merchants Sell 2.5x More",
+		"Description" : "Merchants Sell 2.5x More",
+		"Cost" : 14000000000,
 	},
-	"49" : {
-		"Name" : "Keep Classic Wood Upgrades",
-		"Description" : "After Ascending keep all Classic Wood Upgrades",
-		"Cost" : 5500000000,
-	},
+	#"49" : {
+	#	"Name" : "Keep Classic Wood Upgrades",
+	#	"Description" : "After Ascending keep all Classic Wood Upgrades",
+	#	"Cost" : 20000000000,
+	#},
 	"55b" : {
 		"Name" : "Keep 10 more research",
 		"Description" : "After Ascending keep 10 More Research Items",
-		"Cost" : 6100000000,
+		"Cost" : 22500000000,
 	},
-	"56" : {
-		"Name" : "Dam Effects 20%",
-		"Description" : "Improve All Dam Section effects by 20%",
-		"Cost" : 7000000000,
+	"55c" : {
+		"Name" : "2x Classic, Rare Wood Price",
+		"Description" : "2x Classic, Rare Wood Price",
+		"Cost" : 28500000000,
+	},
+	"55d" : {
+		"Name" : "Magic Effect 15%",
+		"Description" : "Magic Effect 15%",
+		"Cost" : 39990000000,
 	},
 	"56a" : {
 		"Name" : "+1 Auto Clicker",
 		"Description" : "+1 Auto Clicker, every second clicks for you!",
-		"Cost" : 8000000000,
-	},
-	"56b" : {
-		"Name" : "Merchants Sell 2x",
-		"Description" : "Merchants Sell 2x More",
-		"Cost" : 9250000000,
+		"Cost" : 50000000000,
 	},
 	"56c" : {
 		"Name" : "Mythic Upgrades -75%",
 		"Description" : "Mythic Upgrades -75%",
-		"Cost" : 11000000000,
+		"Cost" : 65000000000,
+	},
+	"50" : {
+		"Name" : "Dam Effects 15%",
+		"Description" : "Improve All Dam Section effects by 15%",
+		"Cost" : 80000000000,
+	},
+	"50a" : {
+		"Name" : "Achievement Effect 22.5%",
+		"Description" : "Achievement Effect 22.5%",
+		"Cost" : 100000000000,
 	},
 	"56d" : {
 		"Name" : "Dam Construction Speed 2x",
 		"Description" : "Increases The Speed That Materials are Consumed For Dam Construction By 2x",
-		"Cost" : 12500000000,
+		"Cost" : 125000000000,
 	},
-	"58" : {
-		"Name" : "Improve Magic Effects 2x",
-		"Description" : "Double All Magic Effects",
-		"Cost" : 13250000000,
+	"56e" : {
+		"Name" : "Half Research Time",
+		"Description" : "Half The Time Research Takes",
+		"Cost" : 100000000000,
 	},
 	"59" : {
 		"Name" : "All Upgrades 50% Cheaper",
 		"Description" : "Make All Upgrades 50% Cheaper",
-		"Cost" : 16000000000,
+		"Cost" : 265000000000,
+	},
+	"59a" : {
+		"Name" : "Magic Storage Effect 17.5%",
+		"Description" : "Magic Storage Effect 17.5%",
+		"Cost" : 350000000000,
 	},
 	"59b" : {
 		"Name" : "+1 Auto Clicker",
 		"Description" : "+1 Auto Clicker, every second clicks for you!",
-		"Cost" : 20000000000,
+		"Cost" : 425000000000,
 	},
 	"59c" : {
 		"Name" : "WPC x10",
 		"Description" : "WPC x10",
-		"Cost" : 25000000000,
+		"Cost" : 555000000000,
 	},
 	"59d" : {
 		"Name" : "WPS x5",
 		"Description" : "WPS x5",
-		"Cost" : 31500000000,
+		"Cost" : 731500000000,
 	},
 	"60" : {
 		"Name" : "Beaver Price -70%",
 		"Description" : "Beaver Price -70%",
-		"Cost" : 42000000000,
+		"Cost" : 842000000000,
 	},
-	"55" : {
-		"Name" : "Keep Rare Wood Upgrades",
-		"Description" : "After Ascending keep all Rare Wood Upgrades",
-		"Cost" : 47500000000,
+	#"55" : {
+	#	"Name" : "Keep Rare Wood Upgrades",
+	#	"Description" : "After Ascending keep all Rare Wood Upgrades",
+	#	"Cost" : 1000000000001,
+	#},
+	"56" : {
+		"Name" : "Dam Effects 20%",
+		"Description" : "Improve All Dam Section effects by 20%",
+		"Cost" : 1250000000000,
+	},
+	"58" : {
+		"Name" : "Improve Magic Effects 2x",
+		"Description" : "Double All Magic Effects",
+		"Cost" : 1555500000000,
 	},
 	"60a" : {
 		"Name" : "Woodcamp Price -55%",
 		"Description" : "Woodcamp Price -55%",
-		"Cost" : 55500000000,
+		"Cost" : 1666000000000,
 	},
 	"60b" : {
 		"Name" : "+1 Auto Clicker",
 		"Description" : "+1 Auto Clicker, every second clicks for you!",
-		"Cost" : 70000000000,
+		"Cost" : 2250000000000,
 	},
 	"60c" : {
 		"Name" : "Storage x2",
 		"Description" : "Storage x2",
-		"Cost" : 100000000000,
+		"Cost" : 3333000000000,
 	},
 	"61" : {
 		"Name" : "Dam Construction Speed 3x",
 		"Description" : "Increases The Speed That Materials are Consumed For Dam Construction 3x",
-		"Cost" : 150000000000,
+		"Cost" : 5000000000000,
 	},
 }
