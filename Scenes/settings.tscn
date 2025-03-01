@@ -85,6 +85,7 @@ layout_mode = 2
 color = Color(0.329412, 0.329412, 0.329412, 1)
 
 [node name="MC" type="MarginContainer" parent="MC/VBox/SettingsMC/Grid/SoundSettings"]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -208,6 +209,7 @@ theme_override_font_sizes/font_size = 30
 text = "Save"
 
 [node name="VBox" type="VBoxContainer" parent="MC/VBox/SettingsMC/Grid/SaveSettings/MC/VBox/Grid"]
+visible = false
 layout_mode = 2
 
 [node name="Label" type="Label" parent="MC/VBox/SettingsMC/Grid/SaveSettings/MC/VBox/Grid/VBox"]
@@ -232,6 +234,7 @@ layout_mode = 2
 color = Color(0.329412, 0.329412, 0.329412, 1)
 
 [node name="MC" type="MarginContainer" parent="MC/VBox/SettingsMC/Grid/ControlsSettings"]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -264,6 +267,7 @@ layout_mode = 2
 color = Color(0.329412, 0.329412, 0.329412, 1)
 
 [node name="MC" type="MarginContainer" parent="MC/VBox/SettingsMC/Grid/Gameplay"]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0

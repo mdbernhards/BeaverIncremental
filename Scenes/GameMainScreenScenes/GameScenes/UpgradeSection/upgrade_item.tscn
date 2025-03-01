@@ -30,6 +30,7 @@ theme_override_font_sizes/font_size = 20
 text = "Wood 1"
 
 [node name="NrLabel" type="Label" parent="Color/UpgradeVBox/MC"]
+visible = false
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 16

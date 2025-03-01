@@ -65,6 +65,10 @@ func calculatePotentialMagicGain():
 			
 			var resourcesMagic = 0
 			if SaveData.SavedMagicCalculation[resourceType]["PotentialMagicGain"] > resourcesMagic:
+				if SaveData.SavedMagicCalculation[resourceType]["PotentialMagicGain"] < 1:
+					SaveData.SavedMagicCalculation[resourceType]["PotentialMagicGain"] = 0
+				
+				
 				resourcesMagic = SaveData.SavedMagicCalculation[resourceType]["PotentialMagicGain"]
 			
 			var usedWoodCount = 0

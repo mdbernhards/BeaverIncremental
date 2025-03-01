@@ -547,9 +547,9 @@ var Magic = {
 		"Cost" : 65000000000,
 	},
 	"50" : {
-		"Name" : "Dam Effects 15%",
+		"Name" : "Dam Effects 25%",
 		"Description" : "Improve All Dam Section effects by 15%",
-		"Cost" : 80000000000,
+		"Cost" : 90000000000,
 	},
 	"50a" : {
 		"Name" : "Achievement Effect 22.5%",
@@ -557,44 +557,39 @@ var Magic = {
 		"Cost" : 100000000000,
 	},
 	"56d" : {
-		"Name" : "Dam Construction Speed 2x",
-		"Description" : "Increases The Speed That Materials are Consumed For Dam Construction By 2x",
-		"Cost" : 125000000000,
+		"Name" : "Dam Construction Speed 40%",
+		"Description" : "Increases The Speed That Materials are Consumed For Dam Construction By 40%",
+		"Cost" : 175000000000,
 	},
 	"56e" : {
 		"Name" : "Half Research Time",
 		"Description" : "Half The Time Research Takes",
-		"Cost" : 100000000000,
+		"Cost" : 225000000000,
 	},
 	"59" : {
 		"Name" : "All Upgrades 50% Cheaper",
 		"Description" : "Make All Upgrades 50% Cheaper",
-		"Cost" : 265000000000,
+		"Cost" : 300000000000,
 	},
 	"59a" : {
 		"Name" : "Magic Storage Effect 17.5%",
 		"Description" : "Magic Storage Effect 17.5%",
-		"Cost" : 350000000000,
+		"Cost" : 400000000000,
 	},
 	"59b" : {
 		"Name" : "+1 Auto Clicker",
 		"Description" : "+1 Auto Clicker, every second clicks for you!",
-		"Cost" : 425000000000,
+		"Cost" : 450000000000,
 	},
-	"59c" : {
-		"Name" : "WPC x10",
-		"Description" : "WPC x10",
-		"Cost" : 555000000000,
-	},
-	"59d" : {
-		"Name" : "WPS x5",
-		"Description" : "WPS x5",
-		"Cost" : 731500000000,
+	"59bb" : {
+		"Name" : "Dam Construction Speed 35%",
+		"Description" : "Increases The Speed That Materials are Consumed For Dam Construction By 40%",
+		"Cost" : 750000000000,
 	},
 	"60" : {
 		"Name" : "Beaver Price -70%",
 		"Description" : "Beaver Price -70%",
-		"Cost" : 842000000000,
+		"Cost" : 1000000000000,
 	},
 	#"55" : {
 	#	"Name" : "Keep Rare Wood Upgrades",
@@ -602,9 +597,9 @@ var Magic = {
 	#	"Cost" : 1000000000001,
 	#},
 	"56" : {
-		"Name" : "Dam Effects 20%",
+		"Name" : "Dam Effects 40%",
 		"Description" : "Improve All Dam Section effects by 20%",
-		"Cost" : 1250000000000,
+		"Cost" : 1500000000000,
 	},
 	"58" : {
 		"Name" : "Improve Magic Effects 2x",
@@ -614,21 +609,41 @@ var Magic = {
 	"60a" : {
 		"Name" : "Woodcamp Price -55%",
 		"Description" : "Woodcamp Price -55%",
-		"Cost" : 1666000000000,
+		"Cost" : 2250000000000,
 	},
 	"60b" : {
 		"Name" : "+1 Auto Clicker",
 		"Description" : "+1 Auto Clicker, every second clicks for you!",
-		"Cost" : 2250000000000,
+		"Cost" : 3550000000000,
+	},
+	"60bb" : {
+		"Name" : "Half Research Time",
+		"Description" : "Half The Time Research Takes",
+		"Cost" : 4440000000000,
 	},
 	"60c" : {
 		"Name" : "Storage x2",
 		"Description" : "Storage x2",
-		"Cost" : 3333000000000,
+		"Cost" : 6000000000000,
 	},
 	"61" : {
 		"Name" : "Dam Construction Speed 3x",
 		"Description" : "Increases The Speed That Materials are Consumed For Dam Construction 3x",
-		"Cost" : 5000000000000,
+		"Cost" : 8500000000000,
+	},
+	"59c" : {
+		"Name" : "WPC x10",
+		"Description" : "WPC x10",
+		"Cost" : 15000000000000,
+	},
+	"59d" : {
+		"Name" : "WPS x5",
+		"Description" : "WPS x5",
+		"Cost" : 20000000000000,
+	},
+	"61b" : {
+		"Name" : "Dam Construction Speed 5x",
+		"Description" : "Increases The Speed That Materials are Consumed For Dam Construction 3x",
+		"Cost" : 25000000000000,
 	},
 }

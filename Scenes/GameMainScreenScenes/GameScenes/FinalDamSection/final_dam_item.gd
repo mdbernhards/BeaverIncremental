@@ -52,6 +52,11 @@ func updateBarValues():
 	PercentigeDoneLabel.text = str(roundPercentige(progressPercentige)) + "% Done"
 	WoodProgressBar.value = progressPercentige
 	ProductionSlider.value = SaveData.FinalDamData[WoodType]["ProductionSpeedSlider"]
+	
+	var sectionCount = SaveData.countCompletedDamSections() + 1
+	var totalNeededMultip = max(1, roundf(sectionCount*sectionCount/2.65+sectionCount))
+	
+	TotalNeeded = totalNeededMultip * 1e15 + 1000
 
 func roundPercentige(percentige):
 	if percentige < 0.01:
@@ -81,14 +86,16 @@ func _on_unlock_button_button_down() -> void:
 			_on_final_dam_refresh_timer_timeout()
 
 func _on_final_dam_refresh_timer_timeout() -> void:
-	setCantAffordRect()
-	updateBarValues()
-	checkIfCompleted()
+	if !SaveData.FinalDamData[WoodType]["Completed"]:
+		setCantAffordRect()
+		updateBarValues()
+		checkIfCompleted()
 	
 	if SaveData.FinalDamData[WoodType]["Completed"]:
 		CompletedLabel.visible = true
 		ProgressMC.visible = false
 		UnlockButton.visible = false
+		WoodProgressBar.value = 100
 	elif SaveData.FinalDamData[WoodType]["Unlocked"]:
 		CompletedLabel.visible = false
 		ProgressMC.visible = true

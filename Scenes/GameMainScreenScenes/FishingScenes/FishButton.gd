@@ -47,7 +47,6 @@ func _ready() -> void:
 
 func settingFishData():
 	Direction = Vector2(RNG.randf_range(-1, 1), RNG.randf_range(-1, 1))
-	position += Vector2(RNG.randf_range(0, 850), RNG.randf_range(0, 680))
 	SwimType = RNG.randi_range(0, 3)
 	Angle = RNG.randi_range(-180, 180)
 	AngleDirection = RNG.randi_range(0, 3)
@@ -65,6 +64,11 @@ func settingFishData():
 	TurnChance = FishData.TurnChance
 	Scale = FishData.Scale * Values.ResourceValues["Fish"]["FishSizeMultip"] / baitMultip
 	scale *= Scale
+	
+	position += Vector2(RNG.randf_range(0, 900 - FishButton.size.x * Scale), RNG.randf_range(0, 680))
+	
+	if position.x + FishButton.size.x * Scale > 1030:
+		position.x -= FishButton.size.x * Scale
 
 func _process(delta: float) -> void:
 	pass

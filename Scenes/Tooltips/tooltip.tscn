@@ -29,6 +29,7 @@ color = Color(0.137255, 0.14902, 0.180392, 1)
 [node name="MC" type="MarginContainer" parent="MC"]
 layout_mode = 2
 size_flags_vertical = 4
+theme_override_constants/margin_left = 5
 theme_override_constants/margin_bottom = 5
 
 [node name="VBox" type="VBoxContainer" parent="MC/MC"]
@@ -40,6 +41,7 @@ custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
 
 [node name="MC" type="MarginContainer" parent="MC/MC/VBox/HBox"]
+visible = false
 custom_minimum_size = Vector2(50, 50)
 layout_mode = 2
 theme_override_constants/margin_left = 5

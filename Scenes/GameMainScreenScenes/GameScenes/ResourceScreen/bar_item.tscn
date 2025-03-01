@@ -103,19 +103,19 @@ text = "Click"
 [node name="ResourceProductionSlider" type="HSlider" parent="HBox/BarVBox/BarRect"]
 custom_minimum_size = Vector2(175, 0)
 layout_mode = 0
-offset_left = 180.0
-offset_top = 39.0
-offset_right = 355.0
-offset_bottom = 55.0
+offset_left = 160.0
+offset_top = 37.0
+offset_right = 335.0
+offset_bottom = 53.0
 scale = Vector2(1.09087, 1.08809)
 value = 100.0
 
 [node name="ProductionLabel" type="Label" parent="HBox/BarVBox/BarRect/ResourceProductionSlider"]
 layout_mode = 0
-offset_left = 12.8338
-offset_top = -22.057
-offset_right = 157.834
-offset_bottom = 0.943001
+offset_left = 0.916707
+offset_top = -21.138
+offset_right = 145.917
+offset_bottom = 1.86205
 theme_override_font_sizes/font_size = 13
 text = "Maple production: 25%"
 

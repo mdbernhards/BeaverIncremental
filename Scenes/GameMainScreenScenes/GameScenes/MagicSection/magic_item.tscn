@@ -39,6 +39,7 @@ horizontal_alignment = 2
 vertical_alignment = 2
 
 [node name="MagicIdLabel" type="Label" parent="MagicButton/MC"]
+visible = false
 layout_mode = 2
 size_flags_vertical = 8
 theme_override_colors/font_color = Color(0, 0.501961, 0, 1)

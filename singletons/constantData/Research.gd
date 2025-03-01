@@ -1837,31 +1837,76 @@ var Research = {
 		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 0,
 		"Unlocked" : func(): return true,
 	},
-	"136" :  {
-		"Name" : "WPS 1% Per Achievement",
-		"Description" : "WPS 1% Per Achievement",
+	"135a" :  {
+		"Name" : "Ebony, Rosewood and Cherry Storage 35%",
+		"Description" : "Ebony, Rosewood and Cherry Storage 35%",
 		"Time" : 7535200, # Seconds
 		"OakCost" : 0, "AppleCost" : 0, "MapleCost" : 0, "BirchCost" : 0, "SpruceCost" : 0,
-		"ChestnutCost" : 0, "CherryCost" : 0, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 0,
-		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 1e20,
+		"ChestnutCost" : 0, "CherryCost" : 3.58e15, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 0,
+		"EbonyCost" : 3.07e14, "DogwoodCost" : 0, "RosewoodCost" : 3.87e13, "Ghost GumCost" : 0, "DragonwoodCost" : 0,
+		"Unlocked" : func(): return true,
+	},
+	"135aa" :  {
+		"Name" : "WPS x5",
+		"Description" : "WPS x5",
+		"Time" : 7635200, # Seconds
+		"OakCost" : 1e17, "AppleCost" : 7.5e16, "MapleCost" : 7e16, "BirchCost" :1.25e16, "SpruceCost" : 9e15,
+		"ChestnutCost" : 7.5e15, "CherryCost" : 2e16, "AshCost" : 3.15e16, "CedarCost" : 3.5e15, "MahoganyCost" : 1e15,
+		"EbonyCost" : 6e15, "DogwoodCost" : 1e16, "RosewoodCost" : 1e16, "Ghost GumCost" : 1e15, "DragonwoodCost" : 4e12,
+		"Unlocked" : func(): return true,
+	},
+	"135b" :  {
+		"Name" : "Merchant Price -95%",
+		"Description" : "Merchant Price -95%",
+		"Time" : 7835200, # Seconds
+		"OakCost" : 0, "AppleCost" : 8.28e16, "MapleCost" : 0, "BirchCost" : 1.36e16, "SpruceCost" : 0,
+		"ChestnutCost" : 0, "CherryCost" : 0, "AshCost" : 4.44e15, "CedarCost" : 0, "MahoganyCost" : 0,
+		"EbonyCost" : 0, "DogwoodCost" : 4.42e14, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 3.8e12,
+		"Unlocked" : func(): return true,
+	},
+	"136" :  {
+		"Name" : "WPS +1% Per Achievement",
+		"Description" : "WPS +1% Per Achievement",
+		"Time" : 7935200, # Seconds
+		"OakCost" : 8.97e16, "AppleCost" : 0, "MapleCost" : 5.62e16, "BirchCost" : 0, "SpruceCost" : 9.41e15,
+		"ChestnutCost" : 5.85e15, "CherryCost" : 0, "AshCost" : 0, "CedarCost" : 1.48e15, "MahoganyCost" : 1.22e15,
+		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 0,
+		"Unlocked" : func(): return true,
+	},
+	"136b" :  {
+		"Name" : "33% Dam Construction Speed",
+		"Description" : "33% Dam Construction Speed",
+		"Time" : 8056950, # Seconds
+		"OakCost" : 1.05e17, "AppleCost" : 0, "MapleCost" : 0, "BirchCost" : 0, "SpruceCost" : 1.1e16,
+		"ChestnutCost" : 7e15, "CherryCost" : 0, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 1.5e15,
+		"EbonyCost" : 4.55e14, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 8.2e12,
 		"Unlocked" : func(): return true,
 	},
 	"137" :  {
 		"Name" : "Mythic Storage 28%",
 		"Description" : "Mythic Storage 28%",
-		"Time" : 7946330, # Seconds
-		"OakCost" : 0, "AppleCost" : 0, "MapleCost" : 0, "BirchCost" : 0, "SpruceCost" : 0,
-		"ChestnutCost" : 0, "CherryCost" : 0, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 0,
-		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 1e20,
+		"Time" : 8146330, # Seconds
+		"OakCost" : 0, "AppleCost" : 4e17, "MapleCost" : 0, "BirchCost" : 5.5e16, "SpruceCost" : 0,
+		"ChestnutCost" : 0, "CherryCost" : 2.15e16, "AshCost" : 0, "CedarCost" : 6e15, "MahoganyCost" : 0,
+		"EbonyCost" : 0, "DogwoodCost" : 3.15e15, "RosewoodCost" : 0, "Ghost GumCost" : 6.1e14, "DragonwoodCost" : 0,
 		"Unlocked" : func(): return true,
 	},
-	"137b" :  {
-		"Name" : "35% Dam Construction Speed",
-		"Description" : "35% Dam Construction Speed",
-		"Time" : 8456950, # Seconds
+	"137a" :  {
+		"Name" : "Merchants Sell 10x More",
+		"Description" : "Merchants Sell 10x More",
+		"Time" : 8246330, # Seconds
 		"OakCost" : 0, "AppleCost" : 0, "MapleCost" : 0, "BirchCost" : 0, "SpruceCost" : 0,
+		"ChestnutCost" : 9.55e16, "CherryCost" : 8.26e16, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 0,
+		"EbonyCost" : 7.79e15, "DogwoodCost" : 0, "RosewoodCost" : 1.46e15, "Ghost GumCost" : 0, "DragonwoodCost" : 0,
+		"Unlocked" : func(): return true,
+	},
+	"137c" :  {
+		"Name" : "20% More Magic",
+		"Description" : "20% More Magic",
+		"Time" : 8746330, # Seconds
+		"OakCost" : 2e18, "AppleCost" : 1.76e18, "MapleCost" : 1.25e18, "BirchCost" : 2.13e17, "SpruceCost" : 1.7e17,
 		"ChestnutCost" : 0, "CherryCost" : 0, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 0,
-		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 1e20,
+		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 0,
 		"Unlocked" : func(): return true,
 	},
 	"138" :  {
@@ -1869,26 +1914,80 @@ var Research = {
 		"Description" : "Dragonwood WPS, WPC and Storage x1.5",
 		"Time" : 8977370, # Seconds
 		"OakCost" : 0, "AppleCost" : 0, "MapleCost" : 0, "BirchCost" : 0, "SpruceCost" : 0,
-		"ChestnutCost" : 0, "CherryCost" : 0, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 0,
-		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 1e20,
+		"ChestnutCost" : 0, "CherryCost" : 0, "AshCost" : 1.02e17, "CedarCost" : 2.25e16, "MahoganyCost" : 2.08e16,
+		"EbonyCost" : 0, "DogwoodCost" : 1.85e16, "RosewoodCost" : 0, "Ghost GumCost" : 4.55e15, "DragonwoodCost" : 4.25e14,
 		"Unlocked" : func(): return true,
 	},
 	"139" :  {
 		"Name" : "Mythic WPC x2",
 		"Description" : "Mythic WPC x2",
-		"Time" : 9588500, # Seconds
-		"OakCost" : 0, "AppleCost" : 0, "MapleCost" : 0, "BirchCost" : 0, "SpruceCost" : 0,
-		"ChestnutCost" : 0, "CherryCost" : 0, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 0,
-		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 1e20,
+		"Time" : 9388500, # Seconds
+		"OakCost" : 1.65e20, "AppleCost" : 0, "MapleCost" : 0, "BirchCost" : 1.5e19, "SpruceCost" : 0,
+		"ChestnutCost" : 6.25e18, "CherryCost" : 0, "AshCost" : 8.15e18, "CedarCost" : 0, "MahoganyCost" : 0,
+		"EbonyCost" : 3.75e17, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 0,
+		"Unlocked" : func(): return true,
+	},
+	"139a" :  {
+		"Name" : "+25 Woodcamps and Beavers",
+		"Description" : "+25 Woodcamps and Beavers",
+		"Time" : 9788500, # Seconds
+		"OakCost" : 0, "AppleCost" : 0, "MapleCost" : 1.4e20, "BirchCost" : 0, "SpruceCost" : 0,
+		"ChestnutCost" : 0, "CherryCost" : 6.5e18, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 1.25e18,
+		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 2e17, "Ghost GumCost" : 0, "DragonwoodCost" : 1.2e18,
+		"Unlocked" : func(): return true,
+	},
+	"137b" :  {
+		"Name" : "55% Dam Construction Speed",
+		"Description" : "55% Dam Construction Speed",
+		"Time" : 10256950, # Seconds
+		"OakCost" : 0, "AppleCost" : 2e20, "MapleCost" : 0, "BirchCost" : 0, "SpruceCost" : 1.25e19,
+		"ChestnutCost" : 0, "CherryCost" : 0, "AshCost" : 0, "CedarCost" : 1.5e18, "MahoganyCost" : 0,
+		"EbonyCost" : 0, "DogwoodCost" : 3.5e18, "RosewoodCost" : 0, "Ghost GumCost" : 1.5e18, "DragonwoodCost" : 0,
+		"Unlocked" : func(): return true,
+	},
+	"139b" :  {
+		"Name" : "Classic WPS 10%",
+		"Description" : "Classic WPS 10%",
+		"Time" : 10688500, # Seconds
+		"OakCost" : 0, "AppleCost" : 4e21, "MapleCost" : 0, "BirchCost" : 0, "SpruceCost" : 0,
+		"ChestnutCost" : 0, "CherryCost" : 0, "AshCost" : 1.4e20, "CedarCost" : 0, "MahoganyCost" : 0,
+		"EbonyCost" : 0, "DogwoodCost" : 1e20, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 6.25e19,
+		"Unlocked" : func(): return true,
+	},
+	"139c" :  {
+		"Name" : "Rare WPS 20%",
+		"Description" : "Rare WPS 20%",
+		"Time" : 10988500, # Seconds
+		"OakCost" : 0, "AppleCost" : 0, "MapleCost" : 0, "BirchCost" : 1.75e20, "SpruceCost" : 0,
+		"ChestnutCost" : 0, "CherryCost" : 0, "AshCost" : 0, "CedarCost" : 1.6e19, "MahoganyCost" : 0,
+		"EbonyCost" : 4e18, "DogwoodCost" : 0, "RosewoodCost" : 4.45e18, "Ghost GumCost" : 0, "DragonwoodCost" : 0,
+		"Unlocked" : func(): return true,
+	},
+	"139d" :  {
+		"Name" : "Mythic WPS 30%",
+		"Description" : "Mythic WPS 30%",
+		"Time" : 11488500, # Seconds
+		"OakCost" : 0, "AppleCost" : 0, "MapleCost" : 2.5e21, "BirchCost" : 0, "SpruceCost" : 0,
+		"ChestnutCost" : 7.5e19, "CherryCost" : 0, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 0,
+		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 2.1e19, "DragonwoodCost" : 0,
+		"Unlocked" : func(): return true,
+	},
+	"139e" :  {
+		"Name" : "Mythic Storage 15%",
+		"Description" : "Mythic Storage 15%",
+		"Time" : 12088500, # Seconds
+		"OakCost" : 2.4e21, "AppleCost" : 0, "MapleCost" : 0, "BirchCost" : 0, "SpruceCost" : 1.4e20,
+		"ChestnutCost" : 0, "CherryCost" : 8.5e19, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 1.55e19,
+		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 0,
 		"Unlocked" : func(): return true,
 	},
 	"140" :  {
 		"Name" : "WPS x5",
 		"Description" : "WPS x5",
-		"Time" : 10000000, # Seconds
-		"OakCost" : 0, "AppleCost" : 0, "MapleCost" : 0, "BirchCost" : 0, "SpruceCost" : 0,
-		"ChestnutCost" : 0, "CherryCost" : 0, "AshCost" : 0, "CedarCost" : 0, "MahoganyCost" : 0,
-		"EbonyCost" : 0, "DogwoodCost" : 0, "RosewoodCost" : 0, "Ghost GumCost" : 0, "DragonwoodCost" : 1e20,
+		"Time" : 12500000, # Seconds
+		"OakCost" : 1.55e22, "AppleCost" : 2.5e22, "MapleCost" : 1.4e22, "BirchCost" :1e21, "SpruceCost" : 8.5e20,
+		"ChestnutCost" : 4.2e20, "CherryCost" : 4.35e20, "AshCost" : 7.85e20, "CedarCost" : 9.5e19, "MahoganyCost" : 1e20,
+		"EbonyCost" : 2e19, "DogwoodCost" : 7.35e20, "RosewoodCost" : 3.4e19, "Ghost GumCost" : 1e20, "DragonwoodCost" : 4.3e20,
 		"Unlocked" : func(): return true,
 	},
 }

@@ -1,17 +1,11 @@
 TODO
 
 First:
-Keep Playing
 
-Def Before Launch:
-Check Don't Use Bait 10 Times Achievements, and the mechanic itself
-Rebalance Fishing Again after finding bugs, Need To decrease size, lifetime and increase speed and bounce speed
-Change All 10^ achievements to 1e
-Need To Add Some More Research
-
-Making The Game Playable from start to finish
-
-Fix Buy All Magic Upgrades Achievement
+Fix Magic Bug
+Fix Saves
+Make Start Of Game Faster
+If cherry unlocked show page
 
 Later:
 Show 10x, 100x Merchant price on mouseover
@@ -256,3 +250,9 @@ Fix TotalGoldGain, TotalWoodProduced and TotalWoodSold Achievements DONE
 Fix Chance To Use Bait DONE
 Change Refund Chance Upgrades to lower bounce speed upgrades DONE
 Write In Text Log Fishing Chance and Bait Refunds DONE
+
+Fix Buy All Magic Upgrades Achievement DONE
+Making The Game Playable from start to finish DONE?
+Change All 10^ achievements to 1e DONE
+Check Don't Use Bait 10 Times Achievements, and the mechanic itself DONE
+Rebalance Fishing Again after finding bugs, Need To decrease size, lifetime and increase speed and bounce speed DONE

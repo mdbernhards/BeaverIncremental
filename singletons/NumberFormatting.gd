@@ -32,6 +32,7 @@ func formatNumber(number: float, floatCount = null) -> String:
 	
 	if usedMagnitude > 24: # works up to Max e24 (Magnitude)
 		usedMagnitude = 24
+		floatCount = 0
 	
 	if floatCount == null:
 		floatCount = 3 - (magnitude % 3)
