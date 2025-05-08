@@ -700,7 +700,7 @@ var Upgrades = {
 			"Unlocked" : func(): return true,
 		},
 		"5" :  {
-			"Name" : "1.5% WPC TO WPS",
+			"Name" : "1.5% WPC To WPS",
 			"Description" : "1.5% WPC TO WPS",
 			"OtherText" : "",
 			"Unlocked" : func(): return true,
